@@ -20,6 +20,8 @@
 #define MAINWINDOW_H
 
 #include <ddialog.h>
+#include <QPushButton>
+#include <dimagebutton.h>
 
 DWIDGET_USE_NAMESPACE
 
@@ -30,6 +32,18 @@ class MainWindow : public DDialog
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+private Q_SLOTS:
+    void previous();
+    void next();
+
+private:
+    void initUI();
+    void initConnect();
+
+private:
+    QPushButton* m_nextBtn;
+    DImageButton* m_previousBtn;
 };
 
 #endif // MAINWINDOW_H

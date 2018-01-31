@@ -29,3 +29,25 @@ MainWindow::~MainWindow()
 {
 
 }
+
+void MainWindow::previous()
+{
+
+}
+
+void MainWindow::next()
+{
+
+}
+
+void MainWindow::initUI()
+{
+    m_previousBtn = new DImageButton;
+    m_nextBtn     = new QPushButton;
+}
+
+void MainWindow::initConnect()
+{
+    connect(m_previousBtn, &DImageButton::clicked, this, &MainWindow::previous);
+    connect(m_nextBtn, &QPushButton::clicked, this, &MainWindow::next);
+}
