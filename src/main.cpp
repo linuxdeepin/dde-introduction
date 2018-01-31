@@ -17,13 +17,30 @@
  */
 
 #include "mainwindow.h"
-#include <QApplication>
+
+#include <DApplication>
+#include <QDebug>
+
+DWIDGET_USE_NAMESPACE
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    DApplication::loadDXcbPlugin();
+    DApplication a(argc, argv);
+    a.setApplicationName("dde-introduction");
+
+    if (!a.setSingleInstance(a.applicationName(), DApplication::UserScope)) {
+        qWarning() << QString("There is a %1 running!!").arg(a.applicationName());
+        return -1;
+    }
+
+    a.setOrganizationName("deepin");
+    a.setApplicationVersion(DApplication::buildVersion("1.0"));
+    a.loadTranslator();
+
     MainWindow w;
-    w.show();
+    w.moveToCenter();
+    w.exec();
 
     return a.exec();
 }

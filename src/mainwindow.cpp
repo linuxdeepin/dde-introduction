@@ -17,10 +17,12 @@
  */
 
 #include "mainwindow.h"
+#include <QHBoxLayout>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+    : DDialog(parent)
 {
+
 }
 
 MainWindow::~MainWindow()
