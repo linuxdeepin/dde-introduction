@@ -34,3 +34,6 @@ endif ()
 
 # bin
 install(TARGETS ${BIN_NAME} DESTINATION bin)
+
+# desktop
+install (FILES dde-introduction.desktop DESTINATION share/applications)

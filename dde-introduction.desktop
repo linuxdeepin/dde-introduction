@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Utility
+Exec=dde-introduction
+Icon=dde
+Name=Deepin Introducation
+Name[zh_CN]=系统欢迎界面
+StartupNotify=true
+TryExec=dde
+Type=Application
