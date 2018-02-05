@@ -23,10 +23,11 @@ find_package(Dtk REQUIRED Widget)
 add_executable(${BIN_NAME} ${SRCS})
 target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS})
 target_link_libraries(${BIN_NAME} PRIVATE
-    ${DtkWidget_LIBRARIES}
-    ${Qt5Widgets_LIBRARIES}
-    ${Qt5Concurrent_LIBRARIES}
-)
+  ${DtkWidget_LIBRARIES}
+  ${Qt5Widgets_LIBRARIES}
+  ${Qt5Concurrent_LIBRARIES}
+  ${DFrameworkdbus_LIBRARIES}
+  )
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(CMAKE_INSTALL_PREFIX /usr)
