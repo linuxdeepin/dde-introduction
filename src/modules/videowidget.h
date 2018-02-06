@@ -16,13 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef VIDEOWIDGET_H
+#define VIDEOWIDGET_H
+
 #include <DVideoWidget>
 
 DWIDGET_USE_NAMESPACE
 
 class VideoWidget : public DVideoWidget {
     Q_OBJECT
+public:
     explicit VideoWidget(QWidget *parent = nullptr);
 
 private:
 };
+
+#endif

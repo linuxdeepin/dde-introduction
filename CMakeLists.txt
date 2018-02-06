@@ -14,7 +14,8 @@ set(CMAKE_CXX_FLAGS -Wall)
 file(GLOB SRCS "src/*.h"
                "src/*.cpp"
                "src/modules/*.h"
-               "src/modules/*.cc")
+               "src/modules/*.cc"
+               "src/modules/*.cpp")
 
 # Find the library
 find_package(PkgConfig REQUIRED)
