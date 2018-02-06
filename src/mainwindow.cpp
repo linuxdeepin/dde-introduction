@@ -17,12 +17,19 @@
  */
 
 #include "mainwindow.h"
+#include "modules/videowidget.h"
+
 #include <QHBoxLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : DDialog(parent)
+    , m_index(1)
+    , m_current(nullptr)
+    , m_last(nullptr)
+    , m_currentAni(new QPropertyAnimation(this))
+    , m_lastAni(new QPropertyAnimation(this))
 {
-
+    m_current = new VideoWidget(this);
 }
 
 MainWindow::~MainWindow()
@@ -32,12 +39,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::previous()
 {
-
+    updateModule(--m_index);
 }
 
 void MainWindow::next()
 {
+    // create new QWidget, change pointer
+    updateModule(++m_index);
 
+    // update animation direction
 }
 
 void MainWindow::initUI()
@@ -50,4 +60,24 @@ void MainWindow::initConnect()
 {
     connect(m_previousBtn, &DImageButton::clicked, this, &MainWindow::previous);
     connect(m_nextBtn, &QPushButton::clicked, this, &MainWindow::next);
+}
+
+void MainWindow::bindAnimation()
+{
+    m_currentAni->setTargetObject(m_current);
+    m_lastAni->setTargetObject(m_last);
+}
+
+void MainWindow::updateModule(const int index)
+{
+    m_last = m_current;
+    switch (index) {
+    case 1:
+        m_current = new VideoWidget(this);
+        break;
+    default:
+        break;
+    }
+
+    bindAnimation();
 }

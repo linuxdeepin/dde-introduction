@@ -22,6 +22,7 @@
 #include <ddialog.h>
 #include <QPushButton>
 #include <dimagebutton.h>
+#include <QPropertyAnimation>
 
 DWIDGET_USE_NAMESPACE
 
@@ -40,10 +41,17 @@ private Q_SLOTS:
 private:
     void initUI();
     void initConnect();
+    void bindAnimation();
+    void updateModule(const int index);
 
 private:
+    int m_index;
     QPushButton* m_nextBtn;
     DImageButton* m_previousBtn;
+    QWidget *m_current;
+    QWidget *m_last;
+    QPropertyAnimation *m_currentAni;
+    QPropertyAnimation *m_lastAni;
 };
 
 #endif // MAINWINDOW_H
