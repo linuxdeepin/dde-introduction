@@ -11,7 +11,10 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_FLAGS -Wall)
 
 # Sources files
-file(GLOB SRCS "src/*.h" "src/*.cpp")
+file(GLOB SRCS "src/*.h"
+               "src/*.cpp"
+               "src/modules/*.h"
+               "src/modules/*.cc")
 
 # Find the library
 find_package(PkgConfig REQUIRED)
