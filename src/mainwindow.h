@@ -43,6 +43,7 @@ private:
     void initConnect();
     void bindAnimation();
     void updateModule(const int index);
+    void animationHandle();
 
 private:
     int m_index;

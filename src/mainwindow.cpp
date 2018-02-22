@@ -24,12 +24,20 @@
 MainWindow::MainWindow(QWidget *parent)
     : DDialog(parent)
     , m_index(1)
+    , m_nextBtn(new QPushButton(tr("next"), this))
     , m_current(nullptr)
     , m_last(nullptr)
     , m_currentAni(new QPropertyAnimation(this))
     , m_lastAni(new QPropertyAnimation(this))
 {
+    setFixedSize(700, 450);
+
     m_current = new VideoWidget(this);
+
+    m_current->show();
+
+    m_nextBtn->move(550, 405);
+    m_nextBtn->raise();
 }
 
 MainWindow::~MainWindow()
@@ -60,6 +68,8 @@ void MainWindow::initConnect()
 {
     connect(m_previousBtn, &DImageButton::clicked, this, &MainWindow::previous);
     connect(m_nextBtn, &QPushButton::clicked, this, &MainWindow::next);
+    connect(m_currentAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
+    connect(m_lastAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
 }
 
 void MainWindow::bindAnimation()
@@ -80,4 +90,10 @@ void MainWindow::updateModule(const int index)
     }
 
     bindAnimation();
+}
+
+void MainWindow::animationHandle()
+{
+    m_last->deleteLater();
+    m_nextBtn->raise();
 }

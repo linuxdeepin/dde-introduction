@@ -19,9 +19,11 @@ file(GLOB SRCS "src/*.h"
 
 # Find the library
 find_package(PkgConfig REQUIRED)
+find_package(Dtk REQUIRED Widget)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Concurrent REQUIRED)
-find_package(Dtk REQUIRED Widget)
+find_package(Qt5Multimedia REQUIRED)
+find_package(Qt5MultimediaWidgets REQUIRED)
 
 # driver-manager
 add_executable(${BIN_NAME} ${SRCS})
@@ -31,6 +33,8 @@ target_link_libraries(${BIN_NAME} PRIVATE
   ${Qt5Widgets_LIBRARIES}
   ${Qt5Concurrent_LIBRARIES}
   ${DFrameworkdbus_LIBRARIES}
+  ${Qt5Multimedia_LIBRARIES}
+  ${Qt5MultimediaWidgets_LIBRARIES}
   )
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)

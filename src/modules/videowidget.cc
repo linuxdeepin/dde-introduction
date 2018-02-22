@@ -18,8 +18,21 @@
 
 #include "videowidget.h"
 
+#include <QMediaPlayer>
+#include <QPushButton>
+#include <QTimer>
+
 VideoWidget::VideoWidget(QWidget *parent)
     : DVideoWidget(parent)
+    , m_player(new QMediaPlayer(this))
+    , m_control(new DImageButton())
 {
+    setSource(m_player);
 
+    setSourceVideoPixelRatio(devicePixelRatioF());
+
+    setGeometry(QRect(0, 0, 700, 450));
+
+    m_player->play();
+    m_player->pause();
 }

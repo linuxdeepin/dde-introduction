@@ -20,6 +20,8 @@
 #define VIDEOWIDGET_H
 
 #include <DVideoWidget>
+#include <QMediaPlayer>
+#include <dimagebutton.h>
 
 DWIDGET_USE_NAMESPACE
 
@@ -29,6 +31,8 @@ public:
     explicit VideoWidget(QWidget *parent = nullptr);
 
 private:
+    QMediaPlayer* m_player;
+    DImageButton* m_control;
 };
 
 #endif
