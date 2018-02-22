@@ -13,9 +13,10 @@ set(CMAKE_CXX_FLAGS -Wall)
 # Sources files
 file(GLOB SRCS "src/*.h"
                "src/*.cpp"
-               "src/modules/*.h"
-               "src/modules/*.cc"
-               "src/modules/*.cpp")
+               "src/*.cc"
+               "src/*/*.cpp"
+               "src/*/*.h"
+               "src/*/*.cc")
 
 # Find the library
 find_package(PkgConfig REQUIRED)
@@ -28,14 +29,16 @@ find_package(Qt5MultimediaWidgets REQUIRED)
 # driver-manager
 add_executable(${BIN_NAME} ${SRCS})
 target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS})
+
 target_link_libraries(${BIN_NAME} PRIVATE
-  ${DtkWidget_LIBRARIES}
-  ${Qt5Widgets_LIBRARIES}
-  ${Qt5Concurrent_LIBRARIES}
-  ${DFrameworkdbus_LIBRARIES}
-  ${Qt5Multimedia_LIBRARIES}
-  ${Qt5MultimediaWidgets_LIBRARIES}
-  )
+    ${DtkWidget_LIBRARIES}
+    ${DtkCore_LIBRARIES}
+    ${Qt5Widgets_LIBRARIES}
+    ${Qt5Concurrent_LIBRARIES}
+    ${DFrameworkdbus_LIBRARIES}
+    ${Qt5Multimedia_LIBRARIES}
+    ${Qt5MultimediaWidgets_LIBRARIES}
+    )
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(CMAKE_INSTALL_PREFIX /usr)
