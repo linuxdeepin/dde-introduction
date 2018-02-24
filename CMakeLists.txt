@@ -9,6 +9,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_FLAGS -Wall)
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Sources files
 file(GLOB SRCS "src/*.h"
@@ -25,10 +26,12 @@ find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Concurrent REQUIRED)
 find_package(Qt5Multimedia REQUIRED)
 find_package(Qt5MultimediaWidgets REQUIRED)
+find_package(Qt5DBus REQUIRED)
+find_package(DFrameworkdbus REQUIRED)
 
 # driver-manager
 add_executable(${BIN_NAME} ${SRCS})
-target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS})
+target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS} ${DFrameworkdbus_INCLUDE_DIRS})
 
 target_link_libraries(${BIN_NAME} PRIVATE
     ${DtkWidget_LIBRARIES}
@@ -38,6 +41,7 @@ target_link_libraries(${BIN_NAME} PRIVATE
     ${DFrameworkdbus_LIBRARIES}
     ${Qt5Multimedia_LIBRARIES}
     ${Qt5MultimediaWidgets_LIBRARIES}
+    ${Qt5DBus_LIBRARIES}
     )
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)

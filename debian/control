@@ -2,7 +2,11 @@ Source: dde-introduction
 Section: utils
 Priority: optional
 Maintainer: zhangdingyuan <zhangdingyuan@deepin.com>
-Build-Depends: debhelper (>= 9),pkg-config, cmake, libdtkwidget-dev
+Build-Depends: debhelper (>= 9),
+ pkg-config,
+ cmake,
+ libdtkwidget-dev,
+ libdframeworkdbus-dev
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org
 

@@ -23,6 +23,7 @@ BaseWidget::BaseWidget(QWidget *parent)
     , m_layout(new QVBoxLayout(this))
     , m_title(new QLabel(this))
     , m_borderWidget(new BorderWidget(this))
+    , m_selectBtn(new DImageButton(this))
 {
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
@@ -40,6 +41,9 @@ void BaseWidget::setPixmap(const QPixmap &pixmap)
     m_borderWidget->setPixmap(pixmap);
 
     adjustSize();
+
+    m_selectBtn->raise();
+    m_selectBtn->move(rect().topRight());
 }
 
 void BaseWidget::setTitle(const QString &title)

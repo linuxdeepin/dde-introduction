@@ -20,6 +20,7 @@
 #include "modules/videowidget.h"
 
 #include <QHBoxLayout>
+#include "worker.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : DDialog(parent)

@@ -16,39 +16,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BASEWIDGET_H
-#define BASEWIDGET_H
+#ifndef WORKER_H
+#define WORKER_H
 
-#include "borderwidget.h"
-#include <QFrame>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <dimagebutton.h>
+#include <QObject>
+#include <com_deepin_daemon_appearance.h>
+#include <com_deepin_wmswitcher.h>
+#include <com_deepin_dde_daemon_dock.h>
 
-DWIDGET_USE_NAMESPACE
+using Icon       = com::deepin::daemon::Appearance;
+using WMSwitcher = com::deepin::WMSwitcher;
+using Dock       = com::deepin::dde::daemon::Dock;
 
-class BaseWidget : public QFrame
+class Worker : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit BaseWidget(QWidget *parent = nullptr);
+    static Worker* Instance();
 
-Q_SIGNALS:
-    void clicked();
-
-public Q_SLOTS:
-    void setPixmap(const QPixmap &pixmap);
-    void setTitle(const QString &title);
-    void setChecked(const bool checked);
-
-protected:
-    void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+private Q_SLOTS:
+    void onIconChanged(const QString & value);
+    void onWMChanged(const QString &wm);
+    void onDisplayModeChanged(int mode);
 
 private:
-    QVBoxLayout* m_layout;
-    QLabel* m_title;
-    BorderWidget* m_borderWidget;
-    DImageButton* m_selectBtn;
+    explicit Worker(QObject *parent = nullptr);
+
+private:
+    Icon*       m_iconInter;
+    WMSwitcher* m_wmInter;
+    Dock*       m_dockInter;
 };
 
-#endif // BASEWIDGET_H
+#endif // WORKER_H
