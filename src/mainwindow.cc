@@ -19,9 +19,11 @@
 #include "mainwindow.h"
 #include "modules/videowidget.h"
 #include "modules/desktopmodemodule.h"
+#include "basemodulewidget.h"
 
 #include <QHBoxLayout>
 
+static const QSize WINDOW_SIZE { 700, 450 };
 MainWindow::MainWindow(QWidget *parent)
     : DDialog(parent)
     , m_index(1)
@@ -54,8 +56,6 @@ void MainWindow::next()
         return;
     }
 
-    m_nextBtn->hide();
-
     // create new QWidget, change pointer
     updateModule(++m_index);
 
@@ -66,17 +66,20 @@ void MainWindow::next()
 
 void MainWindow::initUI()
 {
+    setFixedSize(WINDOW_SIZE);
+
+    m_fakerWidget = new QWidget(this);
+    m_fakerWidget->show();
+    m_fakerWidget->setFixedSize(WINDOW_SIZE);
+
     m_previousBtn = new DImageButton;
     m_nextBtn     = new QPushButton(tr("next"), this);
 
-    setFixedSize(700, 450);
-
-    m_current = new VideoWidget(this);
-    m_current->setFixedSize(size());
+    m_current = initVideoWidgt();
+    m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
     m_nextBtn->move(550, 405);
-    m_nextBtn->raise();
 
     m_currentAni->setPropertyName("pos");
     m_lastAni->setPropertyName("pos");
@@ -101,13 +104,15 @@ void MainWindow::updateModule(const int index)
     m_last = m_current;
     switch (index) {
     case 1:
-        m_current = new VideoWidget(this);
+        m_current = initVideoWidgt();
         break;
+    case 2:
+        m_current = initDesktopModeModule();
     default:
         break;
     }
 
-    m_current->setFixedSize(size());
+    m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
     bindAnimation();
@@ -124,6 +129,16 @@ void MainWindow::updateModule(const int index)
 void MainWindow::animationHandle()
 {
     m_last->deleteLater();
-    m_nextBtn->show();
-    m_nextBtn->raise();
+}
+
+BaseModuleWidget *MainWindow::initVideoWidgt()
+{
+    BaseModuleWidget* w = new BaseModuleWidget(new VideoWidget, m_fakerWidget);
+    return w;
+}
+
+BaseModuleWidget *MainWindow::initDesktopModeModule()
+{
+    BaseModuleWidget* w = new BaseModuleWidget(new DesktopModeModule, m_fakerWidget);
+    return w;
 }

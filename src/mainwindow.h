@@ -26,6 +26,7 @@
 
 DWIDGET_USE_NAMESPACE
 
+class BaseModuleWidget;
 class MainWindow : public DDialog
 {
     Q_OBJECT
@@ -45,6 +46,9 @@ private:
     void updateModule(const int index);
     void animationHandle();
 
+    BaseModuleWidget* initVideoWidgt();
+    BaseModuleWidget* initDesktopModeModule();
+
 private:
     int m_index;
     QPushButton* m_nextBtn;
@@ -53,6 +57,7 @@ private:
     QWidget *m_last;
     QPropertyAnimation *m_currentAni;
     QPropertyAnimation *m_lastAni;
+    QWidget* m_fakerWidget;
 };
 
 #endif // MAINWINDOW_H
