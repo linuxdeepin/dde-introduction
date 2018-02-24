@@ -18,29 +18,20 @@
 
 #include "mainwindow.h"
 #include "modules/videowidget.h"
+#include "modules/desktopmodemodule.h"
 
 #include <QHBoxLayout>
-#include "worker.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : DDialog(parent)
     , m_index(1)
-    , m_nextBtn(new QPushButton(tr("next"), this))
     , m_current(nullptr)
     , m_last(nullptr)
     , m_currentAni(new QPropertyAnimation(this))
     , m_lastAni(new QPropertyAnimation(this))
 {
-    setFixedSize(700, 450);
-
-    m_current = new VideoWidget(this);
-
-    m_current->show();
-
-    m_nextBtn->move(550, 405);
-    m_nextBtn->raise();
-
-    Worker::Instance();
+    initUI();
+    initConnect();
 }
 
 MainWindow::~MainWindow()
@@ -50,21 +41,45 @@ MainWindow::~MainWindow()
 
 void MainWindow::previous()
 {
+    if (m_currentAni->state() == QPropertyAnimation::Running) {
+        return;
+    }
+
     updateModule(--m_index);
 }
 
 void MainWindow::next()
 {
+    if (m_currentAni->state() == QPropertyAnimation::Running) {
+        return;
+    }
+
+    m_nextBtn->hide();
+
     // create new QWidget, change pointer
     updateModule(++m_index);
 
     // update animation direction
+    m_currentAni->start();
+    m_lastAni->start();
 }
 
 void MainWindow::initUI()
 {
     m_previousBtn = new DImageButton;
-    m_nextBtn     = new QPushButton;
+    m_nextBtn     = new QPushButton(tr("next"), this);
+
+    setFixedSize(700, 450);
+
+    m_current = new VideoWidget(this);
+    m_current->setFixedSize(size());
+    m_current->show();
+
+    m_nextBtn->move(550, 405);
+    m_nextBtn->raise();
+
+    m_currentAni->setPropertyName("pos");
+    m_lastAni->setPropertyName("pos");
 }
 
 void MainWindow::initConnect()
@@ -77,8 +92,8 @@ void MainWindow::initConnect()
 
 void MainWindow::bindAnimation()
 {
-    m_currentAni->setTargetObject(m_current);
-    m_lastAni->setTargetObject(m_last);
+    m_currentAni->setTargetObject(m_last);
+    m_lastAni->setTargetObject(m_current);
 }
 
 void MainWindow::updateModule(const int index)
@@ -92,11 +107,23 @@ void MainWindow::updateModule(const int index)
         break;
     }
 
+    m_current->setFixedSize(size());
+    m_current->show();
+
     bindAnimation();
+
+    m_currentAni->setDuration(500);
+    m_currentAni->setStartValue(m_last->rect().topLeft());
+    m_currentAni->setEndValue(QPoint(m_last->x() - m_last->width(), 0));
+
+    m_lastAni->setDuration(500);
+    m_lastAni->setStartValue(QPoint(m_last->rect().topRight()));
+    m_lastAni->setEndValue(QPoint(0, 0));
 }
 
 void MainWindow::animationHandle()
 {
     m_last->deleteLater();
+    m_nextBtn->show();
     m_nextBtn->raise();
 }

@@ -38,6 +38,9 @@ class Worker : public QObject
 public:
     static Worker* Instance();
 
+public Q_SLOTS:
+    void setDesktopMode(Model::DesktopMode mode);
+
 private Q_SLOTS:
     void onWMChanged(const QString &wm);
     void onDisplayModeChanged(int mode);

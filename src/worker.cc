@@ -19,11 +19,43 @@
 #include "worker.h"
 #include <QDebug>
 #include <QJsonDocument>
+#include <QProcess>
 
 Worker *Worker::Instance()
 {
     static Worker * instance = new Worker;
     return instance;
+}
+
+void Worker::setDesktopMode(Model::DesktopMode mode)
+{
+    QStringList args;
+    switch (mode) {
+    case Model::EfficientMode:
+        args << "--print-reply"
+             << "--dest=com.deepin.dde.daemon.Launcher"
+             << "/com/deepin/dde/daemon/Launcher"
+             << "org.freedesktop.DBus.Properties.Set"
+             << "string:com.deepin.dde.daemon.Launcher"
+             << "string:Fullscreen"
+             << "variant:boolean:true";
+        break;
+    case Model::FashionMode:
+        args << "--print-reply"
+             << "--dest=com.deepin.dde.daemon.Launcher"
+             << "/com/deepin/dde/daemon/Launcher"
+             << "org.freedesktop.DBus.Properties.Set"
+             << "string:com.deepin.dde.daemon.Launcher"
+             << "string:Fullscreen"
+             << "variant:boolean:false";
+        break;
+    default:
+        break;
+    }
+
+    QProcess::startDetached("dbus-send", args);
+
+    m_dockInter->setDisplayMode(mode);
 }
 
 void Worker::onWMChanged(const QString &wm)
