@@ -18,15 +18,12 @@
 
 #include "worker.h"
 #include <QDebug>
+#include <QJsonDocument>
+
 Worker *Worker::Instance()
 {
     static Worker * instance = new Worker;
     return instance;
-}
-
-void Worker::onIconChanged(const QString &value)
-{
-
 }
 
 void Worker::onWMChanged(const QString &wm)
@@ -39,8 +36,36 @@ void Worker::onDisplayModeChanged(int mode)
 
 }
 
+void Worker::onIconRefreshed(const QString &name)
+{
+    if (name == "icon") {
+        QDBusPendingReply<QString> icon = m_iconInter->List("icon");
+        QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(icon, this);
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, [=] (QDBusPendingCallWatcher *w) {
+            if (w->isError()) {
+                qDebug() << w->error().message();
+            } else {
+               QDBusPendingReply<QString> reply = *w;
+               onIconListChanged(reply.value());
+            }
+
+            watcher->deleteLater();
+        });
+    }
+}
+
+void Worker::onIconListChanged(const QString &value)
+{
+    const QJsonArray &array = QJsonDocument::fromJson(value.toUtf8()).array();
+
+    for (const QJsonValue &value : array) {
+        m_model->addIcon(IconStruct::fromJson(value.toObject()));
+    }
+}
+
 Worker::Worker(QObject *parent)
     : QObject(parent)
+    , m_model(Model::Instance())
     , m_iconInter(new Icon("com.deepin.daemon.Appearance",
                            "/com/deepin/daemon/Appearance",
                            QDBusConnection::sessionBus(), this))
@@ -51,7 +76,8 @@ Worker::Worker(QObject *parent)
                            "/com/deepin/dde/daemon/Dock",
                            QDBusConnection::sessionBus(), this))
 {
-    connect(m_iconInter, &Icon::Changed, this, &Worker::onIconChanged);
+    connect(m_iconInter, &Icon::Refreshed, this, &Worker::onIconRefreshed);
+    connect(m_iconInter, &Icon::IconThemeChanged, m_model, &Model::setCurrentIcon);
     connect(m_wmInter, &WMSwitcher::WMChanged, this, &Worker::onWMChanged);
     connect(m_dockInter, &Dock::DisplayModeChanged, this, &Worker::onDisplayModeChanged);
 
@@ -59,7 +85,10 @@ Worker::Worker(QObject *parent)
     m_wmInter->setSync(false);
     m_dockInter->setSync(false);
 
-    onIconChanged(m_iconInter->iconTheme());
+    m_model->setCurrentIcon(m_iconInter->iconTheme());
+
     onWMChanged(m_wmInter->CurrentWM());
     onDisplayModeChanged(m_dockInter->displayMode());
+
+    onIconRefreshed("icon");
 }

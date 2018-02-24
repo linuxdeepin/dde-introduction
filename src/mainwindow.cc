@@ -39,6 +39,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_nextBtn->move(550, 405);
     m_nextBtn->raise();
+
+    Worker::Instance();
 }
 
 MainWindow::~MainWindow()

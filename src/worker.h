@@ -19,7 +19,10 @@
 #ifndef WORKER_H
 #define WORKER_H
 
+#include "model.h"
+
 #include <QObject>
+
 #include <com_deepin_daemon_appearance.h>
 #include <com_deepin_wmswitcher.h>
 #include <com_deepin_dde_daemon_dock.h>
@@ -36,14 +39,16 @@ public:
     static Worker* Instance();
 
 private Q_SLOTS:
-    void onIconChanged(const QString & value);
     void onWMChanged(const QString &wm);
     void onDisplayModeChanged(int mode);
+    void onIconRefreshed(const QString &name);
+    void onIconListChanged(const QString & value);
 
 private:
     explicit Worker(QObject *parent = nullptr);
 
 private:
+    Model*      m_model;
     Icon*       m_iconInter;
     WMSwitcher* m_wmInter;
     Dock*       m_dockInter;
