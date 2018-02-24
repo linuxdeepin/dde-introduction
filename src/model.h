@@ -56,22 +56,33 @@ public:
     static Model* Instance();
 
     enum DesktopMode {
-        FashionMode,
-        EfficientMode
+        EfficientMode = 0,
+        FashionMode = 1
+    };
+
+    enum WMType {
+        WM_2D,
+        WM_3D
     };
 
     inline IconStruct currentIcon() { return m_currentIcon; }
     inline QList<IconStruct> iconList() { return m_iconList; }
+    inline WMType wmType() const { return m_wmType; }
+    inline DesktopMode desktopMode() const { return m_desktopMode; }
 
 Q_SIGNALS:
     void iconChanged(const IconStruct &icon) const;
     void iconAdded(const IconStruct &icon) const;
     void iconRemoved(const IconStruct &icon) const;
+    void wmTypeChanged(WMType type) const;
+    void desktopModeChanged(DesktopMode mode) const;
 
 public Q_SLOTS:
     void addIcon(const IconStruct &icon);
     void removeIcon(const IconStruct &icon);
     void setCurrentIcon(const QString &icon);
+    void setWmType(WMType wmType);
+    void setDesktopMode(DesktopMode desktopMode);
 
 private:
     explicit Model(QObject *parent = nullptr);
@@ -79,7 +90,8 @@ private:
 private:
     QList<IconStruct> m_iconList;
     IconStruct m_currentIcon;
-
+    WMType m_wmType;
+    DesktopMode m_desktopMode;
 };
 
 #endif // MODEL_H

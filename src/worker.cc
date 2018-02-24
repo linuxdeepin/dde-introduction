@@ -28,12 +28,12 @@ Worker *Worker::Instance()
 
 void Worker::onWMChanged(const QString &wm)
 {
-
+    m_model->setWmType(wm == "deepin wm" ? Model::WM_3D : Model::WM_2D);
 }
 
 void Worker::onDisplayModeChanged(int mode)
 {
-
+    m_model->setDesktopMode((Model::DesktopMode)mode);
 }
 
 void Worker::onIconRefreshed(const QString &name)

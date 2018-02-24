@@ -59,3 +59,25 @@ Model::Model(QObject *parent)
 {
 
 }
+
+void Model::setDesktopMode(DesktopMode desktopMode)
+{
+    if (m_desktopMode == desktopMode) {
+        return;
+    }
+
+    m_desktopMode = desktopMode;
+
+    emit desktopModeChanged(desktopMode);
+}
+
+void Model::setWmType(WMType wmType)
+{
+    if (m_wmType == wmType) {
+        return;
+    }
+
+    m_wmType = wmType;
+
+    emit wmTypeChanged(wmType);
+}
