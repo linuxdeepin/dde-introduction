@@ -98,7 +98,15 @@ void Worker::onIconListChanged(const QString &value)
     const QJsonArray &array = QJsonDocument::fromJson(value.toUtf8()).array();
 
     for (const QJsonValue &value : array) {
-        m_model->addIcon(IconStruct::fromJson(value.toObject()));
+        QDBusPendingReply<QString> icon = m_iconInter->Thumbnail("icon", value.toObject()["Id"].toString());
+        QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(icon, this);
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, [=] (QDBusPendingCallWatcher *w) {
+            QDBusPendingReply<QString> reply = *w;
+            QJsonObject obj = value.toObject();
+            obj["Pixmap"] = reply.value();
+            m_model->addIcon(IconStruct::fromJson(obj));
+            watcher->deleteLater();
+        });
     }
 }
 

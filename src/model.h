@@ -22,11 +22,13 @@
 #include <QObject>
 #include <QJsonObject>
 #include <QDebug>
+#include <QPixmap>
 
 struct IconStruct {
     QString Id;
     QString Path;
     bool Deletable;
+    QPixmap Pixmap;
 
     bool operator ==(const IconStruct &icon) {
         return Id == icon.Id;
@@ -44,6 +46,7 @@ struct IconStruct {
           Icon.Id = object["Id"].toString();
           Icon.Path = object["Path"].toString();
           Icon.Deletable = object["Deletable"].toBool();
+          Icon.Pixmap = QPixmap(object["Pixmap"].toString());
 
           return Icon;
     }
