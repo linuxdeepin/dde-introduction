@@ -58,6 +58,13 @@ void Worker::setDesktopMode(Model::DesktopMode mode)
     m_dockInter->setDisplayMode(mode);
 }
 
+void Worker::setWMMode(Model::WMType type)
+{
+    if (m_model->wmType() != type) {
+        m_wmInter->RequestSwitchWM();
+    }
+}
+
 void Worker::onWMChanged(const QString &wm)
 {
     m_model->setWmType(wm == "deepin wm" ? Model::WM_3D : Model::WM_2D);

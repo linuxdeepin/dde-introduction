@@ -40,6 +40,7 @@ public:
 
 public Q_SLOTS:
     void setDesktopMode(Model::DesktopMode mode);
+    void setWMMode(Model::WMType type);
 
 private Q_SLOTS:
     void onWMChanged(const QString &wm);
