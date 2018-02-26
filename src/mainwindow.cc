@@ -19,6 +19,8 @@
 #include "mainwindow.h"
 #include "modules/videowidget.h"
 #include "modules/desktopmodemodule.h"
+#include "modules/wmmodemodule.h"
+#include "modules/iconmodule.h"
 #include "basemodulewidget.h"
 
 #include <QHBoxLayout>
@@ -108,6 +110,13 @@ void MainWindow::updateModule(const int index)
         break;
     case 2:
         m_current = initDesktopModeModule();
+        break;
+    case 3:
+        m_current = initWMModeModule();
+        break;
+    case 4:
+        m_current = initIconModule();
+        break;
     default:
         break;
     }
@@ -140,5 +149,17 @@ BaseModuleWidget *MainWindow::initVideoWidgt()
 BaseModuleWidget *MainWindow::initDesktopModeModule()
 {
     BaseModuleWidget* w = new BaseModuleWidget(new DesktopModeModule, m_fakerWidget);
+    return w;
+}
+
+BaseModuleWidget *MainWindow::initWMModeModule()
+{
+    BaseModuleWidget* w = new BaseModuleWidget(new WMModeModule, m_fakerWidget);
+    return w;
+}
+
+BaseModuleWidget *MainWindow::initIconModule()
+{
+    BaseModuleWidget* w = new BaseModuleWidget(new IconModule, m_fakerWidget);
     return w;
 }

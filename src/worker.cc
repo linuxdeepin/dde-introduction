@@ -65,6 +65,11 @@ void Worker::setWMMode(Model::WMType type)
     }
 }
 
+void Worker::setIcon(const IconStruct &icon)
+{
+    m_iconInter->setIconTheme(icon.Id);
+}
+
 void Worker::onWMChanged(const QString &wm)
 {
     m_model->setWmType(wm == "deepin wm" ? Model::WM_3D : Model::WM_2D);

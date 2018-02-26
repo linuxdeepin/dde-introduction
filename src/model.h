@@ -30,8 +30,12 @@ struct IconStruct {
     bool Deletable;
     QPixmap Pixmap;
 
-    bool operator ==(const IconStruct &icon) {
+    bool operator ==(const IconStruct &icon) const {
         return Id == icon.Id;
+    }
+
+    bool operator <(const IconStruct &icon) const {
+        return Id < icon.Id;
     }
 
     friend QDebug operator <<(QDebug debug, const IconStruct &icon) {

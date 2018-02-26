@@ -41,6 +41,7 @@ public:
 public Q_SLOTS:
     void setDesktopMode(Model::DesktopMode mode);
     void setWMMode(Model::WMType type);
+    void setIcon(const IconStruct &icon);
 
 private Q_SLOTS:
     void onWMChanged(const QString &wm);

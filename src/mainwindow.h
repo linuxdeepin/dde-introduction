@@ -48,6 +48,8 @@ private:
 
     BaseModuleWidget* initVideoWidgt();
     BaseModuleWidget* initDesktopModeModule();
+    BaseModuleWidget* initWMModeModule();
+    BaseModuleWidget* initIconModule();
 
 private:
     int m_index;
