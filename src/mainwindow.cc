@@ -149,6 +149,8 @@ BaseModuleWidget *MainWindow::initVideoWidgt()
 BaseModuleWidget *MainWindow::initDesktopModeModule()
 {
     BaseModuleWidget* w = new BaseModuleWidget(new DesktopModeModule, m_fakerWidget);
+    w->setTitle(tr("Please select desktop mode"));
+    w->setDescribe(tr("You can switch it in Mode by right clicking on dock"));
     return w;
 }
 
@@ -161,5 +163,7 @@ BaseModuleWidget *MainWindow::initWMModeModule()
 BaseModuleWidget *MainWindow::initIconModule()
 {
     BaseModuleWidget* w = new BaseModuleWidget(new IconModule, m_fakerWidget);
+    w->setTitle(tr("Please select icon theme"));
+    w->setDescribe(tr("You can change it in Control Center > Personalization > Theme > Icon Theme"));
     return w;
 }

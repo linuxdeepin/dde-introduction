@@ -17,6 +17,9 @@
  */
 
 #include "basewidget.h"
+#include <DHiDPIHelper>
+
+DWIDGET_USE_NAMESPACE
 
 BaseWidget::BaseWidget(QWidget *parent)
     : QFrame(parent)
@@ -35,9 +38,13 @@ BaseWidget::BaseWidget(QWidget *parent)
     setLayout(m_layout);
 }
 
+void BaseWidget::setPixmap(const QString &url) {
+    setPixmap(QPixmap(DHiDPIHelper::loadNxPixmap(url)));
+}
+
 void BaseWidget::setPixmap(const QPixmap &pixmap)
 {
-    m_borderWidget->setFixedSize(pixmap.size());
+    m_borderWidget->setFixedSize(pixmap.size() + QSize(5, 5));
     m_borderWidget->setPixmap(pixmap);
 
     adjustSize();

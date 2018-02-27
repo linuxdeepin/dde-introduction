@@ -37,6 +37,7 @@ Q_SIGNALS:
     void clicked();
 
 public Q_SLOTS:
+    void setPixmap(const QString &url);
     void setPixmap(const QPixmap &pixmap);
     void setTitle(const QString &title);
     void setChecked(const bool checked);

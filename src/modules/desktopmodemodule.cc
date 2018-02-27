@@ -29,6 +29,9 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     m_efficientWidget->setTitle(tr("Efficient Mode"));
     m_fashionWidget->setTitle(tr("Fashion Mode"));
 
+    m_efficientWidget->setPixmap(":/resources/effective_mode_big.png");
+    m_fashionWidget->setPixmap(":/resources/fashion_mode_big.png");
+
     connect(m_model, &Model::desktopModeChanged, this, &DesktopModeModule::onDesktopTypeChanged);
     connect(m_fashionWidget, &BaseWidget::clicked, this, [=] {
         m_worker->setDesktopMode(Model::FashionMode);

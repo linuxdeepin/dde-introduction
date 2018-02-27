@@ -35,7 +35,7 @@ IconModule::IconModule(QWidget *parent)
     currentIconChanged(m_model->currentIcon());
 
     m_layout->setSpacing(20);
-    m_layout->setContentsMargins(20, 0, 10, 0);
+    m_layout->setContentsMargins(15, 0, 10, 0);
 
     QWidget *content = new QWidget;
     content->setLayout(m_layout);
@@ -49,7 +49,7 @@ IconModule::IconModule(QWidget *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setStyleSheet("background-color:transparent;");
 
-    setFixedSize(700, 350);
+    setFixedSize(750, 300);
 }
 
 void IconModule::addIcon(const IconStruct &icon)
