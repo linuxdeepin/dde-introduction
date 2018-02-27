@@ -30,7 +30,7 @@ find_package(Qt5DBus REQUIRED)
 find_package(DFrameworkdbus REQUIRED)
 
 # driver-manager
-add_executable(${BIN_NAME} ${SRCS})
+add_executable(${BIN_NAME} ${SRCS} dde-introduction.qrc)
 target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS} ${DFrameworkdbus_INCLUDE_DIRS})
 
 target_link_libraries(${BIN_NAME} PRIVATE

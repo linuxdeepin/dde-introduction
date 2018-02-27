@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/2d_big.png</file>
+        <file>resources/2d_big@2x.png</file>
+        <file>resources/2d_small.png</file>
+        <file>resources/2d_small@2x.png</file>
+        <file>resources/3d_big.png</file>
+        <file>resources/3d_big@2x.png</file>
+        <file>resources/3d_small.png</file>
+        <file>resources/3d_small@2x.png</file>
+        <file>resources/effective_mode_big.png</file>
+        <file>resources/effective_mode_big@2x.png</file>
+        <file>resources/effective_mode_small.png</file>
+        <file>resources/effective_mode_small@2x.png</file>
+        <file>resources/fashion_mode_big.png</file>
+        <file>resources/fashion_mode_big@2x.png</file>
+        <file>resources/fashion_mode_small.png</file>
+        <file>resources/fashion_mode_small@2x.png</file>
+    </qresource>
+</RCC>
