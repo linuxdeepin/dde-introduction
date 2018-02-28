@@ -44,7 +44,7 @@ void BaseWidget::setPixmap(const QString &url) {
 
 void BaseWidget::setPixmap(const QPixmap &pixmap)
 {
-    m_borderWidget->setFixedSize(pixmap.size() + QSize(5, 5));
+    m_borderWidget->setFixedSize(pixmap.size() / devicePixelRatioF() + QSize(5, 5));
     m_borderWidget->setPixmap(pixmap);
 
     adjustSize();
