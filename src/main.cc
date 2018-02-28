@@ -17,7 +17,7 @@
  */
 
 #include "mainwindow.h"
-
+#include "normalwindow.h"
 #include <DApplication>
 #include <QDebug>
 
@@ -42,5 +42,9 @@ int main(int argc, char *argv[])
     w.moveToCenter();
     w.exec();
 
-    return a.exec();
+    NormalWindow n;
+    n.setFixedWidth(750);
+    n.exec();
+
+    return 0;
 }

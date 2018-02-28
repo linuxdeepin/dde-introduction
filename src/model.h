@@ -28,7 +28,7 @@ struct IconStruct {
     QString Id;
     QString Path;
     bool Deletable;
-    QPixmap Pixmap;
+    QString Pixmap;
 
     bool operator ==(const IconStruct &icon) const {
         return Id == icon.Id;
@@ -50,7 +50,7 @@ struct IconStruct {
           Icon.Id = object["Id"].toString();
           Icon.Path = object["Path"].toString();
           Icon.Deletable = object["Deletable"].toBool();
-          Icon.Pixmap = QPixmap(object["Pixmap"].toString());
+          Icon.Pixmap = object["Pixmap"].toString();
 
           return Icon;
     }
@@ -70,6 +70,11 @@ public:
     enum WMType {
         WM_2D,
         WM_3D
+    };
+
+    enum IconType {
+        Big,
+        Small
     };
 
     inline IconStruct currentIcon() { return m_currentIcon; }

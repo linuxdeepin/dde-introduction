@@ -16,33 +16,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WMMODEMODULE_H
-#define WMMODEMODULE_H
+#ifndef MODULEINTERFACE_H
+#define MODULEINTERFACE_H
 
-#include "moduleinterface.h"
-#include "../widgets/basewidget.h"
 #include "../model.h"
 #include "../worker.h"
 
-#include <QFrame>
-#include <QHBoxLayout>
 
-class WMModeModule : public ModuleInterface
+#include <QFrame>
+class ModuleInterface : public QFrame
 {
     Q_OBJECT
 public:
-    explicit WMModeModule(QWidget *parent = nullptr);
+    explicit ModuleInterface(QWidget *parent = nullptr);
 
-    void updateBigIcon() Q_DECL_OVERRIDE;
-    void updateSmaillIcon() Q_DECL_OVERRIDE;
+    void setIconType(Model::IconType type);
 
-private Q_SLOTS:
-    void onWMModeChanged(Model::WMType type);
+    virtual void updateBigIcon() = 0;
+    virtual void updateSmaillIcon() = 0;
 
-private:
-    QHBoxLayout* m_layout;
-    BaseWidget* m_efficientWidget;
-    BaseWidget* m_fashionWidget;
+protected:
+    Model  *m_model;
+    Worker *m_worker;
 };
 
-#endif // WMMODEMODULE_H
+#endif // MODULEINTERFACE_H

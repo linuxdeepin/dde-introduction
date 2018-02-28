@@ -18,11 +18,11 @@
 
 #include "iconmodule.h"
 
+#include <QImageReader>
+
 IconModule::IconModule(QWidget *parent)
-    : QScrollArea(parent)
+    : ModuleInterface(parent)
     , m_layout(new DFlowLayout(this))
-    , m_model(Model::Instance())
-    , m_worker(Worker::Instance())
 {
     connect(m_model, &Model::iconAdded, this, &IconModule::addIcon);
     connect(m_model, &Model::iconRemoved, this, &IconModule::removeIcon);
@@ -37,19 +37,7 @@ IconModule::IconModule(QWidget *parent)
     m_layout->setSpacing(20);
     m_layout->setContentsMargins(15, 0, 10, 0);
 
-    QWidget *content = new QWidget;
-    content->setLayout(m_layout);
-
-    setWidget(content);
-    setWidgetResizable(true);
-    setFocusPolicy(Qt::NoFocus);
-    setFrameStyle(QFrame::NoFrame);
-    setContentsMargins(0, 0, 0, 0);
-    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setStyleSheet("background-color:transparent;");
-
-    setFixedSize(750, 300);
+    setLayout(m_layout);
 }
 
 void IconModule::addIcon(const IconStruct &icon)
@@ -59,7 +47,12 @@ void IconModule::addIcon(const IconStruct &icon)
      }
 
      BaseWidget *base = new BaseWidget(this);
-     base->setPixmap(icon.Pixmap);
+
+     QPixmap pixmap(icon.Pixmap);
+     pixmap.setDevicePixelRatio(devicePixelRatioF());
+
+     base->setPixmap(pixmap);
+     base->setTitle(icon.Id);
 
      connect(base, &BaseWidget::clicked, this, [=] {
          m_worker->setIcon(icon);
@@ -89,4 +82,14 @@ void IconModule::currentIconChanged(const IconStruct &icon)
         map.value()->setChecked(icon == map.key());
         map.next();
     }
+}
+
+void IconModule::updateBigIcon()
+{
+    setFixedWidth(750);
+}
+
+void IconModule::updateSmaillIcon()
+{
+
 }

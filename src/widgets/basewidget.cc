@@ -18,6 +18,7 @@
 
 #include "basewidget.h"
 #include <DHiDPIHelper>
+#include <QDebug>
 
 DWIDGET_USE_NAMESPACE
 
@@ -26,7 +27,10 @@ BaseWidget::BaseWidget(QWidget *parent)
     , m_layout(new QVBoxLayout(this))
     , m_title(new QLabel(this))
     , m_borderWidget(new BorderWidget(this))
-    , m_selectBtn(new DImageButton(this))
+    , m_selectBtn(new DImageButton(":/resources/list_select.png",
+                                   ":/resources/list_select.png",
+                                   ":/resources/list_select.png",
+                                   this))
 {
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
@@ -44,13 +48,10 @@ void BaseWidget::setPixmap(const QString &url) {
 
 void BaseWidget::setPixmap(const QPixmap &pixmap)
 {
-    m_borderWidget->setFixedSize(pixmap.size() / devicePixelRatioF() + QSize(5, 5));
+    m_borderWidget->setFixedSize(pixmap.size() / devicePixelRatioF() + QSize(6, 6));
     m_borderWidget->setPixmap(pixmap);
 
     adjustSize();
-
-    m_selectBtn->raise();
-    m_selectBtn->move(rect().topRight());
 }
 
 void BaseWidget::setTitle(const QString &title)
@@ -60,7 +61,9 @@ void BaseWidget::setTitle(const QString &title)
 
 void BaseWidget::setChecked(const bool checked)
 {
-
+    m_selectBtn->raise();
+    m_selectBtn->move(m_borderWidget->rect().topRight());
+    m_selectBtn->setVisible(checked);
 }
 
 void BaseWidget::mouseReleaseEvent(QMouseEvent *event)

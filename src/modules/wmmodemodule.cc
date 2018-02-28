@@ -19,18 +19,13 @@
 #include "wmmodemodule.h"
 
 WMModeModule::WMModeModule(QWidget *parent)
-    : QFrame(parent)
+    : ModuleInterface(parent)
     , m_layout(new QHBoxLayout(this))
-    , m_model(Model::Instance())
-    , m_worker(Worker::Instance())
     , m_efficientWidget(new BaseWidget(this))
     , m_fashionWidget(new BaseWidget(this))
 {
     m_efficientWidget->setTitle(tr("Efficient Mode"));
     m_fashionWidget->setTitle(tr("Fashion Mode"));
-
-    m_efficientWidget->setPixmap(":/resources/3d_big.png");
-    m_fashionWidget->setPixmap(":/resources/2d_big.png");
 
     connect(m_model, &Model::wmTypeChanged, this, &WMModeModule::onWMModeChanged);
     connect(m_fashionWidget, &BaseWidget::clicked, this, [=] {
@@ -46,6 +41,18 @@ WMModeModule::WMModeModule(QWidget *parent)
     m_layout->addWidget(m_fashionWidget);
 
     setLayout(m_layout);
+}
+
+void WMModeModule::updateBigIcon()
+{
+    m_efficientWidget->setPixmap(":/resources/3d_big.png");
+    m_fashionWidget->setPixmap(":/resources/2d_big.png");
+}
+
+void WMModeModule::updateSmaillIcon()
+{
+    m_efficientWidget->setPixmap(":/resources/3d_small.png");
+    m_fashionWidget->setPixmap(":/resources/2d_small.png");
 }
 
 void WMModeModule::onWMModeChanged(Model::WMType type)

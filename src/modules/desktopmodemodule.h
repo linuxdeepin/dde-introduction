@@ -19,6 +19,7 @@
 #ifndef DESKTOPMODEMODULE_H
 #define DESKTOPMODEMODULE_H
 
+#include "moduleinterface.h"
 #include "../widgets/basewidget.h"
 #include "../model.h"
 #include "../worker.h"
@@ -26,19 +27,21 @@
 #include <QFrame>
 #include <QHBoxLayout>
 
-class DesktopModeModule : public QFrame
+class DesktopModeModule : public ModuleInterface
 {
     Q_OBJECT
 public:
     explicit DesktopModeModule(QWidget *parent = nullptr);
 
+    void updateBigIcon() Q_DECL_OVERRIDE;
+    void updateSmaillIcon() Q_DECL_OVERRIDE;
+
 private Q_SLOTS:
     void onDesktopTypeChanged(Model::DesktopMode mode);
 
+
 private:
     QHBoxLayout* m_layout;
-    Model* m_model;
-    Worker* m_worker;
     BaseWidget* m_efficientWidget;
     BaseWidget* m_fashionWidget;
 };

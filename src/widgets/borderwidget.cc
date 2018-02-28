@@ -42,15 +42,15 @@ void BorderWidget::paintEvent(QPaintEvent *event)
 
     QPainterPath contentPath;
 
-    QRect pixRect(QPoint(0, 0), m_pixmap.size() / devicePixelRatioF());
+    QRect pixRect(QPoint(3, 3), m_pixmap.size() / devicePixelRatioF());
 
-    contentPath.addRoundedRect(pixRect.adjusted(4, 4, -4, -4), 4, 4);
+    contentPath.addRoundedRect(pixRect, 5, 5);
     painter.setClipPath(contentPath);
 
-    painter.drawPixmap(pixRect.adjusted(4, 4, -4, -4), m_pixmap);
+    painter.drawPixmap(pixRect, m_pixmap);
 
     QPainterPath path;
-    path.addRoundedRect(pixRect.adjusted(2, 2, -2, -2), 4, 4);
+    path.addRoundedRect(rect().adjusted(1, 1, -1, -1), 5, 5);
     painter.setClipRect(QRect(), Qt::NoClip);
 
     QPen pen(QColor("#2CA7F8"));

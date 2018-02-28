@@ -19,18 +19,13 @@
 #include "desktopmodemodule.h"
 
 DesktopModeModule::DesktopModeModule(QWidget *parent)
-    : QFrame(parent)
+    : ModuleInterface(parent)
     , m_layout(new QHBoxLayout(this))
-    , m_model(Model::Instance())
-    , m_worker(Worker::Instance())
     , m_efficientWidget(new BaseWidget(this))
     , m_fashionWidget(new BaseWidget(this))
 {
     m_efficientWidget->setTitle(tr("Efficient Mode"));
     m_fashionWidget->setTitle(tr("Fashion Mode"));
-
-    m_efficientWidget->setPixmap(":/resources/effective_mode_big.png");
-    m_fashionWidget->setPixmap(":/resources/fashion_mode_big.png");
 
     connect(m_model, &Model::desktopModeChanged, this, &DesktopModeModule::onDesktopTypeChanged);
     connect(m_fashionWidget, &BaseWidget::clicked, this, [=] {
@@ -63,6 +58,18 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
     default:
         break;
     }
+}
+
+void DesktopModeModule::updateBigIcon()
+{
+    m_efficientWidget->setPixmap(":/resources/effective_mode_big.png");
+    m_fashionWidget->setPixmap(":/resources/fashion_mode_big.png");
+}
+
+void DesktopModeModule::updateSmaillIcon()
+{
+    m_efficientWidget->setPixmap(":/resources/effective_mode_small.png");
+    m_fashionWidget->setPixmap(":/resources/fashion_mode_small.png");
 }
 
 

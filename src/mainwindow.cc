@@ -117,6 +117,9 @@ void MainWindow::updateModule(const int index)
     case 4:
         m_current = initIconModule();
         break;
+    case 5:
+        close();
+        break;
     default:
         break;
     }
@@ -148,7 +151,10 @@ BaseModuleWidget *MainWindow::initVideoWidgt()
 
 BaseModuleWidget *MainWindow::initDesktopModeModule()
 {
-    BaseModuleWidget* w = new BaseModuleWidget(new DesktopModeModule, m_fakerWidget);
+    DesktopModeModule *module = new DesktopModeModule;
+    module->updateBigIcon();
+
+    BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
     w->setTitle(tr("Please select desktop mode"));
     w->setDescribe(tr("You can switch it in Mode by right clicking on dock"));
     return w;
@@ -156,13 +162,19 @@ BaseModuleWidget *MainWindow::initDesktopModeModule()
 
 BaseModuleWidget *MainWindow::initWMModeModule()
 {
-    BaseModuleWidget* w = new BaseModuleWidget(new WMModeModule, m_fakerWidget);
+    WMModeModule *module = new WMModeModule;
+    module->updateBigIcon();
+
+    BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
     return w;
 }
 
 BaseModuleWidget *MainWindow::initIconModule()
 {
-    BaseModuleWidget* w = new BaseModuleWidget(new IconModule, m_fakerWidget);
+    IconModule *module = new IconModule;
+    module->updateBigIcon();
+
+    BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
     w->setTitle(tr("Please select icon theme"));
     w->setDescribe(tr("You can change it in Control Center > Personalization > Theme > Icon Theme"));
     return w;

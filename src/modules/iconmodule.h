@@ -19,6 +19,7 @@
 #ifndef ICONMODULE_H
 #define ICONMODULE_H
 
+#include "moduleinterface.h"
 #include "../widgets/basewidget.h"
 #include "../model.h"
 #include "../worker.h"
@@ -29,11 +30,14 @@
 
 DWIDGET_USE_NAMESPACE
 
-class IconModule : public QScrollArea
+class IconModule : public ModuleInterface
 {
     Q_OBJECT
 public:
     explicit IconModule(QWidget *parent = nullptr);
+
+    void updateBigIcon() Q_DECL_OVERRIDE;
+    void updateSmaillIcon() Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void addIcon(const IconStruct &icon);
@@ -42,8 +46,6 @@ private Q_SLOTS:
 
 private:
     DFlowLayout* m_layout;
-    Model* m_model;
-    Worker* m_worker;
     QMap<IconStruct, BaseWidget*> m_iconList;
 };
 
