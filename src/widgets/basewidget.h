@@ -40,7 +40,6 @@ public Q_SLOTS:
     void setPixmap(const QString &url);
     void setPixmap(const QPixmap &pixmap);
     void setTitle(const QString &title);
-    void setChecked(const bool checked);
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;

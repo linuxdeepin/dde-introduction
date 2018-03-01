@@ -77,7 +77,7 @@ public:
         Small
     };
 
-    inline IconStruct currentIcon() { return m_currentIcon; }
+    IconStruct currentIcon();
     inline QList<IconStruct> iconList() { return m_iconList; }
     inline WMType wmType() const { return m_wmType; }
     inline DesktopMode desktopMode() const { return m_desktopMode; }
@@ -101,7 +101,7 @@ private:
 
 private:
     QList<IconStruct> m_iconList;
-    IconStruct m_currentIcon;
+    QString m_currentIcon;
     WMType m_wmType;
     DesktopMode m_desktopMode;
 };

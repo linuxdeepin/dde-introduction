@@ -24,6 +24,17 @@ Model *Model::Instance()
     return instance;
 }
 
+IconStruct Model::currentIcon()
+{
+    for (const IconStruct &tmp : m_iconList) {
+        if (tmp.Id == m_currentIcon) {
+            return tmp;
+        }
+    }
+
+    Q_UNREACHABLE();
+}
+
 void Model::addIcon(const IconStruct &icon)
 {
     if (m_iconList.contains(icon)) {
@@ -33,6 +44,10 @@ void Model::addIcon(const IconStruct &icon)
     m_iconList << icon;
 
     emit iconAdded(icon);
+
+    if (icon.Id == m_currentIcon) {
+        emit iconChanged(icon);
+    }
 }
 
 void Model::removeIcon(const IconStruct &icon)
@@ -46,9 +61,14 @@ void Model::removeIcon(const IconStruct &icon)
 
 void Model::setCurrentIcon(const QString &icon)
 {
+    if (icon == m_currentIcon) {
+        return;
+    }
+
+    m_currentIcon = icon;
+
     for (const IconStruct &tmp : m_iconList) {
         if (tmp.Id == icon) {
-            m_currentIcon = tmp;
             emit iconChanged(tmp);
         }
     }

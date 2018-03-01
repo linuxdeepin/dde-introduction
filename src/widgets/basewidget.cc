@@ -27,10 +27,6 @@ BaseWidget::BaseWidget(QWidget *parent)
     , m_layout(new QVBoxLayout(this))
     , m_title(new QLabel(this))
     , m_borderWidget(new BorderWidget(this))
-    , m_selectBtn(new DImageButton(":/resources/list_select.png",
-                                   ":/resources/list_select.png",
-                                   ":/resources/list_select.png",
-                                   this))
 {
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
@@ -57,13 +53,6 @@ void BaseWidget::setPixmap(const QPixmap &pixmap)
 void BaseWidget::setTitle(const QString &title)
 {
     m_title->setText(title);
-}
-
-void BaseWidget::setChecked(const bool checked)
-{
-    m_selectBtn->raise();
-    m_selectBtn->move(m_borderWidget->rect().topRight());
-    m_selectBtn->setVisible(checked);
 }
 
 void BaseWidget::mouseReleaseEvent(QMouseEvent *event)

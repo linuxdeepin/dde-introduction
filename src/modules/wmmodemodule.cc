@@ -29,13 +29,17 @@ WMModeModule::WMModeModule(QWidget *parent)
 
     connect(m_model, &Model::wmTypeChanged, this, &WMModeModule::onWMModeChanged);
     connect(m_fashionWidget, &BaseWidget::clicked, this, [=] {
-        m_worker->setWMMode(Model::WM_2D);
-    });
-    connect(m_efficientWidget, &BaseWidget::clicked, this, [=] {
         m_worker->setWMMode(Model::WM_3D);
     });
+    connect(m_efficientWidget, &BaseWidget::clicked, this, [=] {
+        m_worker->setWMMode(Model::WM_2D);
+    });
 
-    onWMModeChanged(m_model->wmType());
+    QTimer::singleShot(100, this, [=] {
+        onWMModeChanged(m_model->wmType());
+    });
+
+    m_layout->setContentsMargins(10, 8, 10, 0);
 
     m_layout->addWidget(m_efficientWidget);
     m_layout->addWidget(m_fashionWidget);
@@ -45,17 +49,28 @@ WMModeModule::WMModeModule(QWidget *parent)
 
 void WMModeModule::updateBigIcon()
 {
-    m_efficientWidget->setPixmap(":/resources/3d_big.png");
-    m_fashionWidget->setPixmap(":/resources/2d_big.png");
+    m_efficientWidget->setPixmap(":/resources/2d_big.png");
+    m_fashionWidget->setPixmap(":/resources/3d_big.png");
 }
 
 void WMModeModule::updateSmaillIcon()
 {
-    m_efficientWidget->setPixmap(":/resources/3d_small.png");
-    m_fashionWidget->setPixmap(":/resources/2d_small.png");
+    m_efficientWidget->setPixmap(":/resources/2d_small.png");
+    m_fashionWidget->setPixmap(":/resources/3d_small.png");
 }
 
 void WMModeModule::onWMModeChanged(Model::WMType type)
 {
+    m_selectBtn->raise();
 
+    switch (type) {
+    case Model::WM_2D:
+        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - QPoint(8, 8));
+        break;
+    case Model::WM_3D:
+        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - QPoint(8, 8));
+        break;
+    default:
+        break;
+    }
 }

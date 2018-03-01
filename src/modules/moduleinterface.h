@@ -22,8 +22,11 @@
 #include "../model.h"
 #include "../worker.h"
 
-
+#include <dimagebutton.h>
 #include <QFrame>
+
+DWIDGET_USE_NAMESPACE
+
 class ModuleInterface : public QFrame
 {
     Q_OBJECT
@@ -38,6 +41,7 @@ public:
 protected:
     Model  *m_model;
     Worker *m_worker;
+    DImageButton* m_selectBtn;
 };
 
 #endif // MODULEINTERFACE_H

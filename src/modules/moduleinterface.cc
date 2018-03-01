@@ -22,8 +22,12 @@ ModuleInterface::ModuleInterface(QWidget *parent)
     : QFrame(parent)
     , m_model(Model::Instance())
     , m_worker(Worker::Instance())
+    , m_selectBtn(new DImageButton(":/resources/list_select.png",
+                                   ":/resources/list_select.png",
+                                   ":/resources/list_select.png",
+                                   this))
 {
-
+    m_selectBtn->setFixedSize(16, 16);
 }
 
 void ModuleInterface::setIconType(Model::IconType type)

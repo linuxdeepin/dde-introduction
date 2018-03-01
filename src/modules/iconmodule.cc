@@ -32,17 +32,19 @@ IconModule::IconModule(QWidget *parent)
         addIcon(icon);
     }
 
-    currentIconChanged(m_model->currentIcon());
+    QTimer::singleShot(100, this, [=] {
+        currentIconChanged(m_model->currentIcon());
+    });
 
     m_layout->setSpacing(20);
-    m_layout->setContentsMargins(15, 0, 10, 0);
+    m_layout->setContentsMargins(15, 8, 10, 0);
 
     setLayout(m_layout);
 }
 
 void IconModule::addIcon(const IconStruct &icon)
 {
-     if (m_iconList.keys().contains(icon)) {
+     if (m_iconList.keys().contains(icon) && icon.Id.isEmpty()) {
          return;
      }
 
@@ -76,12 +78,13 @@ void IconModule::removeIcon(const IconStruct &icon)
 
 void IconModule::currentIconChanged(const IconStruct &icon)
 {
-    QMapIterator<IconStruct, BaseWidget*> map(m_iconList);
-
-    while (map.hasNext()) {
-        map.value()->setChecked(icon == map.key());
-        map.next();
+    if (icon.Id.isEmpty()) {
+        return;
     }
+
+    m_selectBtn->raise();
+
+    m_selectBtn->move(m_iconList[icon]->mapTo(this, m_iconList[icon]->rect().topRight())  - QPoint(8, 8));
 }
 
 void IconModule::updateBigIcon()
