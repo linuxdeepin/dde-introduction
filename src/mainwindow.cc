@@ -50,6 +50,17 @@ void MainWindow::previous()
     }
 
     updateModule(--m_index);
+
+    m_currentAni->setDuration(500);
+    m_currentAni->setStartValue(QPoint(m_last->x() - m_last->width(), 0));
+    m_currentAni->setEndValue(m_last->rect().topLeft());
+
+    m_lastAni->setDuration(500);
+    m_lastAni->setStartValue(m_last->rect().topLeft());
+    m_lastAni->setEndValue(m_last->rect().topRight());
+
+    m_currentAni->start();
+    m_lastAni->start();
 }
 
 void MainWindow::next()
@@ -61,7 +72,14 @@ void MainWindow::next()
     // create new QWidget, change pointer
     updateModule(++m_index);
 
-    // update animation direction
+    m_lastAni->setDuration(500);
+    m_lastAni->setStartValue(m_last->rect().topLeft());
+    m_lastAni->setEndValue(QPoint(m_last->x() - m_last->width(), 0));
+
+    m_currentAni->setDuration(500);
+    m_currentAni->setStartValue(QPoint(m_last->rect().topRight()));
+    m_currentAni->setEndValue(QPoint(0, 0));
+
     m_currentAni->start();
     m_lastAni->start();
 }
@@ -74,14 +92,21 @@ void MainWindow::initUI()
     m_fakerWidget->show();
     m_fakerWidget->setFixedSize(WINDOW_SIZE);
 
-    m_previousBtn = new DImageButton;
+    m_previousBtn = new DImageButton(this);
+    m_previousBtn->setText("<");
+    m_previousBtn->setFixedSize(16, 16);
+
     m_nextBtn     = new QPushButton(tr("next"), this);
 
     m_current = initVideoWidgt();
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
+    m_previousBtn->move(30, 405);
     m_nextBtn->move(550, 405);
+
+    m_previousBtn->hide();
+    m_nextBtn->show();
 
     m_currentAni->setPropertyName("pos");
     m_lastAni->setPropertyName("pos");
@@ -92,21 +117,24 @@ void MainWindow::initConnect()
     connect(m_previousBtn, &DImageButton::clicked, this, &MainWindow::previous);
     connect(m_nextBtn, &QPushButton::clicked, this, &MainWindow::next);
     connect(m_currentAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
-    connect(m_lastAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
 }
 
 void MainWindow::bindAnimation()
 {
-    m_currentAni->setTargetObject(m_last);
-    m_lastAni->setTargetObject(m_current);
+    m_currentAni->setTargetObject(m_current);
+    m_lastAni->setTargetObject(m_last);
 }
 
 void MainWindow::updateModule(const int index)
 {
+    m_nextBtn->show();
+    m_previousBtn->show();
+
     m_last = m_current;
     switch (index) {
     case 1:
         m_current = initVideoWidgt();
+        m_previousBtn->hide();
         break;
     case 2:
         m_current = initDesktopModeModule();
@@ -128,19 +156,14 @@ void MainWindow::updateModule(const int index)
     m_current->show();
 
     bindAnimation();
-
-    m_currentAni->setDuration(500);
-    m_currentAni->setStartValue(m_last->rect().topLeft());
-    m_currentAni->setEndValue(QPoint(m_last->x() - m_last->width(), 0));
-
-    m_lastAni->setDuration(500);
-    m_lastAni->setStartValue(QPoint(m_last->rect().topRight()));
-    m_lastAni->setEndValue(QPoint(0, 0));
 }
 
 void MainWindow::animationHandle()
 {
-    m_last->deleteLater();
+    if (m_last) {
+        m_last->deleteLater();
+        m_last = nullptr;
+    }
 }
 
 BaseModuleWidget *MainWindow::initVideoWidgt()
