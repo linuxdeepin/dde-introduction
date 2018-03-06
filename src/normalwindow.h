@@ -19,18 +19,22 @@
 #ifndef NORMALWINDOW_H
 #define NORMALWINDOW_H
 
-#include <DSettingsDialog>
-#include <QWidget>
-#include <DSettingsWidgetFactory>
+#include <ddialog.h>
+#include <QVBoxLayout>
+#include <QScrollArea>
+#include "widgets/navigationbar.h"
 
 DWIDGET_USE_NAMESPACE
 
-class NormalWindow : public DSettingsDialog
+class NormalWindow : public DDialog
 {
     Q_OBJECT
 public:
     explicit NormalWindow(QWidget *parent = nullptr);
 
+private:
+    QVBoxLayout *m_mainLayout;
+    NavigationBar *m_navigationBar;
 };
 
 #endif // NORMALWINDOW_H
