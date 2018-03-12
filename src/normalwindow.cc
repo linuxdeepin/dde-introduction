@@ -22,6 +22,10 @@
 #include "modules/iconmodule.h"
 #include "basemodulewidget.h"
 
+#include <DSettings>
+
+DCORE_USE_NAMESPACE
+
 static QWidget *createDesktopModeHandle(QObject *opt) {
     Q_UNUSED(opt);
 
@@ -47,22 +51,12 @@ static QWidget *createIconHandle(QObject *opt) {
 }
 
 NormalWindow::NormalWindow(QWidget *parent)
-    : DDialog(parent),
-      m_mainLayout(new QVBoxLayout),
-      m_navigationBar(new NavigationBar)
+    : DSettingsDialog(parent)
 {
-    QWidget *centralWidget = new QWidget;
-    centralWidget->setLayout(m_mainLayout);
-    centralWidget->setFixedSize(700, 450);
+    widgetFactory()->registerWidget("desktopMode", createDesktopModeHandle);
+    widgetFactory()->registerWidget("wmMode", createWMModeHandle);
+    widgetFactory()->registerWidget("iconMode", createIconHandle);
 
-    QHBoxLayout *contentLayout = new QHBoxLayout;
-    contentLayout->addWidget(m_navigationBar);
-    contentLayout->addStretch();
-
-    m_mainLayout->addLayout(contentLayout);
-    m_mainLayout->setMargin(0);
-    m_mainLayout->setSpacing(0);
-
-    addContent(centralWidget);
-    setContentLayoutContentsMargins(QMargins(0, 0, 0, 0));
+    DSettings *backend = DSettings::fromJsonFile(":/resources/config.json");
+    updateSettings(backend);
 }

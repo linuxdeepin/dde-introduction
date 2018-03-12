@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
     w.exec();
 
     NormalWindow n;
+    n.setFixedWidth(750);
     n.exec();
 
     return 0;
