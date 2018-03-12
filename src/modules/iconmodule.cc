@@ -40,6 +40,8 @@ IconModule::IconModule(QWidget *parent)
     m_layout->setContentsMargins(15, 8, 10, 0);
 
     setLayout(m_layout);
+
+    updateSmaillIcon();
 }
 
 void IconModule::addIcon(const IconStruct &icon)
@@ -95,4 +97,13 @@ void IconModule::updateBigIcon()
 void IconModule::updateSmaillIcon()
 {
 
+}
+
+void IconModule::resizeEvent(QResizeEvent *event)
+{
+    ModuleInterface::resizeEvent(event);
+
+    QTimer::singleShot(1, this, [=] {
+        currentIconChanged(m_model->currentIcon());
+    });
 }

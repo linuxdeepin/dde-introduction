@@ -45,6 +45,8 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     m_layout->addWidget(m_fashionWidget);
 
     setLayout(m_layout);
+
+    updateSmaillIcon();
 }
 
 void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
@@ -73,6 +75,15 @@ void DesktopModeModule::updateSmaillIcon()
 {
     m_efficientWidget->setPixmap(":/resources/effective_mode_small.png");
     m_fashionWidget->setPixmap(":/resources/fashion_mode_small.png");
+}
+
+void DesktopModeModule::resizeEvent(QResizeEvent *event)
+{
+    ModuleInterface::resizeEvent(event);
+
+    QTimer::singleShot(1, this, [=] {
+        onDesktopTypeChanged(m_model->desktopMode());
+    });
 }
 
 

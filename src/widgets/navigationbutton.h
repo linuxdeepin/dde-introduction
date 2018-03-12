@@ -16,36 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DESKTOPMODEMODULE_H
-#define DESKTOPMODEMODULE_H
+#ifndef NAVIGATIONBUTTON_H
+#define NAVIGATIONBUTTON_H
 
-#include "moduleinterface.h"
-#include "../widgets/basewidget.h"
-#include "../model.h"
-#include "../worker.h"
+#include <QPushButton>
 
-#include <QFrame>
-#include <QHBoxLayout>
-
-class DesktopModeModule : public ModuleInterface
+class NavigationButton : public QPushButton
 {
     Q_OBJECT
 public:
-    explicit DesktopModeModule(QWidget *parent = nullptr);
-
-    void updateBigIcon() Q_DECL_OVERRIDE;
-    void updateSmaillIcon() Q_DECL_OVERRIDE;
+    explicit NavigationButton(QWidget *parent = nullptr);
 
 protected:
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
-
-private Q_SLOTS:
-    void onDesktopTypeChanged(Model::DesktopMode mode);
-
-private:
-    QHBoxLayout* m_layout;
-    BaseWidget* m_efficientWidget;
-    BaseWidget* m_fashionWidget;
+    void paintEvent(QPaintEvent *event);
 };
 
-#endif // DESKTOPMODEMODULE_H
+#endif // NAVIGATIONBUTTON_H

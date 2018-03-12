@@ -45,6 +45,8 @@ WMModeModule::WMModeModule(QWidget *parent)
     m_layout->addWidget(m_fashionWidget);
 
     setLayout(m_layout);
+
+    updateSmaillIcon();
 }
 
 void WMModeModule::updateBigIcon()
@@ -57,6 +59,15 @@ void WMModeModule::updateSmaillIcon()
 {
     m_efficientWidget->setPixmap(":/resources/2d_small.png");
     m_fashionWidget->setPixmap(":/resources/3d_small.png");
+}
+
+void WMModeModule::resizeEvent(QResizeEvent *event)
+{
+    ModuleInterface::resizeEvent(event);
+
+    QTimer::singleShot(1, this, [=] {
+        onWMModeChanged(m_model->wmType());
+    });
 }
 
 void WMModeModule::onWMModeChanged(Model::WMType type)

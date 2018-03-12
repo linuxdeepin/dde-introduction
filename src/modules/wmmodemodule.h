@@ -36,6 +36,9 @@ public:
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmaillIcon() Q_DECL_OVERRIDE;
 
+protected:
+    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+
 private Q_SLOTS:
     void onWMModeChanged(Model::WMType type);
 

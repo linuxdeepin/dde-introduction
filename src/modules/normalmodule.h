@@ -16,36 +16,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DESKTOPMODEMODULE_H
-#define DESKTOPMODEMODULE_H
+#ifndef NORMALMODULE_H
+#define NORMALMODULE_H
 
-#include "moduleinterface.h"
-#include "../widgets/basewidget.h"
-#include "../model.h"
-#include "../worker.h"
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QButtonGroup>
+#include <QPushButton>
+#include <QMap>
 
-#include <QFrame>
-#include <QHBoxLayout>
-
-class DesktopModeModule : public ModuleInterface
+class NormalModule : public QWidget
 {
     Q_OBJECT
 public:
-    explicit DesktopModeModule(QWidget *parent = nullptr);
-
-    void updateBigIcon() Q_DECL_OVERRIDE;
-    void updateSmaillIcon() Q_DECL_OVERRIDE;
-
-protected:
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
-
-private Q_SLOTS:
-    void onDesktopTypeChanged(Model::DesktopMode mode);
+    explicit NormalModule(QWidget *parent = nullptr);
 
 private:
-    QHBoxLayout* m_layout;
-    BaseWidget* m_efficientWidget;
-    BaseWidget* m_fashionWidget;
+    QVBoxLayout *m_leftNavigationLayout;
+    QVBoxLayout *m_rightContentLayout;
+    QButtonGroup *m_buttonGrp;
+    QMap<QWidget*, QWidget*> m_moduleMap;
+    QWidget *m_currentWidget;
 };
 
-#endif // DESKTOPMODEMODULE_H
+#endif // NORMALMODULE_H

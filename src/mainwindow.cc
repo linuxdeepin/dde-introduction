@@ -21,6 +21,7 @@
 #include "modules/desktopmodemodule.h"
 #include "modules/wmmodemodule.h"
 #include "modules/iconmodule.h"
+#include "modules/normalmodule.h"
 #include "basemodulewidget.h"
 
 #include <QHBoxLayout>
@@ -146,13 +147,17 @@ void MainWindow::updateModule(const int index)
         m_current = initIconModule();
         break;
     case 5:
-        close();
+        m_current = initNormalModule();
+        m_nextBtn->hide();
+        m_previousBtn->hide();
+        setFixedSize(900, 450);
+        m_fakerWidget->setFixedSize(900, 450);
+        m_current->setFixedSize(900, 450);
         break;
     default:
         break;
     }
 
-    m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
     bindAnimation();
@@ -169,6 +174,7 @@ void MainWindow::animationHandle()
 BaseModuleWidget *MainWindow::initVideoWidgt()
 {
     BaseModuleWidget* w = new BaseModuleWidget(new VideoWidget, m_fakerWidget);
+    w->setFixedSize(WINDOW_SIZE);
     return w;
 }
 
@@ -180,6 +186,7 @@ BaseModuleWidget *MainWindow::initDesktopModeModule()
     BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
     w->setTitle(tr("Please select desktop mode"));
     w->setDescribe(tr("You can switch it in Mode by right clicking on dock"));
+    w->setFixedSize(WINDOW_SIZE);
     return w;
 }
 
@@ -189,6 +196,7 @@ BaseModuleWidget *MainWindow::initWMModeModule()
     module->updateBigIcon();
 
     BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
+    w->setFixedSize(WINDOW_SIZE);
     return w;
 }
 
@@ -200,5 +208,11 @@ BaseModuleWidget *MainWindow::initIconModule()
     BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
     w->setTitle(tr("Please select icon theme"));
     w->setDescribe(tr("You can change it in Control Center > Personalization > Theme > Icon Theme"));
+    w->setFixedSize(WINDOW_SIZE);
     return w;
+}
+
+BaseModuleWidget *MainWindow::initNormalModule()
+{
+    return new BaseModuleWidget(new NormalModule, m_fakerWidget);
 }

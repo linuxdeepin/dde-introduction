@@ -19,47 +19,47 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <ddialog.h>
-#include <QPushButton>
-#include <dimagebutton.h>
 #include <QPropertyAnimation>
+#include <QPushButton>
+#include <ddialog.h>
+#include <dimagebutton.h>
 
 DWIDGET_USE_NAMESPACE
 
 class BaseModuleWidget;
-class MainWindow : public DDialog
-{
-    Q_OBJECT
+class MainWindow : public DDialog {
+  Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+  MainWindow(QWidget *parent = 0);
+  ~MainWindow();
 
 private Q_SLOTS:
-    void previous();
-    void next();
+  void previous();
+  void next();
 
 private:
-    void initUI();
-    void initConnect();
-    void bindAnimation();
-    void updateModule(const int index);
-    void animationHandle();
+  void initUI();
+  void initConnect();
+  void bindAnimation();
+  void updateModule(const int index);
+  void animationHandle();
 
-    BaseModuleWidget* initVideoWidgt();
-    BaseModuleWidget* initDesktopModeModule();
-    BaseModuleWidget* initWMModeModule();
-    BaseModuleWidget* initIconModule();
+  BaseModuleWidget *initVideoWidgt();
+  BaseModuleWidget *initDesktopModeModule();
+  BaseModuleWidget *initWMModeModule();
+  BaseModuleWidget *initIconModule();
+  BaseModuleWidget *initNormalModule();
 
 private:
-    int m_index;
-    QPushButton* m_nextBtn;
-    DImageButton* m_previousBtn;
-    QWidget *m_current;
-    QWidget *m_last;
-    QPropertyAnimation *m_currentAni;
-    QPropertyAnimation *m_lastAni;
-    QWidget* m_fakerWidget;
+  int m_index;
+  QPushButton *m_nextBtn;
+  DImageButton *m_previousBtn;
+  QWidget *m_current;
+  QWidget *m_last;
+  QPropertyAnimation *m_currentAni;
+  QPropertyAnimation *m_lastAni;
+  QWidget *m_fakerWidget;
 };
 
 #endif // MAINWINDOW_H
