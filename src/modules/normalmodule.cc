@@ -66,10 +66,12 @@ NormalModule::NormalModule(QWidget *parent)
     m_rightContentLayout->addWidget(icon);
     m_rightContentLayout->addWidget(wm);
 
-    video->setFixedSize(700, height());
-    desktop->setFixedSize(700, height());
-    icon->setFixedSize(700, height());
-    wm->setFixedSize(700, height());
+    m_rightContentLayout->addStretch();
+
+    video->setFixedWidth(700);
+    desktop->setFixedWidth(700);
+    icon->setFixedWidth(700);
+    wm->setFixedWidth(700);
 
     video->hide();
     desktop->hide();

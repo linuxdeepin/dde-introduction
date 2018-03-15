@@ -41,8 +41,10 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
 
     m_layout->setContentsMargins(10, 8, 10, 0);
 
+    m_layout->addStretch();
     m_layout->addWidget(m_efficientWidget);
     m_layout->addWidget(m_fashionWidget);
+    m_layout->addStretch();
 
     setLayout(m_layout);
 

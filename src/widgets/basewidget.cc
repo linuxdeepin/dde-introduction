@@ -31,11 +31,9 @@ BaseWidget::BaseWidget(QWidget *parent)
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
 
-    m_layout->addStretch();
     m_layout->addWidget(m_borderWidget, 0, Qt::AlignCenter);
     m_layout->addSpacing(5);
     m_layout->addWidget(m_title, 0, Qt::AlignCenter);
-    m_layout->addStretch();
 
     setLayout(m_layout);
 }
