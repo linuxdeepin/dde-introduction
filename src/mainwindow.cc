@@ -94,8 +94,11 @@ void MainWindow::initUI()
     m_fakerWidget->setFixedSize(WINDOW_SIZE);
 
     m_previousBtn = new DImageButton(this);
-    m_previousBtn->setText("<");
-    m_previousBtn->setFixedSize(16, 16);
+    m_previousBtn->setNormalPic(":/resources/previous_normal.svg");
+    m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
+    m_previousBtn->setPressPic(":/resources/previous_press.svg");
+    m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");
+    m_previousBtn->setFixedSize(27, 26);
 
     m_nextBtn     = new QPushButton(tr("next"), this);
 
