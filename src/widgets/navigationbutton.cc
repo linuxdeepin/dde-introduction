@@ -23,6 +23,7 @@
 NavigationButton::NavigationButton(QWidget *parent)
     : QPushButton(parent)
 {
+    setCheckable(true);
 }
 
 void NavigationButton::paintEvent(QPaintEvent *event)

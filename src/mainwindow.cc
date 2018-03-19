@@ -153,9 +153,9 @@ void MainWindow::updateModule(const int index)
         m_current = initNormalModule();
         m_nextBtn->hide();
         m_previousBtn->hide();
-        setFixedSize(900, 450);
-        m_fakerWidget->setFixedSize(900, 450);
-        m_current->setFixedSize(900, 450);
+        setFixedSize(850, 450);
+        m_fakerWidget->setFixedSize(850, 450);
+        m_current->setFixedSize(850, 450);
         break;
     default:
         break;

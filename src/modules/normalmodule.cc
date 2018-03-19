@@ -43,12 +43,36 @@ NormalModule::NormalModule(QWidget *parent)
     layout->setMargin(0);
     layout->setSpacing(0);
 
-    layout->addLayout(m_leftNavigationLayout);
+    QWidget *leftWidget = new QWidget;
+    leftWidget->setObjectName("LeftWidget");
+    leftWidget->setLayout(m_leftNavigationLayout);
+    leftWidget->setStyleSheet("#LeftWidget {"
+                              "border: solid #eee;"
+                              "border-right-width: 1px;"
+                              "}"
+                              ""
+                              "#LeftWidget > QPushButton {"
+                              "margin: 0;"
+                              "text-align: left;"
+                              "padding: 5px 15px;"
+                              "border: none;"
+                              "}"
+                              ""
+                              "#LeftWidget > QPushButton:checked {"
+                              "color: #2ca7f8;"
+                              "font-weight: 500;"
+                              "background-color: #d5edfe;"
+                              "border: 1px solid rgba(44, 167, 248, .1);"
+                              "border-left: none;"
+                              "border-right: none;"
+                              "}");
+
+    layout->addWidget(leftWidget);
     layout->addWidget(content);
 
     setLayout(layout);
 
-    setMinimumSize(900, 450);
+    setMinimumSize(850, 450);
     content->setFixedSize(700, 450);
 
     NavigationButton * videoBtn = new NavigationButton;
@@ -60,6 +84,12 @@ NormalModule::NormalModule(QWidget *parent)
     DesktopModeModule *desktop = new DesktopModeModule;
     IconModule *icon = new IconModule;
     WMModeModule *wm = new WMModeModule;
+
+    videoBtn->setText(tr("Introduction"));
+    desktopBtn->setText(tr("Desktop mode"));
+    iconBtn->setText(tr("Icon theme"));
+    wmBtn->setText(tr("Window effect"));
+    videoBtn->setChecked(true);
 
     m_rightContentLayout->addWidget(video);
     m_rightContentLayout->addWidget(desktop);
@@ -85,10 +115,10 @@ NormalModule::NormalModule(QWidget *parent)
 
     m_currentWidget = video;
 
-    videoBtn->setFixedWidth(200);
-    desktopBtn->setFixedWidth(200);
-    iconBtn->setFixedWidth(200);
-    wmBtn->setFixedWidth(200);
+    videoBtn->setFixedWidth(150);
+    desktopBtn->setFixedWidth(150);
+    iconBtn->setFixedWidth(150);
+    wmBtn->setFixedWidth(150);
 
     m_buttonGrp->addButton(videoBtn);
     m_buttonGrp->addButton(desktopBtn);
