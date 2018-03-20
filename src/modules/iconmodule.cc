@@ -97,11 +97,28 @@ void IconModule::currentIconChanged(const IconStruct &icon)
 void IconModule::updateBigIcon()
 {
     setFixedWidth(700);
+
+    QMapIterator<IconStruct, BaseWidget*>map(m_iconList);
+
+    while (map.hasNext()) {
+        map.next();
+        QPixmap pixmap(map.key().Pixmap);
+        map.value()->setPixmap(pixmap);
+    }
 }
 
 void IconModule::updateSmaillIcon()
 {
     setFixedWidth(580);
+
+    QMapIterator<IconStruct, BaseWidget*>map(m_iconList);
+
+    while (map.hasNext()) {
+        map.next();
+        QPixmap pixmap(map.key().Pixmap);
+        pixmap = pixmap.scaled(240, 52, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+        map.value()->setPixmap(pixmap);
+    }
 }
 
 void IconModule::resizeEvent(QResizeEvent *event)
