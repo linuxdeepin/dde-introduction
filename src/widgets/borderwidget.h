@@ -29,12 +29,14 @@ public:
 
 public slots:
     void setPixmap(const QPixmap &pixmap);
+    void setChecked(bool checked);
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
 private:
     QPixmap m_pixmap;
+    bool m_checked;
 };
 
 #endif // BORDERWIDGET_H

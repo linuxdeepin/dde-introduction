@@ -55,6 +55,11 @@ void BaseWidget::setTitle(const QString &title)
     m_title->setText(title);
 }
 
+void BaseWidget::setChecked(bool checked)
+{
+    m_borderWidget->setChecked(checked);
+}
+
 void BaseWidget::mouseReleaseEvent(QMouseEvent *event)
 {
     QFrame::mouseReleaseEvent(event);

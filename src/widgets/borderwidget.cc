@@ -23,12 +23,20 @@
 
 BorderWidget::BorderWidget(QWidget *parent)
     : QFrame(parent)
+    , m_checked(false)
 {
 }
 
 void BorderWidget::setPixmap(const QPixmap &pixmap)
 {
     m_pixmap = pixmap;
+
+    update();
+}
+
+void BorderWidget::setChecked(bool checked)
+{
+    m_checked = checked;
 
     update();
 }
@@ -49,13 +57,21 @@ void BorderWidget::paintEvent(QPaintEvent *event)
 
     painter.drawPixmap(pixRect, m_pixmap);
 
+    // draw border
     QPainterPath path;
     path.addRoundedRect(rect().adjusted(1, 1, -1, -1), 5, 5);
     painter.setClipRect(QRect(), Qt::NoClip);
+    if (m_checked) {
+        QPen pen(QColor("#2CA7F8"));
+        pen.setWidth(2);
 
-    QPen pen(QColor("#2CA7F8"));
-    pen.setWidth(2);
+        painter.setPen(pen);
+        painter.drawPath(path);
+    } else {
+        QPen pen(QColor(0, 0, 0, 0.1 * 255));
+        pen.setWidth(1);
 
-    painter.setPen(pen);
-    painter.drawPath(path);
+        painter.setPen(pen);
+        painter.drawPath(path);
+    }
 }

@@ -3,14 +3,23 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
-Support::Support(QWidget *parent) : QWidget(parent)
+Support::Support(QWidget *parent)
+    : QScrollArea(parent)
 {
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->setMargin(0);
-    layout->setSpacing(0);
-
     QLabel *label = new QLabel;
     label->setWordWrap(true);
+    setWidgetResizable(true);
+    setFocusPolicy(Qt::NoFocus);
+    setFrameStyle(QFrame::NoFrame);
+    setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
+    setContentsMargins(0, 0, 0, 0);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setStyleSheet("background-color:transparent;");
+    setWidget(label);
+
+    label->setMargin(10);
+
     label->setText("<body> \
                    <b>Internationalization</b> \
                    <br> deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world \
@@ -36,8 +45,4 @@ Support::Support(QWidget *parent) : QWidget(parent)
                    <li>Be on deepin contributors list.</li> \
                    <li>Outstanding members will get a souvenir of deepin.</li> \
                    </body>");
-
-    layout->addWidget(label);
-
-    setLayout(layout);
 }

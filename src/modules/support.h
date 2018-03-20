@@ -1,9 +1,9 @@
 #ifndef SUPPORT_H
 #define SUPPORT_H
 
-#include <QWidget>
+#include <QScrollArea>
 
-class Support : public QWidget
+class Support : public QScrollArea
 {
     Q_OBJECT
 public:

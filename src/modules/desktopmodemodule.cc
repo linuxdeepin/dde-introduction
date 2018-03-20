@@ -43,6 +43,7 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
 
     m_layout->addStretch();
     m_layout->addWidget(m_efficientWidget);
+    m_layout->addSpacing(20);
     m_layout->addWidget(m_fashionWidget);
     m_layout->addStretch();
 
@@ -58,9 +59,13 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
     switch (mode) {
     case Model::EfficientMode:
         m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - QPoint(8, 8));
+        m_efficientWidget->setChecked(true);
+        m_fashionWidget->setChecked(false);
         break;
     case Model::FashionMode:
         m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - QPoint(8, 8));
+        m_fashionWidget->setChecked(true);
+        m_efficientWidget->setChecked(false);
         break;
     default:
         break;

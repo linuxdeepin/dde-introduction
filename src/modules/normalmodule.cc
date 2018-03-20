@@ -73,8 +73,8 @@ NormalModule::NormalModule(QWidget *parent)
 
     setLayout(layout);
 
-    setMinimumSize(850, 450);
-    content->setFixedSize(700, 450);
+    setFixedSize(700, 450);
+    content->setFixedSize(580, 450);
 
     NavigationButton * videoBtn = new NavigationButton;
     NavigationButton * desktopBtn = new NavigationButton;
@@ -103,10 +103,14 @@ NormalModule::NormalModule(QWidget *parent)
 
     m_rightContentLayout->addStretch();
 
-    video->setFixedWidth(700);
-    desktop->setFixedWidth(700);
-    icon->setFixedWidth(700);
-    wm->setFixedWidth(700);
+    video->setFixedWidth(580);
+    desktop->setFixedWidth(580);
+    icon->setFixedWidth(580);
+    wm->setFixedWidth(580);
+
+    desktop->updateSmaillIcon();
+    icon->updateSmaillIcon();
+    wm->updateSmaillIcon();
 
     video->hide();
     desktop->hide();
@@ -122,10 +126,11 @@ NormalModule::NormalModule(QWidget *parent)
 
     m_currentWidget = video;
 
-    videoBtn->setFixedWidth(150);
-    desktopBtn->setFixedWidth(150);
-    iconBtn->setFixedWidth(150);
-    wmBtn->setFixedWidth(150);
+    videoBtn->setFixedWidth(120);
+    desktopBtn->setFixedWidth(120);
+    iconBtn->setFixedWidth(120);
+    wmBtn->setFixedWidth(120);
+    supportBtn->setFixedWidth(120);
 
     m_buttonGrp->addButton(videoBtn);
     m_buttonGrp->addButton(desktopBtn);
