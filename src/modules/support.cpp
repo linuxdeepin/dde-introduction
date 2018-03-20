@@ -1,6 +1,5 @@
 #include "support.h"
 
-#include <QVBoxLayout>
 #include <QLabel>
 
 Support::Support(QWidget *parent)

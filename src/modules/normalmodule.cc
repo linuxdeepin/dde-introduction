@@ -23,6 +23,7 @@
 #include "wmmodemodule.h"
 #include "videowidget.h"
 #include "support.h"
+#include "about.h"
 
 NormalModule::NormalModule(QWidget *parent)
     : QWidget(parent)
@@ -81,25 +82,32 @@ NormalModule::NormalModule(QWidget *parent)
     NavigationButton * iconBtn = new NavigationButton;
     NavigationButton * wmBtn = new NavigationButton;
     NavigationButton * supportBtn = new NavigationButton;
+    NavigationButton * aboutBtn = new NavigationButton;
 
     VideoWidget *video = new VideoWidget;
     DesktopModeModule *desktop = new DesktopModeModule;
     IconModule *icon = new IconModule;
     WMModeModule *wm = new WMModeModule;
     Support *support = new Support;
+    About *about = new About;
 
     videoBtn->setText(tr("Introduction"));
     desktopBtn->setText(tr("Desktop mode"));
     iconBtn->setText(tr("Icon theme"));
     wmBtn->setText(tr("Window effect"));
     supportBtn->setText(tr("Support us"));
+    aboutBtn->setText(tr("About us"));
+
     videoBtn->setChecked(true);
+
+    m_rightContentLayout->addStretch();
 
     m_rightContentLayout->addWidget(video);
     m_rightContentLayout->addWidget(desktop);
     m_rightContentLayout->addWidget(icon);
     m_rightContentLayout->addWidget(wm);
     m_rightContentLayout->addWidget(support);
+    m_rightContentLayout->addWidget(about);
 
     m_rightContentLayout->addStretch();
 
@@ -117,12 +125,14 @@ NormalModule::NormalModule(QWidget *parent)
     icon->hide();
     wm->hide();
     support->hide();
+    about->hide();
 
     m_moduleMap[videoBtn] = video;
     m_moduleMap[desktopBtn] = desktop;
     m_moduleMap[iconBtn] = icon;
     m_moduleMap[wmBtn] = wm;
     m_moduleMap[supportBtn] = support;
+    m_moduleMap[aboutBtn] = about;
 
     m_currentWidget = video;
 
@@ -131,12 +141,14 @@ NormalModule::NormalModule(QWidget *parent)
     iconBtn->setFixedWidth(120);
     wmBtn->setFixedWidth(120);
     supportBtn->setFixedWidth(120);
+    aboutBtn->setFixedWidth(120);
 
     m_buttonGrp->addButton(videoBtn);
     m_buttonGrp->addButton(desktopBtn);
     m_buttonGrp->addButton(iconBtn);
     m_buttonGrp->addButton(wmBtn);
     m_buttonGrp->addButton(supportBtn);
+    m_buttonGrp->addButton(aboutBtn);
 
     m_buttonGrp->setExclusive(true);
 
@@ -146,6 +158,7 @@ NormalModule::NormalModule(QWidget *parent)
     m_leftNavigationLayout->addWidget(iconBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
     m_leftNavigationLayout->addWidget(wmBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
     m_leftNavigationLayout->addWidget(supportBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
+    m_leftNavigationLayout->addWidget(aboutBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
     m_leftNavigationLayout->addStretch();
 
     connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [=] (QAbstractButton *btn) {
