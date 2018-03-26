@@ -49,7 +49,6 @@ private:
   BaseModuleWidget *initDesktopModeModule();
   BaseModuleWidget *initWMModeModule();
   BaseModuleWidget *initIconModule();
-  BaseModuleWidget *initNormalModule();
 
 private:
   int m_index;

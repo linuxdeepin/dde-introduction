@@ -150,7 +150,7 @@ void MainWindow::updateModule(const int index)
         m_current = initIconModule();
         break;
     case 5:
-        m_current = initNormalModule();
+        m_current = new NormalModule(m_fakerWidget);
         m_nextBtn->hide();
         m_previousBtn->hide();
         break;
@@ -210,9 +210,4 @@ BaseModuleWidget *MainWindow::initIconModule()
     w->setDescribe(tr("You can change it in Control Center > Personalization > Theme > Icon Theme"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
-}
-
-BaseModuleWidget *MainWindow::initNormalModule()
-{
-    return new BaseModuleWidget(new NormalModule, m_fakerWidget);
 }

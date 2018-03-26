@@ -32,18 +32,18 @@ NormalModule::NormalModule(QWidget *parent)
     , m_buttonGrp(new QButtonGroup)
     , m_currentWidget(nullptr)
 {
-    QWidget *content = new QWidget;
-    content->setLayout(m_rightContentLayout);
-
     QHBoxLayout *layout = new QHBoxLayout(this);
+    layout->setMargin(0);
+    layout->setSpacing(0);
 
     m_leftNavigationLayout->setMargin(0);
+    m_leftNavigationLayout->setSpacing(0);
 
     m_rightContentLayout->setSpacing(0);
     m_rightContentLayout->setMargin(0);
 
-    layout->setMargin(0);
-    layout->setSpacing(0);
+    QWidget *content = new QWidget;
+    content->setLayout(m_rightContentLayout);
 
     QWidget *leftWidget = new QWidget;
     leftWidget->setObjectName("LeftWidget");
@@ -72,7 +72,15 @@ NormalModule::NormalModule(QWidget *parent)
     layout->addWidget(leftWidget);
     layout->addWidget(content);
 
-    setLayout(layout);
+    // bottom navigation
+
+
+    QHBoxLayout *mainLayout = new QHBoxLayout;
+    mainLayout->setSpacing(0);
+    mainLayout->setMargin(0);
+    mainLayout->addLayout(layout);
+
+    setLayout(mainLayout);
 
     setFixedSize(700, 450);
     content->setFixedSize(580, 450);
