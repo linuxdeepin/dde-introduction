@@ -24,6 +24,7 @@
 #include "videowidget.h"
 #include "support.h"
 #include "about.h"
+#include "../widgets/bottomnavigation.h"
 
 NormalModule::NormalModule(QWidget *parent)
     : QWidget(parent)
@@ -32,7 +33,7 @@ NormalModule::NormalModule(QWidget *parent)
     , m_buttonGrp(new QButtonGroup)
     , m_currentWidget(nullptr)
 {
-    QHBoxLayout *layout = new QHBoxLayout(this);
+    QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
 
@@ -73,12 +74,13 @@ NormalModule::NormalModule(QWidget *parent)
     layout->addWidget(content);
 
     // bottom navigation
+    BottomNavigation *bottomNavigation = new BottomNavigation;
 
-
-    QHBoxLayout *mainLayout = new QHBoxLayout;
+    QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->setSpacing(0);
     mainLayout->setMargin(0);
     mainLayout->addLayout(layout);
+    mainLayout->addWidget(bottomNavigation);
 
     setLayout(mainLayout);
 
