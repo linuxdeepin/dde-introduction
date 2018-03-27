@@ -85,7 +85,7 @@ NormalModule::NormalModule(QWidget *parent)
     setLayout(mainLayout);
 
     setFixedSize(700, 450);
-    content->setFixedSize(580, 450);
+    content->setFixedWidth(580);
 
     NavigationButton * videoBtn = new NavigationButton;
     NavigationButton * desktopBtn = new NavigationButton;

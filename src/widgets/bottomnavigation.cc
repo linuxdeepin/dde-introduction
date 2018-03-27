@@ -11,7 +11,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout;
-    layout->setContentsMargins(20, 0, 10, 0);
+    layout->setContentsMargins(20, 10, 10, 10);
     layout->setSpacing(0);
 
     DImageButton *sinaBtn = new DImageButton;
@@ -46,13 +46,13 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     m_buttons[feedback] = "http://feedback.deepin.org/";
     m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
 
-    layout->addWidget(sinaBtn);
-    layout->addWidget(twitterBtn);
-    layout->addWidget(facebook);
-    layout->addWidget(offical);
-    layout->addWidget(community);
-    layout->addWidget(feedback);
-    layout->addWidget(thank);
+    layout->addWidget(sinaBtn, 0, Qt::AlignCenter);
+    layout->addWidget(twitterBtn, 0, Qt::AlignCenter);
+    layout->addWidget(facebook, 0, Qt::AlignCenter);
+    layout->addWidget(offical, 0, Qt::AlignCenter);
+    layout->addWidget(community, 0, Qt::AlignCenter);
+    layout->addWidget(feedback, 0, Qt::AlignCenter);
+    layout->addWidget(thank, 0, Qt::AlignCenter);
 
     setLayout(layout);
 }
