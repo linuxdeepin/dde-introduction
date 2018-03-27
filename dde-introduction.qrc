@@ -23,5 +23,18 @@
         <file>resources/previous_hover.svg</file>
         <file>resources/previous_normal.svg</file>
         <file>resources/previous_press.svg</file>
+        <file>resources/close_round_hover.svg</file>
+        <file>resources/close_round_normal.svg</file>
+        <file>resources/close_round_press.svg</file>
+        <file>resources/Mail.svg</file>
+        <file>resources/pause_hover.svg</file>
+        <file>resources/pause_press.svg</file>
+        <file>resources/pause.svg</file>
+        <file>resources/play_hover.svg</file>
+        <file>resources/play_press.svg</file>
+        <file>resources/play.svg</file>
+        <file>resources/Twitter.svg</file>
+        <file>resources/weibo.svg</file>
+        <file>resources/Facebook.svg</file>
     </qresource>
 </RCC>

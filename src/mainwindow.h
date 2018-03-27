@@ -21,13 +21,13 @@
 
 #include <QPropertyAnimation>
 #include <QPushButton>
-#include <ddialog.h>
+#include <daboutdialog.h>
 #include <dimagebutton.h>
 
 DWIDGET_USE_NAMESPACE
 
 class BaseModuleWidget;
-class MainWindow : public DDialog {
+class MainWindow : public DAbstractDialog {
   Q_OBJECT
 
 public:

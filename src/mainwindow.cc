@@ -25,10 +25,13 @@
 #include "basemodulewidget.h"
 
 #include <QHBoxLayout>
+#include <DTitlebar>
+
+DWIDGET_USE_NAMESPACE
 
 static const QSize WINDOW_SIZE { 700, 450 };
 MainWindow::MainWindow(QWidget *parent)
-    : DDialog(parent)
+    : DAbstractDialog(parent)
     , m_index(1)
     , m_current(nullptr)
     , m_last(nullptr)
