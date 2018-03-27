@@ -45,7 +45,6 @@ private:
   void updateModule(const int index);
   void animationHandle();
 
-  BaseModuleWidget *initVideoWidgt();
   BaseModuleWidget *initDesktopModeModule();
   BaseModuleWidget *initWMModeModule();
   BaseModuleWidget *initIconModule();

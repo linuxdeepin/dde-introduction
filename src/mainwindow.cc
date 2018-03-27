@@ -102,7 +102,7 @@ void MainWindow::initUI()
 
     m_nextBtn     = new QPushButton(tr("next"), this);
 
-    m_current = initVideoWidgt();
+    m_current = new VideoWidget(m_fakerWidget);
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
@@ -137,7 +137,8 @@ void MainWindow::updateModule(const int index)
     m_last = m_current;
     switch (index) {
     case 1:
-        m_current = initVideoWidgt();
+        m_current = new VideoWidget(m_fakerWidget);
+        m_current->setFixedSize(WINDOW_SIZE);
         m_previousBtn->hide();
         break;
     case 2:
@@ -169,13 +170,6 @@ void MainWindow::animationHandle()
         m_last->deleteLater();
         m_last = nullptr;
     }
-}
-
-BaseModuleWidget *MainWindow::initVideoWidgt()
-{
-    BaseModuleWidget* w = new BaseModuleWidget(new VideoWidget, m_fakerWidget);
-    w->setFixedSize(WINDOW_SIZE);
-    return w;
 }
 
 BaseModuleWidget *MainWindow::initDesktopModeModule()

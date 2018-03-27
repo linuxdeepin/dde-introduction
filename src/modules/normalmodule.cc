@@ -130,7 +130,7 @@ NormalModule::NormalModule(QWidget *parent)
     icon->updateSmaillIcon();
     wm->updateSmaillIcon();
 
-    video->hide();
+    video->show();
     desktop->hide();
     icon->hide();
     wm->hide();

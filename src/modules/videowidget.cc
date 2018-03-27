@@ -21,18 +21,39 @@
 #include <QMediaPlayer>
 #include <QPushButton>
 #include <QTimer>
+#include <QHBoxLayout>
 
 VideoWidget::VideoWidget(QWidget *parent)
-    : DVideoWidget(parent)
+    : ModuleInterface(parent)
+    , m_video(new QVideoWidget(this))
     , m_player(new QMediaPlayer(this))
     , m_control(new DImageButton())
 {
-    setSource(m_player);
+    QHBoxLayout *layout = new QHBoxLayout;
+    layout->setMargin(0);
+    layout->setSpacing(0);
 
-    setSourceVideoPixelRatio(devicePixelRatioF());
+    layout->addWidget(m_video);
 
-    setGeometry(QRect(0, 0, 700, 450));
+    setLayout(layout);
+
+    m_player->setVideoOutput(m_video);
+
+    m_player->setMedia(QUrl("file:///home/haruyukilxz/Videos/羽毛的光芒.mp4"));
+    m_video->setAspectRatioMode(Qt::KeepAspectRatioByExpanding);
+
+    m_video->setGeometry(0, 0, 700, 450);
 
     m_player->play();
     m_player->pause();
+}
+
+void VideoWidget::updateBigIcon()
+{
+    m_video->setFixedSize(700, 450);
+}
+
+void VideoWidget::updateSmaillIcon()
+{
+    m_video->setFixedSize(580, 450);
 }

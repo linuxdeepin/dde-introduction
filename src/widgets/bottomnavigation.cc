@@ -51,7 +51,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     layout->addWidget(facebook);
     layout->addWidget(offical);
     layout->addWidget(community);
-    layout->addWidget(facebook);
+    layout->addWidget(feedback);
     layout->addWidget(thank);
 
     setLayout(layout);

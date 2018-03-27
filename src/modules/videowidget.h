@@ -19,18 +19,24 @@
 #ifndef VIDEOWIDGET_H
 #define VIDEOWIDGET_H
 
-#include <DVideoWidget>
+#include "moduleinterface.h"
+
+#include <QVideoWidget>
 #include <QMediaPlayer>
 #include <dimagebutton.h>
 
 DWIDGET_USE_NAMESPACE
 
-class VideoWidget : public DVideoWidget {
+class VideoWidget : public ModuleInterface {
     Q_OBJECT
 public:
     explicit VideoWidget(QWidget *parent = nullptr);
 
+    void updateBigIcon() Q_DECL_OVERRIDE;
+    void updateSmaillIcon() Q_DECL_OVERRIDE;
+
 private:
+    QVideoWidget *m_video;
     QMediaPlayer* m_player;
     DImageButton* m_control;
 };
