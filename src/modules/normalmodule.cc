@@ -76,9 +76,13 @@ NormalModule::NormalModule(QWidget *parent)
     // bottom navigation
     BottomNavigation *bottomNavigation = new BottomNavigation;
 
+    QLabel *titleLabel = new QLabel;
+
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->setSpacing(0);
     mainLayout->setMargin(0);
+    mainLayout->addSpacing(15);
+    mainLayout->addWidget(titleLabel, 0, Qt::AlignCenter);
     mainLayout->addLayout(layout);
     mainLayout->addWidget(bottomNavigation);
 
@@ -144,6 +148,14 @@ NormalModule::NormalModule(QWidget *parent)
     m_moduleMap[supportBtn] = support;
     m_moduleMap[aboutBtn] = about;
 
+    m_titleMap[videoBtn] = tr("Welcome");
+    m_titleMap[desktopBtn] = tr("Please select desktop mode");
+    m_titleMap[iconBtn] = tr("Please select icon theme");
+    m_titleMap[wmBtn] = tr("Please select to enable window effect or not");
+    m_titleMap[supportBtn] = tr("Support us");
+    m_titleMap[aboutBtn] = tr("About us");
+
+    titleLabel->setText(m_titleMap[videoBtn]);
     m_currentWidget = video;
 
     videoBtn->setFixedWidth(120);
@@ -173,6 +185,7 @@ NormalModule::NormalModule(QWidget *parent)
 
     connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [=] (QAbstractButton *btn) {
         QWidget *w = m_moduleMap[btn];
+        titleLabel->setText(m_titleMap[btn]);
         m_currentWidget->hide();
         w->show();
         m_currentWidget = w;

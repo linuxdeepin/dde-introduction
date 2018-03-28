@@ -36,6 +36,7 @@ private:
     QVBoxLayout *m_rightContentLayout;
     QButtonGroup *m_buttonGrp;
     QMap<QWidget*, QWidget*> m_moduleMap;
+    QMap<QAbstractButton*, QString> m_titleMap;
     QWidget *m_currentWidget;
 };
 

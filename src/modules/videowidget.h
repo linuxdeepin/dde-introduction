@@ -42,6 +42,8 @@ public:
     void onControlButtonClicked();
 
 protected:
+    void enterEvent(QEvent *);
+    void leaveEvent(QEvent *);
     void resizeEvent(QResizeEvent *);
 
 private:

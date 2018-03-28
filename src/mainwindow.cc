@@ -126,6 +126,8 @@ void MainWindow::initUI()
 
     m_currentAni->setPropertyName("pos");
     m_lastAni->setPropertyName("pos");
+
+    connect(closeBtn, &DImageButton::clicked, this, &MainWindow::close);
 }
 
 void MainWindow::initConnect()

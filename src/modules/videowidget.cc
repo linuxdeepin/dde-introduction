@@ -52,6 +52,7 @@ VideoWidget::VideoWidget(QWidget *parent)
     m_videoItem->setSize(QSize(700, 450));
 
     m_control->setFixedSize(48, 48);
+    m_control->hide();
     m_control->raise();
 
     QMediaPlaylist *playlist = new QMediaPlaylist;
@@ -111,10 +112,24 @@ void VideoWidget::onControlButtonClicked()
     updateControlButton();
 }
 
+void VideoWidget::enterEvent(QEvent *e)
+{
+    ModuleInterface::enterEvent(e);
+
+    m_control->show();
+}
+
+void VideoWidget::leaveEvent(QEvent *e)
+{
+    ModuleInterface::leaveEvent(e);
+
+    m_control->hide();
+}
+
 void VideoWidget::resizeEvent(QResizeEvent *e)
 {
     ModuleInterface::resizeEvent(e);
 
     m_control->move(QPoint((rect().width() - m_control->width()) / 2,
-                            rect().height() / 2));
+                           rect().height() / 2));
 }
