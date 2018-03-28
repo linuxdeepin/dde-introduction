@@ -105,6 +105,15 @@ void MainWindow::initUI()
 
     m_nextBtn     = new QPushButton(tr("next"), this);
 
+    DImageButton *closeBtn = new DImageButton(":/resources/close_round_normal.svg",
+                                              ":/resources/close_round_hover.svg",
+                                              ":/resources/close_round_press.svg",this);
+
+    closeBtn->setFixedSize(24, 24);
+
+    closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
+    closeBtn->show();
+
     m_current = new VideoWidget(m_fakerWidget);
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
