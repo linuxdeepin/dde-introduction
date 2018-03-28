@@ -25,6 +25,10 @@
 #include <QMediaPlayer>
 #include <dimagebutton.h>
 
+#include <QGraphicsVideoItem>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+
 DWIDGET_USE_NAMESPACE
 
 class VideoWidget : public ModuleInterface {
@@ -34,9 +38,16 @@ public:
 
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmaillIcon() Q_DECL_OVERRIDE;
+    void updateControlButton();
+    void onControlButtonClicked();
+
+protected:
+    void resizeEvent(QResizeEvent *);
 
 private:
-    QVideoWidget *m_video;
+    QGraphicsScene *m_scene;
+    QGraphicsView *m_video;
+    QGraphicsVideoItem *m_videoItem;
     QMediaPlayer* m_player;
     DImageButton* m_control;
 };
