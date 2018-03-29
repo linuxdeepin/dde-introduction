@@ -54,6 +54,7 @@ VideoWidget::VideoWidget(QWidget *parent)
 
     m_video->setSource(m_player);
     m_video->setAspectRatioMode(Qt::KeepAspectRatioByExpanding);
+    m_video->setSourceVideoPixelRatio(devicePixelRatioF());
 
     m_player->play();
     m_player->pause();
