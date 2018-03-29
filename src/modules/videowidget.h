@@ -21,13 +21,10 @@
 
 #include "moduleinterface.h"
 
-#include <QVideoWidget>
+#include <DVideoWidget>
 #include <QMediaPlayer>
 #include <dimagebutton.h>
-
-#include <QGraphicsVideoItem>
-#include <QGraphicsScene>
-#include <QGraphicsView>
+#include <DClipEffectWidget>
 
 DWIDGET_USE_NAMESPACE
 
@@ -42,16 +39,18 @@ public:
     void onControlButtonClicked();
 
 protected:
-    void enterEvent(QEvent *);
-    void leaveEvent(QEvent *);
-    void resizeEvent(QResizeEvent *);
+    void enterEvent(QEvent *) Q_DECL_OVERRIDE;
+    void leaveEvent(QEvent *) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
 
 private:
-    QGraphicsScene *m_scene;
-    QGraphicsView *m_video;
-    QGraphicsVideoItem *m_videoItem;
+    void updateClip();
+
+private:
+    DVideoWidget *m_video;
     QMediaPlayer* m_player;
     DImageButton* m_control;
+    DClipEffectWidget *m_clip;
 };
 
 #endif

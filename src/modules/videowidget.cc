@@ -18,48 +18,42 @@
 
 #include "videowidget.h"
 
-#include <QMediaPlaylist>
-#include <QMediaPlayer>
 #include <QPushButton>
 #include <QTimer>
 #include <QHBoxLayout>
 #include <QResizeEvent>
+#include <QBitmap>
+#include <QPainter>
 
 VideoWidget::VideoWidget(QWidget *parent)
     : ModuleInterface(parent)
-    , m_scene(new QGraphicsScene)
-    , m_video(new QGraphicsView(m_scene))
-    , m_videoItem(new QGraphicsVideoItem)
+    , m_video(new DVideoWidget)
     , m_player(new QMediaPlayer(this))
     , m_control(new DImageButton(this))
+    , m_clip(new DClipEffectWidget(m_video))
 {
     m_selectBtn->hide();
+
+    setObjectName("VideoWidget");
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
 
-    layout->addWidget(m_video);
+    layout->addWidget(m_video, 0, Qt::AlignCenter);
 
     setLayout(layout);
 
-    m_scene->addItem(m_videoItem);
-
-    m_video->fitInView(m_scene->sceneRect(), Qt::KeepAspectRatio);
-    m_video->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_video->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_video->setGeometry(0, 0, 700, 450);
-    m_videoItem->setSize(QSize(700, 450));
+    updateBigIcon();
 
     m_control->setFixedSize(48, 48);
     m_control->hide();
     m_control->raise();
 
-    QMediaPlaylist *playlist = new QMediaPlaylist;
-    playlist->addMedia(QUrl("file:///home/rekols/Videos/一択彼女加藤恵.mov"));
-    playlist->setPlaybackMode(QMediaPlaylist::Loop);
-    m_player->setPlaylist(playlist);
-    m_player->setVideoOutput(m_videoItem);
+    m_player->setMedia(QUrl("http://10.0.13.109/dde-%E6%AC%A2%E8%BF%8E%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4"));
+
+    m_video->setSource(m_player);
+    m_video->setAspectRatioMode(Qt::KeepAspectRatioByExpanding);
 
     m_player->play();
     m_player->pause();
@@ -72,14 +66,18 @@ VideoWidget::VideoWidget(QWidget *parent)
 
 void VideoWidget::updateBigIcon()
 {
-    m_video->setGeometry(0, 0, 700, 450);
-    m_videoItem->setSize(QSize(700, 450));
+    setFixedSize(700, 450);
+    m_video->setFixedSize(700, 450);
+
+    updateClip();
 }
 
 void VideoWidget::updateSmaillIcon()
 {
-    m_video->setGeometry(0, 0, 580, 450);
-    m_videoItem->setSize(QSize(580, 450));
+    setFixedSize(560, 360);
+    m_video->setFixedSize(560, 360);
+
+    updateClip();
 }
 
 void VideoWidget::updateControlButton()
@@ -95,6 +93,8 @@ void VideoWidget::updateControlButton()
         m_control->setHoverPic(":/resources/play_hover.svg");
         m_control->setPressPic(":/resources/play_press.svg");
         break;
+    default:
+        break;
     }
 }
 
@@ -106,6 +106,8 @@ void VideoWidget::onControlButtonClicked()
         break;
     case QMediaPlayer::PausedState:
         m_player->play();
+        break;
+    default:
         break;
     }
 
@@ -132,4 +134,11 @@ void VideoWidget::resizeEvent(QResizeEvent *e)
 
     m_control->move(QPoint((rect().width() - m_control->width()) / 2,
                            rect().height() / 2));
+}
+
+void VideoWidget::updateClip()
+{
+    QPainterPath path;
+    path.addRoundedRect(rect(), 5, 5);
+    m_clip->setClipPath(path);
 }

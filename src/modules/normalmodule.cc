@@ -114,22 +114,19 @@ NormalModule::NormalModule(QWidget *parent)
 
     videoBtn->setChecked(true);
 
-    m_rightContentLayout->addStretch();
-
-    m_rightContentLayout->addWidget(video);
-    m_rightContentLayout->addWidget(desktop);
-    m_rightContentLayout->addWidget(icon);
-    m_rightContentLayout->addWidget(wm);
-    m_rightContentLayout->addWidget(support);
-    m_rightContentLayout->addWidget(about);
-
-    m_rightContentLayout->addStretch();
+    m_rightContentLayout->addWidget(video, 0, Qt::AlignCenter);
+    m_rightContentLayout->addWidget(desktop, 0, Qt::AlignCenter);
+    m_rightContentLayout->addWidget(icon, 0, Qt::AlignCenter);
+    m_rightContentLayout->addWidget(wm, 0, Qt::AlignCenter);
+    m_rightContentLayout->addWidget(support, 0, Qt::AlignCenter);
+    m_rightContentLayout->addWidget(about, 0, Qt::AlignCenter);
 
     video->setFixedWidth(580);
     desktop->setFixedWidth(580);
     icon->setFixedWidth(580);
     wm->setFixedWidth(580);
 
+    video->updateSmaillIcon();
     desktop->updateSmaillIcon();
     icon->updateSmaillIcon();
     wm->updateSmaillIcon();
