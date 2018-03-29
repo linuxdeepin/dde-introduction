@@ -37,7 +37,7 @@ public:
     explicit IconModule(QWidget *parent = nullptr);
 
     void updateBigIcon() Q_DECL_OVERRIDE;
-    void updateSmaillIcon() Q_DECL_OVERRIDE;
+    void updateSmallIcon() Q_DECL_OVERRIDE;
 
 protected:
     void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;

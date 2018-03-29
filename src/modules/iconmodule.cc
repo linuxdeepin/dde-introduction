@@ -41,7 +41,7 @@ IconModule::IconModule(QWidget *parent)
 
     setLayout(m_layout);
 
-    updateSmaillIcon();
+    updateSmallIcon();
 }
 
 void IconModule::addIcon(const IconStruct &icon)
@@ -107,7 +107,7 @@ void IconModule::updateBigIcon()
     }
 }
 
-void IconModule::updateSmaillIcon()
+void IconModule::updateSmallIcon()
 {
     setFixedWidth(580);
 

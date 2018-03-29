@@ -34,7 +34,7 @@ public:
     explicit VideoWidget(QWidget *parent = nullptr);
 
     void updateBigIcon() Q_DECL_OVERRIDE;
-    void updateSmaillIcon() Q_DECL_OVERRIDE;
+    void updateSmallIcon() Q_DECL_OVERRIDE;
     void updateControlButton();
     void onControlButtonClicked();
 

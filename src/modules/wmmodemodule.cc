@@ -49,7 +49,7 @@ WMModeModule::WMModeModule(QWidget *parent)
 
     setLayout(m_layout);
 
-    updateSmaillIcon();
+    updateSmallIcon();
 }
 
 void WMModeModule::updateBigIcon()
@@ -58,7 +58,7 @@ void WMModeModule::updateBigIcon()
     m_fashionWidget->setPixmap(":/resources/3d_big.png");
 }
 
-void WMModeModule::updateSmaillIcon()
+void WMModeModule::updateSmallIcon()
 {
     m_efficientWidget->setPixmap(":/resources/2d_small.png");
     m_fashionWidget->setPixmap(":/resources/3d_small.png");

@@ -36,7 +36,7 @@ public:
     void setIconType(Model::IconType type);
 
     virtual void updateBigIcon() = 0;
-    virtual void updateSmaillIcon() = 0;
+    virtual void updateSmallIcon() = 0;
 
 protected:
     Model  *m_model;

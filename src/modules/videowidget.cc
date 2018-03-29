@@ -73,7 +73,7 @@ void VideoWidget::updateBigIcon()
     updateClip();
 }
 
-void VideoWidget::updateSmaillIcon()
+void VideoWidget::updateSmallIcon()
 {
     setFixedSize(560, 360);
     m_video->setFixedSize(560, 360);

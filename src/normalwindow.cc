@@ -30,7 +30,7 @@ static QWidget *createDesktopModeHandle(QObject *opt) {
     Q_UNUSED(opt);
 
     DesktopModeModule *module = new DesktopModeModule;
-    module->updateSmaillIcon();
+    module->updateSmallIcon();
 
     return new BaseModuleWidget(module);
 }
@@ -39,7 +39,7 @@ static QWidget *createWMModeHandle(QObject *opt) {
     Q_UNUSED(opt);
 
     WMModeModule *module = new WMModeModule;
-    module->updateSmaillIcon();
+    module->updateSmallIcon();
 
     return new BaseModuleWidget(module);
 }

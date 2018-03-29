@@ -37,7 +37,7 @@ void ModuleInterface::setIconType(Model::IconType type)
         updateBigIcon();
         break;
     case Model::Small:
-        updateSmaillIcon();
+        updateSmallIcon();
         break;
     default:
         break;

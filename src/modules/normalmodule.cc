@@ -126,10 +126,10 @@ NormalModule::NormalModule(QWidget *parent)
     icon->setFixedWidth(580);
     wm->setFixedWidth(580);
 
-    video->updateSmaillIcon();
-    desktop->updateSmaillIcon();
-    icon->updateSmaillIcon();
-    wm->updateSmaillIcon();
+    video->updateSmallIcon();
+    desktop->updateSmallIcon();
+    icon->updateSmallIcon();
+    wm->updateSmallIcon();
 
     video->show();
     desktop->hide();

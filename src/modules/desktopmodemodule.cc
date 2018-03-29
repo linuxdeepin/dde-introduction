@@ -49,7 +49,7 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
 
     setLayout(m_layout);
 
-    updateSmaillIcon();
+    updateSmallIcon();
 }
 
 void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
@@ -78,7 +78,7 @@ void DesktopModeModule::updateBigIcon()
     m_fashionWidget->setPixmap(":/resources/fashion_mode_big.png");
 }
 
-void DesktopModeModule::updateSmaillIcon()
+void DesktopModeModule::updateSmallIcon()
 {
     m_efficientWidget->setPixmap(":/resources/effective_mode_small.png");
     m_fashionWidget->setPixmap(":/resources/fashion_mode_small.png");
