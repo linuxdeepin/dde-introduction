@@ -67,7 +67,7 @@ void Worker::setWMMode(Model::WMType type)
 
 void Worker::setIcon(const IconStruct &icon)
 {
-    m_iconInter->setIconTheme(icon.Id);
+    m_iconInter->Set("icon", icon.Id);
 }
 
 void Worker::onWMChanged(const QString &wm)
