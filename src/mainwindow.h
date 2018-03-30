@@ -21,6 +21,8 @@
 
 #include <QPropertyAnimation>
 #include <QPushButton>
+#include <QSettings>
+
 #include <daboutdialog.h>
 #include <dimagebutton.h>
 
@@ -58,6 +60,7 @@ private:
   QPropertyAnimation *m_currentAni;
   QPropertyAnimation *m_lastAni;
   QWidget *m_fakerWidget;
+  QSettings *m_settings;
 };
 
 #endif // MAINWINDOW_H

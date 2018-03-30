@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_last(nullptr)
     , m_currentAni(new QPropertyAnimation(this))
     , m_lastAni(new QPropertyAnimation(this))
+    , m_settings(new QSettings("deepin", "dde-introduction"))
 {
     initUI();
     initConnect();
@@ -114,15 +115,24 @@ void MainWindow::initUI()
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
     closeBtn->show();
 
-    m_current = new VideoWidget(m_fakerWidget);
+    const bool isFirst = m_settings->value("IsFirst", true).toBool();
+
+    if (isFirst) {
+        m_settings->setValue("IsFirst", false);
+        m_current = new VideoWidget(m_fakerWidget);
+        m_previousBtn->hide();
+        m_nextBtn->show();
+    } else {
+        m_current = new NormalModule(m_fakerWidget);
+        m_previousBtn->hide();
+        m_nextBtn->hide();
+    }
+
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
     m_previousBtn->move(30, 405);
     m_nextBtn->move(550, 405);
-
-    m_previousBtn->hide();
-    m_nextBtn->show();
 
     m_currentAni->setPropertyName("pos");
     m_lastAni->setPropertyName("pos");
