@@ -31,11 +31,15 @@ class NormalModule : public QWidget
 public:
     explicit NormalModule(QWidget *parent = nullptr);
 
+
+private:
+    void updateCurrentWidget(const int index);
+
 private:
     QVBoxLayout *m_leftNavigationLayout;
     QVBoxLayout *m_rightContentLayout;
     QButtonGroup *m_buttonGrp;
-    QMap<QWidget*, QWidget*> m_moduleMap;
+    QMap<QWidget*, int> m_buttonMap;
     QMap<QAbstractButton*, QString> m_titleMap;
     QWidget *m_currentWidget;
 };

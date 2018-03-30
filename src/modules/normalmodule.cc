@@ -98,12 +98,13 @@ NormalModule::NormalModule(QWidget *parent)
     NavigationButton * supportBtn = new NavigationButton;
     NavigationButton * aboutBtn = new NavigationButton;
 
-    VideoWidget *video = new VideoWidget;
-    DesktopModeModule *desktop = new DesktopModeModule;
-    IconModule *icon = new IconModule;
-    WMModeModule *wm = new WMModeModule;
-    Support *support = new Support;
-    About *about = new About;
+    m_buttonMap[videoBtn]   = 1;
+    m_buttonMap[desktopBtn] = 2;
+    m_buttonMap[iconBtn]    = 3;
+    m_buttonMap[wmBtn]      = 4;
+    m_buttonMap[supportBtn] = 5;
+    m_buttonMap[aboutBtn]   = 6;
+
 
     videoBtn->setText(tr("Introduction"));
     desktopBtn->setText(tr("Desktop mode"));
@@ -114,37 +115,6 @@ NormalModule::NormalModule(QWidget *parent)
 
     videoBtn->setChecked(true);
 
-    m_rightContentLayout->addWidget(video, 0, Qt::AlignCenter);
-    m_rightContentLayout->addWidget(desktop, 0, Qt::AlignCenter);
-    m_rightContentLayout->addWidget(icon, 0, Qt::AlignCenter);
-    m_rightContentLayout->addWidget(wm, 0, Qt::AlignCenter);
-    m_rightContentLayout->addWidget(support, 0, Qt::AlignCenter);
-    m_rightContentLayout->addWidget(about, 0, Qt::AlignCenter);
-
-    video->setFixedWidth(580);
-    desktop->setFixedWidth(580);
-    icon->setFixedWidth(580);
-    wm->setFixedWidth(580);
-
-    video->updateSmallIcon();
-    desktop->updateSmallIcon();
-    icon->updateSmallIcon();
-    wm->updateSmallIcon();
-
-    video->show();
-    desktop->hide();
-    icon->hide();
-    wm->hide();
-    support->hide();
-    about->hide();
-
-    m_moduleMap[videoBtn] = video;
-    m_moduleMap[desktopBtn] = desktop;
-    m_moduleMap[iconBtn] = icon;
-    m_moduleMap[wmBtn] = wm;
-    m_moduleMap[supportBtn] = support;
-    m_moduleMap[aboutBtn] = about;
-
     m_titleMap[videoBtn] = tr("Welcome");
     m_titleMap[desktopBtn] = tr("Please select desktop mode");
     m_titleMap[iconBtn] = tr("Please select icon theme");
@@ -153,7 +123,6 @@ NormalModule::NormalModule(QWidget *parent)
     m_titleMap[aboutBtn] = tr("About us");
 
     titleLabel->setText(m_titleMap[videoBtn]);
-    m_currentWidget = video;
 
     videoBtn->setFixedWidth(120);
     desktopBtn->setFixedWidth(120);
@@ -181,10 +150,65 @@ NormalModule::NormalModule(QWidget *parent)
     m_leftNavigationLayout->addStretch();
 
     connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [=] (QAbstractButton *btn) {
-        QWidget *w = m_moduleMap[btn];
+        updateCurrentWidget(m_buttonMap[btn]);
         titleLabel->setText(m_titleMap[btn]);
-        m_currentWidget->hide();
-        w->show();
-        m_currentWidget = w;
     });
+
+    updateCurrentWidget(m_buttonMap[videoBtn]);
+}
+
+void NormalModule::updateCurrentWidget(const int index)
+{
+    if (m_currentWidget) {
+        m_rightContentLayout->removeWidget(m_currentWidget);
+        m_currentWidget->deleteLater();
+        m_currentWidget = nullptr;
+    }
+
+    switch (index) {
+    case 1:
+    {
+        VideoWidget *w = new VideoWidget;
+        w->updateSmallIcon();
+        m_currentWidget = w;
+        break;
+    }
+    case 2:
+    {
+        DesktopModeModule *w = new DesktopModeModule;
+        w->updateSmallIcon();
+        m_currentWidget = w;
+        break;
+    }
+    case 3:
+    {
+        IconModule *w = new IconModule;
+        w->updateSmallIcon();
+        m_currentWidget = w;
+        break;
+    }
+    case 4:
+    {
+        WMModeModule *w = new WMModeModule;
+        w->updateSmallIcon();
+        m_currentWidget = w;
+        break;
+    }
+    case 5:
+    {
+        m_currentWidget = new Support;
+        break;
+    }
+    case 6:
+    {
+        m_currentWidget = new About;
+        break;
+    }
+    default:
+        break;
+    }
+
+    m_currentWidget->setFixedWidth(580);
+    m_rightContentLayout->addWidget(m_currentWidget, 0, Qt::AlignCenter);
+    m_currentWidget->show();
 }
