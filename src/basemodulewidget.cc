@@ -28,6 +28,10 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
 
+    m_describeLbl->setFixedWidth(510);
+    m_describeLbl->setWordWrap(true);
+    m_describeLbl->setAlignment(Qt::AlignCenter);
+
     m_layout->addSpacing(20);
     m_layout->addWidget(m_titleLbl, 0, Qt::AlignHCenter);
     m_layout->addStretch();

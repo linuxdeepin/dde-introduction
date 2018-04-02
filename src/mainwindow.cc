@@ -115,6 +115,7 @@ void MainWindow::initUI()
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
     closeBtn->show();
 
+#ifndef QT_DEBUG
     const bool isFirst = m_settings->value("IsFirst", true).toBool();
 
     if (isFirst) {
@@ -127,12 +128,17 @@ void MainWindow::initUI()
         m_previousBtn->hide();
         m_nextBtn->hide();
     }
+#else
+    m_current = new VideoWidget(m_fakerWidget);
+    m_previousBtn->hide();
+    m_nextBtn->show();
+#endif
 
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
     m_previousBtn->move(30, 405);
-    m_nextBtn->move(550, 405);
+    m_nextBtn->move(590, 405);
 
     m_currentAni->setPropertyName("pos");
     m_lastAni->setPropertyName("pos");
@@ -214,6 +220,8 @@ BaseModuleWidget *MainWindow::initWMModeModule()
     module->updateBigIcon();
 
     BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
+    w->setTitle(tr("Please select to enable window effect or not"));
+    w->setDescribe(tr("You can enable or disable it in Control Center > Personalization > Enable window effect, or use shortcuts Shift+Super+Tab"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
 }
