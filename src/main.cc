@@ -20,6 +20,7 @@
 #include "normalwindow.h"
 #include <DApplication>
 #include <QDebug>
+#include <DWidgetUtil>
 
 DWIDGET_USE_NAMESPACE
 
@@ -39,8 +40,8 @@ int main(int argc, char *argv[])
     a.loadTranslator();
 
     MainWindow w;
-    w.moveToCenter();
-    w.exec();
+    w.show();
+    moveToCenter(&w);
 
-    return 0;
+    return a.exec();
 }
