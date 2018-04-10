@@ -4,6 +4,7 @@
 #include <dimagebutton.h>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QEvent>
 
 DWIDGET_USE_NAMESPACE
 
@@ -39,6 +40,14 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     DImageButton *mail = new DImageButton(":/resources/Mail.svg",
                                           ":/resources/Mail.svg",
                                           ":/resources/Mail.svg");
+
+    QList<QWidget*> list;
+
+    list << sinaBtn << twitterBtn << facebook << offical << community << feedback << thank << mail;
+
+    for (QWidget *w : list) {
+        w->installEventFilter(this);
+    }
 
     connect(sinaBtn, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
     connect(twitterBtn, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
@@ -79,4 +88,17 @@ void BottomNavigation::onButtonClicked()
     Q_ASSERT(button);
 
     QDesktopServices::openUrl(QUrl(m_buttons[button]));
+}
+
+bool BottomNavigation::eventFilter(QObject *watched, QEvent *event)
+{
+    if (event->type() == QEvent::Enter) {
+        setCursor(Qt::PointingHandCursor);
+    }
+
+    if (event->type() == QEvent::Leave) {
+        setCursor(Qt::ArrowCursor);
+    }
+
+    return QWidget::eventFilter(watched, event);
 }

@@ -13,6 +13,9 @@ public:
 private slots:
     void onButtonClicked();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
+
 private:
     QMap<QWidget*, QString> m_buttons;
 };
