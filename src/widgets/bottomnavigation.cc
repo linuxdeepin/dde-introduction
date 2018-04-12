@@ -26,13 +26,16 @@ BottomNavigation::BottomNavigation(QWidget *parent)
                                               ":/resources/Facebook.svg");
 
     DImageButton *offical = new DImageButton;
-    offical->setText(tr("Official website"));
+    offical->setText(tr("Home Page"));
 
     DImageButton *community = new DImageButton;
     community->setText(tr("Community"));
 
     DImageButton *feedback = new DImageButton;
     feedback->setText(tr("Feedback"));
+
+    DImageButton *help = new DImageButton;
+    help->setText(tr("Help"));
 
     DImageButton *thank = new DImageButton;
     thank->setText(tr("Acknowledgements"));

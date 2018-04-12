@@ -112,7 +112,7 @@ void MainWindow::initUI()
     m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");
     m_previousBtn->setFixedSize(27, 26);
 
-    m_nextBtn     = new QPushButton(tr("next"), this);
+    m_nextBtn     = new QPushButton(tr("Next"), this);
 
     DImageButton *closeBtn = new DImageButton(":/resources/close_round_normal.svg",
                                               ":/resources/close_round_hover.svg",
