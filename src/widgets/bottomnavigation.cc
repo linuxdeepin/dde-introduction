@@ -44,22 +44,14 @@ BottomNavigation::BottomNavigation(QWidget *parent)
                                           ":/resources/Mail.svg",
                                           ":/resources/Mail.svg");
 
-    QList<QWidget*> list;
+    QList<DImageButton*> list;
 
-    list << sinaBtn << twitterBtn << facebook << offical << community << feedback << thank << mail;
+    list << sinaBtn << twitterBtn << facebook << offical << community << feedback << help << thank << mail;
 
-    for (QWidget *w : list) {
+    for (DImageButton *w : list) {
         w->installEventFilter(this);
+        connect(w, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
     }
-
-    connect(sinaBtn, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
-    connect(twitterBtn, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
-    connect(facebook, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
-    connect(offical, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
-    connect(community, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
-    connect(feedback, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
-    connect(thank, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
-    connect(mail, &DImageButton::clicked, this, &BottomNavigation::onButtonClicked);
 
     m_buttons[sinaBtn] = "https://weibo.com/p/1006062675284423/home";
     m_buttons[twitterBtn] = "https://twitter.com/linux_deepin";
@@ -68,6 +60,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     m_buttons[community] = "https://bbs.deepin.org/";
     m_buttons[feedback] = "http://feedback.deepin.org/";
     m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
+    m_buttons[help] = "";
     m_buttons[mail] = "";
 
     layout->addWidget(sinaBtn, 0, Qt::AlignCenter);
@@ -77,6 +70,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     layout->addWidget(offical, 0, Qt::AlignCenter);
     layout->addWidget(community, 0, Qt::AlignCenter);
     layout->addWidget(feedback, 0, Qt::AlignCenter);
+    layout->addWidget(help, 0, Qt::AlignCenter);
     layout->addWidget(thank, 0, Qt::AlignCenter);
     layout->addStretch();
     layout->addWidget(mail, 0, Qt::AlignCenter);
