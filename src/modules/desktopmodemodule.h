@@ -39,7 +39,7 @@ public:
 protected:
     void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
-private Q_SLOTS:
+private slots:
     void onDesktopTypeChanged(Model::DesktopMode mode);
 
 private:

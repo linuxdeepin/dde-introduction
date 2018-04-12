@@ -38,12 +38,12 @@ class Worker : public QObject
 public:
     static Worker* Instance();
 
-public Q_SLOTS:
+public slots:
     void setDesktopMode(Model::DesktopMode mode);
     void setWMMode(Model::WMType type);
     void setIcon(const IconStruct &icon);
 
-private Q_SLOTS:
+private slots:
     void onWMChanged(const QString &wm);
     void onDisplayModeChanged(int mode);
     void onIconRefreshed(const QString &name);

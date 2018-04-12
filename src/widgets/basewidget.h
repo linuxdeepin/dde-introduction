@@ -33,10 +33,10 @@ class BaseWidget : public QFrame
 public:
     explicit BaseWidget(QWidget *parent = nullptr);
 
-Q_SIGNALS:
+signals:
     void clicked();
 
-public Q_SLOTS:
+public slots:
     void setPixmap(const QString &url);
     void setPixmap(const QPixmap &pixmap);
     void setTitle(const QString &title);

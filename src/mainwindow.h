@@ -36,7 +36,7 @@ public:
   MainWindow(QWidget *parent = 0);
   ~MainWindow();
 
-private Q_SLOTS:
+private slots:
   void previous();
   void next();
 

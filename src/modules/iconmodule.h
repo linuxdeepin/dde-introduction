@@ -42,7 +42,7 @@ public:
 protected:
     void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
-private Q_SLOTS:
+private slots:
     void addIcon(const IconStruct &icon);
     void removeIcon(const IconStruct &icon);
     void currentIconChanged(const IconStruct &icon);

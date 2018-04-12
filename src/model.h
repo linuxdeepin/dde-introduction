@@ -82,14 +82,14 @@ public:
     inline WMType wmType() const { return m_wmType; }
     inline DesktopMode desktopMode() const { return m_desktopMode; }
 
-Q_SIGNALS:
+signals:
     void iconChanged(const IconStruct &icon) const;
     void iconAdded(const IconStruct &icon) const;
     void iconRemoved(const IconStruct &icon) const;
     void wmTypeChanged(WMType type) const;
     void desktopModeChanged(DesktopMode mode) const;
 
-public Q_SLOTS:
+public slots:
     void addIcon(const IconStruct &icon);
     void removeIcon(const IconStruct &icon);
     void setCurrentIcon(const QString &icon);
