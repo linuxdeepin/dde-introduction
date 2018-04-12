@@ -123,7 +123,7 @@ void MainWindow::initUI()
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
     closeBtn->show();
 
-#ifdef QT_DEBUG
+#ifndef QT_DEBUG
     const bool isFirst = m_settings->value("IsFirst", true).toBool();
 
     if (isFirst) {
