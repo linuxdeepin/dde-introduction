@@ -65,4 +65,4 @@ endif ()
 
 # qm files
 file(GLOB QM_FILES "translations/*.qm")
-install(FILES ${QM_FILES} DESTINATION share/dde-dock/translations)
+install(FILES ${QM_FILES} DESTINATION share/dde-introduction/translations)
