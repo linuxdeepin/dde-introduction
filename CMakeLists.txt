@@ -53,3 +53,16 @@ install(TARGETS ${BIN_NAME} DESTINATION bin)
 
 # desktop
 install (FILES dde-introduction.desktop DESTINATION share/applications)
+
+if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Ofast")
+
+    # generate qm
+    execute_process(COMMAND bash "translate_generation.sh"
+                    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+endif ()
+
+
+# qm files
+file(GLOB QM_FILES "translations/*.qm")
+install(FILES ${QM_FILES} DESTINATION share/dde-dock/translations)
