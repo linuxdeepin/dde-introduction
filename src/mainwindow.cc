@@ -112,7 +112,7 @@ void MainWindow::initUI()
     m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");
     m_previousBtn->setFixedSize(27, 26);
 
-    m_nextBtn     = new QPushButton(tr("Next"), this);
+    m_nextBtn = new NextButton(tr("Next"), this);
 
     DImageButton *closeBtn = new DImageButton(":/resources/close_round_normal.svg",
                                               ":/resources/close_round_hover.svg",
@@ -131,6 +131,7 @@ void MainWindow::initUI()
         m_current = new VideoWidget(m_fakerWidget);
         m_previousBtn->hide();
         m_nextBtn->show();
+        m_nextBtn->setMode(NextButton::Transparent);
     } else {
         m_current = new NormalModule(m_fakerWidget);
         m_previousBtn->hide();
@@ -140,6 +141,7 @@ void MainWindow::initUI()
     m_current = new VideoWidget(m_fakerWidget);
     m_previousBtn->hide();
     m_nextBtn->show();
+    m_nextBtn->setMode(NextButton::Transparent);
 #endif
 
     m_current->setFixedSize(WINDOW_SIZE);
@@ -157,7 +159,7 @@ void MainWindow::initUI()
 void MainWindow::initConnect()
 {
     connect(m_previousBtn, &DImageButton::clicked, this, &MainWindow::previous);
-    connect(m_nextBtn, &QPushButton::clicked, this, &MainWindow::next);
+    connect(m_nextBtn, &NextButton::clicked, this, &MainWindow::next);
     connect(m_currentAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
 }
 
@@ -171,6 +173,7 @@ void MainWindow::updateModule(const int index)
 {
     m_nextBtn->show();
     m_previousBtn->show();
+    m_nextBtn->setMode(NextButton::Normal);
 
     m_last = m_current;
     switch (index) {
@@ -178,6 +181,7 @@ void MainWindow::updateModule(const int index)
         m_current = new VideoWidget(m_fakerWidget);
         m_current->setFixedSize(WINDOW_SIZE);
         m_previousBtn->hide();
+        m_nextBtn->setMode(NextButton::Transparent);
         break;
     case 2:
         m_current = initDesktopModeModule();

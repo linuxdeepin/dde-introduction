@@ -19,6 +19,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "widgets/nextbutton.h"
+
 #include <QPropertyAnimation>
 #include <QPushButton>
 #include <QSettings>
@@ -53,7 +55,7 @@ private:
 
 private:
   int m_index;
-  QPushButton *m_nextBtn;
+  NextButton *m_nextBtn;
   DImageButton *m_previousBtn;
   QWidget *m_current;
   QWidget *m_last;
