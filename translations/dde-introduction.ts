@@ -108,32 +108,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cc" line="219"/>
+        <location filename="../src/mainwindow.cc" line="223"/>
         <source>Please select desktop mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cc" line="220"/>
+        <location filename="../src/mainwindow.cc" line="224"/>
         <source>You can switch it in Mode by right clicking on dock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cc" line="231"/>
+        <location filename="../src/mainwindow.cc" line="235"/>
         <source>Please select to enable window effect or not</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cc" line="232"/>
+        <location filename="../src/mainwindow.cc" line="236"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cc" line="243"/>
+        <location filename="../src/mainwindow.cc" line="247"/>
         <source>Please select icon theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cc" line="244"/>
+        <location filename="../src/mainwindow.cc" line="248"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
         <translation type="unfinished"></translation>
     </message>
@@ -242,17 +242,17 @@
     </message>
     <message>
         <location filename="../src/modules/support.cc" line="48"/>
-        <source>The donation aims to make a survey and decide the orientation and proirity of the projects, support the continuous further development, and support community activities and construction.</source>
+        <source>The donation aims to make a survey and decide the orientation and priority of the projects, support the continuous further development, and support community activities and construction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/modules/support.cc" line="50"/>
+        <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become an Internal Testing Team member, you will</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/modules/support.cc" line="49"/>
         <source>Internal Testing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/support.cc" line="50"/>
-        <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become a Internal Testing Team member, you will</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
