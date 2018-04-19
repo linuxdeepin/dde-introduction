@@ -29,25 +29,25 @@ HEADERS += \
     src/widgets/nextbutton.h
 
 SOURCES += \
-    src/basemodulewidget.cc \
-    src/main.cc \
-    src/mainwindow.cc \
-    src/model.cc \
-    src/normalwindow.cc \
-    src/worker.cc \
-    src/modules/about.cc \
-    src/modules/desktopmodemodule.cc \
-    src/modules/iconmodule.cc \
-    src/modules/moduleinterface.cc \
-    src/modules/normalmodule.cc \
-    src/modules/support.cc \
-    src/modules/videowidget.cc \
-    src/modules/wmmodemodule.cc \
-    src/widgets/basewidget.cc \
-    src/widgets/borderwidget.cc \
-    src/widgets/bottomnavigation.cc \
-    src/widgets/navigationbutton.cc \
-    src/widgets/nextbutton.cc
+    src/basemodulewidget.cpp \
+    src/main.cpp \
+    src/mainwindow.cpp \
+    src/model.cpp \
+    src/normalwindow.cpp \
+    src/worker.cpp \
+    src/modules/about.cpp \
+    src/modules/desktopmodemodule.cpp \
+    src/modules/iconmodule.cpp \
+    src/modules/moduleinterface.cpp \
+    src/modules/normalmodule.cpp \
+    src/modules/support.cpp \
+    src/modules/videowidget.cpp \
+    src/modules/wmmodemodule.cpp \
+    src/widgets/basewidget.cpp \
+    src/widgets/borderwidget.cpp \
+    src/widgets/bottomnavigation.cpp \
+    src/widgets/navigationbutton.cpp \
+    src/widgets/nextbutton.cpp
 
 RESOURCES += \
     dde-introduction.qrc
