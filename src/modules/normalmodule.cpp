@@ -42,6 +42,12 @@ NormalModule::NormalModule(QWidget *parent)
 
     m_rightContentLayout->setSpacing(0);
     m_rightContentLayout->setMargin(0);
+    m_rightContentLayout->setContentsMargins(0, 0, 0, 0);
+
+    QLabel *logo = new QLabel(this);
+    logo->setPixmap(QIcon::fromTheme("dde-introduction").pixmap(24, 24));
+    logo->move(rect().topLeft());
+    logo->show();
 
     QWidget *content = new QWidget;
     content->setLayout(m_rightContentLayout);
@@ -57,7 +63,7 @@ NormalModule::NormalModule(QWidget *parent)
                               "#LeftWidget > QPushButton {"
                               "margin: 0;"
                               "text-align: left;"
-                              "padding: 5px 15px;"
+                              "padding: 10px 15px;"
                               "border: none;"
                               "}"
                               ""
@@ -77,6 +83,8 @@ NormalModule::NormalModule(QWidget *parent)
     BottomNavigation *bottomNavigation = new BottomNavigation;
 
     QLabel *titleLabel = new QLabel;
+    titleLabel->setStyleSheet("font-size: 20px;"
+                              "font-weight: medium;");
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->setSpacing(0);

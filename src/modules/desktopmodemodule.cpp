@@ -39,11 +39,10 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
         onDesktopTypeChanged(m_model->desktopMode());
     });
 
-    m_layout->setContentsMargins(10, 8, 10, 0);
+    m_layout->setContentsMargins(20, 8, 20, 0);
 
     m_layout->addStretch();
     m_layout->addWidget(m_efficientWidget);
-    m_layout->addSpacing(20);
     m_layout->addWidget(m_fashionWidget);
     m_layout->addStretch();
 

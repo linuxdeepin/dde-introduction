@@ -28,9 +28,10 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
 
-    m_describeLbl->setFixedWidth(510);
+    m_describeLbl->setFixedWidth(460);
     m_describeLbl->setWordWrap(true);
     m_describeLbl->setAlignment(Qt::AlignCenter);
+    m_describeLbl->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
     m_layout->addSpacing(20);
     m_layout->addWidget(m_titleLbl, 0, Qt::AlignHCenter);
@@ -38,9 +39,16 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_layout->addWidget(content, 0, Qt::AlignCenter);
     m_layout->addStretch();
     m_layout->addWidget(m_describeLbl, 0, Qt::AlignHCenter);
-    m_layout->addSpacing(30);
+    m_layout->addSpacing(10);
 
     setLayout(m_layout);
+
+    m_titleLbl->setStyleSheet("font-size: 20px;"
+                              "font-weight: medium;");
+
+    m_describeLbl->setStyleSheet("color: #848484;"
+                                 "font-size: 11px;"
+                                 "font-weight: 500;");
 }
 
 void BaseModuleWidget::setTitle(const QString &title)
@@ -51,4 +59,5 @@ void BaseModuleWidget::setTitle(const QString &title)
 void BaseModuleWidget::setDescribe(const QString &describe)
 {
     m_describeLbl->setText(describe);
+    m_describeLbl->adjustSize();
 }

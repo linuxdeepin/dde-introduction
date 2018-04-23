@@ -144,11 +144,13 @@ void MainWindow::initUI()
     m_nextBtn->setMode(NextButton::Transparent);
 #endif
 
+    m_nextBtn->setFixedHeight(24);
+
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
-    m_previousBtn->move(30, 405);
-    m_nextBtn->move(590, 405);
+    m_previousBtn->move(20, height() - m_previousBtn->height() - 20);
+    m_nextBtn->move(width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20);
 
     m_currentAni->setPropertyName("pos");
     m_lastAni->setPropertyName("pos");

@@ -12,7 +12,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout;
-    layout->setContentsMargins(20, 10, 10, 10);
+    layout->setContentsMargins(20, 10, 10, 14);
     layout->setSpacing(10);
 
     DImageButton *sinaBtn = new DImageButton(":/resources/weibo.svg",
@@ -76,6 +76,10 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     layout->addWidget(mail, 0, Qt::AlignCenter);
 
     setLayout(layout);
+
+    setStyleSheet("QLabel {"
+                  "color: #0082FA;"
+                  "}");
 }
 
 void BottomNavigation::onButtonClicked()

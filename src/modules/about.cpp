@@ -19,18 +19,17 @@ About::About(QWidget *parent)
 
     label->setMargin(10);
 
-    const QString &text = QString("<body>"
-                                  "<b>%1</b>"
-                                  "<br>"
-                                  "%2"
-                                  "<br><b>%3</b>"
+    const QString &text = QString("<body style=\"line-height: 18px;font-size:12px;font-style: normal;\">"
+                                  "<div style=\"font-style: medium;font-size: 16px;\">%1</div>"
+                                  "<br>%2<br>"
+                                  "<br><div style=\"font-style: medium;font-size: 16px;\">%3</div>"
                                   "<li>%4</li>"
                                   "%5"
                                   "<li>%6</li>"
                                   "%7"
                                   "<li>%8</li>"
                                   "%9"
-                                  "<br><b>%10</b>"
+                                  "<br><div style=\"font-style: medium;font-size: 16px;\">%10</div>"
                                   "<br>%11</body>")
             .arg(tr("About us"))
             .arg(tr("deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment."))

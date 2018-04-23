@@ -75,8 +75,9 @@ void VideoWidget::updateBigIcon()
 
 void VideoWidget::updateSmallIcon()
 {
-    setFixedSize(560, 360);
-    m_video->setFixedSize(560, 360);
+    const QSize size(548, 342);
+    setFixedSize(size);
+    m_video->setFixedSize(size);
 
     updateClip();
 }

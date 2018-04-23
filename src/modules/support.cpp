@@ -19,22 +19,22 @@ Support::Support(QWidget *parent)
 
     label->setMargin(10);
 
-    const QString &text = QString("<body>"
-                                  "<b>%1</b>"
-                                  "<br>%2"
-                                  "<br>%3"
-                                  "<br>%4"
-                                  "<br>%5"
+    const QString &text = QString("<body style=\"line-height: 18px;font-size:12px;font-style: normal;\">"
+                                  "<div style=\"font-style: medium;font-size: 16px;\">%1</div><br>"
+                                  "<br>%2<br>"
+                                  "<br>%3<br>"
+                                  "<br>%4<br>"
+                                  "<br>%5<br>"
                                   "<br>%6"
-                                  "<br><b>%7</b>"
-                                  "<br>%8"
-                                  "<br>%9"
+                                  "<br><div style=\"font-style: medium;font-size: 16px;\">%7</div><br>"
+                                  "<br>%8<br>"
+                                  "<br>%9<br>"
                                   "<br>%10"
-                                  "<br><b>%11</b>"
-                                  "<br>%12"
-                                  "<br>%13"
-                                  "<br>%14"
-                                  "<br>%15"
+                                  "<br><div style=\"font-style: medium;font-size: 16px;\">%11</div><br>"
+                                  "<br>%12<br>"
+                                  "<br>%13<br>"
+                                  "<br>%14<br>"
+                                  "<br>%15<br>"
                                   "<br>%16</body>")
             .arg(tr("Internationalization"))
             .arg(tr("deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world to experience the Linux distribution from China, let the system widely spread all over the world and enlarge its global impact, we hope that more and more people from the Linux community can join to help the translation work to let our open source work benefit the world!"))

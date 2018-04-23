@@ -36,8 +36,8 @@ IconModule::IconModule(QWidget *parent)
         currentIconChanged(m_model->currentIcon());
     });
 
-    m_layout->setSpacing(20);
-    m_layout->setContentsMargins(15, 8, 10, 0);
+    m_layout->setSpacing(0);
+    m_layout->setContentsMargins(20, 8, 10, 0);
 
     setLayout(m_layout);
 
@@ -103,6 +103,7 @@ void IconModule::updateBigIcon()
     while (map.hasNext()) {
         map.next();
         QPixmap pixmap(map.key().Pixmap);
+        pixmap = pixmap.scaled(QSize(320, 70) * devicePixelRatioF(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
     }
 }
@@ -116,7 +117,7 @@ void IconModule::updateSmallIcon()
     while (map.hasNext()) {
         map.next();
         QPixmap pixmap(map.key().Pixmap);
-        pixmap = pixmap.scaled(240, 52, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(QSize(240, 52) * devicePixelRatioF(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
     }
 }
