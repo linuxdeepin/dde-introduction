@@ -38,7 +38,7 @@ NormalModule::NormalModule(QWidget *parent)
     layout->setSpacing(0);
 
     m_leftNavigationLayout->setMargin(0);
-    m_leftNavigationLayout->setSpacing(0);
+    m_leftNavigationLayout->setSpacing(10);
 
     m_rightContentLayout->setSpacing(0);
     m_rightContentLayout->setMargin(0);
@@ -63,7 +63,7 @@ NormalModule::NormalModule(QWidget *parent)
                               "#LeftWidget > QPushButton {"
                               "margin: 0;"
                               "text-align: left;"
-                              "padding: 10px 15px;"
+                              "padding: 0px 15px;"
                               "border: none;"
                               "}"
                               ""
@@ -132,13 +132,6 @@ NormalModule::NormalModule(QWidget *parent)
 
     titleLabel->setText(m_titleMap[videoBtn]);
 
-    videoBtn->setFixedWidth(120);
-    desktopBtn->setFixedWidth(120);
-    iconBtn->setFixedWidth(120);
-    wmBtn->setFixedWidth(120);
-    supportBtn->setFixedWidth(120);
-    aboutBtn->setFixedWidth(120);
-
     m_buttonGrp->addButton(videoBtn);
     m_buttonGrp->addButton(desktopBtn);
     m_buttonGrp->addButton(iconBtn);
@@ -149,12 +142,12 @@ NormalModule::NormalModule(QWidget *parent)
     m_buttonGrp->setExclusive(true);
 
     m_leftNavigationLayout->addStretch();
-    m_leftNavigationLayout->addWidget(videoBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
-    m_leftNavigationLayout->addWidget(desktopBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
-    m_leftNavigationLayout->addWidget(iconBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
-    m_leftNavigationLayout->addWidget(wmBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
-    m_leftNavigationLayout->addWidget(supportBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
-    m_leftNavigationLayout->addWidget(aboutBtn, 0, Qt::AlignLeft | Qt::AlignVCenter);
+
+    for (QWidget * w : m_buttonGrp->buttons()) {
+        w->setFixedSize(120, 30);
+        m_leftNavigationLayout->addWidget(w, 0, Qt::AlignLeft | Qt::AlignVCenter);
+    }
+
     m_leftNavigationLayout->addStretch();
 
     connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [=] (QAbstractButton *btn) {
