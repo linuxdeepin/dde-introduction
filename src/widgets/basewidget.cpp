@@ -47,7 +47,7 @@ void BaseWidget::setPixmap(const QPixmap &pixmap)
     m_borderWidget->setFixedSize(pixmap.size() / devicePixelRatioF() + QSize(10, 10));
     m_borderWidget->setPixmap(pixmap);
 
-    adjustSize();
+    setFixedWidth(m_borderWidget->width());
 }
 
 void BaseWidget::setTitle(const QString &title)
