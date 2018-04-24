@@ -57,11 +57,13 @@ void MainWindow::previous()
 
     updateModule(--m_index);
 
-    m_currentAni->setDuration(500);
+    m_currentAni->setDuration(300);
+    m_lastAni->setEasingCurve(QEasingCurve::InOutCubic);
     m_currentAni->setStartValue(QPoint(m_last->x() - m_last->width(), 0));
     m_currentAni->setEndValue(m_last->rect().topLeft());
 
-    m_lastAni->setDuration(500);
+    m_lastAni->setDuration(300);
+    m_currentAni->setEasingCurve(QEasingCurve::InOutCubic);
     m_lastAni->setStartValue(m_last->rect().topLeft());
     m_lastAni->setEndValue(m_last->rect().topRight());
 
@@ -78,11 +80,13 @@ void MainWindow::next()
     // create new QWidget, change pointer
     updateModule(++m_index);
 
-    m_lastAni->setDuration(500);
+    m_lastAni->setDuration(300);
+    m_lastAni->setEasingCurve(QEasingCurve::InOutCubic);
     m_lastAni->setStartValue(m_last->rect().topLeft());
     m_lastAni->setEndValue(QPoint(m_last->x() - m_last->width(), 0));
 
-    m_currentAni->setDuration(500);
+    m_currentAni->setDuration(300);
+    m_currentAni->setEasingCurve(QEasingCurve::InOutCubic);
     m_currentAni->setStartValue(QPoint(m_last->rect().topRight()));
     m_currentAni->setEndValue(QPoint(0, 0));
 

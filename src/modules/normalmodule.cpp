@@ -46,7 +46,7 @@ NormalModule::NormalModule(QWidget *parent)
 
     QLabel *logo = new QLabel(this);
     logo->setPixmap(QIcon::fromTheme("dde-introduction").pixmap(24, 24));
-    logo->move(rect().topLeft());
+    logo->move(rect().topLeft() + QPoint(12, 8));
     logo->show();
 
     QWidget *content = new QWidget;

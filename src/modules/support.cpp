@@ -17,25 +17,27 @@ Support::Support(QWidget *parent)
     setStyleSheet("background-color:transparent;");
     setWidget(label);
 
-    label->setMargin(10);
+    label->setMargin(20);
 
     const QString &text = QString("<body style=\"line-height: 18px;font-size:12px;font-style: normal;\">"
-                                  "<div style=\"font-style: medium;font-size: 16px;\">%1</div><br>"
-                                  "<br>%2<br>"
-                                  "<br>%3<br>"
-                                  "<br>%4<br>"
-                                  "<br>%5<br>"
+                                  "<div style=\"font-style: medium;font-size: 16px;\">%1</div>"
+                                  "<br>%2"
+                                  "<br>%3"
+                                  "<br>%4"
+                                  "<br>%5"
                                   "<br>%6"
-                                  "<br><div style=\"font-style: medium;font-size: 16px;\">%7</div><br>"
-                                  "<br>%8<br>"
-                                  "<br>%9<br>"
+                                  "<br><div style=\"font-style: medium;font-size: 16px;\">%7</div>"
+                                  "<br>%8"
+                                  "<br>%9"
                                   "<br>%10"
-                                  "<br><div style=\"font-style: medium;font-size: 16px;\">%11</div><br>"
-                                  "<br>%12<br>"
-                                  "<br>%13<br>"
-                                  "<br>%14<br>"
-                                  "<br>%15<br>"
-                                  "<br>%16</body>")
+                                  "<br><div style=\"font-style: medium;font-size: 16px;\">%11</div>"
+                                  "<br>%12"
+                                  "<ul>"
+                                  "<li>%13</li>"
+                                  "<li>%14</li>"
+                                  "<li>%15</li>"
+                                  "<li>%16</li>"
+                                  "</ul></body>")
             .arg(tr("Internationalization"))
             .arg(tr("deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world to experience the Linux distribution from China, let the system widely spread all over the world and enlarge its global impact, we hope that more and more people from the Linux community can join to help the translation work to let our open source work benefit the world!"))
             .arg(tr("The i18n translation work is mainly about:"))

@@ -12,7 +12,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout;
-    layout->setContentsMargins(20, 10, 10, 14);
+    layout->setContentsMargins(20, 10, 20, 14);
     layout->setSpacing(10);
 
     DImageButton *sinaBtn = new DImageButton(":/resources/weibo.svg",

@@ -17,17 +17,18 @@ About::About(QWidget *parent)
     setStyleSheet("background-color:transparent;");
     setWidget(label);
 
-    label->setMargin(10);
+    label->setMargin(20);
 
     const QString &text = QString("<body style=\"line-height: 18px;font-size:12px;font-style: normal;\">"
                                   "<div style=\"font-style: medium;font-size: 16px;\">%1</div>"
-                                  "<br>%2<br>"
+                                  "<br>%2"
                                   "<br><div style=\"font-style: medium;font-size: 16px;\">%3</div>"
-                                  "<li>%4</li>"
+                                  "<ul><li>%4</li></ul>"
                                   "%5"
-                                  "<li>%6</li>"
+                                  "<ul><li>%5</li></ul>"
                                   "%7"
                                   "<li>%8</li>"
+                                  "</ul>"
                                   "%9"
                                   "<br><div style=\"font-style: medium;font-size: 16px;\">%10</div>"
                                   "<br>%11</body>")
