@@ -63,8 +63,8 @@ public:
     static Model* Instance();
 
     enum DesktopMode {
-        EfficientMode = 0,
-        FashionMode = 1
+        EfficientMode = 1,
+        FashionMode = 0
     };
 
     enum WMType {

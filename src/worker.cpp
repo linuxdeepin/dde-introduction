@@ -38,7 +38,7 @@ void Worker::setDesktopMode(Model::DesktopMode mode)
              << "org.freedesktop.DBus.Properties.Set"
              << "string:com.deepin.dde.daemon.Launcher"
              << "string:Fullscreen"
-             << "variant:boolean:true";
+             << "variant:boolean:false";
         break;
     case Model::FashionMode:
         args << "--print-reply"
@@ -47,7 +47,7 @@ void Worker::setDesktopMode(Model::DesktopMode mode)
              << "org.freedesktop.DBus.Properties.Set"
              << "string:com.deepin.dde.daemon.Launcher"
              << "string:Fullscreen"
-             << "variant:boolean:false";
+             << "variant:boolean:true";
         break;
     default:
         break;
