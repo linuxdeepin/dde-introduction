@@ -22,8 +22,32 @@
 
 IconModule::IconModule(QWidget *parent)
     : ModuleInterface(parent)
-    , m_layout(new DFlowLayout(this))
+    , m_scroll(new QScrollArea)
+    , m_layout(new DFlowLayout)
 {
+    QHBoxLayout *layout = new QHBoxLayout;
+    layout->setMargin(0);
+    layout->setSpacing(0);
+    layout->addWidget(m_scroll, 0, Qt::AlignCenter);
+    setLayout(layout);
+
+    m_scrollWidget = new QWidget;
+    m_scrollWidget->setLayout(m_layout);
+
+    m_layout->setSpacing(0);
+    m_layout->setMargin(0);
+    m_layout->setContentsMargins(15, 8, 20, -10);
+
+    m_selectBtn->setParent(m_scrollWidget);
+
+    m_scroll->setWidget(m_scrollWidget);
+    m_scroll->setWidgetResizable(true);
+    m_scroll->setFocusPolicy(Qt::NoFocus);
+    m_scroll->setFrameStyle(QFrame::NoFrame);
+    m_scroll->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
+    m_scroll->setContentsMargins(0, 0, 0, 0);
+    m_scroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
     connect(m_model, &Model::iconAdded, this, &IconModule::addIcon);
     connect(m_model, &Model::iconRemoved, this, &IconModule::removeIcon);
     connect(m_model, &Model::iconChanged, this, &IconModule::currentIconChanged);
@@ -35,11 +59,6 @@ IconModule::IconModule(QWidget *parent)
     QTimer::singleShot(100, this, [=] {
         currentIconChanged(m_model->currentIcon());
     });
-
-    m_layout->setSpacing(0);
-    m_layout->setContentsMargins(20, 8, 10, 0);
-
-    setLayout(m_layout);
 
     updateSmallIcon();
 }
@@ -96,7 +115,10 @@ void IconModule::currentIconChanged(const IconStruct &icon)
 
 void IconModule::updateBigIcon()
 {
-    setFixedWidth(700);
+    const QSize size(700, 330);
+    setFixedSize(size);
+    m_scroll->setFixedSize(size);
+    m_scrollWidget->setFixedWidth(size.width());
 
     QMapIterator<IconStruct, BaseWidget*>map(m_iconList);
 
@@ -110,14 +132,17 @@ void IconModule::updateBigIcon()
 
 void IconModule::updateSmallIcon()
 {
-    setFixedWidth(580);
+    const QSize size(580, 330);
+    setFixedSize(size);
+    m_scroll->setFixedSize(size);
+    m_scrollWidget->setFixedWidth(size.width());
 
     QMapIterator<IconStruct, BaseWidget*>map(m_iconList);
 
     while (map.hasNext()) {
         map.next();
         QPixmap pixmap(map.key().Pixmap);
-        pixmap = pixmap.scaled(QSize(240, 52) * devicePixelRatioF(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(QSize(260, 52) * devicePixelRatioF(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
     }
 }

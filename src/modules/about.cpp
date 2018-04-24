@@ -12,9 +12,8 @@ About::About(QWidget *parent)
     setFrameStyle(QFrame::NoFrame);
     setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
     setContentsMargins(0, 0, 0, 0);
-    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setStyleSheet("background-color:transparent;");
+
     setWidget(label);
 
     label->setMargin(20);
@@ -25,10 +24,9 @@ About::About(QWidget *parent)
                                   "<br><div style=\"font-style: medium;font-size: 16px;\">%3</div>"
                                   "<ul><li>%4</li></ul>"
                                   "%5"
-                                  "<ul><li>%5</li></ul>"
+                                  "<ul><li>%6</li></ul>"
                                   "%7"
-                                  "<li>%8</li>"
-                                  "</ul>"
+                                  "<ul><li>%8</li></ul>"
                                   "%9"
                                   "<br><div style=\"font-style: medium;font-size: 16px;\">%10</div>"
                                   "<br>%11</body>")

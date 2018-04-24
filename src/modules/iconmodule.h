@@ -27,6 +27,7 @@
 #include <QScrollArea>
 #include <QGridLayout>
 #include <dflowlayout.h>
+#include <QScrollArea>
 
 DWIDGET_USE_NAMESPACE
 
@@ -48,6 +49,8 @@ private slots:
     void currentIconChanged(const IconStruct &icon);
 
 private:
+    QScrollArea *m_scroll;
+    QWidget *m_scrollWidget;
     DFlowLayout* m_layout;
     QMap<IconStruct, BaseWidget*> m_iconList;
 };

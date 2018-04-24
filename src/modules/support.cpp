@@ -12,9 +12,8 @@ Support::Support(QWidget *parent)
     setFrameStyle(QFrame::NoFrame);
     setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
     setContentsMargins(0, 0, 0, 0);
-    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setStyleSheet("background-color:transparent;");
+
     setWidget(label);
 
     label->setMargin(20);

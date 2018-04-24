@@ -28,7 +28,7 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
 
-    m_describeLbl->setFixedWidth(460);
+    m_describeLbl->setFixedSize(460, 40);
     m_describeLbl->setWordWrap(true);
     m_describeLbl->setAlignment(Qt::AlignCenter);
     m_describeLbl->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
@@ -39,7 +39,7 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_layout->addWidget(content, 0, Qt::AlignCenter);
     m_layout->addStretch();
     m_layout->addWidget(m_describeLbl, 0, Qt::AlignHCenter);
-    m_layout->addSpacing(10);
+    m_layout->addSpacing(15);
 
     setLayout(m_layout);
 
