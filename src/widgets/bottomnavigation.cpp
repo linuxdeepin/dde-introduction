@@ -5,6 +5,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QEvent>
+#include <QProcess>
 
 DWIDGET_USE_NAMESPACE
 
@@ -60,8 +61,11 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     m_buttons[community] = "https://bbs.deepin.org/";
     m_buttons[feedback] = "http://feedback.deepin.org/";
     m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
-    m_buttons[help] = "";
-    m_buttons[mail] = "";
+    m_buttons[mail] = "mailto:support@deepin.com";
+
+    connect(help, &DImageButton::clicked, this, [=] {
+        QProcess::startDetached("/usr/bin/dman");
+    });
 
     layout->addWidget(sinaBtn, 0, Qt::AlignCenter);
     layout->addWidget(twitterBtn, 0, Qt::AlignCenter);
