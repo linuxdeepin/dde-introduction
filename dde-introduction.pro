@@ -67,4 +67,7 @@ CONFIG(release, debug|release) {
 qm_files.path = $$PREFIX/share/dde-introduction/translations/
 qm_files.files = translations/*.qm
 
-INSTALLS += desktop target
+icon.path = $$PREFIX/share/icons/hicolor/scalable/apps
+icon.files = resources/dde-introduction.svg
+
+INSTALLS += desktop target icon
