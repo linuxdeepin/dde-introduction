@@ -61,8 +61,8 @@ VideoWidget::VideoWidget(QWidget *parent)
 
     updateControlButton();
 
-    connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked);
-    connect(m_player, &QMediaPlayer::stateChanged, this, &VideoWidget::updateControlButton);
+    connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
+    connect(m_player, &QMediaPlayer::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
 }
 
 void VideoWidget::updateBigIcon()
@@ -96,6 +96,7 @@ void VideoWidget::updateControlButton()
         m_control->setPressPic(":/resources/play_press.svg");
         break;
     case QMediaPlayer::StoppedState: {
+        m_player->play();
         m_player->setPosition(1);
         m_player->pause();
     }
