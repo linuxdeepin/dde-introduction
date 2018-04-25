@@ -95,6 +95,11 @@ void VideoWidget::updateControlButton()
         m_control->setHoverPic(":/resources/play_hover.svg");
         m_control->setPressPic(":/resources/play_press.svg");
         break;
+    case QMediaPlayer::StoppedState: {
+        m_player->setPosition(1);
+        m_player->pause();
+    }
+        break;
     default:
         break;
     }
@@ -127,7 +132,7 @@ void VideoWidget::leaveEvent(QEvent *e)
 {
     ModuleInterface::leaveEvent(e);
 
-    m_control->hide();
+    m_control->setVisible(m_player->state() == QMediaPlayer::PausedState);
 }
 
 void VideoWidget::resizeEvent(QResizeEvent *e)
