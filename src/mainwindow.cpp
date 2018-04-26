@@ -193,8 +193,18 @@ void MainWindow::updateModule(const int index)
         m_current = initDesktopModeModule();
         break;
     case 3:
-        m_current = initWMModeModule();
-        break;
+    {
+        QFile file(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + QDir::separator() + "deepin/deepin-wm-switcher/config.json");
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QJsonDocument doc = std::move(QJsonDocument::fromJson(file.readAll()));
+            QJsonObject obj = std::move(doc.object());
+            if (obj["allow_switch"].toBool()) {
+                m_current = initWMModeModule();
+                break;
+            }
+        }
+        ++m_index;
+    }
     case 4:
         m_current = initIconModule();
         break;

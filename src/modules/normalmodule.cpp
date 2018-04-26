@@ -102,45 +102,62 @@ NormalModule::NormalModule(QWidget *parent)
     setFixedSize(700, 450);
     content->setFixedWidth(580);
 
+    bool allow_switch_wm = false;
+    QFile file(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + QDir::separator() + "deepin/deepin-wm-switcher/config.json");
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QJsonDocument doc = std::move(QJsonDocument::fromJson(file.readAll()));
+        QJsonObject obj = std::move(doc.object());
+        allow_switch_wm = std::move(obj["allow_switch"].toBool());
+    }
+
+    // video button
     NavigationButton * videoBtn = new NavigationButton;
-    NavigationButton * desktopBtn = new NavigationButton;
-    NavigationButton * iconBtn = new NavigationButton;
-    NavigationButton * wmBtn = new NavigationButton;
-    NavigationButton * supportBtn = new NavigationButton;
-    NavigationButton * aboutBtn = new NavigationButton;
-
     m_buttonMap[videoBtn]   = 1;
-    m_buttonMap[desktopBtn] = 2;
-    m_buttonMap[iconBtn]    = 3;
-    m_buttonMap[wmBtn]      = 4;
-    m_buttonMap[supportBtn] = 5;
-    m_buttonMap[aboutBtn]   = 6;
-
-
     videoBtn->setText(tr("Introduction"));
+    m_titleMap[videoBtn] = tr("Welcome");
+    m_buttonGrp->addButton(videoBtn);
+
+    // desktop button
+    NavigationButton * desktopBtn = new NavigationButton;
+    m_buttonMap[desktopBtn] = 2;
     desktopBtn->setText(tr("Desktop mode"));
+    m_titleMap[desktopBtn] = tr("Please select desktop mode");
+    m_buttonGrp->addButton(desktopBtn);
+
+    // icon button
+    NavigationButton * iconBtn = new NavigationButton;
+    m_buttonMap[iconBtn]    = 3;
     iconBtn->setText(tr("Icon theme"));
-    wmBtn->setText(tr("Window effect"));
+    m_titleMap[iconBtn] = tr("Please select icon theme");
+    m_buttonGrp->addButton(iconBtn);
+
+    // wm button
+    NavigationButton * wmBtn = nullptr;
+    if (allow_switch_wm) {
+        wmBtn = new NavigationButton;
+        m_buttonMap[wmBtn]      = 4;
+        wmBtn->setText(tr("Window effect"));
+        m_titleMap[wmBtn] = tr("Please select to enable window effect or not");
+        m_buttonGrp->addButton(wmBtn);
+    }
+
+    // support button
+    NavigationButton * supportBtn = new NavigationButton;
+    m_buttonMap[supportBtn] = 5;
     supportBtn->setText(tr("Support us"));
+    m_titleMap[supportBtn] = tr("Support us");
+    m_buttonGrp->addButton(supportBtn);
+
+    // about button
+    NavigationButton * aboutBtn = new NavigationButton;
+    m_buttonMap[aboutBtn]   = 6;
     aboutBtn->setText(tr("About us"));
+    m_titleMap[aboutBtn] = tr("About us");
+    m_buttonGrp->addButton(aboutBtn);
 
     videoBtn->setChecked(true);
 
-    m_titleMap[videoBtn] = tr("Welcome");
-    m_titleMap[desktopBtn] = tr("Please select desktop mode");
-    m_titleMap[iconBtn] = tr("Please select icon theme");
-    m_titleMap[wmBtn] = tr("Please select to enable window effect or not");
-    m_titleMap[supportBtn] = tr("Support us");
-    m_titleMap[aboutBtn] = tr("About us");
-
     titleLabel->setText(m_titleMap[videoBtn]);
-
-    m_buttonGrp->addButton(videoBtn);
-    m_buttonGrp->addButton(desktopBtn);
-    m_buttonGrp->addButton(iconBtn);
-    m_buttonGrp->addButton(wmBtn);
-    m_buttonGrp->addButton(supportBtn);
-    m_buttonGrp->addButton(aboutBtn);
 
     m_buttonGrp->setExclusive(true);
 
