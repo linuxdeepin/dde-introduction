@@ -25,6 +25,7 @@
 #include <QMediaPlayer>
 #include <dimagebutton.h>
 #include <DClipEffectWidget>
+#include <QPropertyAnimation>
 
 DWIDGET_USE_NAMESPACE
 
@@ -51,6 +52,7 @@ private:
     QMediaPlayer* m_player;
     DImageButton* m_control;
     DClipEffectWidget *m_clip;
+    QPropertyAnimation *m_btnAni;
 };
 
 #endif

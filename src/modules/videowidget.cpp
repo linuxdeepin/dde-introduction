@@ -31,8 +31,11 @@ VideoWidget::VideoWidget(QWidget *parent)
     , m_player(new QMediaPlayer(this))
     , m_control(new DImageButton(this))
     , m_clip(new DClipEffectWidget(m_video))
+    , m_btnAni(new QPropertyAnimation(m_control, "pos", this))
 {
     m_selectBtn->hide();
+
+    m_btnAni->setDuration(500);
 
     setObjectName("VideoWidget");
 
@@ -47,7 +50,6 @@ VideoWidget::VideoWidget(QWidget *parent)
     updateBigIcon();
 
     m_control->setFixedSize(48, 48);
-    m_control->hide();
     m_control->raise();
 
     m_player->setMedia(QUrl("http://10.0.13.109/dde-%E6%AC%A2%E8%BF%8E%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4"));
@@ -56,7 +58,7 @@ VideoWidget::VideoWidget(QWidget *parent)
     m_video->setAspectRatioMode(Qt::KeepAspectRatioByExpanding);
     m_video->setSourceVideoPixelRatio(devicePixelRatioF());
 
-    m_player->play();
+    m_player->setPosition(1);
     m_player->pause();
 
     updateControlButton();
@@ -84,16 +86,29 @@ void VideoWidget::updateSmallIcon()
 
 void VideoWidget::updateControlButton()
 {
+    const QPoint &p = rect().center() - m_control->rect().center();
     switch (m_player->state()) {
-    case QMediaPlayer::PlayingState:
+    case QMediaPlayer::PlayingState: {
         m_control->setNormalPic(":/resources/pause.svg");
         m_control->setHoverPic(":/resources/pause_hover.svg");
         m_control->setPressPic(":/resources/pause_press.svg");
+        m_btnAni->stop();
+        m_btnAni->setStartValue(p);
+        m_btnAni->setEndValue(QPoint(p.x(), height() - m_control->height() - 20));
+        m_btnAni->start();
+    }
         break;
-    case QMediaPlayer::PausedState:
+    case QMediaPlayer::PausedState: {
         m_control->setNormalPic(":/resources/play.svg");
         m_control->setHoverPic(":/resources/play_hover.svg");
         m_control->setPressPic(":/resources/play_press.svg");
+        if (m_btnAni->startValue().toPoint() == p) {
+            m_btnAni->stop();
+            m_btnAni->setStartValue(m_control->pos());
+            m_btnAni->setEndValue(p);
+            m_btnAni->start();
+        }
+    }
         break;
     case QMediaPlayer::StoppedState: {
         m_player->play();
@@ -140,8 +155,7 @@ void VideoWidget::resizeEvent(QResizeEvent *e)
 {
     ModuleInterface::resizeEvent(e);
 
-    m_control->move(QPoint((rect().width() - m_control->width()) / 2,
-                           rect().height() / 2));
+    m_control->move(rect().center() - m_control->rect().center());
 }
 
 void VideoWidget::updateClip()
