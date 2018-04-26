@@ -45,7 +45,8 @@ NormalModule::NormalModule(QWidget *parent)
     m_rightContentLayout->setContentsMargins(0, 0, 0, 0);
 
     QLabel *logo = new QLabel(this);
-    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction").pixmap(QSize(24, 24) * devicePixelRatioF()));
+    QIcon::setThemeName("hicolor");
+    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(12, 8));

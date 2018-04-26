@@ -36,5 +36,6 @@
         <file>resources/Twitter.svg</file>
         <file>resources/weibo.svg</file>
         <file>resources/Facebook.svg</file>
+        <file>resources/dde-introduction.svg</file>
     </qresource>
 </RCC>
