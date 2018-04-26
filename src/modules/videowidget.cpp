@@ -35,7 +35,8 @@ VideoWidget::VideoWidget(QWidget *parent)
 {
     m_selectBtn->hide();
 
-    m_btnAni->setDuration(500);
+    m_btnAni->setDuration(250);
+    m_btnAni->setEasingCurve(QEasingCurve::InOutCubic);
 
     setObjectName("VideoWidget");
 
