@@ -32,7 +32,14 @@ IconModule::IconModule(QWidget *parent)
     setLayout(layout);
 
     m_scrollWidget = new QWidget;
-    m_scrollWidget->setLayout(m_layout);
+    QVBoxLayout *widgetLayout = new QVBoxLayout;
+    m_scrollWidget->setLayout(widgetLayout);
+
+    widgetLayout->setMargin(0);
+    widgetLayout->setSpacing(0);
+    widgetLayout->addStretch();
+    widgetLayout->addLayout(m_layout);
+    widgetLayout->addStretch();
 
     m_layout->setSpacing(0);
     m_layout->setMargin(0);
