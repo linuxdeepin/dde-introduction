@@ -48,6 +48,7 @@ private slots:
     void onDisplayModeChanged(int mode);
     void onIconRefreshed(const QString &name);
     void onIconListChanged(const QString & value);
+    void onIconPixmapFinished(QDBusPendingCallWatcher *w);
 
 private:
     explicit Worker(QObject *parent = nullptr);

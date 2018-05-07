@@ -90,7 +90,7 @@ void IconModule::addIcon(const IconStruct &icon)
 
      m_iconList[icon] = base;
 
-     m_layout->addWidget(base);
+     m_layout->insertWidget(m_model->iconList().indexOf(icon), base);
 }
 
 void IconModule::removeIcon(const IconStruct &icon)

@@ -18,6 +18,13 @@
 
 #include "model.h"
 
+#include <QCollator>
+
+bool iconSort(const IconStruct &icon1, const IconStruct &icon2) {
+    QCollator qc;
+    return qc.compare(icon1.Id, icon2.Id) < 0;
+}
+
 Model *Model::Instance()
 {
     static Model * instance = new Model;
@@ -43,6 +50,8 @@ void Model::addIcon(const IconStruct &icon)
 
     m_iconList << icon;
 
+    std::sort(m_iconList.begin(), m_iconList.end(), iconSort);
+
     emit iconAdded(icon);
 
     if (icon.Id == m_currentIcon) {
@@ -52,7 +61,7 @@ void Model::addIcon(const IconStruct &icon)
 
 void Model::removeIcon(const IconStruct &icon)
 {
-    Q_ASSERT(!m_iconList.contains(icon));
+    Q_ASSERT(m_iconList.contains(icon));
 
     m_iconList.removeOne(icon);
 
