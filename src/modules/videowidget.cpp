@@ -24,6 +24,7 @@
 #include <QResizeEvent>
 #include <QBitmap>
 #include <QPainter>
+#include <QGraphicsOpacityEffect>
 
 VideoWidget::VideoWidget(QWidget *parent)
     : ModuleInterface(parent)
@@ -32,11 +33,35 @@ VideoWidget::VideoWidget(QWidget *parent)
     , m_control(new DImageButton(this))
     , m_clip(new DClipEffectWidget(m_video))
     , m_btnAni(new QPropertyAnimation(m_control, "pos", this))
+    , m_hideAni(new QPropertyAnimation(this))
+    , m_leaveTimer(new QTimer(this))
 {
     m_selectBtn->hide();
 
+    m_leaveTimer->setSingleShot(true);
+    m_leaveTimer->setInterval(1000);
+
+    m_hideEffect = new QGraphicsOpacityEffect(m_control);
+    m_hideEffect->setOpacity(1);
+    m_control->setGraphicsEffect(m_hideEffect);
+
     m_btnAni->setDuration(250);
     m_btnAni->setEasingCurve(QEasingCurve::InOutCubic);
+
+    m_hideAni->setDuration(250);
+    m_hideAni->setEasingCurve(QEasingCurve::InOutCubic);
+    m_hideAni->setPropertyName("opacity");
+    m_hideAni->setTargetObject(m_hideEffect);
+    m_hideAni->setStartValue(1.0f);
+    m_hideAni->setEndValue(0.0f);
+
+    connect(m_hideAni, &QPropertyAnimation::finished, this, [=] {
+        m_control->hide();
+    });
+
+    connect(m_leaveTimer, &QTimer::timeout, this, [=] {
+        m_hideAni->start();
+    });
 
     setObjectName("VideoWidget");
 
@@ -142,14 +167,18 @@ void VideoWidget::enterEvent(QEvent *e)
 {
     ModuleInterface::enterEvent(e);
 
+    m_hideEffect->setOpacity(1);
     m_control->show();
+    m_leaveTimer->stop();
 }
 
 void VideoWidget::leaveEvent(QEvent *e)
 {
     ModuleInterface::leaveEvent(e);
 
-    m_control->setVisible(m_player->state() == QMediaPlayer::PausedState);
+    if (m_player->state() != QMediaPlayer::PausedState) {
+        m_leaveTimer->start();
+    }
 }
 
 void VideoWidget::resizeEvent(QResizeEvent *e)

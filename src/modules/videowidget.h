@@ -29,6 +29,7 @@
 
 DWIDGET_USE_NAMESPACE
 
+class QGraphicsOpacityEffect;
 class VideoWidget : public ModuleInterface {
     Q_OBJECT
 public:
@@ -53,6 +54,9 @@ private:
     DImageButton* m_control;
     DClipEffectWidget *m_clip;
     QPropertyAnimation *m_btnAni;
+    QPropertyAnimation *m_hideAni;
+    QGraphicsOpacityEffect *m_hideEffect;
+    QTimer *m_leaveTimer;
 };
 
 #endif
