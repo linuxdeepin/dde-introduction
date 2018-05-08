@@ -90,7 +90,7 @@ void VideoWidget::updateControlButton()
     const QPoint &p = rect().center() - m_control->rect().center();
     switch (m_player->state()) {
     case QMediaPlayer::PlayingState: {
-        m_control->setNormalPic(":/resources/pause.svg");
+        m_control->setNormalPic(":/resources/pause_normal.svg");
         m_control->setHoverPic(":/resources/pause_hover.svg");
         m_control->setPressPic(":/resources/pause_press.svg");
         m_btnAni->stop();
@@ -100,7 +100,7 @@ void VideoWidget::updateControlButton()
     }
         break;
     case QMediaPlayer::PausedState: {
-        m_control->setNormalPic(":/resources/play.svg");
+        m_control->setNormalPic(":/resources/play_normal.svg");
         m_control->setHoverPic(":/resources/play_hover.svg");
         m_control->setPressPic(":/resources/play_press.svg");
         if (m_btnAni->startValue().toPoint() == p) {
