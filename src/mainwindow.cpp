@@ -117,6 +117,7 @@ void MainWindow::initUI()
     m_previousBtn->setFixedSize(27, 26);
 
     m_nextBtn = new NextButton(tr("Next"), this);
+    m_doneBtn = new NextButton(tr("Done"), this);
 
     DImageButton *closeBtn = new DImageButton(":/resources/close_round_normal.svg",
                                               ":/resources/close_round_hover.svg",
@@ -149,12 +150,15 @@ void MainWindow::initUI()
 #endif
 
     m_nextBtn->setFixedHeight(24);
+    m_doneBtn->setFixedHeight(24);
 
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
 
     m_previousBtn->move(20, height() - m_previousBtn->height() - 20);
     m_nextBtn->move(width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20);
+    m_doneBtn->move(m_nextBtn->pos());
+    m_doneBtn->hide();
 
     m_currentAni->setPropertyName("pos");
     m_lastAni->setPropertyName("pos");
@@ -167,6 +171,7 @@ void MainWindow::initConnect()
     connect(m_previousBtn, &DImageButton::clicked, this, &MainWindow::previous);
     connect(m_nextBtn, &NextButton::clicked, this, &MainWindow::next);
     connect(m_currentAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
+    connect(m_doneBtn, &NextButton::clicked, qApp, &QCoreApplication::quit);
 }
 
 void MainWindow::bindAnimation()
@@ -180,6 +185,7 @@ void MainWindow::updateModule(const int index)
     m_nextBtn->show();
     m_previousBtn->show();
     m_nextBtn->setMode(NextButton::Normal);
+    m_doneBtn->hide();
 
     m_last = m_current;
     switch (index) {
@@ -205,13 +211,16 @@ void MainWindow::updateModule(const int index)
         }
         ++m_index;
     }
+        break;
     case 4:
         m_current = initIconModule();
+        m_nextBtn->hide();
+        m_doneBtn->show();
         break;
     case 5:
-        m_current = new NormalModule(m_fakerWidget);
-        m_nextBtn->hide();
-        m_previousBtn->hide();
+//        m_current = new NormalModule(m_fakerWidget);
+//        m_nextBtn->hide();
+//        m_previousBtn->hide();
         break;
     default:
         break;

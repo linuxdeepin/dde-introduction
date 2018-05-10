@@ -57,6 +57,7 @@ private:
   int m_index;
   NextButton *m_nextBtn;
   DImageButton *m_previousBtn;
+  NextButton *m_doneBtn;
   QWidget *m_current;
   QWidget *m_last;
   QPropertyAnimation *m_currentAni;
