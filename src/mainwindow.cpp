@@ -211,7 +211,6 @@ void MainWindow::updateModule(const int index)
         }
         ++m_index;
     }
-        break;
     case 4:
         m_current = initIconModule();
         m_nextBtn->hide();
