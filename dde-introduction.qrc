@@ -37,5 +37,9 @@
         <file>resources/dde-introduction.svg</file>
         <file>resources/pause_normal.svg</file>
         <file>resources/play_normal.svg</file>
+        <file>resources/15.5.1demo_en-US.mp4</file>
+        <file>resources/15.5.1demo_en-US@2x.mp4</file>
+        <file>resources/15.5.1demo_zh-CN.mp4</file>
+        <file>resources/15.5.1demo_zh-CN@2x.mp4</file>
     </qresource>
 </RCC>

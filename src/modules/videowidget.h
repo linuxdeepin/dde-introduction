@@ -47,6 +47,7 @@ protected:
 
 private:
     void updateClip();
+    void durationChanged();
 
 private:
     DVideoWidget *m_video;
