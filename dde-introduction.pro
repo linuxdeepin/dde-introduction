@@ -70,4 +70,4 @@ qm_files.files = translations/*.qm
 icon.path = $$PREFIX/share/icons/hicolor/scalable/apps
 icon.files = resources/dde-introduction.svg
 
-INSTALLS += desktop target icon
+INSTALLS += desktop target icon qm_files
