@@ -215,6 +215,7 @@ void MainWindow::updateModule(const int index)
         m_current = initIconModule();
         m_nextBtn->hide();
         m_doneBtn->show();
+        m_doneBtn->setFocus();
         break;
     case 5:
 //        m_current = new NormalModule(m_fakerWidget);
