@@ -21,7 +21,7 @@
 
 #include "moduleinterface.h"
 
-#include <DVideoWidget>
+#include "../dvideowidget.h"
 #include <QMediaPlayer>
 #include <dimagebutton.h>
 #include <DClipEffectWidget>

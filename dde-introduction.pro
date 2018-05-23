@@ -26,7 +26,8 @@ HEADERS += \
     src/widgets/borderwidget.h \
     src/widgets/bottomnavigation.h \
     src/widgets/navigationbutton.h \
-    src/widgets/nextbutton.h
+    src/widgets/nextbutton.h \
+    src/dvideowidget.h
 
 SOURCES += \
     src/basemodulewidget.cpp \
@@ -47,7 +48,8 @@ SOURCES += \
     src/widgets/borderwidget.cpp \
     src/widgets/bottomnavigation.cpp \
     src/widgets/navigationbutton.cpp \
-    src/widgets/nextbutton.cpp
+    src/widgets/nextbutton.cpp \
+    src/dvideowidget.cpp
 
 RESOURCES += \
     dde-introduction.qrc
