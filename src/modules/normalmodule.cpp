@@ -32,6 +32,7 @@ NormalModule::NormalModule(QWidget *parent)
     , m_rightContentLayout(new QVBoxLayout)
     , m_buttonGrp(new QButtonGroup)
     , m_currentWidget(nullptr)
+    , m_index(-1)
 {
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
@@ -166,6 +167,7 @@ NormalModule::NormalModule(QWidget *parent)
     for (QWidget * w : m_buttonGrp->buttons()) {
         w->setFixedSize(120, 30);
         m_leftNavigationLayout->addWidget(w, 0, Qt::AlignLeft | Qt::AlignVCenter);
+        w->installEventFilter(this);
     }
 
     m_leftNavigationLayout->addStretch();
@@ -178,8 +180,21 @@ NormalModule::NormalModule(QWidget *parent)
     updateCurrentWidget(m_buttonMap[videoBtn]);
 }
 
+bool NormalModule::eventFilter(QObject *watched, QEvent *event)
+{
+    if (qobject_cast<NavigationButton*>(watched) && event->type() == QEvent::KeyPress) {
+        return true;
+    }
+
+    return false;
+}
+
 void NormalModule::updateCurrentWidget(const int index)
 {
+    if (index == m_index) return;
+
+    m_index = index;
+
     if (m_currentWidget) {
         m_rightContentLayout->removeWidget(m_currentWidget);
         m_currentWidget->deleteLater();

@@ -31,6 +31,8 @@ class NormalModule : public QWidget
 public:
     explicit NormalModule(QWidget *parent = nullptr);
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
 
 private:
     void updateCurrentWidget(const int index);
@@ -42,6 +44,7 @@ private:
     QMap<QWidget*, int> m_buttonMap;
     QMap<QAbstractButton*, QString> m_titleMap;
     QWidget *m_currentWidget;
+    int m_index;
 };
 
 #endif // NORMALMODULE_H
