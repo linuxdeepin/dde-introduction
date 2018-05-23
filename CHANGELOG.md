@@ -1,3 +1,36 @@
+<a name="0.0.2"></a>
+### 0.0.2 (2018-05-23)
+
+
+#### Features
+
+*   add done button ([b756188b](https://github.com/linuxdeepin/dde-introduction/commit/b756188beeb699033b4ab19f2a04bd0665479f78))
+*   check support switch wm ([0dd291df](https://github.com/linuxdeepin/dde-introduction/commit/0dd291df4f37a283a724c07d800fcd09e4f476a6))
+*   video support button animation ([c6d77481](https://github.com/linuxdeepin/dde-introduction/commit/c6d77481dee10faabbb65fc12c1beacf26cd4aca))
+* **icon:**
+  *  set vertical spacing ([c61df69e](https://github.com/linuxdeepin/dde-introduction/commit/c61df69eeb58e32fb787a76875bcc1c3a0ae0ab4))
+  *  sort icon list ([cfd9b3c4](https://github.com/linuxdeepin/dde-introduction/commit/cfd9b3c44cd7a5168b2b0060dbf356ed5ae026d1))
+* **video:**
+  *  update new video file ([17eadc7d](https://github.com/linuxdeepin/dde-introduction/commit/17eadc7d0f2217ba6ca5509896062a5d4b395276))
+  *  support hide control animation ([7833efd9](https://github.com/linuxdeepin/dde-introduction/commit/7833efd90fe35e0d95fce4b86e3f84ed4031d3ea))
+  *  update new control icon ([feb5298e](https://github.com/linuxdeepin/dde-introduction/commit/feb5298eaec5ccf6b64019a387bcf837f6ebb7ff))
+  *  pause video when stop ([ba6cfa4f](https://github.com/linuxdeepin/dde-introduction/commit/ba6cfa4fb56e87ea9436829ef808947ba1b7b475))
+
+#### Bug Fixes
+
+*   done button not have focus ([2cd5b87d](https://github.com/linuxdeepin/dde-introduction/commit/2cd5b87d9a9fa113bec14ee02156e634a4c7be40))
+*   not load ts ([c49e3a0e](https://github.com/linuxdeepin/dde-introduction/commit/c49e3a0e9398600c3a4b0f70508cea68a0f197cf))
+*   empty page when cannot switch wm ([5b39af1a](https://github.com/linuxdeepin/dde-introduction/commit/5b39af1a2cc56df91515a1eb4711222d381bd9a0))
+*   normal window icon error ([b3a5284a](https://github.com/linuxdeepin/dde-introduction/commit/b3a5284a45e4e65d688a9efb331c3da0f902b0cd))
+*   button link ([b5303cc1](https://github.com/linuxdeepin/dde-introduction/commit/b5303cc1c35b2cd3a4f9ba0889facce2cd01d899))
+*   button shift after rolling ([ce46befc](https://github.com/linuxdeepin/dde-introduction/commit/ce46befc26f346f1546622318c64016e1b104715))
+*   border truncation ([1c4bda8e](https://github.com/linuxdeepin/dde-introduction/commit/1c4bda8ea932dc73bb15623c6eeb5dd5fed2c3c8))
+*   desktop mode error ([ffc63571](https://github.com/linuxdeepin/dde-introduction/commit/ffc63571c5944cca55885b79cd70b351232b9c30))
+* **icon:**  not align center ([f22acf74](https://github.com/linuxdeepin/dde-introduction/commit/f22acf7468444d9718424f3b48f894c18cbde174))
+* **video:**  block key event ([6543eac7](https://github.com/linuxdeepin/dde-introduction/commit/6543eac7ece5ea7c507510085333adc2d8d60b42))
+
+
+
 <a name=""></a>
 ##  0.0.1 (2018-04-24)
 
