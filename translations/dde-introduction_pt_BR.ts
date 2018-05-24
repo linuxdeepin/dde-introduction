@@ -211,17 +211,17 @@
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
         <source>The i18n translation work is mainly about:</source>
-        <translation type="unfinished"/>
+        <translation>O trabalho de tradução do i18n é principalmente sobre:</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
         <source>deepin: Joining the document writing and i18n work to let our open source work benefit the world!</source>
-        <translation type="unfinished"/>
+        <translation>deepin: Juntando-se à escrita do documento e ao trabalho da i18n para permitir que o nosso trabalho de código aberto beneficie o mundo!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
         <source>Deepin community: Providing community news, download, mirrors, projects and a gathering place for developers!</source>
-        <translation type="unfinished"/>
+        <translation>Comunidade Deepin: Fornecendo notícias da comunidade, download, espelhos, projetos e um local de encontro para desenvolvedores!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
@@ -241,12 +241,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>
         <source>The donation upholds the principle of completely voluntary and no matter who you are, wherever you are, how much you contribute, are all making contributions to the development of Deepin community and we are very grateful for your donation.</source>
-        <translation type="unfinished"/>
+        <translation>A doação sustenta o princípio de ser completamente voluntário e não importa quem você é, onde quer que você esteja, o quanto você contribui, todos estão contribuindo para o desenvolvimento da comunidade Deepin e estamos muito gratos por sua doação.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="49"/>
         <source>The donation aims to make a survey and decide the orientation and priority of the projects, support the continuous further development, and support community activities and construction.</source>
-        <translation type="unfinished"/>
+        <translation>A doação tem como objetivo fazer uma pesquisa e decidir a orientação e a prioridade dos projetos, apoiar o desenvolvimento contínuo e apoiar atividades comunitárias e construção.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>
@@ -256,27 +256,27 @@
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation type="unfinished"/>
+        <translation>Testes Internos</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
         <source>Get the latest achievements of deepin and software timely.</source>
-        <translation type="unfinished"/>
+        <translation>Receba as últimas conquistas do Deepin e software em tempo hábil.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="53"/>
         <source>Obtain the latest development plans and progress of deepin project in advance.</source>
-        <translation type="unfinished"/>
+        <translation>Obtenha os mais recentes planos de desenvolvimento e progresso do projeto deepin com antecedência.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="54"/>
         <source>Be on deepin contributors list.</source>
-        <translation type="unfinished"/>
+        <translation>Esteja na lista de colaboradores do deepin.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="55"/>
         <source>Outstanding members will get a souvenir of deepin.</source>
-        <translation type="unfinished"/>
+        <translation>Os membros proeminentes receberão uma lembrança do deepin.</translation>
     </message>
 </context>
 <context>

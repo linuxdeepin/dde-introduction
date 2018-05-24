@@ -72,7 +72,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
         <source>Feedback</source>
-        <translation>Feedback</translation>
+        <translation>Retour d&apos;information</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="39"/>
