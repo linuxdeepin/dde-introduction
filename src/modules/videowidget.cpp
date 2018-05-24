@@ -85,9 +85,19 @@ VideoWidget::VideoWidget(QWidget *parent)
     qreal ratio = 1.0;
 
     QLocale locale;
-    const QString &file = QString(":/resources/15.5.1demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh-CN" : "en-US");
 
-    list->addMedia(QUrl(QString("qrc%1").arg(qt_findAtNxFile(file, devicePixelRatioF(), &ratio))));
+    QDir videoPath(qApp->applicationDirPath());
+    videoPath.setSorting(QDir::Name);
+
+#ifdef QT_DEBUG
+    videoPath.cd("resources");
+#else
+    videoPath.cd("../lib/dde-introduction");
+#endif
+
+    const QString &file = videoPath.path() + QString("/15.5.1demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh-CN" : "en-US");
+
+    list->addMedia(QUrl(QString("file:///%1").arg(qt_findAtNxFile(file, devicePixelRatioF(), &ratio))));
     list->setPlaybackMode(QMediaPlaylist::Loop);
 
     m_player->setMedia(list);

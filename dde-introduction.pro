@@ -3,6 +3,7 @@ TEMPLATE = app
 QT = core gui widgets dbus multimedia multimediawidgets
 CONFIG += link_pkgconfig c++11
 PKGCONFIG += dtkwidget dframeworkdbus
+DESTDIR    = $$_PRO_FILE_PWD_
 
 isEmpty(PREFIX){
     PREFIX = /usr
@@ -69,7 +70,10 @@ CONFIG(release, debug|release) {
 qm_files.path = $$PREFIX/share/dde-introduction/translations/
 qm_files.files = translations/*.qm
 
+videos.path = $$PREFIX/lib/dde-introduction/
+videos.files = resources/*.mp4
+
 icon.path = $$PREFIX/share/icons/hicolor/scalable/apps
 icon.files = resources/dde-introduction.svg
 
-INSTALLS += desktop target icon qm_files
+INSTALLS += desktop target icon qm_files videos
