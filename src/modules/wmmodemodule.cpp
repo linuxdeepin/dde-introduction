@@ -24,8 +24,8 @@ WMModeModule::WMModeModule(QWidget *parent)
     , m_efficientWidget(new BaseWidget(this))
     , m_fashionWidget(new BaseWidget(this))
 {
-    m_efficientWidget->setTitle(tr("Efficient Mode"));
-    m_fashionWidget->setTitle(tr("Fashion Mode"));
+    m_efficientWidget->setTitle(tr("Disable window effect"));
+    m_fashionWidget->setTitle(tr("Enable window effect"));
 
     connect(m_model, &Model::wmTypeChanged, this, &WMModeModule::onWMModeChanged);
     connect(m_fashionWidget, &BaseWidget::clicked, this, [=] {
