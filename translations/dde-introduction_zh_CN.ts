@@ -145,54 +145,54 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="116"/>
+        <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
         <translation>介绍</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="123"/>
+        <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
         <translation>桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="130"/>
+        <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
         <translation>图标主题</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="139"/>
+        <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
         <translation>窗口特效</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
+        <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
         <translation>支持我们</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="154"/>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
+        <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
         <translation>关于我们</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
+        <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
         <translation>欢迎使用</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
+        <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
         <translation>请选择桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="131"/>
+        <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
         <translation>请选择图标主题</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="140"/>
+        <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
         <translation>请选择是否开启窗口特效</translation>
     </message>
@@ -284,13 +284,13 @@
     <name>WMModeModule</name>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
-        <source>Efficient Mode</source>
-        <translation>高效模式</translation>
+        <source>Disable window effect</source>
+        <translation>关闭窗口特效</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
-        <source>Fashion Mode</source>
-        <translation>时尚模式</translation>
+        <source>Enable window effect</source>
+        <translation>开启窗口特效</translation>
     </message>
 </context>
 </TS>

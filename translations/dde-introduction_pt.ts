@@ -24,7 +24,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
         <source>Deepin Technology takes user requirements as core, adheres to innovative idea, and bases on the market demand to feedback users with better products and services.</source>
-        <translation type="unfinished"/>
+        <translation>A Deepin Technology toma os requisitos do utilizador como o seu núcleo, adere a ideias inovadoras, e baseia-se na procura do mercado para proporcionar aos utilizadores melhores produtos e serviços.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
@@ -144,54 +144,54 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="116"/>
+        <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
         <translation>Introdução</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="123"/>
+        <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
         <translation>Modo do Ambiente de Trabalho</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="130"/>
+        <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
         <translation>Tema dos ícones</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="139"/>
+        <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
         <translation>Efeito da janela</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
+        <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
         <translation>Apoie-nos</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="154"/>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
+        <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
         <translation>Sobre nós</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
+        <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
         <translation>Bem-vindo</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
+        <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
         <translation>Por favor selecione o modo do ambiente de trabalho</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="131"/>
+        <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
         <translation>Por favor selecione o tema de ícones</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="140"/>
+        <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
         <translation>Por favor selecione ativar efeito de janela ou não</translation>
     </message>
@@ -251,7 +251,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>
         <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become an Internal Testing Team member, you will</source>
-        <translation type="unfinished"/>
+        <translation>Para qualidade de controlo do projeto deepin, damos as boas vindas a todos para participarem nos testes internos e rastreio de feedback. Torne-se num membro da Equipa Interna de Testes, será</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
@@ -283,13 +283,13 @@
     <name>WMModeModule</name>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
-        <source>Efficient Mode</source>
-        <translation>Modo Eficiente</translation>
+        <source>Disable window effect</source>
+        <translation>Desativar efeitos de janela</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
-        <source>Fashion Mode</source>
-        <translation>Modo Elegante</translation>
+        <source>Enable window effect</source>
+        <translation>Ativar efeitos de janela</translation>
     </message>
 </context>
 </TS>

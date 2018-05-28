@@ -144,54 +144,54 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="116"/>
+        <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
         <translation>Pengenalan</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="123"/>
+        <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
         <translation>Mod desktop</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="130"/>
+        <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
         <translation>Tema ikon</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="139"/>
+        <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
         <translation>Kesan tetingkap</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
+        <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
         <translation>Sokong kami</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="154"/>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
+        <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
         <translation>Perihal kami</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
+        <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
         <translation>Selamat Datang</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
+        <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
         <translation>Sila pilih mod desktop</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="131"/>
+        <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
         <translation>Sila pilih tema ikon</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="140"/>
+        <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
         <translation>Sila pilih untuk benarkan kesan tetingkap atau sebaliknya</translation>
     </message>
@@ -283,13 +283,13 @@
     <name>WMModeModule</name>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
-        <source>Efficient Mode</source>
-        <translation>Mod Efisyen</translation>
+        <source>Disable window effect</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
-        <source>Fashion Mode</source>
-        <translation>Mod Berfesyen</translation>
+        <source>Enable window effect</source>
+        <translation>Benarkan kesan tetingkap</translation>
     </message>
 </context>
 </TS>

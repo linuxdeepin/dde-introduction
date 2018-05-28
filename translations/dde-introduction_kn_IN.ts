@@ -144,54 +144,54 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="116"/>
+        <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
         <translation>ಪರಿಚಯ</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="123"/>
+        <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
         <translation> ಡೆಸ್ಕ್ಟಾಪ್ ರೀತಿ</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="130"/>
+        <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
         <translation>ಐಕಾನ್ ಥೀಮ್</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="139"/>
+        <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
         <translation>ವಿಂಡೋ ಎಫೆಕ್ಟ್ಸ್</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
+        <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
         <translation>ಪ್ರೋತ್ಸಾಹಿಸಿ</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="154"/>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
+        <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
         <translation>ನಮ್ಮ ಬಗ್ಗೆ</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
+        <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
         <translation>ಸ್ವಾಗತ</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
+        <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
         <translation>ದಯವಿಟ್ಟು ಡೆಸ್ಕ್ಟಾಪ್ ರೀತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="131"/>
+        <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
         <translation>ದಯವಿಟ್ಟು ಐಕಾನ್ ಥೀಮ್ ಆಯ್ಕೆಮಾಡಿ</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="140"/>
+        <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
         <translation>ವಿಂಡೋ ಎಫೆಕ್ಟ್ ಗಳು ಬೇಕೋ ಬೇಡವೋ ಎಂದು ಆಯ್ಕೆಮಾಡಿ</translation>
     </message>
@@ -283,13 +283,13 @@
     <name>WMModeModule</name>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
-        <source>Efficient Mode</source>
-        <translation>ದಕ್ಷ ರೂಪ</translation>
+        <source>Disable window effect</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
-        <source>Fashion Mode</source>
-        <translation>ಅಲಂಕೃತ ರೂಪ</translation>
+        <source>Enable window effect</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

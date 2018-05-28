@@ -144,54 +144,54 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="116"/>
+        <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
         <translation>Introduction</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="123"/>
+        <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
         <translation>Mode bureau</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="130"/>
+        <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
         <translation>Thème des icônes</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="139"/>
+        <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
         <translation>Effet de fenêtre</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
+        <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
         <translation>Soutenez-nous</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="154"/>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
+        <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
         <translation>À propos de nous</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
+        <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
         <translation>Bienvenue</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
+        <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
         <translation>Veuillez sélectionner le mode bureau</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="131"/>
+        <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
         <translation>Veuillez sélectionner un thème d&apos;icônes</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="140"/>
+        <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
         <translation>Veuillez sélectionner pour activer ou non l&apos;effet de fenêtre.</translation>
     </message>
@@ -283,13 +283,13 @@
     <name>WMModeModule</name>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
-        <source>Efficient Mode</source>
-        <translation>Mode étendu </translation>
+        <source>Disable window effect</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
-        <source>Fashion Mode</source>
-        <translation>Mode dock</translation>
+        <source>Enable window effect</source>
+        <translation>Activer les effets de fenêtre</translation>
     </message>
 </context>
 </TS>
