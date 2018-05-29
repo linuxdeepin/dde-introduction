@@ -1,3 +1,13 @@
+<a name=""></a>
+##  1.0.0 (2018-05-29)
+
+
+#### Features
+
+*   upload 15.6 demo video ([d0b0f53b](https://github.com/linuxdeepin/dde-introduction/commit/d0b0f53b5365f7d32c4b89cace10486e9d9e9711))
+
+
+
 <a name="0.0.3"></a>
 ### 0.0.3 (2018-05-24)
 
