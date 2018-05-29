@@ -95,7 +95,7 @@ VideoWidget::VideoWidget(QWidget *parent)
     videoPath.cd("../lib/dde-introduction");
 #endif
 
-    const QString &file = videoPath.path() + QString("/15.5.1demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh-CN" : "en-US");
+    const QString &file = videoPath.path() + QString("/15.6demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh-CN" : "en-US");
 
     list->addMedia(QUrl(QString("file:///%1").arg(qt_findAtNxFile(file, devicePixelRatioF(), &ratio))));
     list->setPlaybackMode(QMediaPlaylist::Loop);
