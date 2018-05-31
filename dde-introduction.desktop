@@ -2,6 +2,6 @@
 Categories=Utility
 Exec=/usr/bin/dde-introduction
 Icon=dde-introduction
-Name=Deepin Introducation
+Name=Deepin Introduction
 Name[zh_CN]=欢迎
 Type=Application
