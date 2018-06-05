@@ -6,7 +6,8 @@ Build-Depends: debhelper (>= 9),
  pkg-config,
  cmake,
  libdtkwidget-dev,
- libdframeworkdbus-dev
+ libdframeworkdbus-dev,
+ libdmr-dev
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org
 

@@ -20,12 +20,13 @@
 #define VIDEOWIDGET_H
 
 #include "moduleinterface.h"
-
 #include "../dvideowidget.h"
-#include <QMediaPlayer>
+
 #include <dimagebutton.h>
 #include <DClipEffectWidget>
 #include <QPropertyAnimation>
+#include <player_widget.h>
+#include <player_engine.h>
 
 DWIDGET_USE_NAMESPACE
 
@@ -47,17 +48,16 @@ protected:
 
 private:
     void updateClip();
-    void durationChanged();
 
 private:
-    DVideoWidget *m_video;
-    QMediaPlayer* m_player;
+    dmr::PlayerWidget *m_video;
     DImageButton* m_control;
     DClipEffectWidget *m_clip;
     QPropertyAnimation *m_btnAni;
     QPropertyAnimation *m_hideAni;
     QGraphicsOpacityEffect *m_hideEffect;
     QTimer *m_leaveTimer;
+    QTimer *m_pauseTimer;
 };
 
 #endif

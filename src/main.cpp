@@ -21,11 +21,14 @@
 #include <DApplication>
 #include <QDebug>
 #include <DWidgetUtil>
+#include <DPlatformWindowHandle>
+#include <compositing_manager.h>
 
 DWIDGET_USE_NAMESPACE
 
 int main(int argc, char *argv[])
 {
+    qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
     DApplication::loadDXcbPlugin();
     DApplication a(argc, argv);
     a.setApplicationName("dde-introduction");
@@ -39,7 +42,15 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
     a.loadTranslator();
 
+    setlocale(LC_NUMERIC, "C");
+
+    // 强制不使用嵌入mpv窗口的模式
+    dmr::CompositingManager::get().overrideCompositeMode(true);
+
     MainWindow w;
+
+    DPlatformWindowHandle::enableDXcbForWindow(&w, true);
+
     w.show();
     moveToCenter(&w);
 

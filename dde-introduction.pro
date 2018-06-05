@@ -2,7 +2,7 @@ TARGET = dde-introduction
 TEMPLATE = app
 QT = core gui widgets dbus multimedia multimediawidgets
 CONFIG += link_pkgconfig c++11
-PKGCONFIG += dtkwidget dframeworkdbus
+PKGCONFIG += dtkwidget dframeworkdbus libdmr
 DESTDIR    = $$_PRO_FILE_PWD_
 
 isEmpty(PREFIX){

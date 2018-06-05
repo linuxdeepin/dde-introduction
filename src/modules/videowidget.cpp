@@ -31,13 +31,13 @@
 
 VideoWidget::VideoWidget(QWidget *parent)
     : ModuleInterface(parent)
-    , m_video(new DVideoWidget)
-    , m_player(new QMediaPlayer(this))
+    , m_video(new dmr::PlayerWidget(this))
     , m_control(new DImageButton(this))
     , m_clip(new DClipEffectWidget(m_video))
     , m_btnAni(new QPropertyAnimation(m_control, "pos", this))
     , m_hideAni(new QPropertyAnimation(this))
     , m_leaveTimer(new QTimer(this))
+    , m_pauseTimer(new QTimer(this))
 {
     m_selectBtn->hide();
 
@@ -66,6 +66,12 @@ VideoWidget::VideoWidget(QWidget *parent)
         m_hideAni->start();
     });
 
+    connect(m_pauseTimer, &QTimer::timeout, this, [=] {
+        m_video->engine().pauseResume();
+    });
+
+    m_pauseTimer->setSingleShot(true);
+
     setObjectName("VideoWidget");
 
     QHBoxLayout *layout = new QHBoxLayout;
@@ -74,14 +80,11 @@ VideoWidget::VideoWidget(QWidget *parent)
 
     layout->addWidget(m_video, 0, Qt::AlignCenter);
 
-    setLayout(layout);
-
     updateBigIcon();
 
     m_control->setFixedSize(48, 48);
     m_control->raise();
 
-    QMediaPlaylist *list = new QMediaPlaylist(this);
     qreal ratio = 1.0;
 
     QLocale locale;
@@ -97,21 +100,23 @@ VideoWidget::VideoWidget(QWidget *parent)
 
     const QString &file = videoPath.path() + QString("/15.6demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh-CN" : "en-US");
 
-    list->addMedia(QUrl(QString("file:///%1").arg(qt_findAtNxFile(file, devicePixelRatioF(), &ratio))));
-    list->setPlaybackMode(QMediaPlaylist::Loop);
+    connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
+    connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
 
-    m_player->setMedia(list);
+    m_video->engine().setBackendProperty("pause-on-start", "true");
+    m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
 
-    m_video->setSource(m_player);
-    m_video->setAspectRatioMode(Qt::KeepAspectRatioByExpanding);
-    m_video->setSourceVideoPixelRatio(devicePixelRatioF());
+    m_video->play(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
+
+    QTimer::singleShot(1000, this, [=] {
+        m_pauseTimer->setInterval(m_video->engine().duration() * 1000);
+    });
 
     updateControlButton();
 
-    connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
-    connect(m_player, &QMediaPlayer::durationChanged, this, &VideoWidget::durationChanged, Qt::QueuedConnection);
+    setLayout(layout);
 
-    connect(m_player, &QMediaPlayer::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
+    m_control->raise();
 }
 
 void VideoWidget::updateBigIcon()
@@ -135,8 +140,8 @@ void VideoWidget::updateControlButton()
 {
     const QPoint &p = rect().center() - m_control->rect().center();
 
-    switch (m_player->state()) {
-    case QMediaPlayer::PlayingState: {
+    switch (m_video->engine().state()) {
+    case dmr::PlayerEngine::Playing: {
         m_control->setNormalPic(":/resources/pause_normal.svg");
         m_control->setHoverPic(":/resources/pause_hover.svg");
         m_control->setPressPic(":/resources/pause_press.svg");
@@ -146,7 +151,7 @@ void VideoWidget::updateControlButton()
         m_btnAni->start();
     }
         break;
-    case QMediaPlayer::PausedState: {
+    case dmr::PlayerEngine::Paused: {
         m_control->setNormalPic(":/resources/play_normal.svg");
         m_control->setHoverPic(":/resources/play_hover.svg");
         m_control->setPressPic(":/resources/play_press.svg");
@@ -159,6 +164,10 @@ void VideoWidget::updateControlButton()
             m_btnAni->setEndValue(p);
             m_btnAni->start();
         }
+        // update pause timer
+        int elapsed = m_video->engine().duration() - m_video->engine().elapsed() + 1;
+        if (elapsed != 0)
+            m_pauseTimer->setInterval(elapsed * 1000);
     }
         break;
     default:
@@ -168,16 +177,14 @@ void VideoWidget::updateControlButton()
 
 void VideoWidget::onControlButtonClicked()
 {
-    switch (m_player->state()) {
-    case QMediaPlayer::PlayingState:
-        m_player->pause();
-        break;
-    case QMediaPlayer::PausedState:
-        m_player->play();
-        break;
-    default:
-        break;
+    if (m_video->engine().paused()) {
+        m_pauseTimer->start();
+    } else {
+        m_pauseTimer->stop();
     }
+
+    m_video->engine().pauseResume();
+    m_video->engine().play();
 
     updateControlButton();
 }
@@ -195,7 +202,7 @@ void VideoWidget::leaveEvent(QEvent *e)
 {
     ModuleInterface::leaveEvent(e);
 
-    if (m_player->state() != QMediaPlayer::PausedState) {
+    if (m_video->engine().state() != dmr::PlayerEngine::Paused) {
         m_leaveTimer->start();
     }
 }
@@ -212,10 +219,4 @@ void VideoWidget::updateClip()
     QPainterPath path;
     path.addRoundedRect(rect(), 5, 5);
     m_clip->setClipPath(path);
-}
-
-void VideoWidget::durationChanged()
-{
-    m_player->pause();
-    updateControlButton();
 }
