@@ -70,7 +70,7 @@ CONFIG(release, debug|release) {
 qm_files.path = $$PREFIX/share/dde-introduction/translations/
 qm_files.files = translations/*.qm
 
-videos.path = $$PREFIX/lib/dde-introduction/
+videos.path = $$PREFIX/share/dde-introduction/
 videos.files = resources/*.mp4
 
 icon.path = $$PREFIX/share/icons/hicolor/scalable/apps

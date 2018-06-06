@@ -95,7 +95,7 @@ VideoWidget::VideoWidget(QWidget *parent)
 #ifdef QT_DEBUG
     videoPath.cd("resources");
 #else
-    videoPath.cd("../lib/dde-introduction");
+    videoPath.cd("../share/dde-introduction");
 #endif
 
     const QString &file = videoPath.path() + QString("/15.6demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh-CN" : "en-US");
