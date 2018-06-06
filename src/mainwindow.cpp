@@ -97,7 +97,6 @@ void MainWindow::next()
 void MainWindow::initUI()
 {
     setFixedSize(WINDOW_SIZE);
-    setWindowFlags(Qt::FramelessWindowHint);
 
     DPlatformWindowHandle* handle = new DPlatformWindowHandle(this);
     handle->setBorderWidth(0);
