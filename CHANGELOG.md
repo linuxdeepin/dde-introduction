@@ -1,3 +1,19 @@
+<a name="1.0.1"></a>
+### 1.0.1 (2018-06-07)
+
+
+#### Bug Fixes
+
+*   cannot use alt+f4 close window ([b6619b80](https://github.com/linuxdeepin/dde-introduction/commit/b6619b80115eb0d8f73e559c4f0fde1ec1682c7b))
+*   error app name ([89593643](https://github.com/linuxdeepin/dde-introduction/commit/89593643ec4e379ec4a841a713a315bf530ea2d8))
+* **video:**  video jitter ([35776c30](https://github.com/linuxdeepin/dde-introduction/commit/35776c30aae781368b9e3c50458cfc26cd86f1fe))
+
+#### Features
+
+*   upload new video for english ([76898fe7](https://github.com/linuxdeepin/dde-introduction/commit/76898fe7109186371894735231f1a8b8b5b19e71))
+
+
+
 <a name=""></a>
 ##  1.0.0 (2018-05-29)
 
