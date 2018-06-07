@@ -9,7 +9,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation>deepin es una distribución de Linux comprometida a proporcionar una experiencia elegante, amigable, segura y estable para usuarios de todo el mundo. No solo integra y configura los mejores productos de código abierto, sino que también desarrolla una serie de aplicaciones para uso diario, como Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie, entre otros, Deepin Desktop Environment y Deepin Control Center. se basan en la tecnología Qt. deepin se enfoca en la experiencia fácil de usar y el diseño atractivo, por lo que es fácil de instalar y usar para la mayoría de los usuarios y puede reemplazar Windows para el trabajo y el entretenimiento.</translation>
+        <translation>Deepin es una distribución de Linux comprometida a proporcionar una experiencia elegante, amigable, segura y estable para usuarios de todo el mundo. No solo integra y configura los mejores productos de código abierto, sino que también desarrolla una serie de aplicaciones para uso diario, como Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie, entre otros, Deepin Desktop Environment y Deepin Control Center. se basan en la tecnología Qt. Deepin se enfoca en la experiencia fácil de usar y el diseño atractivo, por lo que es fácil de instalar y usar para la mayoría de los usuarios y puede reemplazar Windows para el trabajo y el entretenimiento.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
-        <translation>El proyecto deepin es un sistema operativo de escritorio de código abierto creativo y enérgico. Insiste en la idea de fuente abierta siempre, el desarrollo está bajo Licencia GPL y todos los códigos son de código abierto, que se ha subido a GitHub. Los miembros de la comunidad, los fanáticos del software libre y Deepin Technology desarrollarán el proyecto deepin juntos para hacer una contribución adecuada al código abierto de China.</translation>
+        <translation>El proyecto deepin es un sistema operativo de escritorio de código abierto creativo y enérgico. Insiste en la idea del código abierto permanente, el desarrollo está bajo Licencia GPL y todos los códigos son de fuente abierta, que se ha subido a GitHub. Los miembros de la comunidad, los aficionados del software libre y Deepin Technology desarrollarán el proyecto Deepin juntos para hacer una contribución adecuada al código abierto de China.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation>página de inicio</translation>
+        <translation>Página de inicio</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>Puede cambiarlo en modo haciendo clic derecho en el muelle</translation>
+        <translation>Puedes cambiar este modo, haciendo clic derecho en el muelle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="260"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation>Puede habilitarlo o deshabilitarlo en Control Center &gt; Personalización &gt; Activar efecto de ventana, o usar los atajos Shift+Super+Tab</translation>
+        <translation>Puedes habilitarlo o deshabilitarlo en el Centro de Control &gt; Personalización &gt; Activar efecto de ventana, o usar los atajos Shift+Super+Tab</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
@@ -167,7 +167,7 @@
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
-        <translation>Apoyanos</translation>
+        <translation>Apóyenos</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
@@ -206,17 +206,17 @@
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
         <source>deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world to experience the Linux distribution from China, let the system widely spread all over the world and enlarge its global impact, we hope that more and more people from the Linux community can join to help the translation work to let our open source work benefit the world!</source>
-        <translation>deepin nació en China y su objetivo es ser global. Con el fin de hacer posible que más y más usuarios de todo el mundo experimenten la distribución de Linux desde China, permitan que el sistema se extienda ampliamente por todo el mundo y aumente su impacto global, esperamos que cada vez más personas de la comunidad Linux puedan usarla ¡únase para ayudar a que la traducción funcione y permita que nuestro trabajo de código abierto beneficie al mundo!</translation>
+        <translation>Deepin nació en China y su objetivo es ser global. Con el fin de hacer posible que más y más usuarios de todo el mundo experimenten la distribución de Linux desde China, permitan que el sistema se extienda ampliamente por todo el mundo y aumente su impacto global, esperamos que cada vez más personas de la comunidad Linux puedan usarla ¡únase para ayudar a que la traducción funcione y permita que nuestro trabajo de código abierto beneficie al mundo!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
         <source>The i18n translation work is mainly about:</source>
-        <translation>El trabajo de traducción i18n se trata principalmente de:</translation>
+        <translation>El trabajo de traducción y i18n se trata principalmente de:</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
         <source>deepin: Joining the document writing and i18n work to let our open source work benefit the world!</source>
-        <translation>deepin: ¡Unirme a la escritura de documentos e i18n trabajar para que nuestro trabajo de código abierto beneficie al mundo!</translation>
+        <translation>Deepin: ¡Uniéndote a la escritura de documentación y trabajos de i18n para que nuestro trabajo de código abierto beneficie al mundo!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
@@ -236,12 +236,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
         <source>The development of deepin can not move on without community support, for further improve the construction of the deepin community environment, Deepin Technology has made the decision to officially open channels of donation.</source>
-        <translation>El desarrollo de deepin no puede avanzar sin el apoyo de la comunidad, para mejorar aún más la construcción del entorno de la comunidad deepin, Deepin Technology ha tomado la decisión de abrir canales de donación oficialmente.</translation>
+        <translation>El desarrollo de Deepin no puede avanzar sin el apoyo de la comunidad, para mejorar aún más la construcción del entorno de la comunidad deepin, Deepin Technology ha tomado la decisión de abrir canales de donación oficialmente.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>
         <source>The donation upholds the principle of completely voluntary and no matter who you are, wherever you are, how much you contribute, are all making contributions to the development of Deepin community and we are very grateful for your donation.</source>
-        <translation>La donación mantiene el principio de completamente voluntario y no importa quién sea usted, esté donde esté, cuánto contribuya, todos están contribuyendo al desarrollo de la comunidad Deepin y estamos muy agradecidos por su donación.</translation>
+        <translation>La donación mantiene el principio de completo voluntariado y no importa quién sea usted, esté donde esté, cuánto contribuya, todos están contribuyendo al desarrollo de la comunidad Deepin y estamos muy agradecidos por su donación.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="49"/>
@@ -261,7 +261,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
         <source>Get the latest achievements of deepin and software timely.</source>
-        <translation>Obtenga los últimos logros de deepin y software a tiempo.</translation>
+        <translation>Obtenga los últimos avances de Deepin y software a tiempo.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="53"/>
@@ -271,12 +271,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="54"/>
         <source>Be on deepin contributors list.</source>
-        <translation>Estar en la lista de contribuyentes deepin.</translation>
+        <translation>Estar en la lista de contribuyentes Deepin.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="55"/>
         <source>Outstanding members will get a souvenir of deepin.</source>
-        <translation>Los miembros más destacados recibirán un recuerdo de deepin.</translation>
+        <translation>Los miembros más destacados recibirán un recuerdo de Deepin.</translation>
     </message>
 </context>
 <context>

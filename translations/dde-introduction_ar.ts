@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation type="unfinished"/>
+        <translation>فكرة مفتوحة المصدر</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>

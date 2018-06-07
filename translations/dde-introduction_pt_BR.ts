@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation type="unfinished"/>
+        <translation>Bem-vindo ao projeto i18n.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
@@ -236,7 +236,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
         <source>The development of deepin can not move on without community support, for further improve the construction of the deepin community environment, Deepin Technology has made the decision to officially open channels of donation.</source>
-        <translation type="unfinished"/>
+        <translation>O desenvolvimento do deepin não pode seguir em frente sem o apoio da comunidade, para melhorar ainda mais a construção da comunidade do ambiente deepin, a Deepin Technology tomou a decisão de abrir oficialmente canais de doação.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>
@@ -251,7 +251,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>
         <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become an Internal Testing Team member, you will</source>
-        <translation type="unfinished"/>
+        <translation>Para garantir a qualidade do projeto deepin, damos as boas-vindas a mais pessoas para participar do teste interno e do rastreamento de feedback. Torne-se um membro da equipe interna de testes</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>

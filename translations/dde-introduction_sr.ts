@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation>Почетна Страница</translation>
+        <translation>Матична Страница</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
@@ -72,7 +72,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
         <source>Feedback</source>
-        <translation>Ваша запажања</translation>
+        <translation>Повратне информације</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="39"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="42"/>
         <source>Acknowledgements</source>
-        <translation>Признања</translation>
+        <translation>Заслуге</translation>
     </message>
 </context>
 <context>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
-        <translation>Режим радне површине</translation>
+        <translation>Режим рада</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="131"/>

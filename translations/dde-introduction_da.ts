@@ -19,7 +19,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>Customer First</source>
-        <translation type="unfinished"/>
+        <translation>Kunden kommer først</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation type="unfinished"/>
+        <translation>Open source-ide</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
         <source>Open and Free</source>
-        <translation type="unfinished"/>
+        <translation>Åben og fri</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="260"/>
         <source>Please select to enable window effect or not</source>
-        <translation type="unfinished"/>
+        <translation>Vælg venligst om vindueseffekt skal aktiveres</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
@@ -193,7 +193,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
-        <translation type="unfinished"/>
+        <translation>Vælg venligst om vindueseffekt skal aktiveres</translation>
     </message>
 </context>
 <context>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
         <source>The i18n translation work is mainly about:</source>
-        <translation type="unfinished"/>
+        <translation>i18n-oversættelsesarbejdet handler primært om:</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation type="unfinished"/>
+        <translation>Deaktivér vindueseffekt</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
