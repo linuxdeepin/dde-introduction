@@ -132,17 +132,28 @@ void MainWindow::initUI()
 
     if (isFirst) {
         m_settings->setValue("IsFirst", false);
-        m_current = new VideoWidget(m_fakerWidget);
+
+#ifndef DISABLE_VIDEO
+        m_current = new VideoWidget(true, m_fakerWidget);
+        m_nextBtn->setMode(NextButton::Transparent);
+#else
+        m_current = initDesktopModeModule();
+        m_nextBtn->setMode(NextButton::Normal);
+        m_index = 2;
+#endif
         m_previousBtn->hide();
         m_nextBtn->show();
-        m_nextBtn->setMode(NextButton::Transparent);
     } else {
         m_current = new NormalModule(m_fakerWidget);
         m_previousBtn->hide();
         m_nextBtn->hide();
     }
 #else
-    m_current = new VideoWidget(m_fakerWidget);
+#ifndef DISABLE_VIDEO
+        m_current = new VideoWidget(true, m_fakerWidget);
+#else
+        m_current = initDesktopModeModule();
+#endif
     m_previousBtn->hide();
     m_nextBtn->show();
     m_nextBtn->setMode(NextButton::Transparent);
@@ -189,11 +200,13 @@ void MainWindow::updateModule(const int index)
     m_last = m_current;
     switch (index) {
     case 1:
-        m_current = new VideoWidget(m_fakerWidget);
+#ifndef DISABLE_VIDEO
+        m_current = new VideoWidget(true, m_fakerWidget);
         m_current->setFixedSize(WINDOW_SIZE);
         m_previousBtn->hide();
         m_nextBtn->setMode(NextButton::Transparent);
         break;
+#endif
     case 2:
         m_current = initDesktopModeModule();
         break;

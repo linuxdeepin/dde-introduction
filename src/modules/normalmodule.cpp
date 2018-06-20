@@ -111,12 +111,14 @@ NormalModule::NormalModule(QWidget *parent)
         allow_switch_wm = std::move(obj["allow_switch"].toBool());
     }
 
+#ifndef DISABLE_VIDEO
     // video button
     NavigationButton * videoBtn = new NavigationButton;
     m_buttonMap[videoBtn]   = 1;
     videoBtn->setText(tr("Introduction"));
     m_titleMap[videoBtn] = tr("Welcome");
     m_buttonGrp->addButton(videoBtn);
+#endif
 
     // desktop button
     NavigationButton * desktopBtn = new NavigationButton;
@@ -156,9 +158,13 @@ NormalModule::NormalModule(QWidget *parent)
     m_titleMap[aboutBtn] = tr("About us");
     m_buttonGrp->addButton(aboutBtn);
 
+#ifndef DISABLE_VIDEO
     videoBtn->setChecked(true);
-
     titleLabel->setText(m_titleMap[videoBtn]);
+#else
+    desktopBtn->setChecked(true);
+    titleLabel->setText(m_titleMap[desktopBtn]);
+#endif
 
     m_buttonGrp->setExclusive(true);
 
@@ -177,7 +183,11 @@ NormalModule::NormalModule(QWidget *parent)
         titleLabel->setText(m_titleMap[btn]);
     });
 
+#ifndef DISABLE_VIDEO
     updateCurrentWidget(m_buttonMap[videoBtn]);
+#else
+    updateCurrentWidget(m_buttonMap[desktopBtn]);
+#endif
 }
 
 bool NormalModule::eventFilter(QObject *watched, QEvent *event)
@@ -204,7 +214,7 @@ void NormalModule::updateCurrentWidget(const int index)
     switch (index) {
     case 1:
     {
-        VideoWidget *w = new VideoWidget;
+        VideoWidget *w = new VideoWidget(false);
         w->updateSmallIcon();
         m_currentWidget = w;
         break;

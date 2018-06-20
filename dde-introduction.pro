@@ -5,6 +5,8 @@ CONFIG += link_pkgconfig c++11
 PKGCONFIG += dtkwidget dframeworkdbus libdmr
 DESTDIR    = $$_PRO_FILE_PWD_
 
+load(deepin_qt)
+
 isEmpty(PREFIX){
     PREFIX = /usr
 }
@@ -77,3 +79,7 @@ icon.path = $$PREFIX/share/icons/hicolor/scalable/apps
 icon.files = resources/dde-introduction.svg
 
 INSTALLS += desktop target icon qm_files videos
+
+host_mips64 | host_sw_64: {
+    DEFINES += DISABLE_VIDEO
+}

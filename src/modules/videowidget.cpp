@@ -29,7 +29,7 @@
 #include <QIcon>
 #include <QLocale>
 
-VideoWidget::VideoWidget(QWidget *parent)
+VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     : ModuleInterface(parent)
     , m_video(new dmr::PlayerWidget(this))
     , m_control(new DImageButton(this))
@@ -103,7 +103,8 @@ VideoWidget::VideoWidget(QWidget *parent)
     connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
     connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
 
-    m_video->engine().setBackendProperty("pause-on-start", "true");
+    m_video->engine().setBackendProperty("pause-on-start", autoPlay ? "false" : "true");
+
     m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
 
     m_video->play(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));

@@ -34,7 +34,7 @@ class QGraphicsOpacityEffect;
 class VideoWidget : public ModuleInterface {
     Q_OBJECT
 public:
-    explicit VideoWidget(QWidget *parent = nullptr);
+    explicit VideoWidget(bool autoPlay, QWidget *parent = nullptr);
 
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmallIcon() Q_DECL_OVERRIDE;
