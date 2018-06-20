@@ -1,3 +1,13 @@
+<a name="1.0.2"></a>
+### 1.0.2 (2018-06-20)
+
+
+#### Features
+
+* **pro:**  custom fuction ([836cdc85](https://github.com/linuxdeepin/dde-introduction/commit/836cdc85f861418bbc4205a1394f91ac2c0378c3))
+
+
+
 <a name="1.0.1"></a>
 ### 1.0.1 (2018-06-07)
 
