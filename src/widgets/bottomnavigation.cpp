@@ -57,7 +57,12 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     m_buttons[sinaBtn] = "https://weibo.com/p/1006062675284423/home";
     m_buttons[twitterBtn] = "https://twitter.com/linux_deepin";
     m_buttons[facebook] = "https://www.facebook.com/deepinlinux/";
+
+#ifndef PROFESSIONAL
     m_buttons[offical] = "https://www.deepin.org/";
+#else
+    m_buttons[offical] = "https://www.deepin.com/";
+#endif
     m_buttons[community] = "https://bbs.deepin.org/";
     m_buttons[feedback] = "http://feedback.deepin.org/";
     m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";

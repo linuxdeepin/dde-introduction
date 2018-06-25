@@ -83,3 +83,8 @@ INSTALLS += desktop target icon qm_files videos
 host_mips64 | host_sw_64: {
     DEFINES += DISABLE_VIDEO
 }
+
+deepin_professional: {
+    DEFINES += PROFESSIONAL
+}
+
