@@ -1,3 +1,13 @@
+<a name="1.0.3"></a>
+### 1.0.3 (2018-06-27)
+
+
+#### Features
+
+* **pro:**  open deepin.com ([e7430974](https://github.com/linuxdeepin/dde-introduction/commit/e7430974b44b4102b087b23e653ae572b06941b8))
+
+
+
 <a name="1.0.2"></a>
 ### 1.0.2 (2018-06-20)
 
