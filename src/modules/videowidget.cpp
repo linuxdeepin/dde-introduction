@@ -98,7 +98,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     videoPath.cd("../share/dde-introduction");
 #endif
 
-    const QString &file = videoPath.path() + QString("/15.6demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh-CN" : "en-US");
+    const QString &file = videoPath.path() + QString("/15.6demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh_CN" : "en_US");
 
     connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
     connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
