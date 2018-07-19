@@ -1,3 +1,13 @@
+<a name="1.0.4"></a>
+### 1.0.4 (2018-07-19)
+
+
+#### Bug Fixes
+
+*   video file rename ([babb5854](https://github.com/linuxdeepin/dde-introduction/commit/babb5854df3f78799d2abfb3201712044c48505c))
+
+
+
 <a name="1.0.3"></a>
 ### 1.0.3 (2018-06-27)
 
