@@ -34,7 +34,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
-        <translation type="unfinished"/>
+        <translation>O projeto deepin é um criativo e energético sistema operativo de código aberto. Insiste sempre na ideia de código aberto, o desenvolvimento assenta sobre a licença GPL e todos os códigos fontes são abertos, os quais foram enviados para o GitHub. Membros da comunidade, fãs do código aberto e a Deepin Technology desenvolvem o projeto deepin juntos acarretando uma grande contribuição para o código aberto na China.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
         <source>Only in a comfortable, pleasure and free working environment, one can get high work efficiency. In Deepin Technology, no long and boring meeting and workflow, no complicated class hierarchy, all are equal and cooperative. It provides regular professional training, prospective career development and mature promote channel for employees.</source>
-        <translation type="unfinished"/>
+        <translation>Apenas um ambiente livre, agradável, e confortável pode ter uma produtividade elevada. Na Deepin Technology não há longas e aborrecidas reuniões, não há complicadas classes hierárquicas, todos são iguais e cooperantes. Proporciona regularmente treinamento profissional, perspetivas de desenvolvimento de carreira, e canais de promoção para funcionários.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
         <source>deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world to experience the Linux distribution from China, let the system widely spread all over the world and enlarge its global impact, we hope that more and more people from the Linux community can join to help the translation work to let our open source work benefit the world!</source>
-        <translation type="unfinished"/>
+        <translation>o deepin nasceu na China e pretende tornar-se global. Para tal ser possível para mais e mais utilizadores de todo o mundo experimentarem a distribuição Linux da China, deixa que o sistema se espalhe por todo o mundo e aumente o seu impacto global, temos a esperança que mais e mais pessoas da comunidade Linux possam juntar-se e ajudar no trabalho de tradução para que o nosso trabalho de código fonte aberto possa beneficiar o mundo!  </translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
@@ -236,17 +236,17 @@
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
         <source>The development of deepin can not move on without community support, for further improve the construction of the deepin community environment, Deepin Technology has made the decision to officially open channels of donation.</source>
-        <translation type="unfinished"/>
+        <translation>O desenvolvimento do deepin não pode avançar sem o apoio da comunidade, para melhoramento futuro da construção do ambiente da comunidade deepin, a Deepin Technology tomou a decisão de abrir canais oficiais de doações.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>
         <source>The donation upholds the principle of completely voluntary and no matter who you are, wherever you are, how much you contribute, are all making contributions to the development of Deepin community and we are very grateful for your donation.</source>
-        <translation type="unfinished"/>
+        <translation>A doação contém o princípio de completo voluntarismo e não interessa quem você é, quem quer que seja, quanto contribui, todos estão a fazer contribuições para o desenvolvimento da comunidade Deepin, e nós estamos muito gratos pela sua doação. </translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="49"/>
         <source>The donation aims to make a survey and decide the orientation and priority of the projects, support the continuous further development, and support community activities and construction.</source>
-        <translation type="unfinished"/>
+        <translation>A doação tem como propósito fazer uma sondagem e decidir a orientação e prioridade dos projetos, apoiar a continuidade do desenvolvimento futuro, e apoiar a construção e atividades da comunidade.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>

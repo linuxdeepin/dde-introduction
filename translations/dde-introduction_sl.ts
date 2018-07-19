@@ -4,32 +4,32 @@
     <message>
         <location filename="../src/modules/about.cpp" line="33"/>
         <source>About us</source>
-        <translation type="unfinished"/>
+        <translation>O nas</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation type="unfinished"/>
+        <translation>deepin je Linuxova distribucija, ki nudi elegantno, uporabniku prijazno, varno in stabilno izkušnjo za uporabnike povsod po svetu. Ne le, da integrira in konfigurira najboljše odprtokodne produkte, temveč tudi razvija vrsto programov za vsakdanjo rabo, recimo Trgovino Deepin, Zajem zaslona Deepin, Glasbo Deepin, Filme Deepin in tako naprej, sem pa sodita tudi Namizno okolje Deepin in Nadzorni center Deepin, ki sta zasnovana na Qt tehnologiji. deepin se osredotoča na uporabniku prijazno izkušnjo in čudovit dizajn, zato se ga da preprosto namestiti in uporabljati za delo in zabavo namesto Windowsov.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
         <source>Objective</source>
-        <translation type="unfinished"/>
+        <translation>Cilj</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>Customer First</source>
-        <translation type="unfinished"/>
+        <translation>Stranka na prvem mestu</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
         <source>Deepin Technology takes user requirements as core, adheres to innovative idea, and bases on the market demand to feedback users with better products and services.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology daje prednost uporabniškim potrebam in glede na povpraševanje ter povratne informacije uporabnikov nudi boljše produkte in storitve.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation type="unfinished"/>
+        <translation>Ideja odprtokodnosti</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
@@ -173,7 +173,7 @@
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
         <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
-        <translation type="unfinished"/>
+        <translation>O nas</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="118"/>

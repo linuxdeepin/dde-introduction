@@ -9,7 +9,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation>deepin, tüm dünyadan kullanıcılara zarif, kullanıcı dostu, güvenilir ve kararlı bir deneyim sunan bir Linux dağıtımıdır. En iyi açık kaynaklı ürünleri bir araya getirmekle kalmayıp, Qt teknoloji tarafından geliştirilmiş Deepin Masaüstü Ortamı&apos;nda çalışan ve Deepin Denetim Masası ile yapılandırılabilen, Deepin Mağaza, Deepin Ekran Görüntüsü, Deepin Müzik, Deepin Sinema gibi günlük kullanım için geliştirilmiş bir dizi uygulama sunar. Deepin kullanıcı dostu deneyim ve güzel tasarım üzerine odaklanmış olduğundan kurması ve kullanması kolaydır ve çoğu kullanıcı tarafından iş yapmak ve eğlence amacıyla Windows yerine kullanılabilir.</translation>
+        <translation>deepin, tüm dünyadan kullanıcılara zarif, kullanıcı dostu, güvenilir ve kararlı bir deneyim sunan bir Linux dağıtımıdır. En iyi açık kaynaklı ürünleri bir araya getirmekle kalmayıp, Qt teknoloji tarafından geliştirilmiş Deepin Masaüstü Ortamı üzerinde çalışan ve Deepin Kontrol Merkezi ile yapılandırılabilen, Deepin Mağazası, Deepin Ekran Görüntüsü, Deepin Müzik, Deepin Sinema gibi günlük kullanım için geliştirilmiş bir dizi özgün uygulama sunar. Deepin kullanıcı dostu deneyim ve güzel tasarım üzerine odaklanmış olduğundan kurması ve kullanması kolaydır ve çoğu kullanıcı tarafından iş yapmak ve eğlence amacıyla Windows yerine kullanılabilir.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation>Denetim Masası &gt; Kişiselleştirme &gt; Pencere etkisi kullanılsın seçeneğini ya da Shift + Super + Tab kısayolunu kullanabilirsiniz</translation>
+        <translation>Denetim Masası &gt; Kişiselleştirme &gt; Pencere Etkisi Kullanılsın seçeneğini ya da Shift + Super + Tab kısayolunu kullanabilirsiniz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
@@ -151,23 +151,23 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
-        <translation>Masaüstü kipi</translation>
+        <translation>Masaüstü Kipi</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
-        <translation>Simge teması</translation>
+        <translation>Simge Teması</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
-        <translation>Pencere etkisi</translation>
+        <translation>Pencere Etkisi</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
-        <translation>Bizi destekleyin</translation>
+        <translation>Bizi Destekleyin</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
@@ -284,12 +284,12 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation>Pencere etkisi kullanılmasın</translation>
+        <translation>Pencere Etkisi Kullanılmasın</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Enable window effect</source>
-        <translation>Pencere etkisi kullanılsın</translation>
+        <translation>Pencere Etkisi Kullanılsın</translation>
     </message>
 </context>
 </TS>

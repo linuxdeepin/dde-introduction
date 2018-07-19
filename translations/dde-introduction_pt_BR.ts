@@ -9,7 +9,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation>Deepin é uma distribuição linux empenhada em oferecer uma experiência elegante, amigável, segura e estável a todos os usuários ao redor do mundo. Ela não apenas integra e configura os melhores produtos de código aberto, mas também desenvolve uma série de aplicativos para o uso diário, como o Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie, entre outros, dentre eles o Deepin Desktop Environment e o Deepin Control Center, baseados em tecnologia Qt. Deepin tem o foco em uma experiência amigável e um belo design, sendo de instalação e uso simples para a maioria dos usuários e podendo substituir o Windows para trabalho e entretenimento.</translation>
+        <translation>Deepin é uma distribuição Linux empenhada em oferecer uma experiência elegante, amigável, segura e estável a todos os usuários ao redor do mundo. Ela não apenas integra e configura os melhores produtos de código aberto, mas também desenvolve uma série de aplicativos para o uso diário, como o Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie, entre outros, dentre eles o Deepin Desktop Environment e o Deepin Control Center, baseados em tecnologia Qt. O Deepin tem foco em uma experiência amigável e um belo design, sendo de instalação e uso simples para a maioria dos usuários, podendo substituir o Windows para trabalho e entretenimento.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
-        <translation>O projeto deepin  propõe um sistema operacional de código aberto e muito criativo. Ele insiste na ideia de código aberto, o desenvolvimento está sob licença GPL e todos os códigos são de código aberto, que foram enviados para o GitHub. Os membros da comunidade, os fãs de código aberto e a Deepin Technology desenvolverão o projeto deepin juntos para dar uma devida contribuição ao código aberto da China.</translation>
+        <translation>O projeto deepin é um sistema operacional de desktop de código aberto criativo e ativa. Ele investe na ideia de código aberto sempre, o desenvolvimento está sob licença GPL e todos os códigos são de código aberto, que foram enviados para o GitHub. Os membros da comunidade, os fãs de código aberto e a Deepin Technology desenvolverão o projeto deepin juntos para dar devida contribuição ao código aberto da China.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="248"/>
         <source>Please select desktop mode</source>
-        <translation>Escolha um modo de área de trabalho</translation>
+        <translation>Escolha o modo área de trabalho</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation>Você pode ativá-lo ou desativá-lo no Centro de Controle&gt; Personalização&gt; Ativar efeito de janela ou usar atalhos Shift + Super + Tab</translation>
+        <translation>Você pode ativá-lo ou desativá-lo na Central de Controle&gt; Personalização&gt; Ativar efeito de janela ou usar atalhos Shift + Super + Tab</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
@@ -138,7 +138,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>Você pode modificar isto em Centro de Controle &gt; Personalização &gt; Tema &gt; Tema dos Ícones</translation>
+        <translation>Você pode modificar isto em Central de Controle &gt; Personalização &gt; Tema &gt; Tema dos Ícones</translation>
     </message>
 </context>
 <context>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
-        <translation>Modo de área de trabalho</translation>
+        <translation>Modo área de trabalho</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="131"/>
@@ -246,12 +246,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="49"/>
         <source>The donation aims to make a survey and decide the orientation and priority of the projects, support the continuous further development, and support community activities and construction.</source>
-        <translation>A doação tem como objetivo fazer uma pesquisa e decidir a orientação e a prioridade dos projetos, apoiar o desenvolvimento contínuo e apoiar atividades comunitárias e construção.</translation>
+        <translation>A doação tem como objetivo fazer uma pesquisa e decidir a orientação e a prioridade dos projetos, apoiar o desenvolvimento contínuo e apoiar atividades comunitárias e sua construção.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>
         <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become an Internal Testing Team member, you will</source>
-        <translation>Para garantir a qualidade do projeto deepin, damos as boas-vindas a mais pessoas para participar do teste interno e do rastreamento de feedback. Torne-se um membro da equipe interna de testes</translation>
+        <translation>Para garantir a qualidade do projeto deepin, damos as boas-vindas aqueles que desejam participar do teste interno e do rastreamento de feedback. Torne-se um membro da equipe interna de testes</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
@@ -261,7 +261,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
         <source>Get the latest achievements of deepin and software timely.</source>
-        <translation>Receba as últimas conquistas do Deepin e software em tempo hábil.</translation>
+        <translation>Saiba das últimas notícias do Sistema Operacional Deepin a qualquer hora em qualquer lugar.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="53"/>

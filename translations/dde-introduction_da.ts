@@ -14,7 +14,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
         <source>Objective</source>
-        <translation type="unfinished"/>
+        <translation>Målsætning</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
         <source>deepin is an open source desktop system developed for common users. You are free to download, distribute, modify and use it. Detailed address is GitHub: https://github.com/linuxdeepin</source>
-        <translation type="unfinished"/>
+        <translation>deepin er et open source skrivebordssystem udviklet til almindelige brugere. Du kan frit downloade, distribuere, ændre og bruge det. Detaljer findes på GitHub: https://github.com/linuxdeepin</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation type="unfinished"/>
+        <translation>Hjemmeside</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation type="unfinished"/>
+        <translation>Du kan skifte det i tilstand, ved at højreklikke på dokken</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="260"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation type="unfinished"/>
+        <translation>Du kan aktivere eller deaktivere det i Kontrolcenter &gt; Personlig tilpasning &gt; Aktivér vindueseffekt, eller brug genvejen Skift+Super+Tab</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
@@ -138,7 +138,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation type="unfinished"/>
+        <translation>Du kan ændre det i Kontrolcenter &gt; Personlig tilpasning &gt; Tema &gt; Ikontema</translation>
     </message>
 </context>
 <context>
@@ -221,12 +221,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
         <source>Deepin community: Providing community news, download, mirrors, projects and a gathering place for developers!</source>
-        <translation type="unfinished"/>
+        <translation>Deepin-fællesskab: Leverer fællesskabsnyheder, download, spejle, projekter og et samlingssted for udviklere!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation type="unfinished"/>
+        <translation>Du er velkommen til at deltage i i18n-projektet.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
@@ -261,12 +261,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
         <source>Get the latest achievements of deepin and software timely.</source>
-        <translation type="unfinished"/>
+        <translation>Få de seneste resultater for deepin og software til tiden.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="53"/>
         <source>Obtain the latest development plans and progress of deepin project in advance.</source>
-        <translation type="unfinished"/>
+        <translation>Få de seneste udviklingsplaner og forløb af deepin-projektet på forhånd.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="54"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="55"/>
         <source>Outstanding members will get a souvenir of deepin.</source>
-        <translation type="unfinished"/>
+        <translation>Fremtrædende medlemmer får en souvenir af deepin.</translation>
     </message>
 </context>
 <context>

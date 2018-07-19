@@ -14,12 +14,12 @@
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
         <source>Objective</source>
-        <translation type="unfinished"/>
+        <translation>Tikslas</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>Customer First</source>
-        <translation type="unfinished"/>
+        <translation>Pirmiausia, klientas</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation type="unfinished"/>
+        <translation>Atvirojo kodo idėja</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
         <source>Open and Free</source>
-        <translation type="unfinished"/>
+        <translation>Atvira ir laisva</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
@@ -49,12 +49,12 @@
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
         <source>Open source project</source>
-        <translation type="unfinished"/>
+        <translation>Atvirojo kodo projektas</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
         <source>deepin is an open source desktop system developed for common users. You are free to download, distribute, modify and use it. Detailed address is GitHub: https://github.com/linuxdeepin</source>
-        <translation type="unfinished"/>
+        <translation>deepin yra atvirojo kodo darbalaukio sistema, sukurta įprastiems naudotojams. Jūs galite ją laisvai atsisiųsti, platinti, modifikuoti ir naudoti. Išsamesnis adresas yra GitHub: https://github.com/linuxdeepin</translation>
     </message>
 </context>
 <context>
@@ -62,17 +62,17 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation type="unfinished"/>
+        <translation>Svetainė</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation type="unfinished"/>
+        <translation>Bendruomenė</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
         <source>Feedback</source>
-        <translation>Atsiliepimas</translation>
+        <translation>Atsiliepimai</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="39"/>
@@ -113,32 +113,32 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="248"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Pasirinkite darbalaukio veikseną</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation type="unfinished"/>
+        <translation>Galėsite ją pakeisti, spustelėję dešiniu mygtuku ant doko ir pasirinkę Veiksena</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="260"/>
         <source>Please select to enable window effect or not</source>
-        <translation type="unfinished"/>
+        <translation>Pasirinkite ar įjungti langų efektus, ar ne</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation type="unfinished"/>
+        <translation>Galite juos įjungti arba išjungti perėję į Valdymo centras &gt; Personalizacija &gt; Įjungti langų efektus, arba pasinaudoję sparčiuoju klavišu Lyg2+Super+Tab</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Pasirinkite piktogramų temą</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation type="unfinished"/>
+        <translation>Galite ją keisti, perėję į Valdymo centras &gt; Personalizacija &gt; Tema &gt; Piktogramų tema</translation>
     </message>
 </context>
 <context>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
-        <translation type="unfinished"/>
+        <translation>Įžanga</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="124"/>
@@ -161,13 +161,13 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
-        <translation>Langų efektas</translation>
+        <translation>Langų efektai</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
-        <translation type="unfinished"/>
+        <translation>Palaikykite mus</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
@@ -178,22 +178,22 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
-        <translation type="unfinished"/>
+        <translation>Sveiki</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Pasirinkite darbalaukio veikseną</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Pasirinkite piktogramų temą</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
-        <translation type="unfinished"/>
+        <translation>Pasirinkite ar įjungti langų efektus, ar ne</translation>
     </message>
 </context>
 <context>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="40"/>
         <source>Internationalization</source>
-        <translation type="unfinished"/>
+        <translation>Internacionalizacija</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation type="unfinished"/>
+        <translation>Paaukojimai</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation type="unfinished"/>
+        <translation>Vidinis testavimas</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
@@ -271,12 +271,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="54"/>
         <source>Be on deepin contributors list.</source>
-        <translation type="unfinished"/>
+        <translation>Būsite deepin talkininkų sąraše.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="55"/>
         <source>Outstanding members will get a souvenir of deepin.</source>
-        <translation type="unfinished"/>
+        <translation>Išskirtiniai nariai gaus deepin suvenyrą.</translation>
     </message>
 </context>
 <context>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation type="unfinished"/>
+        <translation>Išjungti langų efektus</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
