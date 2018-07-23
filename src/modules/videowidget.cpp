@@ -28,6 +28,20 @@
 #include <QMediaPlaylist>
 #include <QIcon>
 #include <QLocale>
+#include <player_engine.h>
+
+static QDir ResourcesQDir() {
+    QDir videoPath(qApp->applicationDirPath());
+    videoPath.setSorting(QDir::Name);
+
+#ifdef QT_DEBUG
+    videoPath.cd("resources");
+#else
+    videoPath.cd("../share/dde-introduction");
+#endif
+
+    return std::move(videoPath);
+}
 
 VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     : ModuleInterface(parent)
@@ -39,6 +53,8 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     , m_leaveTimer(new QTimer(this))
     , m_pauseTimer(new QTimer(this))
 {
+
+    dmr::Backend::setDebugLevel(dmr::Backend::DebugLevel::Debug);
     m_selectBtn->hide();
 
     m_leaveTimer->setSingleShot(true);
@@ -87,18 +103,9 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 
     qreal ratio = 1.0;
 
-    QLocale locale;
+    QDir videoPath(ResourcesQDir());
 
-    QDir videoPath(qApp->applicationDirPath());
-    videoPath.setSorting(QDir::Name);
-
-#ifdef QT_DEBUG
-    videoPath.cd("resources");
-#else
-    videoPath.cd("../share/dde-introduction");
-#endif
-
-    const QString &file = videoPath.path() + QString("/15.6demo_%1.mp4").arg(locale.language() == QLocale::Chinese ? "zh_CN" : "en_US");
+    const QString &file = videoPath.path() + QString("/demo.mp4");
 
     connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
     connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
@@ -122,7 +129,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 
 void VideoWidget::updateBigIcon()
 {
-    setFixedSize(700, 450);
+    setFixedSize(720, 450);
     m_video->setFixedSize(700, 450);
 
     updateClip();
@@ -130,7 +137,7 @@ void VideoWidget::updateBigIcon()
 
 void VideoWidget::updateSmallIcon()
 {
-    const QSize size(548, 342);
+    const QSize size(550, 346);
     setFixedSize(size);
     m_video->setFixedSize(size);
 
@@ -147,6 +154,22 @@ void VideoWidget::updateControlButton()
 
     switch (m_video->engine().state()) {
     case dmr::PlayerEngine::Playing: {
+        QLocale locale;
+        const QString &file = QString("15.7_%1.ass").arg(locale.language() == QLocale::Chinese ?
+                                                             "zh_CN" :
+                                                             "en_US");
+        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
+
+        const dmr::PlayingMovieInfo info = m_video->engine().playingMovieInfo();
+
+        for (const dmr::SubtitleInfo sub : info.subs) {
+            const QString &title = sub["title"].toString();
+            if (title == file) {
+                m_video->engine().selectSubtitle(info.subs.indexOf(sub));
+                break;
+            }
+        }
+
         m_control->setNormalPic(":/resources/pause_normal.svg");
         m_control->setHoverPic(":/resources/pause_hover.svg");
         m_control->setPressPic(":/resources/pause_press.svg");
