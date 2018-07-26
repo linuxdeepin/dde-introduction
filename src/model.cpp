@@ -39,7 +39,7 @@ IconStruct Model::currentIcon()
         }
     }
 
-    Q_UNREACHABLE();
+    return IconStruct();
 }
 
 void Model::addIcon(const IconStruct &icon)

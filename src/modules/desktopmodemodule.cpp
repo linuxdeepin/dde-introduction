@@ -35,10 +35,6 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
         m_worker->setDesktopMode(Model::EfficientMode);
     });
 
-    QTimer::singleShot(100, this, [=] {
-        onDesktopTypeChanged(m_model->desktopMode());
-    });
-
     m_layout->setContentsMargins(20, 8, 20, 0);
 
     m_layout->addStretch();
@@ -83,13 +79,7 @@ void DesktopModeModule::updateSmallIcon()
     m_fashionWidget->setPixmap(":/resources/fashion_mode_small.png");
 }
 
-void DesktopModeModule::resizeEvent(QResizeEvent *event)
+void DesktopModeModule::updateSelectBtnPos()
 {
-    ModuleInterface::resizeEvent(event);
-
-    QTimer::singleShot(1, this, [=] {
-        onDesktopTypeChanged(m_model->desktopMode());
-    });
+    onDesktopTypeChanged(m_model->desktopMode());
 }
-
-

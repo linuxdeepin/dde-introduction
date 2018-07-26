@@ -18,16 +18,24 @@
 
 #include "moduleinterface.h"
 
+#include <DHiDPIHelper>
+
+DWIDGET_USE_NAMESPACE
+
 ModuleInterface::ModuleInterface(QWidget *parent)
     : QFrame(parent)
     , m_model(Model::Instance())
     , m_worker(Worker::Instance())
-    , m_selectBtn(new DImageButton(":/resources/list_select.png",
-                                   ":/resources/list_select.png",
-                                   ":/resources/list_select.png",
-                                   this))
+    , m_selectBtn(new QLabel(this))
+    , m_updateSelectBtnTimer(new QTimer(this))
 {
+    m_selectBtn->setPixmap(DHiDPIHelper::loadNxPixmap(":/resources/list_select.png"));
     m_selectBtn->setFixedSize(16, 16);
+
+    m_updateSelectBtnTimer->setInterval(0);
+    m_updateSelectBtnTimer->setSingleShot(true);
+
+    connect(m_updateSelectBtnTimer, &QTimer::timeout, this, &ModuleInterface::updateSelectBtnPos);
 }
 
 void ModuleInterface::setIconType(Model::IconType type)
@@ -42,4 +50,11 @@ void ModuleInterface::setIconType(Model::IconType type)
     default:
         break;
     }
+}
+
+void ModuleInterface::resizeEvent(QResizeEvent *event)
+{
+    QFrame::resizeEvent(event);
+
+    m_updateSelectBtnTimer->start();
 }

@@ -35,6 +35,8 @@ IconModule::IconModule(QWidget *parent)
     QVBoxLayout *widgetLayout = new QVBoxLayout;
     m_scrollWidget->setLayout(widgetLayout);
 
+    m_scrollWidget->installEventFilter(this);
+
     widgetLayout->setMargin(0);
     widgetLayout->setSpacing(0);
     widgetLayout->addStretch();
@@ -63,10 +65,6 @@ IconModule::IconModule(QWidget *parent)
     for (const IconStruct &icon : m_model->iconList()) {
         addIcon(icon);
     }
-
-    QTimer::singleShot(100, this, [=] {
-        currentIconChanged(m_model->currentIcon());
-    });
 
     updateSmallIcon();
 }
@@ -155,11 +153,16 @@ void IconModule::updateSmallIcon()
     }
 }
 
-void IconModule::resizeEvent(QResizeEvent *event)
+void IconModule::updateSelectBtnPos()
 {
-    ModuleInterface::resizeEvent(event);
+    currentIconChanged(m_model->currentIcon());
+}
 
-    QTimer::singleShot(1, this, [=] {
-        currentIconChanged(m_model->currentIcon());
-    });
+bool IconModule::eventFilter(QObject *watched, QEvent *event)
+{
+    if (watched == m_scrollWidget && event->type() == QEvent::Resize) {
+        m_updateSelectBtnTimer->start();
+    }
+
+    return ModuleInterface::eventFilter(watched, event);
 }

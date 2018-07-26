@@ -63,13 +63,9 @@ void WMModeModule::updateSmallIcon()
     m_fashionWidget->setPixmap(":/resources/3d_small.png");
 }
 
-void WMModeModule::resizeEvent(QResizeEvent *event)
+void WMModeModule::updateSelectBtnPos()
 {
-    ModuleInterface::resizeEvent(event);
-
-    QTimer::singleShot(1, this, [=] {
-        onWMModeChanged(m_model->wmType());
-    });
+    onWMModeChanged(m_model->wmType());
 }
 
 void WMModeModule::onWMModeChanged(Model::WMType type)

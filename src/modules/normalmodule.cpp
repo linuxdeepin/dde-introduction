@@ -118,6 +118,9 @@ NormalModule::NormalModule(QWidget *parent)
     videoBtn->setText(tr("Introduction"));
     m_titleMap[videoBtn] = tr("Welcome");
     m_buttonGrp->addButton(videoBtn);
+    VideoWidget *videoModule = new VideoWidget(false, this);
+    videoModule->hide();
+    m_modules[1] = videoModule;
 #endif
 
     // desktop button
@@ -126,6 +129,9 @@ NormalModule::NormalModule(QWidget *parent)
     desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Please select desktop mode");
     m_buttonGrp->addButton(desktopBtn);
+    DesktopModeModule *desktopModeModule = new DesktopModeModule(this);
+    desktopModeModule->hide();
+    m_modules[2] = desktopModeModule;
 
     // icon button
     NavigationButton * iconBtn = new NavigationButton;
@@ -133,6 +139,9 @@ NormalModule::NormalModule(QWidget *parent)
     iconBtn->setText(tr("Icon theme"));
     m_titleMap[iconBtn] = tr("Please select icon theme");
     m_buttonGrp->addButton(iconBtn);
+    IconModule *iconModule = new IconModule(this);
+    iconModule->hide();
+    m_modules[3] = iconModule;
 
     // wm button
     NavigationButton * wmBtn = nullptr;
@@ -142,6 +151,9 @@ NormalModule::NormalModule(QWidget *parent)
         wmBtn->setText(tr("Window effect"));
         m_titleMap[wmBtn] = tr("Please select to enable window effect or not");
         m_buttonGrp->addButton(wmBtn);
+        WMModeModule *wmModeModule = new WMModeModule(this);
+        wmModeModule->hide();
+        m_modules[4] = wmModeModule;
     }
 
     // support button
@@ -150,6 +162,9 @@ NormalModule::NormalModule(QWidget *parent)
     supportBtn->setText(tr("Support us"));
     m_titleMap[supportBtn] = tr("Support us");
     m_buttonGrp->addButton(supportBtn);
+    Support *support = new Support(this);
+    support->hide();
+    m_modules[5] = support;
 
     // about button
     NavigationButton * aboutBtn = new NavigationButton;
@@ -157,6 +172,9 @@ NormalModule::NormalModule(QWidget *parent)
     aboutBtn->setText(tr("About us"));
     m_titleMap[aboutBtn] = tr("About us");
     m_buttonGrp->addButton(aboutBtn);
+    About *about = new About(this);
+    about->hide();
+    m_modules[6] = about;
 
 #ifndef DISABLE_VIDEO
     videoBtn->setChecked(true);
@@ -207,54 +225,21 @@ void NormalModule::updateCurrentWidget(const int index)
 
     if (m_currentWidget) {
         m_rightContentLayout->removeWidget(m_currentWidget);
-        m_currentWidget->deleteLater();
-        m_currentWidget = nullptr;
+        m_currentWidget->hide();
     }
 
-    switch (index) {
-    case 1:
-    {
-        VideoWidget *w = new VideoWidget(false);
-        w->updateSmallIcon();
-        m_currentWidget = w;
-        break;
-    }
-    case 2:
-    {
-        DesktopModeModule *w = new DesktopModeModule;
-        w->updateSmallIcon();
-        m_currentWidget = w;
-        break;
-    }
-    case 3:
-    {
-        IconModule *w = new IconModule;
-        w->updateSmallIcon();
-        m_currentWidget = w;
-        break;
-    }
-    case 4:
-    {
-        WMModeModule *w = new WMModeModule;
-        w->updateSmallIcon();
-        m_currentWidget = w;
-        break;
-    }
-    case 5:
-    {
-        m_currentWidget = new Support;
-        break;
-    }
-    case 6:
-    {
-        m_currentWidget = new About;
-        break;
-    }
-    default:
-        break;
-    }
+    QTimer::singleShot(100, this, [=] {
+        QWidget *w = m_modules[index];
+        ModuleInterface *module = qobject_cast<ModuleInterface*>(w);
+        if (module) {
+            module->updateSmallIcon();
+            module->updateSelectBtnPos();
+        }
 
-    m_currentWidget->setFixedWidth(580);
-    m_rightContentLayout->addWidget(m_currentWidget, 0, Qt::AlignCenter);
-    m_currentWidget->show();
+        m_currentWidget = w;
+
+        m_rightContentLayout->addWidget(m_currentWidget, 0, Qt::AlignCenter);
+        m_currentWidget->setFixedWidth(580);
+        m_currentWidget->show();
+    });
 }

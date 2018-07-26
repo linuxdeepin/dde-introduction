@@ -137,6 +137,10 @@ void VideoWidget::updateSmallIcon()
     updateClip();
 }
 
+void VideoWidget::updateSelectBtnPos()
+{
+}
+
 void VideoWidget::updateControlButton()
 {
     const QPoint &p = rect().center() - m_control->rect().center();

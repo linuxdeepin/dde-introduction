@@ -25,6 +25,7 @@
 #include <QPushButton>
 #include <QMap>
 
+class ModuleInterface;
 class NormalModule : public QWidget
 {
     Q_OBJECT
@@ -43,6 +44,7 @@ private:
     QButtonGroup *m_buttonGrp;
     QMap<QWidget*, int> m_buttonMap;
     QMap<QAbstractButton*, QString> m_titleMap;
+    QMap<int, QWidget*> m_modules;
     QWidget *m_currentWidget;
     int m_index;
 };

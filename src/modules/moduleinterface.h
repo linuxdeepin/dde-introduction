@@ -38,10 +38,15 @@ public:
     virtual void updateBigIcon() = 0;
     virtual void updateSmallIcon() = 0;
 
+    virtual void updateSelectBtnPos() = 0;
+
+    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+
 protected:
     Model  *m_model;
     Worker *m_worker;
-    DImageButton* m_selectBtn;
+    QLabel* m_selectBtn;
+    QTimer *m_updateSelectBtnTimer;
 };
 
 #endif // MODULEINTERFACE_H

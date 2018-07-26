@@ -38,6 +38,7 @@ public:
 
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmallIcon() Q_DECL_OVERRIDE;
+    void updateSelectBtnPos() Q_DECL_OVERRIDE;
     void updateControlButton();
     void onControlButtonClicked();
 

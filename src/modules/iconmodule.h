@@ -39,9 +39,10 @@ public:
 
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmallIcon() Q_DECL_OVERRIDE;
+    void updateSelectBtnPos() Q_DECL_OVERRIDE;
 
 protected:
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
 
 private slots:
     void addIcon(const IconStruct &icon);
