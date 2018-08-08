@@ -1,3 +1,17 @@
+<a name="1.0.5"></a>
+### 1.0.5 (2018-08-08)
+
+
+#### Bug Fixes
+
+*   select icon pos error ([1ac9ff62](https://github.com/linuxdeepin/dde-introduction/commit/1ac9ff625ad17b1aa340a481e3b7e223e6118575))
+
+#### Features
+
+* **video:**  use subtitle ([93540bad](https://github.com/linuxdeepin/dde-introduction/commit/93540bada157a15035de56283551874ffb17c140))
+
+
+
 <a name="1.0.4"></a>
 ### 1.0.4 (2018-07-19)
 
