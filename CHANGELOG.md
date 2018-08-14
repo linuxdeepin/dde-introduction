@@ -1,3 +1,13 @@
+<a name="1.0.6"></a>
+### 1.0.6 (2018-08-14)
+
+
+#### Features
+
+*   update new ass file ([76019f60](https://github.com/linuxdeepin/dde-introduction/commit/76019f602f3ae0c308d3f17161edfec3bd17ea31))
+
+
+
 <a name="1.0.5"></a>
 ### 1.0.5 (2018-08-08)
 
