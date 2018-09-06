@@ -33,6 +33,9 @@ int main(int argc, char *argv[])
     DApplication a(argc, argv);
     a.setApplicationName("dde-introduction");
 
+    // dapplication default setting is true
+    a.setAttribute(Qt::AA_ForceRasterWidgets, false);
+
     if (!a.setSingleInstance(a.applicationName(), DApplication::UserScope)) {
         qWarning() << QString("There is a %1 running!!").arg(a.applicationName());
         return -1;
