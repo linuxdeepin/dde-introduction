@@ -44,22 +44,22 @@ Style: tiyanshengjishuangguanqixia,Noto Sans CJK SC,70,&H00141414,&H000000FF,&H0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 5,0:00:17.12,0:00:20.70,yijianzhida,,0,0,0,,{\fad(500,500)}Change setting with one click
-Dialogue: 3,0:00:17.12,0:00:20.70,kongzhi,,0,0,0,,{\fad(500,500)}Left navigation in Control Center
-Dialogue: 7,0:00:27.60,0:00:31.17,weinin,,0,0,0,,{\fad(500,500)}Customize your unique application menu
-Dialogue: 6,0:00:27.60,0:00:31.17,qidong,,0,0,0,,{\fad(500,500)}New look for the small window Launcher
-Dialogue: 13,0:00:31.57,0:00:35.47,yiju,,0,0,0,,{\fad(500,500)}Smart sequence based on use frequency
-Dialogue: 11,0:00:41.65,0:00:43.65,didianliangxianshi,,0,0,0,,{\fad(500,500)}Low battery warning
-Dialogue: 11,0:00:44.82,0:00:50.25,zidongqiehuanjienengmoshi,,0,0,0,,{\fad(500,500)}Auto Mode Switch
-Dialogue: 12,0:00:51.05,0:00:54.62,zidongqiehuanjienengmoshi-biaoti,,0,0,0,,{\fad(500,500)}Automatic power saving mode
-Dialogue: 11,0:00:51.05,0:00:54.62,tiexinyanchangshiyongshijian,,0,0,0,,{\fad(500,500)}Longer battery life when unplug
-Dialogue: 12,0:01:07.65,0:01:11.22,qidongsuduneicunyouhua,,0,0,0,,{\fad(500,500)}Quicker startup and less memory usage
-Dialogue: 11,0:01:07.65,0:01:11.22,tiyanshengjishuangguanqixia,,0,0,0,,{\fad(500,500)}Fully improved user experience
-Dialogue: 9,0:01:13.05,0:01:16.62,qingsong,,0,0,0,,{\fad(500,500)}Easy to find out the answers
-Dialogue: 8,0:01:13.05,0:01:16.62,shoulu,,0,0,0,,{\fad(500,500)}Comprehensive Deepin Manual
-Dialogue: 11,0:01:43.02,0:01:46.60,heibai,,0,0,0,,{\fad(500,500)}Switch as you wish
-Dialogue: 10,0:01:43.02,0:01:46.60,bufen,,0,0,0,,{\fad(500,500)}Light or dark
-Dialogue: 13,0:01:54.77,0:01:58.35,anquan,,0,0,0,,{\fad(500,500)}Faster and securer
-Dialogue: 12,0:01:54.77,0:01:58.35,mima,,0,0,0,,{\fad(500,500)}New fingerprint unlock
-Dialogue: 14,0:02:11.42,0:02:15.02,weininde,,0,0,0,,{\fad(500,500)}Satisfy your work and entertainment needs
-Dialogue: 13,0:02:11.42,0:02:15.02,shendu,,0,0,0,,{\fad(500,500)}deepin and its native applications
+Dialogue: 4,0:00:37.22,0:00:40.80,yijianzhida,,0,0,0,,{\fad(500,500)}Change setting with one click
+Dialogue: 3,0:00:37.22,0:00:40.80,kongzhi,,0,0,0,,{\fad(500,500)}Left navigation in Control Center
+Dialogue: 7,0:00:45.05,0:00:48.62,weinin,,0,0,0,,{\fad(500,500)}Customize your unique application menu
+Dialogue: 6,0:00:45.05,0:00:48.62,qidong,,0,0,0,,{\fad(500,500)}New look for the small window Launcher
+Dialogue: 12,0:00:49.92,0:00:53.82,yiju,,0,0,0,,{\fad(500,500)}Smart sequence based on use frequency
+Dialogue: 11,0:00:59.75,0:01:01.75,didianliangxianshi,,0,0,0,,{\fad(500,500)}Low battery warning
+Dialogue: 11,0:01:03.05,0:01:08.47,zidongqiehuanjienengmoshi,,0,0,0,,{\fad(500,500)}Auto Mode Switch
+Dialogue: 12,0:01:09.30,0:01:12.87,zidongqiehuanjienengmoshi-biaoti,,0,0,0,,{\fad(500,500)}Automatic power saving mode
+Dialogue: 11,0:01:09.30,0:01:12.87,tiexinyanchangshiyongshijian,,0,0,0,,{\fad(500,500)}Longer battery life when unplug
+Dialogue: 12,0:01:25.65,0:01:29.22,qidongsuduneicunyouhua,,0,0,0,,{\fad(500,500)}Quicker startup and less memory usage
+Dialogue: 11,0:01:25.65,0:01:29.22,tiyanshengjishuangguanqixia,,0,0,0,,{\fad(500,500)}Fully improved user experience
+Dialogue: 9,0:01:31.55,0:01:35.12,qingsong,,0,0,0,,{\fad(500,500)}Easy to find out the answers
+Dialogue: 8,0:01:31.55,0:01:35.12,shoulu,,0,0,0,,{\fad(500,500)}Comprehensive Deepin Manual
+Dialogue: 11,0:02:01.10,0:02:04.67,heibai,,0,0,0,,{\fad(500,500)}Switch as you wish
+Dialogue: 10,0:02:01.10,0:02:04.67,bufen,,0,0,0,,{\fad(500,500)}Light or dark
+Dialogue: 13,0:02:13.20,0:02:16.77,anquan,,0,0,0,,{\fad(500,500)}Faster and securer
+Dialogue: 12,0:02:13.20,0:02:16.77,mima,,0,0,0,,{\fad(500,500)}New fingerprint unlock
+Dialogue: 14,0:02:29.37,0:02:32.97,weininde,,0,0,0,,{\fad(500,500)}Satisfy your work and entertainment needs
+Dialogue: 13,0:02:29.37,0:02:32.97,shendu,,0,0,0,,{\fad(500,500)}deepin and its native applications

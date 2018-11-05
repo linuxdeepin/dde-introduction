@@ -155,7 +155,7 @@ void VideoWidget::updateControlButton()
     switch (m_video->engine().state()) {
     case dmr::PlayerEngine::Playing: {
         QLocale locale;
-        const QString &file = QString("15.7_%1.ass").arg(locale.language() == QLocale::Chinese ?
+        const QString &file = QString("15.8_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
         m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
