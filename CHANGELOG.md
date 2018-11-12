@@ -1,3 +1,14 @@
+<a name="1.0.7"></a>
+### 1.0.7 (2018-11-12)
+
+
+#### Features
+
+*   upload 15.8 demo file ([27d7ba50](https://github.com/linuxdeepin/dde-introduction/commit/27d7ba5072993167945d0f0779c1d32613ca8bb5))
+*   disable force raster widgets ([fbff6e5a](https://github.com/linuxdeepin/dde-introduction/commit/fbff6e5a81d343ba9b0fefa9fd6678a61c1a212d))
+
+
+
 <a name="1.0.6"></a>
 ### 1.0.6 (2018-08-14)
 
