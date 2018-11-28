@@ -1,3 +1,13 @@
+<a name="1.0.8"></a>
+### 1.0.8 (2018-11-28)
+
+
+#### Features
+
+*   add genericName ([7b2bb229](https://github.com/linuxdeepin/dde-introduction/commit/7b2bb2290caec677370a48668bf079ad89781312))
+
+
+
 <a name="1.0.7"></a>
 ### 1.0.7 (2018-11-12)
 
