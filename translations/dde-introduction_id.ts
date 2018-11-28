@@ -4,7 +4,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="33"/>
         <source>About us</source>
-        <translation type="unfinished"/>
+        <translation>Tentang kami</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation type="unfinished"/>
+        <translation>Ide Sumber Terbuka</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
         <source>Open and Free</source>
-        <translation type="unfinished"/>
+        <translation>Terbuka dan Bebas</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
@@ -67,7 +67,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation type="unfinished"/>
+        <translation>Komunitas</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="248"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Pilih mode desktop</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Silakan pilih tema ikon</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
@@ -151,44 +151,44 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Mode Desktop</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema ikon</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
-        <translation type="unfinished"/>
+        <translation>Efek jendela</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
-        <translation type="unfinished"/>
+        <translation>Dukung kami</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
         <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
-        <translation type="unfinished"/>
+        <translation>Tentang kami</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
-        <translation type="unfinished"/>
+        <translation>Selamat datang</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Pilih mode desktop</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Silakan pilih tema ikon</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="141"/>
@@ -226,12 +226,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation type="unfinished"/>
+        <translation>Selamat datang untuk bergabung pada proyek i18n.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation type="unfinished"/>
+        <translation>Donasi</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation type="unfinished"/>
+        <translation>Testing internal</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation type="unfinished"/>
+        <translation>Nonaktifkan efek jendela</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>

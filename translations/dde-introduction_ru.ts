@@ -133,12 +133,12 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
         <source>Please select icon theme</source>
-        <translation>Пожалуйста выберите тему иконок</translation>
+        <translation>Пожалуйста выберите тему значков</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>Вы можете изменить это в Центре Управления &gt; Персональные Настройки &gt; Тема &gt; Тема Иконок</translation>
+        <translation>Вы можете изменить это в Центре Управления &gt; Персональные Настройки &gt; Тема &gt; Тема Значков</translation>
     </message>
 </context>
 <context>
@@ -156,7 +156,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
-        <translation>Тема иконок</translation>
+        <translation>Тема значков</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="140"/>
@@ -188,7 +188,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
-        <translation>Пожалуйста выберите тему иконок</translation>
+        <translation>Пожалуйста выберите тему значков</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="141"/>

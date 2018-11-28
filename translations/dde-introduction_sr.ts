@@ -19,7 +19,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>Customer First</source>
-        <translation>Корисник на Првом Месту</translation>
+        <translation>Корисник на првом месту</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation>Идеја Отвореног Кода</translation>
+        <translation>Идеја отвореног кода</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
         <source>Open and Free</source>
-        <translation>Отворен и Слободан</translation>
+        <translation>Отворен и слободан</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation>Матична Страница</translation>
+        <translation>Матична страница</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
@@ -138,7 +138,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>Можете променити у Контролни Центар &gt; Личне промене &gt; Теме &gt; Тема Иконица</translation>
+        <translation>Можете променити у Контролни Центар &gt; Личне промене &gt; Теме &gt; Тема иконица</translation>
     </message>
 </context>
 <context>

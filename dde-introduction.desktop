@@ -1,9 +1,43 @@
 [Desktop Entry]
 Categories=Utility
 Exec=/usr/bin/dde-introduction
+GenericName=Introduction
 Icon=dde-introduction
 Name=Deepin Introduction
-Name[zh_CN]=欢迎
 Type=Application
-GenericName=Introduction
 X-Deepin-Vendor=deepin
+
+# Translations:
+# Do not manually modify!
+GenericName[ar]=المقدمة
+GenericName[bg]=Въведение
+GenericName[bn]=পরিচয়
+GenericName[ca]=Introducció
+GenericName[cs]=Úvod
+GenericName[da]=Introduktion
+GenericName[de]=Einführung
+GenericName[en_GB]=Introduction
+GenericName[es]=Introducción
+GenericName[fi]=Johdanto
+GenericName[fr]=Introduction
+GenericName[hi_IN]=परिचय
+GenericName[hr]=Uvod
+GenericName[hu]=Bemutatkozás
+GenericName[it]=Introduzione
+GenericName[ja]=イントロダクション
+GenericName[kn_IN]=ಪರಿಚಯ
+GenericName[lt]=Įžanga
+GenericName[ms]=Pengenalan
+GenericName[pl]=Wprowadzenie
+GenericName[pt]=Introdução
+GenericName[pt_BR]=Introdução
+GenericName[ru]=Введение
+GenericName[sk]=Úvod
+GenericName[sr]=Представљање
+GenericName[tr]=Giriş
+GenericName[uk]=Вступ
+GenericName[zh_CN]=欢迎
+GenericName[zh_TW]=介紹
+Name[sr]=Дипин Представљање
+Name[zh_CN]=欢迎
+

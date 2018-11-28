@@ -9,7 +9,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation>Deepin est une distribution Linux qui s&apos;engage à fournir une expérience élégante, conviviale, sûre et stable pour les utilisateurs du monde entier. Il intègre et configure non seulement les meilleurs produits open-source, mais développe également une série d&apos;applications pour une utilisation quotidienne, telles que Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie, Deepin Movie et ainsi de suite, parmi lesquelles Deepin Desktop Environment et Deepin Control Center sont basés sur la technologie Qt. Deepin met l&apos;accent sur la convivialité et la beauté du design, de sorte qu&apos;il est facile à installer et à utiliser pour la plupart des utilisateurs et qu&apos;il peut remplacer Windows pour le travail et le divertissement.</translation>
+        <translation>Deepin est une distribution Linux qui s&apos;engage à fournir une expérience élégante, conviviale, sûre et stable pour les utilisateurs du monde entier. Il intègre non seulement les meilleurs produits open-source, mais développe également une série d&apos;applications pour une utilisation quotidienne, telles que Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie et autres, ainsi que Deepin Desktop Environment et Deepin Control Center qui sont basées sur la technologie Qt. Deepin met l&apos;accent sur la convivialité et la beauté du design, de sorte qu&apos;il est facile à installer et à utiliser pour la plupart des utilisateurs et peut remplacer Windows pour le travail et le divertissement.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
-        <translation>Le projet Deepin est un système d&apos;exploitation de bureau open source créatif et énergique. Il insiste sur l&apos;idée de l&apos;open source toujours, les développements sont sous licence GPL et tous les codes sont open source, qui a été téléchargé sur GitHub. Les membres de la communauté, les fans d&apos;open source et Deepin Technology développeront ensemble le projet Deepin afin d&apos;apporter une contribution à l&apos;open source en Chine.</translation>
+        <translation>Le projet Deepin est un système d&apos;exploitation de bureau créatif et énergique. Il maintient toujours son idée de l&apos;open source , les développements sont sous licence GPL et tous les codes sont accessibles et disponibles sur GitHub. Les membres de la communauté, les fans d&apos;open source et Deepin Technology développeront ensemble le projet Deepin afin d&apos;apporter une contribution à l&apos;open source en Chine.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
         <source>Only in a comfortable, pleasure and free working environment, one can get high work efficiency. In Deepin Technology, no long and boring meeting and workflow, no complicated class hierarchy, all are equal and cooperative. It provides regular professional training, prospective career development and mature promote channel for employees.</source>
-        <translation>Ce n&apos;est que dans un environnement de travail confortable, agréable et libre que l&apos;on peut obtenir une grande efficacité de travail. Dans Deepin Technology, pas de longues et ennuyeuses réunions et flux de travail, pas de hiérarchie de classe compliquée, tous sont égaux et coopératifs. Il offre des formations professionnelles régulières, des perspectives d&apos;évolution de carrière et des canaux de promotion mûrs pour les employés.</translation>
+        <translation>Ce n&apos;est que dans un environnement de travail confortable, agréable et libre que l&apos;on peut obtenir une grande efficacité de travail. Dans Deepin Technology, pas de longues et ennuyeuses réunions de travail, pas de hiérarchie de classe compliquée, tous sont égaux et coopératifs. Deepin Technology offre aussi des formations professionnelles régulières, des perspectives d&apos;évolution de carrière et des canaux de promotion pour les employés.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
@@ -118,12 +118,12 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>Vous pouvez le changer de mode en cliquant avec le bouton droit de la souris sur la station d&apos;accueil.</translation>
+        <translation>Vous pouvez changer de mode en cliquant avec le bouton droit de la souris sur le dock.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="260"/>
         <source>Please select to enable window effect or not</source>
-        <translation>Veuillez sélectionner pour activer ou non l&apos;effet de fenêtre.</translation>
+        <translation>Veuillez sélectionner pour activer ou non les effets de fenêtre.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
@@ -284,12 +284,12 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation>Désactiver l&apos;effet de fenêtre</translation>
+        <translation>Désactiver les effets de fenêtres </translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Enable window effect</source>
-        <translation>Activer les effets de fenêtre</translation>
+        <translation>Activer les effets de fenêtres </translation>
     </message>
 </context>
 </TS>

@@ -4,7 +4,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="33"/>
         <source>About us</source>
-        <translation type="unfinished"/>
+        <translation>O nama</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation type="unfinished"/>
+        <translation>Ideja otvorenog koda</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
         <source>Open and Free</source>
-        <translation type="unfinished"/>
+        <translation>Otvoren i slobodan</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
         <source>Open source project</source>
-        <translation type="unfinished"/>
+        <translation>Projekt otvorenog koda</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
@@ -62,12 +62,12 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation type="unfinished"/>
+        <translation>Početna stranica</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation type="unfinished"/>
+        <translation>Zajednica</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="248"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Molim izaberite desktop način </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="260"/>
         <source>Please select to enable window effect or not</source>
-        <translation type="unfinished"/>
+        <translation>Molim odaberite hoćete li omogućiti efekte prozora ili ne</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
@@ -133,12 +133,12 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Molim odaberite temu ikona</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation type="unfinished"/>
+        <translation>Možete promjeniti u kontrolnom centru &gt; Personalizacija &gt; Tema &gt; Tema ikone</translation>
     </message>
 </context>
 <context>
@@ -146,54 +146,54 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
-        <translation type="unfinished"/>
+        <translation>Uvod</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Desktop način rada</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema ikona</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
-        <translation type="unfinished"/>
+        <translation>Efekt prozora</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
-        <translation type="unfinished"/>
+        <translation>Podržite nas</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
         <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
-        <translation type="unfinished"/>
+        <translation>O nama</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
-        <translation type="unfinished"/>
+        <translation>Dobrodošli</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Molim izaberite desktop način rada</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Molim odaberite temu ikona</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
-        <translation type="unfinished"/>
+        <translation>Molim odaberite hoćete li omogućiti efekte prozora ili ne</translation>
     </message>
 </context>
 <context>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="40"/>
         <source>Internationalization</source>
-        <translation type="unfinished"/>
+        <translation>Internacionalizacija</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
@@ -211,27 +211,27 @@
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
         <source>The i18n translation work is mainly about:</source>
-        <translation type="unfinished"/>
+        <translation>i18n prevoditeljski rad uglavnom je:</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
         <source>deepin: Joining the document writing and i18n work to let our open source work benefit the world!</source>
-        <translation type="unfinished"/>
+        <translation>deepin: Pridruživanje pisanju dokumenata i i18n radu da bi naš otvoreni kod bio na korist svijetu!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
         <source>Deepin community: Providing community news, download, mirrors, projects and a gathering place for developers!</source>
-        <translation type="unfinished"/>
+        <translation>Deepin zajednica: Donosi novosti zajednice, preuzimanja, zrcala, projekti i mjesto okupljanja razvijatelja!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation type="unfinished"/>
+        <translation>Dobrodošli ste pridružiti se i18 projektu.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation type="unfinished"/>
+        <translation>Donacije</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>

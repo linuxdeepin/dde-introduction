@@ -1,60 +1,60 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="hu" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ku_IQ" version="2.1">
 <context>
     <name>About</name>
     <message>
         <location filename="../src/modules/about.cpp" line="33"/>
         <source>About us</source>
-        <translation>Rólunk</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation>A deepin egy Linux-disztribúció, amelynek célja, hogy elegáns, felhasználóbarát, biztonságos és megbízható mivoltával élményt jelentsen a világ bármely felhasználója számára. Nem csupán a legjobb nyílt forráskódú szoftvereket tartalmazza, de olyan saját fejlesztésű alkalmazásokat kínál mindennapos használatra, mint a Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie és megannyi más, melyek a Deepin Desktop Environtment-tel és a Deepin Vezérlőpulttal egyetemben Qt-technológiára épülnek. A deepin a felhasználóbarát működésre és a vizuális élményekre helyezi a hangsúlyt, s egyszerű kezelhetőségével alternatívát jelenthet a legtöbb Windows-felhasználó számára a mindennapokban.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
         <source>Objective</source>
-        <translation>Cél</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>Customer First</source>
-        <translation>Az ügyfél az első</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
         <source>Deepin Technology takes user requirements as core, adheres to innovative idea, and bases on the market demand to feedback users with better products and services.</source>
-        <translation>A Deepin Technology a felhasználói igényeket veszi alapul, melyeket innovativitással ötvöz. Számításba veszi a felhasználói visszajelzéseket, hogy a termékeket és szolgáltatásokat a lehető legmagasabb színvonalra emelje.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation>Nyílt forráskódú ötletek</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
-        <translation>A deepin projekt célja egy kreatív és erőteljes nyílt forráskódú operációs rendszer létrehozása. Minden esetben ragaszkodik a nyílt forráskód ideájához, így a fejlesztés a GPL Licenc nyomán minden esetben a GitHub-on szabadon hozzáférhető forráskódot eredményez. A közösség tagjai, a nyílt forráskód elkötelezettjei és a Deepin Technology együtt járulnak hozzá a deepin projekthez és Kína nyílt forráskódú szoftvereihez.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
         <source>Open and Free</source>
-        <translation>Nyílt és szabad</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
         <source>Only in a comfortable, pleasure and free working environment, one can get high work efficiency. In Deepin Technology, no long and boring meeting and workflow, no complicated class hierarchy, all are equal and cooperative. It provides regular professional training, prospective career development and mature promote channel for employees.</source>
-        <translation>Csak egy komfortos, élvezetes és szabad munkakörnyezetben lehet hatékonyan dolgozni. A Deepin Technology csapatában nincsenek hosszú és unalmat meetingek, komplikált csoport-hierarchiák, hiszen a résztvevők egyenlő partnerekként kooperálnak. Rendszeresek a szakmai tréningek, ígéretes karrierfejlesztési és továbbfejlődési lehetőségek állnak az alkalmazottak rendelkezésére.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
         <source>Open source project</source>
-        <translation>Nyílt forráskódú projekt</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
         <source>deepin is an open source desktop system developed for common users. You are free to download, distribute, modify and use it. Detailed address is GitHub: https://github.com/linuxdeepin</source>
-        <translation>A deepin egy nyílt forráskódú asztali operációs rendszer, melyet átlagos felhasználásra szántunk. Szabadon letölthető, terjeszthető, módosítható és használható. A GitHub repo címe: https://github.com/linuxdeepin</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -62,27 +62,27 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation>Kezdőlap</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation>Közösség</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
         <source>Feedback</source>
-        <translation>Visszajelzés</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="39"/>
         <source>Help</source>
-        <translation>Súgó</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="42"/>
         <source>Acknowledgements</source>
-        <translation>Köszönetnyilvánítás</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -90,12 +90,12 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="27"/>
         <source>Efficient Mode</source>
-        <translation>Hatékony mód</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Fashion Mode</source>
-        <translation>Stílus mód</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -103,42 +103,42 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="119"/>
         <source>Next</source>
-        <translation>Következő</translation>
+        <translation>Pêşve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="120"/>
         <source>Done</source>
-        <translation>Kész</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="248"/>
         <source>Please select desktop mode</source>
-        <translation>Válassz asztalstílust</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>Az asztal stílusa a Mód menüben állítható, melyet a dokkra való jobb kattintással érsz el</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="260"/>
         <source>Please select to enable window effect or not</source>
-        <translation>Engedélyezed a vizuális hatásokat?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation>Ki- és bekapcsolhatod ezt a Vezérlőpult &gt; Személyre szabás &gt; Vizuális hatások engedélyezése opcióval, vagy használhatod a Shift+Super+Tab billentyűkombinációt is</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
         <source>Please select icon theme</source>
-        <translation>Válassz ikonstílust</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>Megváltoztathatod a Vezérlőpult &gt; Személyre szabás &gt; Téma &gt; Ikonstílus menüpontban</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -146,54 +146,54 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
-        <translation>Bemutatkozás</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
-        <translation>Asztalstílus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
-        <translation>Ikonstílus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
-        <translation>Ablakeffekt</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
-        <translation>Támogass bennünket</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
         <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
-        <translation>Rólunk</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
-        <translation>Üdvözöljük</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
-        <translation>Válassz asztalstílust</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
-        <translation>Válasszon ikonstílust</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
-        <translation>Engedélyezed a vizuális effekteket?</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="40"/>
         <source>Internationalization</source>
-        <translation>Nemzetközivé tétel</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation>Adományok</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
@@ -289,7 +289,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Enable window effect</source>
-        <translation>Ablak effektusok bekapcsolása</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

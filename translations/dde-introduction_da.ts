@@ -9,7 +9,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin er en Linux-distribution der er fast besluttet på at levere en elegant, brugervenlig, sikker og stabil oplevelse til brugere verden over. Det integrerer og konfigurerer ikke blot de bedste open source-produkter, men udvikler også en serie af programmer til dagligt brug, såsom Deepin butik, Deepin skærmbillede, Deepin musik, Deepin film osv., heriblandt Deepin-skrivebordsmiljø og Deepin-kontrolcenter som er baseret på Qt-teknologi. Deepin fokuserer på en brugervenlig oplevelse og smukt design, så det er let at installere og bruge for de fleste brugere og kan nemt erstatte Windows til arbejde og underholdning.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
         <source>Deepin Technology takes user requirements as core, adheres to innovative idea, and bases on the market demand to feedback users with better products and services.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology tager brugerkrav som kerneområde, følger innovative ideer, og på basis af markedsefterspørgelse til feedback vil brugerne forbedre produkter og tjenester.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin-projektet er et kreativt og energisk open source skrivebordsstyresystem. Det insisterer altid på open source ideen. Udviklingen er under GPL-licensen og alt kode er open source, som uploades til GitHub. Fællesskabsmedlemmer, open source fans og Deepin Technology udvikler deepin-projektet sammen for at skabe et tiltrængt bidrag til Kinas open source.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
         <source>Only in a comfortable, pleasure and free working environment, one can get high work efficiency. In Deepin Technology, no long and boring meeting and workflow, no complicated class hierarchy, all are equal and cooperative. It provides regular professional training, prospective career development and mature promote channel for employees.</source>
-        <translation type="unfinished"/>
+        <translation>Kun i et komfortabelt, behageligt og frit arbejdsmiljø at man kan få høj arbejdseffektivitet. I Deepin Technology er der ingen lange og kedelige møder og arbejdsgang, intet kompliceret klassehierarki. Alle er ligestillet og samarbejdsvillige. Der gives regelmæssig professionel træning, fremtidig karriere udvikling og voksent promoveringskanal for ansatte.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
         <source>deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world to experience the Linux distribution from China, let the system widely spread all over the world and enlarge its global impact, we hope that more and more people from the Linux community can join to help the translation work to let our open source work benefit the world!</source>
-        <translation type="unfinished"/>
+        <translation>deepin startede i Kina og gik efter at gå globalt. For at flere og flere brugere verden over kan opleve Linux-distributionen fra Kina, udbredes systemet over hele verdenen og øger dens globale indvirkning. Vi håber at flere og flere personer fra Linux-fællesskabet vil deltage for at hjælpe med oversættelsesarbejdet, så verdenen kan drage fordel af vores open source-arbejde!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
         <source>deepin: Joining the document writing and i18n work to let our open source work benefit the world!</source>
-        <translation type="unfinished"/>
+        <translation>deepin: Deltagelse i dokumentskrivningen og arbejdet med i18n vil gøre at hele verdenen kan få gavn af vores open source arbejde!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
@@ -236,22 +236,22 @@
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
         <source>The development of deepin can not move on without community support, for further improve the construction of the deepin community environment, Deepin Technology has made the decision to officially open channels of donation.</source>
-        <translation type="unfinished"/>
+        <translation>Udviklingen af deepin kan ikke fortsætte uden støtte fra fællesskabet til yderligere at forbedre skabelsen af deepin-fællessksabsmiljøet, Deepin Technology har taget beslutningen om officielt at åbne kanaler til donationer.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>
         <source>The donation upholds the principle of completely voluntary and no matter who you are, wherever you are, how much you contribute, are all making contributions to the development of Deepin community and we are very grateful for your donation.</source>
-        <translation type="unfinished"/>
+        <translation>Donationen opretholder princippet i fuldstændig frivillighed og ligegyldigt hvem du er, hvor du er, hvor meget du bidrager med, så bidrager alle til udviklingen af Deepin-fællesskabet, og vi er meget taknemmelige for din donation.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="49"/>
         <source>The donation aims to make a survey and decide the orientation and priority of the projects, support the continuous further development, and support community activities and construction.</source>
-        <translation type="unfinished"/>
+        <translation>Donationen har til mål at oprette en brugerundersøgelse og beslutte retningen og prioriteten af projekterne, støtte den fortsatte fremtidige udvikling og støtte aktiviteter i fællesskabet og skabelse.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>
         <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become an Internal Testing Team member, you will</source>
-        <translation type="unfinished"/>
+        <translation>Til kvalitetssikring af deepin-projektet, byder vi flere personer velkommen til at deltage i den interne sporing af test og feedback. Bliv medlem af det interne testteam, og du vil</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>

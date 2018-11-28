@@ -90,12 +90,12 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="27"/>
         <source>Efficient Mode</source>
-        <translation>Effizienter Modus</translation>
+        <translation>Profi-Modus</translation>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Fashion Mode</source>
-        <translation>Mode-Modus</translation>
+        <translation>Designer-Modus</translation>
     </message>
 </context>
 <context>

@@ -4,7 +4,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="33"/>
         <source>About us</source>
-        <translation type="unfinished"/>
+        <translation>Tietoa meistä</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="34"/>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../src/modules/about.cpp" line="35"/>
         <source>Objective</source>
-        <translation type="unfinished"/>
+        <translation>Tavoite</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>Customer First</source>
-        <translation type="unfinished"/>
+        <translation>Asiakas Ensin</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Open Source Idea</source>
-        <translation type="unfinished"/>
+        <translation>Avoimen Lähdekoodin Idea</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
         <source>Open and Free</source>
-        <translation type="unfinished"/>
+        <translation>Avoin ja Ilmainen</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
         <source>Open source project</source>
-        <translation type="unfinished"/>
+        <translation>Avoimen lähdekoodin projekti</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
@@ -62,12 +62,12 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation type="unfinished"/>
+        <translation>Kotisivu</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation type="unfinished"/>
+        <translation>Yhteisö</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="42"/>
         <source>Acknowledgements</source>
-        <translation type="unfinished"/>
+        <translation>Kiitokset</translation>
     </message>
 </context>
 <context>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="248"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Valitse työpöytätila</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="249"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="260"/>
         <source>Please select to enable window effect or not</source>
-        <translation type="unfinished"/>
+        <translation>Valitse ottaaksesi ikkunatehosteet käyttöön</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="261"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="272"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Valitse kuvaketeema</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="273"/>
@@ -146,54 +146,54 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="117"/>
         <source>Introduction</source>
-        <translation type="unfinished"/>
+        <translation>Johdanto</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="124"/>
         <source>Desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Työpöytätila</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="131"/>
         <source>Icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Kuvaketeema</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Window effect</source>
-        <translation type="unfinished"/>
+        <translation>Ikkunatehosteet</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <location filename="../src/modules/normalmodule.cpp" line="149"/>
         <source>Support us</source>
-        <translation type="unfinished"/>
+        <translation>Tue meitä</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="155"/>
         <location filename="../src/modules/normalmodule.cpp" line="156"/>
         <source>About us</source>
-        <translation type="unfinished"/>
+        <translation>Tietoa meistä</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Welcome</source>
-        <translation type="unfinished"/>
+        <translation>Tervetuloa</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Valitse työpöytätila</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="132"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Valitse kuvaketeema</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select to enable window effect or not</source>
-        <translation type="unfinished"/>
+        <translation>Valitse ottaaksesi ikkunatehosteet käyttöön</translation>
     </message>
 </context>
 <context>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="40"/>
         <source>Internationalization</source>
-        <translation type="unfinished"/>
+        <translation>Kansainvälistyminen</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
         <source>The i18n translation work is mainly about:</source>
-        <translation type="unfinished"/>
+        <translation>i18n-käännöstyö on pääasiassa:</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
@@ -226,12 +226,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation type="unfinished"/>
+        <translation>Tervetuloa liittymään i18n-projektiimme.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation type="unfinished"/>
+        <translation>Lahjoitukset</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation type="unfinished"/>
+        <translation>Sisäinen Testaus</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
@@ -271,12 +271,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="54"/>
         <source>Be on deepin contributors list.</source>
-        <translation type="unfinished"/>
+        <translation>Ole deepinin osallistujien listalla.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="55"/>
         <source>Outstanding members will get a souvenir of deepin.</source>
-        <translation type="unfinished"/>
+        <translation>Erinomaiset jäsenet saavat matkamuiston deepinistä.</translation>
     </message>
 </context>
 <context>
@@ -284,12 +284,12 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation type="unfinished"/>
+        <translation>Poista ikkunatehosteet käytöstä</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Enable window effect</source>
-        <translation type="unfinished"/>
+        <translation>Ota ikkunatehosteet käyttöön</translation>
     </message>
 </context>
 </TS>

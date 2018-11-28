@@ -289,7 +289,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Enable window effect</source>
-        <translation type="unfinished"/>
+        <translation>윈도우 효과 활성화</translation>
     </message>
 </context>
 </TS>
