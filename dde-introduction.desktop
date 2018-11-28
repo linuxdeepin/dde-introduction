@@ -5,3 +5,5 @@ Icon=dde-introduction
 Name=Deepin Introduction
 Name[zh_CN]=欢迎
 Type=Application
+GenericName=Introduction
+X-Deepin-Vendor=deepin
