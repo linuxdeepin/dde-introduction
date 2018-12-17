@@ -72,20 +72,28 @@ CONFIG(release, debug|release) {
 qm_files.path = $$PREFIX/share/dde-introduction/translations/
 qm_files.files = translations/*.qm
 
-videos.path = $$PREFIX/share/dde-introduction/
-videos.files += resources/*.mp4
-videos.files += resources/*.ass
-
 icon.path = $$PREFIX/share/icons/hicolor/scalable/apps
 icon.files = resources/dde-introduction.svg
 
-INSTALLS += desktop target icon qm_files videos
+INSTALLS += desktop target icon qm_files
 
 host_mips64 | host_sw_64: {
     DEFINES += DISABLE_VIDEO
 }
 
-deepin_professional: {
+message($$CONFIG)
+
+deepin_professional {
     DEFINES += PROFESSIONAL
+    videos.path = $$PREFIX/share/dde-introduction/
+    videos.files += resources/professional/*.mp4
+    videos.files += resources/professional/*.ass
+    INSTALLS += videos
 }
 
+deepin_desktop {
+    videos.path = $$PREFIX/share/dde-introduction/
+    videos.files += resources/desktop/*.mp4
+    videos.files += resources/desktop/*.ass
+    INSTALLS += videos
+}

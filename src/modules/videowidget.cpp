@@ -105,7 +105,11 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 
     QDir videoPath(ResourcesQDir());
 
-    const QString &file = videoPath.path() + QString("/demo.mp4");
+#ifdef PROFESSIONAL
+    const QString &file = videoPath.path() + QString("/professional/demo.mp4");
+#else
+    const QString &file = videoPath.path() + QString("/desktop/demo.mp4");
+#endif
 
     connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
     connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
@@ -155,10 +159,17 @@ void VideoWidget::updateControlButton()
     switch (m_video->engine().state()) {
     case dmr::PlayerEngine::Playing: {
         QLocale locale;
+#ifdef PROFESSIONAL
+        const QString &file = QString("15.5 SP2_%1.ass").arg(locale.language() == QLocale::Chinese ?
+                                                             "zh_CN" :
+                                                             "en_US");
+        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/professional/%1").arg(file)));
+#else
         const QString &file = QString("15.8_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
-        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
+        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/desktop/%1").arg(file)));
+#endif
 
         const dmr::PlayingMovieInfo info = m_video->engine().playingMovieInfo();
 
