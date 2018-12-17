@@ -1,3 +1,13 @@
+<a name="1.0.9"></a>
+### 1.0.9 (2018-12-17)
+
+
+#### Features
+
+*   add professional video ([3c6b6179](https://github.com/linuxdeepin/dde-introduction/commit/3c6b61798a62e6204b47035614cd078d4be59829))
+
+
+
 <a name="1.0.8"></a>
 ### 1.0.8 (2018-11-28)
 
