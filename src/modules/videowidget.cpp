@@ -35,12 +35,16 @@ static QDir ResourcesQDir() {
     videoPath.setSorting(QDir::Name);
 
 #ifdef QT_DEBUG
-    videoPath.cd("resources");
+#ifdef PROFESSIONAL
+    videoPath.cd("resources/professional");
+#else
+    videoPath.cd("resources/desktop");
+#endif
 #else
     videoPath.cd("../share/dde-introduction");
 #endif
 
-    return std::move(videoPath);
+    return videoPath;
 }
 
 VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
@@ -105,11 +109,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 
     QDir videoPath(ResourcesQDir());
 
-#ifdef PROFESSIONAL
-    const QString &file = videoPath.path() + QString("/professional/demo.mp4");
-#else
-    const QString &file = videoPath.path() + QString("/desktop/demo.mp4");
-#endif
+    const QString &file = videoPath.path() + QString("/demo.mp4");
 
     connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
     connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
