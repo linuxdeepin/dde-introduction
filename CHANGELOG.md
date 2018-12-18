@@ -1,3 +1,13 @@
+<a name="1.0.10"></a>
+### 1.0.10 (2018-12-18)
+
+
+#### Bug Fixes
+
+*   video path wrong ([49b34d32](https://github.com/linuxdeepin/dde-introduction/commit/49b34d32d2a231b0c54252e544b7af88b01c20f3))
+
+
+
 <a name="1.0.9"></a>
 ### 1.0.9 (2018-12-17)
 
