@@ -163,12 +163,12 @@ void VideoWidget::updateControlButton()
         const QString &file = QString("15.5 SP2_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
-        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/professional/%1").arg(file)));
+        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
 #else
         const QString &file = QString("15.8_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
-        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/desktop/%1").arg(file)));
+        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
 #endif
 
         const dmr::PlayingMovieInfo info = m_video->engine().playingMovieInfo();
