@@ -1,3 +1,13 @@
+<a name=""></a>
+##  1.1.0 (2018-12-19)
+
+
+#### Bug Fixes
+
+*   ass path error ([297ed537](https://github.com/linuxdeepin/dde-introduction/commit/297ed537470dd8c1f1b489f068681fa367ba9c38))
+
+
+
 <a name="1.0.10"></a>
 ### 1.0.10 (2018-12-18)
 
