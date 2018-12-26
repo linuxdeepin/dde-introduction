@@ -1,3 +1,13 @@
+<a name="1.1.1"></a>
+### 1.1.1 (2018-12-26)
+
+
+#### Features
+
+*   update all video and ass ([ac7db5e5](https://github.com/linuxdeepin/dde-introduction/commit/ac7db5e5d6d04f746c0a4cf14f193d0111ec9c6b))
+
+
+
 <a name=""></a>
 ##  1.1.0 (2018-12-19)
 
