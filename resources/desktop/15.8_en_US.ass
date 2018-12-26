@@ -41,6 +41,8 @@ Style: zidongqiehuanjienengmoshi-biaoti,Noto Sans CJK SC,70,&H00141414,&H000000F
 Style: tiexinyanchangshiyongshijian,Noto Sans CJK SC,70,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,7,611,10,577,1
 Style: qidongsuduneicunyouhua,Noto Sans CJK SC,70,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,281,10,241,1
 Style: tiyanshengjishuangguanqixia,Noto Sans CJK SC,70,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,7,374,10,669,1
+Style: deepin 15.8,Noto Sans CJK SC,90,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,557,10,409,1
+Style: Music by,Noto Sans CJK SC,35,&H004F4F4F,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,589,10,86,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -63,3 +65,5 @@ Dialogue: 13,0:02:13.20,0:02:16.77,anquan,,0,0,0,,{\fad(500,500)}Faster and secu
 Dialogue: 12,0:02:13.20,0:02:16.77,mima,,0,0,0,,{\fad(500,500)}New fingerprint unlock
 Dialogue: 14,0:02:29.37,0:02:32.97,weininde,,0,0,0,,{\fad(500,500)}Satisfy your work and entertainment needs
 Dialogue: 13,0:02:29.37,0:02:32.97,shendu,,0,0,0,,{\fad(500,500)}deepin and its native applications
+Dialogue: 14,0:02:35.00,0:02:38.60,deepin 15.8,,0,0,0,,{\fad(500,500)}deepin 15.8
+Dialogue: 13,0:02:35.00,0:02:38.60,Music by,,0,0,0,,{\fad(500,500)}Music by audionautix.com

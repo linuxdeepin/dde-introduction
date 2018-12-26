@@ -41,6 +41,8 @@ Style: tiexinyanchang,Noto Sans CJK SC,75,&H00141414,&H000000FF,&H00000000,&H000
 Style: zidongqiehuan-zimu,Noto Sans CJK SC,75,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,654,10,314,1
 Style: qidongsudu,Noto Sans CJK SC,75,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,370,10,232,1
 Style: tiyanshengji,Noto Sans CJK SC,75,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,7,625,10,706,1
+Style: deepin 15.8,Noto Sans CJK SC,90,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,557,10,409,1
+Style: Music by,Noto Sans CJK SC,35,&H004F4F4F,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,571,10,86,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -63,3 +65,5 @@ Dialogue: 13,0:02:13.19,0:02:16.77,anquan,,0,0,0,,{\fad(500,500)}安全速度全
 Dialogue: 12,0:02:13.19,0:02:16.77,mima,,0,0,0,,{\fad(500,500)}密码指纹双重解锁
 Dialogue: 14,0:02:29.37,0:02:32.97,weininde,,0,0,0,,{\fad(500,500)}为您的办公、生活、娱乐保驾护航
 Dialogue: 13,0:02:29.37,0:02:32.97,shendu,,0,0,0,,{\fad(500,500)}深度操作系统及原生应用
+Dialogue: 14,0:02:35.00,0:02:38.60,deepin 15.8,,0,0,0,,{\fad(500,500)}deepin 15.8
+Dialogue: 13,0:02:35.00,0:02:38.60,Music by,,0,0,0,,{\fad(500,500)}音乐由audionautix.com提供
