@@ -1,3 +1,13 @@
+<a name="1.1.2"></a>
+### 1.1.2 (2018-12-28)
+
+
+#### Bug Fixes
+
+*   update wmswitcher interface ([93a43fb3](https://github.com/linuxdeepin/dde-introduction/commit/93a43fb3e649e0dd64586cf9a028ecde8b7e6f25))
+
+
+
 <a name="1.1.1"></a>
 ### 1.1.1 (2018-12-26)
 
