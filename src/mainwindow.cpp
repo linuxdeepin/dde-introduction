@@ -39,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_currentAni(new QPropertyAnimation(this))
     , m_lastAni(new QPropertyAnimation(this))
     , m_settings(new QSettings("deepin", "dde-introduction"))
+    , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
 {
     initUI();
     initConnect();
@@ -212,16 +213,24 @@ void MainWindow::updateModule(const int index)
         break;
     case 3:
     {
-        QFile file(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + QDir::separator() + "deepin/deepin-wm-switcher/config.json");
+        if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
+            m_current = initWMModeModule();
+            break;
+        }
+
+        QFile file("/etc/deepin-wm-switcher/config.json");
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QJsonDocument doc = std::move(QJsonDocument::fromJson(file.readAll()));
-            QJsonObject obj = std::move(doc.object());
+            QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+            QJsonObject obj = doc.object();
             if (obj["allow_switch"].toBool()) {
                 m_current = initWMModeModule();
                 break;
             }
         }
-        ++m_index;
+
+        if (!m_nextBtn->isVisible()) { //hack
+            ++m_index;
+        }
     }
     case 4:
         m_current = initIconModule();

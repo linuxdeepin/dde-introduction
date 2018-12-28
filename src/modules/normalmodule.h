@@ -24,6 +24,9 @@
 #include <QButtonGroup>
 #include <QPushButton>
 #include <QMap>
+#include <com_deepin_wmswitcher.h>
+
+using WMSwitcher = com::deepin::WMSwitcher;
 
 class ModuleInterface;
 class NormalModule : public QWidget
@@ -46,6 +49,7 @@ private:
     QMap<QAbstractButton*, QString> m_titleMap;
     QMap<int, QWidget*> m_modules;
     QWidget *m_currentWidget;
+    WMSwitcher *m_wmSwitcher;
     int m_index;
 };
 

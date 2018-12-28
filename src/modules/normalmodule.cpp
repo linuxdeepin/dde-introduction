@@ -32,6 +32,7 @@ NormalModule::NormalModule(QWidget *parent)
     , m_rightContentLayout(new QVBoxLayout)
     , m_buttonGrp(new QButtonGroup)
     , m_currentWidget(nullptr)
+    , m_wmSwitcher(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
     , m_index(-1)
 {
     QHBoxLayout *layout = new QHBoxLayout;
@@ -103,13 +104,7 @@ NormalModule::NormalModule(QWidget *parent)
     setFixedSize(700, 450);
     content->setFixedWidth(580);
 
-    bool allow_switch_wm = false;
-    QFile file(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + QDir::separator() + "deepin/deepin-wm-switcher/config.json");
-    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QJsonDocument doc = std::move(QJsonDocument::fromJson(file.readAll()));
-        QJsonObject obj = std::move(doc.object());
-        allow_switch_wm = std::move(obj["allow_switch"].toBool());
-    }
+    bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
 
 #ifndef DISABLE_VIDEO
     // video button

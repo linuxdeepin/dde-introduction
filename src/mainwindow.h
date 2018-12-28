@@ -21,12 +21,15 @@
 
 #include "widgets/nextbutton.h"
 
+#include <com_deepin_wmswitcher.h>
 #include <QPropertyAnimation>
 #include <QPushButton>
 #include <QSettings>
 
 #include <QWidget>
 #include <dimagebutton.h>
+
+using WMSwitcherInter = com::deepin::WMSwitcher;
 
 DWIDGET_USE_NAMESPACE
 
@@ -64,6 +67,7 @@ private:
   QPropertyAnimation *m_lastAni;
   QWidget *m_fakerWidget;
   QSettings *m_settings;
+  WMSwitcherInter *m_displayInter;
 };
 
 #endif // MAINWINDOW_H
