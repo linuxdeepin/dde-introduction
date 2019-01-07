@@ -1,3 +1,13 @@
+<a name="1.1.3"></a>
+### 1.1.3 (2019-01-07)
+
+
+#### Features
+
+*   update video and ass for 15.9 ([ccfa7415](https://github.com/linuxdeepin/dde-introduction/commit/ccfa74150fdd40141ceba0523fa7bc7315014efc))
+
+
+
 <a name="1.1.2"></a>
 ### 1.1.2 (2018-12-28)
 
