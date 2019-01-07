@@ -43,7 +43,6 @@ static QDir ResourcesQDir() {
 #else
     videoPath.cd("../share/dde-introduction");
 #endif
-
     return videoPath;
 }
 
@@ -165,7 +164,7 @@ void VideoWidget::updateControlButton()
                                                              "en_US");
         m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
 #else
-        const QString &file = QString("15.8_%1.ass").arg(locale.language() == QLocale::Chinese ?
+        const QString &file = QString("%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
         m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
