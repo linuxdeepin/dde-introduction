@@ -104,72 +104,75 @@ NormalModule::NormalModule(QWidget *parent)
     setFixedSize(700, 450);
     content->setFixedWidth(580);
 
+    int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
 
 #ifndef DISABLE_VIDEO
     // video button
     NavigationButton * videoBtn = new NavigationButton;
-    m_buttonMap[videoBtn]   = 1;
+    m_buttonMap[videoBtn]   = ++moduleCount;
     videoBtn->setText(tr("Introduction"));
     m_titleMap[videoBtn] = tr("Welcome");
     m_buttonGrp->addButton(videoBtn);
     VideoWidget *videoModule = new VideoWidget(false, this);
     videoModule->hide();
-    m_modules[1] = videoModule;
+    m_modules[moduleCount] = videoModule;
 #endif
 
     // desktop button
     NavigationButton * desktopBtn = new NavigationButton;
-    m_buttonMap[desktopBtn] = 2;
+    m_buttonMap[desktopBtn] = ++moduleCount;
     desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Please select desktop mode");
     m_buttonGrp->addButton(desktopBtn);
     DesktopModeModule *desktopModeModule = new DesktopModeModule(this);
     desktopModeModule->hide();
-    m_modules[2] = desktopModeModule;
+    m_modules[moduleCount] = desktopModeModule;
 
     // icon button
     NavigationButton * iconBtn = new NavigationButton;
-    m_buttonMap[iconBtn]    = 3;
+    m_buttonMap[iconBtn]    = ++moduleCount;
     iconBtn->setText(tr("Icon theme"));
     m_titleMap[iconBtn] = tr("Please select icon theme");
     m_buttonGrp->addButton(iconBtn);
     IconModule *iconModule = new IconModule(this);
     iconModule->hide();
-    m_modules[3] = iconModule;
+    m_modules[moduleCount] = iconModule;
 
     // wm button
     NavigationButton * wmBtn = nullptr;
     if (allow_switch_wm) {
         wmBtn = new NavigationButton;
-        m_buttonMap[wmBtn]      = 4;
+        m_buttonMap[wmBtn]      = ++moduleCount;
         wmBtn->setText(tr("Window effect"));
         m_titleMap[wmBtn] = tr("Please select to enable window effect or not");
         m_buttonGrp->addButton(wmBtn);
         WMModeModule *wmModeModule = new WMModeModule(this);
         wmModeModule->hide();
-        m_modules[4] = wmModeModule;
+        m_modules[moduleCount] = wmModeModule;
     }
 
+#ifndef PROFESSIONAL
     // support button
     NavigationButton * supportBtn = new NavigationButton;
-    m_buttonMap[supportBtn] = 5;
+    m_buttonMap[supportBtn] = ++moduleCount;
     supportBtn->setText(tr("Support us"));
     m_titleMap[supportBtn] = tr("Support us");
     m_buttonGrp->addButton(supportBtn);
     Support *support = new Support(this);
     support->hide();
-    m_modules[5] = support;
+    m_modules[moduleCount] = support;
+#endif
 
     // about button
     NavigationButton * aboutBtn = new NavigationButton;
-    m_buttonMap[aboutBtn]   = 6;
+    m_buttonMap[aboutBtn]   = ++moduleCount;
     aboutBtn->setText(tr("About us"));
     m_titleMap[aboutBtn] = tr("About us");
     m_buttonGrp->addButton(aboutBtn);
     About *about = new About(this);
     about->hide();
-    m_modules[6] = about;
+    m_modules[moduleCount] = about;
 
 #ifndef DISABLE_VIDEO
     videoBtn->setChecked(true);

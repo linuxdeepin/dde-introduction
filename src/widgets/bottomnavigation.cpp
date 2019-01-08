@@ -38,8 +38,10 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     DImageButton *help = new DImageButton;
     help->setText(tr("Help"));
 
+#ifndef PROFESSIONAL
     DImageButton *thank = new DImageButton;
     thank->setText(tr("Acknowledgements"));
+#endif
 
     DImageButton *mail = new DImageButton(":/resources/Mail.svg",
                                           ":/resources/Mail.svg",
@@ -47,7 +49,11 @@ BottomNavigation::BottomNavigation(QWidget *parent)
 
     QList<DImageButton*> list;
 
-    list << sinaBtn << twitterBtn << facebook << offical << community << feedback << help << thank << mail;
+    list << sinaBtn << twitterBtn << facebook << offical << community << feedback << help
+#ifndef PROFESSIONAL
+    << thank
+#endif
+    << mail;
 
     for (DImageButton *w : list) {
         w->installEventFilter(this);
@@ -65,7 +71,9 @@ BottomNavigation::BottomNavigation(QWidget *parent)
 #endif
     m_buttons[community] = "https://bbs.deepin.org/";
     m_buttons[feedback] = "http://feedback.deepin.org/";
+#ifndef PROFESSIONAL
     m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
+#endif
     m_buttons[mail] = "mailto:support@deepin.com";
 
     connect(help, &DImageButton::clicked, this, [=] {
@@ -80,7 +88,9 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     layout->addWidget(community, 0, Qt::AlignCenter);
     layout->addWidget(feedback, 0, Qt::AlignCenter);
     layout->addWidget(help, 0, Qt::AlignCenter);
+#ifndef PROFESSIONAL
     layout->addWidget(thank, 0, Qt::AlignCenter);
+#endif
     layout->addStretch();
     layout->addWidget(mail, 0, Qt::AlignCenter);
 
