@@ -1,45 +1,45 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="en_GB" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sq" version="2.1">
 <context>
     <name>About</name>
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>About us</source>
-        <translation>About us</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation>deepin is a Linux distribution committed to providing an elegant, user-friendly, safe, and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie, and so on, among which Deepin Desktop Environment and Deepin Control Centre are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it&apos;s easy to install and use for most users, and can replace Windows for work and entertainment well.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Objective</source>
-        <translation>Objective</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>Customer First</source>
-        <translation>Customer first</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
         <source>Deepin Technology takes user requirements as core, adheres to innovative idea, and bases on the market demand to feedback users with better products and services.</source>
-        <translation>Deepin Technology takes user requirements as its core, adheres to innovative ideas, and is based on the market demand with feedback from users to better our products and services.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
         <source>Open Source Idea</source>
-        <translation>Open source idea</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
-        <translation>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, developed under the GPL License, and all code is open source, which has been uploaded to GitHub. Community members, open source fans, and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
         <source>Open and Free</source>
-        <translation>Open and free</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="44"/>
@@ -49,12 +49,12 @@
     <message>
         <location filename="../src/modules/about.cpp" line="45"/>
         <source>Open source project</source>
-        <translation>Open source project</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="46"/>
         <source>deepin is an open source desktop system developed for common users. You are free to download, distribute, modify and use it. Detailed address is GitHub: https://github.com/linuxdeepin</source>
-        <translation>deepin is an open source desktop system developed for common users. You are free to download, distribute, modify, and use it. Further details on GitHub: https://github.com/linuxdeepin</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
@@ -77,27 +77,27 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation>Home Page</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation>Community</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
         <source>Feedback</source>
-        <translation>Feedback</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="39"/>
         <source>Help</source>
-        <translation>Help</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="43"/>
         <source>Acknowledgements</source>
-        <translation>Acknowledgements</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -105,12 +105,12 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="27"/>
         <source>Efficient Mode</source>
-        <translation>Efficient mode</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Fashion Mode</source>
-        <translation>Beautiful mode</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -118,42 +118,42 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="119"/>
         <source>Next</source>
-        <translation>Next</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="120"/>
         <source>Done</source>
-        <translation>Done</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="269"/>
         <source>Please select desktop mode</source>
-        <translation>Please select a desktop mode</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="270"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>You can switch mode by right clicking on the dock</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="281"/>
         <source>Please select to enable window effect or not</source>
-        <translation>Please select whether to enable the window effect or not</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="282"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation>You can enable or disable it in Control Centre &gt; Personalization &gt; Enable window effect, or use the shortcut Shift+Super+Tab</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Please select icon theme</source>
-        <translation>Please select an icon theme</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="294"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>You can change it in Control Centre &gt; Personalization &gt; Theme &gt; Icon Theme</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -161,54 +161,54 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="114"/>
         <source>Introduction</source>
-        <translation>Introduction</translation>
+        <translation>Hyrje</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Desktop mode</source>
-        <translation>Desktop mode</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="135"/>
         <source>Icon theme</source>
-        <translation>Icon theme</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>Window effect</source>
-        <translation>Window effect</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="159"/>
         <location filename="../src/modules/normalmodule.cpp" line="160"/>
         <source>Support us</source>
-        <translation>Support us</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="170"/>
         <location filename="../src/modules/normalmodule.cpp" line="171"/>
         <source>About us</source>
-        <translation>About us</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="115"/>
         <source>Welcome</source>
-        <translation>Welcome</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="126"/>
         <source>Please select desktop mode</source>
-        <translation>Please select a desktop mode</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="136"/>
         <source>Please select icon theme</source>
-        <translation>Please select an icon theme</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <source>Please select to enable window effect or not</source>
-        <translation>Please select whether to enable the window effect or not</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="40"/>
         <source>Internationalization</source>
-        <translation>Internationalization</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
@@ -226,27 +226,27 @@
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
         <source>The i18n translation work is mainly about:</source>
-        <translation>The i18n translation work is mainly about</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
         <source>deepin: Joining the document writing and i18n work to let our open source work benefit the world!</source>
-        <translation>deepin: Join the documentation writing and i18n work to let our open source work benefit the world!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
         <source>Deepin community: Providing community news, download, mirrors, projects and a gathering place for developers!</source>
-        <translation>Deepin community: Providing community news, downloads, mirrors, projects, and a gathering place for developers!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation>Welcome to join the i18n project.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation>Donations</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
@@ -271,27 +271,27 @@
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation>Internal testing</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
         <source>Get the latest achievements of deepin and software timely.</source>
-        <translation>Get the latest achievements of deepin and software.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="53"/>
         <source>Obtain the latest development plans and progress of deepin project in advance.</source>
-        <translation>Get the latest development plans and progress of deepin project in advance.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="54"/>
         <source>Be on deepin contributors list.</source>
-        <translation>Be on the deepin contributors list.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="55"/>
         <source>Outstanding members will get a souvenir of deepin.</source>
-        <translation>Outstanding members will get a souvenir from deepin.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

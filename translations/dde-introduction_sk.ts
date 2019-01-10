@@ -2,59 +2,74 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../src/modules/about.cpp" line="33"/>
+        <location filename="../src/modules/about.cpp" line="36"/>
         <source>About us</source>
         <translation>O nás</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="34"/>
+        <location filename="../src/modules/about.cpp" line="37"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
         <translation>deepin je distribúcia Linuxu, ktorej cieľom je poskytovať užívateľom po celom svete elegantné, užívateľsky prívetivé, bezpečné a stabilné prostredie. Nielenže integruje a konfiguruje najlepšie produkty s otvoreným zdrojovým kódom, ale tiež vyvíja sériu aplikácií pre každodenné používanie, ako sú Deepin Obchod, Deepin Snímka obrazovky, Deepin Hudba, Deepin Filmy a tak ďalej, medzi ktoré patria Deepin Desktop Environment a Deepin Ovládacie centrum, ktoré sú založené na technológii Qt. deepin sa zameriava na užívateľsky prívetivý zážitok a krásny dizajn, takže je ľahké ho nainštalovať a používať pre väčšinu používateľov a môže nahradiť Windows na prácu a zábavu.</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="35"/>
+        <location filename="../src/modules/about.cpp" line="38"/>
         <source>Objective</source>
         <translation>Cieľ</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="36"/>
+        <location filename="../src/modules/about.cpp" line="39"/>
         <source>Customer First</source>
         <translation>Zákazník na prvom mieste</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="37"/>
+        <location filename="../src/modules/about.cpp" line="40"/>
         <source>Deepin Technology takes user requirements as core, adheres to innovative idea, and bases on the market demand to feedback users with better products and services.</source>
         <translation>Deepin Technology berie požiadavky používateľov ako jadro, dodržiava inovatívnu myšlienku, prispôsobuje sa spätnej väzbe užívateľov a požiadavke trhu s lepšími produktmi a službami.</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="38"/>
+        <location filename="../src/modules/about.cpp" line="41"/>
         <source>Open Source Idea</source>
         <translation>Idea Open Source</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="39"/>
+        <location filename="../src/modules/about.cpp" line="42"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
         <translation>Projekt deepin je kreatívny a energický open source desktopový operačný systém. Využíva myšlienku otvoreného kódu, vývoj je pod licenciou GPL a všetky kódy sú open source, ktorý bol odovzdaný na GitHub. Členovia komunity, fanúšikovia open source kódu a spoločnosť Deepin Technology spoločne rozvinú projekt deepin, aby prispeli k čínskemu open source.</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="40"/>
+        <location filename="../src/modules/about.cpp" line="43"/>
         <source>Open and Free</source>
         <translation>Otvorený a zadarmo</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="41"/>
+        <location filename="../src/modules/about.cpp" line="44"/>
         <source>Only in a comfortable, pleasure and free working environment, one can get high work efficiency. In Deepin Technology, no long and boring meeting and workflow, no complicated class hierarchy, all are equal and cooperative. It provides regular professional training, prospective career development and mature promote channel for employees.</source>
         <translation>Iba v komfortnom, príjemnom a voľnom pracovnom prostredí sa dá dosiahnuť vysoká efektivita práce. V Deepin Technology nie sú žiadne dlhé a nudné schôdzky a pracovné postupy, žiadna zložitá hierarchia tried, všetci sú si rovnocenní a kooperatívni. Poskytuje pravidelné odborné vzdelávanie, perspektívny rozvoj kariéry a zrelý propagačný kanál pre zamestnancov.</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="42"/>
+        <location filename="../src/modules/about.cpp" line="45"/>
         <source>Open source project</source>
         <translation>Open source projekt</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="43"/>
+        <location filename="../src/modules/about.cpp" line="46"/>
         <source>deepin is an open source desktop system developed for common users. You are free to download, distribute, modify and use it. Detailed address is GitHub: https://github.com/linuxdeepin</source>
         <translation>deepin je open source desktopový systém vyvinutý pre bežných používateľov. Môžete ho bezplatne stiahnuť, distribuovať, upravovať a používať. Detailná adresa je na GitHub: https://github.com/linuxdeepin</translation>
+    </message>
+    <message>
+        <location filename="../src/modules/about.cpp" line="52"/>
+        <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/modules/about.cpp" line="53"/>
+        <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/modules/about.cpp" line="54"/>
+        <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -80,7 +95,7 @@
         <translation>Nápoveda</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="42"/>
+        <location filename="../src/widgets/bottomnavigation.cpp" line="43"/>
         <source>Acknowledgements</source>
         <translation>Poďakovanie</translation>
     </message>
@@ -111,32 +126,32 @@
         <translation>Hotovo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="248"/>
+        <location filename="../src/mainwindow.cpp" line="269"/>
         <source>Please select desktop mode</source>
         <translation>Prosím, vyberte režim pracovnej plochy</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="249"/>
+        <location filename="../src/mainwindow.cpp" line="270"/>
         <source>You can switch it in Mode by right clicking on dock</source>
         <translation>Môžete ho prepnúť do režimu kliknutím pravým tlačidlom na dock</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="260"/>
+        <location filename="../src/mainwindow.cpp" line="281"/>
         <source>Please select to enable window effect or not</source>
         <translation>Prosím vyberte, ak chcete povoliť efekty okna alebo nie</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="261"/>
+        <location filename="../src/mainwindow.cpp" line="282"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
         <translation>Môžete ho povoliť alebo zakázať v ponuke Ovládacieho centra &gt; Prispôsobenie &gt; Povoliť efekty okna alebo použiť skratky Shift+Super+Tab</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="272"/>
+        <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Please select icon theme</source>
         <translation>Prosím vyberte tému ikon</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="273"/>
+        <location filename="../src/mainwindow.cpp" line="294"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
         <translation>Môžete ho zmeniť v ponuke Ovládacieho centra &gt; Prispôsobenie &gt; Téma &gt; Téma ikon</translation>
     </message>
@@ -144,54 +159,54 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
+        <location filename="../src/modules/normalmodule.cpp" line="114"/>
         <source>Introduction</source>
         <translation>Úvod</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
+        <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Desktop mode</source>
         <translation>Desktop režim</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="131"/>
+        <location filename="../src/modules/normalmodule.cpp" line="135"/>
         <source>Icon theme</source>
         <translation>Téma ikon</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="140"/>
+        <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>Window effect</source>
         <translation>Efekt okna</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="148"/>
-        <location filename="../src/modules/normalmodule.cpp" line="149"/>
+        <location filename="../src/modules/normalmodule.cpp" line="159"/>
+        <location filename="../src/modules/normalmodule.cpp" line="160"/>
         <source>Support us</source>
         <translation>Podporte nás</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="155"/>
-        <location filename="../src/modules/normalmodule.cpp" line="156"/>
+        <location filename="../src/modules/normalmodule.cpp" line="170"/>
+        <location filename="../src/modules/normalmodule.cpp" line="171"/>
         <source>About us</source>
         <translation>O nás</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="118"/>
+        <location filename="../src/modules/normalmodule.cpp" line="115"/>
         <source>Welcome</source>
         <translation>Vitajte</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="125"/>
+        <location filename="../src/modules/normalmodule.cpp" line="126"/>
         <source>Please select desktop mode</source>
         <translation>Prosím, vyberte režim pracovnej plochy</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="132"/>
+        <location filename="../src/modules/normalmodule.cpp" line="136"/>
         <source>Please select icon theme</source>
         <translation>Prosím vyberte tému ikon</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="141"/>
+        <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <source>Please select to enable window effect or not</source>
         <translation>Prosím vyberte, ak chcete povoliť efekty okna alebo nie</translation>
     </message>

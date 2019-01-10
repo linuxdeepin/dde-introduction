@@ -2,59 +2,74 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../src/modules/about.cpp" line="33"/>
+        <location filename="../src/modules/about.cpp" line="36"/>
         <source>About us</source>
         <translation>關於我們</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="34"/>
+        <location filename="../src/modules/about.cpp" line="37"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
         <translation>Deepin 作業系統是一個致力於為全球使用者提供美觀易用、安全可靠體驗的 Linux 發行版。它不僅僅對最優秀的開放原始碼產品進行整合和設定，還基於 Qt 技術開發了 Deepin 桌面環境和 Deepin 控制中心，並且開發了一系列面向日常使用的 Deepin 特色應用程式，例如 Deepin 商店、Deepin 截圖、Deepin 音樂、Deepin 電影等。Deepin 作業系統專注於製作出易用的體驗和美觀的設計，對於大多數使用者來說，它易於安裝和使用，能夠很好的代替 Windows 系統進行工作與娛樂。</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="35"/>
+        <location filename="../src/modules/about.cpp" line="38"/>
         <source>Objective</source>
         <translation>目標</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="36"/>
+        <location filename="../src/modules/about.cpp" line="39"/>
         <source>Customer First</source>
         <translation>客戶優先</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="37"/>
+        <location filename="../src/modules/about.cpp" line="40"/>
         <source>Deepin Technology takes user requirements as core, adheres to innovative idea, and bases on the market demand to feedback users with better products and services.</source>
         <translation>Deepin 科技以使用者需求為核心，秉承創新理念，立足於市場需求，以更優質的產品與服務回饋給使用者。</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="38"/>
+        <location filename="../src/modules/about.cpp" line="41"/>
         <source>Open Source Idea</source>
         <translation>開源點子</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="39"/>
+        <location filename="../src/modules/about.cpp" line="42"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
         <translation>Deepin 作業系統計畫是具備創新精神和活力的開放原始碼桌面作業系統，自始至終秉承開源理念，嚴格遵守 GPL 授權開發，且所有程式開發程式碼均開源。Deepin 作業系統專案開發程式碼已上傳至 GitHub。社區及開源愛好者將共同促進 Deepin 作業系統專案的發展，為中國的開源事業做出應有的貢獻。</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="40"/>
+        <location filename="../src/modules/about.cpp" line="43"/>
         <source>Open and Free</source>
         <translation>開放自由</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="41"/>
+        <location filename="../src/modules/about.cpp" line="44"/>
         <source>Only in a comfortable, pleasure and free working environment, one can get high work efficiency. In Deepin Technology, no long and boring meeting and workflow, no complicated class hierarchy, all are equal and cooperative. It provides regular professional training, prospective career development and mature promote channel for employees.</source>
         <translation>在舒適、隨意、自由的辦公環境中才能創造更高效的工作品質，在這裡不會有冗長無聊的會議和流程，不會有繁雜的等級觀念，一切平等、互助。Deepin 科技為員工提供定期的專業培訓、可預期的職業發展前景、成熟的晉升管道。</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="42"/>
+        <location filename="../src/modules/about.cpp" line="45"/>
         <source>Open source project</source>
         <translation>開源專案</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="43"/>
+        <location filename="../src/modules/about.cpp" line="46"/>
         <source>deepin is an open source desktop system developed for common users. You are free to download, distribute, modify and use it. Detailed address is GitHub: https://github.com/linuxdeepin</source>
         <translation>Deepin 是一款針對普通使用者發行的開放原始碼桌面系統，您可自由下載、散布、修改和使用。詳細網址為 GitHub：https://github.com/linuxdeepin</translation>
+    </message>
+    <message>
+        <location filename="../src/modules/about.cpp" line="52"/>
+        <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/modules/about.cpp" line="53"/>
+        <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/modules/about.cpp" line="54"/>
+        <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -80,7 +95,7 @@
         <translation>說明</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="42"/>
+        <location filename="../src/widgets/bottomnavigation.cpp" line="43"/>
         <source>Acknowledgements</source>
         <translation>鳴謝</translation>
     </message>
@@ -111,32 +126,32 @@
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="248"/>
+        <location filename="../src/mainwindow.cpp" line="269"/>
         <source>Please select desktop mode</source>
         <translation>選擇桌面模式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="249"/>
+        <location filename="../src/mainwindow.cpp" line="270"/>
         <source>You can switch it in Mode by right clicking on dock</source>
         <translation>您能在 Dock 上按下右鍵後選擇「模式」切換樣式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="260"/>
+        <location filename="../src/mainwindow.cpp" line="281"/>
         <source>Please select to enable window effect or not</source>
         <translation>請選擇是否要啟用視窗特效</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="261"/>
+        <location filename="../src/mainwindow.cpp" line="282"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
         <translation>您能在「控制中心 &gt; 個人化 &gt; 啟用視窗特效」啟用或停用特效，或使用 Shift+Super+Tab 快捷鍵</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="272"/>
+        <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Please select icon theme</source>
         <translation>請選擇圖示主題</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="273"/>
+        <location filename="../src/mainwindow.cpp" line="294"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
         <translation>您能在「控制中心 &gt; 個人化 &gt; 主題 &gt; 圖示主題」中更換主題</translation>
     </message>
@@ -144,54 +159,54 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
+        <location filename="../src/modules/normalmodule.cpp" line="114"/>
         <source>Introduction</source>
         <translation>介紹</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
+        <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Desktop mode</source>
         <translation>桌面模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="131"/>
+        <location filename="../src/modules/normalmodule.cpp" line="135"/>
         <source>Icon theme</source>
         <translation>圖示主題</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="140"/>
+        <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>Window effect</source>
         <translation>視窗特效</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="148"/>
-        <location filename="../src/modules/normalmodule.cpp" line="149"/>
+        <location filename="../src/modules/normalmodule.cpp" line="159"/>
+        <location filename="../src/modules/normalmodule.cpp" line="160"/>
         <source>Support us</source>
         <translation>支援我們</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="155"/>
-        <location filename="../src/modules/normalmodule.cpp" line="156"/>
+        <location filename="../src/modules/normalmodule.cpp" line="170"/>
+        <location filename="../src/modules/normalmodule.cpp" line="171"/>
         <source>About us</source>
         <translation>關於我們</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="118"/>
+        <location filename="../src/modules/normalmodule.cpp" line="115"/>
         <source>Welcome</source>
         <translation>歡迎</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="125"/>
+        <location filename="../src/modules/normalmodule.cpp" line="126"/>
         <source>Please select desktop mode</source>
         <translation>選擇桌面模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="132"/>
+        <location filename="../src/modules/normalmodule.cpp" line="136"/>
         <source>Please select icon theme</source>
         <translation>請選擇圖示主題</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="141"/>
+        <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <source>Please select to enable window effect or not</source>
         <translation>請選擇是否要啟用視窗特效</translation>
     </message>
