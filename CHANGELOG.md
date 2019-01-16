@@ -1,3 +1,13 @@
+<a name=""></a>
+##  1.1.5 (2019-01-16)
+
+
+#### Features
+
+*   difference between professional & community ([30a16f44](https://github.com/linuxdeepin/dde-introduction/commit/30a16f44106fd442259dc3706befef1831b3b6d8))
+
+
+
 <a name="1.1.4"></a>
 ### 1.1.4 (2019-01-16)
 
