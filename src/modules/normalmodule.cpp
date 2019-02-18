@@ -24,6 +24,7 @@
 #include "videowidget.h"
 #include "support.h"
 #include "about.h"
+#include "photoslide.h"
 #include "../widgets/bottomnavigation.h"
 
 NormalModule::NormalModule(QWidget *parent)
@@ -117,6 +118,16 @@ NormalModule::NormalModule(QWidget *parent)
     VideoWidget *videoModule = new VideoWidget(false, this);
     videoModule->hide();
     m_modules[moduleCount] = videoModule;
+#else
+    NavigationButton *slideBtn = new NavigationButton;
+    m_buttonMap[slideBtn] = ++moduleCount;
+    slideBtn->setText(tr("Introduction"));
+    m_titleMap[slideBtn] = tr("Welcome");
+    m_buttonGrp->addButton(slideBtn);
+    PhotoSlide *slideModule = new PhotoSlide;
+    slideModule->hide();
+    slideModule->start(false, false, 2000);
+    m_modules[moduleCount] = slideModule;
 #endif
 
     // desktop button
@@ -178,8 +189,8 @@ NormalModule::NormalModule(QWidget *parent)
     videoBtn->setChecked(true);
     titleLabel->setText(m_titleMap[videoBtn]);
 #else
-    desktopBtn->setChecked(true);
-    titleLabel->setText(m_titleMap[desktopBtn]);
+    slideBtn->setChecked(true);
+    titleLabel->setText(m_titleMap[slideBtn]);
 #endif
 
     m_buttonGrp->setExclusive(true);
@@ -202,7 +213,7 @@ NormalModule::NormalModule(QWidget *parent)
 #ifndef DISABLE_VIDEO
     updateCurrentWidget(m_buttonMap[videoBtn]);
 #else
-    updateCurrentWidget(m_buttonMap[desktopBtn]);
+    updateCurrentWidget(m_buttonMap[slideBtn]);
 #endif
 }
 

@@ -22,6 +22,7 @@
 #include "modules/wmmodemodule.h"
 #include "modules/iconmodule.h"
 #include "modules/normalmodule.h"
+#include "modules/photoslide.h"
 #include "basemodulewidget.h"
 
 #include <QHBoxLayout>
@@ -138,9 +139,11 @@ void MainWindow::initUI()
         m_current = new VideoWidget(true, m_fakerWidget);
         m_nextBtn->setMode(NextButton::Transparent);
 #else
-        m_current = initDesktopModeModule();
+        m_current = new PhotoSlide(m_fakerWidget);
         m_nextBtn->setMode(NextButton::Normal);
-        m_index = 2;
+        static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
+        m_nextBtn->setMode(NextButton::Normal);
+        m_index = 1;
 #endif
         m_previousBtn->hide();
         m_nextBtn->show();
@@ -151,9 +154,15 @@ void MainWindow::initUI()
     }
 #else
 #ifndef DISABLE_VIDEO
-        m_current = new VideoWidget(true, m_fakerWidget);
+//        m_current = new VideoWidget(true, m_fakerWidget);
+    m_current = new PhotoSlide(m_fakerWidget);
+    m_nextBtn->setMode(NextButton::Normal);
+    static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
 #else
-        m_current = initDesktopModeModule();
+//        m_current = initDesktopModeModule();
+    m_current = new PhotoSlide(m_fakerWidget);
+    m_nextBtn->setMode(NextButton::Normal);
+    static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
 #endif
     m_previousBtn->hide();
     m_nextBtn->show();
@@ -204,10 +213,14 @@ void MainWindow::updateModule(const int index)
 #ifndef DISABLE_VIDEO
         m_current = new VideoWidget(true, m_fakerWidget);
         m_current->setFixedSize(WINDOW_SIZE);
-        m_previousBtn->hide();
         m_nextBtn->setMode(NextButton::Transparent);
-        break;
+#else
+        m_current = new PhotoSlide(m_fakerWidget);
+        m_nextBtn->setMode(NextButton::Normal);
+        static_cast<PhotoSlide*>(m_current)->start(false, false, 1000);
 #endif
+        m_previousBtn->hide();
+        break;
     case 2:
         m_current = initDesktopModeModule();
         break;

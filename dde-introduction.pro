@@ -30,7 +30,8 @@ HEADERS += \
     src/widgets/bottomnavigation.h \
     src/widgets/navigationbutton.h \
     src/widgets/nextbutton.h \
-    src/dvideowidget.h
+    src/dvideowidget.h \
+    src/modules/photoslide.h
 
 SOURCES += \
     src/basemodulewidget.cpp \
@@ -52,7 +53,8 @@ SOURCES += \
     src/widgets/bottomnavigation.cpp \
     src/widgets/navigationbutton.cpp \
     src/widgets/nextbutton.cpp \
-    src/dvideowidget.cpp
+    src/dvideowidget.cpp \
+    src/modules/photoslide.cpp
 
 RESOURCES += \
     dde-introduction.qrc
@@ -77,11 +79,9 @@ icon.files = resources/dde-introduction.svg
 
 INSTALLS += desktop target icon qm_files
 
-host_mips64 | host_sw_64: {
+host_mips64 | host_sw_64 | host_arm: {
     DEFINES += DISABLE_VIDEO
 }
-
-message($$CONFIG)
 
 deepin_professional {
     DEFINES += PROFESSIONAL

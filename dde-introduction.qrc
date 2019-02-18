@@ -37,5 +37,19 @@
         <file>resources/dde-introduction.svg</file>
         <file>resources/pause_normal.svg</file>
         <file>resources/play_normal.svg</file>
+        <file>resources/slide_big/05.jpg</file>
+        <file>resources/slide_big/01.jpg</file>
+        <file>resources/slide_big/02.jpg</file>
+        <file>resources/slide_big/03.jpg</file>
+        <file>resources/slide_big/04.jpg</file>
+        <file>resources/slide_big/07.jpg</file>
+        <file>resources/slide_big/06.jpg</file>
+        <file>resources/slide_small/05.jpg</file>
+        <file>resources/slide_small/07.jpg</file>
+        <file>resources/slide_small/02.jpg</file>
+        <file>resources/slide_small/06.jpg</file>
+        <file>resources/slide_small/03.jpg</file>
+        <file>resources/slide_small/01.jpg</file>
+        <file>resources/slide_small/04.jpg</file>
     </qresource>
 </RCC>
