@@ -79,7 +79,7 @@ icon.files = resources/dde-introduction.svg
 
 INSTALLS += desktop target icon qm_files
 
-host_mips64 | host_sw_64 | host_arm: {
+host_mips64 | host_sw_64 | host_aarch64: {
     DEFINES += DISABLE_VIDEO
 }
 
