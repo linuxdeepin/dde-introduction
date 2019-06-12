@@ -9,7 +9,8 @@ Build-Depends: debhelper (>= 9),
  libdframeworkdbus-dev,
  libdmr-dev,
  libffmpegthumbnailer-dev,
- deepin-qt5config,
+ libdtkcore-dev,
+ libdtkcore-bin,
  qttools5-dev
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org

@@ -5,7 +5,7 @@ CONFIG += link_pkgconfig c++11
 PKGCONFIG += dtkwidget dframeworkdbus libdmr
 DESTDIR    = $$_PRO_FILE_PWD_
 
-load(deepin_qt)
+load(dtk_qmake)
 
 isEmpty(PREFIX){
     PREFIX = /usr
