@@ -17,7 +17,6 @@
  */
 
 #include "mainwindow.h"
-#include "modules/videowidget.h"
 #include "modules/desktopmodemodule.h"
 #include "modules/wmmodemodule.h"
 #include "modules/iconmodule.h"
@@ -28,6 +27,10 @@
 #include <QHBoxLayout>
 #include <DTitlebar>
 #include <DPlatformWindowHandle>
+
+#ifndef DISABLE_VIDEO
+#include "modules/videowidget.h"
+#endif
 
 DWIDGET_USE_NAMESPACE
 

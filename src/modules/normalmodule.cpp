@@ -21,11 +21,14 @@
 #include "desktopmodemodule.h"
 #include "iconmodule.h"
 #include "wmmodemodule.h"
-#include "videowidget.h"
 #include "support.h"
 #include "about.h"
 #include "photoslide.h"
 #include "../widgets/bottomnavigation.h"
+
+#ifndef DISABLE_VIDEO
+#include "videowidget.h"
+#endif
 
 NormalModule::NormalModule(QWidget *parent)
     : QWidget(parent)
