@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>深度操作系統將全球領先的技術和創新帶入政府信息化建設和企業級信息技術基礎架構，是當今國內增長最快的操作系統之一。許多政府和企業用戶由於其易用性和可擴展性而選擇深度操作系統，信息部門和運維部門則更重視深度操作系統提供給桌面終端的穩定性、安全性和靈活性。深度操作系統桌面版能夠安裝在筆記本和台式機中，通過產品設計和技術實現，在穩定、高效的前提下，帶來前所未見的易用性。簡潔的使用體驗可以幫助用戶減少瀏覽和查找的時間，將更多時間投入工作。</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>作為深度操作系統的研發團隊，武漢深之度科技有限公司（簡稱“深度科技”）成立於2011年，以操作系統產品為核心，專注於研發基於Linux內核的操作系統軟件，並以其為核心為用戶提供方案、管理、維護、諮詢、定制、開發等相關服務。深度操作系統軟件作為深度科技的核心產品，在國產的Linux操作系統產品中取得了眾多突出的成績，並在全球獲得了廣泛的認可。</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>深度科技將繼續秉承開源和創新的精神，以操作系統的自主可控替代為契機，構建國產操作系統生態環境，成為領先的基礎軟件產品與解決方案供應商。</translation>
     </message>
 </context>
 <context>

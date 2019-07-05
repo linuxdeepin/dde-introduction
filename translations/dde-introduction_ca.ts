@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin, aportant la tecnologia i la innovació més importants del món a la construcció d&apos;informació del govern i a la infraestructura de tecnologia de la informació d&apos;empresa, és un dels sistemes operatius de més ràpid creixement a la Xina actual. A causa de la seva facilitat d&apos;ús i extensibilitat, molts usuaris governamentals i empresarials trien el Deepin com a seu sistema operatiu diari, mentre que els departaments d&apos;informació i els departaments de manteniment estan atrets per l&apos;estabilitat, seguretat i flexibilitat de l&apos;entorn d&apos;escriptori. L&apos;escriptori del Deepin, que es pot instal·lar en ordinadors portàtils i ordinadors de sobretaula, és estable i eficient i molt senzill d&apos;utilitzar, basat en el meravellós disseny del producte i la tecnologia avançada. La seva senzilla experiència d&apos;usuari pot ajudar els usuaris a reduir el temps de navegació i cerca, i estar més temps per la feina.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>L&apos;equip de recerca i desenvolupament de Deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), establert el 2011, pren els productes del sistema operatiu com a nucli, se centra en el desenvolupament del programari del sistema operatiu basat en el nucli de Linux i proporciona als usuaris solucions, gestió, manteniment, consulta, personalització, desenvolupament i altres serveis relacionats. Com a producte principal de Deepin Technology, el programari de Deepin ha obtingut diversos èxits destacats en productes domèstics del sistema operatiu Linux i ha estat àmpliament reconegut al món.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology continuarà adherint-se al codi obert i l&apos;esperit innovador, aprofitant l&apos;oportunitat del sistema operatiu autònom, controlable i reemplaçable, construint l&apos;ecosistema del sistema operatiu domèstic amb vista a convertir-se en un proveïdor líder de productes i solucions de programari bàsics.</translation>
     </message>
 </context>
 <context>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="270"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>Encara el podeu canviar a Mode, clicant amb el botó dret a l&apos;acoblador.</translation>
+        <translation>El podeu canviar a Mode, clicant amb el botó dret a l&apos;acoblador.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="281"/>

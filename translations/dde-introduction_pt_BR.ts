@@ -123,7 +123,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="120"/>
         <source>Done</source>
-        <translation>Feito</translation>
+        <translation>Concluído</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="269"/>

@@ -34,7 +34,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
         <source>The deepin project is a creative and energetic open source desktop operating system. It insists on the open source idea always, the development are under GPL License and all codes are open source, which has been uploaded to GitHub. Community members, open source fans and Deepin Technology will develop the deepin project together to make a due contribution to China open source.</source>
-        <translation>Дипин пројекат је креативан и енергичан рачунарски оперативни систем отвореног кода. Увек инсистирамо на идеји отвореног кода. Развој је под GPL лиценцама и целокупан код је отворен и отпремљен на GitHub. Чланови заједнице, ентузијасти отвореног кода и Дипин Технологија заједнички развијају Дипин пројекат како би дали допринос Кини отвореног кода.</translation>
+        <translation>Дипин пројекат је креативан и енергичан рачунарски оперативни систем отвореног кода. Увек инсистирамо на идеји отвореног кода. Развој је под GPL лиценцама и целокупан код је отворен и отпремљен на GitHub. Чланови заједнице, ентузијасти отвореног кода и Дипин Технологија заједнички развијају Дипин и доприносе Кини отвореног кода.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="44"/>
         <source>Only in a comfortable, pleasure and free working environment, one can get high work efficiency. In Deepin Technology, no long and boring meeting and workflow, no complicated class hierarchy, all are equal and cooperative. It provides regular professional training, prospective career development and mature promote channel for employees.</source>
-        <translation>Само у удобном, задовољавајућем и слободном радном окружењу појединац може остварити високу радну ефикасност. У Дипиин Технологији нема дугих досадних састанака и процедура рада, нема компликоване хијерархије, сви смо једнаки сарадници. Пружамо редовне професионалне обуке, перспективан развој каријере и разрађене канале за промовисање запослених.</translation>
+        <translation>Само у удобном, задовољавајућем и слободном радном окружењу појединац може остварити високу радну ефикасност. У Дипин Технологији нема дугих досадних састанака и процедура рада, нема компликоване хијерархије, сви смо једнаки сарадници. Пружамо редовне професионалне обуке, перспективан развој каријере и разрађене канале за промовисање запослених.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="45"/>
@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>Дипин доноси водеће светске технологије и иновације у владин информациони систем и високо технолошку информациону инфраструктуру у предузећа. Један је од најбрже растућих оперативних система у Кини данас. Због лакоће употребе и проширивости, многи владини и пословни корисници се одлучују за Дипин као свакодневни оперативни систем, док информационе секторе и одељења за одржавање привлаче стабилност, безбедност и флексибилност Дипиновог радног окружења. Дипин се може инсталирати на преносне рачунаре и радне станице, веома је стабилан, ефикасан и врло једноставан за коришћење. Темељи се на лепом дизајну и напредним технологијама. Његово једноставно корисничко искуство може помоћи корисницима да скрате време прегледања и претраживања и да уложе више времена у рад.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>Дипинов тим за истраживање и развој - Wuhan Deepin Technology Co., Ltd (Дипин Технологија), основан је 2011-те године. Темељимо се на производњи оперативног система, као и развоју софтвера за оперативне системе базиране на Линукс језгру. Нашим корисницима пружамо решења, управљање, одржавање, консултације, прилагођавање, развој и друге сродне услуге. Као централни производ Дипин Технологије, Дипинов софтвер је остварио велика достигнућа међу домаћим (Кинеским) Линукс оперативним системима, а такође је признат широм света.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>Дипин Технологија ће остати верна духу отвореног кода и иновација. Пружаћемо прилику свима да користе независан, управљив и замењив оперативни систем. Градићемо екосистем домаћег оперативног система и радићемо на томе да постанемо водећи снабдевач основних софтверских производа и решења.</translation>
     </message>
 </context>
 <context>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="269"/>
         <source>Please select desktop mode</source>
-        <translation>Молимо одаберите режим радне површине</translation>
+        <translation>Молимо изаберите режим радне површине</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="270"/>
@@ -138,7 +138,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="281"/>
         <source>Please select to enable window effect or not</source>
-        <translation>Молимо одаберите да укључите ефекте прозра или не</translation>
+        <translation>Изаберите да ли да укључите ефекте прозра</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="282"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Please select icon theme</source>
-        <translation>Молимо одаберите тему иконица</translation>
+        <translation>Молимо изаберите тему иконица</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="294"/>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>Window effect</source>
-        <translation>Ефекти прозора</translation>
+        <translation>Ефекти</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="159"/>
@@ -198,17 +198,17 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="126"/>
         <source>Please select desktop mode</source>
-        <translation>Молимо одаберите режим радне површине</translation>
+        <translation>Молимо изаберите режим радне површине</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="136"/>
         <source>Please select icon theme</source>
-        <translation>Молимо одаберите тему иконица</translation>
+        <translation>Молимо изаберите тему иконица</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <source>Please select to enable window effect or not</source>
-        <translation>Молимо одаберите да омогућите ефекте прозора или не</translation>
+        <translation>Изаберите да ли да укључите ефекте прозра</translation>
     </message>
 </context>
 <context>
@@ -221,7 +221,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
         <source>deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world to experience the Linux distribution from China, let the system widely spread all over the world and enlarge its global impact, we hope that more and more people from the Linux community can join to help the translation work to let our open source work benefit the world!</source>
-        <translation>Дипин је настао у Кини и усмерен је да буде глобалан. Да би омогућили све већем броју корисника  да искуси Линукс дистрибуцију из Кине, како би систем био широко заступљен у свету и увећао свој глобални утицај, надамо се да ће нам се све већи број људи из Линукс заједнице придружити и помоћи око превођења. То ће омогућити да наш рад отвореног кода буде од користи целом свету.</translation>
+        <translation>Дипин је настао у Кини и усмерен је да буде глобалан. Како бисмо омогућили све већем броју корисника  да искуси Линукс дистрибуцију из Кине, да систем буде широко заступљен у свету и увећа свој глобални утицај, надамо се да ће нам се све већи број људи из Линукс заједнице придружити и помоћи око превођења. То ће омогућити да наш рад отвореног кода буде од користи целом свету.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
         <source>deepin: Joining the document writing and i18n work to let our open source work benefit the world!</source>
-        <translation>Дипин: Учествовање у писању документације и i18n раду, како би омогућили да наш рад отвореног кода буде од користи целом свету!</translation>
+        <translation>Дипин: Учествовање у писању документације и i18n раду, како бисмо омогућили да наш рад отвореног кода буде од користи целом свету!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>
         <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become an Internal Testing Team member, you will</source>
-        <translation>Да би осигурали квалитет Дипин пројекта позивамо што већи број људи да учествује у интерном тестирању и праћењу повратних информација. Постаните члан Тима за Интерно Тестирање и Ви ћете</translation>
+        <translation>Како бисмо осигурали квалитет Дипин пројекта позивамо што већи број људи да учествује у интерном тестирању и праћењу повратних информација. Постаните члан Тима за Интерно Тестирање и Ви ћете</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>

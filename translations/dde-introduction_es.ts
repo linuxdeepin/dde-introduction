@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin, acerca su tecnología e innovación a empresas líderes en el mundo de la infraestructura de construcción, información gubernamental y tecnología de información empresarial, Hoy es uno de los sistemas operativos de más rápido crecimiento en China. Debido a su facilidad de uso y extensibilidad, muchos usuarios gubernamentales y empresariales eligen deepin como su sistema operativo diario, mientras que los departamentos de información y mantenimiento se sienten atraídos por la estabilidad, seguridad y flexibilidad del entorno de escritorio de deepin. El escritorio Deepin, se puede instalar en computadoras portátiles y de escritorio, es estable y eficiente, Es un producto basado en un maravilloso diseño con tecnología de avanzada. Su fácil manejo ayuda a los usuarios a reducir el tiempo de navegación y búsqueda, y dedicar más tiempo al trabajo.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>El equipo de investigación y desarrollo de deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), establecido en 2011, tomando como base los productos del sistema operativo, se enfoca en el desarrollo de software de sistema operativo basado en el kernel de Linux y brinda a los usuarios Soluciones, gestión, mantenimiento, consulta, personalización, desarrollo y otros servicios relacionados. Como el producto central de Deepin Technology, el software de deepin ha obtenido varios logros sobresalientes en productos de sistemas operativos Linux domésticos y ha sido ampliamente reconocido en el mundo.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology continuará adhiriéndose al código abierto y al espíritu innovador, aprovechará la oportunidad del sistema operativo autónomo, controlable y reemplazable, desarrollará el ecosistema del sistema operativo nacional y se convertirá en un proveedor líder de productos y soluciones de software.</translation>
     </message>
 </context>
 <context>

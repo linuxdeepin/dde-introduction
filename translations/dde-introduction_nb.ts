@@ -105,12 +105,12 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="27"/>
         <source>Efficient Mode</source>
-        <translation type="unfinished"/>
+        <translation>Efficient Mode</translation>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Fashion Mode</source>
-        <translation type="unfinished"/>
+        <translation>Fashion Mode</translation>
     </message>
 </context>
 <context>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>Window effect</source>
-        <translation type="unfinished"/>
+        <translation>Vinduseffekt</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="159"/>

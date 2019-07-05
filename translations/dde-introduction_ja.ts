@@ -9,7 +9,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
         <source>deepin is a Linux distribution committed to providing elegant, user-friendly, safe and stable experience for users all over the world. It not only integrates and configures the best open-source products, but also develops a series of applications for daily use, such as Deepin Store, Deepin Screenshot, Deepin Music, Deepin Movie and so on, among which Deepin Desktop Environment and Deepin Control Center are based on Qt technology. deepin focuses on user-friendly experience and beautiful design, so it’s easy to install and use for most users and can well replace Windows for work and entertainment.</source>
-        <translation>Deepinは世界中のユーザーにエレガントで使いやすく、安全で安定した体験を提供する事を約束するLinuxディストリビューションです。最高のオープンソースプロダクトを統合や設定するだけでなく、日常的に利用できるDeepin Store, Deepin Screenshot, Deepin Music, Deepin Moveなどを開発しています。Deepin DesktopとDeepin Control CenterはQtテクノロジーを基盤として利用しています。Deepinは美しくて使いやすいデザインに焦点を当てているため、インストールが簡単で殆どのユーザーが仕事や趣味の為にWindowsを置き換えることが出来ます。</translation>
+        <translation>Deepinは、世界中のユーザーに、エレガントで使いやすく、安全で安定した体験を提供することを約束するLinuxディストリビューションです。最高のオープンソースプロダクトを統合・構成しているだけでなく、日常的に利用できるDeepin Store, Deepin Screenshot, Deepin Music, Deepin Moveなどを開発しています。Deepin DesktopとDeepin Control CenterはQtテクノロジーを基盤として利用しています。Deepinは美しくて使いやすいデザインに焦点を当てているためインストールが簡単で、ほとんどのユーザーが仕事や趣味のためにWindowsを置き換えることができます。</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="46"/>
         <source>deepin is an open source desktop system developed for common users. You are free to download, distribute, modify and use it. Detailed address is GitHub: https://github.com/linuxdeepin</source>
-        <translation>Deepinは一般ユーザー向けに開発されたオープンソースのデスクトップシステムです。自由にダウンロード、配布、修正、利用が出来ます。詳しくはGitHubをご覧下さい: https://github.com/linuxdeepin</translation>
+        <translation>Deepinは一般ユーザー向けに開発されたオープンソースのデスクトップシステムです。自由にダウンロード、配布、修正、利用できます。詳しくはGitHubをご覧ください: https://github.com/linuxdeepin</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
@@ -133,17 +133,17 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="270"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>Dockを右クリックすることでモードを切り替えることが出来ます</translation>
+        <translation>Dockを右クリックすると、モードを切り替えできます</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="281"/>
         <source>Please select to enable window effect or not</source>
-        <translation>ウィンドウエフェクトを有効にするかどうかを選択してください</translation>
+        <translation>ウィンドウ効果を有効にするかどうかを選択してください</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="282"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation>Control Center &gt; Personalization &gt; Enable window effect もしくは Shift+Super+Tabのショートカットから有効無効を切り替えることが出来ます。</translation>
+        <translation>Control Center &gt; Personalization &gt; Enable window effect もしくは Shift+Super+Tabのショートカットから有効無効を切り替えできます。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="294"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>Control Center &gt; Personalization &gt; Theme &gt; Icon Themeから変更することが出来ます</translation>
+        <translation>Control Center &gt; Personalization &gt; Theme &gt; Icon Themeから変更できます</translation>
     </message>
 </context>
 <context>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>Window effect</source>
-        <translation>ウィンドウエフェクト</translation>
+        <translation>ウィンドウ効果</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="159"/>
@@ -208,7 +208,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <source>Please select to enable window effect or not</source>
-        <translation>ウィンドウエフェクトを有効にするかどうかを選択してください</translation>
+        <translation>ウィンドウ効果を有効にするかどうかを選択してください</translation>
     </message>
 </context>
 <context>
@@ -251,7 +251,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
         <source>The development of deepin can not move on without community support, for further improve the construction of the deepin community environment, Deepin Technology has made the decision to officially open channels of donation.</source>
-        <translation>Deepinの開発はコミュニティの支援無しでは実現出来ません。Deepinコミュニティの組織環境を更に改善するため、Deepinテクノロジーは公式に寄付を受け付けることを決めました。</translation>
+        <translation>Deepinの開発はコミュニティの支援なしでは実現できません。Deepinコミュニティの組織環境をさらに改善するため、Deepinテクノロジーは公式に寄付を受け付けることを決めました。</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>

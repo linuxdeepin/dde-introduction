@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="282"/>
         <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
-        <translation>Denetim Masası &gt; Kişiselleştirme &gt; Pencere Etkisi Kullanılsın seçeneğini ya da Shift + Super + Tab kısayolunu kullanabilirsiniz</translation>
+        <translation>Kontrol Merkezi &gt; Kişiselleştirme &gt; Pencere Etkisi Kullanılsın seçeneğini ya da Shift + Super + Tab kısayolunu kullanabilirsiniz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="294"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>Denetim Masası &gt; Kişiselleştirme &gt; Tema &gt; Simge Teması seçeneğinden değiştirebilirsiniz</translation>
+        <translation>Kontrol Merkezi &gt; Kişiselleştirme &gt; Tema &gt; Simge Teması seçeneğinden değiştirebilirsiniz</translation>
     </message>
 </context>
 <context>
@@ -251,7 +251,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
         <source>The development of deepin can not move on without community support, for further improve the construction of the deepin community environment, Deepin Technology has made the decision to officially open channels of donation.</source>
-        <translation>deepin geliştirme çalışmaları topluluk desteği olmadan ilerleyemezdi. deepin topluluğunu daha da geliştirmek için Deepin Technology resmi bağış kanalları açmaya karar verdi.</translation>
+        <translation>Deepin geliştirme çalışmaları topluluk desteği olmadan ilerleyemezdi. Deepin topluluğunu daha da geliştirmek için Deepin Technology resmi bağış kanalları açmaya karar verdi.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>
@@ -271,12 +271,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation>İç Deneme</translation>
+        <translation>Dahili Test</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
         <source>Get the latest achievements of deepin and software timely.</source>
-        <translation>deepin yeniliklerini ve yazılımlarını zamanında alırsınız.</translation>
+        <translation>Deepin yeniliklerini ve yazılımlarını zamanında alırsınız.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="53"/>

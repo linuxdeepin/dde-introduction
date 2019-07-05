@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin, das die weltweit führende Technologie und Innovation in den Bereichen Government Information Construction und Enterprise Information Technology Infrastructure einbringt, ist heute eines der am schnellsten wachsenden Betriebssysteme in China. Aufgrund seiner Benutzerfreundlichkeit und Erweiterbarkeit entscheiden sich viele Regierungs- und Unternehmensanwender für Deepin als ihr tägliches Betriebssystem, während die Informationsabteilungen und die Wartungsabteilungen von der Stabilität, Sicherheit und Flexibilität der Deepin-Desktop-Umgebung angezogen werden. Deepin Desktop, das auf Laptops und Desktops installiert werden kann, ist stabil und effizient als auch sehr einfach zu bedienen, basierend auf dem wunderbaren Produktdesign und der fortschrittlichen Technologie. Die einfache Benutzerführung kann den Benutzern helfen, die Suchzeit zu verkürzen und mehr Zeit in die Arbeit zu investieren.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>Das Forschungs- und Entwicklungsteam von deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), gegründet im Jahr 2011, wobei Betriebssystemprodukte im Mittelpunkt stehen, konzentriert sich auf die Entwicklung von Betriebssystemsoftware auf Basis des Linux-Kernels und bietet den Anwendern Lösungen, Management, Wartung, Beratung, Anpassung, Entwicklung und andere damit verbundene Dienstleistungen. Als Kernprodukt der Deepin Technology hat Deepin-Software verschiedene herausragende Leistungen bei heimischen Linux-Betriebssystemprodukten erzielt und ist weltweit anerkannt. </translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology wird sich weiterhin an den Open-Source- und Innovationsgeist halten, die Möglichkeit eines autonomen, kontrollierbaren und ersetzbaren Betriebssystems nutzen, ein heimisches Betriebssystemökosystem aufbauen und ein führender Anbieter von Basissoftwareprodukten und -lösungen werden.</translation>
     </message>
 </context>
 <context>
@@ -105,12 +105,12 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="27"/>
         <source>Efficient Mode</source>
-        <translation>Profi-Modus</translation>
+        <translation>Effizienter Modus</translation>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Fashion Mode</source>
-        <translation>Designer-Modus</translation>
+        <translation>Gewohnter Modus</translation>
     </message>
 </context>
 <context>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Please select icon theme</source>
-        <translation>Bitten Icon-Thema auswählen</translation>
+        <translation>Bitte wählen Sie ein Symbolthema aus</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="294"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="135"/>
         <source>Icon theme</source>
-        <translation>Icon-Thema</translation>
+        <translation>Symbolthema</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="147"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation>Mach mit beim  Übersetzungs-Projekt! (i18n)</translation>
+        <translation>Willkommen beim i18n-Projekt.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
@@ -299,12 +299,12 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation>Fenstereffekte deaktivieren</translation>
+        <translation>Fenstereffekt deaktivieren</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Enable window effect</source>
-        <translation>Fenstereffekte aktivieren</translation>
+        <translation>Fenstereffekt aktivieren</translation>
     </message>
 </context>
 </TS>

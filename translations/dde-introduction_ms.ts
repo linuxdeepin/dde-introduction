@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>deepin, menawarkan teknologi dan invoasi bertaraf dunia ke dalam pembangunan maklumat kerajaan dan juga prasarana teknologi maklumat perusahaan, kini merupakan sistem pengoperasian terpantas di negara China. Disebabkan mudah digunakan dan boleh dipertingkatkan lagi keupayaannya, banyak agensi kerajaan dan pengguna perusahaan telah memilihnya sebagai sistem pengoperasian harian mereka. Manakala, jabatan maklumat dan jabatan penyelenggaraan terpikat dengan kestabilan, keselamatan dan keanjalan persekitaran desktop deepin desktop. Desktop Deepin, yang dipasang ke dalam komputer riba dan komputer desktop, adalah stabil dan cekap kerana sangat mudah digunakan, berasaskan reka bentuk produk terbaik dengan teknologi terkini Pengalaman pengguna yang ringkas dapat mengurangkan tempoh pelayaran dan penggelintaran pengguna, seterusnya dapat lebih fokus kepada kerja mereka.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>Pasukan kajian dan pembangunan deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), telah ditubuhkan pada tahun 2011, dengan menjadikan produk sistem pengoperasian sebagai teras, fokus kepada pembangunan sistem peroperasian yang berasaskan kernel Linux, dan menawarkan kepada pengguna perkhidmatan berbentuk penyelesaian, pengurusan, penyelenggaraan, perundingan, penyuaian, pembangunan serta lain-lain perkhidmatan yang berkaitan. Sebagai produk teras bagi Deepin Technology, perisian deepin telah mendapat pelbagai pencaipaian yang membanggakan dalam kategori produk sistem pengoperasian Linux tempatan dan juga telah mendapat pengikhtirafan di serata dunia.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology akan terus berkomitmen dengan sumber terbuka dan bersemangat inovatif, mengambil peluang atas keistimewaan sistem pengoperasian yang bersifat autonomi, boleh dikawal selia dan boleh diganti, membina ekosistem sistem pengoperasian dan seterusnya menjadi pembekal utama produk dan penyelesaian perisian asasi.</translation>
     </message>
 </context>
 <context>
