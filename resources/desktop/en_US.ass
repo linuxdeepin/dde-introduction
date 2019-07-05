@@ -43,6 +43,8 @@ Style: qidongsuduneicunyouhua,Noto Sans CJK SC,70,&H00141414,&H000000FF,&H000000
 Style: tiyanshengjishuangguanqixia,Noto Sans CJK SC,70,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,7,374,10,669,1
 Style: deepin 15.10,Noto Sans CJK SC,90,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,545,10,409,1
 Style: Music by,Noto Sans CJK SC,35,&H004F4F4F,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,589,10,86,1
+Style: zhuomianwenjian,Noto Sans CJK SC,70,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,1,550,10,543,1
+Style: gaobiezaluan,Noto Sans CJK SC,70,&H00141414,&H000000FF,&H00000000,&H00000000,0,0,0,0,100.0,100.0,0.0,0.0,1,0.0,0.0,7,605,10,374,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -57,13 +59,13 @@ Dialogue: 12,0:01:09.30,0:01:12.87,zidongqiehuanjienengmoshi-biaoti,,0,0,0,,{\fa
 Dialogue: 11,0:01:09.30,0:01:12.87,tiexinyanchangshiyongshijian,,0,0,0,,{\fad(500,500)}Longer battery life when unplug
 Dialogue: 12,0:01:25.65,0:01:29.22,qidongsuduneicunyouhua,,0,0,0,,{\fad(500,500)}Quicker startup and less memory usage
 Dialogue: 11,0:01:25.65,0:01:29.22,tiyanshengjishuangguanqixia,,0,0,0,,{\fad(500,500)}Fully improved user experience
-Dialogue: 9,0:01:31.55,0:01:35.12,qingsong,,0,0,0,,{\fad(500,500)}Easy to find out the answers
-Dialogue: 8,0:01:31.55,0:01:35.12,shoulu,,0,0,0,,{\fad(500,500)}Comprehensive Deepin Manual
-Dialogue: 11,0:02:01.10,0:02:04.67,heibai,,0,0,0,,{\fad(500,500)}Switch as you wish
-Dialogue: 10,0:02:01.10,0:02:04.67,bufen,,0,0,0,,{\fad(500,500)}Light or dark
-Dialogue: 13,0:02:13.20,0:02:16.77,anquan,,0,0,0,,{\fad(500,500)}Faster and securer
-Dialogue: 12,0:02:13.20,0:02:16.77,mima,,0,0,0,,{\fad(500,500)}New fingerprint unlock
-Dialogue: 14,0:02:29.37,0:02:32.97,weininde,,0,0,0,,{\fad(500,500)}Satisfy your work and entertainment needs
-Dialogue: 13,0:02:29.37,0:02:32.97,shendu,,0,0,0,,{\fad(500,500)}deepin and its native applications
-Dialogue: 14,0:02:35.00,0:02:38.60,deepin 15.10,,0,0,0,,{\fad(500,500)}deepin 15.10
-Dialogue: 13,0:02:35.00,0:02:38.60,Music by,,0,0,0,,{\fad(500,500)}Music by audionautix.com
+Dialogue: 9,0:01:30.82,0:01:34.40,gaobiezaluan,,0,0,0,,{\fad(500,500)}Keep items neat and organized
+Dialogue: 8,0:01:30.82,0:01:34.40,zhuomianwenjian,,0,0,0,,{\fad(500,500)}Auto merge files on desktop
+Dialogue: 11,0:02:03.10,0:02:06.67,heibai,,0,0,0,,{\fad(500,500)}Switch as you wish
+Dialogue: 10,0:02:03.10,0:02:06.67,bufen,,0,0,0,,{\fad(500,500)}Light or dark
+Dialogue: 13,0:02:15.19,0:02:18.77,anquan,,0,0,0,,{\fad(500,500)}Faster and securer
+Dialogue: 12,0:02:15.19,0:02:18.77,mima,,0,0,0,,{\fad(500,500)}New fingerprint unlock
+Dialogue: 14,0:02:31.40,0:02:35.00,weininde,,0,0,0,,{\fad(500,500)}Satisfy your work and entertainment needs
+Dialogue: 13,0:02:31.40,0:02:35.00,shendu,,0,0,0,,{\fad(500,500)}deepin and its native applications
+Dialogue: 14,0:02:37.00,0:02:40.60,deepin 15.10,,0,0,0,,{\fad(500,500)}deepin 15.11
+Dialogue: 13,0:02:37.00,0:02:40.60,Music by,,0,0,0,,{\fad(500,500)}Music by audionautix.com
