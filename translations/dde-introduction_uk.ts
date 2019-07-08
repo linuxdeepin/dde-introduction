@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>На сьогодні, deepin, яка впроваджує найсучасніші технології та інновації у державні інформаційні системи та промислову інфраструктуру інформаційних технологій, є однією із операційних систем, кількість користувачів якої у Китаї швидко зростає. Оскільки ця операційна система є простою у користуванні та гнучкою у сенсі розширення, багато урядових та ділових установ вибирають deepin як типову операційну систему. Працівників же інформаційних та адміністративних підрозділів приваблює у системі стабільність, безпека та гнучкість стільничного середовища deepin. Deepin для робочих станцій, яку можна встановити на ноутбук чи робочий комп&apos;ютер, є стабільною та ефективною, а також дуже простою у користуванні. Її засновано на чудовому наборі продуктів та сучасних технологіях. Простота системи надає можливість користувачам швидше отримувати і шукати інформацію і дає їм більше часу на виконання основних робочих завдань.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>Команда, яка відповідає за визначення перспектив і розробку deepin — Wuhan Deepin Technology Co., Ltd (Deepin Technology), — сформувалася у 2011 році, створивши ядро операційної системи. Основний акцент було зроблено на розробці програмного забезпечення операційної системи на основі ядра Linux і наданні користувачам рішень, послуг з керування, супроводу, консультування, налаштовування, розробки та інших послуг. Якщо основний продукт Deepin Technology, програмне забезпечення deepin отримало широке визнання на місцевому ринку операційних систем на основі Linux та стало відомим у всьому світі. </translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology сповнена рішучості дотримуватися духу вільного програмного забезпечення та інновацій, створюючи автономну, контрольовану та придатну до заміни операційну систему, будуючи місцеву екосистему програмних продуктів та намагаючись стати провідним постачальником базових програмних продуктів та рішень.</translation>
     </message>
 </context>
 <context>
@@ -221,7 +221,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
         <source>deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world to experience the Linux distribution from China, let the system widely spread all over the world and enlarge its global impact, we hope that more and more people from the Linux community can join to help the translation work to let our open source work benefit the world!</source>
-        <translation>deepin з&apos;явився у Китаї. У наших планах було розповсюдження системи у всьому світі. Тому у сподіванні, що користувачі з усього світу змодуть користуватися дистрибутивом Linux з Китаю, що система зможе широко розповсюдитися світом, а частка дистрибутива у світі зростатиме, ми покладаємося на те, що усе більше учасників спільноти Linux долучатимуться до проекту і допомагатимуть у перекладі на користь усього вільного програмного забезпечення світу!</translation>
+        <translation>deepin з&apos;явився у Китаї. У наших планах було розповсюдження системи у всьому світі. Тому у сподіванні, що користувачі з усього світу зможуть користуватися дистрибутивом Linux з Китаю, що система зможе широко розповсюдитися світом, а частка дистрибутива у світі зростатиме, ми покладаємося на те, що усе більше учасників спільноти Linux долучатимуться до проекту і допомагатимуть у перекладі на користь усього вільного програмного забезпечення світу!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
         <source>deepin: Joining the document writing and i18n work to let our open source work benefit the world!</source>
-        <translation>deepin: долучіться до команди зі створення документації та інтернаціоналізації, щоб допомогти нашому вільному програмному забезпеченню ширитися світом!</translation>
+        <translation>deepin: долучіться до команди зі створення документації та i18n інтернаціоналізації, щоб допомогти нашому вільному програмному забезпеченню ширитися світом!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation>Запрошуємо до участі у проекті інтернаціоналізації.</translation>
+        <translation>Запрошуємо до участі i18n у проекті інтернаціоналізації.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
@@ -299,7 +299,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation>Відключити віконні ефекти</translation>
+        <translation>Вимкнути віконні ефекти</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>

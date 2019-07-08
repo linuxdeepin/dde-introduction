@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>deepin, bringer verdenens ledende teknologi og innovation til statslig informationskonstruktion- og virksomhedsinformation-teknologiinfrastruktur, det er i dag et af de hurtigst voksende styresystemer i Kina. Da det er let at bruge og kan udvides, vælger mange statslige- og virksomheds-brugere deepin som deres daglige styresystem, mens informationsafdelingerne og vedligeholdelsesafdelingerne tiltrækkes af stabiliteten, sikkerheden og fleksibiliten i deepin-skrivebordsmiljøet. Deepin-skrivebordet, som kan installeres på bærbare og stationære, er stabil og effektiv samt meget let at bruge, baseret på det fantastiske produktdesign og den avanceret teknologi. Dets simple brugeroplevelse kan hjælpe brugere med at reducere browsing- og søgetiden, og bruge mere tid på at arbejde.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>Deepins forsknings- og udviklingsteam - Wuhan Deepin Technology Co., Ltd (Deepin Technology), etableret i 2011, har styresystem-produkter som sin kerne, fokuserer på udviklingen af styresystem-software baseret på Linux-kernen, og leverer brugere løsninger, håndtering, vedligeholdelse, konsultering, tilpasning, udvikling og andre relaterede tjenester. Som kerneproduktet af Deepin Technology, har deepin-software opnået diverse udmærkelser i hjemlige Linux-styresystem-produkter og er blevet bredt genkendt i verdenen. </translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology vil fortsat fastholde ånden af open source og innovation, benytte muligheden for selvstyret, kontrollerbar og erstatteligt styresystem, bygge hjemligt økosystem for styresystem og blive en ledende leverandør af grundlæggende softwareprodukter og -løsninger.</translation>
     </message>
 </context>
 <context>

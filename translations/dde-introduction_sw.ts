@@ -1,10 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ast" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sw" version="2.1">
 <context>
     <name>About</name>
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>About us</source>
-        <translation>Tocante a nós</translation>
+        <translation>Kuhusu yetu</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Objective</source>
-        <translation>Oxetivu</translation>
+        <translation>Shabaha</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>Customer First</source>
-        <translation>Primero&apos;l veceru</translation>
+        <translation>Mteja kwanza</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="41"/>
         <source>Open Source Idea</source>
-        <translation type="unfinished"/>
+        <translation>Chanzo wazi programmu</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="42"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
         <source>Open and Free</source>
-        <translation type="unfinished"/>
+        <translation>Wazi na huru</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="44"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="45"/>
         <source>Open source project</source>
-        <translation type="unfinished"/>
+        <translation>Mradi chanzo na wazi</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="46"/>
@@ -77,27 +77,27 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation>Páxina d&apos;aniciu</translation>
+        <translation>Tovuti ya mradi</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation>Comunidá</translation>
+        <translation>Jumuiya</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
         <source>Feedback</source>
-        <translation>Comentarios</translation>
+        <translation>Maoni</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="39"/>
         <source>Help</source>
-        <translation>Ayuda</translation>
+        <translation>Usaidizi</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="43"/>
         <source>Acknowledgements</source>
-        <translation>Agradecimientos</translation>
+        <translation>Shukrani</translation>
     </message>
 </context>
 <context>
@@ -105,12 +105,12 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="27"/>
         <source>Efficient Mode</source>
-        <translation>Mou Windows</translation>
+        <translation>Hali uhifadhi</translation>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Fashion Mode</source>
-        <translation>Mou MacOS</translation>
+        <translation>Hali urembo</translation>
     </message>
 </context>
 <context>
@@ -118,17 +118,17 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="119"/>
         <source>Next</source>
-        <translation>Siguiente</translation>
+        <translation>Ingine</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="120"/>
         <source>Done</source>
-        <translation>Fecho</translation>
+        <translation>Imemalizwa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="269"/>
         <source>Please select desktop mode</source>
-        <translation>Esbilla&apos;l mou d&apos;escritoriu</translation>
+        <translation>Tafadhali chagua hali ya eneo ya kazi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="270"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Tafadhali chagua mandhari ya ikoni</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="294"/>
@@ -161,12 +161,12 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="114"/>
         <source>Introduction</source>
-        <translation>Introducción</translation>
+        <translation>Utangulizi</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Mandhari ya eneo ya kazi</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="135"/>
@@ -188,22 +188,22 @@
         <location filename="../src/modules/normalmodule.cpp" line="170"/>
         <location filename="../src/modules/normalmodule.cpp" line="171"/>
         <source>About us</source>
-        <translation>Tocante a nós</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="115"/>
         <source>Welcome</source>
-        <translation>Afáyate</translation>
+        <translation>Karibu</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="126"/>
         <source>Please select desktop mode</source>
-        <translation>Esbilla&apos;l mou d&apos;escritoriu</translation>
+        <translation>Tafadhali chagua hali ya eneo ya kazi</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="136"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Tafadhali chagua mandhari ya ikoni</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="40"/>
         <source>Internationalization</source>
-        <translation type="unfinished"/>
+        <translation>Kujenga kwa kimataifa</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
         <source>The i18n translation work is mainly about:</source>
-        <translation type="unfinished"/>
+        <translation>Kujenga kwa kimataifa (i18n) ni kazi ya:</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
@@ -241,12 +241,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation type="unfinished"/>
+        <translation>Karibu kwa kazi ya kujenga kwa kimaitaifa</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation>Donaciones</translation>
+        <translation>Michango</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation type="unfinished"/>
+        <translation>Majaribio ya ndani</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
@@ -286,12 +286,12 @@
     <message>
         <location filename="../src/modules/support.cpp" line="54"/>
         <source>Be on deepin contributors list.</source>
-        <translation type="unfinished"/>
+        <translation>Tajiwa kwa wachangiaji wa Deepin.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="55"/>
         <source>Outstanding members will get a souvenir of deepin.</source>
-        <translation type="unfinished"/>
+        <translation>Wachangiaji bora watapata zawadi ya Deepin.</translation>
     </message>
 </context>
 <context>
@@ -299,12 +299,12 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation type="unfinished"/>
+        <translation>Lemaza athari ya dirisha</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Enable window effect</source>
-        <translation>Activar efeutos de ventanes</translation>
+        <translation>Wezesha athari ya dirisha</translation>
     </message>
 </context>
 </TS>

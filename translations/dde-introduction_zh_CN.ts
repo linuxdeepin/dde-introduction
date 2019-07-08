@@ -257,7 +257,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>
         <source>The donation upholds the principle of completely voluntary and no matter who you are, wherever you are, how much you contribute, are all making contributions to the development of Deepin community and we are very grateful for your donation.</source>
-        <translation>捐助秉承着完全自愿的原则，不管你是个人还是组织、来自何处、捐助金额多少，都是对社区的发展贡献出自己的力量，我们对你的捐助深表感谢。</translation>
+        <translation>捐助秉承着完全自愿的原则，不管您是个人还是组织、来自何处、捐助金额多少，都是对社区的发展贡献出自己的力量，我们对您的捐助深表感谢。</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="49"/>
@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>
         <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become an Internal Testing Team member, you will</source>
-        <translation>为了深度操作系统项目的质量保证，欢迎越来越多的人参与到内部测试工作和反馈跟踪。成为内测用户，你将</translation>
+        <translation>为了深度操作系统项目的质量保证，欢迎越来越多的人参与到内部测试工作和反馈跟踪。成为内测用户，您将</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>

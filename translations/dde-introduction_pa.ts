@@ -1,10 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ast" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pa" version="2.1">
 <context>
     <name>About</name>
     <message>
         <location filename="../src/modules/about.cpp" line="36"/>
         <source>About us</source>
-        <translation>Tocante a nós</translation>
+        <translation>ਸਾਡੇ ਬਾਰੇ</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="37"/>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../src/modules/about.cpp" line="38"/>
         <source>Objective</source>
-        <translation>Oxetivu</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="39"/>
         <source>Customer First</source>
-        <translation>Primero&apos;l veceru</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="40"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
         <source>Open and Free</source>
-        <translation type="unfinished"/>
+        <translation>ਆਜ਼ਾਦ ਅਤੇ ਮੁਕਤ</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="44"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="45"/>
         <source>Open source project</source>
-        <translation type="unfinished"/>
+        <translation>ਆਜ਼ਾਦ ਸਰੋਤ ਪਰੋਜੈਕਟ</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="46"/>
@@ -77,27 +77,27 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation>Páxina d&apos;aniciu</translation>
+        <translation>ਮੁੱਖ ਸਫ਼ਾ</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation>Comunidá</translation>
+        <translation>ਕਮਿਊਨਟੀ</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
         <source>Feedback</source>
-        <translation>Comentarios</translation>
+        <translation>ਸੁਝਾਅ</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="39"/>
         <source>Help</source>
-        <translation>Ayuda</translation>
+        <translation>ਮਦਦ</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="43"/>
         <source>Acknowledgements</source>
-        <translation>Agradecimientos</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -105,12 +105,12 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="27"/>
         <source>Efficient Mode</source>
-        <translation>Mou Windows</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Fashion Mode</source>
-        <translation>Mou MacOS</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -118,17 +118,17 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="119"/>
         <source>Next</source>
-        <translation>Siguiente</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="120"/>
         <source>Done</source>
-        <translation>Fecho</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="269"/>
         <source>Please select desktop mode</source>
-        <translation>Esbilla&apos;l mou d&apos;escritoriu</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="270"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="114"/>
         <source>Introduction</source>
-        <translation>Introducción</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
@@ -188,17 +188,17 @@
         <location filename="../src/modules/normalmodule.cpp" line="170"/>
         <location filename="../src/modules/normalmodule.cpp" line="171"/>
         <source>About us</source>
-        <translation>Tocante a nós</translation>
+        <translation>ਸਾਡੇ ਬਾਰੇ</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="115"/>
         <source>Welcome</source>
-        <translation>Afáyate</translation>
+        <translation>ਜੀ ਆਇਆਂ ਨੂੰ</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="126"/>
         <source>Please select desktop mode</source>
-        <translation>Esbilla&apos;l mou d&apos;escritoriu</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="136"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="40"/>
         <source>Internationalization</source>
-        <translation type="unfinished"/>
+        <translation>ਕੌਮਾਂਤਰੀਕਰਨ</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
@@ -246,7 +246,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation>Donaciones</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
@@ -304,7 +304,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Enable window effect</source>
-        <translation>Activar efeutos de ventanes</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

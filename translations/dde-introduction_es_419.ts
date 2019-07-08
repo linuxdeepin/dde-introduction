@@ -39,7 +39,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="43"/>
         <source>Open and Free</source>
-        <translation type="unfinished"/>
+        <translation>Abierto y Gratis</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="44"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="45"/>
         <source>Open source project</source>
-        <translation type="unfinished"/>
+        <translation>Proyecto de código abierto</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="46"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>
         <source>Community</source>
-        <translation type="unfinished"/>
+        <translation>Comunidad</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="36"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="269"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Por favor seleccione el modo de escritorio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="270"/>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Por favor seleccione el tema del icono</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="294"/>
@@ -166,12 +166,12 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="125"/>
         <source>Desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Modo de escritorio</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="135"/>
         <source>Icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema de icono</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="147"/>
@@ -193,17 +193,17 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="115"/>
         <source>Welcome</source>
-        <translation type="unfinished"/>
+        <translation>Bienvenido</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="126"/>
         <source>Please select desktop mode</source>
-        <translation type="unfinished"/>
+        <translation>Por favor seleccione el modo de escritorio</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="136"/>
         <source>Please select icon theme</source>
-        <translation type="unfinished"/>
+        <translation>Por favor seleccione el tema del icono</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="148"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="40"/>
         <source>Internationalization</source>
-        <translation type="unfinished"/>
+        <translation>Internacionalización</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
@@ -246,7 +246,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
         <source>Donations</source>
-        <translation type="unfinished"/>
+        <translation>Donaciones</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation type="unfinished"/>
+        <translation>Pruebas internas</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
@@ -299,7 +299,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation type="unfinished"/>
+        <translation>Deshabilitar efectos de ventana</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>

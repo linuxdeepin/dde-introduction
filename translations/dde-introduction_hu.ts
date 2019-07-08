@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>A Deepin, a legújabb technológiákat alkalmazó operációs rendszer. Egyszerű használhatósága és bővíthetősége miatt sok felhasználó operációs redszerként a Deepin-t használja. Az IT szakemberek alacsony karbantartási igényét és stabilitását tartják vonzónak. A Deepin asztali verziója, ami laptopokra és asztali gépekre telepíthető; stabil és hatékony, amellett hogy könnyen használható.   A design mindig a legújabb trendeket követi. Egyszerű felhasználói felülete meggyorsítja a műveleteket és beállításokat, több időt hagyva a fontos munkákra.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>A deepin fejlesztési és kutatási csapata, a Wuhan Deepin Technology Co., Ltd (Deepin Technology) 2011-ben alakult. Linux kernellel rendelkező operációs rendszer fejlesztése, informatikai megoldások, karbantartás, konzultáció, egyedi fejlesztés a fő tevékenység. A deepin operációs rendszer -a Deepin Technology alapterméke- kimagasló eredményt ért el a Linux termékek széles palettáján, és elismertséget szerzett szerte a világban.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>A Deepin Technology folytatni kívánja a nyílt forráskód hagyományait és innovatív szellemét, hogy a szoftvertermékek és megoldások nemzetközi vezető szállítójává váljon.</translation>
     </message>
 </context>
 <context>
@@ -221,27 +221,27 @@
     <message>
         <location filename="../src/modules/support.cpp" line="41"/>
         <source>deepin was born in China and aimed to go global. So as to make it possible for more and more users from around the world to experience the Linux distribution from China, let the system widely spread all over the world and enlarge its global impact, we hope that more and more people from the Linux community can join to help the translation work to let our open source work benefit the world!</source>
-        <translation type="unfinished"/>
+        <translation>A deepin Kínában született, de globális felhasználásra szánják. Ahhoz, hogy ezt a kínai Linux disztribúció minél több felhasználóhoz eljuthasson a világ minden pontján és meghatározó globális szereplővé válhasson, reméljük, hogy minél többen csatlakoznak és segítik a fordítási és dokumentációs közösség munkáját, hogy nyílt forráskódú munkánkból az egész világ profitálhasson!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="42"/>
         <source>The i18n translation work is mainly about:</source>
-        <translation type="unfinished"/>
+        <translation>A i18n fordítási munkákról:</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="43"/>
         <source>deepin: Joining the document writing and i18n work to let our open source work benefit the world!</source>
-        <translation type="unfinished"/>
+        <translation>deepin: Csatlakozzon és segítse a fordítási, dokumentációs közösség munkáját, hogy az i18n nyílt forráskódú munkánkból az egész világ profitálhasson!</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="44"/>
         <source>Deepin community: Providing community news, download, mirrors, projects and a gathering place for developers!</source>
-        <translation type="unfinished"/>
+        <translation>Deepin közösség: A közösségi hírek, letöltések, tükörszerverek, projektek és fejlesztők gyűjtőhelye.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="45"/>
         <source>Welcome to join i18n project.</source>
-        <translation type="unfinished"/>
+        <translation>Várjuk csatlakozásodat ai i18n fordítási projekthez.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="46"/>
@@ -251,47 +251,47 @@
     <message>
         <location filename="../src/modules/support.cpp" line="47"/>
         <source>The development of deepin can not move on without community support, for further improve the construction of the deepin community environment, Deepin Technology has made the decision to officially open channels of donation.</source>
-        <translation type="unfinished"/>
+        <translation>A deepin nem fejlődhet közösségi támogatás nélkül. A deepin közösségi környezet további fejlesztése érdekében a Deepin Technology számára adomány adható, hogy a fejlesztések továbbra is működjenek.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="48"/>
         <source>The donation upholds the principle of completely voluntary and no matter who you are, wherever you are, how much you contribute, are all making contributions to the development of Deepin community and we are very grateful for your donation.</source>
-        <translation type="unfinished"/>
+        <translation>Az adomány teljességgel önkéntes alapú, nem számít hogy ki vagy, mennyivel szeretnél hozzájárulni a Deepin közösség fejlesztéséhez, mi mindenképpen hálásak leszünk az adományodért.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="49"/>
         <source>The donation aims to make a survey and decide the orientation and priority of the projects, support the continuous further development, and support community activities and construction.</source>
-        <translation type="unfinished"/>
+        <translation>Az adományok segíségével fel tudjuk mérni és el tudjuk dönteni a projekt feladatainak fejlesztési prioritásait és irányait, és támogatja a további folyamatos fejlesztést, és a közösségi tevékenységeket, közösség építést.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="51"/>
         <source>For quality assurance of the deepin project, we welcome more people to participate in the internal testing and feedback tracking. Become an Internal Testing Team member, you will</source>
-        <translation type="unfinished"/>
+        <translation>A deepin projekt minőségének biztosítása érdekében várunk olyan önkénteseket, akik a belső tesztelésben és visszajelzésekben részt vesznek. Ök:</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="50"/>
         <source>Internal Testing</source>
-        <translation type="unfinished"/>
+        <translation>Belső tesztelés</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="52"/>
         <source>Get the latest achievements of deepin and software timely.</source>
-        <translation type="unfinished"/>
+        <translation>Megkapják a legfrissebb fejlesztéseket és szoftvereket.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="53"/>
         <source>Obtain the latest development plans and progress of deepin project in advance.</source>
-        <translation type="unfinished"/>
+        <translation>Elsőként kapják meg a legfrissebb fejlesztési terveket és a projekt állapotinformációit.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="54"/>
         <source>Be on deepin contributors list.</source>
-        <translation type="unfinished"/>
+        <translation>Rajta lesznek a deepin hozzájárulók listán.</translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="55"/>
         <source>Outstanding members will get a souvenir of deepin.</source>
-        <translation type="unfinished"/>
+        <translation>A kiemelkedő tagok deepin ajándékban részesülnek.</translation>
     </message>
 </context>
 <context>
@@ -299,7 +299,7 @@
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
         <source>Disable window effect</source>
-        <translation type="unfinished"/>
+        <translation>Ablak effekt kikapcsolása</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>

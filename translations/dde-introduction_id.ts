@@ -77,7 +77,7 @@
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="30"/>
         <source>Home Page</source>
-        <translation>Halaman Rumah</translation>
+        <translation>Beranda</translation>
     </message>
     <message>
         <location filename="../src/widgets/bottomnavigation.cpp" line="33"/>

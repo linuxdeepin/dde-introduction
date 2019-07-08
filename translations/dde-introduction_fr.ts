@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>deepin, leader mondial apporte des technologies et des innovations de pointe dans la construction et l&apos;infrastructure de l&apos;information pour les entreprises et les gouvernements, c&apos;est l&apos;un des systèmes d&apos;exploitation dont la croissance est la plus rapide en Chine. En raison de sa facilité d&apos;utilisation et de son évolutivité, de nombreux utilisateurs, provenant des gouvernements ou des entreprises, choisissent deepin comme système d&apos;exploitation, tandis que les services d&apos;information et de maintenance sont attirés par la stabilité, la sécurité et la flexibilité de l&apos;environnement de bureau deepin. Le bureau Deepin, qui peut être installé sur les ordinateurs portables et les ordinateurs de bureau, est stable, efficace, et très facile à utiliser, grâce à sa solide conception et à sa technologie de pointe. Son utilisation simple permet à l&apos;utilisateur de réduire son temps de navigation, de recherche et d&apos;augmenter sa productivité.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>L’équipe de recherche et développement de deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), créée en 2011, se concentre sur le développement d&apos;un système d’exploitation basés sur le noyau Linux et fournit aux utilisateurs divers services et des solutions de gestion, de maintenance, de conseil, de personnalisation, de développement. En tant que produit principal de Deepin Technology, le logiciel Deepin a réalisé de remarquables avancées pour le système d&apos;exploitation Linux qui ont été largement reconnu dans le monde.</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Technology continuera à adhérer à l’esprit &quot;open source&quot; et novateur, profitera d&apos;un système d’exploitation autonome, contrôlable et remplaçable, construira un système d’exploitation et un écosystème, deviendra l&apos;un des principaux fournisseurs de produits et de solutions logiciels.</translation>
     </message>
 </context>
 <context>

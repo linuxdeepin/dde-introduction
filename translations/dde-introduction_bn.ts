@@ -59,17 +59,17 @@
     <message>
         <location filename="../src/modules/about.cpp" line="52"/>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
-        <translation type="unfinished"/>
+        <translation>ডিপিন হল বর্তমানে চিনের দ্রুত ক্রমবর্ধমান অপারেটিং সিস্টেম মধ্যে অন্যতম যা পৃথিবীর  বিশ্বের নেতৃস্থানীয় প্রযুক্তি এবং আবিষ্কার সরকারের তথ্য শৈলী এবং এন্টারপ্রাইজ তথ্য প্রযুক্তি অবকাঠামোতে নিয়ে আসছে। এর সহজে ব্যবহারযোগ্যতা এবং বর্ধিতকরনের সুবিধার জন্য অনেক সরকারি এবং এন্টারপ্রাইজ ব্যবহারকারী ডিপিনকে তাদের দৈনন্দিন ব্যবহারের অপারেটিং সিস্টেম হিসেবে বেছে নিয়েছে যেখানে তথ্য বিভাগ এবং রক্ষণাবেক্ষণ বিভাগ ডিপিন ডেস্কটপ এনভাইরনমেন্টের স্থায়িত্ব,  নিরাপত্তা এবং নমনীয়তা দ্বারা আকর্ষিত হয়। ডিপিন ডেস্কটপ হল স্থিতিশীল, দক্ষ, সহজে ব্যবহারযোগ্য, সুন্দর প্রোডাক্ট ডিজাইন এবং উন্নত প্রযুক্তির উপর ভিত্তি করে তৈরি করা যা ল্যাপটপ এবং ডেক্সটপে ইন্সটল করা যায়। এটির সহজ ব্যবহারকারী অভিজ্ঞতা, ব্যবহারকারীর ব্রাউজিং এবং অনুসন্ধানের সময় কমিয়ে কাজে বেশি সময় দিতে সাহায্য করতে পারে।</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="53"/>
         <source>The research and development team of deepin - Wuhan Deepin Technology Co., Ltd (Deepin Technology), established in 2011, taking operating system products as the core, focuses on the development of operating system software based on the Linux kernel, and provides users with solutions, management, maintenance, consultation, customization, development and other related services. As the core product of Deepin Technology, deepin software has obtained various outstanding achievements in domestic Linux operating system products and has been widely recognized in the world. </source>
-        <translation type="unfinished"/>
+        <translation>লিনাক্স কার্নেলের উপর ভিত্তি করে অপারেটিং সিস্টেম সফটওয়্যার ডেভেলপমেন্টকে কেন্দ্রবিন্দুতে রেখে ডিপিনের গবেষণা এবং ডেভেলপমেন্ট টিম- Wuhan Deepin Technology Co., Ltd (Deepin Technology), 2011 সালে প্রতিষ্ঠিত হয়েছে। এটা  ব্যবস্থাপনা, রক্ষণাবেক্ষণ, পরামর্শ, কাস্টমাইজেশন, উন্নয়ন এবং অন্যান্য সম্পর্কিত পরিষেবাও ব্যবহারকারীদের প্রদান করে। ডিপিন টেকনোলজির মূল পণ্য হিসাবে, ডিপিন সফটওয়্যার দেশীয় লিনাক্স অপারেটিং সিস্টেমের পণ্যগুলিতে অসাধারণ সাফল্য অর্জন করেছে এবং বিশ্বে ব্যাপকভাবে স্বীকৃত হয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/modules/about.cpp" line="54"/>
         <source>Deepin Technology will continue to adhere to the open source and innovative spirit, take the opportunity of autonomous, controllable and replaceable operating system, build domestic operating system ecosystem and become a leading supplier of basic software products and solutions.</source>
-        <translation type="unfinished"/>
+        <translation>ডেপিন টেকনোলজি ওপেন সোর্স এবং উদ্ভাবনী উদ্দীপনার সাথে লেগে থাকবে। স্বায়ত্বশাসিত, নিয়ন্ত্রণযোগ্য এবং প্রতিস্থাপনযোগ্য অপারেটিং সিস্টেমের সুযোগ গ্রহণ করবে। দেশীয় অপারেটিং সিস্টেম ইকোসিস্টেম তৈরি করবে এবং মৌলিক সফটওয়্যারপণ্য এবং সমাধানগুলির একটি নেতৃস্থানীয় সরবরাহকারী হয়ে উঠবে।</translation>
     </message>
 </context>
 <context>
