@@ -103,90 +103,107 @@ void MainWindow::initUI()
 {
     setFixedSize(WINDOW_SIZE);
 
-    DPlatformWindowHandle* handle = new DPlatformWindowHandle(this);
-    handle->setBorderWidth(0);
-    handle->setWindowRadius(5);
-    handle->setEnableSystemMove(true);
-    handle->setEnableSystemResize(false);
+        DPlatformWindowHandle* handle = new DPlatformWindowHandle(this);
+        handle->setBorderWidth(0);
+        handle->setWindowRadius(5);
+        handle->setEnableSystemMove(true);
+        handle->setEnableSystemResize(false);
 
-    m_fakerWidget = new QWidget(this);
-    m_fakerWidget->show();
-    m_fakerWidget->setFixedSize(WINDOW_SIZE);
+        m_fakerWidget = new QWidget(this);
+        m_fakerWidget->show();
+        m_fakerWidget->setFixedSize(WINDOW_SIZE);
 
-    m_previousBtn = new DImageButton(this);
-    m_previousBtn->setNormalPic(":/resources/previous_normal.svg");
-    m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
-    m_previousBtn->setPressPic(":/resources/previous_press.svg");
-    m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");
-    m_previousBtn->setFixedSize(27, 26);
+        m_nextBtn = new NextButton(tr("Next"), this);
+        m_doneBtn = new NextButton(tr("Done"), this);
+        m_nextBtn->setFixedSize(100, 36);
+        m_doneBtn->setFixedSize(100, 36);
 
-    m_nextBtn = new NextButton(tr("Next"), this);
-    m_doneBtn = new NextButton(tr("Done"), this);
+        m_previousBtn = new DImageButton(this);
+        m_previousBtn->setNormalPic(":/resources/previous_normal.svg");
+        m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
+        m_previousBtn->setPressPic(":/resources/previous_press.svg");
+        m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");
+        m_previousBtn->setFixedSize(27, 26);
 
-    DImageButton *closeBtn = new DImageButton(":/resources/close_round_normal.svg",
-                                              ":/resources/close_round_hover.svg",
-                                              ":/resources/close_round_press.svg",this);
+        //Addition Button Shadow
+        QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
+        shadow_effect->setOffset(0, 2);
+        shadow_effect->setColor(QColor(0,0,0,0.05*255));
+        shadow_effect->setBlurRadius(4);
+        m_nextBtn->setGraphicsEffect(shadow_effect);
 
-    closeBtn->setFixedSize(24, 24);
+        DImageButton *closeBtn = new DImageButton(":/resources/close_round_normal.svg",
+                                                  ":/resources/close_round_hover.svg",
+                                                  ":/resources/close_round_press.svg",this);
 
-    closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
-    closeBtn->show();
+        closeBtn->setFixedSize(24, 24);
 
-#ifndef QT_DEBUG
-    const bool isFirst = m_settings->value("IsFirst", true).toBool();
+        closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
+        closeBtn->show();
 
-    if (isFirst) {
-        m_settings->setValue("IsFirst", false);
+    #ifndef QT_DEBUG
+        const bool isFirst = m_settings->value("IsFirst", true).toBool();
 
-#ifndef DISABLE_VIDEO
+        if (isFirst) {
+            m_settings->setValue("IsFirst", false);
+
+    #ifndef DISABLE_VIDEO
+            m_current = new VideoWidget(true, m_fakerWidget);
+            m_nextBtn->setMode(NextButton::Transparent);
+    #else
+            m_current = new PhotoSlide(m_fakerWidget);
+            m_nextBtn->setMode(NextButton::Normal);
+            static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
+            m_nextBtn->setMode(NextButton::Normal);
+            m_index = 1;
+    #endif
+            m_previousBtn->hide();
+            m_nextBtn->show();
+        } else {
+            m_current = new NormalModule(m_fakerWidget);
+            m_previousBtn->hide();
+            m_nextBtn->hide();
+        }
+    #else
+    #ifndef DISABLE_VIDEO
         m_current = new VideoWidget(true, m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Transparent);
-#else
+        //m_current = new PhotoSlide(m_fakerWidget);
+        m_nextBtn->setMode(NextButton::Normal);
+        //static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
+    #else
+    //        m_current = initDesktopModeModule();
         m_current = new PhotoSlide(m_fakerWidget);
         m_nextBtn->setMode(NextButton::Normal);
         static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
-        m_nextBtn->setMode(NextButton::Normal);
-        m_index = 1;
-#endif
+    #endif
         m_previousBtn->hide();
         m_nextBtn->show();
-    } else {
-        m_current = new NormalModule(m_fakerWidget);
-        m_previousBtn->hide();
-        m_nextBtn->hide();
-    }
-#else
-#ifndef DISABLE_VIDEO
-//        m_current = new VideoWidget(true, m_fakerWidget);
-    m_current = new PhotoSlide(m_fakerWidget);
-    m_nextBtn->setMode(NextButton::Normal);
-    static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
-#else
-//        m_current = initDesktopModeModule();
-    m_current = new PhotoSlide(m_fakerWidget);
-    m_nextBtn->setMode(NextButton::Normal);
-    static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
-#endif
-    m_previousBtn->hide();
-    m_nextBtn->show();
-    m_nextBtn->setMode(NextButton::Transparent);
-#endif
+        m_nextBtn->setMode(NextButton::Transparent);
+    #endif
 
-    m_nextBtn->setFixedHeight(24);
-    m_doneBtn->setFixedHeight(24);
+        m_current->setFixedSize(WINDOW_SIZE);
+        m_current->show();
 
-    m_current->setFixedSize(WINDOW_SIZE);
-    m_current->show();
+        m_previousBtn->move(20, height() - m_previousBtn->height() - 20);
+        m_nextBtn->move(width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20);
+        m_doneBtn->move(m_nextBtn->pos());
+        m_doneBtn->hide();
 
-    m_previousBtn->move(20, height() - m_previousBtn->height() - 20);
-    m_nextBtn->move(width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20);
-    m_doneBtn->move(m_nextBtn->pos());
-    m_doneBtn->hide();
+        m_currentAni->setPropertyName("pos");
+        m_lastAni->setPropertyName("pos");
 
-    m_currentAni->setPropertyName("pos");
-    m_lastAni->setPropertyName("pos");
+        connect(closeBtn, &DImageButton::clicked, this, &MainWindow::close);
 
-    connect(closeBtn, &DImageButton::clicked, this, &MainWindow::close);
+        QWidget *widget = new QWidget(this);
+        widget->setAutoFillBackground(true);
+        widget->resize(QSize(32,32));
+        QPalette palette;
+        QPixmap pixmap(":/resources/introduction.svg");
+        palette.setBrush(QPalette::Window, QBrush(pixmap));
+        widget->setPalette(palette);
+        widget->move(QPoint(10,8));
+        widget->show();
+
 }
 
 void MainWindow::initConnect()
@@ -294,8 +311,8 @@ BaseModuleWidget *MainWindow::initWMModeModule()
     module->updateBigIcon();
 
     BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
-    w->setTitle(tr("Please select to enable window effect or not"));
-    w->setDescribe(tr("You can enable or disable it in Control Center > Personalization > Enable window effect, or use shortcuts Shift+Super+Tab"));
+    w->setTitle(tr("Please select the mode of operation"));
+    w->setDescribe(tr("If your computer configuration is not high, you are recommended to choose extreme speed mode"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
 }

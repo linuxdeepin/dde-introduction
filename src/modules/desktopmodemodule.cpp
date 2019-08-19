@@ -24,7 +24,7 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     , m_efficientWidget(new BaseWidget(this))
     , m_fashionWidget(new BaseWidget(this))
 {
-    m_efficientWidget->setTitle(tr("Efficient Mode"));
+    m_efficientWidget->setTitle(tr("Classical Mode"));
     m_fashionWidget->setTitle(tr("Fashion Mode"));
 
     connect(m_model, &Model::desktopModeChanged, this, &DesktopModeModule::onDesktopTypeChanged);
@@ -38,8 +38,8 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     m_layout->setContentsMargins(20, 8, 20, 0);
 
     m_layout->addStretch();
-    m_layout->addWidget(m_efficientWidget);
     m_layout->addWidget(m_fashionWidget);
+    m_layout->addWidget(m_efficientWidget);
     m_layout->addStretch();
 
     setLayout(m_layout);
@@ -69,14 +69,19 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
 
 void DesktopModeModule::updateBigIcon()
 {
-    m_efficientWidget->setPixmap(":/resources/effective_mode_big.png");
-    m_fashionWidget->setPixmap(":/resources/fashion_mode_big.png");
+    m_efficientWidget->setPixmap(":/resources/effective_mode.png");
+    m_fashionWidget->setPixmap(":/resources/fashion_mode.png");
 }
 
 void DesktopModeModule::updateSmallIcon()
 {
-    m_efficientWidget->setPixmap(":/resources/effective_mode_small.png");
-    m_fashionWidget->setPixmap(":/resources/fashion_mode_small.png");
+    //Temporary Modification, Waiting for Follow-up Modification of Pictures
+    QPixmap pixmapeff(":/resources/fashion_mode.png");
+    QPixmap pixmapfash(":/resources/fashion_mode.png");
+    pixmapeff = pixmapeff.scaled(QSize(240,150), Qt::KeepAspectRatio);
+    pixmapfash = pixmapfash.scaled(QSize(240,150), Qt::KeepAspectRatio);
+    m_efficientWidget->setPixmap(pixmapeff);
+    m_fashionWidget->setPixmap(pixmapfash);
 }
 
 void DesktopModeModule::updateSelectBtnPos()

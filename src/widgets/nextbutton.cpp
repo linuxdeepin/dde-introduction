@@ -2,8 +2,9 @@
 
 #include <QPainterPath>
 #include <QPainter>
+#include <QGraphicsDropShadowEffect>
 
-#define DEFAULT_BG_COLOR  255, 255, 255, 0.2 * 255
+#define DEFAULT_BG_COLOR  255, 255, 255, 1.0 * 255
 #define HOVER_BG_COLOR    255, 255, 255, 0.3 * 255
 #define PRESS_BG_COLOR    255, 255, 255, 0.1 * 255
 
@@ -27,24 +28,26 @@ void NextButton::setMode(NextButton::Mode mode)
 
 void NextButton::paintEvent(QPaintEvent *event)
 {
-    switch (m_mode) {
-    case Transparent: {
-        QPainter painter(this);
+    QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
 
-        QPainterPath path;
-        path.addRoundedRect(rect(), 5, 5);
+    QPainterPath path;
+    path.addRoundedRect(rect(), 8, 8);
 
-        painter.fillPath(path, m_currentColor);
+    //Setting Gradient
+    QLinearGradient linear(rect().topLeft(), rect().bottomRight());
+    linear.setColorAt(0, QColor(230,230,230,255));
+    linear.setColorAt(1, QColor(227,227,227,255));
+    linear.setSpread(QGradient::PadSpread);
+    painter.fillPath(path, linear);
 
-        painter.setPen(Qt::black);
-        painter.drawText(rect(), Qt::AlignCenter, m_text);
-        break;
-    }
-    case Normal:
-    default:
-        QPushButton::paintEvent(event);
-        break;
-    }
+    //Inner border
+    painter.setPen(QPen(QColor(0,0,0,0.03*255), 1));
+    painter.drawRoundedRect(QRect(QPoint(rect().topLeft().x() + 1, rect().topLeft().y() + 1),
+                                  QPoint(rect().bottomRight().x() - 1, rect().bottomRight().y() - 1)), 8, 8);
+    //Text
+    painter.setPen(QPen(Qt::black, 1));
+    painter.drawText(rect(), Qt::AlignCenter, m_text);
 }
 
 void NextButton::enterEvent(QEvent *event)

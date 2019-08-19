@@ -77,12 +77,13 @@ NormalModule::NormalModule(QWidget *parent)
                               "}"
                               ""
                               "#LeftWidget > QPushButton:checked {"
-                              "color: #2ca7f8;"
-                              "font-weight: 500;"
-                              "background-color: #d5edfe;"
-                              "border: 1px solid rgba(44, 167, 248, .1);"
-                              "border-left: none;"
-                              "border-right: none;"
+                              "background: #0081FF;"
+                              "box-shadow: 0 4px 6px 0 rgba(44,167,248,0.40);"
+                              "border-radius: 8px;"
+                              "border-radius: 8px;"
+                              "font-family: SourceHanSansSC-Medium;"
+                              "font-size: 14px;"
+                              "color: #FFFFFF;"
                               "}");
 
     layout->addWidget(leftWidget);
@@ -177,6 +178,16 @@ NormalModule::NormalModule(QWidget *parent)
     support->hide();
     m_modules[moduleCount] = support;
 #endif
+
+    //support us
+    NavigationButton * supportBtn = new NavigationButton;
+    m_buttonMap[supportBtn]   = ++moduleCount;
+    supportBtn->setText(tr("Support us"));
+    m_titleMap[supportBtn] = tr("Support us");
+    m_buttonGrp->addButton(supportBtn);
+    Support *support = new Support(this);
+    support->hide();
+    m_modules[moduleCount] = support;
 
     // about button
     NavigationButton * aboutBtn = new NavigationButton;

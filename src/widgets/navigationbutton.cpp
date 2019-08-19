@@ -38,5 +38,5 @@ void NavigationButton::paintEvent(QPaintEvent *event)
     r.setLeft(r.right() - 2);
 
     QPainter painter(this);
-    painter.fillRect(r, QColor(44, 167, 248));
+    //painter.fillRect(r, QColor(44, 167, 248));
 }

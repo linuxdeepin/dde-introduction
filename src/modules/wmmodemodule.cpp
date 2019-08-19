@@ -24,8 +24,8 @@ WMModeModule::WMModeModule(QWidget *parent)
     , m_efficientWidget(new BaseWidget(this))
     , m_fashionWidget(new BaseWidget(this))
 {
-    m_efficientWidget->setTitle(tr("Disable window effect"));
-    m_fashionWidget->setTitle(tr("Enable window effect"));
+    m_efficientWidget->setTitle(tr("Extreme speed mode"));
+    m_fashionWidget->setTitle(tr("Gorgeous mode"));
 
     connect(m_model, &Model::wmTypeChanged, this, &WMModeModule::onWMModeChanged);
     connect(m_fashionWidget, &BaseWidget::clicked, this, [=] {
@@ -42,8 +42,8 @@ WMModeModule::WMModeModule(QWidget *parent)
     m_layout->setContentsMargins(20, 8, 20, 0);
 
     m_layout->addStretch();
-    m_layout->addWidget(m_efficientWidget);
     m_layout->addWidget(m_fashionWidget);
+    m_layout->addWidget(m_efficientWidget);
     m_layout->addStretch();
 
     setLayout(m_layout);

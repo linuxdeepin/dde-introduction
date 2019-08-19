@@ -106,7 +106,7 @@
     <name>DesktopModeModule</name>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="27"/>
-        <source>Efficient Mode</source>
+        <source>Classical Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -118,42 +118,47 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.cpp" line="119"/>
+        <location filename="../src/mainwindow.cpp" line="116"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="117"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="269"/>
+        <location filename="../src/mainwindow.cpp" line="118"/>
+        <source>&lt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="297"/>
         <source>Please select desktop mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="270"/>
+        <location filename="../src/mainwindow.cpp" line="298"/>
         <source>You can switch it in Mode by right clicking on dock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="281"/>
-        <source>Please select to enable window effect or not</source>
+        <location filename="../src/mainwindow.cpp" line="309"/>
+        <source>Please select the mode of operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="282"/>
-        <source>You can enable or disable it in Control Center &gt; Personalization &gt; Enable window effect, or use shortcuts Shift+Super+Tab</source>
+        <location filename="../src/mainwindow.cpp" line="310"/>
+        <source>If your computer configuration is not high, you are recommended to choose extreme speed mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="293"/>
+        <location filename="../src/mainwindow.cpp" line="321"/>
         <source>Please select icon theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="294"/>
+        <location filename="../src/mainwindow.cpp" line="322"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
         <translation type="unfinished"></translation>
     </message>
@@ -161,54 +166,56 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="114"/>
+        <location filename="../src/modules/normalmodule.cpp" line="119"/>
+        <location filename="../src/modules/normalmodule.cpp" line="128"/>
         <source>Introduction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="125"/>
+        <location filename="../src/modules/normalmodule.cpp" line="140"/>
         <source>Desktop mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="135"/>
+        <location filename="../src/modules/normalmodule.cpp" line="150"/>
         <source>Icon theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
+        <location filename="../src/modules/normalmodule.cpp" line="162"/>
         <source>Window effect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="159"/>
-        <location filename="../src/modules/normalmodule.cpp" line="160"/>
+        <location filename="../src/modules/normalmodule.cpp" line="174"/>
+        <location filename="../src/modules/normalmodule.cpp" line="175"/>
         <source>Support us</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="170"/>
-        <location filename="../src/modules/normalmodule.cpp" line="171"/>
+        <location filename="../src/modules/normalmodule.cpp" line="185"/>
+        <location filename="../src/modules/normalmodule.cpp" line="186"/>
         <source>About us</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="115"/>
+        <location filename="../src/modules/normalmodule.cpp" line="120"/>
+        <location filename="../src/modules/normalmodule.cpp" line="129"/>
         <source>Welcome</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="126"/>
+        <location filename="../src/modules/normalmodule.cpp" line="141"/>
         <source>Please select desktop mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="136"/>
+        <location filename="../src/modules/normalmodule.cpp" line="151"/>
         <source>Please select icon theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="148"/>
+        <location filename="../src/modules/normalmodule.cpp" line="163"/>
         <source>Please select to enable window effect or not</source>
         <translation type="unfinished"></translation>
     </message>
@@ -300,12 +307,12 @@
     <name>WMModeModule</name>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="27"/>
-        <source>Disable window effect</source>
+        <source>Extreme speed mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
-        <source>Enable window effect</source>
+        <source>Gorgeous mode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

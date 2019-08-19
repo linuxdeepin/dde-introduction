@@ -51,5 +51,8 @@
         <file>resources/slide_small/03.jpg</file>
         <file>resources/slide_small/01.jpg</file>
         <file>resources/slide_small/04.jpg</file>
+        <file>resources/introduction.svg</file>
+        <file>resources/effective_mode.png</file>
+        <file>resources/fashion_mode.png</file>
     </qresource>
 </RCC>
