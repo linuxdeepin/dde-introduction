@@ -51,6 +51,12 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
     a.loadTranslator();
 
+    static const QDate buildDate = QLocale( QLocale::English ).toDate( QString(__DATE__).replace("  ", " 0"), "MMM dd yyyy");
+    QString t_date = buildDate.toString("MMdd");
+    // Version Time
+    a.setApplicationVersion(DApplication::buildVersion(t_date));
+
+
 #ifndef DISABLE_VIDEO
     setlocale(LC_NUMERIC, "C");
 

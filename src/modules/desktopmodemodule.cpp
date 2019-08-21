@@ -75,11 +75,8 @@ void DesktopModeModule::updateBigIcon()
 
 void DesktopModeModule::updateSmallIcon()
 {
-    //Temporary Modification, Waiting for Follow-up Modification of Pictures
-    QPixmap pixmapeff(":/resources/fashion_mode.png");
-    QPixmap pixmapfash(":/resources/fashion_mode.png");
-    pixmapeff = pixmapeff.scaled(QSize(240,150), Qt::KeepAspectRatio);
-    pixmapfash = pixmapfash.scaled(QSize(240,150), Qt::KeepAspectRatio);
+    QPixmap pixmapeff(":/resources/effective_mode_small.png");
+    QPixmap pixmapfash(":/resources/fashion_mode_small.png");
     m_efficientWidget->setPixmap(pixmapeff);
     m_fashionWidget->setPixmap(pixmapfash);
 }

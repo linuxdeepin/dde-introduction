@@ -26,6 +26,8 @@
 #include "photoslide.h"
 #include "../widgets/bottomnavigation.h"
 
+#include <dlabel.h>
+
 #ifndef DISABLE_VIDEO
 #include "videowidget.h"
 #endif
@@ -66,7 +68,6 @@ NormalModule::NormalModule(QWidget *parent)
     leftWidget->setLayout(m_leftNavigationLayout);
     leftWidget->setStyleSheet("#LeftWidget {"
                               "border: solid #eee;"
-                              "border-right-width: 1px;"
                               "}"
                               ""
                               "#LeftWidget > QPushButton {"
@@ -92,9 +93,11 @@ NormalModule::NormalModule(QWidget *parent)
     // bottom navigation
     BottomNavigation *bottomNavigation = new BottomNavigation;
 
-    QLabel *titleLabel = new QLabel;
+    DLabel *titleLabel = new DLabel;
     titleLabel->setStyleSheet("font-size: 20px;"
                               "font-weight: medium;");
+
+    DLabel *describe = new DLabel;
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->setSpacing(0);
@@ -102,6 +105,7 @@ NormalModule::NormalModule(QWidget *parent)
     mainLayout->addSpacing(15);
     mainLayout->addWidget(titleLabel, 0, Qt::AlignCenter);
     mainLayout->addLayout(layout);
+    mainLayout->addWidget(describe, 0, Qt::AlignCenter);
     mainLayout->addWidget(bottomNavigation);
 
     setLayout(mainLayout);
@@ -139,20 +143,11 @@ NormalModule::NormalModule(QWidget *parent)
     m_buttonMap[desktopBtn] = ++moduleCount;
     desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Please select desktop mode");
+    m_describeMap[desktopBtn] = tr("You can switch it in Mode by right clicking on dock");
     m_buttonGrp->addButton(desktopBtn);
     DesktopModeModule *desktopModeModule = new DesktopModeModule(this);
     desktopModeModule->hide();
     m_modules[moduleCount] = desktopModeModule;
-
-    // icon button
-    NavigationButton * iconBtn = new NavigationButton;
-    m_buttonMap[iconBtn]    = ++moduleCount;
-    iconBtn->setText(tr("Icon theme"));
-    m_titleMap[iconBtn] = tr("Please select icon theme");
-    m_buttonGrp->addButton(iconBtn);
-    IconModule *iconModule = new IconModule(this);
-    iconModule->hide();
-    m_modules[moduleCount] = iconModule;
 
     // wm button
     NavigationButton * wmBtn = nullptr;
@@ -161,11 +156,23 @@ NormalModule::NormalModule(QWidget *parent)
         m_buttonMap[wmBtn]      = ++moduleCount;
         wmBtn->setText(tr("Window effect"));
         m_titleMap[wmBtn] = tr("Please select to enable window effect or not");
+        m_describeMap[wmBtn] = tr("If your computer configuration is not high, you are recommended to choose extreme speed mode");
         m_buttonGrp->addButton(wmBtn);
         WMModeModule *wmModeModule = new WMModeModule(this);
         wmModeModule->hide();
         m_modules[moduleCount] = wmModeModule;
     }
+
+    // icon button
+    NavigationButton * iconBtn = new NavigationButton;
+    m_buttonMap[iconBtn]    = ++moduleCount;
+    iconBtn->setText(tr("Icon theme"));
+    m_titleMap[iconBtn] = tr("Please select icon theme");
+    m_describeMap[iconBtn] = tr("You can change it in Control Center > Personalization > Theme > Icon Theme");
+    m_buttonGrp->addButton(iconBtn);
+    IconModule *iconModule = new IconModule(this);
+    iconModule->hide();
+    m_modules[moduleCount] = iconModule;
 
 #ifndef PROFESSIONAL
     // support button
@@ -222,6 +229,7 @@ NormalModule::NormalModule(QWidget *parent)
     connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [=] (QAbstractButton *btn) {
         updateCurrentWidget(m_buttonMap[btn]);
         titleLabel->setText(m_titleMap[btn]);
+        describe->setText(m_describeMap[btn]);
     });
 
 #ifndef DISABLE_VIDEO

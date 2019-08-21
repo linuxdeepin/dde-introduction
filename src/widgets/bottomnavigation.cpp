@@ -30,13 +30,16 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     offical->setText(tr("Home Page"));
 
     DImageButton *community = new DImageButton;
-    community->setText(tr("Community"));
+    community->setText(tr("UserCommunity"));
 
     DImageButton *feedback = new DImageButton;
-    feedback->setText(tr("Feedback"));
+    feedback->setText(tr("ReportingIssues"));
 
     DImageButton *help = new DImageButton;
-    help->setText(tr("Help"));
+    help->setText(tr("HelpManual"));
+
+    DImageButton *thank = new DImageButton;
+    thank->setText(tr("Thank"));
 
 #ifndef PROFESSIONAL
     DImageButton *thank = new DImageButton;
@@ -49,7 +52,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
 
     QList<DImageButton*> list;
 
-    list << sinaBtn << twitterBtn << facebook << offical << community << feedback << help
+    list << sinaBtn << twitterBtn << facebook  << community << feedback << help << thank
 #ifndef PROFESSIONAL
     << thank
 #endif
@@ -71,6 +74,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
 #endif
     m_buttons[community] = "https://bbs.deepin.org/";
     m_buttons[feedback] = "http://feedback.deepin.org/";
+    m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
 #ifndef PROFESSIONAL
     m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
 #endif
@@ -84,10 +88,11 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     layout->addWidget(twitterBtn, 0, Qt::AlignCenter);
     layout->addWidget(facebook, 0, Qt::AlignCenter);
     layout->addStretch();
-    layout->addWidget(offical, 0, Qt::AlignCenter);
+    //layout->addWidget(offical, 0, Qt::AlignCenter);
     layout->addWidget(community, 0, Qt::AlignCenter);
     layout->addWidget(feedback, 0, Qt::AlignCenter);
     layout->addWidget(help, 0, Qt::AlignCenter);
+    layout->addWidget(thank, 0, Qt::AlignCenter);
 #ifndef PROFESSIONAL
     layout->addWidget(thank, 0, Qt::AlignCenter);
 #endif

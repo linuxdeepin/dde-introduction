@@ -47,6 +47,7 @@ private:
     QButtonGroup *m_buttonGrp;
     QMap<QWidget*, int> m_buttonMap;
     QMap<QAbstractButton*, QString> m_titleMap;
+    QMap<QAbstractButton*, QString> m_describeMap;
     QMap<int, QWidget*> m_modules;
     QWidget *m_currentWidget;
     WMSwitcher *m_wmSwitcher;
