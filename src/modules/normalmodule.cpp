@@ -154,8 +154,8 @@ NormalModule::NormalModule(QWidget *parent)
     if (allow_switch_wm) {
         wmBtn = new NavigationButton;
         m_buttonMap[wmBtn]      = ++moduleCount;
-        wmBtn->setText(tr("Window effect"));
-        m_titleMap[wmBtn] = tr("Please select to enable window effect or not");
+        wmBtn->setText(tr("Operation mode"));
+        m_titleMap[wmBtn] = tr("Please select the mode of operation");
         m_describeMap[wmBtn] = tr("If your computer configuration is not high, you are recommended to choose extreme speed mode");
         m_buttonGrp->addButton(wmBtn);
         WMModeModule *wmModeModule = new WMModeModule(this);

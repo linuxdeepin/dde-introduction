@@ -45,6 +45,8 @@ MainWindow::MainWindow(QWidget *parent)
     , m_settings(new QSettings("deepin", "dde-introduction"))
     , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
 {
+    QString tt = m_settings->fileName();
+    tt.append(" ");
     initUI();
     initConnect();
 }
