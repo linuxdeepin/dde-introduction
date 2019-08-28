@@ -26,7 +26,7 @@
 #include "photoslide.h"
 #include "../widgets/bottomnavigation.h"
 
-#include <dlabel.h>
+#include <DLabel>
 
 #ifndef DISABLE_VIDEO
 #include "videowidget.h"
@@ -94,8 +94,9 @@ NormalModule::NormalModule(QWidget *parent)
     BottomNavigation *bottomNavigation = new BottomNavigation;
 
     DLabel *titleLabel = new DLabel;
-    titleLabel->setStyleSheet("font-size: 20px;"
-                              "font-weight: medium;");
+    titleLabel->setStyleSheet("font-family: SourceHanSansSC-Bold;"
+                              "font-size: 17px;"
+                              "color: #001A2E;");
 
     DLabel *describe = new DLabel;
 
