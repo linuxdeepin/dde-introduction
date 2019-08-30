@@ -34,7 +34,7 @@ static QDir ResourcesQDir() {
     QDir videoPath(qApp->applicationDirPath());
     videoPath.setSorting(QDir::Name);
 
-#ifndef QT_DEBUG
+#ifdef QT_DEBUG
 #ifdef PROFESSIONAL
     videoPath.cd("resources/professional");
 #else
@@ -117,7 +117,9 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 
     m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
 
-    m_video->play(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
+    m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
+    m_video->engine().play();
+    //m_video->play(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
 
     QTimer::singleShot(1000, this, [=] {
         m_pauseTimer->setInterval(m_video->engine().duration() * 1000);
