@@ -2,7 +2,8 @@
 #define NEXTBUTTON_H
 
 #include <QPushButton>
-#include <dpushbutton.h>
+//#include <dpushbutton.h>
+#include <DPushButton>
 
 class NextButton : public QPushButton
 {
