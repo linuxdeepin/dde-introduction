@@ -2,6 +2,9 @@
 #define ABOUT_H
 
 #include <QScrollArea>
+#include <DLabel>
+
+DWIDGET_USE_NAMESPACE
 
 class About : public QScrollArea
 {

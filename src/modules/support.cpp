@@ -64,16 +64,16 @@ Support::Support(QWidget *parent)
                                   "<br><body style=\"line-height: 18px;font-size:12px;font-style: normal;\">"
                                   "<div style=\"font-style: medium;font-size: 16px;\">%8</div></br>"
                                   "<br>%9<a href=http://www.deepin.org>%10</a>")
-            .arg("■Localization")
-            .arg("Deep OS supports 30 languages, but we want to do better! If you want to use your own national language perfectly in Deep Operating System, please join our ")
-            .arg("transfixer")
-            .arg(" community to help us!")
-            .arg("■Donate or buy souvenirs")
-            .arg("Over the past decade, we have been moving forward and striving to provide the best desktop operating system experience. Welcome to buy our souvenirs. It not only makes you more personalized, but also helps us to make depth better!")
-            .arg("www.deepin.org/donate")
-            .arg("■Become our charging user")
-            .arg("You can also become an individual payer to support us and gain more rights and interests at ")
-            .arg("www.deepin.org");
+            .arg(tr("■Localization"))
+            .arg(tr("Deep OS supports 30 languages, but we want to do better! If you want to use your own national language perfectly in Deep Operating System, please join our "))
+            .arg(tr("transfixer"))
+            .arg(tr(" community to help us!"))
+            .arg(tr("■Donate or buy souvenirs"))
+            .arg(tr("Over the past decade, we have been moving forward and striving to provide the best desktop operating system experience. Welcome to buy our souvenirs. It not only makes you more personalized, but also helps us to make depth better!"))
+            .arg(tr("www.deepin.org/donate"))
+            .arg(tr("■Become our charging user"))
+            .arg(tr("You can also become an individual payer to support us and gain more rights and interests at "))
+            .arg(tr("www.deepin.org"));
 #endif
 
     label->setText(text);

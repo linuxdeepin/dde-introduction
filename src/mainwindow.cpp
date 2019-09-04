@@ -143,7 +143,7 @@ void MainWindow::initUI()
         closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
         closeBtn->show();
 
-    #ifndef QT_DEBUG
+    #ifdef QT_DEBUG
         const bool isFirst = m_settings->value("IsFirst", true).toBool();
 
         if (isFirst) {
@@ -205,7 +205,6 @@ void MainWindow::initUI()
         widget->setPalette(palette);
         widget->move(QPoint(10,8));
         widget->show();
-
 }
 
 void MainWindow::initConnect()
