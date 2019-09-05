@@ -41,22 +41,17 @@ BottomNavigation::BottomNavigation(QWidget *parent)
     DImageButton *thank = new DImageButton;
     thank->setText(tr("Thank"));
 
-#ifndef PROFESSIONAL
-    DImageButton *thank = new DImageButton;
-    thank->setText(tr("Acknowledgements"));
-#endif
-
     DImageButton *mail = new DImageButton(":/resources/Mail.svg",
                                           ":/resources/Mail.svg",
                                           ":/resources/Mail.svg");
 
-    QList<DImageButton*> list;
+    QList<DImageButton *> list;
 
     list << sinaBtn << twitterBtn << facebook  << community << feedback << help << thank
 #ifndef PROFESSIONAL
-    << thank
+         << thank
 #endif
-    << mail;
+         << mail;
 
     for (DImageButton *w : list) {
         w->installEventFilter(this);
@@ -80,7 +75,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
 #endif
     m_buttons[mail] = "mailto:support@deepin.com";
 
-    connect(help, &DImageButton::clicked, this, [=] {
+    connect(help, &DImageButton::clicked, this, [ = ] {
         QProcess::startDetached("/usr/bin/dman");
     });
 
@@ -108,7 +103,7 @@ BottomNavigation::BottomNavigation(QWidget *parent)
 
 void BottomNavigation::onButtonClicked()
 {
-    DImageButton *button = qobject_cast<DImageButton*>(sender());
+    DImageButton *button = qobject_cast<DImageButton *>(sender());
 
     Q_ASSERT(button);
 

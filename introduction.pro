@@ -6,7 +6,7 @@ QT += dtkwidget
 PKGCONFIG += dframeworkdbus libdmr
 DESTDIR    = $$_PRO_FILE_PWD_
 
-load(dtk_qmake)
+#load(dtk_qmake)
 
 isEmpty(PREFIX){
     PREFIX = /usr

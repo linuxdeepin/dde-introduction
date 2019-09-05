@@ -119,7 +119,7 @@ NormalModule::NormalModule(QWidget *parent)
 
 #ifndef DISABLE_VIDEO
     // video button
-    NavigationButton * videoBtn = new NavigationButton;
+    NavigationButton *videoBtn = new NavigationButton;
     m_buttonMap[videoBtn]   = ++moduleCount;
     videoBtn->setText(tr("Introduction"));
     m_titleMap[videoBtn] = tr("Welcome");
@@ -140,7 +140,7 @@ NormalModule::NormalModule(QWidget *parent)
 #endif
 
     // desktop button
-    NavigationButton * desktopBtn = new NavigationButton;
+    NavigationButton *desktopBtn = new NavigationButton;
     m_buttonMap[desktopBtn] = ++moduleCount;
     desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Please select desktop mode");
@@ -151,7 +151,7 @@ NormalModule::NormalModule(QWidget *parent)
     m_modules[moduleCount] = desktopModeModule;
 
     // wm button
-    NavigationButton * wmBtn = nullptr;
+    NavigationButton *wmBtn = nullptr;
     if (allow_switch_wm) {
         wmBtn = new NavigationButton;
         m_buttonMap[wmBtn]      = ++moduleCount;
@@ -165,7 +165,7 @@ NormalModule::NormalModule(QWidget *parent)
     }
 
     // icon button
-    NavigationButton * iconBtn = new NavigationButton;
+    NavigationButton *iconBtn = new NavigationButton;
     m_buttonMap[iconBtn]    = ++moduleCount;
     iconBtn->setText(tr("Icon theme"));
     m_titleMap[iconBtn] = tr("Please select icon theme");
@@ -175,20 +175,8 @@ NormalModule::NormalModule(QWidget *parent)
     iconModule->hide();
     m_modules[moduleCount] = iconModule;
 
-#ifndef PROFESSIONAL
-    // support button
-    NavigationButton * supportBtn = new NavigationButton;
-    m_buttonMap[supportBtn] = ++moduleCount;
-    supportBtn->setText(tr("Support us"));
-    m_titleMap[supportBtn] = tr("Support us");
-    m_buttonGrp->addButton(supportBtn);
-    Support *support = new Support(this);
-    support->hide();
-    m_modules[moduleCount] = support;
-#endif
-
     //support us
-    NavigationButton * supportBtn = new NavigationButton;
+    NavigationButton *supportBtn = new NavigationButton;
     m_buttonMap[supportBtn]   = ++moduleCount;
     supportBtn->setText(tr("Support us"));
     m_titleMap[supportBtn] = tr("Support us");
@@ -198,7 +186,7 @@ NormalModule::NormalModule(QWidget *parent)
     m_modules[moduleCount] = support;
 
     // about button
-    NavigationButton * aboutBtn = new NavigationButton;
+    NavigationButton *aboutBtn = new NavigationButton;
     m_buttonMap[aboutBtn]   = ++moduleCount;
     aboutBtn->setText(tr("About us"));
     m_titleMap[aboutBtn] = tr("About us");
@@ -219,7 +207,7 @@ NormalModule::NormalModule(QWidget *parent)
 
     m_leftNavigationLayout->addStretch();
 
-    for (QWidget * w : m_buttonGrp->buttons()) {
+    for (QWidget *w : m_buttonGrp->buttons()) {
         w->setFixedSize(120, 30);
         m_leftNavigationLayout->addWidget(w, 0, Qt::AlignLeft | Qt::AlignVCenter);
         w->installEventFilter(this);
@@ -227,7 +215,7 @@ NormalModule::NormalModule(QWidget *parent)
 
     m_leftNavigationLayout->addStretch();
 
-    connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [=] (QAbstractButton *btn) {
+    connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [ = ] (QAbstractButton * btn) {
         updateCurrentWidget(m_buttonMap[btn]);
         titleLabel->setText(m_titleMap[btn]);
         describe->setText(m_describeMap[btn]);
@@ -242,7 +230,7 @@ NormalModule::NormalModule(QWidget *parent)
 
 bool NormalModule::eventFilter(QObject *watched, QEvent *event)
 {
-    if (qobject_cast<NavigationButton*>(watched) && event->type() == QEvent::KeyPress) {
+    if (qobject_cast<NavigationButton *>(watched) && event->type() == QEvent::KeyPress) {
         return true;
     }
 
@@ -260,10 +248,11 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget->hide();
     }
 
-    QTimer::singleShot(100, this, [=] {
+    QTimer::singleShot(100, this, [ = ] {
         QWidget *w = m_modules[index];
-        ModuleInterface *module = qobject_cast<ModuleInterface*>(w);
-        if (module) {
+        ModuleInterface *module = qobject_cast<ModuleInterface *>(w);
+        if (module)
+        {
             module->updateSmallIcon();
             module->updateSelectBtnPos();
         }
