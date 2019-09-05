@@ -55,15 +55,13 @@ Support::Support(QWidget *parent)
                           .arg(tr("Be on deepin contributors list."))
                           .arg(tr("Outstanding members will get a souvenir of deepin."));
 #else
-    const QString &text = QString("<br><body style=\"line-height: 18px;font-size:12px;font-style: normal;\">"
-                                  "<div style=\"font-style: medium;font-size: 16px;\">%1</div></br>"
-                                  "<br>%2<a href=http://www.deepin.org/donate>%3</a>%4"
-                                  "<br><body style=\"line-height: 18px;font-size:12px;font-style: normal;\">"
-                                  "<div style=\"font-style: medium;font-size: 16px;\">%5</div></br>"
-                                  "<br>%6<a href=http://www.deepin.org/donate>%7</a>"
-                                  "<br><body style=\"line-height: 18px;font-size:12px;font-style: normal;\">"
-                                  "<div style=\"font-style: medium;font-size: 16px;\">%8</div></br>"
-                                  "<br>%9<a href=http://www.deepin.org>%10</a>")
+
+    const QString &text = QString("<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%1</p>"
+                                  "<div style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%2<a href=http://www.deepin.org/donate>%3</a>%4</div>"
+                                  "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%5</p>"
+                                  "<div style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%6<a href=http://www.deepin.org/donate>%7</a></div>"
+                                  "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%8</p>"
+                                  "<div style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%9<a href=http://www.deepin.org>%10</a></div>")
                           .arg(tr("■Localization"))
                           .arg(tr("Deep OS supports 30 languages, but we want to do better! If you want to use your own national language perfectly in Deep Operating System, please join our "))
                           .arg(tr("transfixer"))

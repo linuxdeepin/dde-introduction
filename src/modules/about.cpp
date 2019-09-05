@@ -46,19 +46,16 @@ About::About(QWidget *parent)
            .arg(tr("Open source project"))
            .arg(tr("deepin is an open source desktop system developed for common users. You are free to download, distribute, modify and use it. Detailed address is GitHub: https://github.com/linuxdeepin"));
 #else
-    text = QString("<body style=\"line-height: 18px;font-size:12px;color: #303030;font-family: LucidaGrande;\">"
-                   /*font-family: LucidaGrande;
-                   font-size: 16px;
-                   color: #303030;
-                   line-height: 18px;*/
-                   "<p>%1<a href=https://github.com>%2</a>%3</p>"
-                   "<p>%4"
-                   "<br>%5</br></p>"
-                   "<p>%6"
-                   "<br>%7</br>"
-                   "<br>%8</br>"
-                   "<br>%9</br>"
-                   "<br>%10</br></p>")
+
+    text = QString("<br><p style=\"font-family: SourceHanSansSC-Normal;font-size: 12px;color: #303030;line-height: 18px;\">%1<a href=https://github.com>%2</a>%3</p>"
+                   "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%4"
+                   "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%5</p>"
+                   "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%6"
+                   "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%7</br>"
+                   "<br style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%8</br>"
+                   "<br style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%9</br>"
+                   "<br style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%10</p>"
+                   "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%11")
            .arg(tr("    Deep is an open source operating system development team in China, which has a history of 14 years. Many of our members have benefited from open source projects around the world, and based on the Linux open source project, the Deep Team has also received some business revenue to support its development. Therefore, it is very desirable to feed back the open source community through the deep operating system, so that more users around the world can use the best open source Linux operating system products. Our source code is open on "))
            .arg(tr("github"))
            .arg(tr(", and anyone who has doubts is welcome to know or use our code."))
@@ -68,7 +65,8 @@ About::About(QWidget *parent)
            .arg(tr("Hiweed Linux was first released in 2004"))
            .arg(tr("Hiweed Linux renamed deepin in 2008"))
            .arg(tr("A new V15 version will be released in 2016"))
-           .arg(tr("X Month X, 2018, latest version 1.5.1"));
+           .arg(tr("X Month X, 2018, latest version 1.5.1"))
+           .arg(tr("■Open source projects"));
 #endif
 
     label->setText(text);

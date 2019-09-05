@@ -66,3 +66,8 @@ void BaseWidget::mouseReleaseEvent(QMouseEvent *event)
 
     emit clicked();
 }
+
+void BaseWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    return;
+}
