@@ -60,54 +60,59 @@
 详情地址为GitHub：https://github.com/linuxdeepin</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="62"/>
+        <location filename="../src/modules/about.cpp" line="59"/>
         <source>    Deep is an open source operating system development team in China, which has a history of 14 years. Many of our members have benefited from open source projects around the world, and based on the Linux open source project, the Deep Team has also received some business revenue to support its development. Therefore, it is very desirable to feed back the open source community through the deep operating system, so that more users around the world can use the best open source Linux operating system products. Our source code is open on </source>
         <translation>         深度是一家来着中国的开源操作系统开发团队，历史已经持续14年。我们的很多成员都从全球的开源项目中受益良多，而基于Linux开源项目，深度团队也获得了一些商业收入支持自己的发展。因此，非常希望通过深度操作系统回馈开源社区，让全球更多的用户使用到最好的开源Linux操作系统产品。我们的源码开放在</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="63"/>
+        <location filename="../src/modules/about.cpp" line="60"/>
         <source>github</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="64"/>
+        <location filename="../src/modules/about.cpp" line="61"/>
         <source>, and anyone who has doubts is welcome to know or use our code.</source>
         <translation>上，欢迎任何有疑虑的朋友去了解或者使用我们的代码。</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="65"/>
+        <location filename="../src/modules/about.cpp" line="62"/>
         <source>■target</source>
         <translation>■目标</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="66"/>
+        <location filename="../src/modules/about.cpp" line="63"/>
         <source>The World&apos;s Most Beautiful and Useful Linux Distribution</source>
         <translation>世界上最美观好用的Linux发行版</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="67"/>
+        <location filename="../src/modules/about.cpp" line="64"/>
         <source>■History</source>
         <translation>■历史</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="68"/>
+        <location filename="../src/modules/about.cpp" line="65"/>
         <source>Hiweed Linux was first released in 2004</source>
         <translation>2004年 Hiweed Linux首次发布</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="69"/>
+        <location filename="../src/modules/about.cpp" line="66"/>
         <source>Hiweed Linux renamed deepin in 2008</source>
         <translation>2008年 Hiweed Linux更名为deepin</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="70"/>
+        <location filename="../src/modules/about.cpp" line="67"/>
         <source>A new V15 version will be released in 2016</source>
         <translation>2016年 发布全新 的V15 版本</translation>
     </message>
     <message>
-        <location filename="../src/modules/about.cpp" line="71"/>
+        <location filename="../src/modules/about.cpp" line="68"/>
         <source>X Month X, 2018, latest version 1.5.1</source>
         <translation>2018年 X月X日， 最新1.5.1版本</translation>
+    </message>
+    <message>
+        <location filename="../src/modules/about.cpp" line="69"/>
+        <source>■Open source projects</source>
+        <translation type="unfinished">■开源项目</translation>
     </message>
     <message>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
@@ -150,9 +155,8 @@
         <translation>致谢</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="46"/>
         <source>Acknowledgements</source>
-        <translation>致谢</translation>
+        <translation type="vanished">致谢</translation>
     </message>
 </context>
 <context>
@@ -181,32 +185,32 @@
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="304"/>
+        <location filename="../src/mainwindow.cpp" line="303"/>
         <source>Please select desktop mode</source>
         <translation>请选择桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="305"/>
+        <location filename="../src/mainwindow.cpp" line="304"/>
         <source>You can switch it in Mode by right clicking on dock</source>
         <translation>您可以在任务栏右键菜单—“模式”中进行调节</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="316"/>
+        <location filename="../src/mainwindow.cpp" line="315"/>
         <source>Please select the mode of operation</source>
         <translation>请选择运行模式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="317"/>
+        <location filename="../src/mainwindow.cpp" line="316"/>
         <source>If your computer configuration is not high, you are recommended to choose extreme speed mode</source>
         <translation>如果您的电脑配置不高,推荐您选择极速模式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="328"/>
+        <location filename="../src/mainwindow.cpp" line="327"/>
         <source>Please select icon theme</source>
         <translation>请选择图标主题</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="329"/>
+        <location filename="../src/mainwindow.cpp" line="328"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
         <translation>您可以在控制中心个性化模块—图标主题中进行调节</translation>
     </message>
@@ -255,16 +259,14 @@
         <translation>您可以在控制中心个性化模块—图标主题中进行调节</translation>
     </message>
     <message>
+        <location filename="../src/modules/normalmodule.cpp" line="181"/>
         <location filename="../src/modules/normalmodule.cpp" line="182"/>
-        <location filename="../src/modules/normalmodule.cpp" line="183"/>
-        <location filename="../src/modules/normalmodule.cpp" line="193"/>
-        <location filename="../src/modules/normalmodule.cpp" line="194"/>
         <source>Support us</source>
         <translation>支持我们</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="203"/>
-        <location filename="../src/modules/normalmodule.cpp" line="204"/>
+        <location filename="../src/modules/normalmodule.cpp" line="191"/>
+        <location filename="../src/modules/normalmodule.cpp" line="192"/>
         <source>About us</source>
         <translation>关于深度</translation>
     </message>
@@ -347,52 +349,52 @@
         <translation>为了深度操作系统项目的质量保证，欢迎越来越多的人参与到内部测试工作和反馈跟踪。成为内测用户，您将</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="67"/>
+        <location filename="../src/modules/support.cpp" line="65"/>
         <source>■Localization</source>
         <translation>■本地化翻译</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="68"/>
+        <location filename="../src/modules/support.cpp" line="66"/>
         <source>Deep OS supports 30 languages, but we want to do better! If you want to use your own national language perfectly in Deep Operating System, please join our </source>
         <translation>深度操作系统支持30种语言，但是我们还想做得更好！如果您希望完美的在深度操作系统中使用自己民族的语言，请参与我们的</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="69"/>
+        <location filename="../src/modules/support.cpp" line="67"/>
         <source>transfixer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="70"/>
+        <location filename="../src/modules/support.cpp" line="68"/>
         <source> community to help us!</source>
         <translation>社区来帮助我们！</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="71"/>
+        <location filename="../src/modules/support.cpp" line="69"/>
         <source>■Donate or buy souvenirs</source>
         <translation>■捐助或者购买纪念品</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="72"/>
+        <location filename="../src/modules/support.cpp" line="70"/>
         <source>Over the past decade, we have been moving forward and striving to provide the best desktop operating system experience. Welcome to buy our souvenirs. It not only makes you more personalized, but also helps us to make depth better!</source>
         <translation>十年来，我们不断前进，努力提供最好的桌面操作系统体验欢迎购买我们的纪念商品，它不但让你更有个性，而且能够帮助到我们把深度做得更好！</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="73"/>
+        <location filename="../src/modules/support.cpp" line="71"/>
         <source>www.deepin.org/donate</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="74"/>
+        <location filename="../src/modules/support.cpp" line="72"/>
         <source>■Become our charging user</source>
         <translation>■成为我们的收费用户</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="75"/>
+        <location filename="../src/modules/support.cpp" line="73"/>
         <source>You can also become an individual payer to support us and gain more rights and interests at </source>
         <translation>您也可以成为个人付费用户来支持我们，并且获得更多的权益</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="76"/>
+        <location filename="../src/modules/support.cpp" line="74"/>
         <source>www.deepin.org</source>
         <translation></translation>
     </message>

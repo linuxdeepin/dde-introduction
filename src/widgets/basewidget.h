@@ -44,6 +44,7 @@ public slots:
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void mouseDoubleClickEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 
 private:
     QVBoxLayout* m_layout;
