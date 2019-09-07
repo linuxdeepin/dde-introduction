@@ -9,8 +9,8 @@
 
 DWIDGET_USE_NAMESPACE
 
-BottomNavigation::BottomNavigation(QWidget *parent)
-    : QWidget(parent)
+BottomNavigation::BottomNavigation(DWidget *parent)
+    : DWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setContentsMargins(20, 10, 20, 14);

@@ -20,15 +20,15 @@
 
 #include <QPainter>
 
-NavigationButton::NavigationButton(QWidget *parent)
-    : QPushButton(parent)
+NavigationButton::NavigationButton(DWidget *parent)
+    : DPushButton(parent)
 {
     setCheckable(true);
 }
 
-void NavigationButton::paintEvent(QPaintEvent *event)
+/*void NavigationButton::paintEvent(QPaintEvent *event)
 {
-    QPushButton::paintEvent(event);
+    DPushButton::paintEvent(event);
 
     if (!isChecked())
         return;
@@ -39,4 +39,4 @@ void NavigationButton::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
     //painter.fillRect(r, QColor(44, 167, 248));
-}
+}*/

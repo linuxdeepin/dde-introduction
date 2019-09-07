@@ -19,21 +19,22 @@
 #ifndef NORMALMODULE_H
 #define NORMALMODULE_H
 
-#include <QWidget>
+#include <DWidget>
 #include <QVBoxLayout>
 #include <QButtonGroup>
 #include <QPushButton>
 #include <QMap>
+
 #include <com_deepin_wmswitcher.h>
 
 using WMSwitcher = com::deepin::WMSwitcher;
-
+DWIDGET_USE_NAMESPACE
 class ModuleInterface;
-class NormalModule : public QWidget
+class NormalModule : public DWidget
 {
     Q_OBJECT
 public:
-    explicit NormalModule(QWidget *parent = nullptr);
+    explicit NormalModule(DWidget *parent = nullptr);
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;

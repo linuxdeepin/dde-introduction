@@ -2,10 +2,11 @@
 #define NEXTBUTTON_H
 
 #include <QPushButton>
-//#include <dpushbutton.h>
 #include <DPushButton>
 
-class NextButton : public QPushButton
+DWIDGET_USE_NAMESPACE
+
+class NextButton : public DPushButton
 {
     Q_OBJECT
 public:

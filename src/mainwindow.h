@@ -25,20 +25,23 @@
 #include <QPropertyAnimation>
 #include <QPushButton>
 #include <QSettings>
-
 #include <QWidget>
-#include <dimagebutton.h>
+
+#include <DMainWindow>
+#include <DArrowButton>
+#include <DImageButton>
+#include <DWidget>
 
 using WMSwitcherInter = com::deepin::WMSwitcher;
 
 DWIDGET_USE_NAMESPACE
 
 class BaseModuleWidget;
-class MainWindow : public QWidget {
+class MainWindow : public DWidget {
   Q_OBJECT
 
 public:
-  MainWindow(QWidget *parent = 0);
+  MainWindow(DWidget *parent = 0);
   ~MainWindow();
 
 private slots:
@@ -61,11 +64,11 @@ private:
   NextButton *m_nextBtn;
   DImageButton *m_previousBtn;
   NextButton *m_doneBtn;
-  QWidget *m_current;
-  QWidget *m_last;
+  DWidget *m_current;
+  DWidget *m_last;
   QPropertyAnimation *m_currentAni;
   QPropertyAnimation *m_lastAni;
-  QWidget *m_fakerWidget;
+  DWidget *m_fakerWidget;
   QSettings *m_settings;
   WMSwitcherInter *m_displayInter;
 };

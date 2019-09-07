@@ -35,8 +35,8 @@
 DWIDGET_USE_NAMESPACE
 
 static const QSize WINDOW_SIZE { 700, 450 };
-MainWindow::MainWindow(QWidget *parent)
-    : QWidget(parent)
+MainWindow::MainWindow(DWidget *parent)
+    : DWidget(parent)
     , m_index(1)
     , m_current(nullptr)
     , m_last(nullptr)
@@ -61,6 +61,7 @@ void MainWindow::previous()
     if (m_currentAni->state() == QPropertyAnimation::Running) {
         return;
     }
+    //titlebar()->setTitle("123123");
 
     updateModule(--m_index);
 
@@ -125,7 +126,7 @@ void MainWindow::initUI()
         m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
         m_previousBtn->setPressPic(":/resources/previous_press.svg");
         m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");
-        m_previousBtn->setFixedSize(27, 26);
+        m_previousBtn->setFixedSize(36, 36);
 
         //Addition Button Shadow
         QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
@@ -143,7 +144,7 @@ void MainWindow::initUI()
         closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
         closeBtn->show();
 
-    #ifdef QT_DEBUG
+    #ifndef QT_DEBUG
         const bool isFirst = m_settings->value("IsFirst", true).toBool();
 
         if (isFirst) {

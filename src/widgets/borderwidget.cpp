@@ -22,7 +22,7 @@
 #include <QDebug>
 
 BorderWidget::BorderWidget(QWidget *parent)
-    : QFrame(parent)
+    : DFrame(parent)
     , m_checked(false)
 {
 }
@@ -43,7 +43,7 @@ void BorderWidget::setChecked(bool checked)
 
 void BorderWidget::paintEvent(QPaintEvent *event)
 {
-    QFrame::paintEvent(event);
+    DFrame::paintEvent(event);
 
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
