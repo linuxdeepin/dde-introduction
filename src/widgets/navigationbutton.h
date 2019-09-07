@@ -19,16 +19,18 @@
 #ifndef NAVIGATIONBUTTON_H
 #define NAVIGATIONBUTTON_H
 
-#include <QPushButton>
+#include <DPushButton>
 
-class NavigationButton : public QPushButton
+DWIDGET_USE_NAMESPACE
+
+class NavigationButton : public DPushButton
 {
     Q_OBJECT
 public:
-    explicit NavigationButton(QWidget *parent = nullptr);
+    explicit NavigationButton(DWidget *parent = nullptr);
 
 protected:
-    void paintEvent(QPaintEvent *event);
+   // void paintEvent(QPaintEvent *event);
 };
 
 #endif // NAVIGATIONBUTTON_H

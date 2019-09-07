@@ -19,9 +19,11 @@
 #ifndef BORDERWIDGET_H
 #define BORDERWIDGET_H
 
-#include <QFrame>
+#include <DFrame>
 
-class BorderWidget : public QFrame
+DWIDGET_USE_NAMESPACE
+
+class BorderWidget : public DFrame
 {
     Q_OBJECT
 public:

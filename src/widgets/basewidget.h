@@ -20,14 +20,16 @@
 #define BASEWIDGET_H
 
 #include "borderwidget.h"
-#include <QFrame>
+
 #include <QVBoxLayout>
-#include <QLabel>
-#include <dimagebutton.h>
+
+#include <DFrame>
+#include <DLabel>
+#include <DImageButton>
 
 DWIDGET_USE_NAMESPACE
 
-class BaseWidget : public QFrame
+class BaseWidget : public DFrame
 {
     Q_OBJECT
 public:
@@ -48,7 +50,7 @@ protected:
 
 private:
     QVBoxLayout* m_layout;
-    QLabel* m_title;
+    DLabel* m_title;
     BorderWidget* m_borderWidget;
     DImageButton* m_selectBtn;
 };

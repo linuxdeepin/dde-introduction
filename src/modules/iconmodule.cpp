@@ -53,7 +53,7 @@ IconModule::IconModule(QWidget *parent)
     m_scroll->setWidget(m_scrollWidget);
     m_scroll->setWidgetResizable(true);
     m_scroll->setFocusPolicy(Qt::NoFocus);
-    m_scroll->setFrameStyle(QFrame::NoFrame);
+    m_scroll->setFrameStyle(DFrame::NoFrame);
     m_scroll->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
     m_scroll->setContentsMargins(0, 0, 0, 0);
     m_scroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

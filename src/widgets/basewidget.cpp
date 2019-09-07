@@ -23,9 +23,9 @@
 DWIDGET_USE_NAMESPACE
 
 BaseWidget::BaseWidget(QWidget *parent)
-    : QFrame(parent)
+    : DFrame(parent)
     , m_layout(new QVBoxLayout(this))
-    , m_title(new QLabel(this))
+    , m_title(new DLabel(this))
     , m_borderWidget(new BorderWidget(this))
 {
     m_layout->setMargin(0);

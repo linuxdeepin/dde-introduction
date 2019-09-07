@@ -23,10 +23,10 @@
 DWIDGET_USE_NAMESPACE
 
 ModuleInterface::ModuleInterface(QWidget *parent)
-    : QFrame(parent)
+    : DFrame(parent)
     , m_model(Model::Instance())
     , m_worker(Worker::Instance())
-    , m_selectBtn(new QLabel(this))
+    , m_selectBtn(new DLabel(this))
     , m_updateSelectBtnTimer(new QTimer(this))
 {
     m_selectBtn->setPixmap(DHiDPIHelper::loadNxPixmap(":/resources/list_select.png"));
@@ -54,7 +54,7 @@ void ModuleInterface::setIconType(Model::IconType type)
 
 void ModuleInterface::resizeEvent(QResizeEvent *event)
 {
-    QFrame::resizeEvent(event);
+    DFrame::resizeEvent(event);
 
     m_updateSelectBtnTimer->start();
 }

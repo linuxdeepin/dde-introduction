@@ -29,6 +29,8 @@
 #include <dflowlayout.h>
 #include <QScrollArea>
 
+#include <DWidget>
+
 DWIDGET_USE_NAMESPACE
 
 class IconModule : public ModuleInterface
@@ -51,7 +53,7 @@ private slots:
 
 private:
     QScrollArea *m_scroll;
-    QWidget *m_scrollWidget;
+    DWidget *m_scrollWidget;
     DFlowLayout* m_layout;
     QMap<IconStruct, BaseWidget*> m_iconList;
 };

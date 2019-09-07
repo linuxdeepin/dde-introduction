@@ -32,8 +32,8 @@
 #include "videowidget.h"
 #endif
 
-NormalModule::NormalModule(QWidget *parent)
-    : QWidget(parent)
+NormalModule::NormalModule(DWidget *parent)
+    : DWidget(parent)
     , m_leftNavigationLayout(new QVBoxLayout)
     , m_rightContentLayout(new QVBoxLayout)
     , m_buttonGrp(new QButtonGroup)
@@ -52,7 +52,7 @@ NormalModule::NormalModule(QWidget *parent)
     m_rightContentLayout->setMargin(0);
     m_rightContentLayout->setContentsMargins(0, 0, 0, 0);
 
-    QLabel *logo = new QLabel(this);
+    DLabel *logo = new DLabel(this);
     QIcon::setThemeName("hicolor");
     QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
     pixmap.setDevicePixelRatio(devicePixelRatioF());
@@ -60,10 +60,10 @@ NormalModule::NormalModule(QWidget *parent)
     logo->move(rect().topLeft() + QPoint(12, 8));
     logo->show();
 
-    QWidget *content = new QWidget;
+    DWidget *content = new DWidget;
     content->setLayout(m_rightContentLayout);
 
-    QWidget *leftWidget = new QWidget;
+    DWidget *leftWidget = new DWidget;
     leftWidget->setObjectName("LeftWidget");
     leftWidget->setLayout(m_leftNavigationLayout);
     leftWidget->setStyleSheet("#LeftWidget {"
@@ -208,8 +208,8 @@ NormalModule::NormalModule(QWidget *parent)
     m_leftNavigationLayout->addStretch();
 
     for (QWidget *w : m_buttonGrp->buttons()) {
-        w->setFixedSize(120, 30);
-        m_leftNavigationLayout->addWidget(w, 0, Qt::AlignLeft | Qt::AlignVCenter);
+        w->setFixedSize(110, 30);
+        m_leftNavigationLayout->addWidget(w, 0, Qt::AlignHCenter | Qt::AlignVCenter);
         w->installEventFilter(this);
     }
 

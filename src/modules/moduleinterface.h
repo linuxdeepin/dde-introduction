@@ -24,10 +24,12 @@
 
 #include <dimagebutton.h>
 #include <QFrame>
+#include <DFrame>
+#include <DLabel>
 
 DWIDGET_USE_NAMESPACE
 
-class ModuleInterface : public QFrame
+class ModuleInterface : public DFrame
 {
     Q_OBJECT
 public:
@@ -45,7 +47,7 @@ public:
 protected:
     Model  *m_model;
     Worker *m_worker;
-    QLabel* m_selectBtn;
+    DLabel* m_selectBtn;
     QTimer *m_updateSelectBtnTimer;
 };
 

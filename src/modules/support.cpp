@@ -1,15 +1,18 @@
 #include "support.h"
 
 #include <QLabel>
+#include <DLabel>
+
+DWIDGET_USE_NAMESPACE
 
 Support::Support(QWidget *parent)
     : QScrollArea(parent)
 {
-    QLabel *label = new QLabel;
+    DLabel *label = new DLabel;
     label->setWordWrap(true);
     setWidgetResizable(true);
     setFocusPolicy(Qt::NoFocus);
-    setFrameStyle(QFrame::NoFrame);
+    setFrameStyle(DFrame::NoFrame);
     setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
     setContentsMargins(0, 0, 0, 0);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

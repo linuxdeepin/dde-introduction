@@ -9,7 +9,7 @@
 #define PRESS_BG_COLOR    255, 255, 255, 0.1 * 255
 
 NextButton::NextButton(const QString &text, QWidget *parent)
-    : QPushButton(parent)
+    : DPushButton(parent)
     , m_text(text)
     , m_mode(Normal)
     , m_currentColor(QColor(DEFAULT_BG_COLOR))
