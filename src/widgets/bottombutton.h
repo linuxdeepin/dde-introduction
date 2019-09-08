@@ -16,25 +16,30 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef NAVIGATIONBUTTON_H
-#define NAVIGATIONBUTTON_H
+#ifndef BOTTOMBUTTON_H
+#define BOTTOMBUTTON_H
 
-#include <DPushButton>
+#include <QRect>
+
+#include <DImageButton>
 #include <DWidget>
 
 DWIDGET_USE_NAMESPACE
 
-class NavigationButton : public DPushButton
+class BottomButton : public DImageButton
 {
     Q_OBJECT
 public:
-    explicit NavigationButton(QString text, DWidget *parent = nullptr);
+    explicit BottomButton(DWidget *parent = nullptr);
+    void setText(const QString text) {m_text = text;};
+    void setRect(const QRect rect) {m_rect = rect;};
 
 protected:
     void paintEvent(QPaintEvent *event);
 
 private:
     QString         m_text;
+    QRect           m_rect;
 };
 
-#endif // NAVIGATIONBUTTON_H
+#endif // BOTTOMBUTTON_H

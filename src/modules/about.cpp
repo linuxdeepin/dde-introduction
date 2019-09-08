@@ -1,7 +1,5 @@
 #include "about.h"
 
-#include <QLabel>
-
 About::About(QWidget *parent)
     : QScrollArea(parent)
 {

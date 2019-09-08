@@ -19,11 +19,13 @@
 #ifndef BASEMODULEWIDGET_H
 #define BASEMODULEWIDGET_H
 
-#include <QWidget>
+#include <DWidget>
 #include <QVBoxLayout>
-#include <QLabel>
+#include <DLabel>
 
-class BaseModuleWidget : public QWidget
+DWIDGET_USE_NAMESPACE
+
+class BaseModuleWidget : public DWidget
 {
     Q_OBJECT
 public:
@@ -34,8 +36,8 @@ public:
 
 private:
     QVBoxLayout* m_layout;
-    QLabel* m_titleLbl;
-    QLabel* m_describeLbl;
+    DLabel* m_titleLbl;
+    DLabel* m_describeLbl;
 };
 
 #endif // BASEMODULEWIDGET_H

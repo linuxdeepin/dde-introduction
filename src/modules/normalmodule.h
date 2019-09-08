@@ -19,11 +19,12 @@
 #ifndef NORMALMODULE_H
 #define NORMALMODULE_H
 
-#include <DWidget>
 #include <QVBoxLayout>
 #include <QButtonGroup>
 #include <QPushButton>
 #include <QMap>
+
+#include <DWidget>
 
 #include <com_deepin_wmswitcher.h>
 

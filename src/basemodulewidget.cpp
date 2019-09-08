@@ -22,8 +22,8 @@
 BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     : QWidget(parent)
     , m_layout(new QVBoxLayout(this))
-    , m_titleLbl(new QLabel(this))
-    , m_describeLbl(new QLabel(this))
+    , m_titleLbl(new DLabel(this))
+    , m_describeLbl(new DLabel(this))
 {
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
@@ -43,12 +43,12 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
 
     setLayout(m_layout);
 
-    m_titleLbl->setStyleSheet("font-size: 20px;"
-                              "font-weight: medium;");
+    /*m_titleLbl->setStyleSheet("font-size: 20px;"
+                              "font-weight: medium;");*/
 
-    m_describeLbl->setStyleSheet("color: #848484;"
+    /*m_describeLbl->setStyleSheet("color: #848484;"
                                  "font-size: 11px;"
-                                 "font-weight: 500;");
+                                 "font-weight: 500;");*/
 }
 
 void BaseModuleWidget::setTitle(const QString &title)
