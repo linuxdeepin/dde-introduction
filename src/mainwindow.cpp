@@ -27,6 +27,7 @@
 #include <QHBoxLayout>
 #include <DTitlebar>
 #include <DPlatformWindowHandle>
+#include <DPalette>
 
 #ifndef DISABLE_VIDEO
 #include "modules/videowidget.h"
@@ -205,9 +206,9 @@ void MainWindow::initUI()
         QWidget *widget = new QWidget(this);
         widget->setAutoFillBackground(true);
         widget->resize(QSize(32,32));
-        QPalette palette;
+        DPalette palette;
         QPixmap pixmap(":/resources/introduction.svg");
-        palette.setBrush(QPalette::Window, QBrush(pixmap));
+        palette.setBrush(DPalette::Window, QBrush(pixmap));
         widget->setPalette(palette);
         widget->move(QPoint(10,8));
         widget->show();
