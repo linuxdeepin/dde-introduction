@@ -16,25 +16,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef NAVIGATIONBUTTON_H
-#define NAVIGATIONBUTTON_H
+#include "bottombutton.h"
 
-#include <DPushButton>
-#include <DWidget>
+#include <QPainter>
+#include <QGraphicsDropShadowEffect>
 
-DWIDGET_USE_NAMESPACE
-
-class NavigationButton : public DPushButton
+BottomButton::BottomButton(DWidget *parent)
+    : DImageButton(parent)
 {
-    Q_OBJECT
-public:
-    explicit NavigationButton(QString text, DWidget *parent = nullptr);
+    setCheckable(true);
+    setFixedSize(QSize(60,30));
+}
 
-protected:
-    void paintEvent(QPaintEvent *event);
-
-private:
-    QString         m_text;
-};
-
-#endif // NAVIGATIONBUTTON_H
+void BottomButton::paintEvent(QPaintEvent *event)
+{
+    QPainter painter(this);
+    QFont font;
+    font.setFamily("SourceHanSansSC-Medium");
+    font.setPixelSize(14);
+    painter.setFont(font);
+    painter.setPen(QPen(QColor(0,129,255)));
+    painter.drawText(rect(), m_text);
+}

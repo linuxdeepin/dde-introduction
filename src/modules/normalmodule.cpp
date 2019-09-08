@@ -27,6 +27,7 @@
 #include "../widgets/bottomnavigation.h"
 
 #include <DLabel>
+#include <DSuggestButton>
 
 #ifndef DISABLE_VIDEO
 #include "videowidget.h"
@@ -66,7 +67,7 @@ NormalModule::NormalModule(DWidget *parent)
     DWidget *leftWidget = new DWidget;
     leftWidget->setObjectName("LeftWidget");
     leftWidget->setLayout(m_leftNavigationLayout);
-    leftWidget->setStyleSheet("#LeftWidget {"
+    /*leftWidget->setStyleSheet("#LeftWidget {"
                               "border: solid #eee;"
                               "}"
                               ""
@@ -85,7 +86,7 @@ NormalModule::NormalModule(DWidget *parent)
                               "font-family: SourceHanSansSC-Medium;"
                               "font-size: 14px;"
                               "color: #FFFFFF;"
-                              "}");
+                              "}");*/
 
     layout->addWidget(leftWidget);
     layout->addWidget(content);
@@ -94,9 +95,13 @@ NormalModule::NormalModule(DWidget *parent)
     BottomNavigation *bottomNavigation = new BottomNavigation;
 
     DLabel *titleLabel = new DLabel;
-    titleLabel->setStyleSheet("font-family: SourceHanSansSC-Bold;"
+    QFont font;
+    font.setPixelSize(17);
+    font.setFamily("SourceHanSansSC-Bold");
+    titleLabel->setFont(font);
+    /*titleLabel->setStyleSheet("font-family: SourceHanSansSC-Bold;"
                               "font-size: 17px;"
-                              "color: #001A2E;");
+                              "color: #001A2E;");*/
 
     DLabel *describe = new DLabel;
 
@@ -116,10 +121,9 @@ NormalModule::NormalModule(DWidget *parent)
 
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
-
 #ifndef DISABLE_VIDEO
     // video button
-    NavigationButton *videoBtn = new NavigationButton;
+    NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
     m_buttonMap[videoBtn]   = ++moduleCount;
     videoBtn->setText(tr("Introduction"));
     m_titleMap[videoBtn] = tr("Welcome");
@@ -140,7 +144,7 @@ NormalModule::NormalModule(DWidget *parent)
 #endif
 
     // desktop button
-    NavigationButton *desktopBtn = new NavigationButton;
+    NavigationButton *desktopBtn = new NavigationButton(tr("Desktop mode"));
     m_buttonMap[desktopBtn] = ++moduleCount;
     desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Please select desktop mode");
@@ -153,7 +157,7 @@ NormalModule::NormalModule(DWidget *parent)
     // wm button
     NavigationButton *wmBtn = nullptr;
     if (allow_switch_wm) {
-        wmBtn = new NavigationButton;
+        wmBtn = new NavigationButton(tr("Operation mode"));
         m_buttonMap[wmBtn]      = ++moduleCount;
         wmBtn->setText(tr("Operation mode"));
         m_titleMap[wmBtn] = tr("Please select the mode of operation");
@@ -165,7 +169,7 @@ NormalModule::NormalModule(DWidget *parent)
     }
 
     // icon button
-    NavigationButton *iconBtn = new NavigationButton;
+    NavigationButton *iconBtn = new NavigationButton(tr("Icon theme"));
     m_buttonMap[iconBtn]    = ++moduleCount;
     iconBtn->setText(tr("Icon theme"));
     m_titleMap[iconBtn] = tr("Please select icon theme");
@@ -176,7 +180,7 @@ NormalModule::NormalModule(DWidget *parent)
     m_modules[moduleCount] = iconModule;
 
     //support us
-    NavigationButton *supportBtn = new NavigationButton;
+    NavigationButton *supportBtn = new NavigationButton(tr("Support us"));
     m_buttonMap[supportBtn]   = ++moduleCount;
     supportBtn->setText(tr("Support us"));
     m_titleMap[supportBtn] = tr("Support us");
@@ -186,7 +190,7 @@ NormalModule::NormalModule(DWidget *parent)
     m_modules[moduleCount] = support;
 
     // about button
-    NavigationButton *aboutBtn = new NavigationButton;
+    NavigationButton *aboutBtn = new NavigationButton(tr("About us"));
     m_buttonMap[aboutBtn]   = ++moduleCount;
     aboutBtn->setText(tr("About us"));
     m_titleMap[aboutBtn] = tr("About us");

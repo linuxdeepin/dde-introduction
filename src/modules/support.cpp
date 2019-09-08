@@ -1,6 +1,5 @@
 #include "support.h"
 
-#include <QLabel>
 #include <DLabel>
 
 DWIDGET_USE_NAMESPACE

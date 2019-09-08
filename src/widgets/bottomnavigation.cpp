@@ -1,4 +1,5 @@
 #include "bottomnavigation.h"
+#include "bottombutton.h"
 
 #include <QHBoxLayout>
 #include <dimagebutton.h>
@@ -26,19 +27,19 @@ BottomNavigation::BottomNavigation(DWidget *parent)
                                               ":/resources/Facebook.svg",
                                               ":/resources/Facebook.svg");
 
-    DImageButton *offical = new DImageButton;
-    offical->setText(tr("Home Page"));
+    //BottomButton *offical = new BottomButton;
+    //offical->setText(tr("Home Page"));
 
-    DImageButton *community = new DImageButton;
+    BottomButton *community = new BottomButton;
     community->setText(tr("UserCommunity"));
 
-    DImageButton *feedback = new DImageButton;
+    BottomButton *feedback = new BottomButton;
     feedback->setText(tr("ReportingIssues"));
 
-    DImageButton *help = new DImageButton;
+    BottomButton *help = new BottomButton;
     help->setText(tr("HelpManual"));
 
-    DImageButton *thank = new DImageButton;
+    BottomButton *thank = new BottomButton;
     thank->setText(tr("Thank"));
 
     DImageButton *mail = new DImageButton(":/resources/Mail.svg",
@@ -62,17 +63,14 @@ BottomNavigation::BottomNavigation(DWidget *parent)
     m_buttons[twitterBtn] = "https://twitter.com/linux_deepin";
     m_buttons[facebook] = "https://www.facebook.com/deepinlinux/";
 
-#ifndef PROFESSIONAL
+/*#ifndef PROFESSIONAL
     m_buttons[offical] = "https://www.deepin.org/";
 #else
     m_buttons[offical] = "https://www.deepin.com/";
-#endif
+#endif*/
     m_buttons[community] = "https://bbs.deepin.org/";
     m_buttons[feedback] = "http://feedback.deepin.org/";
     m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
-#ifndef PROFESSIONAL
-    m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
-#endif
     m_buttons[mail] = "mailto:support@deepin.com";
 
     connect(help, &DImageButton::clicked, this, [ = ] {
@@ -96,9 +94,9 @@ BottomNavigation::BottomNavigation(DWidget *parent)
 
     setLayout(layout);
 
-    setStyleSheet("QLabel {"
+    /*setStyleSheet("QLabel {"
                   "color: #0082FA;"
-                  "}");
+                  "}");*/
 }
 
 void BottomNavigation::onButtonClicked()

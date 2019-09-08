@@ -19,24 +19,38 @@
 #include "navigationbutton.h"
 
 #include <QPainter>
+#include <QGraphicsDropShadowEffect>
 
-NavigationButton::NavigationButton(DWidget *parent)
-    : DPushButton(parent)
+NavigationButton::NavigationButton(QString text, DWidget *parent)
+    : DPushButton(text, parent)
 {
     setCheckable(true);
+    m_text = text;
 }
 
-/*void NavigationButton::paintEvent(QPaintEvent *event)
+void NavigationButton::paintEvent(QPaintEvent *event)
 {
-    DPushButton::paintEvent(event);
-
-    if (!isChecked())
-        return;
-
-    // right border
-    QRect r = rect();
-    r.setLeft(r.right() - 2);
-
     QPainter painter(this);
-    //painter.fillRect(r, QColor(44, 167, 248));
-}*/
+    QFont font;
+    font.setFamily("SourceHanSansSC-Medium");
+    font.setPixelSize(14);
+    painter.setFont(font);
+    QRect r = rect();
+    r.setLeft(rect().left() + 10);
+    r.setTop(rect().top() + 4);
+    if (!isChecked()) {
+        painter.fillRect(rect(),QColor(248,248,248));
+        painter.setPen(QPen(QColor(65,77,104)));
+        painter.drawText(r, m_text);
+    } else {
+        QRect bacrRect = rect();
+        painter.setRenderHint(QPainter :: Antialiasing);
+        QPainterPath path;
+        path.addRoundedRect(bacrRect, 8, 8);
+        painter.setPen(Qt::NoPen);
+        painter.fillPath(path, QColor(0,129,255));
+        painter.drawPath(path);
+        painter.setPen(QPen(QColor(255,255,255)));
+        painter.drawText(r, m_text);
+    }
+}

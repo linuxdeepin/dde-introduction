@@ -37,7 +37,7 @@ using WMSwitcherInter = com::deepin::WMSwitcher;
 DWIDGET_USE_NAMESPACE
 
 class BaseModuleWidget;
-class MainWindow : public DWidget {
+class MainWindow : public DMainWindow {
   Q_OBJECT
 
 public:

@@ -36,7 +36,7 @@ DWIDGET_USE_NAMESPACE
 
 static const QSize WINDOW_SIZE { 700, 450 };
 MainWindow::MainWindow(DWidget *parent)
-    : DWidget(parent)
+    : DMainWindow(parent)
     , m_index(1)
     , m_current(nullptr)
     , m_last(nullptr)
@@ -105,6 +105,7 @@ void MainWindow::next()
 void MainWindow::initUI()
 {
     setFixedSize(WINDOW_SIZE);
+    titlebar()->deleteLater();
 
         DPlatformWindowHandle* handle = new DPlatformWindowHandle(this);
         handle->setBorderWidth(0);
@@ -115,6 +116,10 @@ void MainWindow::initUI()
         m_fakerWidget = new QWidget(this);
         m_fakerWidget->show();
         m_fakerWidget->setFixedSize(WINDOW_SIZE);
+        //QPalette pal;
+        //pal.setColor(QPalette::Background, QColor(248,248,248));
+        //m_fakerWidget->setAutoFillBackground(true);
+        //m_fakerWidget->setPalette(pal);
 
         m_nextBtn = new NextButton(tr("Next"), this);
         m_doneBtn = new NextButton(tr("Done"), this);
