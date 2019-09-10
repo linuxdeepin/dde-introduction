@@ -129,9 +129,9 @@ void MainWindow::initUI()
 
         m_previousBtn = new DImageButton(this);
         m_previousBtn->setNormalPic(":/resources/previous_normal.svg");
-        m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
+        /*m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
         m_previousBtn->setPressPic(":/resources/previous_press.svg");
-        m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");
+        m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");*/
         m_previousBtn->setFixedSize(36, 36);
 
         //Addition Button Shadow
@@ -145,7 +145,7 @@ void MainWindow::initUI()
                                                   ":/resources/close_round_hover.svg",
                                                   ":/resources/close_round_press.svg",this);
 
-        closeBtn->setFixedSize(24, 24);
+        closeBtn->setFixedSize(50, 50);
 
         closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
         closeBtn->show();
