@@ -161,7 +161,7 @@ void VideoWidget::updateControlButton()
     switch (m_video->engine().state()) {
     case dmr::PlayerEngine::Playing: {
         QLocale locale;
-#ifdef PROFESSIONAL
+/*#ifdef PROFESSIONAL
         const QString &file = QString("15.5 SP3_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
@@ -170,8 +170,13 @@ void VideoWidget::updateControlButton()
         const QString &file = QString("%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
+        QString tt = ResourcesQDir().path() + QString("/%1").arg(file);
         m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
-#endif
+#endif*/
+        const QString &file = QString("15.5 SP3_%1.ass").arg(locale.language() == QLocale::Chinese ?
+                                                             "zh_CN" :
+                                                             "en_US");
+        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
 
         const dmr::PlayingMovieInfo info = m_video->engine().playingMovieInfo();
 
