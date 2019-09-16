@@ -67,8 +67,6 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     m_hideAni->setTargetObject(m_hideEffect);
     m_hideAni->setStartValue(1.0f);
     m_hideAni->setEndValue(0.0f);
-    click = true;
-    first - true;
 
     connect(m_hideAni, &QPropertyAnimation::finished, this, [=] {
         m_control->hide();
@@ -78,9 +76,9 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
         m_hideAni->start();
     });
 
-    connect(m_pauseTimer, &QTimer::timeout, this, [=] {
+    /*connect(m_pauseTimer, &QTimer::timeout, this, [=] {
         m_video->engine().pauseResume();
-    });
+    });*/
 
     //m_pauseTimer->setSingleShot(true);
 
@@ -104,19 +102,19 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     const QString &file = videoPath.path() + QString("/demo.mp4");
 
     connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
-    connect(m_control, &DImageButton::clicked, this, &VideoWidget::clickButton);
     connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
 
+    autoPlay = !autoPlay;
     m_video->engine().setBackendProperty("pause-on-start", autoPlay ? "false" : "true");
 
     m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
     m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
-    m_video->engine().play();
+    //m_video->engine().play();
     //m_video->play(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
 
-    QTimer::singleShot(1000, this, [=] {
+    /*QTimer::singleShot(1000, this, [=] {
         m_pauseTimer->setInterval(m_video->engine().duration() * 1000);
-    });
+    });*/
 
     updateControlButton();
 
@@ -150,8 +148,8 @@ void VideoWidget::updateControlButton()
 {
     const QPoint &p = rect().center() - m_control->rect().center();
 
-    switch (m_video->engine().state()) {
-    case dmr::PlayerEngine::Playing: {
+    //switch (m_video->engine().state()) {
+    if (m_video->engine().state() == dmr::PlayerEngine::Playing) {
         /*QLocale locale;
         const QString &file = QString("15.5 SP3_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
@@ -175,9 +173,7 @@ void VideoWidget::updateControlButton()
         m_btnAni->setStartValue(p);
         m_btnAni->setEndValue(QPoint(p.x(), height() - m_control->height() - 20));
         m_btnAni->start();
-    }
-        break;
-    case dmr::PlayerEngine::Paused: {
+    } else {
         m_control->setNormalPic(":/resources/play_normal.svg");
         m_control->setHoverPic(":/resources/play_hover.svg");
         m_control->setPressPic(":/resources/play_press.svg");
@@ -191,33 +187,24 @@ void VideoWidget::updateControlButton()
             m_btnAni->start();
         }
         // update pause timer
-        int elapsed = m_video->engine().duration() - m_video->engine().elapsed() + 1;
+        /*int elapsed = m_video->engine().duration() - m_video->engine().elapsed() + 1;
         if (elapsed == 0)
-            m_pauseTimer->setInterval(1000);
+            m_pauseTimer->setInterval(1000);*/
     }
-        break;
-    default:
-        break;
-    }
-}
-
-void VideoWidget::clickButton()
-{
-    click = !click;
 }
 
 void VideoWidget::onControlButtonClicked()
 {
-    if (m_video->engine().paused()) {
+    /*if (m_video->engine().paused()) {
         m_pauseTimer->start();
     } else {
         m_pauseTimer->stop();
-    }
+    }*/
 
     m_video->engine().pauseResume();
     m_video->engine().play();
 
-    updateControlButton();
+    //updateControlButton();
 }
 
 void VideoWidget::enterEvent(QEvent *e)

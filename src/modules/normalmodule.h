@@ -44,6 +44,8 @@ protected:
 
 private:
     void updateCurrentWidget(const int index);
+private slots:
+    void initTheme(int type);
 
 private:
     QVBoxLayout *m_leftNavigationLayout;

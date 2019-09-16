@@ -28,7 +28,7 @@
 #include <QWidget>
 
 #include <DMainWindow>
-#include <DArrowButton>
+#include <DIconButton>
 #include <DImageButton>
 #include <DWidget>
 
@@ -65,7 +65,7 @@ private:
 private:
   int m_index;
   NextButton *m_nextBtn;
-  DPushButton *m_previousBtn;
+  DIconButton *m_previousBtn;
   NextButton *m_doneBtn;
   DWidget *m_current;
   DWidget *m_last;

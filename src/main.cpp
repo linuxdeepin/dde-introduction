@@ -23,6 +23,7 @@
 #include <DWidgetUtil>
 #include <DPlatformWindowHandle>
 #include <DWidget>
+#include <DLog>
 #include <QDBusInterface>
 #include <DWindowManagerHelper>
 #include <DGuiApplicationHelper>
@@ -106,11 +107,22 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
     a.loadTranslator();
 
+    QDBusConnection dbus = QDBusConnection::sessionBus();
+    dbus.registerService("com.deepin.introduction");
+    using namespace Dtk::Core;
+    Dtk::Core::DLogManager::registerConsoleAppender();
+    Dtk::Core::DLogManager::registerFileAppender();
+    QCommandLineParser cmdParser;
+    cmdParser.setApplicationDescription("deepin-introduction");
+    cmdParser.addHelpOption();
+    cmdParser.addVersionOption();
+    cmdParser.process(a);
+
     // 应用已保存的主题设置
     DGuiApplicationHelper::instance()->setPaletteType(getThemeTypeSetting());
 
     //监听当前应用主题切换事件
-    QObject::connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::paletteTypeChanged,
+    QObject::connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged,
     [] (DGuiApplicationHelper::ColorType type) {
         qDebug() << type;
         // 保存程序的主题设置  type : 0,系统主题， 1,浅色主题， 2,深色主题
@@ -131,8 +143,8 @@ int main(int argc, char *argv[])
 #endif
 
     MainWindow w;
-
     DPlatformWindowHandle::enableDXcbForWindow(&w, true);
+    dbus.registerObject("/com/deepin/introduction", &w, QDBusConnection::ExportScriptableSlots);
 
     w.show();
     moveToCenter(&w);

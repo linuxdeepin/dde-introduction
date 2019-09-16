@@ -44,6 +44,7 @@ NormalModule::NormalModule(DWidget *parent)
     , m_wmSwitcher(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
     , m_index(-1)
 {
+    //initTheme(0);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
@@ -275,6 +276,13 @@ void NormalModule::updateCurrentWidget(const int index)
             module->updateSmallIcon();
             module->updateSelectBtnPos();
         }
+        if (index != 1) {
+            QWidget *w = m_modules[1];
+            VideoWidget *video = qobject_cast<VideoWidget *>(w);
+            if (video) {
+                video->onControlButtonClicked();
+            }
+        }
 
         m_currentWidget = w;
 
@@ -282,4 +290,16 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget->setFixedSize(549,343);
         m_currentWidget->show();
     });
+}
+
+void NormalModule::initTheme(int type)
+{
+    if (type == 0) {
+        type = DGuiApplicationHelper::instance()->themeType();
+    }
+    if (type == 2) {
+    DPalette pa = this->palette();
+    pa.setColor(DPalette::Window,QColor(40,40,40));
+    this->setPalette(pa);
+    }
 }
