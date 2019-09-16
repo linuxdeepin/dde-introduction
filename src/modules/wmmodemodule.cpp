@@ -74,12 +74,12 @@ void WMModeModule::onWMModeChanged(Model::WMType type)
 
     switch (type) {
     case Model::WM_2D:
-        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - QPoint(8, 8));
+        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - QPoint(8, -68));
         m_efficientWidget->setChecked(true);
         m_fashionWidget->setChecked(false);
         break;
     case Model::WM_3D:
-        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - QPoint(8, 8));
+        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - QPoint(8, -68));
         m_fashionWidget->setChecked(true);
         m_efficientWidget->setChecked(false);
         break;

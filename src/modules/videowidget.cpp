@@ -152,7 +152,7 @@ void VideoWidget::updateControlButton()
 
     switch (m_video->engine().state()) {
     case dmr::PlayerEngine::Playing: {
-        QLocale locale;
+        /*QLocale locale;
         const QString &file = QString("15.5 SP3_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
@@ -166,7 +166,7 @@ void VideoWidget::updateControlButton()
                 m_video->engine().selectSubtitle(info.subs.indexOf(sub));
                 break;
             }
-        }
+        }*/
 
         m_control->setNormalPic(":/resources/pause_normal.svg");
         m_control->setHoverPic(":/resources/pause_hover.svg");

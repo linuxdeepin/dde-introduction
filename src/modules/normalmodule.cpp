@@ -49,16 +49,15 @@ NormalModule::NormalModule(DWidget *parent)
 
     //m_leftNavigationLayout->setMargin(0);
     m_leftNavigationLayout->setSpacing(10);
-    m_leftNavigationLayout->setContentsMargins(0, 50, 0, 63);
+    m_leftNavigationLayout->setContentsMargins(0, 50, 0, 73);
 
     m_rightContentLayout->setSpacing(0);
     m_rightContentLayout->setMargin(0);
-    m_rightContentLayout->setContentsMargins(0,0,0,0);
+    m_rightContentLayout->setContentsMargins(0,20,0,0);
 
     DLabel *logo = new DLabel(this);
     QIcon::setThemeName("hicolor");
-    QIcon t_icon = QIcon::fromTheme("dde-introduction");
-    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", t_icon).pixmap(QSize(24, 24) * devicePixelRatioF()));
+    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(12, 8));
@@ -193,14 +192,14 @@ NormalModule::NormalModule(DWidget *parent)
     m_modules[moduleCount] = support;
 
     // about button
-    NavigationButton *aboutBtn = new NavigationButton(tr("About us"));
+    /*NavigationButton *aboutBtn = new NavigationButton(tr("About us"));
     m_buttonMap[aboutBtn]   = ++moduleCount;
     aboutBtn->setText(tr("About us"));
     m_titleMap[aboutBtn] = tr("About us");
     m_buttonGrp->addButton(aboutBtn);
     About *about = new About(this);
     about->hide();
-    m_modules[moduleCount] = about;
+    m_modules[moduleCount] = about;*/
 
 #ifndef DISABLE_VIDEO
     videoBtn->setChecked(true);
