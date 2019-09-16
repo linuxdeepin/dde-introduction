@@ -27,6 +27,7 @@
 #include <QHBoxLayout>
 #include <DTitlebar>
 #include <DPlatformWindowHandle>
+#include <DGuiApplicationHelper>
 #include <DPalette>
 
 #ifndef DISABLE_VIDEO
@@ -46,10 +47,9 @@ MainWindow::MainWindow(DWidget *parent)
     , m_settings(new QSettings("deepin", "dde-introduction"))
     , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
 {
-    QString tt = m_settings->fileName();
     initUI();
     initConnect();
-    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::slotTheme);
+    bool aa = connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::slotTheme);
 }
 
 MainWindow::~MainWindow()
@@ -106,116 +106,123 @@ void MainWindow::initUI()
 {
     setFixedSize(WINDOW_SIZE);
     titlebar()->deleteLater();
+    DPalette pl = this->palette();
+    pl.setColor(DPalette::Light, Qt::transparent);
+    pl.setColor(DPalette::Dark, Qt::transparent);
+    titlebar()->setPalette(pl);
 
-        DPlatformWindowHandle* handle = new DPlatformWindowHandle(this);
-        handle->setBorderWidth(0);
-        handle->setWindowRadius(5);
-        handle->setEnableSystemMove(true);
-        handle->setEnableSystemResize(false);
+    DPlatformWindowHandle *handle = new DPlatformWindowHandle(this);
+    handle->setBorderWidth(0);
+    handle->setWindowRadius(5);
+    handle->setEnableSystemMove(true);
+    handle->setEnableSystemResize(false);
 
-        m_fakerWidget = new QWidget(this);
-        m_fakerWidget->show();
-        m_fakerWidget->setFixedSize(WINDOW_SIZE);
-        //QPalette pal;
-        //pal.setColor(QPalette::Background, QColor(248,248,248));
-        //m_fakerWidget->setAutoFillBackground(true);
-        //m_fakerWidget->setPalette(pal);
+    m_fakerWidget = new QWidget(this);
+    m_fakerWidget->show();
+    m_fakerWidget->setFixedSize(WINDOW_SIZE);
+    m_fakerWidget->setPalette(pl);
 
-        m_nextBtn = new NextButton(tr("Next"), this);
-        m_doneBtn = new NextButton(tr("Done"), this);
-        m_nextBtn->setFixedSize(100, 36);
-        m_doneBtn->setFixedSize(100, 36);
+    m_nextBtn = new NextButton(tr("Next"), this);
+    m_doneBtn = new NextButton(tr("Done"), this);
+    m_nextBtn->setFixedSize(100, 36);
+    m_doneBtn->setFixedSize(100, 36);
 
-        //m_previousBtn = new DPushButton(this);
-        m_previousBtn = new DIconButton(QStyle::StandardPixmap::SP_ArrowBack,this);
-        //m_previousBtn->setIcon(QIcon(":/resources/previous_normal.svg"));
-        //m_previousBtn->setNormalPic(":/resources/previous_normal.svg");
-        /*m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
-        m_previousBtn->setPressPic(":/resources/previous_press.svg");
-        m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");*/
-        m_previousBtn->setFixedSize(36, 36);
+    //m_previousBtn = new DPushButton(this);
+    m_previousBtn = new DIconButton(QStyle::StandardPixmap::SP_ArrowBack, this);
+    m_previousBtn->setFixedSize(36, 36);
 
-        //Addition Button Shadow
-        QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
-        shadow_effect->setOffset(0, 2);
-        shadow_effect->setColor(QColor(0,0,0,0.05*255));
-        shadow_effect->setBlurRadius(4);
-        m_nextBtn->setGraphicsEffect(shadow_effect);
+    //Addition Button Shadow
+    QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
+    shadow_effect->setOffset(0, 2);
+    shadow_effect->setColor(QColor(0, 0, 0, 0.05 * 255));
+    shadow_effect->setBlurRadius(4);
+    m_nextBtn->setGraphicsEffect(shadow_effect);
 
-        DGuiApplicationHelper::ColorType type = DGuiApplicationHelper::instance()->paletteType();
-        slotTheme(type);
+    DGuiApplicationHelper::ColorType type = DGuiApplicationHelper::instance()->paletteType();
+    slotTheme(type);
 
-        DImageButton *closeBtn = new DImageButton(":/resources/close_normal.svg",
-                                                  ":/resources/close_normal.svg",
-                                                  ":/resources/close_normal.svg",this);
+    DImageButton *closeBtn = new DImageButton(":/resources/close_normal.svg",
+                                              ":/resources/close_normal.svg",
+                                              ":/resources/close_normal.svg", this);
 
-        closeBtn->setFixedSize(50, 50);
+    closeBtn->setFixedSize(50, 50);
 
-        closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
-        closeBtn->show();
+    closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
+    closeBtn->show();
 
-    #ifndef QT_DEBUG
-        const bool isFirst = m_settings->value("IsFirst", true).toBool();
+#ifndef QT_DEBUG
+    const bool isFirst = m_settings->value("IsFirst", true).toBool();
 
-        if (isFirst) {
-            m_settings->setValue("IsFirst", false);
+    if (isFirst) {
+        m_settings->setValue("IsFirst", false);
 
-    #ifndef DISABLE_VIDEO
-            m_current = new VideoWidget(false, m_fakerWidget);
-            m_nextBtn->setMode(NextButton::Transparent);
-    #else
-            m_current = new PhotoSlide(m_fakerWidget);
-            m_nextBtn->setMode(NextButton::Normal);
-            static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
-            m_nextBtn->setMode(NextButton::Normal);
-            m_index = 1;
-    #endif
-            m_previousBtn->hide();
-            m_nextBtn->show();
-        } else {
-            m_current = new NormalModule(m_fakerWidget);
-            m_previousBtn->hide();
-            m_nextBtn->hide();
-        }
-    #else
-    #ifndef DISABLE_VIDEO
+#ifndef DISABLE_VIDEO
         m_current = new VideoWidget(false, m_fakerWidget);
-        //m_current = new PhotoSlide(m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Normal);
-        //static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
-    #else
-    //        m_current = initDesktopModeModule();
+        m_nextBtn->setMode(NextButton::Transparent);
+#else
         m_current = new PhotoSlide(m_fakerWidget);
         m_nextBtn->setMode(NextButton::Normal);
-        static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
-    #endif
+        static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+        m_nextBtn->setMode(NextButton::Normal);
+        m_index = 1;
+#endif
         m_previousBtn->hide();
         m_nextBtn->show();
-        m_nextBtn->setMode(NextButton::Transparent);
-    #endif
+    } else {
+        m_current = new NormalModule(m_fakerWidget);
+        m_previousBtn->hide();
+        m_nextBtn->hide();
+    }
+#else
+#ifndef DISABLE_VIDEO
+    m_current = new VideoWidget(false, m_fakerWidget);
+    //m_current = new PhotoSlide(m_fakerWidget);
+    m_nextBtn->setMode(NextButton::Normal);
+    //static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
+#else
+    //        m_current = initDesktopModeModule();
+    m_current = new PhotoSlide(m_fakerWidget);
+    m_nextBtn->setMode(NextButton::Normal);
+    static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+#endif
+    m_previousBtn->hide();
+    m_nextBtn->show();
+    m_nextBtn->setMode(NextButton::Transparent);
+#endif
 
-        m_current->setFixedSize(WINDOW_SIZE);
-        m_current->show();
+    m_current->setFixedSize(WINDOW_SIZE);
+    m_current->show();
 
-        m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/10,404);
-        m_nextBtn->move(/*width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20*/590, 404);
-        m_doneBtn->move(m_nextBtn->pos());
-        m_doneBtn->hide();
+    m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/10, 404);
+    m_nextBtn->move(/*width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20*/590, 404);
+    m_doneBtn->move(m_nextBtn->pos());
+    m_doneBtn->hide();
 
-        m_currentAni->setPropertyName("pos");
-        m_lastAni->setPropertyName("pos");
+    m_currentAni->setPropertyName("pos");
+    m_lastAni->setPropertyName("pos");
 
-        connect(closeBtn, &DImageButton::clicked, this, &MainWindow::close);
+    connect(closeBtn, &DImageButton::clicked, this, &MainWindow::close);
 
-        QWidget *widget = new QWidget(this);
-        widget->setAutoFillBackground(true);
-        widget->resize(QSize(32,32));
-        DPalette palette;
-        QPixmap pixmap(":/resources/introduction.svg");
-        palette.setBrush(DPalette::Window, QBrush(pixmap));
-        widget->setPalette(palette);
-        widget->move(QPoint(10,8));
-        widget->show();
+//    QWidget *widget = new QWidget(this);
+//    widget->setAutoFillBackground(true);
+//    widget->resize(QSize(32, 32)* devicePixelRatioF());
+//    DPalette palette;
+////        QPixmap pixmap(":/resources/introduction.svg");
+////    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF()));
+//    QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
+//    palette.setBrush(DPalette::Window, QBrush(pixmap));
+//    widget->setPalette(palette);
+//    widget->move(QPoint(10, 8) * devicePixelRatioF());
+//    widget->show();
+
+    DLabel *logo = new DLabel(this);
+//    QIcon::setThemeName("hicolor");
+//    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
+    QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
+    pixmap.setDevicePixelRatio(devicePixelRatioF());
+    logo->setPixmap(pixmap);
+    logo->move(rect().topLeft() + QPoint(12, 8));
+    logo->show();
 }
 
 void MainWindow::initConnect()
@@ -249,15 +256,14 @@ void MainWindow::updateModule(const int index)
 #else
         m_current = new PhotoSlide(m_fakerWidget);
         m_nextBtn->setMode(NextButton::Normal);
-        static_cast<PhotoSlide*>(m_current)->start(false, false, 1000);
+        static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
 #endif
         m_previousBtn->hide();
         break;
     case 2:
         m_current = initDesktopModeModule();
         break;
-    case 3:
-    {
+    case 3: {
         if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
             m_current = initWMModeModule();
             break;
@@ -311,7 +317,7 @@ BaseModuleWidget *MainWindow::initDesktopModeModule()
     module->updateBigIcon();
 
     int type = DGuiApplicationHelper::instance()->themeType();
-    BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
+    BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
     w->setTitle(tr("Please select desktop mode"));
     w->setDescribe(tr("You can switch it in Mode by right clicking on dock"));
@@ -325,7 +331,7 @@ BaseModuleWidget *MainWindow::initWMModeModule()
     module->updateBigIcon();
 
     int type = DGuiApplicationHelper::instance()->themeType();
-    BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
+    BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
     w->setTitle(tr("Please select the mode of operation"));
     w->setDescribe(tr("If your computer configuration is not high, you are recommended to choose extreme speed mode"));
@@ -338,7 +344,7 @@ BaseModuleWidget *MainWindow::initIconModule()
     IconModule *module = new IconModule;
     module->updateBigIcon();
 
-    BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
+    BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setTitle(tr("Please select icon theme"));
     w->setDescribe(tr("You can change it in Control Center > Personalization > Theme > Icon Theme"));
     w->setFixedSize(WINDOW_SIZE);
@@ -347,9 +353,7 @@ BaseModuleWidget *MainWindow::initIconModule()
 
 void MainWindow::slotTheme(int type)
 {
-    if (type == 0) {
-        type = DGuiApplicationHelper::instance()->themeType();
-    }
+    type = DGuiApplicationHelper::instance()->themeType();
     if (type == 1) {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(65, 77, 104, 255));

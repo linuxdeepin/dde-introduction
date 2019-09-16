@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
     Dtk::Core::DLogManager::registerConsoleAppender();
     Dtk::Core::DLogManager::registerFileAppender();
     QCommandLineParser cmdParser;
-    cmdParser.setApplicationDescription("deepin-introduction");
+    cmdParser.setApplicationDescription("dde-introduction");
     cmdParser.addHelpOption();
     cmdParser.addVersionOption();
     cmdParser.process(a);
@@ -127,6 +127,7 @@ int main(int argc, char *argv[])
         qDebug() << type;
         // 保存程序的主题设置  type : 0,系统主题， 1,浅色主题， 2,深色主题
         saveThemeTypeSetting(type);
+        DGuiApplicationHelper::instance()->setPaletteType(type);
     });
 
     static const QDate buildDate = QLocale( QLocale::English ).toDate( QString(__DATE__).replace("  ", " 0"), "MMM dd yyyy");

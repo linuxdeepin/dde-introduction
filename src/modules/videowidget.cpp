@@ -207,6 +207,14 @@ void VideoWidget::onControlButtonClicked()
     //updateControlButton();
 }
 
+void VideoWidget::stop()
+{
+    if (m_video->engine().state() == dmr::PlayerEngine::Playing) {
+        m_video->engine().pauseResume();
+        m_video->engine().play();
+    }
+}
+
 void VideoWidget::enterEvent(QEvent *e)
 {
     ModuleInterface::enterEvent(e);

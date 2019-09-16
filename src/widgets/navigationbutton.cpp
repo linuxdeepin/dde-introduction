@@ -30,11 +30,6 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
 {
     setCheckable(true);
     setFocusPolicy(Qt::NoFocus);
-    /*DPalette pa = this->palette();
-    pa.setColor(DPalette::Light, QColor(0,0,0,0));
-    pa.setColor(DPalette::Dark, QColor(0,0,0,0));
-    pa.setColor(DPalette::Base, QColor(0,0,0,0));
-    this->setPalette(pa);*/
     this->setFlat(true);
     m_text = text;
 }

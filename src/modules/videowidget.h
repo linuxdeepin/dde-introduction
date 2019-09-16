@@ -41,6 +41,7 @@ public:
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
     void updateControlButton();
     void onControlButtonClicked();
+    void stop();
 
 protected:
     void enterEvent(QEvent *) Q_DECL_OVERRIDE;

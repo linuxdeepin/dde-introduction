@@ -59,8 +59,9 @@ NormalModule::NormalModule(DWidget *parent)
     m_rightContentLayout->setContentsMargins(0, 0, 0, 0);
 
     DLabel *logo = new DLabel(this);
-    QIcon::setThemeName("hicolor");
-    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
+//    QIcon::setThemeName("hicolor");
+//    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
+    QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(24, 24) * devicePixelRatioF());
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(12, 8));
@@ -115,7 +116,7 @@ NormalModule::NormalModule(DWidget *parent)
     describe->setFont(deFont);
 
     DPalette dePa = describe->palette();
-    dePa.setColor(DPalette::WindowText,QColor("#FF526A7F"));
+    dePa.setColor(DPalette::WindowText, QColor("#FF526A7F"));
     describe->setPalette(dePa);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -130,7 +131,7 @@ NormalModule::NormalModule(DWidget *parent)
     setLayout(mainLayout);
 
     setFixedSize(700, 450);
-    content->setFixedSize(549,343);
+    content->setFixedSize(549, 343);
 
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
@@ -276,18 +277,19 @@ void NormalModule::updateCurrentWidget(const int index)
             module->updateSmallIcon();
             module->updateSelectBtnPos();
         }
-        if (index != 1) {
+        if (index != 1)
+        {
             QWidget *w = m_modules[1];
             VideoWidget *video = qobject_cast<VideoWidget *>(w);
             if (video) {
-                video->onControlButtonClicked();
+                video->stop();
             }
         }
 
         m_currentWidget = w;
 
         m_rightContentLayout->addWidget(m_currentWidget, 0, Qt::AlignCenter);
-        m_currentWidget->setFixedSize(549,343);
+        m_currentWidget->setFixedSize(549, 343);
         m_currentWidget->show();
     });
 }
@@ -298,8 +300,8 @@ void NormalModule::initTheme(int type)
         type = DGuiApplicationHelper::instance()->themeType();
     }
     if (type == 2) {
-    DPalette pa = this->palette();
-    pa.setColor(DPalette::Window,QColor(40,40,40));
-    this->setPalette(pa);
+        DPalette pa = this->palette();
+        pa.setColor(DPalette::Window, QColor(40, 40, 40));
+        this->setPalette(pa);
     }
 }
