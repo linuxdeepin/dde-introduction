@@ -157,7 +157,7 @@ void MainWindow::initUI()
             m_settings->setValue("IsFirst", false);
 
     #ifndef DISABLE_VIDEO
-            m_current = new VideoWidget(true, m_fakerWidget);
+            m_current = new VideoWidget(false, m_fakerWidget);
             m_nextBtn->setMode(NextButton::Transparent);
     #else
             m_current = new PhotoSlide(m_fakerWidget);

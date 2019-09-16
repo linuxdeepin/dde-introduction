@@ -34,7 +34,7 @@ static QDir ResourcesQDir() {
     QDir videoPath(qApp->applicationDirPath());
     videoPath.setSorting(QDir::Name);
 
-#ifdef QT_DEBUG
+/*#ifndef QT_DEBUG
 #ifdef PROFESSIONAL
     videoPath.cd("resources/professional");
 #else
@@ -42,7 +42,8 @@ static QDir ResourcesQDir() {
 #endif
 #else
     videoPath.cd("../share/dde-introduction");
-#endif
+#endif*/
+    videoPath.cd("../share/dde-introduction");
     return videoPath;
 }
 

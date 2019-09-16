@@ -117,7 +117,7 @@ NormalModule::NormalModule(DWidget *parent)
     setLayout(mainLayout);
 
     setFixedSize(700, 450);
-    content->setFixedWidth(580);
+    content->setFixedSize(580,372);
 
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();

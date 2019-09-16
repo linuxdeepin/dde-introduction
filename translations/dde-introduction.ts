@@ -112,7 +112,7 @@
     <message>
         <location filename="../src/modules/about.cpp" line="69"/>
         <source>■Open source projects</source>
-        <translation type="unfinished">■开源项目</translation>
+        <translation>■开源项目</translation>
     </message>
     <message>
         <source>deepin, bringing the world&apos;s leading technology and innovation into government information construction and enterprise information technology infrastructure, is one of the fastest growing operating systems in China today. Because of its ease of use and extendibility, many government and enterprise users choose deepin as their daily operating system, while the information departments and the maintenance departments are attracted by the stability, security and flexibility of deepin desktop environment. Deepin desktop, which can be installed on laptops and desktops, is stable and efficient as well as very easy to use, based on the wonderful product design and the advanced technology. Its simple user experience can help users reduce the browsing and searching time, and put more time into work.</source>
@@ -192,7 +192,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="304"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>您可以在任务栏右键菜单—“模式”中进行调节</translation>
+        <translation>您也可以通过XXXXX来XXXXX</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="315"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="328"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>您可以在控制中心个性化模块—图标主题中进行调节</translation>
+        <translation type="unfinished">您也可以通过XXXXX来XXXXX</translation>
     </message>
 </context>
 <context>
@@ -231,12 +231,12 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>您可以在任务栏右键菜单—“模式”中进行调节</translation>
+        <translation>您也可以通过XXXXX来XXXXX</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="158"/>
         <source>Operation mode</source>
-        <translation>操作模式</translation>
+        <translation>运行模式</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="159"/>
