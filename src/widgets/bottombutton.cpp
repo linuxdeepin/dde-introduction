@@ -25,15 +25,20 @@ BottomButton::BottomButton(DWidget *parent)
     : DImageButton(parent)
 {
     setCheckable(true);
-    setFixedSize(QSize(60,30));
+    setFixedSize(QSize(85,30));
 }
 
 void BottomButton::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
     QFont font;
     font.setFamily("SourceHanSansSC-Medium");
     font.setPixelSize(14);
+
+    QFontMetrics fm(font);
+    QRect rec = fm.boundingRect(m_text);
+    setFixedWidth(rec.width());
+
+    QPainter painter(this);
     painter.setFont(font);
     painter.setPen(QPen(QColor(0,129,255)));
     painter.drawText(rect(), m_text);

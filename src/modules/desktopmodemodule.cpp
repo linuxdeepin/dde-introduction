@@ -24,6 +24,7 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     , m_efficientWidget(new BaseWidget(this))
     , m_fashionWidget(new BaseWidget(this))
 {
+    isfirst = true;
     m_efficientWidget->setTitle(tr("Classical Mode"));
     m_fashionWidget->setTitle(tr("Fashion Mode"));
 
@@ -35,12 +36,13 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
         m_worker->setDesktopMode(Model::EfficientMode);
     });
 
-    m_layout->setContentsMargins(20, 8, 20, 0);
+    m_layout->setMargin(0);
+    m_layout->setContentsMargins(0, 30, 0, 65);
 
-    m_layout->addStretch();
+    //m_layout->addStretch();
     m_layout->addWidget(m_fashionWidget);
     m_layout->addWidget(m_efficientWidget);
-    m_layout->addStretch();
+    //m_layout->addStretch();
 
     setLayout(m_layout);
 
@@ -51,14 +53,17 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
 {
     m_selectBtn->raise();
 
+    QPoint p(8,8);
+    if (!isfirst)
+        p.setY(-18);
     switch (mode) {
     case Model::EfficientMode:
-        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - QPoint(8, -68));
+        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - p);
         m_efficientWidget->setChecked(true);
         m_fashionWidget->setChecked(false);
         break;
     case Model::FashionMode:
-        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - QPoint(8, -68));
+        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - p);
         m_fashionWidget->setChecked(true);
         m_efficientWidget->setChecked(false);
         break;
@@ -84,4 +89,9 @@ void DesktopModeModule::updateSmallIcon()
 void DesktopModeModule::updateSelectBtnPos()
 {
     onDesktopTypeChanged(m_model->desktopMode());
+}
+
+void DesktopModeModule::setFirst(bool first)
+{
+    isfirst = first;
 }

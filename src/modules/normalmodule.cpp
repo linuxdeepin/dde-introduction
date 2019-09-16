@@ -17,7 +17,6 @@
  */
 
 #include "normalmodule.h"
-#include "../widgets/navigationbutton.h"
 #include "desktopmodemodule.h"
 #include "iconmodule.h"
 #include "wmmodemodule.h"
@@ -25,6 +24,9 @@
 #include "about.h"
 #include "photoslide.h"
 #include "../widgets/bottomnavigation.h"
+#include "../widgets/navigationbutton.h"
+
+#include <QFont>
 
 #include <DLabel>
 #include <DSuggestButton>
@@ -45,15 +47,15 @@ NormalModule::NormalModule(DWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
-    layout->setContentsMargins(0, 0, 20, 0);
+    layout->setContentsMargins(0, 13, 20, 0);
 
     //m_leftNavigationLayout->setMargin(0);
     m_leftNavigationLayout->setSpacing(10);
-    m_leftNavigationLayout->setContentsMargins(0, 50, 0, 73);
+    m_leftNavigationLayout->setContentsMargins(0, 50, 0, 0);
 
     m_rightContentLayout->setSpacing(0);
     m_rightContentLayout->setMargin(0);
-    m_rightContentLayout->setContentsMargins(0,20,0,0);
+    m_rightContentLayout->setContentsMargins(0, 0, 0, 0);
 
     DLabel *logo = new DLabel(this);
     QIcon::setThemeName("hicolor");
@@ -106,6 +108,14 @@ NormalModule::NormalModule(DWidget *parent)
                               "color: #001A2E;");*/
 
     DLabel *describe = new DLabel;
+    QFont deFont;
+    deFont.setFamily("SourceHanSansSC-Normal");
+    deFont.setPixelSize(12);
+    describe->setFont(deFont);
+
+    DPalette dePa = describe->palette();
+    dePa.setColor(DPalette::WindowText,QColor("#FF526A7F"));
+    describe->setPalette(dePa);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->setSpacing(0);
@@ -153,6 +163,7 @@ NormalModule::NormalModule(DWidget *parent)
     m_describeMap[desktopBtn] = tr("You can switch it in Mode by right clicking on dock");
     m_buttonGrp->addButton(desktopBtn);
     DesktopModeModule *desktopModeModule = new DesktopModeModule(this);
+    desktopModeModule->setFirst(false);
     desktopModeModule->hide();
     m_modules[moduleCount] = desktopModeModule;
 
@@ -166,6 +177,7 @@ NormalModule::NormalModule(DWidget *parent)
         m_describeMap[wmBtn] = tr("If your computer configuration is not high, you are recommended to choose extreme speed mode");
         m_buttonGrp->addButton(wmBtn);
         WMModeModule *wmModeModule = new WMModeModule(this);
+        wmModeModule->setFirst(false);
         wmModeModule->hide();
         m_modules[moduleCount] = wmModeModule;
     }
@@ -218,6 +230,7 @@ NormalModule::NormalModule(DWidget *parent)
         m_leftNavigationLayout->addWidget(w, 0, Qt::AlignHCenter | Qt::AlignVCenter);
         w->installEventFilter(this);
     }
+    m_leftNavigationLayout->addStretch();
 
     //m_leftNavigationLayout->addStretch();
 

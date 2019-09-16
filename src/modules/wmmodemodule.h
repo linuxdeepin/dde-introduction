@@ -38,6 +38,7 @@ public:
 
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
 
+    void setFirst(bool first);
 private slots:
     void onWMModeChanged(Model::WMType type);
 
@@ -45,6 +46,7 @@ private:
     QHBoxLayout* m_layout;
     BaseWidget* m_efficientWidget;
     BaseWidget* m_fashionWidget;
+    bool m_first;
 };
 
 #endif // WMMODEMODULE_H

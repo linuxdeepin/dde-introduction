@@ -29,7 +29,7 @@ BaseWidget::BaseWidget(QWidget *parent)
     , m_borderWidget(new BorderWidget(this))
 {
     m_layout->setMargin(0);
-    m_layout->setSpacing(0);
+    m_layout->setSpacing(16);
 
     m_layout->addStretch();
     m_layout->addWidget(m_borderWidget, 0, Qt::AlignCenter);
@@ -45,7 +45,7 @@ void BaseWidget::setPixmap(const QString &url) {
 
 void BaseWidget::setPixmap(const QPixmap &pixmap)
 {
-    m_borderWidget->setFixedSize(pixmap.size() / devicePixelRatioF() + QSize(10, 10));
+    m_borderWidget->setFixedSize(pixmap.size() /*/ devicePixelRatioF()*/ + QSize(10, 10));
     m_borderWidget->setPixmap(pixmap);
 
     setFixedWidth(m_borderWidget->width());

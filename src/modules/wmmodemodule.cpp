@@ -24,6 +24,7 @@ WMModeModule::WMModeModule(QWidget *parent)
     , m_efficientWidget(new BaseWidget(this))
     , m_fashionWidget(new BaseWidget(this))
 {
+    m_first = true;
     m_efficientWidget->setTitle(tr("Extreme speed mode"));
     m_fashionWidget->setTitle(tr("Gorgeous mode"));
 
@@ -39,12 +40,12 @@ WMModeModule::WMModeModule(QWidget *parent)
         onWMModeChanged(m_model->wmType());
     });
 
-    m_layout->setContentsMargins(20, 8, 20, 0);
+    m_layout->setContentsMargins(0, 30, 0, 65);
 
-    m_layout->addStretch();
+    //m_layout->addStretch();
     m_layout->addWidget(m_fashionWidget);
     m_layout->addWidget(m_efficientWidget);
-    m_layout->addStretch();
+    //m_layout->addStretch();
 
     setLayout(m_layout);
 
@@ -72,18 +73,25 @@ void WMModeModule::onWMModeChanged(Model::WMType type)
 {
     m_selectBtn->raise();
 
+    QPoint p(8,8);
+    if (!m_first)
+        p.setY(-18);
     switch (type) {
     case Model::WM_2D:
-        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - QPoint(8, -68));
+        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - p);
         m_efficientWidget->setChecked(true);
         m_fashionWidget->setChecked(false);
         break;
     case Model::WM_3D:
-        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - QPoint(8, -68));
+        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - p);
         m_fashionWidget->setChecked(true);
         m_efficientWidget->setChecked(false);
         break;
     default:
         break;
     }
+}
+void WMModeModule::setFirst(bool first)
+{
+    m_first = first;
 }
