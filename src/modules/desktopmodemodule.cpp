@@ -74,8 +74,8 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
 
 void DesktopModeModule::updateBigIcon()
 {
-    m_efficientWidget->setPixmap(":/resources/effective_mode.png");
-    m_fashionWidget->setPixmap(":/resources/fashion_mode.png");
+    m_efficientWidget->setPixmap(":/resources/effective_mode_big.png");
+    m_fashionWidget->setPixmap(":/resources/fashion_mode_big.png");
     m_layout->setContentsMargins(10, 70, 10, 35);
 }
 

@@ -1,6 +1,7 @@
 #include "support.h"
 
 #include <DLabel>
+#include <DFrame>
 
 DWIDGET_USE_NAMESPACE
 

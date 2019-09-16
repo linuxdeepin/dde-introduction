@@ -126,7 +126,7 @@ void MainWindow::initUI()
         m_doneBtn->setFixedSize(100, 36);
 
         m_previousBtn = new DPushButton(this);
-        m_previousBtn->setIcon(QIcon(":/resources/previous_normal.svg"));
+        //m_previousBtn->setIcon(QIcon(":/resources/previous_normal.svg"));
         //m_previousBtn->setNormalPic(":/resources/previous_normal.svg");
         /*m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
         m_previousBtn->setPressPic(":/resources/previous_press.svg");
@@ -355,6 +355,7 @@ void MainWindow::slotTheme(int type)
         nextPa.setColor(DPalette::Light, QColor(227, 227, 227, 255));
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
+        m_previousBtn->setIcon(QIcon(":/resources/previous_normal.svg"));
     } else {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(192, 198, 212, 255));
@@ -362,5 +363,6 @@ void MainWindow::slotTheme(int type)
         nextPa.setColor(DPalette::Light, QColor(65, 65, 65, 255));
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
+        m_previousBtn->setIcon(QIcon(":/resources/previous_normal_dark.png"));
     }
 }
