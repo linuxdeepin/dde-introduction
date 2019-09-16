@@ -33,11 +33,13 @@ public:
 
     void setTitle(const QString &title);
     void setDescribe(const QString &describe);
+    void setType(int type);
 
 private:
     QVBoxLayout* m_layout;
     DLabel* m_titleLbl;
     DLabel* m_describeLbl;
+    int m_type;
 };
 
 #endif // BASEMODULEWIDGET_H

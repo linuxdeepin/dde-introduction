@@ -76,7 +76,7 @@ void DesktopModeModule::updateBigIcon()
 {
     m_efficientWidget->setPixmap(":/resources/effective_mode.png");
     m_fashionWidget->setPixmap(":/resources/fashion_mode.png");
-    m_layout->setContentsMargins(0, 70, 0, 35);
+    m_layout->setContentsMargins(10, 70, 10, 35);
 }
 
 void DesktopModeModule::updateSmallIcon()

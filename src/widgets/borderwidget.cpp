@@ -66,7 +66,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     path.addRoundedRect(rect().adjusted(2, 2, -2, -2), 5, 5);
     painter.setClipRect(QRect(), Qt::NoClip);
     if (m_checked) {
-        QPen pen(QColor("#2CA7F8"));
+        QPen pen(QColor("#0081FF"));
         pen.setWidth(4);
 
         painter.setPen(pen);

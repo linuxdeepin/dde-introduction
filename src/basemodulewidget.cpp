@@ -18,6 +18,9 @@
 
 #include "basemodulewidget.h"
 #include <QDebug>
+#include <DPalette>
+
+DGUI_USE_NAMESPACE
 
 BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     : QWidget(parent)
@@ -43,6 +46,8 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
 
     setLayout(m_layout);
 
+    m_type = 1;
+
     /*m_titleLbl->setStyleSheet("font-size: 20px;"
                               "font-weight: medium;");*/
 
@@ -53,11 +58,43 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
 
 void BaseModuleWidget::setTitle(const QString &title)
 {
+    QFont font;
+    font.setFamily("SourceHanSansSC-Bold");
+    //font.setBold(true);
+    font.setPixelSize(17);
+    m_titleLbl->setFont(font);
+    if (m_type == 1) {
+        DPalette pa = m_titleLbl->palette();
+        pa.setColor(DPalette::WindowText, QColor(0,26,46,255));
+        m_titleLbl->setPalette(pa);
+    } else {
+        DPalette pa = m_titleLbl->palette();
+        pa.setColor(DPalette::WindowText, QColor(192,198,212,255));
+        m_titleLbl->setPalette(pa);
+    }
     m_titleLbl->setText(title);
 }
 
 void BaseModuleWidget::setDescribe(const QString &describe)
 {
+    QFont font;
+    font.setFamily("SourceHanSansSC-Normal");
+    font.setPixelSize(12);
+    m_describeLbl->setFont(font);
+    if (m_type == 1) {
+        DPalette pa = m_describeLbl->palette();
+        pa.setColor(DPalette::WindowText, QColor(82,106,127,255));
+        m_describeLbl->setPalette(pa);
+    } else {
+        DPalette pa = m_describeLbl->palette();
+        pa.setColor(DPalette::WindowText, QColor(109,124,136,255));
+        m_describeLbl->setPalette(pa);
+    }
     m_describeLbl->setText(describe);
     m_describeLbl->adjustSize();
+}
+
+void BaseModuleWidget::setType(int type)
+{
+    m_type = type;
 }

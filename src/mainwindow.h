@@ -65,7 +65,7 @@ private:
 private:
   int m_index;
   NextButton *m_nextBtn;
-  DImageButton *m_previousBtn;
+  DPushButton *m_previousBtn;
   NextButton *m_doneBtn;
   DWidget *m_current;
   DWidget *m_last;

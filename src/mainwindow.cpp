@@ -61,7 +61,6 @@ void MainWindow::previous()
     if (m_currentAni->state() == QPropertyAnimation::Running) {
         return;
     }
-    //titlebar()->setTitle("123123");
 
     updateModule(--m_index);
 
@@ -126,8 +125,9 @@ void MainWindow::initUI()
         m_nextBtn->setFixedSize(100, 36);
         m_doneBtn->setFixedSize(100, 36);
 
-        m_previousBtn = new DImageButton(this);
-        m_previousBtn->setNormalPic(":/resources/previous_normal.svg");
+        m_previousBtn = new DPushButton(this);
+        m_previousBtn->setIcon(QIcon(":/resources/previous_normal.svg"));
+        //m_previousBtn->setNormalPic(":/resources/previous_normal.svg");
         /*m_previousBtn->setHoverPic(":/resources/previous_hover.svg");
         m_previousBtn->setPressPic(":/resources/previous_press.svg");
         m_previousBtn->setDisabledPic(":/resources/previous_disabled.svg");*/
@@ -143,9 +143,9 @@ void MainWindow::initUI()
         DGuiApplicationHelper::ColorType type = DGuiApplicationHelper::instance()->paletteType();
         slotTheme(type);
 
-        DImageButton *closeBtn = new DImageButton(":/resources/close_round_normal.svg",
-                                                  ":/resources/close_round_hover.svg",
-                                                  ":/resources/close_round_press.svg",this);
+        DImageButton *closeBtn = new DImageButton(":/resources/close_normal.svg",
+                                                  ":/resources/close_normal.svg",
+                                                  ":/resources/close_normal.svg",this);
 
         closeBtn->setFixedSize(50, 50);
 
@@ -195,7 +195,7 @@ void MainWindow::initUI()
         m_current->setFixedSize(WINDOW_SIZE);
         m_current->show();
 
-        m_previousBtn->move(20, height() - m_previousBtn->height() - 20);
+        m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/10,404);
         m_nextBtn->move(/*width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20*/590, 404);
         m_doneBtn->move(m_nextBtn->pos());
         m_doneBtn->hide();
@@ -218,7 +218,7 @@ void MainWindow::initUI()
 
 void MainWindow::initConnect()
 {
-    connect(m_previousBtn, &DImageButton::clicked, this, &MainWindow::previous);
+    connect(m_previousBtn, &DPushButton::clicked, this, &MainWindow::previous);
     connect(m_nextBtn, &NextButton::clicked, this, &MainWindow::next);
     connect(m_currentAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
     connect(m_doneBtn, &NextButton::clicked, qApp, &QCoreApplication::quit);
@@ -308,7 +308,9 @@ BaseModuleWidget *MainWindow::initDesktopModeModule()
     DesktopModeModule *module = new DesktopModeModule;
     module->updateBigIcon();
 
+    int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
+    w->setType(type);
     w->setTitle(tr("Please select desktop mode"));
     w->setDescribe(tr("You can switch it in Mode by right clicking on dock"));
     w->setFixedSize(WINDOW_SIZE);
@@ -320,7 +322,9 @@ BaseModuleWidget *MainWindow::initWMModeModule()
     WMModeModule *module = new WMModeModule;
     module->updateBigIcon();
 
+    int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget* w = new BaseModuleWidget(module, m_fakerWidget);
+    w->setType(type);
     w->setTitle(tr("Please select the mode of operation"));
     w->setDescribe(tr("If your computer configuration is not high, you are recommended to choose extreme speed mode"));
     w->setFixedSize(WINDOW_SIZE);
