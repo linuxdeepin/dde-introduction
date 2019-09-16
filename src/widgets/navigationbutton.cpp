@@ -20,15 +20,26 @@
 
 #include <QPainter>
 #include <QGraphicsDropShadowEffect>
+#include <DPalette>
+
+DWIDGET_USE_NAMESPACE
+DGUI_USE_NAMESPACE
 
 NavigationButton::NavigationButton(QString text, DWidget *parent)
     : DPushButton(text, parent)
 {
     setCheckable(true);
+    setFocusPolicy(Qt::NoFocus);
+    /*DPalette pa = this->palette();
+    pa.setColor(DPalette::Light, QColor(0,0,0,0));
+    pa.setColor(DPalette::Dark, QColor(0,0,0,0));
+    pa.setColor(DPalette::Base, QColor(0,0,0,0));
+    this->setPalette(pa);*/
+    this->setFlat(true);
     m_text = text;
 }
 
-void NavigationButton::paintEvent(QPaintEvent *event)
+/*void NavigationButton::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     QFont font;
@@ -53,4 +64,4 @@ void NavigationButton::paintEvent(QPaintEvent *event)
         painter.setPen(QPen(QColor(255,255,255)));
         painter.drawText(r, m_text);
     }
-}
+}*/

@@ -44,6 +44,9 @@ public:
   MainWindow(DWidget *parent = 0);
   ~MainWindow();
 
+public slots:
+  void slotTheme(int type);
+
 private slots:
   void previous();
   void next();

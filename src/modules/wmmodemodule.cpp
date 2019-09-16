@@ -56,6 +56,7 @@ void WMModeModule::updateBigIcon()
 {
     m_efficientWidget->setPixmap(":/resources/2d_big.png");
     m_fashionWidget->setPixmap(":/resources/3d_big.png");
+    m_layout->setContentsMargins(0, 70, 0, 35);
 }
 
 void WMModeModule::updateSmallIcon()

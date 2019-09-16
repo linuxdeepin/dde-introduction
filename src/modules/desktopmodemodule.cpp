@@ -39,10 +39,10 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     m_layout->setMargin(0);
     m_layout->setContentsMargins(0, 30, 0, 65);
 
-    //m_layout->addStretch();
+    m_layout->addStretch();
     m_layout->addWidget(m_fashionWidget);
     m_layout->addWidget(m_efficientWidget);
-    //m_layout->addStretch();
+    m_layout->addStretch();
 
     setLayout(m_layout);
 
@@ -76,6 +76,7 @@ void DesktopModeModule::updateBigIcon()
 {
     m_efficientWidget->setPixmap(":/resources/effective_mode.png");
     m_fashionWidget->setPixmap(":/resources/fashion_mode.png");
+    m_layout->setContentsMargins(0, 70, 0, 35);
 }
 
 void DesktopModeModule::updateSmallIcon()

@@ -15,6 +15,7 @@ NextButton::NextButton(const QString &text, QWidget *parent)
     , m_currentColor(QColor(DEFAULT_BG_COLOR))
 {
     setText(text);
+    setFocusPolicy(Qt::NoFocus);
 
     update();
 }
@@ -26,7 +27,7 @@ void NextButton::setMode(NextButton::Mode mode)
     update();
 }
 
-void NextButton::paintEvent(QPaintEvent *event)
+/*void NextButton::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
@@ -48,7 +49,7 @@ void NextButton::paintEvent(QPaintEvent *event)
     //Text
     painter.setPen(QPen(Qt::black, 1));
     painter.drawText(rect(), Qt::AlignCenter, m_text);
-}
+}*/
 
 void NextButton::enterEvent(QEvent *event)
 {

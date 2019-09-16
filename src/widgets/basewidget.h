@@ -43,6 +43,7 @@ public slots:
     void setPixmap(const QPixmap &pixmap);
     void setTitle(const QString &title);
     void setChecked(bool checked);
+    void setLayoutSpacing(int i);
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;

@@ -25,11 +25,13 @@
 #include <QMap>
 
 #include <DWidget>
+#include <DPalette>
 
 #include <com_deepin_wmswitcher.h>
 
 using WMSwitcher = com::deepin::WMSwitcher;
 DWIDGET_USE_NAMESPACE
+DGUI_USE_NAMESPACE
 class ModuleInterface;
 class NormalModule : public DWidget
 {
