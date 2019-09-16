@@ -30,20 +30,21 @@
 #include <QLocale>
 #include <player_engine.h>
 
-static QDir ResourcesQDir() {
+static QDir ResourcesQDir()
+{
     QDir videoPath(qApp->applicationDirPath());
     videoPath.setSorting(QDir::Name);
 
-/*#ifndef QT_DEBUG
-#ifdef PROFESSIONAL
-    videoPath.cd("resources/professional");
-#else
-    videoPath.cd("resources/desktop");
-#endif
-#else
+    /*#ifndef QT_DEBUG
+    #ifdef PROFESSIONAL
+        videoPath.cd("resources/professional");
+    #else
+        videoPath.cd("resources/desktop");
+    #endif
+    #else
+        videoPath.cd("../share/dde-introduction");
+    #endif*/
     videoPath.cd("../share/dde-introduction");
-#endif*/
-    videoPath.cd("/usr/share/dde-introduction");
     return videoPath;
 }
 
@@ -78,15 +79,15 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     m_hideAni->setStartValue(1.0f);
     m_hideAni->setEndValue(0.0f);
 
-    connect(m_hideAni, &QPropertyAnimation::finished, this, [=] {
+    connect(m_hideAni, &QPropertyAnimation::finished, this, [ = ] {
         m_control->hide();
     });
 
-    connect(m_leaveTimer, &QTimer::timeout, this, [=] {
+    connect(m_leaveTimer, &QTimer::timeout, this, [ = ] {
         m_hideAni->start();
     });
 
-    connect(m_pauseTimer, &QTimer::timeout, this, [=] {
+    connect(m_pauseTimer, &QTimer::timeout, this, [ = ] {
         m_video->engine().pauseResume();
     });
 
@@ -122,7 +123,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     m_video->engine().play();
     //m_video->play(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
 
-    QTimer::singleShot(1000, this, [=] {
+    QTimer::singleShot(1000, this, [ = ] {
         m_pauseTimer->setInterval(m_video->engine().duration() * 1000);
     });
 
@@ -161,18 +162,18 @@ void VideoWidget::updateControlButton()
     switch (m_video->engine().state()) {
     case dmr::PlayerEngine::Playing: {
         QLocale locale;
-/*#ifdef PROFESSIONAL
-        const QString &file = QString("15.5 SP3_%1.ass").arg(locale.language() == QLocale::Chinese ?
-                                                             "zh_CN" :
-                                                             "en_US");
-        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
-#else
-        const QString &file = QString("%1.ass").arg(locale.language() == QLocale::Chinese ?
-                                                             "zh_CN" :
-                                                             "en_US");
-        QString tt = ResourcesQDir().path() + QString("/%1").arg(file);
-        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
-#endif*/
+        /*#ifdef PROFESSIONAL
+                const QString &file = QString("15.5 SP3_%1.ass").arg(locale.language() == QLocale::Chinese ?
+                                                                     "zh_CN" :
+                                                                     "en_US");
+                m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
+        #else
+                const QString &file = QString("%1.ass").arg(locale.language() == QLocale::Chinese ?
+                                                                     "zh_CN" :
+                                                                     "en_US");
+                QString tt = ResourcesQDir().path() + QString("/%1").arg(file);
+                m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
+        #endif*/
         const QString &file = QString("15.5 SP3_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
@@ -196,7 +197,7 @@ void VideoWidget::updateControlButton()
         m_btnAni->setEndValue(QPoint(p.x(), height() - m_control->height() - 20));
         m_btnAni->start();
     }
-        break;
+    break;
     case dmr::PlayerEngine::Paused: {
         m_control->setNormalPic(":/resources/play_normal.svg");
         m_control->setHoverPic(":/resources/play_hover.svg");
@@ -215,7 +216,7 @@ void VideoWidget::updateControlButton()
         if (elapsed != 0)
             m_pauseTimer->setInterval(elapsed * 1000);
     }
-        break;
+    break;
     default:
         break;
     }

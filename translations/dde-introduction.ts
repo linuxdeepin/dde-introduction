@@ -212,7 +212,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="328"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>您也可以通过XXXXX来XXXXX</translation>
+        <translation type="unfinished">您也可以通过XXXXX来XXXXX</translation>
     </message>
 </context>
 <context>
