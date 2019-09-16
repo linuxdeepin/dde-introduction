@@ -44,14 +44,39 @@ void BaseWidget::setLayoutSpacing(int i)
     m_layout->setSpacing(i);
 }
 
-void BaseWidget::setPixmap(const QString &url) {
-    setPixmap(QPixmap(DHiDPIHelper::loadNxPixmap(url)));
+void BaseWidget::setBigPixmap(const QString &url) {
+    setBigPixmap(QPixmap(DHiDPIHelper::loadNxPixmap(url)));
+}
+
+void BaseWidget::setSmallPixmap(const QString &url)
+{
+    setSmallPixmap(QPixmap(DHiDPIHelper::loadNxPixmap(url)));
 }
 
 void BaseWidget::setPixmap(const QPixmap &pixmap)
 {
-    m_borderWidget->setFixedSize(pixmap.size() /*/ devicePixelRatioF()*/ + QSize(10, 10));
+    m_borderWidget->setFixedSize(pixmap.size() / devicePixelRatioF() + QSize(10, 10));
     m_borderWidget->setPixmap(pixmap);
+
+    setFixedWidth(m_borderWidget->width());
+}
+
+void BaseWidget::setBigPixmap(const QPixmap &pixmap)
+{
+    QSize scaleSize = QSize(320,200) * devicePixelRatioF();
+    QPixmap scaledPixmap = pixmap.scaled(scaleSize, Qt::KeepAspectRatio);
+    m_borderWidget->setFixedSize(QSize(320,200) + QSize(10, 10));
+    m_borderWidget->setPixmap(scaledPixmap);
+
+    setFixedWidth(m_borderWidget->width());
+}
+
+void BaseWidget::setSmallPixmap(const QPixmap &pixmap)
+{
+    QSize scaleSize = QSize(240,150) * devicePixelRatioF();
+    QPixmap scaledPixmap = pixmap.scaled(scaleSize, Qt::KeepAspectRatio);
+    m_borderWidget->setFixedSize(QSize(240,150) + QSize(10, 10));
+    m_borderWidget->setPixmap(scaledPixmap);
 
     setFixedWidth(m_borderWidget->width());
 }

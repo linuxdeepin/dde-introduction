@@ -47,7 +47,7 @@ IconModule::IconModule(QWidget *parent)
     m_layout->setSpacing(10);
     m_layout->setMargin(0);
     m_layout->setContentsMargins(10, 8, 0, 15);
-    m_layout->setVerticalSpacing(40);
+    m_layout->setVerticalSpacing(38);
 
     m_selectBtn->setParent(m_scrollWidget);
 
@@ -150,7 +150,7 @@ void IconModule::updateSmallIcon()
     while (map.hasNext()) {
         map.next();
         QPixmap pixmap(map.key().Pixmap);
-        pixmap = pixmap.scaled(QSize(240, 60)/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(QSize(240, 60) * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
         map.value()->setLayoutSpacing(10);
     }

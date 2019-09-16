@@ -74,17 +74,17 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
 
 void DesktopModeModule::updateBigIcon()
 {
-    m_efficientWidget->setPixmap(":/resources/effective_mode_big.png");
-    m_fashionWidget->setPixmap(":/resources/fashion_mode_big.png");
+    m_efficientWidget->setBigPixmap(":/resources/effective_mode_big@3x.png");
+    m_fashionWidget->setBigPixmap(":/resources/fashion_mode_big@3x.png");
     m_layout->setContentsMargins(10, 70, 10, 35);
 }
 
 void DesktopModeModule::updateSmallIcon()
 {
-    QPixmap pixmapeff(":/resources/effective_mode_small.png");
-    QPixmap pixmapfash(":/resources/fashion_mode_small.png");
-    m_efficientWidget->setPixmap(pixmapeff);
-    m_fashionWidget->setPixmap(pixmapfash);
+    QPixmap pixmapeff(":/resources/effective_mode_small@3x.png");
+    QPixmap pixmapfash(":/resources/fashion_mode_small@3x.png");
+    m_efficientWidget->setSmallPixmap(pixmapeff);
+    m_fashionWidget->setSmallPixmap(pixmapfash);
 }
 
 void DesktopModeModule::updateSelectBtnPos()

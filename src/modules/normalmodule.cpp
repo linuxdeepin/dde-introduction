@@ -175,6 +175,18 @@ NormalModule::NormalModule(DWidget *parent)
         wmBtn = new NavigationButton(tr("Operation mode"));
         m_buttonMap[wmBtn]      = ++moduleCount;
         wmBtn->setText(tr("Operation mode"));
+        QFont font = wmBtn->font();
+        QFontMetrics fm(font);
+        QRect rec = fm.boundingRect(wmBtn->text());
+        int www = rec.width();
+        while (www > 110) {
+            int size = font.pointSize();
+            font.setPointSize(size - 1);
+            QFontMetrics fms(font);
+            QRect rect = fms.boundingRect(wmBtn->text());
+            www = rect.width();
+        }
+        wmBtn->setFont(font);
         m_titleMap[wmBtn] = tr("Please select the mode of operation");
         m_describeMap[wmBtn] = tr("If your computer configuration is not high, you are recommended to choose extreme speed mode");
         m_buttonGrp->addButton(wmBtn);

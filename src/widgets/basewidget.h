@@ -39,8 +39,11 @@ signals:
     void clicked();
 
 public slots:
-    void setPixmap(const QString &url);
+    void setBigPixmap(const QString &url);
+    void setSmallPixmap(const QString &url);
     void setPixmap(const QPixmap &pixmap);
+    void setBigPixmap(const QPixmap &pixmap);
+    void setSmallPixmap(const QPixmap &pixmap);
     void setTitle(const QString &title);
     void setChecked(bool checked);
     void setLayoutSpacing(int i);
