@@ -45,13 +45,15 @@ NormalModule::NormalModule(DWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
+    layout->setContentsMargins(0, 0, 20, 0);
 
-    m_leftNavigationLayout->setMargin(0);
+    //m_leftNavigationLayout->setMargin(0);
     m_leftNavigationLayout->setSpacing(10);
+    m_leftNavigationLayout->setContentsMargins(0, 50, 0, 63);
 
     m_rightContentLayout->setSpacing(0);
     m_rightContentLayout->setMargin(0);
-    m_rightContentLayout->setContentsMargins(0, 0, 0, 0);
+    m_rightContentLayout->setContentsMargins(0,0,0,0);
 
     DLabel *logo = new DLabel(this);
     QIcon::setThemeName("hicolor");
@@ -117,7 +119,7 @@ NormalModule::NormalModule(DWidget *parent)
     setLayout(mainLayout);
 
     setFixedSize(700, 450);
-    content->setFixedSize(580,372);
+    content->setFixedSize(549,343);
 
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
@@ -209,7 +211,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     m_buttonGrp->setExclusive(true);
 
-    m_leftNavigationLayout->addStretch();
+    //m_leftNavigationLayout->addStretch();
 
     for (QWidget *w : m_buttonGrp->buttons()) {
         w->setFixedSize(110, 30);
@@ -217,7 +219,7 @@ NormalModule::NormalModule(DWidget *parent)
         w->installEventFilter(this);
     }
 
-    m_leftNavigationLayout->addStretch();
+    //m_leftNavigationLayout->addStretch();
 
     connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [ = ] (QAbstractButton * btn) {
         updateCurrentWidget(m_buttonMap[btn]);
@@ -264,7 +266,7 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget = w;
 
         m_rightContentLayout->addWidget(m_currentWidget, 0, Qt::AlignCenter);
-        m_currentWidget->setFixedWidth(580);
+        m_currentWidget->setFixedSize(549,343);
         m_currentWidget->show();
     });
 }
