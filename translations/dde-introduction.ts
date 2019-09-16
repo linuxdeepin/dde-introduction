@@ -152,7 +152,7 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Classical Mode</source>
-        <translation>经典模式</translation>
+        <translation>高效模式</translation>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="29"/>

@@ -42,10 +42,8 @@ WMModeModule::WMModeModule(QWidget *parent)
 
     m_layout->setContentsMargins(0, 30, 0, 65);
 
-    //m_layout->addStretch();
     m_layout->addWidget(m_fashionWidget);
     m_layout->addWidget(m_efficientWidget);
-    //m_layout->addStretch();
 
     setLayout(m_layout);
 

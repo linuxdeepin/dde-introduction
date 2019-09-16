@@ -47,8 +47,6 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     , m_leaveTimer(new QTimer(this))
     , m_pauseTimer(new QTimer(this))
 {
-
-    //dmr::Backend::setDebugLevel(dmr::Backend::DebugLevel::Debug);
     m_selectBtn->hide();
 
     m_leaveTimer->setSingleShot(true);
@@ -81,6 +79,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     });*/
 
     //m_pauseTimer->setSingleShot(true);
+    //dmr::Backend::setDebugLevel(dmr::Backend::DebugLevel::Debug);
 
     setObjectName("VideoWidget");
 
@@ -213,6 +212,7 @@ void VideoWidget::stop()
         m_video->engine().pauseResume();
         m_video->engine().play();
     }
+    //updateControlButton();
 }
 
 void VideoWidget::enterEvent(QEvent *e)

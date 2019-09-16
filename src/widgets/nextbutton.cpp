@@ -27,30 +27,6 @@ void NextButton::setMode(NextButton::Mode mode)
     update();
 }
 
-/*void NextButton::paintEvent(QPaintEvent *event)
-{
-    QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-
-    QPainterPath path;
-    path.addRoundedRect(rect(), 8, 8);
-
-    //Setting Gradient
-    QLinearGradient linear(rect().topLeft(), rect().bottomRight());
-    linear.setColorAt(0, QColor(230,230,230,255));
-    linear.setColorAt(1, QColor(227,227,227,255));
-    linear.setSpread(QGradient::PadSpread);
-    painter.fillPath(path, linear);
-
-    //Inner border
-    painter.setPen(QPen(QColor(0,0,0,0.03*255), 1));
-    painter.drawRoundedRect(QRect(QPoint(rect().topLeft().x() + 1, rect().topLeft().y() + 1),
-                                  QPoint(rect().bottomRight().x() - 1, rect().bottomRight().y() - 1)), 8, 8);
-    //Text
-    painter.setPen(QPen(Qt::black, 1));
-    painter.drawText(rect(), Qt::AlignCenter, m_text);
-}*/
-
 void NextButton::enterEvent(QEvent *event)
 {
     QPushButton::enterEvent(event);

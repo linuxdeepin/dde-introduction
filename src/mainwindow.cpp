@@ -25,6 +25,7 @@
 #include "basemodulewidget.h"
 
 #include <QHBoxLayout>
+
 #include <DTitlebar>
 #include <DPlatformWindowHandle>
 #include <DGuiApplicationHelper>
@@ -47,9 +48,9 @@ MainWindow::MainWindow(DWidget *parent)
     , m_settings(new QSettings("deepin", "dde-introduction"))
     , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
 {
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged,this,&MainWindow::slotTheme);
     initUI();
     initConnect();
-    bool aa = connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::slotTheme);
 }
 
 MainWindow::~MainWindow()
@@ -137,9 +138,7 @@ void MainWindow::initUI()
     shadow_effect->setColor(QColor(0, 0, 0, 0.05 * 255));
     shadow_effect->setBlurRadius(4);
     m_nextBtn->setGraphicsEffect(shadow_effect);
-
-    DGuiApplicationHelper::ColorType type = DGuiApplicationHelper::instance()->paletteType();
-    slotTheme(type);
+    slotTheme();
 
     DImageButton *closeBtn = new DImageButton(":/resources/close_normal.svg",
                                               ":/resources/close_normal.svg",
@@ -216,8 +215,6 @@ void MainWindow::initUI()
 //    widget->show();
 
     DLabel *logo = new DLabel(this);
-//    QIcon::setThemeName("hicolor");
-//    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
     QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
@@ -351,9 +348,9 @@ BaseModuleWidget *MainWindow::initIconModule()
     return w;
 }
 
-void MainWindow::slotTheme(int type)
+void MainWindow::slotTheme()
 {
-    type = DGuiApplicationHelper::instance()->themeType();
+    int type = DGuiApplicationHelper::instance()->themeType();
     if (type == 1) {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(65, 77, 104, 255));

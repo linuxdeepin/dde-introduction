@@ -152,7 +152,7 @@
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Classical Mode</source>
-        <translation>经典模式</translation>
+        <translation>高效模式</translation>
     </message>
     <message>
         <location filename="../src/modules/desktopmodemodule.cpp" line="29"/>
@@ -360,13 +360,13 @@
         <location filename="../src/modules/support.cpp" line="66"/>
         <location filename="../src/modules/support.cpp" line="87"/>
         <source>Donate or buy souvenirs</source>
-        <translation>捐助或者购买纪念品</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="69"/>
         <location filename="../src/modules/support.cpp" line="90"/>
         <source>Become our charging user</source>
-        <translation>成为我们的收费用户</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/modules/support.cpp" line="72"/>
