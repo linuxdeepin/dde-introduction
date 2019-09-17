@@ -177,7 +177,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="118"/>
         <source>Next</source>
-        <translation>下一步</translation>
+        <translation>下一个</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="119"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="172"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>您可以在控制中心个性化模块—图标主题中进行调节</translation>
+        <translation>您也可以通过XXXXX来XXXXX</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="181"/>

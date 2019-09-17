@@ -43,7 +43,7 @@ static QDir ResourcesQDir() {
 #else
     videoPath.cd("../share/dde-introduction");
 #endif*/
-    videoPath.cd("../share/dde-introduction");
+    videoPath.cd("/usr/share/dde-introduction");
     return videoPath;
 }
 

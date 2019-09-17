@@ -47,7 +47,6 @@ MainWindow::MainWindow(DWidget *parent)
     , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
 {
     QString tt = m_settings->fileName();
-    tt.append(" ");
     initUI();
     initConnect();
 }
