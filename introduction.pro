@@ -89,17 +89,8 @@ host_mips64 | host_sw_64 | host_aarch64: {
     PKGCONFIG -= libdmr
 }
 
-deepin_professional {
-    DEFINES += PROFESSIONAL
-    videos.path = $$PREFIX/share/dde-introduction/
-    videos.files += resources/professional/*.mp4
-    videos.files += resources/professional/*.ass
-    INSTALLS += videos
-}
-
-deepin_desktop {
-    videos.path = $$PREFIX/share/dde-introduction/
-    videos.files += resources/desktop/*.mp4
-    videos.files += resources/desktop/*.ass
-    INSTALLS += videos
-}
+DEFINES += PROFESSIONAL
+videos.path = $$PREFIX/share/dde-introduction/
+videos.files += resources/professional/*.mp4
+videos.files += resources/professional/*.ass
+INSTALLS += videos
