@@ -16,10 +16,9 @@ About::About(QWidget *parent)
     setWidget(label);
 
     label->setMargin(20);
+    label->setOpenExternalLinks(true);
 
-    QString text;
-
-    text = QString("<br><p style=\"font-family: SourceHanSansSC-Normal;font-size: 12px;color: #303030;line-height: 18px;\">%1<a href=https://github.com>%2</a>%3</p>"
+    QString text = QString("<br><p style=\"font-family: SourceHanSansSC-Normal;font-size: 12px;color: #303030;line-height: 18px;\">%1<a href=https://github.com>%2</a>%3</p>"
                    "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%4"
                    "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%5</p>"
                    "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%6"

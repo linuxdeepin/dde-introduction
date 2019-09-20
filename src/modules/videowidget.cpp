@@ -49,7 +49,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     , m_pauseTimer(new QTimer(this))
 {
 
-    dmr::Backend::setDebugLevel(dmr::Backend::DebugLevel::Debug);
+    //dmr::Backend::setDebugLevel(dmr::Backend::DebugLevel::Debug);
     m_selectBtn->hide();
 
     m_leaveTimer->setSingleShot(true);
@@ -68,6 +68,8 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     m_hideAni->setTargetObject(m_hideEffect);
     m_hideAni->setStartValue(1.0f);
     m_hideAni->setEndValue(0.0f);
+    click = true;
+    first - true;
 
     connect(m_hideAni, &QPropertyAnimation::finished, this, [ = ] {
         m_control->hide();
@@ -103,13 +105,13 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     const QString &file = videoPath.path() + QString("/demo.mp4");
 
     connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
+    connect(m_control, &DImageButton::clicked, this, &VideoWidget::clickButton);
     connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
 
     m_video->engine().setBackendProperty("pause-on-start", autoPlay ? "false" : "true");
 
-    m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
-
     m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
+    m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
     m_video->engine().play();
     //m_video->play(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
 
@@ -204,6 +206,14 @@ void VideoWidget::updateControlButton()
             m_btnAni->setStartValue(m_control->pos());
             m_btnAni->setEndValue(p);
             m_btnAni->start();
+            if (!click)
+                onControlButtonClicked();
+            /*if (!first) {
+                if (!click)
+                    onControlButtonClicked();
+            } else {
+                first = false;
+            }*/
         }
         // update pause timer
         int elapsed = m_video->engine().duration() - m_video->engine().elapsed() + 1;
@@ -214,6 +224,11 @@ void VideoWidget::updateControlButton()
     default:
         break;
     }
+}
+
+void VideoWidget::clickButton()
+{
+    click = !click;
 }
 
 void VideoWidget::onControlButtonClicked()

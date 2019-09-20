@@ -47,6 +47,8 @@ protected:
     void leaveEvent(QEvent *) Q_DECL_OVERRIDE;
     void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
 
+private slots:
+    void clickButton();
 private:
     void updateClip();
 
@@ -59,6 +61,8 @@ private:
     QGraphicsOpacityEffect *m_hideEffect;
     QTimer *m_leaveTimer;
     QTimer *m_pauseTimer;
+    bool click;
+    bool first;
 };
 
 #endif

@@ -19,6 +19,7 @@ Support::Support(QWidget *parent)
     setWidget(label);
 
     label->setMargin(20);
+    label->setOpenExternalLinks(true);
 
     const QString &text = QString("<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%1</p>"
                                   "<div style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%2<a href=http://www.deepin.org/donate>%3</a>%4</div>"
