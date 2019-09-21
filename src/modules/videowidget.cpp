@@ -206,14 +206,6 @@ void VideoWidget::updateControlButton()
             m_btnAni->setStartValue(m_control->pos());
             m_btnAni->setEndValue(p);
             m_btnAni->start();
-            if (!click)
-                onControlButtonClicked();
-            /*if (!first) {
-                if (!click)
-                    onControlButtonClicked();
-            } else {
-                first = false;
-            }*/
         }
         // update pause timer
         int elapsed = m_video->engine().duration() - m_video->engine().elapsed() + 1;
