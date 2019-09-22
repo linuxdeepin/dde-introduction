@@ -194,8 +194,8 @@ void VideoWidget::updateControlButton()
         }
         // update pause timer
         int elapsed = m_video->engine().duration() - m_video->engine().elapsed() + 1;
-        if (elapsed != 0)
-            m_pauseTimer->setInterval(elapsed * 1000);
+        if (elapsed == 0)
+            m_pauseTimer->setInterval(1000);
     }
     break;
     default:
