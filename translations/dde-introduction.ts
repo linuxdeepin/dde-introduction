@@ -192,7 +192,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="304"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>您也可以通过XXXXX来XXXXX</translation>
+        <translation>您可以在任务栏右键菜单--“模式”中进行调节</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="315"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="328"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>您也可以通过XXXXX来XXXXX</translation>
+        <translation>您可以在控制中心个性化模块--图标主题中进行调节</translation>
     </message>
 </context>
 <context>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>您也可以通过XXXXX来XXXXX</translation>
+        <translation>您可以在任务栏右键菜单--“模式”中进行调节</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="158"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="172"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>您也可以通过XXXXX来XXXXX</translation>
+        <translation>您可以在控制中心个性化模块--图标主题中进行调节</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="181"/>
