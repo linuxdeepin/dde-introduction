@@ -39,7 +39,7 @@ WMModeModule::WMModeModule(QWidget *parent)
         onWMModeChanged(m_model->wmType());
     });
 
-    m_layout->setContentsMargins(20, 8, 20, 0);
+    m_layout->setContentsMargins(20, 80, 20, 0);
 
     m_layout->addStretch();
     m_layout->addWidget(m_fashionWidget);
