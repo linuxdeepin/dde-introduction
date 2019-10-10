@@ -57,7 +57,8 @@ NormalModule::NormalModule(DWidget *parent)
 
     DLabel *logo = new DLabel(this);
     QIcon::setThemeName("hicolor");
-    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
+    QIcon t_icon = QIcon::fromTheme("dde-introduction");
+    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", t_icon).pixmap(QSize(24, 24) * devicePixelRatioF()));
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(12, 8));
