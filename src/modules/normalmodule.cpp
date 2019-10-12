@@ -46,7 +46,7 @@ NormalModule::NormalModule(DWidget *parent)
 {
     //initTheme(0);
     QHBoxLayout *layout = new QHBoxLayout;
-    layout->setMargin(10);
+    layout->setMargin(0);
     layout->setSpacing(0);
     layout->setContentsMargins(0, 13, 20, 0);
 
