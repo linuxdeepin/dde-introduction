@@ -39,6 +39,11 @@ BaseWidget::BaseWidget(QWidget *parent)
     setLayout(m_layout);
 }
 
+void BaseWidget::setLayoutSpacing(int i)
+{
+    m_layout->setSpacing(i);
+}
+
 void BaseWidget::setPixmap(const QString &url) {
     setPixmap(QPixmap(DHiDPIHelper::loadNxPixmap(url)));
 }

@@ -37,17 +37,17 @@ IconModule::IconModule(QWidget *parent)
 
     m_scrollWidget->installEventFilter(this);
 
-    widgetLayout->setContentsMargins(0, 40, 0, 25);
+    widgetLayout->setContentsMargins(0, 30, 0, 25);
     widgetLayout->setMargin(0);
     widgetLayout->setSpacing(0);
     widgetLayout->addStretch();
     widgetLayout->addLayout(m_layout);
     widgetLayout->addStretch();
 
-    m_layout->setSpacing(0);
+    m_layout->setSpacing(10);
     m_layout->setMargin(0);
-    m_layout->setContentsMargins(0, 40, 0, 30);
-    m_layout->setVerticalSpacing(56);
+    m_layout->setContentsMargins(10, 8, 0, 15);
+    m_layout->setVerticalSpacing(40);
 
     m_selectBtn->setParent(m_scrollWidget);
 
@@ -126,20 +126,21 @@ void IconModule::updateBigIcon()
     setFixedSize(size);
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());
+    m_layout->setContentsMargins(10, 58, 0, 15);
 
     QMapIterator<IconStruct, BaseWidget*>map(m_iconList);
 
     while (map.hasNext()) {
         map.next();
         QPixmap pixmap(map.key().Pixmap);
-        pixmap = pixmap.scaled(QSize(320, 70) * devicePixelRatioF(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(QSize(320, 70) * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
     }
 }
 
 void IconModule::updateSmallIcon()
 {
-    const QSize size(580, 330);
+    const QSize size(580, 250);
     setFixedSize(size);
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());
@@ -149,8 +150,9 @@ void IconModule::updateSmallIcon()
     while (map.hasNext()) {
         map.next();
         QPixmap pixmap(map.key().Pixmap);
-        pixmap = pixmap.scaled(QSize(260, 52) * devicePixelRatioF(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(QSize(240, 60)/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
+        map.value()->setLayoutSpacing(10);
     }
 }
 

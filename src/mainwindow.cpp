@@ -140,6 +140,9 @@ void MainWindow::initUI()
         shadow_effect->setBlurRadius(4);
         m_nextBtn->setGraphicsEffect(shadow_effect);
 
+        DGuiApplicationHelper::ColorType type = DGuiApplicationHelper::instance()->paletteType();
+        slotTheme(type);
+
         DImageButton *closeBtn = new DImageButton(":/resources/close_round_normal.svg",
                                                   ":/resources/close_round_hover.svg",
                                                   ":/resources/close_round_press.svg",this);
@@ -193,7 +196,7 @@ void MainWindow::initUI()
         m_current->show();
 
         m_previousBtn->move(20, height() - m_previousBtn->height() - 20);
-        m_nextBtn->move(width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20);
+        m_nextBtn->move(/*width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20*/590, 404);
         m_doneBtn->move(m_nextBtn->pos());
         m_doneBtn->hide();
 
@@ -334,4 +337,26 @@ BaseModuleWidget *MainWindow::initIconModule()
     w->setDescribe(tr("You can change it in Control Center > Personalization > Theme > Icon Theme"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
+}
+
+void MainWindow::slotTheme(int type)
+{
+    if (type == 0) {
+        type = DGuiApplicationHelper::instance()->themeType();
+    }
+    if (type == 1) {
+        DPalette nextPa = m_nextBtn->palette();
+        nextPa.setColor(DPalette::ButtonText, QColor(65, 77, 104, 255));
+        nextPa.setColor(DPalette::Dark, QColor(230, 230, 230, 255));
+        nextPa.setColor(DPalette::Light, QColor(227, 227, 227, 255));
+        m_nextBtn->setPalette(nextPa);
+        m_doneBtn->setPalette(nextPa);
+    } else {
+        DPalette nextPa = m_nextBtn->palette();
+        nextPa.setColor(DPalette::ButtonText, QColor(192, 198, 212, 255));
+        nextPa.setColor(DPalette::Dark, QColor(72, 72, 72, 255));
+        nextPa.setColor(DPalette::Light, QColor(65, 65, 65, 255));
+        m_nextBtn->setPalette(nextPa);
+        m_doneBtn->setPalette(nextPa);
+    }
 }

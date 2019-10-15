@@ -31,7 +31,7 @@ public:
     explicit NavigationButton(QString text, DWidget *parent = nullptr);
 
 protected:
-    void paintEvent(QPaintEvent *event);
+    //void paintEvent(QPaintEvent *event);
 
 private:
     QString         m_text;
