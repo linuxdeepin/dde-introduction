@@ -35,6 +35,8 @@
 #include "videowidget.h"
 #endif
 
+DGUI_USE_NAMESPACE
+
 NormalModule::NormalModule(DWidget *parent)
     : DWidget(parent)
     , m_leftNavigationLayout(new QVBoxLayout)
