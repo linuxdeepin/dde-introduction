@@ -54,5 +54,6 @@
         <file>resources/effective_mode.png</file>
         <file>resources/fashion_mode.png</file>
         <file>resources/close_normal.svg</file>
+        <file>resources/previous_normal_dark.png</file>
     </qresource>
 </RCC>
