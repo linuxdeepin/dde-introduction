@@ -37,6 +37,7 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     });
 
     m_layout->setMargin(0);
+    m_layout->setSpacing(20);
     m_layout->setContentsMargins(0, 30, 0, 65);
 
     m_layout->addStretch();

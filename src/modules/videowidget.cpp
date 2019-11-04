@@ -46,6 +46,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     , m_hideAni(new QPropertyAnimation(this))
     , m_leaveTimer(new QTimer(this))
     , m_pauseTimer(new QTimer(this))
+    , m_label(new DLabel(this))
 {
     m_selectBtn->hide();
 
@@ -116,9 +117,10 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     });*/
 
     updateControlButton();
-
     setLayout(layout);
 
+    m_label->show();
+    m_label->raise();
     m_control->raise();
 }
 
@@ -126,6 +128,12 @@ void VideoWidget::updateBigIcon()
 {
     setFixedSize(720, 450);
     m_video->setFixedSize(700, 450);
+    if (m_label != NULL) {
+        QPixmap pixmap(":/resources/demo_Moment.jpg");
+        pixmap = pixmap.scaled(m_video->size() * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        m_label->setPixmap(pixmap);
+        m_label->setFixedSize(m_video->size());
+    }
 
     updateClip();
 }
@@ -135,6 +143,12 @@ void VideoWidget::updateSmallIcon()
     const QSize size(550, 346);
     setFixedSize(size);
     m_video->setFixedSize(size);
+    if (m_label != NULL) {
+        QPixmap pixmap(":/resources/demo_Moment.jpg");
+        pixmap = pixmap.scaled(m_video->size() * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        m_label->setPixmap(pixmap);
+        m_label->setFixedSize(m_video->size());
+    }
 
     updateClip();
 }
@@ -172,6 +186,10 @@ void VideoWidget::updateControlButton()
         m_btnAni->setStartValue(p);
         m_btnAni->setEndValue(QPoint(p.x(), height() - m_control->height() - 20));
         m_btnAni->start();
+        if (m_label != NULL) {
+            delete m_label;
+            m_label = NULL;
+        }
     } else {
         m_control->setNormalPic(":/resources/play_normal.svg");
         m_control->setHoverPic(":/resources/play_hover.svg");

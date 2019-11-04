@@ -47,13 +47,6 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     setLayout(m_layout);
 
     m_type = 1;
-
-    /*m_titleLbl->setStyleSheet("font-size: 20px;"
-                              "font-weight: medium;");*/
-
-    /*m_describeLbl->setStyleSheet("color: #848484;"
-                                 "font-size: 11px;"
-                                 "font-weight: 500;");*/
 }
 
 void BaseModuleWidget::setTitle(const QString &title)

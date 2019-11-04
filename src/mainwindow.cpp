@@ -151,7 +151,7 @@ void MainWindow::initUI()
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
     closeBtn->show();
 
-#ifndef QT_DEBUG
+#ifdef QT_DEBUG
     const bool isFirst = m_settings->value("IsFirst", true).toBool();
 
     if (isFirst) {
@@ -340,7 +340,9 @@ BaseModuleWidget *MainWindow::initIconModule()
     IconModule *module = new IconModule;
     module->updateBigIcon();
 
+    int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
+    w->setType(type);
     w->setTitle(tr("Please select icon theme"));
     w->setDescribe(tr("You can change it in Control Center > Personalization > Theme > Icon Theme"));
     w->setFixedSize(WINDOW_SIZE);
