@@ -58,6 +58,7 @@ private:
     QWidget *m_currentWidget;
     WMSwitcher *m_wmSwitcher;
     int m_index;
+    bool isx86;
 };
 
 #endif // NORMALMODULE_H

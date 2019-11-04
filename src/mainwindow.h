@@ -72,6 +72,7 @@ private:
   DWidget *m_fakerWidget;
   QSettings *m_settings;
   WMSwitcherInter *m_displayInter;
+  bool isx86;
 };
 
 #endif // MAINWINDOW_H

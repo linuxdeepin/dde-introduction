@@ -25,6 +25,7 @@ BorderWidget::BorderWidget(QWidget *parent)
     : DFrame(parent)
     , m_checked(false)
 {
+    setLineWidth(0);
 }
 
 void BorderWidget::setPixmap(const QPixmap &pixmap)

@@ -44,6 +44,7 @@ NormalModule::NormalModule(DWidget *parent)
     , m_wmSwitcher(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
     , m_index(-1)
 {
+    isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
     //initTheme(0);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
@@ -135,27 +136,30 @@ NormalModule::NormalModule(DWidget *parent)
 
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
-#ifndef DISABLE_VIDEO
-    // video button
+//#ifndef DISABLE_VIDEO
     NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
-    m_buttonMap[videoBtn]   = ++moduleCount;
-    videoBtn->setText(tr("Introduction"));
-    m_titleMap[videoBtn] = tr("Welcome");
-    m_buttonGrp->addButton(videoBtn);
-    VideoWidget *videoModule = new VideoWidget(false, this);
-    videoModule->hide();
-    m_modules[moduleCount] = videoModule;
-#else
-    NavigationButton *slideBtn = new NavigationButton;
-    m_buttonMap[slideBtn] = ++moduleCount;
-    slideBtn->setText(tr("Introduction"));
-    m_titleMap[slideBtn] = tr("Welcome");
-    m_buttonGrp->addButton(slideBtn);
-    PhotoSlide *slideModule = new PhotoSlide;
-    slideModule->hide();
-    slideModule->start(false, false, 2000);
-    m_modules[moduleCount] = slideModule;
-#endif
+    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
+    if (isx86) {
+        // video button
+        m_buttonMap[videoBtn]   = ++moduleCount;
+        videoBtn->setText(tr("Introduction"));
+        m_titleMap[videoBtn] = tr("Welcome");
+        m_buttonGrp->addButton(videoBtn);
+        VideoWidget *videoModule = new VideoWidget(false, this);
+        videoModule->hide();
+        m_modules[moduleCount] = videoModule;
+    } else {
+        //#else
+        m_buttonMap[slideBtn] = ++moduleCount;
+        slideBtn->setText(tr("Introduction"));
+        m_titleMap[slideBtn] = tr("Welcome");
+        m_buttonGrp->addButton(slideBtn);
+        PhotoSlide *slideModule = new PhotoSlide;
+        slideModule->hide();
+        slideModule->start(false, false, 2000);
+        m_modules[moduleCount] = slideModule;
+    }
+//#endif
 
     // desktop button
     NavigationButton *desktopBtn = new NavigationButton(tr("Desktop mode"));
@@ -227,13 +231,16 @@ NormalModule::NormalModule(DWidget *parent)
     about->hide();
     m_modules[moduleCount] = about;*/
 
-#ifndef DISABLE_VIDEO
-    videoBtn->setChecked(true);
-    titleLabel->setText(m_titleMap[videoBtn]);
-#else
-    slideBtn->setChecked(true);
-    titleLabel->setText(m_titleMap[slideBtn]);
-#endif
+//#ifndef DISABLE_VIDEO
+    if (isx86) {
+        videoBtn->setChecked(true);
+        titleLabel->setText(m_titleMap[videoBtn]);
+    } else {
+        //#else
+        slideBtn->setChecked(true);
+        titleLabel->setText(m_titleMap[slideBtn]);
+    }
+//#endif
 
     m_buttonGrp->setExclusive(true);
 
@@ -254,11 +261,13 @@ NormalModule::NormalModule(DWidget *parent)
         describe->setText(m_describeMap[btn]);
     });
 
-#ifndef DISABLE_VIDEO
-    updateCurrentWidget(m_buttonMap[videoBtn]);
-#else
-    updateCurrentWidget(m_buttonMap[slideBtn]);
-#endif
+//#ifndef DISABLE_VIDEO
+    if (isx86)
+        updateCurrentWidget(m_buttonMap[videoBtn]);
+//#else
+    else
+        updateCurrentWidget(m_buttonMap[slideBtn]);
+//#endif
 }
 
 bool NormalModule::eventFilter(QObject *watched, QEvent *event)

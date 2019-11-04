@@ -34,6 +34,7 @@ ModuleInterface::ModuleInterface(QWidget *parent)
 
     m_updateSelectBtnTimer->setInterval(0);
     m_updateSelectBtnTimer->setSingleShot(true);
+    setLineWidth(0);
 
     connect(m_updateSelectBtnTimer, &QTimer::timeout, this, &ModuleInterface::updateSelectBtnPos);
 }

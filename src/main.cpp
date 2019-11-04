@@ -82,9 +82,11 @@ void saveThemeTypeSetting(int type)
 
 int main(int argc, char *argv[])
 {
-#ifndef DISABLE_VIDEO
-    qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
-#endif
+    bool isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
+//#ifndef DISABLE_VIDEO
+    if (isx86)
+        qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
+//#endif
 
     //QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     DApplication::loadDXcbPlugin();
@@ -137,12 +139,14 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion(t_date));
 
 
-#ifndef DISABLE_VIDEO
-    setlocale(LC_NUMERIC, "C");
+//#ifndef DISABLE_VIDEO
+    if (isx86) {
+        setlocale(LC_NUMERIC, "C");
 
-    // 强制不使用嵌入mpv窗口的模式
-    dmr::CompositingManager::get().overrideCompositeMode(true);
-#endif
+        // 强制不使用嵌入mpv窗口的模式
+        dmr::CompositingManager::get().overrideCompositeMode(true);
+    }
+//#endif
 
     MainWindow w;
     DPlatformWindowHandle::enableDXcbForWindow(&w, true);

@@ -48,7 +48,8 @@ MainWindow::MainWindow(DWidget *parent)
     , m_settings(new QSettings("deepin", "dde-introduction"))
     , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
 {
-    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged,this,&MainWindow::slotTheme);
+    isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::slotTheme);
     initUI();
     initConnect();
 }
@@ -107,10 +108,17 @@ void MainWindow::initUI()
 {
     titlebar()->deleteLater();
     setFixedSize(WINDOW_SIZE);
-    /*DPalette pl = this->palette();
-    pl.setColor(DPalette::Light, Qt::transparent);
-    pl.setColor(DPalette::Dark, Qt::transparent);
-    titlebar()->setPalette(pl);*/
+    DPalette pl = this->palette();
+    pl.setColor(DPalette::Window, Qt::white);
+//    pl.setColor(DPalette::Dark, Qt::transparent);
+    this->setPalette(pl);
+    titlebar()->setPalette(pl);
+    titlebar()->setSeparatorVisible(false);
+    this->setForegroundRole(DPalette::Window);
+    this->setBackgroundRole(DPalette::Window);
+
+    titlebar()->setForegroundRole(DPalette::Window);
+    titlebar()->setBackgroundRole(DPalette::Window);
 
     DPlatformWindowHandle *handle = new DPlatformWindowHandle(this);
     handle->setBorderWidth(0);
@@ -155,16 +163,19 @@ void MainWindow::initUI()
     if (isFirst) {
         m_settings->setValue("IsFirst", false);
 
-#ifndef DISABLE_VIDEO
-        m_current = new VideoWidget(false, m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Transparent);
-#else
-        m_current = new PhotoSlide(m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Normal);
-        static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
-        m_nextBtn->setMode(NextButton::Normal);
-        m_index = 1;
-#endif
+//#ifndef DISABLE_VIDEO
+        if (isx86) {
+            m_current = new VideoWidget(false, m_fakerWidget);
+            m_nextBtn->setMode(NextButton::Transparent);
+        } else {
+            m_current = new PhotoSlide(m_fakerWidget);
+            m_nextBtn->setMode(NextButton::Normal);
+            static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+            m_nextBtn->setMode(NextButton::Normal);
+            m_index = 1;
+            //#endif
+        }
+//#else
         m_previousBtn->hide();
         m_nextBtn->show();
     } else {
@@ -173,21 +184,24 @@ void MainWindow::initUI()
         m_nextBtn->hide();
     }
 #else
-#ifndef DISABLE_VIDEO
-    m_current = new VideoWidget(false, m_fakerWidget);
-    //m_current = new PhotoSlide(m_fakerWidget);
-    m_nextBtn->setMode(NextButton::Normal);
-    //static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
-#else
-    //        m_current = initDesktopModeModule();
-    m_current = new PhotoSlide(m_fakerWidget);
-    m_nextBtn->setMode(NextButton::Normal);
-    static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+//#ifndef DISABLE_VIDEO
+    if (isx86) {
+        m_current = new VideoWidget(false, m_fakerWidget);
+        //m_current = new PhotoSlide(m_fakerWidget);
+        m_nextBtn->setMode(NextButton::Normal);
+        //static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
+    } else {
+        //#else
+        //        m_current = initDesktopModeModule();
+        m_current = new PhotoSlide(m_fakerWidget);
+        m_nextBtn->setMode(NextButton::Normal);
+        static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+    }
 #endif
     m_previousBtn->hide();
     m_nextBtn->show();
     m_nextBtn->setMode(NextButton::Transparent);
-#endif
+//#endif
 
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
@@ -234,15 +248,18 @@ void MainWindow::updateModule(const int index)
     m_last = m_current;
     switch (index) {
     case 1:
-#ifndef DISABLE_VIDEO
-        m_current = new VideoWidget(false, m_fakerWidget);
-        m_current->setFixedSize(WINDOW_SIZE);
-        m_nextBtn->setMode(NextButton::Transparent);
-#else
-        m_current = new PhotoSlide(m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Normal);
-        static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
-#endif
+//#ifndef DISABLE_VIDEO
+        if (isx86) {
+            m_current = new VideoWidget(false, m_fakerWidget);
+            m_current->setFixedSize(WINDOW_SIZE);
+            m_nextBtn->setMode(NextButton::Transparent);
+        } else {
+            //#else
+            m_current = new PhotoSlide(m_fakerWidget);
+            m_nextBtn->setMode(NextButton::Normal);
+            static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
+        }
+//#endif
         m_previousBtn->hide();
         break;
     case 2:
