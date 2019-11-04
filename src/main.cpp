@@ -86,6 +86,7 @@ int main(int argc, char *argv[])
     qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
 #endif
 
+    //QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     DApplication::loadDXcbPlugin();
     DApplication a(argc, argv);
 

@@ -105,12 +105,12 @@ void MainWindow::next()
 
 void MainWindow::initUI()
 {
-    setFixedSize(WINDOW_SIZE);
     titlebar()->deleteLater();
-    DPalette pl = this->palette();
+    setFixedSize(WINDOW_SIZE);
+    /*DPalette pl = this->palette();
     pl.setColor(DPalette::Light, Qt::transparent);
     pl.setColor(DPalette::Dark, Qt::transparent);
-    titlebar()->setPalette(pl);
+    titlebar()->setPalette(pl);*/
 
     DPlatformWindowHandle *handle = new DPlatformWindowHandle(this);
     handle->setBorderWidth(0);
@@ -121,7 +121,7 @@ void MainWindow::initUI()
     m_fakerWidget = new QWidget(this);
     m_fakerWidget->show();
     m_fakerWidget->setFixedSize(WINDOW_SIZE);
-    m_fakerWidget->setPalette(pl);
+    //m_fakerWidget->setPalette(pl);
 
     m_nextBtn = new NextButton(tr("Next"), this);
     m_doneBtn = new NextButton(tr("Done"), this);
@@ -206,8 +206,8 @@ void MainWindow::initUI()
 //    widget->setAutoFillBackground(true);
 //    widget->resize(QSize(32, 32)* devicePixelRatioF());
 //    DPalette palette;
-////        QPixmap pixmap(":/resources/introduction.svg");
-////    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF()));
+//        QPixmap pixmap(":/resources/introduction.svg");
+//    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF()));
 //    QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
 //    palette.setBrush(DPalette::Window, QBrush(pixmap));
 //    widget->setPalette(palette);
@@ -219,7 +219,7 @@ void MainWindow::initUI()
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(12, 8));
-    logo->show();
+    //logo->show();
 }
 
 void MainWindow::initConnect()
