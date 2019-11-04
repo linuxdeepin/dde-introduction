@@ -68,6 +68,13 @@ void NavigationButton::initButton()
     m_label->setForegroundRole(DPalette::WindowText);
 }
 
+QSize NavigationButton::setHint()
+{
+    QFontMetrics fm(this->font());
+    QRect rec = fm.boundingRect(m_label->text());
+    return rec.size();
+}
+
 /*void NavigationButton::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);

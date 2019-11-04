@@ -87,9 +87,6 @@ NormalModule::NormalModule(DWidget *parent)
     font.setFamily("SourceHanSansSC");
     font.setStyleName("Bold");
     titleLabel->setFont(font);
-    /*titleLabel->setStyleSheet("font-family: SourceHanSansSC-Bold;"
-                              "font-size: 17px;"
-                              "color: #001A2E;");*/
 
     DLabel *describe = new DLabel;
     QFont deFont;
@@ -230,7 +227,7 @@ NormalModule::NormalModule(DWidget *parent)
     //m_leftNavigationLayout->addStretch();
 
     for (QWidget *w : m_buttonGrp->buttons()) {
-        w->setFixedSize(110, 30);
+        w->setMinimumSize(110, 30);
         m_leftNavigationLayout->addWidget(w, 0, Qt::AlignHCenter | Qt::AlignVCenter);
         w->installEventFilter(this);
     }

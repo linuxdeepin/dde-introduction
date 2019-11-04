@@ -104,3 +104,10 @@ void BaseWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
     return;
 }
+
+void BaseWidget::resizeEvent(QResizeEvent *event)
+{
+    DFrame::resizeEvent(event);
+
+    emit sizeChanged();
+}

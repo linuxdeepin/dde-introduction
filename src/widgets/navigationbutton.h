@@ -35,6 +35,7 @@ public:
 
 protected:
     //void paintEvent(QPaintEvent *event);
+    QSize setHint();
 
 private:
     DLabel*          m_label;

@@ -127,10 +127,10 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 void VideoWidget::updateBigIcon()
 {
     setFixedSize(720, 450);
-    m_video->setFixedSize(700, 450);
+    m_video->setFixedSize(710, 460);
     if (m_label != NULL) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
-        pixmap = pixmap.scaled(m_video->size() * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(m_video->size()/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_label->setPixmap(pixmap);
         m_label->setFixedSize(m_video->size());
     }
@@ -145,7 +145,7 @@ void VideoWidget::updateSmallIcon()
     m_video->setFixedSize(size);
     if (m_label != NULL) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
-        pixmap = pixmap.scaled(m_video->size() * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(m_video->size()/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_label->setPixmap(pixmap);
         m_label->setFixedSize(m_video->size());
     }

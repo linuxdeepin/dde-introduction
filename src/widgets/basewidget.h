@@ -37,6 +37,7 @@ public:
 
 signals:
     void clicked();
+    void sizeChanged();
 
 public slots:
     void setBigPixmap(const QString &url);
@@ -51,6 +52,7 @@ public slots:
 protected:
     void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
     void mouseDoubleClickEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
 private:
     QVBoxLayout* m_layout;

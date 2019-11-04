@@ -35,6 +35,7 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     connect(m_efficientWidget, &BaseWidget::clicked, this, [=] {
         m_worker->setDesktopMode(Model::EfficientMode);
     });
+    connect(m_efficientWidget, &BaseWidget::sizeChanged, this, &DesktopModeModule::updateSelectBtnPos);
 
     m_layout->setMargin(0);
     m_layout->setSpacing(20);
