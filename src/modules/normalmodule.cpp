@@ -152,9 +152,9 @@ NormalModule::NormalModule(DWidget *parent)
     } else {
         //#else
         m_buttonMap[slideBtn] = ++moduleCount;
-        slideBtn->setText(tr("Introduction"));
+        //slideBtn->setText(tr("Introduction"));
         m_titleMap[slideBtn] = tr("Welcome");
-        //m_buttonGrp->addButton(slideBtn);
+        m_buttonGrp->addButton(slideBtn);
         PhotoSlide *slideModule = new PhotoSlide;
         slideModule->hide();
         slideModule->start(false, false, 2000);
@@ -213,14 +213,14 @@ NormalModule::NormalModule(DWidget *parent)
     m_modules[moduleCount] = iconModule;
 
     //support us
-    NavigationButton *supportBtn = new NavigationButton(tr("Support us"));
+    /*NavigationButton *supportBtn = new NavigationButton(tr("Support us"));
     m_buttonMap[supportBtn]   = ++moduleCount;
     //supportBtn->setText(tr("Support us"));
     m_titleMap[supportBtn] = tr("Support us");
     m_buttonGrp->addButton(supportBtn);
     Support *support = new Support(this);
     support->hide();
-    m_modules[moduleCount] = support;
+    m_modules[moduleCount] = support;*/
 
     // about button
     /*NavigationButton *aboutBtn = new NavigationButton(tr("About us"));
