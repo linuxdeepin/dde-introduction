@@ -98,3 +98,14 @@ void DesktopModeModule::setFirst(bool first)
 {
     isfirst = first;
 }
+
+void DesktopModeModule::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Left) {
+        if (m_model->desktopMode() == 0)
+            m_worker->setDesktopMode(Model::FashionMode);
+    } else if (event->key() == Qt::Key_Right) {
+        if (m_model->desktopMode() == 1)
+            m_worker->setDesktopMode(Model::EfficientMode);
+    }
+}

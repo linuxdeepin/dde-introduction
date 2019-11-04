@@ -25,6 +25,7 @@
 #include "../worker.h"
 
 #include <QFrame>
+#include <QKeyEvent>
 #include <QHBoxLayout>
 
 class DesktopModeModule : public ModuleInterface
@@ -38,6 +39,9 @@ public:
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
 
     void setFirst(bool first);
+protected:
+    void keyPressEvent(QKeyEvent *event);
+
 private slots:
     void onDesktopTypeChanged(Model::DesktopMode mode);
 

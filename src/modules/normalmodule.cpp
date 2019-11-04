@@ -251,8 +251,14 @@ NormalModule::NormalModule(DWidget *parent)
         updateCurrentWidget(m_buttonMap[slideBtn]);
         m_button = slideBtn;
     }
-//#endif
+    //#endif
 }
+
+/*void NormalModule::keyPressEvent(QKeyEvent *e)
+{
+    if (e->key() == Qt::Key_Left)
+        return;
+}*/
 
 bool NormalModule::eventFilter(QObject *watched, QEvent *event)
 {

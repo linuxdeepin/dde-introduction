@@ -42,6 +42,7 @@ public:
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
+    //void keyPressEvent(QKeyEvent *e);
 
 private:
     void updateCurrentWidget(const int index);

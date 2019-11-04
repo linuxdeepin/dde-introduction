@@ -36,6 +36,8 @@ WMModeModule::WMModeModule(QWidget *parent)
         m_worker->setWMMode(Model::WM_2D);
     });
 
+    connect(m_efficientWidget, &BaseWidget::sizeChanged, this, &WMModeModule::updateSelectBtnPos);
+
     QTimer::singleShot(100, this, [=] {
         onWMModeChanged(m_model->wmType());
     });
