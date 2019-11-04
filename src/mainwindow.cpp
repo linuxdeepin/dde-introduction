@@ -219,7 +219,7 @@ void MainWindow::initUI()
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(12, 8));
-    //logo->show();
+    logo->show();
 }
 
 void MainWindow::initConnect()

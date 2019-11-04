@@ -58,14 +58,14 @@ NormalModule::NormalModule(DWidget *parent)
     m_rightContentLayout->setMargin(0);
     m_rightContentLayout->setContentsMargins(0, 0, 0, 0);
 
-    DLabel *logo = new DLabel(this);
+    /*DLabel *logo = new DLabel(this);
 //    QIcon::setThemeName("hicolor");
 //    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
     QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(24, 24) * devicePixelRatioF());
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(12, 8));
-    logo->show();
+    logo->show();*/
 
     DWidget *content = new DWidget;
     content->setLayout(m_rightContentLayout);
