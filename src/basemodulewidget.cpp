@@ -59,8 +59,8 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
 void BaseModuleWidget::setTitle(const QString &title)
 {
     QFont font;
-    font.setFamily("SourceHanSansSC-Bold");
-    //font.setBold(true);
+    font.setFamily("SourceHanSansSC");
+    font.setStyleName("Bold");
     font.setPixelSize(17);
     m_titleLbl->setFont(font);
     if (m_type == 1) {
@@ -78,7 +78,8 @@ void BaseModuleWidget::setTitle(const QString &title)
 void BaseModuleWidget::setDescribe(const QString &describe)
 {
     QFont font;
-    font.setFamily("SourceHanSansSC-Normal");
+    font.setFamily("SourceHanSansSC");
+    font.setStyleName("Normal");
     font.setPixelSize(12);
     m_describeLbl->setFont(font);
     if (m_type == 1) {

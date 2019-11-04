@@ -31,7 +31,8 @@ BottomButton::BottomButton(DWidget *parent)
 void BottomButton::paintEvent(QPaintEvent *event)
 {
     QFont font;
-    font.setFamily("SourceHanSansSC-Medium");
+    font.setFamily("SourceHanSansSC");
+    font.setStyleName("Medium");
     font.setPixelSize(14);
 
     QFontMetrics fm(font);

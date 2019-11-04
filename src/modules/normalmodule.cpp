@@ -74,26 +74,6 @@ NormalModule::NormalModule(DWidget *parent)
     DWidget *leftWidget = new DWidget;
     leftWidget->setObjectName("LeftWidget");
     leftWidget->setLayout(m_leftNavigationLayout);
-    /*leftWidget->setStyleSheet("#LeftWidget {"
-                              "border: solid #eee;"
-                              "}"
-                              ""
-                              "#LeftWidget > QPushButton {"
-                              "margin: 0;"
-                              "text-align: left;"
-                              "padding: 0px 15px;"
-                              "border: none;"
-                              "}"
-                              ""
-                              "#LeftWidget > QPushButton:checked {"
-                              "background: #0081FF;"
-                              "box-shadow: 0 4px 6px 0 rgba(44,167,248,0.40);"
-                              "border-radius: 8px;"
-                              "border-radius: 8px;"
-                              "font-family: SourceHanSansSC-Medium;"
-                              "font-size: 14px;"
-                              "color: #FFFFFF;"
-                              "}");*/
 
     layout->addWidget(leftWidget);
     layout->addWidget(content);
@@ -104,7 +84,8 @@ NormalModule::NormalModule(DWidget *parent)
     DLabel *titleLabel = new DLabel;
     QFont font;
     font.setPixelSize(17);
-    font.setFamily("SourceHanSansSC-Bold");
+    font.setFamily("SourceHanSansSC");
+    font.setStyleName("Bold");
     titleLabel->setFont(font);
     /*titleLabel->setStyleSheet("font-family: SourceHanSansSC-Bold;"
                               "font-size: 17px;"
@@ -112,7 +93,8 @@ NormalModule::NormalModule(DWidget *parent)
 
     DLabel *describe = new DLabel;
     QFont deFont;
-    deFont.setFamily("SourceHanSansSC-Normal");
+    deFont.setFamily("SourceHanSansSC");
+    deFont.setStyleName("Normal");
     deFont.setPixelSize(12);
     describe->setFont(deFont);
 

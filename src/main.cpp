@@ -123,6 +123,7 @@ int main(int argc, char *argv[])
 
     // 应用已保存的主题设置
     DGuiApplicationHelper::instance()->setPaletteType(getThemeTypeSetting());
+    saveThemeTypeSetting(0);
 
     //监听当前应用主题切换事件
     QObject::connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::paletteTypeChanged,
