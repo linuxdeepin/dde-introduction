@@ -60,6 +60,32 @@ MainWindow::~MainWindow()
 
 }
 
+void MainWindow::keyPressEvent(QKeyEvent *e)
+{
+    if (m_settings->value("IsFirst", true).toBool()) {
+        switch (m_index) {
+        case 1:
+            static_cast<VideoWidget*>(m_current)->keyPressEvent(e);
+            break;
+        case 2:
+            static_cast<DesktopModeModule*>(static_cast<BaseModuleWidget*>(m_current)->getModel())->keyPressEvent(e);
+            break;
+        case 3:
+            static_cast<WMModeModule*>(static_cast<BaseModuleWidget*>(m_current)->getModel())->keyPressEvent(e);
+            break;
+        case 4:
+            static_cast<IconModule*>(static_cast<BaseModuleWidget*>(m_current)->getModel())->keyPressEvent(e);
+            break;
+        default:
+            break;
+        }
+        setFocus();
+    } else {
+        static_cast<NormalModule*>(m_current)->keyPressEvent(e);
+    }
+    QMainWindow::keyPressEvent(e);
+}
+
 void MainWindow::previous()
 {
     if (m_currentAni->state() == QPropertyAnimation::Running) {
@@ -120,7 +146,7 @@ void MainWindow::initUI()
     handle->setEnableSystemMove(true);
     handle->setEnableSystemResize(false);
 
-    m_fakerWidget = new QWidget(this);
+    m_fakerWidget = new DWidget(this);
     m_fakerWidget->show();
     m_fakerWidget->setFixedSize(WINDOW_SIZE);
     //m_fakerWidget->setPalette(pl);
@@ -220,7 +246,7 @@ void MainWindow::initUI()
 
 void MainWindow::initConnect()
 {
-    connect(m_previousBtn, &DPushButton::clicked, this, &MainWindow::previous);
+    connect(m_previousBtn, &DIconButton::clicked, this, &MainWindow::previous);
     connect(m_nextBtn, &NextButton::clicked, this, &MainWindow::next);
     connect(m_currentAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
     connect(m_doneBtn, &NextButton::clicked, qApp, &QCoreApplication::quit);
@@ -283,7 +309,7 @@ void MainWindow::updateModule(const int index)
         m_current = initIconModule();
         m_nextBtn->hide();
         m_doneBtn->show();
-        m_doneBtn->setFocus();
+        //m_doneBtn->setFocus();
         break;
     case 5:
 //        m_current = new NormalModule(m_fakerWidget);
@@ -355,11 +381,10 @@ void MainWindow::slotTheme()
     if (type == 1) {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(65, 77, 104, 255));
-        nextPa.setColor(DPalette::Dark, QColor(230, 230, 230, 255));
-        nextPa.setColor(DPalette::Light, QColor(227, 227, 227, 255));
+        //nextPa.setColor(DPalette::Dark, QColor(230, 230, 230, 255));
+        //nextPa.setColor(DPalette::Light, QColor(227, 227, 227, 255));
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
-        //m_previousBtn->setIcon(QIcon(":/resources/previous_normal.svg"));
         DPalette pl = this->palette();
         pl.setColor(DPalette::Window, Qt::white);
         this->setPalette(pl);
@@ -367,11 +392,10 @@ void MainWindow::slotTheme()
     } else {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(192, 198, 212, 255));
-        nextPa.setColor(DPalette::Dark, QColor(72, 72, 72, 255));
-        nextPa.setColor(DPalette::Light, QColor(65, 65, 65, 255));
+        //nextPa.setColor(DPalette::Dark, QColor(72, 72, 72, 255));
+        //nextPa.setColor(DPalette::Light, QColor(65, 65, 65, 255));
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
-        //m_previousBtn->setIcon(QIcon(":/resources/previous_normal_dark.png"));
         DPalette pl = this->palette();
         pl.setColor(DPalette::Window, QColor(40,40,40));
         this->setPalette(pl);

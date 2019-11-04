@@ -24,7 +24,6 @@
 #include "../model.h"
 #include "../worker.h"
 
-#include <QFrame>
 #include <QKeyEvent>
 #include <QHBoxLayout>
 
@@ -37,10 +36,9 @@ public:
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmallIcon() Q_DECL_OVERRIDE;
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
 
     void setFirst(bool first);
-protected:
-    void keyPressEvent(QKeyEvent *event);
 
 private slots:
     void onDesktopTypeChanged(Model::DesktopMode mode);

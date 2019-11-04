@@ -161,6 +161,28 @@ void IconModule::updateSelectBtnPos()
     currentIconChanged(m_model->currentIcon());
 }
 
+void IconModule::keyPressEvent(QKeyEvent *e)
+{
+    IconStruct icon = m_model->currentIcon();
+    int index = -1;
+    for (int i = 0; i < m_model->iconList().size(); ++i) {
+        if (m_model->iconList().at(i) == icon) {
+            index = i;
+            break;
+        }
+    }
+    if (e->key() == Qt::Key_Up || e->key() == Qt::Key_Left) {
+        if (index == 0)
+            return;
+        m_worker->setIcon(m_model->iconList().at(index - 1));
+    } else if (e->key() == Qt::Key_Down || e->key() == Qt::Key_Right) {
+        if (index == m_model->iconList().size() - 1)
+            return;
+        m_worker->setIcon(m_model->iconList().at(index + 1));
+    }
+    updateSelectBtnPos();
+}
+
 bool IconModule::eventFilter(QObject *watched, QEvent *event)
 {
     if (watched == m_scrollWidget && event->type() == QEvent::Resize) {

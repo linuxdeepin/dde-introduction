@@ -227,7 +227,7 @@ NormalModule::NormalModule(DWidget *parent)
     //m_leftNavigationLayout->addStretch();
 
     for (QWidget *w : m_buttonGrp->buttons()) {
-        w->setMinimumSize(110, 30);
+        w->setFixedSize(110, 30);
         m_leftNavigationLayout->addWidget(w, 0, Qt::AlignHCenter | Qt::AlignVCenter);
         w->installEventFilter(this);
     }
@@ -252,6 +252,27 @@ NormalModule::NormalModule(DWidget *parent)
         m_button = slideBtn;
     }
     //#endif
+}
+
+void NormalModule::keyPressEvent(QKeyEvent *e)
+{
+    QWidget *w = m_modules[m_index];
+    switch (m_index) {
+    case 1:
+        static_cast<VideoWidget*>(w)->keyPressEvent(e);
+        break;
+    case 2:
+        static_cast<DesktopModeModule*>(w)->keyPressEvent(e);
+        break;
+    case 3:
+        static_cast<WMModeModule*>(w)->keyPressEvent(e);
+        break;
+    case 4:
+        static_cast<IconModule*>(w)->keyPressEvent(e);
+        break;
+    default:
+        break;
+    };
 }
 
 /*void NormalModule::keyPressEvent(QKeyEvent *e)

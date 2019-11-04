@@ -106,10 +106,10 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    a.setApplicationDisplayName(QObject::tr("Introduction"));
     a.setOrganizationName("deepin");
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
     a.loadTranslator();
+    a.setApplicationDisplayName(QObject::tr("Introduction"));
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerService("com.deepin.introduction");

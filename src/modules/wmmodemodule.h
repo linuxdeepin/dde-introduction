@@ -24,8 +24,8 @@
 #include "../model.h"
 #include "../worker.h"
 
-#include <QFrame>
 #include <QHBoxLayout>
+#include <QKeyEvent>
 
 class WMModeModule : public ModuleInterface
 {
@@ -35,8 +35,8 @@ public:
 
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmallIcon() Q_DECL_OVERRIDE;
-
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
 
     void setFirst(bool first);
 private slots:

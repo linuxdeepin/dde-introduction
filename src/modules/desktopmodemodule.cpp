@@ -55,7 +55,7 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
 {
     m_selectBtn->raise();
 
-    QPoint p(8,8);
+    QPoint p(9,6);
     if (!isfirst)
         p.setY(-18);
     switch (mode) {
@@ -102,10 +102,10 @@ void DesktopModeModule::setFirst(bool first)
 void DesktopModeModule::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Left) {
-        if (m_model->desktopMode() == 0)
+        if (m_model->desktopMode() == 1)
             m_worker->setDesktopMode(Model::FashionMode);
     } else if (event->key() == Qt::Key_Right) {
-        if (m_model->desktopMode() == 1)
+        if (m_model->desktopMode() == 0)
             m_worker->setDesktopMode(Model::EfficientMode);
     }
 }

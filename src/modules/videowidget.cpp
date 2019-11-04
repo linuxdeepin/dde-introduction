@@ -140,7 +140,7 @@ void VideoWidget::updateBigIcon()
 
 void VideoWidget::updateSmallIcon()
 {
-    const QSize size(550, 346);
+    const QSize size(540, 340);
     setFixedSize(size);
     m_video->setFixedSize(size);
     if (m_label != NULL) {
@@ -256,6 +256,12 @@ void VideoWidget::resizeEvent(QResizeEvent *e)
     ModuleInterface::resizeEvent(e);
 
     m_control->move(rect().center() - m_control->rect().center());
+}
+
+void VideoWidget::keyPressEvent(QKeyEvent *e)
+{
+    if (e->key() == Qt::Key_Enter || e->key() == Qt::Key_Return)
+        onControlButtonClicked();
 }
 
 void VideoWidget::updateClip()

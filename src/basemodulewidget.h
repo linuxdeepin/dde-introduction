@@ -34,11 +34,13 @@ public:
     void setTitle(const QString &title);
     void setDescribe(const QString &describe);
     void setType(int type);
+    DWidget* getModel() {return m_content;};
 
 private:
     QVBoxLayout* m_layout;
     DLabel* m_titleLbl;
     DLabel* m_describeLbl;
+    DWidget* m_content;
     int m_type;
 };
 

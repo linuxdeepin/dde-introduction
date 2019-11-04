@@ -28,6 +28,7 @@
 #include <QGridLayout>
 #include <dflowlayout.h>
 #include <QScrollArea>
+#include <QKeyEvent>
 
 #include <DWidget>
 
@@ -42,6 +43,7 @@ public:
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmallIcon() Q_DECL_OVERRIDE;
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent*) Q_DECL_OVERRIDE;
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;

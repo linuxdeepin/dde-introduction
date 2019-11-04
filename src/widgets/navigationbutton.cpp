@@ -36,6 +36,7 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
     this->setFlat(true);
     this->setText("");
 
+    m_shadow = new QGraphicsDropShadowEffect(this);
     m_label = new DLabel(this);
     m_label->setText(text);
     QHBoxLayout *layout = new QHBoxLayout;
@@ -54,16 +55,27 @@ void NavigationButton::initButton()
     int type = DGuiApplicationHelper::instance()->themeType();
      DPalette pl = m_label->palette();
     if (type == 1) {
-        if (isChecked())
+        if (isChecked()) {
             pl.setColor(DPalette::WindowText,Qt::white);
-        else
+            m_shadow->setOffset(0, 4);
+            m_shadow->setColor(QColor(44,167,248,0.4 * 255));
+            m_shadow->setBlurRadius(6);
+        } else {
             pl.setColor(DPalette::WindowText,QColor(65,77,104));
+            m_shadow->setColor(QColor(0,42,175,0));
+        }
     } else {
-        if (isChecked())
+        if (isChecked()) {
             pl.setColor(DPalette::WindowText,Qt::white);
-        else
+            m_shadow->setOffset(0, 4);
+            m_shadow->setColor(QColor(0,42,175,0.4 * 255));
+            m_shadow->setBlurRadius(6);
+        } else {
             pl.setColor(DPalette::WindowText,QColor(192,198,212));
+            m_shadow->setColor(QColor(0,42,175,0));
+        }
     }
+    setGraphicsEffect(m_shadow);
     m_label->setPalette(pl);
     m_label->setForegroundRole(DPalette::WindowText);
 }

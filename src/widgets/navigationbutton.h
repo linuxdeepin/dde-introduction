@@ -19,6 +19,8 @@
 #ifndef NAVIGATIONBUTTON_H
 #define NAVIGATIONBUTTON_H
 
+#include <QGraphicsDropShadowEffect>
+
 #include <DPushButton>
 #include <DWidget>
 #include <DLabel>
@@ -39,6 +41,7 @@ protected:
 
 private:
     DLabel*          m_label;
+    QGraphicsDropShadowEffect* m_shadow;
 };
 
 #endif // NAVIGATIONBUTTON_H

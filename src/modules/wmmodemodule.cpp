@@ -74,7 +74,7 @@ void WMModeModule::onWMModeChanged(Model::WMType type)
 {
     m_selectBtn->raise();
 
-    QPoint p(8,8);
+    QPoint p(9,6);
     if (!m_first)
         p.setY(-18);
     switch (type) {
@@ -95,4 +95,15 @@ void WMModeModule::onWMModeChanged(Model::WMType type)
 void WMModeModule::setFirst(bool first)
 {
     m_first = first;
+}
+
+void WMModeModule::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Left) {
+        if (m_model->wmType() == 0)
+            m_worker->setWMMode(Model::WM_3D);
+    } else if (event->key() == Qt::Key_Right) {
+        if (m_model->wmType() == 1)
+            m_worker->setWMMode(Model::WM_2D);
+    }
 }

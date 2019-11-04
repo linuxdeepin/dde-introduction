@@ -26,6 +26,7 @@
 #include <QPushButton>
 #include <QSettings>
 #include <QWidget>
+#include <QKeyEvent>
 
 #include <DMainWindow>
 #include <DIconButton>
@@ -43,6 +44,9 @@ class MainWindow : public DMainWindow {
 public:
   MainWindow(DWidget *parent = 0);
   ~MainWindow();
+
+protected:
+  void keyPressEvent(QKeyEvent *);
 
 private slots:
   void previous();

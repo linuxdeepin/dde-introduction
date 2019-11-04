@@ -27,6 +27,7 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     , m_layout(new QVBoxLayout(this))
     , m_titleLbl(new DLabel(this))
     , m_describeLbl(new DLabel(this))
+    , m_content(content)
 {
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
@@ -39,7 +40,7 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_layout->addSpacing(20);
     m_layout->addWidget(m_titleLbl, 0, Qt::AlignHCenter);
     m_layout->addStretch();
-    m_layout->addWidget(content, 0, Qt::AlignCenter);
+    m_layout->addWidget(m_content, 0, Qt::AlignCenter);
     m_layout->addStretch();
     m_layout->addWidget(m_describeLbl, 0, Qt::AlignHCenter);
     m_layout->addSpacing(15);

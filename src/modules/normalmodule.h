@@ -22,6 +22,7 @@
 #include <QVBoxLayout>
 #include <QButtonGroup>
 #include <QPushButton>
+#include <QKeyEvent>
 #include <QMap>
 
 #include <DWidget>
@@ -39,6 +40,7 @@ class NormalModule : public DWidget
     Q_OBJECT
 public:
     explicit NormalModule(DWidget *parent = nullptr);
+    void keyPressEvent(QKeyEvent *);
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
