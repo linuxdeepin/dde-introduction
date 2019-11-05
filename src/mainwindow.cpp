@@ -202,18 +202,6 @@ void MainWindow::initUI()
 
     connect(closeBtn, &DImageButton::clicked, this, &MainWindow::close);
 
-//    QWidget *widget = new QWidget(this);
-//    widget->setAutoFillBackground(true);
-//    widget->resize(QSize(32, 32)* devicePixelRatioF());
-//    DPalette palette;
-//        QPixmap pixmap(":/resources/introduction.svg");
-//    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF()));
-//    QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
-//    palette.setBrush(DPalette::Window, QBrush(pixmap));
-//    widget->setPalette(palette);
-//    widget->move(QPoint(10, 8) * devicePixelRatioF());
-//    widget->show();
-
     DLabel *logo = new DLabel(this);
     QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
     pixmap.setDevicePixelRatio(devicePixelRatioF());

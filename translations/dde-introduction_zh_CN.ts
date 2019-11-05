@@ -163,42 +163,42 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.cpp" line="123"/>
+        <location filename="../src/mainwindow.cpp" line="126"/>
         <source>Next</source>
         <translation>下一步</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="124"/>
+        <location filename="../src/mainwindow.cpp" line="127"/>
         <source>Done</source>
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="316"/>
+        <location filename="../src/mainwindow.cpp" line="307"/>
         <source>Please select desktop mode</source>
         <translation>请选择桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="317"/>
+        <location filename="../src/mainwindow.cpp" line="308"/>
         <source>You can switch it in Mode by right clicking on dock</source>
         <translation>您可以在任务栏右键菜单--“模式”中进行调节</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="330"/>
+        <location filename="../src/mainwindow.cpp" line="321"/>
         <source>Please select the mode of operation</source>
         <translation>请选择运行模式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="331"/>
+        <location filename="../src/mainwindow.cpp" line="322"/>
         <source>If your computer configuration is not high, you are recommended to choose extreme speed mode</source>
         <translation>如果您的电脑配置不高,推荐您选择极速模式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="342"/>
+        <location filename="../src/mainwindow.cpp" line="333"/>
         <source>Please select icon theme</source>
         <translation>请选择图标主题</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="343"/>
+        <location filename="../src/mainwindow.cpp" line="334"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
         <translation>您可以在控制中心个性化模块--图标主题中进行调节</translation>
     </message>
@@ -206,54 +206,54 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="138"/>
         <location filename="../src/modules/normalmodule.cpp" line="140"/>
-        <location filename="../src/modules/normalmodule.cpp" line="149"/>
+        <location filename="../src/modules/normalmodule.cpp" line="142"/>
+        <location filename="../src/modules/normalmodule.cpp" line="151"/>
         <source>Introduction</source>
         <translation>介绍</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="159"/>
         <location filename="../src/modules/normalmodule.cpp" line="161"/>
+        <location filename="../src/modules/normalmodule.cpp" line="163"/>
         <source>Desktop mode</source>
         <translation>桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="163"/>
+        <location filename="../src/modules/normalmodule.cpp" line="165"/>
         <source>You can switch it in Mode by right clicking on dock</source>
         <translation>您可以在任务栏右键菜单--“模式”中进行调节</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="173"/>
         <location filename="../src/modules/normalmodule.cpp" line="175"/>
+        <location filename="../src/modules/normalmodule.cpp" line="177"/>
         <source>Operation mode</source>
         <translation>运行模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="176"/>
+        <location filename="../src/modules/normalmodule.cpp" line="190"/>
         <source>Please select the mode of operation</source>
         <translation>请选择运行模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="177"/>
+        <location filename="../src/modules/normalmodule.cpp" line="191"/>
         <source>If your computer configuration is not high, you are recommended to choose extreme speed mode</source>
         <translation>如果您的电脑配置不高,推荐您选择极速模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="186"/>
-        <location filename="../src/modules/normalmodule.cpp" line="188"/>
+        <location filename="../src/modules/normalmodule.cpp" line="200"/>
+        <location filename="../src/modules/normalmodule.cpp" line="202"/>
         <source>Icon theme</source>
         <translation>图标主题</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="190"/>
+        <location filename="../src/modules/normalmodule.cpp" line="204"/>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
         <translation>您可以在控制中心个性化模块--图标主题中进行调节</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="197"/>
-        <location filename="../src/modules/normalmodule.cpp" line="199"/>
-        <location filename="../src/modules/normalmodule.cpp" line="200"/>
+        <location filename="../src/modules/normalmodule.cpp" line="211"/>
+        <location filename="../src/modules/normalmodule.cpp" line="213"/>
+        <location filename="../src/modules/normalmodule.cpp" line="214"/>
         <source>Support us</source>
         <translation>支持我们</translation>
     </message>
@@ -262,18 +262,18 @@
         <translation type="vanished">关于深度</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="141"/>
-        <location filename="../src/modules/normalmodule.cpp" line="150"/>
+        <location filename="../src/modules/normalmodule.cpp" line="143"/>
+        <location filename="../src/modules/normalmodule.cpp" line="152"/>
         <source>Welcome</source>
         <translation>欢迎使用</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="162"/>
+        <location filename="../src/modules/normalmodule.cpp" line="164"/>
         <source>Please select desktop mode</source>
         <translation>请选择桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="189"/>
+        <location filename="../src/modules/normalmodule.cpp" line="203"/>
         <source>Please select icon theme</source>
         <translation>请选择图标主题</translation>
     </message>
@@ -333,44 +333,44 @@
         <translation type="vanished">■本地化翻译</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="62"/>
-        <location filename="../src/modules/support.cpp" line="83"/>
+        <location filename="../src/modules/support.cpp" line="63"/>
+        <location filename="../src/modules/support.cpp" line="84"/>
         <source>Localization</source>
         <translation>本地化翻译</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="63"/>
-        <location filename="../src/modules/support.cpp" line="84"/>
+        <location filename="../src/modules/support.cpp" line="64"/>
+        <location filename="../src/modules/support.cpp" line="85"/>
         <source>Deep OS supports 30 languages, but we want to do better! If you want to use your own national language perfectly in Deep Operating System, please join our </source>
         <translation>深度操作系统支持30种语言，但是我们还想做得更好！如果您希望完美的在深度操作系统中使用自己民族的语言，请参与我们的</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="64"/>
-        <location filename="../src/modules/support.cpp" line="85"/>
+        <location filename="../src/modules/support.cpp" line="65"/>
+        <location filename="../src/modules/support.cpp" line="86"/>
         <source>transfixer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="65"/>
-        <location filename="../src/modules/support.cpp" line="86"/>
+        <location filename="../src/modules/support.cpp" line="66"/>
+        <location filename="../src/modules/support.cpp" line="87"/>
         <source> community to help us!</source>
         <translation>社区来帮助我们！</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="66"/>
-        <location filename="../src/modules/support.cpp" line="87"/>
+        <location filename="../src/modules/support.cpp" line="67"/>
+        <location filename="../src/modules/support.cpp" line="88"/>
         <source>Donate or buy souvenirs</source>
-        <translation></translation>
+        <translation>捐助或者购买纪念品</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="69"/>
-        <location filename="../src/modules/support.cpp" line="90"/>
+        <location filename="../src/modules/support.cpp" line="70"/>
+        <location filename="../src/modules/support.cpp" line="91"/>
         <source>Become our charging user</source>
-        <translation></translation>
+        <translation>成为我们的收费用户</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="72"/>
-        <location filename="../src/modules/support.cpp" line="93"/>
+        <location filename="../src/modules/support.cpp" line="73"/>
+        <location filename="../src/modules/support.cpp" line="94"/>
         <source>■</source>
         <translation></translation>
     </message>
@@ -379,14 +379,14 @@
         <translation type="vanished">■捐助或者购买纪念品</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="67"/>
-        <location filename="../src/modules/support.cpp" line="88"/>
+        <location filename="../src/modules/support.cpp" line="68"/>
+        <location filename="../src/modules/support.cpp" line="89"/>
         <source>Over the past decade, we have been moving forward and striving to provide the best desktop operating system experience. Welcome to buy our souvenirs. It not only makes you more personalized, but also helps us to make depth better!</source>
         <translation>十年来，我们不断前进，努力提供最好的桌面操作系统体验欢迎购买我们的纪念商品，它不但让你更有个性，而且能够帮助到我们把深度做得更好！</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="68"/>
-        <location filename="../src/modules/support.cpp" line="89"/>
+        <location filename="../src/modules/support.cpp" line="69"/>
+        <location filename="../src/modules/support.cpp" line="90"/>
         <source>www.deepin.org/donate</source>
         <translation></translation>
     </message>
@@ -395,14 +395,14 @@
         <translation type="vanished">■成为我们的收费用户</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="70"/>
-        <location filename="../src/modules/support.cpp" line="91"/>
+        <location filename="../src/modules/support.cpp" line="71"/>
+        <location filename="../src/modules/support.cpp" line="92"/>
         <source>You can also become an individual payer to support us and gain more rights and interests at </source>
         <translation>您也可以成为个人付费用户来支持我们，并且获得更多的权益</translation>
     </message>
     <message>
-        <location filename="../src/modules/support.cpp" line="71"/>
-        <location filename="../src/modules/support.cpp" line="92"/>
+        <location filename="../src/modules/support.cpp" line="72"/>
+        <location filename="../src/modules/support.cpp" line="93"/>
         <source>www.deepin.org</source>
         <translation></translation>
     </message>
