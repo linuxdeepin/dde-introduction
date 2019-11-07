@@ -20,7 +20,10 @@
 
 #include <QPainter>
 #include <QGraphicsDropShadowEffect>
+#include <QHBoxLayout>
+
 #include <DPalette>
+#include <DLabel>
 
 DWIDGET_USE_NAMESPACE
 DGUI_USE_NAMESPACE
@@ -32,6 +35,14 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
     setFocusPolicy(Qt::NoFocus);
     this->setFlat(true);
     m_text = text;
+
+    /*DLabel *label = new DLabel(this);
+    label->setText(m_text);
+    QHBoxLayout *layout = new QHBoxLayout;
+    layout->setMargin(0);
+    layoutlayoutlayoutlayout->setContentsMargins();
+    layout->addWidget(label);
+    setLayout(layout);*/
 }
 
 /*void NavigationButton::paintEvent(QPaintEvent *event)

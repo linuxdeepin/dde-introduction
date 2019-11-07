@@ -39,7 +39,7 @@ void PhotoSlide::updateBigIcon()
     container_label_->setFixedSize(size);
 
     QStringList list;
-    for (int i = 1; i != 8; i++) {
+    for (int i = 1; i != 9; i++) {
         list << QString(":/resources/slide_big/0%1.jpg").arg(i);
     }
 
@@ -58,7 +58,7 @@ void PhotoSlide::updateSmallIcon()
     container_label_->setFixedSize(size);
 
     QStringList list;
-    for (int i = 1; i != 8; i++) {
+    for (int i = 1; i != 9; i++) {
         list << QString(":/resources/slide_small/0%1.jpg").arg(i);
     }
 
