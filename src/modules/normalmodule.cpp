@@ -136,7 +136,7 @@ NormalModule::NormalModule(DWidget *parent)
         m_buttonMap[slideBtn] = ++moduleCount;
         //slideBtn->setText(tr("Introduction"));
         m_titleMap[slideBtn] = tr("Welcome");
-        m_buttonGrp->addButton(slideBtn);
+        //m_buttonGrp->addButton(slideBtn);
         PhotoSlide *slideModule = new PhotoSlide;
         slideModule->hide();
         slideModule->start(false, false, 2000);
