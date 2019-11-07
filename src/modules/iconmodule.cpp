@@ -133,7 +133,7 @@ void IconModule::updateBigIcon()
     while (map.hasNext()) {
         map.next();
         QPixmap pixmap(map.key().Pixmap);
-        pixmap = pixmap.scaled(QSize(320, 70) * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(QSize(320, 70) * devicePixelRatioF(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
     }
 }
@@ -150,7 +150,7 @@ void IconModule::updateSmallIcon()
     while (map.hasNext()) {
         map.next();
         QPixmap pixmap(map.key().Pixmap);
-        pixmap = pixmap.scaled(QSize(240, 60) * devicePixelRatioF(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        pixmap = pixmap.scaled(QSize(240, 60) * devicePixelRatioF(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
         map.value()->setLayoutSpacing(10);
     }
