@@ -116,6 +116,7 @@ void MainWindow::initUI()
     titlebar()->setSeparatorVisible(false);
     this->setForegroundRole(DPalette::Window);
     this->setBackgroundRole(DPalette::Window);
+    setTitlebarShadowEnabled(false);
 
     titlebar()->setForegroundRole(DPalette::Window);
     titlebar()->setBackgroundRole(DPalette::Window);
@@ -197,11 +198,11 @@ void MainWindow::initUI()
         m_nextBtn->setMode(NextButton::Normal);
         static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
     }
-#endif
+//#endif
     m_previousBtn->hide();
     m_nextBtn->show();
     m_nextBtn->setMode(NextButton::Transparent);
-//#endif
+#endif
 
     m_current->setFixedSize(WINDOW_SIZE);
     m_current->show();
