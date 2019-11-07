@@ -51,6 +51,7 @@ MainWindow::MainWindow(DWidget *parent)
     isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::slotTheme);
     initUI();
+    slotTheme();
     initConnect();
 }
 
@@ -106,20 +107,12 @@ void MainWindow::next()
 
 void MainWindow::initUI()
 {
-    titlebar()->deleteLater();
+    //titlebar()->deleteLater();
+    this->setWindowFlags(Qt::CustomizeWindowHint);
+    titlebar()->setMenuVisible(false);
     setFixedSize(WINDOW_SIZE);
-    DPalette pl = this->palette();
-    pl.setColor(DPalette::Window, Qt::white);
-//    pl.setColor(DPalette::Dark, Qt::transparent);
-    this->setPalette(pl);
-    titlebar()->setPalette(pl);
-    titlebar()->setSeparatorVisible(false);
-    this->setForegroundRole(DPalette::Window);
-    this->setBackgroundRole(DPalette::Window);
-    setTitlebarShadowEnabled(false);
 
-    titlebar()->setForegroundRole(DPalette::Window);
-    titlebar()->setBackgroundRole(DPalette::Window);
+    setTitlebarShadowEnabled(false);
 
     DPlatformWindowHandle *handle = new DPlatformWindowHandle(this);
     handle->setBorderWidth(0);
@@ -365,6 +358,10 @@ void MainWindow::slotTheme()
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
         //m_previousBtn->setIcon(QIcon(":/resources/previous_normal.svg"));
+        DPalette pl = this->palette();
+        pl.setColor(DPalette::Window, Qt::white);
+        this->setPalette(pl);
+        //titlebar()->setPalette(pl);
     } else {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(192, 198, 212, 255));
@@ -373,5 +370,15 @@ void MainWindow::slotTheme()
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
         //m_previousBtn->setIcon(QIcon(":/resources/previous_normal_dark.png"));
+        DPalette pl = this->palette();
+        pl.setColor(DPalette::Window, QColor(40,40,40));
+        this->setPalette(pl);
+        //titlebar()->setPalette(pl);
     }
+    //titlebar()->setSeparatorVisible(false);
+    this->setForegroundRole(DPalette::Window);
+    this->setBackgroundRole(DPalette::Window);
+
+    //titlebar()->setForegroundRole(DPalette::Window);
+    //titlebar()->setBackgroundRole(DPalette::Window);
 }
