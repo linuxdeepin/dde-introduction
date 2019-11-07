@@ -123,6 +123,7 @@ void MainWindow::initUI()
     titlebar()->setSeparatorVisible(false);
     this->setForegroundRole(DPalette::Window);
     this->setBackgroundRole(DPalette::Window);
+    setTitlebarShadowEnabled(false);
 
     titlebar()->setForegroundRole(DPalette::Window);
     titlebar()->setBackgroundRole(DPalette::Window);
