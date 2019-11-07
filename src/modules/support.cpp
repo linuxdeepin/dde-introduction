@@ -1,15 +1,12 @@
 #include "support.h"
 
-#include <DLabel>
 #include <DFrame>
-
-DWIDGET_USE_NAMESPACE
 
 Support::Support(QWidget *parent)
     : QScrollArea(parent)
 {
-    DLabel *label = new DLabel;
-    label->setWordWrap(true);
+    m_label = new DLabel;
+    m_label->setWordWrap(true);
     setWidgetResizable(true);
     setFocusPolicy(Qt::NoFocus);
     setFrameStyle(DFrame::NoFrame);
@@ -17,10 +14,10 @@ Support::Support(QWidget *parent)
     setContentsMargins(0, 0, 0, 0);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    setWidget(label);
+    setWidget(m_label);
 
-    label->setMargin(20);
-    label->setOpenExternalLinks(true);
+    m_label->setMargin(20);
+    m_label->setOpenExternalLinks(true);
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::paletteTypeChanged, this, &Support::initTheme);
     int type = DGuiApplicationHelper::instance()->paletteType();
 
@@ -42,7 +39,6 @@ Support::Support(QWidget *parent)
                           .arg(tr("www.deepin.org"));*/
 
     initTheme(type);
-    label->setText(m_text);
 }
 
 void Support::initTheme(int type)
@@ -93,4 +89,5 @@ void Support::initTheme(int type)
                  .arg(tr("www.deepin.org"))
                  .arg(tr("■"));
     }
+    m_label->setText(m_text);
 }
