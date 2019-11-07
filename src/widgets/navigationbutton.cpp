@@ -23,7 +23,7 @@
 #include <QHBoxLayout>
 
 #include <DPalette>
-#include <DLabel>
+#include <DGuiApplicationHelper>
 
 DWIDGET_USE_NAMESPACE
 DGUI_USE_NAMESPACE
@@ -34,15 +34,38 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
     setCheckable(true);
     setFocusPolicy(Qt::NoFocus);
     this->setFlat(true);
-    m_text = text;
+    this->setText("");
 
-    /*DLabel *label = new DLabel(this);
-    label->setText(m_text);
+    m_label = new DLabel(this);
+    m_label->setText(text);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
-    layoutlayoutlayoutlayout->setContentsMargins();
-    layout->addWidget(label);
-    setLayout(layout);*/
+    layout->setContentsMargins(10,0,0,0);
+    layout->addWidget(m_label);
+    setLayout(layout);
+    initButton();
+
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &NavigationButton::initButton);
+    connect(this, &NavigationButton::clicked, this, &NavigationButton::initButton);
+}
+
+void NavigationButton::initButton()
+{
+    int type = DGuiApplicationHelper::instance()->themeType();
+     DPalette pl = m_label->palette();
+    if (type == 1) {
+        if (isChecked())
+            pl.setColor(DPalette::WindowText,Qt::white);
+        else
+            pl.setColor(DPalette::WindowText,QColor(65,77,104));
+    } else {
+        if (isChecked())
+            pl.setColor(DPalette::WindowText,Qt::white);
+        else
+            pl.setColor(DPalette::WindowText,QColor(192,198,212));
+    }
+    m_label->setPalette(pl);
+    m_label->setForegroundRole(DPalette::WindowText);
 }
 
 /*void NavigationButton::paintEvent(QPaintEvent *event)

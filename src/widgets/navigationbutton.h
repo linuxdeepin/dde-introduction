@@ -21,6 +21,7 @@
 
 #include <DPushButton>
 #include <DWidget>
+#include <DLabel>
 
 DWIDGET_USE_NAMESPACE
 
@@ -30,11 +31,13 @@ class NavigationButton : public DPushButton
 public:
     explicit NavigationButton(QString text, DWidget *parent = nullptr);
 
+    void initButton();
+
 protected:
     //void paintEvent(QPaintEvent *event);
 
 private:
-    QString         m_text;
+    DLabel*          m_label;
 };
 
 #endif // NAVIGATIONBUTTON_H

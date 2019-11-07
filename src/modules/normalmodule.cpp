@@ -142,7 +142,7 @@ NormalModule::NormalModule(DWidget *parent)
     if (isx86) {
         // video button
         m_buttonMap[videoBtn]   = ++moduleCount;
-        videoBtn->setText(tr("Introduction"));
+        //videoBtn->setText(tr("Introduction"));
         m_titleMap[videoBtn] = tr("Welcome");
         m_buttonGrp->addButton(videoBtn);
         VideoWidget *videoModule = new VideoWidget(false, this);
@@ -153,7 +153,7 @@ NormalModule::NormalModule(DWidget *parent)
         m_buttonMap[slideBtn] = ++moduleCount;
         slideBtn->setText(tr("Introduction"));
         m_titleMap[slideBtn] = tr("Welcome");
-        m_buttonGrp->addButton(slideBtn);
+        //m_buttonGrp->addButton(slideBtn);
         PhotoSlide *slideModule = new PhotoSlide;
         slideModule->hide();
         slideModule->start(false, false, 2000);
@@ -164,7 +164,7 @@ NormalModule::NormalModule(DWidget *parent)
     // desktop button
     NavigationButton *desktopBtn = new NavigationButton(tr("Desktop mode"));
     m_buttonMap[desktopBtn] = ++moduleCount;
-    desktopBtn->setText(tr("Desktop mode"));
+    //desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Please select desktop mode");
     m_describeMap[desktopBtn] = tr("You can switch it in Mode by right clicking on dock");
     m_buttonGrp->addButton(desktopBtn);
@@ -178,7 +178,7 @@ NormalModule::NormalModule(DWidget *parent)
     if (allow_switch_wm) {
         wmBtn = new NavigationButton(tr("Operation mode"));
         m_buttonMap[wmBtn]      = ++moduleCount;
-        wmBtn->setText(tr("Operation mode"));
+        //wmBtn->setText(tr("Operation mode"));
         QFont font = wmBtn->font();
         QFontMetrics fm(font);
         QRect rec = fm.boundingRect(wmBtn->text());
@@ -203,7 +203,7 @@ NormalModule::NormalModule(DWidget *parent)
     // icon button
     NavigationButton *iconBtn = new NavigationButton(tr("Icon theme"));
     m_buttonMap[iconBtn]    = ++moduleCount;
-    iconBtn->setText(tr("Icon theme"));
+    //iconBtn->setText(tr("Icon theme"));
     m_titleMap[iconBtn] = tr("Please select icon theme");
     m_describeMap[iconBtn] = tr("You can change it in Control Center > Personalization > Theme > Icon Theme");
     m_buttonGrp->addButton(iconBtn);
@@ -214,7 +214,7 @@ NormalModule::NormalModule(DWidget *parent)
     //support us
     NavigationButton *supportBtn = new NavigationButton(tr("Support us"));
     m_buttonMap[supportBtn]   = ++moduleCount;
-    supportBtn->setText(tr("Support us"));
+    //supportBtn->setText(tr("Support us"));
     m_titleMap[supportBtn] = tr("Support us");
     m_buttonGrp->addButton(supportBtn);
     Support *support = new Support(this);
@@ -256,17 +256,21 @@ NormalModule::NormalModule(DWidget *parent)
     //m_leftNavigationLayout->addStretch();
 
     connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [ = ] (QAbstractButton * btn) {
+        updataButton(btn);
         updateCurrentWidget(m_buttonMap[btn]);
         titleLabel->setText(m_titleMap[btn]);
         describe->setText(m_describeMap[btn]);
     });
 
 //#ifndef DISABLE_VIDEO
-    if (isx86)
+    if (isx86) {
         updateCurrentWidget(m_buttonMap[videoBtn]);
+        m_button = videoBtn;
+    } else {
 //#else
-    else
         updateCurrentWidget(m_buttonMap[slideBtn]);
+        m_button = slideBtn;
+    }
 //#endif
 }
 
@@ -313,6 +317,12 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget->setFixedSize(549, 343);
         m_currentWidget->show();
     });
+}
+
+void NormalModule::updataButton(QAbstractButton *btn)
+{
+    m_button->initButton();
+    m_button = dynamic_cast<NavigationButton*>(btn);
 }
 
 void NormalModule::initTheme(int type)

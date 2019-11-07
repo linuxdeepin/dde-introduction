@@ -33,6 +33,7 @@ using WMSwitcher = com::deepin::WMSwitcher;
 DWIDGET_USE_NAMESPACE
 DGUI_USE_NAMESPACE
 class ModuleInterface;
+class NavigationButton;
 class NormalModule : public DWidget
 {
     Q_OBJECT
@@ -44,6 +45,7 @@ protected:
 
 private:
     void updateCurrentWidget(const int index);
+    void updataButton(QAbstractButton *btn);
 private slots:
     void initTheme(int type);
 
@@ -55,6 +57,7 @@ private:
     QMap<QAbstractButton*, QString> m_titleMap;
     QMap<QAbstractButton*, QString> m_describeMap;
     QMap<int, QWidget*> m_modules;
+    NavigationButton *m_button;
     QWidget *m_currentWidget;
     WMSwitcher *m_wmSwitcher;
     int m_index;
