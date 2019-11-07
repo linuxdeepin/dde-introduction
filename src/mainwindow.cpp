@@ -111,23 +111,8 @@ void MainWindow::initUI()
     this->setWindowFlags(Qt::CustomizeWindowHint);
     titlebar()->setMenuVisible(false);
     setFixedSize(WINDOW_SIZE);
-<<<<<<< HEAD
 
     setTitlebarShadowEnabled(false);
-=======
-    DPalette pl = this->palette();
-    pl.setColor(DPalette::Window, Qt::white);
-//    pl.setColor(DPalette::Dark, Qt::transparent);
-    this->setPalette(pl);
-    titlebar()->setPalette(pl);
-    titlebar()->setSeparatorVisible(false);
-    this->setForegroundRole(DPalette::Window);
-    this->setBackgroundRole(DPalette::Window);
-    setTitlebarShadowEnabled(false);
-
-    titlebar()->setForegroundRole(DPalette::Window);
-    titlebar()->setBackgroundRole(DPalette::Window);
->>>>>>> fix:fix dframe border
 
     DPlatformWindowHandle *handle = new DPlatformWindowHandle(this);
     handle->setBorderWidth(0);
