@@ -99,7 +99,7 @@ NormalModule::NormalModule(DWidget *parent)
     layout->addWidget(content);
 
     // bottom navigation
-    BottomNavigation *bottomNavigation = new BottomNavigation;
+    //BottomNavigation *bottomNavigation = new BottomNavigation;
 
     DLabel *titleLabel = new DLabel;
     QFont font;
@@ -127,7 +127,8 @@ NormalModule::NormalModule(DWidget *parent)
     mainLayout->addWidget(titleLabel, 0, Qt::AlignCenter);
     mainLayout->addLayout(layout);
     mainLayout->addWidget(describe, 0, Qt::AlignCenter);
-    mainLayout->addWidget(bottomNavigation);
+    //mainLayout->addWidget(bottomNavigation);
+    mainLayout->setContentsMargins(0,0,0,20);
 
     setLayout(mainLayout);
 
