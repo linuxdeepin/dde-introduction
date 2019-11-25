@@ -166,6 +166,7 @@ void MainWindow::initUI()
     shadow_effect->setColor(QColor(0, 0, 0, 0.05 * 255));
     shadow_effect->setBlurRadius(4);
     m_nextBtn->setGraphicsEffect(shadow_effect);
+    m_previousBtn->setGraphicsEffect(shadow_effect);
     slotTheme();
 
     DImageButton *closeBtn = new DImageButton(":/resources/close_normal.svg",
