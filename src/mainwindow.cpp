@@ -37,7 +37,7 @@
 
 DWIDGET_USE_NAMESPACE
 
-static const QSize WINDOW_SIZE { 700, 450 };
+static const QSize WINDOW_SIZE { 699, 449 };
 MainWindow::MainWindow(DWidget *parent)
     : DMainWindow(parent)
     , m_index(1)
@@ -149,7 +149,6 @@ void MainWindow::initUI()
     m_fakerWidget = new DWidget(this);
     m_fakerWidget->show();
     m_fakerWidget->setFixedSize(WINDOW_SIZE);
-    //m_fakerWidget->setPalette(pl);
 
     m_nextBtn = new NextButton(tr("Next"), this);
     m_doneBtn = new NextButton(tr("Done"), this);
@@ -225,7 +224,9 @@ void MainWindow::initUI()
     m_nextBtn->setMode(NextButton::Transparent);
 #endif
 
-    m_current->setFixedSize(WINDOW_SIZE);
+    //m_current->setFixedSize(704, 454);
+    m_current->move(-1,-1);
+    m_current->setFixedSize(QSize(700,450));
     m_current->show();
 
     m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/10, 404);

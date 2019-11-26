@@ -88,6 +88,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
+    layout->setContentsMargins(0,0,0,0);
 
     layout->addWidget(m_video, 0, Qt::AlignCenter);
 
@@ -129,8 +130,8 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 
 void VideoWidget::updateBigIcon()
 {
-    setFixedSize(720, 450);
-    m_video->setFixedSize(710, 460);
+    setFixedSize(700, 450);
+    m_video->setFixedSize(this->size());
     if (m_background != NULL) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
         pixmap = pixmap.scaled(m_video->size()/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
@@ -282,6 +283,9 @@ void VideoWidget::keyPressEvent(QKeyEvent *e)
 void VideoWidget::updateClip()
 {
     QPainterPath path;
-    path.addRoundedRect(rect(), 5, 5);
+    QRectF rectF;
+    rectF.setTopLeft(rect().topLeft() - QPointF(2,2));
+    rectF.setBottomRight(rect().bottomRight());
+    path.addRoundedRect(rectF, 5, 5);
     m_clip->setClipPath(path);
 }

@@ -22,7 +22,7 @@ void CoverPhoto::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
-    QRect pixRect(QPoint(0, 0), m_pixmap.size() / devicePixelRatioF());
+    QRect pixRect(QPoint(0, 0), m_pixmap.size()/* * devicePixelRatioF()*/);
 
     // draw background
     QPainterPath contentPath;
