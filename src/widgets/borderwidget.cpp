@@ -53,7 +53,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
 
     // draw background
     QPainterPath contentPath;
-    contentPath.addRoundedRect(pixRect, 5, 5);
+    contentPath.addRoundedRect(pixRect, 10, 10);
     painter.setClipPath(contentPath);
     painter.drawPixmap(pixRect, m_pixmap);
 
@@ -64,7 +64,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
 
     // draw border
     QPainterPath path;
-    path.addRoundedRect(rect().adjusted(2, 2, -2, -2), 5, 5);
+    path.addRoundedRect(rect().adjusted(2, 2, -2, -2), 10, 10);
     painter.setClipRect(QRect(), Qt::NoClip);
     if (m_checked) {
         QPen pen(QColor("#0081FF"));
