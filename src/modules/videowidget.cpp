@@ -46,7 +46,8 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     , m_hideAni(new QPropertyAnimation(this))
     , m_leaveTimer(new QTimer(this))
     , m_pauseTimer(new QTimer(this))
-    , m_label(new DLabel(this))
+    , m_background(new CoverPhoto(this))
+    //, m_label(new DLabel(m_background))
 {
     m_selectBtn->hide();
 
@@ -119,7 +120,9 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     setLayout(layout);
 
     //m_label->show();
-    m_label->raise();
+    //m_label->raise();
+    m_background->setWindowFlags(Qt::FramelessWindowHint);
+    m_background->raise();
     m_control->raise();
     m_load = false;
 }
@@ -128,11 +131,13 @@ void VideoWidget::updateBigIcon()
 {
     setFixedSize(720, 450);
     m_video->setFixedSize(710, 460);
-    if (m_label != NULL) {
+    if (m_background != NULL) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
         pixmap = pixmap.scaled(m_video->size()/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        m_label->setPixmap(pixmap);
-        m_label->setFixedSize(m_video->size());
+        //m_label->setPixmap(pixmap);
+        //m_label->setFixedSize(m_video->size());
+        m_background->setFixedSize(m_video->size());
+        m_background->setPixmap(pixmap);
     }
 
     updateClip();
@@ -143,11 +148,13 @@ void VideoWidget::updateSmallIcon()
     const QSize size(540, 340);
     setFixedSize(size);
     m_video->setFixedSize(size);
-    if (m_label != NULL) {
+    if (m_background != NULL) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
         pixmap = pixmap.scaled(m_video->size()/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        m_label->setPixmap(pixmap);
-        m_label->setFixedSize(m_video->size());
+        //m_label->setPixmap(pixmap);
+        //m_label->setFixedSize(m_video->size());
+        m_background->setFixedSize(m_video->size());
+        m_background->setPixmap(pixmap);
     }
 
     updateClip();
@@ -186,9 +193,9 @@ void VideoWidget::updateControlButton()
         m_btnAni->setStartValue(p);
         m_btnAni->setEndValue(QPoint(p.x(), height() - m_control->height() - 20));
         m_btnAni->start();
-        if (m_label != NULL) {
-            delete m_label;
-            m_label = NULL;
+        if (m_background != NULL) {
+            delete m_background;
+            m_background = NULL;
         }
     } else {
         m_control->setNormalPic(":/resources/play_normal.svg");

@@ -21,6 +21,7 @@
 
 #include "moduleinterface.h"
 #include "../dvideowidget.h"
+#include "../widgets/coverphoto.h"
 
 #include <dimagebutton.h>
 #include <DClipEffectWidget>
@@ -63,7 +64,7 @@ private:
     QGraphicsOpacityEffect *m_hideEffect;
     QTimer *m_leaveTimer;
     QTimer *m_pauseTimer;
-    DWidget *m_background;
+    CoverPhoto *m_background;
     DLabel *m_label;
     bool m_load;
 };
