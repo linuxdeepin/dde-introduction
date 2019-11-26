@@ -28,7 +28,6 @@
 
 #include <QFont>
 
-#include <DLabel>
 #include <DSuggestButton>
 
 #ifndef DISABLE_VIDEO
@@ -43,6 +42,8 @@ NormalModule::NormalModule(DWidget *parent)
     , m_currentWidget(nullptr)
     , m_wmSwitcher(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
     , m_index(-1)
+    , m_titleLabel(new DLabel(this))
+    , m_describe(new DLabel(this))
 {
     isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
     //initTheme(0);
@@ -50,6 +51,7 @@ NormalModule::NormalModule(DWidget *parent)
     layout->setMargin(0);
     layout->setSpacing(0);
     layout->setContentsMargins(0, 13, 20, 0);
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &NormalModule::updateLabel);
 
     //m_leftNavigationLayout->setMargin(0);
     m_leftNavigationLayout->setSpacing(10);
@@ -81,31 +83,26 @@ NormalModule::NormalModule(DWidget *parent)
     // bottom navigation
     //BottomNavigation *bottomNavigation = new BottomNavigation;
 
-    DLabel *titleLabel = new DLabel;
     QFont font;
     font.setPixelSize(17);
     font.setFamily("SourceHanSansSC");
     font.setStyleName("Bold");
-    titleLabel->setFont(font);
+    m_titleLabel->setFont(font);
 
-    DLabel *describe = new DLabel;
     QFont deFont;
     deFont.setFamily("SourceHanSansSC");
     deFont.setStyleName("Normal");
     deFont.setPixelSize(12);
-    describe->setFont(deFont);
-
-    DPalette dePa = describe->palette();
-    dePa.setColor(DPalette::WindowText, QColor("#FF526A7F"));
-    describe->setPalette(dePa);
+    m_describe->setFont(deFont);
+    updateLabel();
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->setSpacing(0);
     mainLayout->setMargin(0);
     mainLayout->addSpacing(15);
-    mainLayout->addWidget(titleLabel, 0, Qt::AlignCenter);
+    mainLayout->addWidget(m_titleLabel, 0, Qt::AlignCenter);
     mainLayout->addLayout(layout);
-    mainLayout->addWidget(describe, 0, Qt::AlignCenter);
+    mainLayout->addWidget(m_describe, 0, Qt::AlignCenter);
     //mainLayout->addWidget(bottomNavigation);
     mainLayout->setContentsMargins(0,0,0,20);
 
@@ -214,11 +211,11 @@ NormalModule::NormalModule(DWidget *parent)
 //#ifndef DISABLE_VIDEO
     if (isx86) {
         videoBtn->setChecked(true);
-        titleLabel->setText(m_titleMap[videoBtn]);
+        m_titleLabel->setText(m_titleMap[videoBtn]);
     } else {
         //#else
         slideBtn->setChecked(true);
-        titleLabel->setText(m_titleMap[slideBtn]);
+        m_titleLabel->setText(m_titleMap[slideBtn]);
     }
 //#endif
 
@@ -238,8 +235,8 @@ NormalModule::NormalModule(DWidget *parent)
     connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [ = ] (QAbstractButton * btn) {
         updataButton(btn);
         updateCurrentWidget(m_buttonMap[btn]);
-        titleLabel->setText(m_titleMap[btn]);
-        describe->setText(m_describeMap[btn]);
+        m_titleLabel->setText(m_titleMap[btn]);
+        m_describe->setText(m_describeMap[btn]);
     });
 
 //#ifndef DISABLE_VIDEO
@@ -342,4 +339,15 @@ void NormalModule::initTheme(int type)
         pa.setColor(DPalette::Window, QColor(40, 40, 40));
         this->setPalette(pa);
     }
+}
+
+void NormalModule::updateLabel()
+{
+    DPalette dePa = m_describe->palette();
+    int type = DGuiApplicationHelper::instance()->themeType();
+    if (type == 1)
+        dePa.setColor(DPalette::WindowText, QColor("#FF8AA1B4"));
+    else
+        dePa.setColor(DPalette::WindowText, QColor("#FFC0C6D4"));
+    m_describe->setPalette(dePa);
 }

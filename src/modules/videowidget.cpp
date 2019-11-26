@@ -95,11 +95,11 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     m_control->setFixedSize(48, 48);
     m_control->raise();
 
-    qreal ratio = 1.0;
+    /*qreal ratio = 1.0;
 
     QDir videoPath(ResourcesQDir());
 
-    const QString &file = videoPath.path() + QString("/demo.mp4");
+    const QString &file = videoPath.path() + QString("/demo.mp4");*/
 
     connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
     connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
@@ -107,10 +107,9 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     autoPlay = !autoPlay;
     m_video->engine().setBackendProperty("pause-on-start", autoPlay ? "false" : "true");
 
-    m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
-    m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
+    //m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
+    //m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
     //m_video->engine().play();
-    //m_video->play(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
 
     /*QTimer::singleShot(1000, this, [=] {
         m_pauseTimer->setInterval(m_video->engine().duration() * 1000);
@@ -122,6 +121,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     //m_label->show();
     m_label->raise();
     m_control->raise();
+    m_load = false;
 }
 
 void VideoWidget::updateBigIcon()
@@ -218,6 +218,14 @@ void VideoWidget::onControlButtonClicked()
         m_pauseTimer->stop();
     }*/
 
+    if (!m_load) {
+        qreal ratio = 1.0;
+        QDir videoPath(ResourcesQDir());
+        const QString &file = videoPath.path() + QString("/demo.mp4");
+        m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
+        m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
+        m_load = true;
+    }
     m_video->engine().pauseResume();
     m_video->engine().play();
 

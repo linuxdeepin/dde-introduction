@@ -27,6 +27,7 @@
 
 #include <DWidget>
 #include <DPalette>
+#include <DLabel>
 
 #include <com_deepin_wmswitcher.h>
 
@@ -51,6 +52,7 @@ private:
     void updataButton(QAbstractButton *btn);
 private slots:
     void initTheme(int type);
+    void updateLabel();
 
 private:
     QVBoxLayout *m_leftNavigationLayout;
@@ -63,6 +65,8 @@ private:
     NavigationButton *m_button;
     QWidget *m_currentWidget;
     WMSwitcher *m_wmSwitcher;
+    DLabel *m_titleLabel;
+    DLabel *m_describe;
     int m_index;
     bool isx86;
 };

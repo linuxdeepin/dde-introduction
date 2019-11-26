@@ -59,7 +59,7 @@ void BaseModuleWidget::setTitle(const QString &title)
     m_titleLbl->setFont(font);
     if (m_type == 1) {
         DPalette pa = m_titleLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(0,26,46,255));
+        pa.setColor(DPalette::WindowText, Qt::black);
         m_titleLbl->setPalette(pa);
     } else {
         DPalette pa = m_titleLbl->palette();
@@ -78,11 +78,11 @@ void BaseModuleWidget::setDescribe(const QString &describe)
     m_describeLbl->setFont(font);
     if (m_type == 1) {
         DPalette pa = m_describeLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(82,106,127,255));
+        pa.setColor(DPalette::WindowText, QColor(138,161,180,255));
         m_describeLbl->setPalette(pa);
     } else {
         DPalette pa = m_describeLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(109,124,136,255));
+        pa.setColor(DPalette::WindowText, QColor(192,198,212,255));
         m_describeLbl->setPalette(pa);
     }
     m_describeLbl->setText(describe);

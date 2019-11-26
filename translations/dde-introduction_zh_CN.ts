@@ -174,7 +174,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Done</source>
-        <translation>完成</translation>
+        <translation>完  成</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="345"/>

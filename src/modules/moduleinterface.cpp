@@ -29,7 +29,7 @@ ModuleInterface::ModuleInterface(QWidget *parent)
     , m_selectBtn(new DLabel(this))
     , m_updateSelectBtnTimer(new QTimer(this))
 {
-    m_selectBtn->setPixmap(DHiDPIHelper::loadNxPixmap(":/resources/list_select.png"));
+    m_selectBtn->setPixmap(DHiDPIHelper::loadNxPixmap(":/resources/list_select.svg"));
     m_selectBtn->setFixedSize(16, 16);
 
     m_updateSelectBtnTimer->setInterval(0);

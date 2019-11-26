@@ -25,6 +25,7 @@
 #include <dimagebutton.h>
 #include <DClipEffectWidget>
 #include <DLabel>
+#include <DWidget>
 #include <QPropertyAnimation>
 #include <player_widget.h>
 #include <player_engine.h>
@@ -62,7 +63,9 @@ private:
     QGraphicsOpacityEffect *m_hideEffect;
     QTimer *m_leaveTimer;
     QTimer *m_pauseTimer;
+    DWidget *m_background;
     DLabel *m_label;
+    bool m_load;
 };
 
 #endif

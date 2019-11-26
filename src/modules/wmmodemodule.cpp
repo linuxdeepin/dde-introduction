@@ -74,9 +74,9 @@ void WMModeModule::onWMModeChanged(Model::WMType type)
 {
     m_selectBtn->raise();
 
-    QPoint p(9,6);
+    QPoint p(9,4);
     if (!m_first)
-        p.setY(-18);
+        p.setY(-20);
     switch (type) {
     case Model::WM_2D:
         m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - p);

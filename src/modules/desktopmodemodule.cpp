@@ -55,9 +55,9 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
 {
     m_selectBtn->raise();
 
-    QPoint p(9,6);
+    QPoint p(9,4);
     if (!isfirst)
-        p.setY(-18);
+        p.setY(-20);
     switch (mode) {
     case Model::EfficientMode:
         m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - p);

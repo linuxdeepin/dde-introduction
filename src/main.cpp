@@ -106,6 +106,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    a.setAutoActivateWindows(true);
     a.setOrganizationName("deepin");
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
     a.loadTranslator();

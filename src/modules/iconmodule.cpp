@@ -113,7 +113,7 @@ void IconModule::currentIconChanged(const IconStruct &icon)
     m_selectBtn->raise();
 
     BaseWidget * w = m_iconList[icon];
-    m_selectBtn->move(w->mapTo(m_scrollWidget, m_iconList[icon]->rect().topRight())  - QPoint(9, 5));
+    m_selectBtn->move(w->mapTo(m_scrollWidget, m_iconList[icon]->rect().topRight())  - QPoint(9, 3));
 
     for (BaseWidget *base : m_iconList.values()) {
         base->setChecked(base == w);
