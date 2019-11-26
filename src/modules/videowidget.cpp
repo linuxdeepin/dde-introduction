@@ -119,7 +119,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     updateControlButton();
     setLayout(layout);
 
-    m_label->show();
+    //m_label->show();
     m_label->raise();
     m_control->raise();
 }
