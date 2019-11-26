@@ -150,8 +150,12 @@
 <context>
     <name>DesktopModeModule</name>
     <message>
-        <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Classical Mode</source>
+        <translation type="vanished">高效模式</translation>
+    </message>
+    <message>
+        <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
+        <source>Efficient Mode</source>
         <translation>高效模式</translation>
     </message>
     <message>
@@ -163,44 +167,68 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.cpp" line="128"/>
+        <location filename="../src/mainwindow.cpp" line="154"/>
         <source>Next</source>
-        <translation>下一步</translation>
+        <translation>下一个</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="129"/>
+        <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Done</source>
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="318"/>
-        <source>Please select desktop mode</source>
+        <location filename="../src/mainwindow.cpp" line="345"/>
+        <source>Choose a desktop mode</source>
         <translation>请选择桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="319"/>
-        <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>您可以在任务栏右键菜单--“模式”中进行调节</translation>
+        <location filename="../src/mainwindow.cpp" line="346"/>
+        <source>You can switch modes by right clicking on the dock</source>
+        <translation>您可以在任务栏右键菜单—“模式”中进行调节</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="332"/>
-        <source>Please select the mode of operation</source>
+        <location filename="../src/mainwindow.cpp" line="359"/>
+        <source>Choose a running mode</source>
         <translation>请选择运行模式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="333"/>
-        <source>If your computer configuration is not high, you are recommended to choose extreme speed mode</source>
-        <translation>如果您的电脑配置不高,推荐您选择极速模式</translation>
+        <location filename="../src/mainwindow.cpp" line="360"/>
+        <source>Please choose fast mode if you has a low configuration computer</source>
+        <translation>如果您的电脑配置不高，推荐你选择极速模式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="346"/>
-        <source>Please select icon theme</source>
+        <location filename="../src/mainwindow.cpp" line="373"/>
+        <source>Choose an icon theme</source>
         <translation>请选择图标主题</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="347"/>
+        <location filename="../src/mainwindow.cpp" line="374"/>
+        <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
+        <translation>您可以在控制中心个性化模块—图标主题中进行调节</translation>
+    </message>
+    <message>
+        <source>Please select desktop mode</source>
+        <translation type="vanished">请选择桌面样式</translation>
+    </message>
+    <message>
+        <source>You can switch it in Mode by right clicking on dock</source>
+        <translation type="vanished">您可以在任务栏右键菜单--“模式”中进行调节</translation>
+    </message>
+    <message>
+        <source>Please select the mode of operation</source>
+        <translation type="vanished">请选择运行模式</translation>
+    </message>
+    <message>
+        <source>If your computer configuration is not high, you are recommended to choose extreme speed mode</source>
+        <translation type="vanished">如果您的电脑配置不高,推荐您选择极速模式</translation>
+    </message>
+    <message>
+        <source>Please select icon theme</source>
+        <translation type="vanished">请选择图标主题</translation>
+    </message>
+    <message>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>您可以在控制中心个性化模块--图标主题中进行调节</translation>
+        <translation type="vanished">您可以在控制中心个性化模块--图标主题中进行调节</translation>
     </message>
 </context>
 <context>
@@ -213,38 +241,76 @@
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="145"/>
-        <source>Desktop mode</source>
+        <source>Desktop Mode</source>
         <translation>桌面样式</translation>
     </message>
     <message>
+        <location filename="../src/modules/normalmodule.cpp" line="148"/>
+        <source>Choose a desktop mode</source>
+        <translation>请选择桌面样式</translation>
+    </message>
+    <message>
         <location filename="../src/modules/normalmodule.cpp" line="149"/>
-        <source>You can switch it in Mode by right clicking on dock</source>
-        <translation>您可以在任务栏右键菜单--“模式”中进行调节</translation>
+        <source>You can switch modes by right clicking on the dock</source>
+        <translation>您可以在任务栏右键菜单—“模式”中进行调节</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="159"/>
-        <source>Operation mode</source>
+        <source>Running Mode</source>
         <translation>运行模式</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="174"/>
-        <source>Please select the mode of operation</source>
+        <source>Choose a running mode</source>
         <translation>请选择运行模式</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="175"/>
-        <source>If your computer configuration is not high, you are recommended to choose extreme speed mode</source>
-        <translation>如果您的电脑配置不高,推荐您选择极速模式</translation>
+        <source>Please choose fast mode if you has a low configuration computer</source>
+        <translation>如果您的电脑配置不高，推荐你选择极速模式</translation>
     </message>
     <message>
         <location filename="../src/modules/normalmodule.cpp" line="184"/>
-        <source>Icon theme</source>
+        <source>Icon Theme</source>
         <translation>图标主题</translation>
     </message>
     <message>
+        <location filename="../src/modules/normalmodule.cpp" line="187"/>
+        <source>Choose an icon theme</source>
+        <translation>请选择图标主题</translation>
+    </message>
+    <message>
         <location filename="../src/modules/normalmodule.cpp" line="188"/>
+        <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
+        <translation>您可以在控制中心个性化模块—图标主题中进行调节</translation>
+    </message>
+    <message>
+        <source>Desktop mode</source>
+        <translation type="vanished">桌面样式</translation>
+    </message>
+    <message>
+        <source>You can switch it in Mode by right clicking on dock</source>
+        <translation type="vanished">您可以在任务栏右键菜单--“模式”中进行调节</translation>
+    </message>
+    <message>
+        <source>Operation mode</source>
+        <translation type="vanished">运行模式</translation>
+    </message>
+    <message>
+        <source>Please select the mode of operation</source>
+        <translation type="vanished">请选择运行模式</translation>
+    </message>
+    <message>
+        <source>If your computer configuration is not high, you are recommended to choose extreme speed mode</source>
+        <translation type="vanished">如果您的电脑配置不高,推荐您选择极速模式</translation>
+    </message>
+    <message>
+        <source>Icon theme</source>
+        <translation type="vanished">图标主题</translation>
+    </message>
+    <message>
         <source>You can change it in Control Center &gt; Personalization &gt; Theme &gt; Icon Theme</source>
-        <translation>您可以在控制中心个性化模块--图标主题中进行调节</translation>
+        <translation type="vanished">您可以在控制中心个性化模块--图标主题中进行调节</translation>
     </message>
     <message>
         <source>Support us</source>
@@ -261,14 +327,12 @@
         <translation>欢迎使用</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="148"/>
         <source>Please select desktop mode</source>
-        <translation>请选择桌面样式</translation>
+        <translation type="vanished">请选择桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="187"/>
         <source>Please select icon theme</source>
-        <translation>请选择图标主题</translation>
+        <translation type="vanished">请选择图标主题</translation>
     </message>
     <message>
         <source>Please select to enable window effect or not</source>
@@ -278,9 +342,13 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="109"/>
         <source>Introduction</source>
-        <translation>欢迎</translation>
+        <translation type="vanished">欢迎</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="112"/>
+        <source>Welcome</source>
+        <translation>欢迎使用</translation>
     </message>
 </context>
 <context>
@@ -431,13 +499,21 @@
 <context>
     <name>WMModeModule</name>
     <message>
-        <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Extreme speed mode</source>
+        <translation type="vanished">极速模式</translation>
+    </message>
+    <message>
+        <source>Gorgeous mode</source>
+        <translation type="vanished">华丽模式</translation>
+    </message>
+    <message>
+        <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
+        <source>Fast Mode</source>
         <translation>极速模式</translation>
     </message>
     <message>
         <location filename="../src/modules/wmmodemodule.cpp" line="29"/>
-        <source>Gorgeous mode</source>
+        <source>Fancy Mode</source>
         <translation>华丽模式</translation>
     </message>
 </context>

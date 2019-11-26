@@ -342,8 +342,8 @@ BaseModuleWidget *MainWindow::initDesktopModeModule()
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
-    w->setTitle(tr("Please select desktop mode"));
-    w->setDescribe(tr("You can switch it in Mode by right clicking on dock"));
+    w->setTitle(tr("Choose a desktop mode"));
+    w->setDescribe(tr("You can switch modes by right clicking on the dock"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
 }
@@ -356,8 +356,8 @@ BaseModuleWidget *MainWindow::initWMModeModule()
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
-    w->setTitle(tr("Please select the mode of operation"));
-    w->setDescribe(tr("If your computer configuration is not high, you are recommended to choose extreme speed mode"));
+    w->setTitle(tr("Choose a running mode"));
+    w->setDescribe(tr("Please choose fast mode if you has a low configuration computer"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
 }
@@ -370,8 +370,8 @@ BaseModuleWidget *MainWindow::initIconModule()
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
-    w->setTitle(tr("Please select icon theme"));
-    w->setDescribe(tr("You can change it in Control Center > Personalization > Theme > Icon Theme"));
+    w->setTitle(tr("Choose an icon theme"));
+    w->setDescribe(tr("Change it in Control Center > Personalization > Icon Theme"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
 }

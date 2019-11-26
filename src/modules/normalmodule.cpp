@@ -142,11 +142,11 @@ NormalModule::NormalModule(DWidget *parent)
 //#endif
 
     // desktop button
-    NavigationButton *desktopBtn = new NavigationButton(tr("Desktop mode"));
+    NavigationButton *desktopBtn = new NavigationButton(tr("Desktop Mode"));
     m_buttonMap[desktopBtn] = ++moduleCount;
     //desktopBtn->setText(tr("Desktop mode"));
-    m_titleMap[desktopBtn] = tr("Please select desktop mode");
-    m_describeMap[desktopBtn] = tr("You can switch it in Mode by right clicking on dock");
+    m_titleMap[desktopBtn] = tr("Choose a desktop mode");
+    m_describeMap[desktopBtn] = tr("You can switch modes by right clicking on the dock");
     m_buttonGrp->addButton(desktopBtn);
     DesktopModeModule *desktopModeModule = new DesktopModeModule(this);
     desktopModeModule->setFirst(false);
@@ -156,7 +156,7 @@ NormalModule::NormalModule(DWidget *parent)
     // wm button
     NavigationButton *wmBtn = nullptr;
     if (allow_switch_wm) {
-        wmBtn = new NavigationButton(tr("Operation mode"));
+        wmBtn = new NavigationButton(tr("Running Mode"));
         m_buttonMap[wmBtn]      = ++moduleCount;
         //wmBtn->setText(tr("Operation mode"));
         QFont font = wmBtn->font();
@@ -171,8 +171,8 @@ NormalModule::NormalModule(DWidget *parent)
             www = rect.width();
         }
         wmBtn->setFont(font);
-        m_titleMap[wmBtn] = tr("Please select the mode of operation");
-        m_describeMap[wmBtn] = tr("If your computer configuration is not high, you are recommended to choose extreme speed mode");
+        m_titleMap[wmBtn] = tr("Choose a running mode");
+        m_describeMap[wmBtn] = tr("Please choose fast mode if you has a low configuration computer");
         m_buttonGrp->addButton(wmBtn);
         WMModeModule *wmModeModule = new WMModeModule(this);
         wmModeModule->setFirst(false);
@@ -181,11 +181,11 @@ NormalModule::NormalModule(DWidget *parent)
     }
 
     // icon button
-    NavigationButton *iconBtn = new NavigationButton(tr("Icon theme"));
+    NavigationButton *iconBtn = new NavigationButton(tr("Icon Theme"));
     m_buttonMap[iconBtn]    = ++moduleCount;
     //iconBtn->setText(tr("Icon theme"));
-    m_titleMap[iconBtn] = tr("Please select icon theme");
-    m_describeMap[iconBtn] = tr("You can change it in Control Center > Personalization > Theme > Icon Theme");
+    m_titleMap[iconBtn] = tr("Choose an icon theme");
+    m_describeMap[iconBtn] = tr("Change it in Control Center > Personalization > Icon Theme");
     m_buttonGrp->addButton(iconBtn);
     IconModule *iconModule = new IconModule(this);
     iconModule->hide();

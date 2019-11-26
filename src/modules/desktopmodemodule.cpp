@@ -25,7 +25,7 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     , m_fashionWidget(new BaseWidget(this))
 {
     isfirst = true;
-    m_efficientWidget->setTitle(tr("Classical Mode"));
+    m_efficientWidget->setTitle(tr("Efficient Mode"));
     m_fashionWidget->setTitle(tr("Fashion Mode"));
 
     connect(m_model, &Model::desktopModeChanged, this, &DesktopModeModule::onDesktopTypeChanged);
