@@ -241,7 +241,7 @@ void MainWindow::initUI()
     QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
-    logo->move(rect().topLeft() + QPoint(12, 8));
+    logo->move(rect().topLeft() + QPoint(10, 8));
     logo->show();
 }
 

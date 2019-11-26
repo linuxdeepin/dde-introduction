@@ -171,14 +171,22 @@ void IconModule::keyPressEvent(QKeyEvent *e)
             break;
         }
     }
-    if (e->key() == Qt::Key_Up || e->key() == Qt::Key_Left) {
+    if (e->key() == Qt::Key_Left) {
         if (index == 0)
             return;
         m_worker->setIcon(m_model->iconList().at(index - 1));
-    } else if (e->key() == Qt::Key_Down || e->key() == Qt::Key_Right) {
+    } else if (e->key() == Qt::Key_Right) {
         if (index == m_model->iconList().size() - 1)
             return;
         m_worker->setIcon(m_model->iconList().at(index + 1));
+    } else if (e->key() == Qt::Key_Up) {
+        if (index < 2)
+            return;
+        m_worker->setIcon(m_model->iconList().at(index - 2));
+    } else if (e->key() == Qt::Key_Down) {
+        if (index > m_model->iconList().size() - 3)
+            return;
+        m_worker->setIcon(m_model->iconList().at(index + 2));
     }
     updateSelectBtnPos();
 }
