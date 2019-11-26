@@ -77,6 +77,7 @@ private:
   QSettings *m_settings;
   WMSwitcherInter *m_displayInter;
   bool isx86;
+  bool m_isFirst;
 };
 
 #endif // MAINWINDOW_H
