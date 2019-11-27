@@ -173,7 +173,7 @@ void MainWindow::initUI()
                                               ":/resources/close_normal.svg",
                                               ":/resources/close_normal.svg", this);
 
-    closeBtn->setFixedSize(50, 50);
+    closeBtn->setFixedSize(51, 51);
 
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
     closeBtn->show();
