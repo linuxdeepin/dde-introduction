@@ -342,7 +342,7 @@ BaseModuleWidget *MainWindow::initDesktopModeModule()
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
-    w->setTitle(tr("Choose a desktop mode"));
+    w->setTitle(tr("Desktop Mode"));
     w->setDescribe(tr("You can switch modes by right clicking on the dock"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
@@ -356,8 +356,8 @@ BaseModuleWidget *MainWindow::initWMModeModule()
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
-    w->setTitle(tr("Choose a running mode"));
-    w->setDescribe(tr("Please choose fast mode if you has a low configuration computer"));
+    w->setTitle(tr("Running Mode"));
+    w->setDescribe(tr("You can switch it in Control Center > Personalization > Window effect"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
 }

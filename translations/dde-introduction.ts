@@ -178,8 +178,22 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="345"/>
+        <source>Desktop Mode</source>
+        <translation>桌面样式</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="359"/>
+        <source>Running Mode</source>
+        <translation>运行模式</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="360"/>
+        <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
+        <translation>您可以在控制中心个性化模块—开启或关闭窗口特效</translation>
+    </message>
+    <message>
         <source>Choose a desktop mode</source>
-        <translation>请选择桌面样式</translation>
+        <translation type="vanished">请选择桌面样式</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="346"/>
@@ -187,14 +201,12 @@
         <translation>您可以在任务栏右键菜单—“模式”中进行调节</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="359"/>
         <source>Choose a running mode</source>
-        <translation>请选择运行模式</translation>
+        <translation type="vanished">请选择运行模式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="360"/>
         <source>Please choose fast mode if you has a low configuration computer</source>
-        <translation>如果您的电脑配置不高，推荐你选择极速模式</translation>
+        <translation type="vanished">如果您的电脑配置不高，推荐你选择极速模式</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="373"/>
