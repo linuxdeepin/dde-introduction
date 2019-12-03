@@ -9,7 +9,6 @@
         <file>resources/fashion_mode_big.png</file>
         <file>resources/fashion_mode_small.png</file>
         <file>resources/config.json</file>
-        <file>resources/list_select.png</file>
         <file>resources/list_select@2x.png</file>
         <file>resources/previous_hover.svg</file>
         <file>resources/previous_normal.svg</file>
@@ -58,5 +57,6 @@
         <file>resources/slide_big/08.jpg</file>
         <file>resources/slide_small/08.jpg</file>
         <file>resources/demo_Moment.jpg</file>
+        <file>resources/list_select.svg</file>
     </qresource>
 </RCC>
