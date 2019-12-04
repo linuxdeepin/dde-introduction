@@ -1,9 +1,9 @@
 [Desktop Entry]
 Categories=Utility
 Exec=/usr/bin/dde-introduction
-GenericName=Introduction
+GenericName=Welcome
 Icon=dde-introduction
-Name=Deepin Introduction
+Name=Deepin Welcome
 Type=Application
 X-Deepin-Vendor=deepin
 
