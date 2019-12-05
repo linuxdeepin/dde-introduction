@@ -33,7 +33,8 @@ HEADERS += \
     src/widgets/nextbutton.h \
     src/dvideowidget.h \
     src/modules/photoslide.h \
-    src/widgets/bottombutton.h
+    src/widgets/bottombutton.h \
+    src/widgets/coverphoto.h
 
 SOURCES += \
     src/basemodulewidget.cpp \
@@ -57,7 +58,8 @@ SOURCES += \
     src/widgets/nextbutton.cpp \
     src/dvideowidget.cpp \
     src/modules/photoslide.cpp \
-    src/widgets/bottombutton.cpp
+    src/widgets/bottombutton.cpp \
+    src/widgets/coverphoto.cpp
 
 RESOURCES += \
     dde-introduction.qrc
