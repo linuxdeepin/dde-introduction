@@ -390,7 +390,6 @@ void MainWindow::slotTheme()
         DPalette pl = this->palette();
         pl.setColor(DPalette::Window, Qt::white);
         this->setPalette(pl);
-        //titlebar()->setPalette(pl);
     } else {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(192, 198, 212, 255));
@@ -401,7 +400,6 @@ void MainWindow::slotTheme()
         DPalette pl = this->palette();
         pl.setColor(DPalette::Window, QColor(40,40,40));
         this->setPalette(pl);
-        //titlebar()->setPalette(pl);
     }
     //titlebar()->setSeparatorVisible(false);
     this->setForegroundRole(DPalette::Window);
