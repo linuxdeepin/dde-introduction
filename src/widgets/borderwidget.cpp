@@ -49,7 +49,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
-    QRect pixRect(QPoint(5, 5), m_pixmap.size() / devicePixelRatioF());
+    QRect pixRect(QPoint(6, 6), (m_pixmap.size() - QSize(3,3)) / devicePixelRatioF());
 
     // draw background
     QPainterPath contentPath;
@@ -64,7 +64,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
 
     // draw border
     QPainterPath path;
-    path.addRoundedRect(rect().adjusted(2, 2, -2, -2), 10, 10);
+    path.addRoundedRect(rect().adjusted(2, 2, -3, -2), 10, 10);
     painter.setClipRect(QRect(), Qt::NoClip);
     if (m_checked) {
         QPen pen(QColor("#0081FF"));

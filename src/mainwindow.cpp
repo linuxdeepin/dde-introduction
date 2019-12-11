@@ -133,7 +133,6 @@ void MainWindow::next()
 
 void MainWindow::initUI()
 {
-    //titlebar()->deleteLater();
     this->setWindowFlags(Qt::CustomizeWindowHint);
     titlebar()->setMenuVisible(false);
     setFixedSize(WINDOW_SIZE);

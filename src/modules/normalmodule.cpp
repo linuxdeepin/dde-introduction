@@ -50,7 +50,7 @@ NormalModule::NormalModule(DWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
-    layout->setContentsMargins(0, 13, 20, 0);
+    layout->setContentsMargins(0, 13, 15, 0);
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &NormalModule::updateLabel);
 
     //m_leftNavigationLayout->setMargin(0);
