@@ -26,11 +26,13 @@
 #include <com_deepin_daemon_appearance.h>
 #include <com_deepin_wmswitcher.h>
 #include <com_deepin_dde_daemon_dock.h>
+#include <DWindowManagerHelper>
 
 using Icon       = com::deepin::daemon::Appearance;
 using WMSwitcher = com::deepin::WMSwitcher;
 using Dock       = com::deepin::dde::daemon::Dock;
 
+DGUI_USE_NAMESPACE
 class Worker : public QObject
 {
     Q_OBJECT
@@ -45,6 +47,7 @@ public slots:
 
 private slots:
     void onWMChanged(const QString &wm);
+    void onWMChang(/*const quint32 &wm*/);
     void onDisplayModeChanged(int mode);
     void onIconRefreshed(const QString &name);
     void onIconListChanged(const QString & value);
@@ -58,6 +61,7 @@ private:
     Icon*       m_iconInter;
     WMSwitcher* m_wmInter;
     Dock*       m_dockInter;
+    DWindowManagerHelper* m_windowManage;
 };
 
 #endif // WORKER_H

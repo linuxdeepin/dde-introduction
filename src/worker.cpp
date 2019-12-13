@@ -75,6 +75,16 @@ void Worker::onWMChanged(const QString &wm)
     m_model->setWmType(wm == "deepin wm" ? Model::WM_3D : Model::WM_2D);
 }
 
+void Worker::onWMChang(/*const quint32 &wm*/)
+{
+    /*if (m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::DeepinWM)
+        return;
+    else if (m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::KWinWM)
+        return;*/
+    m_model->setWmType(m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::DeepinWM ? Model::WM_3D : Model::WM_2D);
+    //m_model->setWmType(wm == "deepin wm" ? Model::WM_3D : Model::WM_2D);
+}
+
 void Worker::onDisplayModeChanged(int mode)
 {
     m_model->setDesktopMode((Model::DesktopMode)mode);
@@ -155,6 +165,8 @@ Worker::Worker(QObject *parent)
     m_dockInter->setSync(false);
 
     m_model->setCurrentIcon(m_iconInter->iconTheme());
+    m_windowManage = DWindowManagerHelper::instance();
+    bool aa = connect(m_windowManage, &DWindowManagerHelper::windowManagerChanged, this, &Worker::onWMChang);
 
     onWMChanged(m_wmInter->CurrentWM());
     onDisplayModeChanged(m_dockInter->displayMode());

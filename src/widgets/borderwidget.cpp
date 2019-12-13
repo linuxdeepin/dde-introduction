@@ -57,10 +57,12 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     painter.setClipPath(contentPath);
     painter.drawPixmap(pixRect, m_pixmap);
 
-    QPen pen(QColor(0, 0, 0, 0.1 * 255));
-    pen.setWidth(1);
-    painter.setPen(pen);
-    painter.drawPath(contentPath);
+    if (!m_checked) {
+        QPen pen(QColor(0, 0, 0, 0.2 * 255));
+        pen.setWidth(1);
+        painter.setPen(pen);
+        painter.drawPath(contentPath);
+    }
 
     // draw border
     QPainterPath path;

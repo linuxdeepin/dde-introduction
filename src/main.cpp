@@ -142,7 +142,6 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion(t_date));
 
 
-
 //#ifndef DISABLE_VIDEO
     if (isx86) {
         setlocale(LC_NUMERIC, "C");
