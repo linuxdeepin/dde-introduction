@@ -127,6 +127,7 @@ void IconModule::updateBigIcon()
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());
     m_layout->setContentsMargins(10, 58, 0, 15);
+    updateSelectBtnPos();
 
     QMapIterator<IconStruct, BaseWidget*>map(m_iconList);
 
@@ -144,6 +145,7 @@ void IconModule::updateSmallIcon()
     setFixedSize(size);
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());
+    updateSelectBtnPos();
 
     QMapIterator<IconStruct, BaseWidget*>map(m_iconList);
 
