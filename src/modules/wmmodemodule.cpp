@@ -25,8 +25,8 @@ WMModeModule::WMModeModule(QWidget *parent)
     , m_fashionWidget(new BaseWidget(this))
 {
     m_first = true;
-    m_efficientWidget->setTitle(tr("Fast Mode"));
-    m_fashionWidget->setTitle(tr("Fancy Mode"));
+    m_efficientWidget->setTitle(tr("Normal Mode"));
+    m_fashionWidget->setTitle(tr("Effect Mode"));
 
     connect(m_model, &Model::wmTypeChanged, this, &WMModeModule::onWMModeChanged);
     connect(m_fashionWidget, &BaseWidget::clicked, this, [=] {

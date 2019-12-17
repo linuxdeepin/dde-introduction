@@ -50,6 +50,7 @@ MainWindow::MainWindow(DWidget *parent)
 {
     isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::slotTheme);
+
     initUI();
     slotTheme();
     initConnect();

@@ -169,7 +169,7 @@ NormalModule::NormalModule(DWidget *parent)
         }
         wmBtn->setFont(font);
         m_titleMap[wmBtn] = tr("Choose a running mode");
-        m_describeMap[wmBtn] = tr("Please choose fast mode if you has a low configuration computer");
+        m_describeMap[wmBtn] = tr("Please choose normal mode if you has a low configuration computer");
         m_buttonGrp->addButton(wmBtn);
         WMModeModule *wmModeModule = new WMModeModule(this);
         wmModeModule->setFirst(false);
