@@ -142,14 +142,7 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion(t_date));
 
 
-//#ifndef DISABLE_VIDEO
-    if (isx86) {
-        setlocale(LC_NUMERIC, "C");
 
-        // 强制不使用嵌入mpv窗口的模式
-        dmr::CompositingManager::get().overrideCompositeMode(true);
-    }
-//#endif
 
     MainWindow w;
     DPlatformWindowHandle::enableDXcbForWindow(&w, true);

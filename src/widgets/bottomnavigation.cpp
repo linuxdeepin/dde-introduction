@@ -93,10 +93,6 @@ BottomNavigation::BottomNavigation(DWidget *parent)
     layout->addWidget(mail, 0, Qt::AlignCenter);
 
     setLayout(layout);
-
-    /*setStyleSheet("QLabel {"
-                  "color: #0082FA;"
-                  "}");*/
 }
 
 void BottomNavigation::onButtonClicked()

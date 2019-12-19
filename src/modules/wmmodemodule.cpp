@@ -91,6 +91,7 @@ void WMModeModule::onWMModeChanged(Model::WMType type)
     default:
         break;
     }
+    update();
 }
 void WMModeModule::setFirst(bool first)
 {

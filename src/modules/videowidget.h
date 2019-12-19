@@ -67,6 +67,7 @@ private:
     CoverPhoto *m_background;
     DLabel *m_label;
     bool m_load;
+    bool m_first;
 };
 
 #endif

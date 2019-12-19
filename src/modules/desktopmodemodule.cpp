@@ -72,6 +72,7 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
     default:
         break;
     }
+    update();
 }
 
 void DesktopModeModule::updateBigIcon()
