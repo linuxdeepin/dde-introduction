@@ -48,7 +48,6 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     , m_leaveTimer(new QTimer(this))
     , m_pauseTimer(new QTimer(this))
     , m_background(new CoverPhoto(this))
-    //, m_label(new DLabel(m_background))
 {
     m_video = NULL;
     m_first = true;
