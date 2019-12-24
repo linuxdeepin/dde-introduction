@@ -46,8 +46,8 @@ IconModule::IconModule(QWidget *parent)
 
     m_layout->setSpacing(10);
     m_layout->setMargin(0);
-    m_layout->setContentsMargins(10, 8, 0, 15);
-    m_layout->setVerticalSpacing(38);
+    m_layout->setContentsMargins(10, 3, 0, 15);
+    m_layout->setVerticalSpacing(35);
 
     m_selectBtn->setParent(m_scrollWidget);
 
@@ -126,7 +126,7 @@ void IconModule::updateBigIcon()
     setFixedSize(size);
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());
-    m_layout->setContentsMargins(10, 58, 0, 15);
+    m_layout->setContentsMargins(10, 43, 0, 15);
     updateSelectBtnPos();
 
     QMapIterator<IconStruct, BaseWidget*>map(m_iconList);

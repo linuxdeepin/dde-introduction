@@ -50,6 +50,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing, true);
 
     QRect pixRect(QPoint(6, 6), (m_pixmap.size() - QSize(3,3)) / devicePixelRatioF());
+    pixRect.moveCenter(rect().center());
 
     // draw background
     QPainterPath contentPath;
