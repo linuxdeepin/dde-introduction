@@ -62,7 +62,13 @@ void BorderWidget::paintEvent(QPaintEvent *event)
         QPen pen(QColor(0, 0, 0, 0.2 * 255));
         pen.setWidth(1);
         painter.setPen(pen);
-        painter.drawPath(contentPath);
+        QPainterPath Frame;
+        QRect frameRect = pixRect;
+        frameRect.setHeight(frameRect.height() + 6);
+        frameRect.moveCenter(rect().center());
+        Frame.addRoundedRect(frameRect, 10, 10);
+        painter.setClipPath(Frame);
+        painter.drawPath(Frame);
     }
 
     // draw border
