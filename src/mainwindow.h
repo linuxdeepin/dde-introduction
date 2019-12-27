@@ -38,46 +38,48 @@ using WMSwitcherInter = com::deepin::WMSwitcher;
 DWIDGET_USE_NAMESPACE
 
 class BaseModuleWidget;
-class MainWindow : public DMainWindow {
-  Q_OBJECT
+class MainWindow : public DMainWindow
+{
+    Q_OBJECT
 
 public:
-  MainWindow(DWidget *parent = 0);
-  ~MainWindow();
+    MainWindow(DWidget *parent = 0);
+    ~MainWindow();
+    void initWindowWidget();
 
 protected:
-  void keyPressEvent(QKeyEvent *);
+    void keyPressEvent(QKeyEvent *);
 
 private slots:
-  void previous();
-  void next();
+    void previous();
+    void next();
 
 private:
-  void slotTheme();
-  void initUI();
-  void initConnect();
-  void bindAnimation();
-  void updateModule(const int index);
-  void animationHandle();
+    void slotTheme();
+    void initUI();
+    void initConnect();
+    void bindAnimation();
+    void updateModule(const int index);
+    void animationHandle();
 
-  BaseModuleWidget *initDesktopModeModule();
-  BaseModuleWidget *initWMModeModule();
-  BaseModuleWidget *initIconModule();
+    BaseModuleWidget *initDesktopModeModule();
+    BaseModuleWidget *initWMModeModule();
+    BaseModuleWidget *initIconModule();
 
 private:
-  int m_index;
-  NextButton *m_nextBtn;
-  DIconButton *m_previousBtn;
-  NextButton *m_doneBtn;
-  DWidget *m_current;
-  DWidget *m_last;
-  QPropertyAnimation *m_currentAni;
-  QPropertyAnimation *m_lastAni;
-  DWidget *m_fakerWidget;
-  QSettings *m_settings;
-  WMSwitcherInter *m_displayInter;
-  bool isx86;
-  bool m_isFirst;
+    int m_index;
+    NextButton *m_nextBtn;
+    DIconButton *m_previousBtn;
+    NextButton *m_doneBtn;
+    DWidget *m_current;
+    DWidget *m_last;
+    QPropertyAnimation *m_currentAni;
+    QPropertyAnimation *m_lastAni;
+    DWidget *m_fakerWidget;
+    QSettings *m_settings;
+    WMSwitcherInter *m_displayInter;
+    bool isx86;
+    bool m_isFirst;
 };
 
 #endif // MAINWINDOW_H

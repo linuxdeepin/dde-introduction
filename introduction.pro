@@ -8,6 +8,13 @@ DESTDIR    = $$_PRO_FILE_PWD_
 
 #load(dtk_qmake)
 
+greaterThan(QT_MAJOR_VERSION, 4) {
+    TARGET_ARCH=$${QT_ARCH}
+} else {
+    TARGET_ARCH=$${QMAKE_HOST.arch}
+}
+
+
 isEmpty(PREFIX){
     PREFIX = /usr
 }
@@ -64,6 +71,16 @@ SOURCES += \
 RESOURCES += \
     dde-introduction.qrc
 
+contains(TARGET_ARCH, x86_64) {
+
+}else{
+    DEFINES += DISABLE_VIDEO
+    HEADERS -= src/modules/videowidget.h
+    SOURCES -= src/modules/videowidget.cpp
+    PKGCONFIG -= libdmr
+}
+
+
 desktop.path = $$PREFIX/share/applications/
 desktop.files += $$PWD/dde-introduction.desktop
 
@@ -84,12 +101,12 @@ icon.files = resources/dde-introduction.svg
 
 INSTALLS += desktop target icon qm_files
 
-host_mips64 | host_sw_64 | host_aarch64: {
-    DEFINES += DISABLE_VIDEO
-    HEADERS -= src/modules/videowidget.h
-    SOURCES -= src/modules/videowidget.cpp
-    PKGCONFIG -= libdmr
-}
+#host_mips64 | host_sw_64 | host_aarch64: {
+#    DEFINES += DISABLE_VIDEO
+#    HEADERS -= src/modules/videowidget.h
+#    SOURCES -= src/modules/videowidget.cpp
+#    PKGCONFIG -= libdmr
+#}
 
 DEFINES += PROFESSIONAL
 videos.path = $$PREFIX/share/dde-introduction/

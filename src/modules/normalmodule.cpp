@@ -62,8 +62,8 @@ NormalModule::NormalModule(DWidget *parent)
     m_rightContentLayout->setContentsMargins(0, 0, 0, 0);
 
     /*DLabel *logo = new DLabel(this);
-//    QIcon::setThemeName("hicolor");
-//    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
+    //    QIcon::setThemeName("hicolor");
+    //    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
     QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(24, 24) * devicePixelRatioF());
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
@@ -104,7 +104,7 @@ NormalModule::NormalModule(DWidget *parent)
     mainLayout->addLayout(layout);
     mainLayout->addWidget(m_describe, 0, Qt::AlignCenter);
     //mainLayout->addWidget(bottomNavigation);
-    mainLayout->setContentsMargins(0,0,0,20);
+    mainLayout->setContentsMargins(0, 0, 0, 20);
 
     setLayout(mainLayout);
 
@@ -113,30 +113,31 @@ NormalModule::NormalModule(DWidget *parent)
 
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
-//#ifndef DISABLE_VIDEO
+
     NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
     NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
-    if (isx86) {
-        // video button
-        m_buttonMap[videoBtn]   = ++moduleCount;
-        //videoBtn->setText(tr("Introduction"));
-        m_titleMap[videoBtn] = tr("Welcome");
-        m_buttonGrp->addButton(videoBtn);
-        VideoWidget *videoModule = new VideoWidget(false, this);
-        videoModule->hide();
-        m_modules[moduleCount] = videoModule;
-    } else {
-        //#else
-        m_buttonMap[slideBtn] = ++moduleCount;
-        //slideBtn->setText(tr("Introduction"));
-        m_titleMap[slideBtn] = tr("Welcome");
-        m_buttonGrp->addButton(slideBtn);
-        PhotoSlide *slideModule = new PhotoSlide;
-        slideModule->hide();
-        slideModule->start(false, false, 2000);
-        m_modules[moduleCount] = slideModule;
-    }
-//#endif
+#ifndef DISABLE_VIDEO
+//    if (isx86) {
+    // video button
+    m_buttonMap[videoBtn]   = ++moduleCount;
+    //videoBtn->setText(tr("Introduction"));
+    m_titleMap[videoBtn] = tr("Welcome");
+    m_buttonGrp->addButton(videoBtn);
+    VideoWidget *videoModule = new VideoWidget(false, this);
+    videoModule->hide();
+    m_modules[moduleCount] = videoModule;
+//    } else {
+#else
+    m_buttonMap[slideBtn] = ++moduleCount;
+    //slideBtn->setText(tr("Introduction"));
+    m_titleMap[slideBtn] = tr("Welcome");
+    m_buttonGrp->addButton(slideBtn);
+    PhotoSlide *slideModule = new PhotoSlide;
+    slideModule->hide();
+    slideModule->start(false, false, 2000);
+    m_modules[moduleCount] = slideModule;
+//    }
+#endif
 
     // desktop button
     NavigationButton *desktopBtn = new NavigationButton(tr("Desktop Mode"));
@@ -208,16 +209,16 @@ NormalModule::NormalModule(DWidget *parent)
     about->hide();
     m_modules[moduleCount] = about;*/
 
-//#ifndef DISABLE_VIDEO
-    if (isx86) {
-        videoBtn->setChecked(true);
-        m_titleLabel->setText(m_titleMap[videoBtn]);
-    } else {
-        //#else
-        slideBtn->setChecked(true);
-        m_titleLabel->setText(m_titleMap[slideBtn]);
-    }
-//#endif
+#ifndef DISABLE_VIDEO
+//    if (isx86) {
+    videoBtn->setChecked(true);
+    m_titleLabel->setText(m_titleMap[videoBtn]);
+//    } else {
+#else
+    slideBtn->setChecked(true);
+    m_titleLabel->setText(m_titleMap[slideBtn]);
+//    }
+#endif
 
     m_buttonGrp->setExclusive(true);
 
@@ -239,16 +240,16 @@ NormalModule::NormalModule(DWidget *parent)
         m_describe->setText(m_describeMap[btn]);
     });
 
-//#ifndef DISABLE_VIDEO
-    if (isx86) {
-        updateCurrentWidget(m_buttonMap[videoBtn]);
-        m_button = videoBtn;
-    } else {
-//#else
-        updateCurrentWidget(m_buttonMap[slideBtn]);
-        m_button = slideBtn;
-    }
-    //#endif
+#ifndef DISABLE_VIDEO
+//    if (isx86) {
+    updateCurrentWidget(m_buttonMap[videoBtn]);
+    m_button = videoBtn;
+//    } else {
+#else
+    updateCurrentWidget(m_buttonMap[slideBtn]);
+    m_button = slideBtn;
+//    }
+#endif
 }
 
 void NormalModule::keyPressEvent(QKeyEvent *e)
@@ -256,16 +257,19 @@ void NormalModule::keyPressEvent(QKeyEvent *e)
     QWidget *w = m_modules[m_index];
     switch (m_index) {
     case 1:
-        static_cast<VideoWidget*>(w)->keyPressEvent(e);
+//        static_cast<VideoWidget *>(w)->keyPressEvent(e);
+#ifndef DISABLE_VIDEO
+        static_cast<VideoWidget *>(w)->keyPressEvent(e);
+#endif
         break;
     case 2:
-        static_cast<DesktopModeModule*>(w)->keyPressEvent(e);
+        static_cast<DesktopModeModule *>(w)->keyPressEvent(e);
         break;
     case 3:
-        static_cast<WMModeModule*>(w)->keyPressEvent(e);
+        static_cast<WMModeModule *>(w)->keyPressEvent(e);
         break;
     case 4:
-        static_cast<IconModule*>(w)->keyPressEvent(e);
+        static_cast<IconModule *>(w)->keyPressEvent(e);
         break;
     default:
         break;
@@ -309,10 +313,12 @@ void NormalModule::updateCurrentWidget(const int index)
         if (index != 1)
         {
             QWidget *w = m_modules[1];
+#ifndef DISABLE_VIDEO
             VideoWidget *video = qobject_cast<VideoWidget *>(w);
             if (video) {
                 video->stop();
             }
+#endif
         }
 
         m_currentWidget = w;
@@ -326,7 +332,7 @@ void NormalModule::updateCurrentWidget(const int index)
 void NormalModule::updataButton(QAbstractButton *btn)
 {
     m_button->initButton();
-    m_button = dynamic_cast<NavigationButton*>(btn);
+    m_button = dynamic_cast<NavigationButton *>(btn);
 }
 
 void NormalModule::initTheme(int type)

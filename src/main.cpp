@@ -83,10 +83,11 @@ void saveThemeTypeSetting(int type)
 int main(int argc, char *argv[])
 {
     bool isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
-//#ifndef DISABLE_VIDEO
-    if (isx86)
-        qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
-//#endif
+#ifndef DISABLE_VIDEO
+//    if (isx86)
+    qDebug() << "init movie";
+    qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
+#endif
 
     //QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     DApplication::loadDXcbPlugin();
@@ -144,12 +145,15 @@ int main(int argc, char *argv[])
 
 
 
+    qDebug() << "mainwindow init";
     MainWindow w;
-    DPlatformWindowHandle::enableDXcbForWindow(&w, true);
-    dbus.registerObject("/com/deepin/introduction", &w, QDBusConnection::ExportScriptableSlots);
-
     w.show();
     moveToCenter(&w);
+    qDebug() << "mainwindow show";
+    w.initWindowWidget();
+
+    DPlatformWindowHandle::enableDXcbForWindow(&w, true);
+    dbus.registerObject("/com/deepin/introduction", &w, QDBusConnection::ExportScriptableSlots);
 
     return a.exec();
 }

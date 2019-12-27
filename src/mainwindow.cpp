@@ -51,9 +51,12 @@ MainWindow::MainWindow(DWidget *parent)
     isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::slotTheme);
 
-    initUI();
-    slotTheme();
-    initConnect();
+    this->setWindowFlags(Qt::CustomizeWindowHint);
+    titlebar()->setMenuVisible(false);
+    setFixedSize(WINDOW_SIZE);
+
+    setTitlebarShadowEnabled(false);
+
 }
 
 MainWindow::~MainWindow()
@@ -61,28 +64,37 @@ MainWindow::~MainWindow()
 
 }
 
+void MainWindow::initWindowWidget()
+{
+    initUI();
+    slotTheme();
+    initConnect();
+}
+
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
     if (m_isFirst) {
         switch (m_index) {
         case 1:
-            static_cast<VideoWidget*>(m_current)->keyPressEvent(e);
+#ifndef DISABLE_VIDEO
+            static_cast<VideoWidget *>(m_current)->keyPressEvent(e);
+#endif
             break;
         case 2:
-            static_cast<DesktopModeModule*>(static_cast<BaseModuleWidget*>(m_current)->getModel())->keyPressEvent(e);
+            static_cast<DesktopModeModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())->keyPressEvent(e);
             break;
         case 3:
-            static_cast<WMModeModule*>(static_cast<BaseModuleWidget*>(m_current)->getModel())->keyPressEvent(e);
+            static_cast<WMModeModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())->keyPressEvent(e);
             break;
         case 4:
-            static_cast<IconModule*>(static_cast<BaseModuleWidget*>(m_current)->getModel())->keyPressEvent(e);
+            static_cast<IconModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())->keyPressEvent(e);
             break;
         default:
             break;
         }
         setFocus();
     } else {
-        static_cast<NormalModule*>(m_current)->keyPressEvent(e);
+        static_cast<NormalModule *>(m_current)->keyPressEvent(e);
     }
     QMainWindow::keyPressEvent(e);
 }
@@ -134,12 +146,6 @@ void MainWindow::next()
 
 void MainWindow::initUI()
 {
-    this->setWindowFlags(Qt::CustomizeWindowHint);
-    titlebar()->setMenuVisible(false);
-    setFixedSize(WINDOW_SIZE);
-
-    setTitlebarShadowEnabled(false);
-
     DPlatformWindowHandle *handle = new DPlatformWindowHandle(this);
     handle->setBorderWidth(0);
     handle->setWindowRadius(5);
@@ -184,18 +190,19 @@ void MainWindow::initUI()
     if (isFirst) {
         m_settings->setValue("IsFirst", false);
 
-//#ifndef DISABLE_VIDEO
-        if (isx86) {
-            m_current = new VideoWidget(false, m_fakerWidget);
-            m_nextBtn->setMode(NextButton::Transparent);
-        } else {
-            m_current = new PhotoSlide(m_fakerWidget);
-            m_nextBtn->setMode(NextButton::Normal);
-            static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
-            m_nextBtn->setMode(NextButton::Normal);
-            m_index = 1;
-            //#endif
-        }
+#ifndef DISABLE_VIDEO
+//        if (isx86) {
+        m_current = new VideoWidget(false, m_fakerWidget);
+        m_nextBtn->setMode(NextButton::Transparent);
+//        } else {
+#else
+        m_current = new PhotoSlide(m_fakerWidget);
+        m_nextBtn->setMode(NextButton::Normal);
+        static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+        m_nextBtn->setMode(NextButton::Normal);
+        m_index = 1;
+#endif
+//        }
 //#else
         m_previousBtn->hide();
         m_nextBtn->show();
@@ -205,28 +212,28 @@ void MainWindow::initUI()
         m_nextBtn->hide();
     }
 #else
-//#ifndef DISABLE_VIDEO
-    if (isx86) {
-        m_current = new VideoWidget(false, m_fakerWidget);
-        //m_current = new PhotoSlide(m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Normal);
-        //static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
-    } else {
-        //#else
-        //        m_current = initDesktopModeModule();
-        m_current = new PhotoSlide(m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Normal);
-        static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
-    }
-//#endif
+#ifndef DISABLE_VIDEO
+//    if (isx86) {
+    m_current = new VideoWidget(false, m_fakerWidget);
+    //m_current = new PhotoSlide(m_fakerWidget);
+    m_nextBtn->setMode(NextButton::Normal);
+    //static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
+//    } else {
+#else
+    //        m_current = initDesktopModeModule();
+    m_current = new PhotoSlide(m_fakerWidget);
+    m_nextBtn->setMode(NextButton::Normal);
+    static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+//    }
+#endif
     m_previousBtn->hide();
     m_nextBtn->show();
     m_nextBtn->setMode(NextButton::Transparent);
 #endif
 
     //m_current->setFixedSize(704, 454);
-    m_current->move(-1,-1);
-    m_current->setFixedSize(QSize(700,450));
+    m_current->move(-1, -1);
+    m_current->setFixedSize(QSize(700, 450));
     m_current->show();
 
     m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/10, 404);
@@ -271,18 +278,18 @@ void MainWindow::updateModule(const int index)
     m_last = m_current;
     switch (index) {
     case 1:
-//#ifndef DISABLE_VIDEO
-        if (isx86) {
-            m_current = new VideoWidget(false, m_fakerWidget);
-            m_current->setFixedSize(WINDOW_SIZE);
-            m_nextBtn->setMode(NextButton::Transparent);
-        } else {
-            //#else
-            m_current = new PhotoSlide(m_fakerWidget);
-            m_nextBtn->setMode(NextButton::Normal);
-            static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
-        }
-//#endif
+#ifndef DISABLE_VIDEO
+//        if (isx86) {
+        m_current = new VideoWidget(false, m_fakerWidget);
+        m_current->setFixedSize(WINDOW_SIZE);
+        m_nextBtn->setMode(NextButton::Transparent);
+//        } else {
+#else
+        m_current = new PhotoSlide(m_fakerWidget);
+        m_nextBtn->setMode(NextButton::Normal);
+        static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
+//        }
+#endif
         m_previousBtn->hide();
         break;
     case 2:
@@ -399,7 +406,7 @@ void MainWindow::slotTheme()
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
         DPalette pl = this->palette();
-        pl.setColor(DPalette::Window, QColor(40,40,40));
+        pl.setColor(DPalette::Window, QColor(40, 40, 40));
         this->setPalette(pl);
     }
     //titlebar()->setSeparatorVisible(false);

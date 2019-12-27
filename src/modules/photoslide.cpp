@@ -10,7 +10,7 @@ PhotoSlide::PhotoSlide(QWidget *parent)
 {
     m_selectBtn->hide();
 
-    container_label_ = new QLabel(this);
+    container_label_ = new DLabel(this);
 
     pos_animation_ = new QPropertyAnimation(container_label_, "pos", this);
 

@@ -8,6 +8,8 @@
 #include <QPropertyAnimation>
 #include <QWidget>
 
+#include <DLabel>
+
 class PhotoSlide : public ModuleInterface {
     Q_OBJECT
 public:
@@ -29,7 +31,7 @@ private slots:
 private:
     int                      slide_index_;
     QStringList              m_photoList;
-    QLabel*                  container_label_   = nullptr;
+    DLabel*                  container_label_   = nullptr;
     QPropertyAnimation*      pos_animation_     = nullptr;
     QGraphicsOpacityEffect*  opacity_effect_    = nullptr;
     QPropertyAnimation*      opacity_animation_ = nullptr;
