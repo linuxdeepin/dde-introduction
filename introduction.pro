@@ -3,7 +3,7 @@ TEMPLATE = app
 QT = core gui widgets dbus multimedia multimediawidgets
 CONFIG += link_pkgconfig c++11
 QT += dtkwidget
-PKGCONFIG += dframeworkdbus libdmr
+PKGCONFIG += dframeworkdbus libdmr gsettings-qt
 DESTDIR    = $$_PRO_FILE_PWD_
 
 #load(dtk_qmake)
