@@ -31,16 +31,16 @@ BottomNavigation::BottomNavigation(DWidget *parent)
     //offical->setText(tr("Home Page"));
 
     BottomButton *community = new BottomButton;
-    community->setText(tr("UserCommunity"));
+    community->setText(tr("Community"));
 
     BottomButton *feedback = new BottomButton;
-    feedback->setText(tr("ReportingIssues"));
+    feedback->setText(tr("Feeback"));
 
     BottomButton *help = new BottomButton;
-    help->setText(tr("HelpManual"));
+    help->setText(tr("Help"));
 
     BottomButton *thank = new BottomButton;
-    thank->setText(tr("Thank"));
+    thank->setText(tr("Acknowledgments"));
 
     DImageButton *mail = new DImageButton(":/resources/Mail.svg",
                                           ":/resources/Mail.svg",

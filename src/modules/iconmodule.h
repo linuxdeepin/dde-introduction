@@ -58,6 +58,7 @@ private:
     DWidget *m_scrollWidget;
     DFlowLayout* m_layout;
     QMap<IconStruct, BaseWidget*> m_iconList;
+    int m_height;
 };
 
 #endif // ICONMODULE_H

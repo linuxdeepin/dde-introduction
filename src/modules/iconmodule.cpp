@@ -113,6 +113,8 @@ void IconModule::currentIconChanged(const IconStruct &icon)
     m_selectBtn->raise();
 
     BaseWidget * w = m_iconList[icon];
+    QPoint p = w->mapTo(m_scrollWidget, m_iconList[icon]->rect().topRight())  - QPoint(9, 3);
+    m_scroll->ensureVisible(p.x(), p.y() + m_height, 50, m_height);
     m_selectBtn->move(w->mapTo(m_scrollWidget, m_iconList[icon]->rect().topRight())  - QPoint(9, 3));
 
     for (BaseWidget *base : m_iconList.values()) {
@@ -137,6 +139,7 @@ void IconModule::updateBigIcon()
         pixmap = pixmap.scaled(QSize(320, 70) * devicePixelRatioF(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
     }
+    m_height = 70;
 }
 
 void IconModule::updateSmallIcon()
@@ -156,6 +159,7 @@ void IconModule::updateSmallIcon()
         map.value()->setPixmap(pixmap);
         map.value()->setLayoutSpacing(10);
     }
+    m_height = 60;
 }
 
 void IconModule::updateSelectBtnPos()

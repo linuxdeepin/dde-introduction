@@ -43,7 +43,7 @@ Support::Support(QWidget *parent)
 
 void Support::initTheme(int type)
 {
-    if (type == 0) {
+    /*if (type == 0) {
         type = DGuiApplicationHelper::instance()->themeType();
     }
     if (type == 2) {
@@ -89,5 +89,5 @@ void Support::initTheme(int type)
                  .arg(tr("www.deepin.org"))
                  .arg(tr("■"));
     }
-    m_label->setText(m_text);
+    m_label->setText(m_text);*/
 }

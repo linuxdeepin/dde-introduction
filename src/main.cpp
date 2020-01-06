@@ -142,8 +142,10 @@ int main(int argc, char *argv[])
     // Version Time
     a.setApplicationVersion(DApplication::buildVersion(t_date));
 
+    setlocale(LC_NUMERIC, "C");
 
-
+    // 强制不使用嵌入mpv窗口的模式
+    dmr::CompositingManager::get().overrideCompositeMode(true);
 
     qDebug() << "mainwindow init";
     MainWindow w;
