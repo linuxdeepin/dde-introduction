@@ -46,17 +46,17 @@
         <file>resources/fashion_mode.png</file>
         <file>resources/close_normal.svg</file>
         <file>resources/previous_normal_dark.png</file>
-        <file>resources/3d_big@3x.png</file>
-        <file>resources/effective_mode_big@3x.png</file>
-        <file>resources/effective_mode_small@3x.png</file>
-        <file>resources/2d_small@3x.png</file>
-        <file>resources/3d_small@3x.png</file>
-        <file>resources/2d_big@3x.png</file>
-        <file>resources/fashion_mode_big@3x.png</file>
-        <file>resources/fashion_mode_small@3x.png</file>
         <file>resources/slide_big/08.jpg</file>
         <file>resources/slide_small/08.jpg</file>
         <file>resources/demo_Moment.jpg</file>
         <file>resources/list_select.svg</file>
+        <file>resources/2d_big@3x.png</file>
+        <file>resources/2d_small@3x.png</file>
+        <file>resources/3d_big@3x.png</file>
+        <file>resources/3d_small@3x.png</file>
+        <file>resources/effective_mode_small@3x.png</file>
+        <file>resources/effective_mode_big@3x.png</file>
+        <file>resources/fashion_mode_big@3x.png</file>
+        <file>resources/fashion_mode_small@3x.png</file>
     </qresource>
 </RCC>
