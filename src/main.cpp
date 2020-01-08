@@ -145,7 +145,9 @@ int main(int argc, char *argv[])
     setlocale(LC_NUMERIC, "C");
 
     // 强制不使用嵌入mpv窗口的模式
+#ifndef DISABLE_VIDEO
     dmr::CompositingManager::get().overrideCompositeMode(true);
+#endif
 
     qDebug() << "mainwindow init";
     MainWindow w;
