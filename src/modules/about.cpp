@@ -26,17 +26,17 @@ About::About(QWidget *parent)
                    "<br style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%9</br>"
                    "<br style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%10</p>"
                    "<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%11")
-           .arg(tr("    Deep is an open source operating system development team in China, which has a history of 14 years. Many of our members have benefited from open source projects around the world, and based on the Linux open source project, the Deep Team has also received some business revenue to support its development. Therefore, it is very desirable to feed back the open source community through the deep operating system, so that more users around the world can use the best open source Linux operating system products. Our source code is open on "))
-           .arg(tr("github"))
-           .arg(tr(", and anyone who has doubts is welcome to know or use our code."))
-           .arg(tr("■target"))
-           .arg(tr("The World's Most Beautiful and Useful Linux Distribution"))
-           .arg(tr("■History"))
-           .arg(tr("Hiweed Linux was first released in 2004"))
-           .arg(tr("Hiweed Linux renamed deepin in 2008"))
-           .arg(tr("A new V15 version will be released in 2016"))
-           .arg(tr("X Month X, 2018, latest version 1.5.1"))
-           .arg(tr("■Open source projects"));
+           .arg(("    Deep is an open source operating system development team in China, which has a history of 14 years. Many of our members have benefited from open source projects around the world, and based on the Linux open source project, the Deep Team has also received some business revenue to support its development. Therefore, it is very desirable to feed back the open source community through the deep operating system, so that more users around the world can use the best open source Linux operating system products. Our source code is open on "))
+           .arg(("github"))
+           .arg((", and anyone who has doubts is welcome to know or use our code."))
+           .arg(("■target"))
+           .arg(("The World's Most Beautiful and Useful Linux Distribution"))
+           .arg(("■History"))
+           .arg(("Hiweed Linux was first released in 2004"))
+           .arg(("Hiweed Linux renamed deepin in 2008"))
+           .arg(("A new V15 version will be released in 2016"))
+           .arg(("X Month X, 2018, latest version 1.5.1"))
+           .arg(("■Open source projects"));
 
     label->setText(text);*/
 }
