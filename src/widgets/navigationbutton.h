@@ -37,8 +37,10 @@ public:
 
 protected:
     //void paintEvent(QPaintEvent *event);
-    QSize setHint();
-
+    //QSize setHint();
+    void resizeEvent(QResizeEvent*);
+signals:
+    void widthChanged(int);
 private:
     DLabel*          m_label;
     QGraphicsDropShadowEffect* m_shadow;

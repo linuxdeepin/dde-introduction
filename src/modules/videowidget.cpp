@@ -249,6 +249,20 @@ void VideoWidget::stop()
     //updateControlButton();
 }
 
+void VideoWidget::updateInterface(QSize size)
+{
+    setFixedSize(size);
+    m_video->setFixedSize(size);
+    if (m_background != NULL) {
+        QPixmap pixmap(":/resources/demo_Moment.jpg");
+        pixmap = pixmap.scaled(m_video->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        m_background->setFixedSize(m_video->size());
+        m_background->setPixmap(pixmap);
+    }
+
+    updateClip();
+}
+
 void VideoWidget::enterEvent(QEvent *e)
 {
     ModuleInterface::enterEvent(e);

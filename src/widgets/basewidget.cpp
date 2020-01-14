@@ -45,6 +45,12 @@ void BaseWidget::setLayoutSpacing(int i)
     m_layout->setSpacing(i);
 }
 
+void BaseWidget::updateInterface(float f)
+{
+    m_borderWidget->updateInterface(f);
+    m_borderWidget->setFixedSize(m_size * f);
+}
+
 void BaseWidget::setBigPixmap(const QString &url)
 {
     setBigPixmap(QPixmap(DHiDPIHelper::loadNxPixmap(url)));
@@ -69,6 +75,7 @@ void BaseWidget::setBigPixmap(const QPixmap &pixmap)
     QPixmap scaledPixmap = pixmap.scaled(scaleSize, Qt::KeepAspectRatio);
     m_borderWidget->setFixedSize(QSize(320, 200) + QSize(10, 11));
     m_borderWidget->setPixmap(scaledPixmap);
+    m_size = QSize(320, 200) + QSize(10, 11);
 
     setFixedWidth(m_borderWidget->width());
 }
@@ -79,6 +86,7 @@ void BaseWidget::setSmallPixmap(const QPixmap &pixmap)
     QPixmap scaledPixmap = pixmap.scaled(scaleSize, Qt::KeepAspectRatio);
     m_borderWidget->setFixedSize(QSize(240, 150) + QSize(10, 10));
     m_borderWidget->setPixmap(scaledPixmap);
+    m_size = QSize(240, 150) + QSize(10, 10);
 
     setFixedWidth(m_borderWidget->width());
 }

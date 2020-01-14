@@ -31,6 +31,7 @@ BorderWidget::BorderWidget(QWidget *parent)
 void BorderWidget::setPixmap(const QPixmap &pixmap)
 {
     m_pixmap = pixmap;
+    m_size = m_pixmap.size();
 
     update();
 }
@@ -42,6 +43,12 @@ void BorderWidget::setChecked(bool checked)
     update();
 }
 
+void BorderWidget::updateInterface(float f)
+{
+    m_size = m_pixmap.size() * f;
+    update();
+}
+
 void BorderWidget::paintEvent(QPaintEvent *event)
 {
     DFrame::paintEvent(event);
@@ -49,7 +56,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
-    QRect pixRect(QPoint(6, 6), (m_pixmap.size() - QSize(3,3)) / devicePixelRatioF());
+    QRect pixRect(QPoint(6, 6), (m_size - QSize(3,3)) / devicePixelRatioF());
     pixRect.moveCenter(rect().center());
 
     // draw background

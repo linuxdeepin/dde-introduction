@@ -32,6 +32,7 @@ public:
 public slots:
     void setPixmap(const QPixmap &pixmap);
     void setChecked(bool checked);
+    void updateInterface(float);
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
@@ -39,6 +40,7 @@ protected:
 private:
     QPixmap m_pixmap;
     bool m_checked;
+    QSize m_size;
 };
 
 #endif // BORDERWIDGET_H

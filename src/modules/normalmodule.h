@@ -53,6 +53,7 @@ private:
 private slots:
     void initTheme(int type);
     void updateLabel();
+    void updateInterface(int);
 
 private:
     QVBoxLayout *m_leftNavigationLayout;
@@ -67,6 +68,7 @@ private:
     WMSwitcher *m_wmSwitcher;
     DLabel *m_titleLabel;
     DLabel *m_describe;
+    DWidget *m_content;
     int m_index;
     bool isx86;
 };

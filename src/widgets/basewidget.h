@@ -48,6 +48,7 @@ public slots:
     void setTitle(const QString &title);
     void setChecked(bool checked);
     void setLayoutSpacing(int i);
+    void updateInterface(float);
 
 protected:
     void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
@@ -59,6 +60,7 @@ private:
     DLabel* m_title;
     BorderWidget* m_borderWidget;
     DImageButton* m_selectBtn;
+    QSize m_size;
 };
 
 #endif // BASEWIDGET_H

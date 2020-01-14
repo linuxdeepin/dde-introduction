@@ -53,7 +53,7 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
 void NavigationButton::initButton()
 {
     int type = DGuiApplicationHelper::instance()->themeType();
-     DPalette pl = m_label->palette();
+    DPalette pl = m_label->palette();
     if (type == 1) {
         if (isChecked()) {
             pl.setColor(DPalette::WindowText,Qt::white);
@@ -80,11 +80,22 @@ void NavigationButton::initButton()
     m_label->setForegroundRole(DPalette::WindowText);
 }
 
-QSize NavigationButton::setHint()
+/*QSize NavigationButton::setHint()
 {
     QFontMetrics fm(this->font());
     QRect rec = fm.boundingRect(m_label->text());
     return rec.size();
+}*/
+
+void NavigationButton::resizeEvent(QResizeEvent *e)
+{
+    DPushButton::resizeEvent(e);
+    if (m_label->text() == "Running Mode") {
+        QFont font = m_label->font();
+        QFontMetrics fm(font);
+        QRect rec = fm.boundingRect(m_label->text());
+        emit widthChanged(rec.width());
+    }
 }
 
 /*void NavigationButton::paintEvent(QPaintEvent *event)

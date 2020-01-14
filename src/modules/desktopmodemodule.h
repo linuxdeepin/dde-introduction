@@ -39,6 +39,7 @@ public:
     void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
 
     void setFirst(bool first);
+    void updateInterface(float);
 
 private slots:
     void onDesktopTypeChanged(Model::DesktopMode mode);
@@ -47,6 +48,7 @@ private:
     QHBoxLayout* m_layout;
     BaseWidget* m_efficientWidget;
     BaseWidget* m_fashionWidget;
+    QSize m_size;
     bool isfirst;
 };
 

@@ -70,15 +70,15 @@ NormalModule::NormalModule(DWidget *parent)
     logo->move(rect().topLeft() + QPoint(12, 8));
     logo->show();*/
 
-    DWidget *content = new DWidget;
-    content->setLayout(m_rightContentLayout);
+    m_content = new DWidget;
+    m_content->setLayout(m_rightContentLayout);
 
     DWidget *leftWidget = new DWidget;
     leftWidget->setObjectName("LeftWidget");
     leftWidget->setLayout(m_leftNavigationLayout);
 
     layout->addWidget(leftWidget);
-    layout->addWidget(content);
+    layout->addWidget(m_content);
 
     // bottom navigation
     //BottomNavigation *bottomNavigation = new BottomNavigation;
@@ -109,7 +109,7 @@ NormalModule::NormalModule(DWidget *parent)
     setLayout(mainLayout);
 
     setFixedSize(700, 450);
-    content->setFixedSize(549, 343);
+    m_content->setFixedSize(549, 343);
 
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
@@ -157,18 +157,7 @@ NormalModule::NormalModule(DWidget *parent)
         wmBtn = new NavigationButton(tr("Running Mode"));
         m_buttonMap[wmBtn]      = ++moduleCount;
         //wmBtn->setText(tr("Operation mode"));
-        QFont font = wmBtn->font();
-        QFontMetrics fm(font);
-        QRect rec = fm.boundingRect(wmBtn->text());
-        int www = rec.width();
-        while (www > 110) {
-            int size = font.pointSize();
-            font.setPointSize(size - 1);
-            QFontMetrics fms(font);
-            QRect rect = fms.boundingRect(wmBtn->text());
-            www = rect.width();
-        }
-        wmBtn->setFont(font);
+        connect(wmBtn, &NavigationButton::widthChanged, this, &NormalModule::updateInterface);
         m_titleMap[wmBtn] = tr("Choose a running mode");
         m_describeMap[wmBtn] = tr("Please choose normal mode if you has a low configuration computer");
         m_buttonGrp->addButton(wmBtn);
@@ -226,6 +215,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     for (QWidget *w : m_buttonGrp->buttons()) {
         w->setFixedSize(110, 30);
+        //w->setMinimumSize(110, 30);
         m_leftNavigationLayout->addWidget(w, 0, Qt::AlignHCenter | Qt::AlignVCenter);
         w->installEventFilter(this);
     }
@@ -356,4 +346,63 @@ void NormalModule::updateLabel()
     else
         dePa.setColor(DPalette::WindowText, QColor("#FFC0C6D4"));
     m_describe->setPalette(dePa);
+}
+
+void NormalModule::updateInterface(int width)
+{
+    if (width < 110) {
+        for (QWidget *w : m_buttonGrp->buttons()) {
+            w->setMinimumSize(110, 30);
+            m_content->setFixedSize(549, 343);
+        }
+        QWidget *w = m_modules[m_index];
+        switch (m_index) {
+        case 1:
+    #ifndef DISABLE_VIDEO
+            static_cast<VideoWidget *>(w)->updateInterface(QSize(549, 343));
+    #endif
+            break;
+        case 2:
+            static_cast<DesktopModeModule *>(w)->updateInterface(1.0);
+            break;
+        /*case 3:
+            static_cast<WMModeModule *>(w)->keyPressEvent(e);
+            break;
+        case 4:
+            static_cast<IconModule *>(w)->keyPressEvent(e);
+            break;*/
+        default:
+            break;
+        };
+        return;
+    }
+    QSize size(549, 343);
+    int widgetWidth = size.width() - (width - 110);
+    int widgetHeigh = size.height() * ((float)widgetWidth / (float)size.width());
+    m_content->setFixedSize(widgetWidth, widgetHeigh);
+
+    QWidget *w = m_modules[m_index];
+    float f = 110.0 / (float)width;
+    switch (m_index) {
+    case 1:
+#ifndef DISABLE_VIDEO
+        static_cast<VideoWidget *>(w)->updateInterface(QSize(widgetWidth, widgetHeigh));
+#endif
+        break;
+    case 2:
+        static_cast<DesktopModeModule *>(w)->updateInterface(f);
+        break;
+    /*case 3:
+        static_cast<WMModeModule *>(w)->keyPressEvent(e);
+        break;
+    case 4:
+        static_cast<IconModule *>(w)->keyPressEvent(e);
+        break;*/
+    default:
+        break;
+    };
+
+    for (QWidget *w : m_buttonGrp->buttons()) {
+        w->setMinimumSize(width + 15, 30);
+    }
 }

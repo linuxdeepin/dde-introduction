@@ -46,6 +46,7 @@ public:
     void updateControlButton();
     void onControlButtonClicked();
     void stop();
+    void updateInterface(QSize);
 
 protected:
     void enterEvent(QEvent *) Q_DECL_OVERRIDE;

@@ -80,6 +80,7 @@ void DesktopModeModule::updateBigIcon()
     m_efficientWidget->setBigPixmap(":/resources/effective_mode_big@3x.png");
     m_fashionWidget->setBigPixmap(":/resources/fashion_mode_big@3x.png");
     m_layout->setContentsMargins(10, 70, 10, 35);
+    m_size = QSize(330,210);
 }
 
 void DesktopModeModule::updateSmallIcon()
@@ -88,6 +89,7 @@ void DesktopModeModule::updateSmallIcon()
     QPixmap pixmapfash(":/resources/fashion_mode_small@3x.png");
     m_efficientWidget->setSmallPixmap(pixmapeff);
     m_fashionWidget->setSmallPixmap(pixmapfash);
+    m_size = QSize(250,160);
 }
 
 void DesktopModeModule::updateSelectBtnPos()
@@ -98,6 +100,31 @@ void DesktopModeModule::updateSelectBtnPos()
 void DesktopModeModule::setFirst(bool first)
 {
     isfirst = first;
+}
+
+void DesktopModeModule::updateInterface(float f)
+{
+    QPoint point = m_selectBtn->pos();
+    m_efficientWidget->updateInterface(f);
+    m_fashionWidget->updateInterface(f);
+
+    m_selectBtn->raise();
+    QPoint p;
+    p.setX((float)m_size.width() * (1 - f) / 2);
+    p.setY(-(float)m_size.height() * (1 - f) / 2);
+    m_selectBtn->move(point - p);
+    /*switch (m_model->desktopMode()) {
+    case Model::EfficientMode:
+        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - p);
+        break;
+    case Model::FashionMode:
+        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - p);
+        break;
+    default:
+        break;
+    }*/
+    point = m_selectBtn->pos();
+    update();
 }
 
 void DesktopModeModule::keyPressEvent(QKeyEvent *event)
