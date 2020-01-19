@@ -20,5 +20,5 @@ Homepage: http://www.deepin.org
 Package: dde-introduction
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Introduction for deepin
+Description: Introduction for UOS
  Deepin initialization setup tool
