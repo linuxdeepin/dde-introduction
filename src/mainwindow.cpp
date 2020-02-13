@@ -212,7 +212,7 @@ void MainWindow::initUI()
         m_nextBtn->hide();
     }
 #else
-#ifndef DISABLE_VIDEO
+#ifdef DISABLE_VIDEO
 //    if (isx86) {
     m_current = new VideoWidget(false, m_fakerWidget);
     //m_current = new PhotoSlide(m_fakerWidget);
@@ -278,7 +278,7 @@ void MainWindow::updateModule(const int index)
     m_last = m_current;
     switch (index) {
     case 1:
-#ifndef DISABLE_VIDEO
+#ifdef DISABLE_VIDEO
 //        if (isx86) {
         m_current = new VideoWidget(false, m_fakerWidget);
         m_current->setFixedSize(WINDOW_SIZE);

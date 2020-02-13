@@ -30,6 +30,7 @@ private slots:
 
 private:
     int                      slide_index_;
+    int                      last_index_;
     QStringList              m_photoList;
     DLabel*                  container_label_   = nullptr;
     QPropertyAnimation*      pos_animation_     = nullptr;
@@ -37,6 +38,11 @@ private:
     QPropertyAnimation*      opacity_animation_ = nullptr;
     QParallelAnimationGroup* animation_group_   = nullptr;
     QVariantAnimation*       null_animation_    = nullptr;
+
+    DLabel*                  m_lastLable        = nullptr;
+    DLabel*                  m_currentLabel     = nullptr;
+    QPropertyAnimation*      m_currentAni       = nullptr;
+    QPropertyAnimation*      m_lastAni          = nullptr;
 };
 
 #endif  // PHOTOSLIDE_H
