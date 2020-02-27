@@ -153,7 +153,8 @@ NormalModule::NormalModule(DWidget *parent)
 
     // wm button
     NavigationButton *wmBtn = nullptr;
-    if (allow_switch_wm) {
+    bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm").property("compositingAllowSwitch").toBool();
+    if (allow_switch_wm && isSuportEffect) {
         wmBtn = new NavigationButton(tr("Running Mode"));
         m_buttonMap[wmBtn]      = ++moduleCount;
         //wmBtn->setText(tr("Operation mode"));

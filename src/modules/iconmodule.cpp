@@ -46,8 +46,8 @@ IconModule::IconModule(QWidget *parent)
 
     m_layout->setSpacing(10);
     m_layout->setMargin(0);
-    m_layout->setContentsMargins(10, 3, 0, 15);
-    m_layout->setVerticalSpacing(35);
+    m_layout->setContentsMargins(10, 5, 0, 14);
+    m_layout->setVerticalSpacing(36);
 
     m_selectBtn->setParent(m_scrollWidget);
 

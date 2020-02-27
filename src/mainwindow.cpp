@@ -296,18 +296,21 @@ void MainWindow::updateModule(const int index)
         m_current = initDesktopModeModule();
         break;
     case 3: {
-        if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
-            m_current = initWMModeModule();
-            break;
-        }
-
-        QFile file("/etc/deepin-wm-switcher/config.json");
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-            QJsonObject obj = doc.object();
-            if (obj["allow_switch"].toBool()) {
+        bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm").property("compositingAllowSwitch").toBool();
+        if (isSuportEffect == true) {
+            if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
                 m_current = initWMModeModule();
                 break;
+            }
+
+            QFile file("/etc/deepin-wm-switcher/config.json");
+            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+                QJsonObject obj = doc.object();
+                if (obj["allow_switch"].toBool()) {
+                    m_current = initWMModeModule();
+                    break;
+                }
             }
         }
 
