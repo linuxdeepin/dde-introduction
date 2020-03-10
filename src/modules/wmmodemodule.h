@@ -19,10 +19,10 @@
 #ifndef WMMODEMODULE_H
 #define WMMODEMODULE_H
 
-#include "moduleinterface.h"
-#include "../widgets/basewidget.h"
 #include "../model.h"
+#include "../widgets/basewidget.h"
 #include "../worker.h"
+#include "moduleinterface.h"
 
 #include <QHBoxLayout>
 #include <QKeyEvent>
@@ -31,12 +31,13 @@ class WMModeModule : public ModuleInterface
 {
     Q_OBJECT
 public:
-    explicit WMModeModule(QWidget *parent = nullptr);
+    explicit WMModeModule(QWidget* parent = nullptr);
 
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmallIcon() Q_DECL_OVERRIDE;
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
-    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent*) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent* event) Q_DECL_OVERRIDE;
 
     void setFirst(bool first);
 private slots:
@@ -49,4 +50,4 @@ private:
     bool m_first;
 };
 
-#endif // WMMODEMODULE_H
+#endif  // WMMODEMODULE_H

@@ -29,18 +29,14 @@ WMModeModule::WMModeModule(QWidget *parent)
     m_fashionWidget->setTitle(tr("Effect Mode"));
 
     connect(m_model, &Model::wmTypeChanged, this, &WMModeModule::onWMModeChanged);
-    connect(m_fashionWidget, &BaseWidget::clicked, this, [=] {
-        m_worker->setWMMode(Model::WM_3D);
-    });
-    connect(m_efficientWidget, &BaseWidget::clicked, this, [=] {
-        m_worker->setWMMode(Model::WM_2D);
-    });
+    connect(m_fashionWidget, &BaseWidget::clicked, this,
+            [=] { m_worker->setWMMode(Model::WM_3D); });
+    connect(m_efficientWidget, &BaseWidget::clicked, this,
+            [=] { m_worker->setWMMode(Model::WM_2D); });
 
     connect(m_efficientWidget, &BaseWidget::sizeChanged, this, &WMModeModule::updateSelectBtnPos);
 
-    QTimer::singleShot(100, this, [=] {
-        onWMModeChanged(m_model->wmType());
-    });
+    QTimer::singleShot(100, this, [=] { onWMModeChanged(m_model->wmType()); });
 
     m_layout->setContentsMargins(0, 30, 0, 65);
 
@@ -72,27 +68,21 @@ void WMModeModule::updateSelectBtnPos()
 
 void WMModeModule::onWMModeChanged(Model::WMType type)
 {
-    m_selectBtn->raise();
-
-    QPoint p(9,4);
-    if (!m_first)
-        p.setY(-20);
     switch (type) {
-    case Model::WM_2D:
-        m_selectBtn->move(m_efficientWidget->mapTo(this, m_efficientWidget->rect().topRight()) - p);
-        m_efficientWidget->setChecked(true);
-        m_fashionWidget->setChecked(false);
-        break;
-    case Model::WM_3D:
-        m_selectBtn->move(m_fashionWidget->mapTo(this, m_fashionWidget->rect().topRight()) - p);
-        m_fashionWidget->setChecked(true);
-        m_efficientWidget->setChecked(false);
-        break;
-    default:
-        break;
+        case Model::WM_2D:
+            m_efficientWidget->setChecked(true);
+            m_fashionWidget->setChecked(false);
+            break;
+        case Model::WM_3D:
+            m_fashionWidget->setChecked(true);
+            m_efficientWidget->setChecked(false);
+            break;
+        default:
+            break;
     }
     update();
 }
+
 void WMModeModule::setFirst(bool first)
 {
     m_first = first;
@@ -107,4 +97,36 @@ void WMModeModule::keyPressEvent(QKeyEvent *event)
         if (m_model->wmType() == 1)
             m_worker->setWMMode(Model::WM_2D);
     }
+}
+
+void WMModeModule::paintEvent(QPaintEvent *event)
+{
+    QWidget::paintEvent(event);
+
+    QPoint point;
+
+    int x = m_efficientWidget->m_borderWidget->geometry().x() +
+            m_fashionWidget->m_borderWidget->geometry().width();
+    int y = m_efficientWidget->m_borderWidget->geometry().y();
+
+    if (m_first) {
+        if (m_model->wmType() == Model::WM_2D) {
+            point.setX(x * 2 + 4);
+            point.setY(y + 66);
+        } else if (m_model->wmType() == Model::WM_3D) {
+            point.setX(x);
+            point.setY(y + 66);
+        }
+    } else {
+        if (m_model->wmType() == Model::WM_2D) {
+            point.setX(x * 2 + 22);
+            point.setY(y + 26);
+        } else if (m_model->wmType() == Model::WM_3D) {
+            point.setX(x + 4);
+            point.setY(y + 26);
+        }
+    }
+
+    m_selectBtn->move(point);
+    m_selectBtn->raise();
 }

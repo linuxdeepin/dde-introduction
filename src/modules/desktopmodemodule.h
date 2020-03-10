@@ -19,24 +19,25 @@
 #ifndef DESKTOPMODEMODULE_H
 #define DESKTOPMODEMODULE_H
 
-#include "moduleinterface.h"
-#include "../widgets/basewidget.h"
 #include "../model.h"
+#include "../widgets/basewidget.h"
 #include "../worker.h"
+#include "moduleinterface.h"
 
-#include <QKeyEvent>
 #include <QHBoxLayout>
+#include <QKeyEvent>
 
 class DesktopModeModule : public ModuleInterface
 {
     Q_OBJECT
 public:
-    explicit DesktopModeModule(QWidget *parent = nullptr);
+    explicit DesktopModeModule(QWidget* parent = nullptr);
 
     void updateBigIcon() Q_DECL_OVERRIDE;
     void updateSmallIcon() Q_DECL_OVERRIDE;
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
-    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent*) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent* event) Q_DECL_OVERRIDE;
 
     void setFirst(bool first);
     void updateInterface(float);
@@ -52,4 +53,4 @@ private:
     bool isfirst;
 };
 
-#endif // DESKTOPMODEMODULE_H
+#endif  // DESKTOPMODEMODULE_H

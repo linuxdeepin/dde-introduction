@@ -17,19 +17,19 @@
  */
 
 #include "mainwindow.h"
+#include "basemodulewidget.h"
 #include "modules/desktopmodemodule.h"
-#include "modules/wmmodemodule.h"
 #include "modules/iconmodule.h"
 #include "modules/normalmodule.h"
 #include "modules/photoslide.h"
-#include "basemodulewidget.h"
+#include "modules/wmmodemodule.h"
 
 #include <QHBoxLayout>
 
-#include <DTitlebar>
-#include <DPlatformWindowHandle>
 #include <DGuiApplicationHelper>
 #include <DPalette>
+#include <DPlatformWindowHandle>
+#include <DTitlebar>
 
 #ifndef DISABLE_VIDEO
 #include "modules/videowidget.h"
@@ -37,7 +37,7 @@
 
 DWIDGET_USE_NAMESPACE
 
-static const QSize WINDOW_SIZE { 699, 449 };
+static const QSize WINDOW_SIZE {699, 449};
 MainWindow::MainWindow(DWidget *parent)
     : DMainWindow(parent)
     , m_index(1)
@@ -46,23 +46,21 @@ MainWindow::MainWindow(DWidget *parent)
     , m_currentAni(new QPropertyAnimation(this))
     , m_lastAni(new QPropertyAnimation(this))
     , m_settings(new QSettings("deepin", "dde-introduction"))
-    , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
+    , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher",
+                                         QDBusConnection::sessionBus(), this))
 {
     isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
-    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::slotTheme);
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
+            &MainWindow::slotTheme);
 
     this->setWindowFlags(Qt::CustomizeWindowHint);
     titlebar()->setMenuVisible(false);
     setFixedSize(WINDOW_SIZE);
 
     setTitlebarShadowEnabled(false);
-
 }
 
-MainWindow::~MainWindow()
-{
-
-}
+MainWindow::~MainWindow() {}
 
 void MainWindow::initWindowWidget()
 {
@@ -75,22 +73,26 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 {
     if (m_isFirst) {
         switch (m_index) {
-        case 1:
+            case 1:
 #ifndef DISABLE_VIDEO
-            static_cast<VideoWidget *>(m_current)->keyPressEvent(e);
+                static_cast<VideoWidget *>(m_current)->keyPressEvent(e);
 #endif
-            break;
-        case 2:
-            static_cast<DesktopModeModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())->keyPressEvent(e);
-            break;
-        case 3:
-            static_cast<WMModeModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())->keyPressEvent(e);
-            break;
-        case 4:
-            static_cast<IconModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())->keyPressEvent(e);
-            break;
-        default:
-            break;
+                break;
+            case 2:
+                static_cast<DesktopModeModule *>(
+                    static_cast<BaseModuleWidget *>(m_current)->getModel())
+                    ->keyPressEvent(e);
+                break;
+            case 3:
+                static_cast<WMModeModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())
+                    ->keyPressEvent(e);
+                break;
+            case 4:
+                static_cast<IconModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())
+                    ->keyPressEvent(e);
+                break;
+            default:
+                break;
         }
         setFocus();
     } else {
@@ -161,11 +163,11 @@ void MainWindow::initUI()
     m_nextBtn->setFixedSize(100, 36);
     m_doneBtn->setFixedSize(100, 36);
 
-    //m_previousBtn = new DPushButton(this);
+    // m_previousBtn = new DPushButton(this);
     m_previousBtn = new DIconButton(QStyle::StandardPixmap::SP_ArrowBack, this);
     m_previousBtn->setFixedSize(36, 36);
 
-    //Addition Button Shadow
+    // Addition Button Shadow
     QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
     shadow_effect->setOffset(0, 2);
     shadow_effect->setColor(QColor(0, 0, 0, 0.05 * 255));
@@ -174,16 +176,16 @@ void MainWindow::initUI()
     m_previousBtn->setGraphicsEffect(shadow_effect);
     slotTheme();
 
-    DImageButton *closeBtn = new DImageButton(":/resources/close_normal.svg",
-                                              ":/resources/close_normal.svg",
-                                              ":/resources/close_normal.svg", this);
+    DImageButton *closeBtn =
+        new DImageButton(":/resources/close_normal.svg", ":/resources/close_normal.svg",
+                         ":/resources/close_normal.svg", this);
 
     closeBtn->setFixedSize(51, 51);
 
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
     closeBtn->show();
 
-#ifndef QT_DEBUG
+#ifdef QT_DEBUG
     const bool isFirst = m_settings->value("IsFirst", true).toBool();
     m_isFirst = isFirst;
 
@@ -191,7 +193,7 @@ void MainWindow::initUI()
         m_settings->setValue("IsFirst", false);
 
 #ifndef DISABLE_VIDEO
-//        if (isx86) {
+        //        if (isx86) {
         m_current = new VideoWidget(false, m_fakerWidget);
         m_nextBtn->setMode(NextButton::Transparent);
 //        } else {
@@ -202,8 +204,8 @@ void MainWindow::initUI()
         m_nextBtn->setMode(NextButton::Normal);
         m_index = 1;
 #endif
-//        }
-//#else
+        //        }
+        //#else
         m_previousBtn->hide();
         m_nextBtn->show();
     } else {
@@ -213,11 +215,11 @@ void MainWindow::initUI()
     }
 #else
 #ifdef DISABLE_VIDEO
-//    if (isx86) {
+    //    if (isx86) {
     m_current = new VideoWidget(false, m_fakerWidget);
-    //m_current = new PhotoSlide(m_fakerWidget);
+    // m_current = new PhotoSlide(m_fakerWidget);
     m_nextBtn->setMode(NextButton::Normal);
-    //static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
+    // static_cast<PhotoSlide*>(m_current)->start(false, false, 2000);
 //    } else {
 #else
     //        m_current = initDesktopModeModule();
@@ -231,13 +233,14 @@ void MainWindow::initUI()
     m_nextBtn->setMode(NextButton::Transparent);
 #endif
 
-    //m_current->setFixedSize(704, 454);
+    // m_current->setFixedSize(704, 454);
     m_current->move(-1, -1);
     m_current->setFixedSize(QSize(700, 450));
     m_current->show();
 
-    m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/10, 404);
-    m_nextBtn->move(/*width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20*/590, 404);
+    m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/ 10, 404);
+    m_nextBtn->move(/*width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20*/ 590,
+                    404);
     m_doneBtn->move(m_nextBtn->pos());
     m_doneBtn->hide();
 
@@ -247,7 +250,8 @@ void MainWindow::initUI()
     connect(closeBtn, &DImageButton::clicked, this, &MainWindow::close);
 
     DLabel *logo = new DLabel(this);
-    QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
+    QPixmap pixmap =
+        QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(10, 8));
@@ -277,60 +281,62 @@ void MainWindow::updateModule(const int index)
 
     m_last = m_current;
     switch (index) {
-    case 1:
+        case 1:
 #ifdef DISABLE_VIDEO
-//        if (isx86) {
-        m_current = new VideoWidget(false, m_fakerWidget);
-        m_current->setFixedSize(WINDOW_SIZE);
-        m_nextBtn->setMode(NextButton::Transparent);
+            //        if (isx86) {
+            m_current = new VideoWidget(false, m_fakerWidget);
+            m_current->setFixedSize(WINDOW_SIZE);
+            m_nextBtn->setMode(NextButton::Transparent);
 //        } else {
 #else
-        m_current = new PhotoSlide(m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Normal);
-        static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
+            m_current = new PhotoSlide(m_fakerWidget);
+            m_nextBtn->setMode(NextButton::Normal);
+            static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
 //        }
 #endif
-        m_previousBtn->hide();
-        break;
-    case 2:
-        m_current = initDesktopModeModule();
-        break;
-    case 3: {
-        bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm").property("compositingAllowSwitch").toBool();
-        if (isSuportEffect == true) {
-            if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
-                m_current = initWMModeModule();
-                break;
-            }
-
-            QFile file("/etc/deepin-wm-switcher/config.json");
-            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-                QJsonObject obj = doc.object();
-                if (obj["allow_switch"].toBool()) {
+            m_previousBtn->hide();
+            break;
+        case 2:
+            m_current = initDesktopModeModule();
+            break;
+        case 3: {
+            bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
+                                      .property("compositingAllowSwitch")
+                                      .toBool();
+            if (isSuportEffect == true) {
+                if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
                     m_current = initWMModeModule();
                     break;
                 }
+
+                QFile file("/etc/deepin-wm-switcher/config.json");
+                if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+                    QJsonObject obj = doc.object();
+                    if (obj["allow_switch"].toBool()) {
+                        m_current = initWMModeModule();
+                        break;
+                    }
+                }
+            }
+
+            if (!m_nextBtn->isVisible()) {  // hack
+                ++m_index;
             }
         }
-
-        if (!m_nextBtn->isVisible()) { //hack
-            ++m_index;
-        }
-    }
-    case 4:
-        m_current = initIconModule();
-        m_nextBtn->hide();
-        m_doneBtn->show();
-        //m_doneBtn->setFocus();
-        break;
-    case 5:
-//        m_current = new NormalModule(m_fakerWidget);
-//        m_nextBtn->hide();
-//        m_previousBtn->hide();
-        break;
-    default:
-        break;
+        case 4:
+            m_current = initIconModule();
+            m_nextBtn->hide();
+            m_doneBtn->show();
+            // m_doneBtn->setFocus();
+            break;
+        case 5:
+            //        m_current = new NormalModule(m_fakerWidget);
+            //        m_nextBtn->hide();
+            //        m_previousBtn->hide();
+            break;
+        default:
+            break;
     }
 
     m_current->show();
@@ -394,8 +400,8 @@ void MainWindow::slotTheme()
     if (type == 1) {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(65, 77, 104, 255));
-        //nextPa.setColor(DPalette::Dark, QColor(230, 230, 230, 255));
-        //nextPa.setColor(DPalette::Light, QColor(227, 227, 227, 255));
+        // nextPa.setColor(DPalette::Dark, QColor(230, 230, 230, 255));
+        // nextPa.setColor(DPalette::Light, QColor(227, 227, 227, 255));
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
         DPalette pl = this->palette();
@@ -404,18 +410,18 @@ void MainWindow::slotTheme()
     } else {
         DPalette nextPa = m_nextBtn->palette();
         nextPa.setColor(DPalette::ButtonText, QColor(192, 198, 212, 255));
-        //nextPa.setColor(DPalette::Dark, QColor(72, 72, 72, 255));
-        //nextPa.setColor(DPalette::Light, QColor(65, 65, 65, 255));
+        // nextPa.setColor(DPalette::Dark, QColor(72, 72, 72, 255));
+        // nextPa.setColor(DPalette::Light, QColor(65, 65, 65, 255));
         m_nextBtn->setPalette(nextPa);
         m_doneBtn->setPalette(nextPa);
         DPalette pl = this->palette();
         pl.setColor(DPalette::Window, QColor(40, 40, 40));
         this->setPalette(pl);
     }
-    //titlebar()->setSeparatorVisible(false);
+    // titlebar()->setSeparatorVisible(false);
     this->setForegroundRole(DPalette::Window);
     this->setBackgroundRole(DPalette::Window);
 
-    //titlebar()->setForegroundRole(DPalette::Window);
-    //titlebar()->setBackgroundRole(DPalette::Window);
+    // titlebar()->setForegroundRole(DPalette::Window);
+    // titlebar()->setBackgroundRole(DPalette::Window);
 }

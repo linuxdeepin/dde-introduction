@@ -24,8 +24,8 @@
 #include <QVBoxLayout>
 
 #include <DFrame>
-#include <DLabel>
 #include <DImageButton>
+#include <DLabel>
 
 DWIDGET_USE_NAMESPACE
 
@@ -34,6 +34,8 @@ class BaseWidget : public DFrame
     Q_OBJECT
 public:
     explicit BaseWidget(QWidget *parent = nullptr);
+
+    BorderWidget *m_borderWidget;
 
 signals:
     void clicked();
@@ -56,11 +58,10 @@ protected:
     void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
 private:
-    QVBoxLayout* m_layout;
-    DLabel* m_title;
-    BorderWidget* m_borderWidget;
-    DImageButton* m_selectBtn;
+    QVBoxLayout *m_layout;
+    DLabel *m_title;
+    DImageButton *m_selectBtn;
     QSize m_size;
 };
 
-#endif // BASEWIDGET_H
+#endif  // BASEWIDGET_H

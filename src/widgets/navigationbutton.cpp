@@ -18,12 +18,12 @@
 
 #include "navigationbutton.h"
 
-#include <QPainter>
 #include <QGraphicsDropShadowEffect>
 #include <QHBoxLayout>
+#include <QPainter>
 
-#include <DPalette>
 #include <DGuiApplicationHelper>
+#include <DPalette>
 
 DWIDGET_USE_NAMESPACE
 DGUI_USE_NAMESPACE
@@ -38,15 +38,17 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
 
     m_shadow = new QGraphicsDropShadowEffect(this);
     m_label = new DLabel(this);
+    m_label->setElideMode(Qt::ElideRight);
     m_label->setText(text);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
-    layout->setContentsMargins(10,0,0,0);
+    layout->setContentsMargins(10, 0, 0, 0);
     layout->addWidget(m_label);
     setLayout(layout);
     initButton();
 
-    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &NavigationButton::initButton);
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
+            &NavigationButton::initButton);
     connect(this, &NavigationButton::clicked, this, &NavigationButton::initButton);
 }
 
@@ -56,23 +58,23 @@ void NavigationButton::initButton()
     DPalette pl = m_label->palette();
     if (type == 1) {
         if (isChecked()) {
-            pl.setColor(DPalette::WindowText,Qt::white);
+            pl.setColor(DPalette::WindowText, Qt::white);
             m_shadow->setOffset(0, 4);
-            m_shadow->setColor(QColor(44,167,248,0.4 * 255));
+            m_shadow->setColor(QColor(44, 167, 248, 0.4 * 255));
             m_shadow->setBlurRadius(6);
         } else {
-            pl.setColor(DPalette::WindowText,QColor(65,77,104));
-            m_shadow->setColor(QColor(0,42,175,0));
+            pl.setColor(DPalette::WindowText, QColor(65, 77, 104));
+            m_shadow->setColor(QColor(0, 42, 175, 0));
         }
     } else {
         if (isChecked()) {
-            pl.setColor(DPalette::WindowText,Qt::white);
+            pl.setColor(DPalette::WindowText, Qt::white);
             m_shadow->setOffset(0, 4);
-            m_shadow->setColor(QColor(0,42,175,0.4 * 255));
+            m_shadow->setColor(QColor(0, 42, 175, 0.4 * 255));
             m_shadow->setBlurRadius(6);
         } else {
-            pl.setColor(DPalette::WindowText,QColor(192,198,212));
-            m_shadow->setColor(QColor(0,42,175,0));
+            pl.setColor(DPalette::WindowText, QColor(192, 198, 212));
+            m_shadow->setColor(QColor(0, 42, 175, 0));
         }
     }
     setGraphicsEffect(m_shadow);
