@@ -17,8 +17,8 @@
  */
 
 #include "basemodulewidget.h"
-#include <QDebug>
 #include <DPalette>
+#include <QDebug>
 
 DGUI_USE_NAMESPACE
 
@@ -45,9 +45,9 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_layout->addWidget(m_describeLbl, 0, Qt::AlignHCenter);
     m_layout->addSpacing(15);
 
-    setLayout(m_layout);
-
     m_type = 1;
+
+    setLayout(m_layout);
 }
 
 void BaseModuleWidget::setTitle(const QString &title)
@@ -63,7 +63,7 @@ void BaseModuleWidget::setTitle(const QString &title)
         m_titleLbl->setPalette(pa);
     } else {
         DPalette pa = m_titleLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(192,198,212,255));
+        pa.setColor(DPalette::WindowText, QColor(192, 198, 212, 255));
         m_titleLbl->setPalette(pa);
     }
     m_titleLbl->setText(title);
@@ -78,11 +78,11 @@ void BaseModuleWidget::setDescribe(const QString &describe)
     m_describeLbl->setFont(font);
     if (m_type == 1) {
         DPalette pa = m_describeLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(138,161,180,255));
+        pa.setColor(DPalette::WindowText, QColor(138, 161, 180, 255));
         m_describeLbl->setPalette(pa);
     } else {
         DPalette pa = m_describeLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(192,198,212,255));
+        pa.setColor(DPalette::WindowText, QColor(192, 198, 212, 255));
         m_describeLbl->setPalette(pa);
     }
     m_describeLbl->setText(describe);
