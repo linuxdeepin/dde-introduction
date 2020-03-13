@@ -282,7 +282,7 @@ void MainWindow::updateModule(const int index)
     m_last = m_current;
     switch (index) {
         case 1:
-#ifdef DISABLE_VIDEO
+#ifndef DISABLE_VIDEO
             //        if (isx86) {
             m_current = new VideoWidget(false, m_fakerWidget);
             m_current->setFixedSize(WINDOW_SIZE);
