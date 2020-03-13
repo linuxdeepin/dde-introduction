@@ -18,19 +18,20 @@
 
 #include "videowidget.h"
 
-#include <QPushButton>
-#include <QTimer>
-#include <QHBoxLayout>
-#include <QResizeEvent>
+#include <player_engine.h>
 #include <QBitmap>
-#include <QPainter>
 #include <QGraphicsOpacityEffect>
-#include <QMediaPlaylist>
+#include <QHBoxLayout>
 #include <QIcon>
 #include <QLocale>
-#include <player_engine.h>
+#include <QMediaPlaylist>
+#include <QPainter>
+#include <QPushButton>
+#include <QResizeEvent>
+#include <QTimer>
 
-static QDir ResourcesQDir() {
+static QDir ResourcesQDir()
+{
     QDir videoPath(qApp->applicationDirPath());
     videoPath.setSorting(QDir::Name);
     videoPath.cd("/usr/share/dde-introduction");
@@ -47,7 +48,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     , m_leaveTimer(new QTimer(this))
     , m_pauseTimer(new QTimer(this))
     , m_background(new CoverPhoto(this))
-    //, m_label(new DLabel(m_background))
+//, m_label(new DLabel(m_background))
 {
     m_selectBtn->hide();
 
@@ -68,27 +69,23 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     m_hideAni->setStartValue(1.0f);
     m_hideAni->setEndValue(0.0f);
 
-    connect(m_hideAni, &QPropertyAnimation::finished, this, [=] {
-        m_control->hide();
-    });
+    connect(m_hideAni, &QPropertyAnimation::finished, this, [=] { m_control->hide(); });
 
-    connect(m_leaveTimer, &QTimer::timeout, this, [=] {
-        m_hideAni->start();
-    });
+    connect(m_leaveTimer, &QTimer::timeout, this, [=] { m_hideAni->start(); });
 
     /*connect(m_pauseTimer, &QTimer::timeout, this, [=] {
         m_video->engine().pauseResume();
     });*/
 
-    //m_pauseTimer->setSingleShot(true);
-    //dmr::Backend::setDebugLevel(dmr::Backend::DebugLevel::Debug);
+    // m_pauseTimer->setSingleShot(true);
+    // dmr::Backend::setDebugLevel(dmr::Backend::DebugLevel::Debug);
 
     setObjectName("VideoWidget");
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
-    layout->setContentsMargins(0,0,0,0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     layout->addWidget(m_video, 0, Qt::AlignCenter);
 
@@ -103,15 +100,18 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 
     const QString &file = videoPath.path() + QString("/demo.mp4");*/
 
-    connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked, Qt::QueuedConnection);
-    connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this, &VideoWidget::updateControlButton, Qt::QueuedConnection);
+    connect(m_control, &DImageButton::clicked, this, &VideoWidget::onControlButtonClicked,
+            Qt::QueuedConnection);
+    connect(&m_video->engine(), &dmr::PlayerEngine::stateChanged, this,
+            &VideoWidget::updateControlButton, Qt::QueuedConnection);
 
     autoPlay = !autoPlay;
     m_video->engine().setBackendProperty("pause-on-start", autoPlay ? "false" : "true");
 
-    //m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
-    //m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
-    //m_video->engine().play();
+    // m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file,
+    // devicePixelRatioF(), &ratio)));
+    // m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
+    // m_video->engine().play();
 
     /*QTimer::singleShot(1000, this, [=] {
         m_pauseTimer->setInterval(m_video->engine().duration() * 1000);
@@ -120,8 +120,8 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     updateControlButton();
     setLayout(layout);
 
-    //m_label->show();
-    //m_label->raise();
+    // m_label->show();
+    // m_label->raise();
     m_background->setWindowFlags(Qt::FramelessWindowHint);
     m_background->raise();
     m_control->raise();
@@ -134,9 +134,10 @@ void VideoWidget::updateBigIcon()
     m_video->setFixedSize(this->size());
     if (m_background != NULL) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
-        pixmap = pixmap.scaled(m_video->size()/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        //m_label->setPixmap(pixmap);
-        //m_label->setFixedSize(m_video->size());
+        pixmap = pixmap.scaled(m_video->size() /* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio,
+                               Qt::SmoothTransformation);
+        // m_label->setPixmap(pixmap);
+        // m_label->setFixedSize(m_video->size());
         m_background->setFixedSize(m_video->size());
         m_background->setPixmap(pixmap);
     }
@@ -151,9 +152,10 @@ void VideoWidget::updateSmallIcon()
     m_video->setFixedSize(size);
     if (m_background != NULL) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
-        pixmap = pixmap.scaled(m_video->size()/* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        //m_label->setPixmap(pixmap);
-        //m_label->setFixedSize(m_video->size());
+        pixmap = pixmap.scaled(m_video->size() /* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio,
+                               Qt::SmoothTransformation);
+        // m_label->setPixmap(pixmap);
+        // m_label->setFixedSize(m_video->size());
         m_background->setFixedSize(m_video->size());
         m_background->setPixmap(pixmap);
     }
@@ -161,21 +163,20 @@ void VideoWidget::updateSmallIcon()
     updateClip();
 }
 
-void VideoWidget::updateSelectBtnPos()
-{
-}
+void VideoWidget::updateSelectBtnPos() {}
 
 void VideoWidget::updateControlButton()
 {
     const QPoint &p = rect().center() - m_control->rect().center();
 
-    //switch (m_video->engine().state()) {
+    // switch (m_video->engine().state()) {
     if (m_video->engine().state() == dmr::PlayerEngine::Playing) {
         /*QLocale locale;
         const QString &file = QString("15.5 SP3_%1.ass").arg(locale.language() == QLocale::Chinese ?
                                                              "zh_CN" :
                                                              "en_US");
-        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() + QString("/%1").arg(file)));
+        m_video->engine().loadSubtitle(QFileInfo(ResourcesQDir().path() +
+        QString("/%1").arg(file)));
 
         const dmr::PlayingMovieInfo info = m_video->engine().playingMovieInfo();
 
@@ -230,14 +231,15 @@ void VideoWidget::onControlButtonClicked()
         qreal ratio = 1.0;
         QDir videoPath(ResourcesQDir());
         const QString &file = videoPath.path() + QString("/demo.mp4");
-        m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
+        m_video->engine().playlist().append(
+            QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
         m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
         m_load = true;
     }
     m_video->engine().pauseResume();
     m_video->engine().play();
 
-    //updateControlButton();
+    // updateControlButton();
 }
 
 void VideoWidget::stop()
@@ -246,7 +248,7 @@ void VideoWidget::stop()
         m_video->engine().pauseResume();
         m_video->engine().play();
     }
-    //updateControlButton();
+    // updateControlButton();
 }
 
 void VideoWidget::updateInterface(QSize size)
@@ -298,7 +300,7 @@ void VideoWidget::updateClip()
 {
     QPainterPath path;
     QRectF rectF;
-    rectF.setTopLeft(rect().topLeft() - QPointF(2,2));
+    rectF.setTopLeft(rect().topLeft() - QPointF(2, 2));
     rectF.setBottomRight(rect().bottomRight());
     path.addRoundedRect(rectF, 5, 5);
     m_clip->setClipPath(path);

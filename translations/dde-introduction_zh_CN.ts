@@ -42,7 +42,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="159"/>
         <source>Next</source>
-        <translation>下一个</translation>
+        <translation>下一步</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="160"/>
