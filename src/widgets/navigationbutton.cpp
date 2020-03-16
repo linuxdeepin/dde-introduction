@@ -89,17 +89,6 @@ void NavigationButton::initButton()
     return rec.size();
 }*/
 
-void NavigationButton::resizeEvent(QResizeEvent *e)
-{
-    DPushButton::resizeEvent(e);
-    if (m_label->text() == "Running Mode") {
-        QFont font = m_label->font();
-        QFontMetrics fm(font);
-        QRect rec = fm.boundingRect(m_label->text());
-        emit widthChanged(rec.width());
-    }
-}
-
 /*void NavigationButton::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);

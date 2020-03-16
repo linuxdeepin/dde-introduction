@@ -21,9 +21,9 @@
 
 #include <QGraphicsDropShadowEffect>
 
+#include <DLabel>
 #include <DPushButton>
 #include <DWidget>
-#include <DLabel>
 
 DWIDGET_USE_NAMESPACE
 
@@ -31,19 +31,20 @@ class NavigationButton : public DPushButton
 {
     Q_OBJECT
 public:
-    explicit NavigationButton(QString text, DWidget *parent = nullptr);
+    explicit NavigationButton(QString text, DWidget* parent = nullptr);
 
     void initButton();
 
 protected:
-    //void paintEvent(QPaintEvent *event);
-    //QSize setHint();
-    void resizeEvent(QResizeEvent*);
+    // void paintEvent(QPaintEvent *event);
+    // QSize setHint();
+
 signals:
     void widthChanged(int);
+
 private:
-    DLabel*          m_label;
+    DLabel* m_label;
     QGraphicsDropShadowEffect* m_shadow;
 };
 
-#endif // NAVIGATIONBUTTON_H
+#endif  // NAVIGATIONBUTTON_H
