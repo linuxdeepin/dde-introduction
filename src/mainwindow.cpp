@@ -170,7 +170,7 @@ void MainWindow::initUI()
     // Addition Button Shadow
     QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
     shadow_effect->setOffset(0, 2);
-    shadow_effect->setColor(QColor(0, 0, 0, 0.05 * 255));
+    shadow_effect->setColor(QColor(0, 0, 0, int(0.05 * 255)));
     shadow_effect->setBlurRadius(4);
     m_nextBtn->setGraphicsEffect(shadow_effect);
     m_previousBtn->setGraphicsEffect(shadow_effect);

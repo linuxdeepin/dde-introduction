@@ -17,14 +17,14 @@
  */
 
 #include "normalmodule.h"
-#include "desktopmodemodule.h"
-#include "iconmodule.h"
-#include "wmmodemodule.h"
-#include "support.h"
-#include "about.h"
-#include "photoslide.h"
 #include "../widgets/bottomnavigation.h"
 #include "../widgets/navigationbutton.h"
+#include "about.h"
+#include "desktopmodemodule.h"
+#include "iconmodule.h"
+#include "photoslide.h"
+#include "support.h"
+#include "wmmodemodule.h"
 
 #include <QFont>
 
@@ -40,20 +40,22 @@ NormalModule::NormalModule(DWidget *parent)
     , m_rightContentLayout(new QVBoxLayout)
     , m_buttonGrp(new QButtonGroup)
     , m_currentWidget(nullptr)
-    , m_wmSwitcher(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher", QDBusConnection::sessionBus(), this))
-    , m_index(-1)
+    , m_wmSwitcher(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher",
+                                  QDBusConnection::sessionBus(), this))
     , m_titleLabel(new DLabel(this))
     , m_describe(new DLabel(this))
+    , m_index(-1)
 {
     isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
-    //initTheme(0);
+    // initTheme(0);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
     layout->setContentsMargins(0, 13, 15, 0);
-    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &NormalModule::updateLabel);
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
+            &NormalModule::updateLabel);
 
-    //m_leftNavigationLayout->setMargin(0);
+    // m_leftNavigationLayout->setMargin(0);
     m_leftNavigationLayout->setSpacing(10);
     m_leftNavigationLayout->setContentsMargins(0, 50, 0, 0);
 
@@ -63,8 +65,9 @@ NormalModule::NormalModule(DWidget *parent)
 
     /*DLabel *logo = new DLabel(this);
     //    QIcon::setThemeName("hicolor");
-    //    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction", QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF()));
-    QPixmap pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(24, 24) * devicePixelRatioF());
+    //    QPixmap pixmap = std::move(QIcon::fromTheme("dde-introduction",
+    QIcon(":/resources/dde-introduction.svg")).pixmap(QSize(24, 24) * devicePixelRatioF())); QPixmap
+    pixmap = QIcon::fromTheme("dde-introduction").pixmap(QSize(24, 24) * devicePixelRatioF());
     pixmap.setDevicePixelRatio(devicePixelRatioF());
     logo->setPixmap(pixmap);
     logo->move(rect().topLeft() + QPoint(12, 8));
@@ -81,7 +84,7 @@ NormalModule::NormalModule(DWidget *parent)
     layout->addWidget(m_content);
 
     // bottom navigation
-    //BottomNavigation *bottomNavigation = new BottomNavigation;
+    // BottomNavigation *bottomNavigation = new BottomNavigation;
 
     QFont font;
     font.setPixelSize(17);
@@ -103,7 +106,7 @@ NormalModule::NormalModule(DWidget *parent)
     mainLayout->addWidget(m_titleLabel, 0, Qt::AlignCenter);
     mainLayout->addLayout(layout);
     mainLayout->addWidget(m_describe, 0, Qt::AlignCenter);
-    //mainLayout->addWidget(bottomNavigation);
+    // mainLayout->addWidget(bottomNavigation);
     mainLayout->setContentsMargins(0, 0, 0, 20);
 
     setLayout(mainLayout);
@@ -115,12 +118,12 @@ NormalModule::NormalModule(DWidget *parent)
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
 
     NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
-    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
+//    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
 #ifndef DISABLE_VIDEO
-//    if (isx86) {
+    //    if (isx86) {
     // video button
-    m_buttonMap[videoBtn]   = ++moduleCount;
-    //videoBtn->setText(tr("Introduction"));
+    m_buttonMap[videoBtn] = ++moduleCount;
+    // videoBtn->setText(tr("Introduction"));
     m_titleMap[videoBtn] = tr("Welcome");
     m_buttonGrp->addButton(videoBtn);
     VideoWidget *videoModule = new VideoWidget(false, this);
@@ -129,7 +132,7 @@ NormalModule::NormalModule(DWidget *parent)
 //    } else {
 #else
     m_buttonMap[slideBtn] = ++moduleCount;
-    //slideBtn->setText(tr("Introduction"));
+    // slideBtn->setText(tr("Introduction"));
     m_titleMap[slideBtn] = tr("Welcome");
     m_buttonGrp->addButton(slideBtn);
     PhotoSlide *slideModule = new PhotoSlide;
@@ -142,7 +145,7 @@ NormalModule::NormalModule(DWidget *parent)
     // desktop button
     NavigationButton *desktopBtn = new NavigationButton(tr("Desktop Mode"));
     m_buttonMap[desktopBtn] = ++moduleCount;
-    //desktopBtn->setText(tr("Desktop mode"));
+    // desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Choose a desktop mode");
     m_describeMap[desktopBtn] = tr("You can switch modes by right clicking on the dock");
     m_buttonGrp->addButton(desktopBtn);
@@ -153,14 +156,17 @@ NormalModule::NormalModule(DWidget *parent)
 
     // wm button
     NavigationButton *wmBtn = nullptr;
-    bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm").property("compositingAllowSwitch").toBool();
+    bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
+                              .property("compositingAllowSwitch")
+                              .toBool();
     if (allow_switch_wm && isSuportEffect) {
         wmBtn = new NavigationButton(tr("Running Mode"));
-        m_buttonMap[wmBtn]      = ++moduleCount;
-        //wmBtn->setText(tr("Operation mode"));
+        m_buttonMap[wmBtn] = ++moduleCount;
+        // wmBtn->setText(tr("Operation mode"));
         connect(wmBtn, &NavigationButton::widthChanged, this, &NormalModule::updateInterface);
         m_titleMap[wmBtn] = tr("Choose a running mode");
-        m_describeMap[wmBtn] = tr("Please choose normal mode if you has a low configuration computer");
+        m_describeMap[wmBtn] =
+            tr("Please choose normal mode if you has a low configuration computer");
         m_buttonGrp->addButton(wmBtn);
         WMModeModule *wmModeModule = new WMModeModule(this);
         wmModeModule->setFirst(false);
@@ -170,8 +176,8 @@ NormalModule::NormalModule(DWidget *parent)
 
     // icon button
     NavigationButton *iconBtn = new NavigationButton(tr("Icon Theme"));
-    m_buttonMap[iconBtn]    = ++moduleCount;
-    //iconBtn->setText(tr("Icon theme"));
+    m_buttonMap[iconBtn] = ++moduleCount;
+    // iconBtn->setText(tr("Icon theme"));
     m_titleMap[iconBtn] = tr("Choose an icon theme");
     m_describeMap[iconBtn] = tr("Change it in Control Center > Personalization > Icon Theme");
     m_buttonGrp->addButton(iconBtn);
@@ -179,7 +185,7 @@ NormalModule::NormalModule(DWidget *parent)
     iconModule->hide();
     m_modules[moduleCount] = iconModule;
 
-    //support us
+    // support us
     /*NavigationButton *supportBtn = new NavigationButton(tr("Support us"));
     m_buttonMap[supportBtn]   = ++moduleCount;
     //supportBtn->setText(tr("Support us"));
@@ -200,7 +206,7 @@ NormalModule::NormalModule(DWidget *parent)
     m_modules[moduleCount] = about;*/
 
 #ifndef DISABLE_VIDEO
-//    if (isx86) {
+    //    if (isx86) {
     videoBtn->setChecked(true);
     m_titleLabel->setText(m_titleMap[videoBtn]);
 //    } else {
@@ -212,27 +218,29 @@ NormalModule::NormalModule(DWidget *parent)
 
     m_buttonGrp->setExclusive(true);
 
-    //m_leftNavigationLayout->addStretch();
+    // m_leftNavigationLayout->addStretch();
 
     for (QWidget *w : m_buttonGrp->buttons()) {
         w->setFixedSize(110, 30);
-        //w->setMinimumSize(110, 30);
+        // w->setMinimumSize(110, 30);
         m_leftNavigationLayout->addWidget(w, 0, Qt::AlignHCenter | Qt::AlignVCenter);
         w->installEventFilter(this);
     }
     m_leftNavigationLayout->addStretch();
 
-    //m_leftNavigationLayout->addStretch();
+    // m_leftNavigationLayout->addStretch();
 
-    connect(m_buttonGrp, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, [ = ] (QAbstractButton * btn) {
-        updataButton(btn);
-        updateCurrentWidget(m_buttonMap[btn]);
-        m_titleLabel->setText(m_titleMap[btn]);
-        m_describe->setText(m_describeMap[btn]);
-    });
+    connect(m_buttonGrp,
+            static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked),
+            this, [=](QAbstractButton *btn) {
+                updataButton(btn);
+                updateCurrentWidget(m_buttonMap[btn]);
+                m_titleLabel->setText(m_titleMap[btn]);
+                m_describe->setText(m_describeMap[btn]);
+            });
 
 #ifndef DISABLE_VIDEO
-//    if (isx86) {
+    //    if (isx86) {
     updateCurrentWidget(m_buttonMap[videoBtn]);
     m_button = videoBtn;
 //    } else {
@@ -247,23 +255,23 @@ void NormalModule::keyPressEvent(QKeyEvent *e)
 {
     QWidget *w = m_modules[m_index];
     switch (m_index) {
-    case 1:
+        case 1:
 //        static_cast<VideoWidget *>(w)->keyPressEvent(e);
 #ifndef DISABLE_VIDEO
-        static_cast<VideoWidget *>(w)->keyPressEvent(e);
+            static_cast<VideoWidget *>(w)->keyPressEvent(e);
 #endif
-        break;
-    case 2:
-        static_cast<DesktopModeModule *>(w)->keyPressEvent(e);
-        break;
-    case 3:
-        static_cast<WMModeModule *>(w)->keyPressEvent(e);
-        break;
-    case 4:
-        static_cast<IconModule *>(w)->keyPressEvent(e);
-        break;
-    default:
-        break;
+            break;
+        case 2:
+            static_cast<DesktopModeModule *>(w)->keyPressEvent(e);
+            break;
+        case 3:
+            static_cast<WMModeModule *>(w)->keyPressEvent(e);
+            break;
+        case 4:
+            static_cast<IconModule *>(w)->keyPressEvent(e);
+            break;
+        default:
+            break;
     };
 }
 
@@ -284,7 +292,8 @@ bool NormalModule::eventFilter(QObject *watched, QEvent *event)
 
 void NormalModule::updateCurrentWidget(const int index)
 {
-    if (index == m_index) return;
+    if (index == m_index)
+        return;
 
     m_index = index;
 
@@ -293,16 +302,14 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget->hide();
     }
 
-    QTimer::singleShot(100, this, [ = ] {
+    QTimer::singleShot(100, this, [=] {
         QWidget *w = m_modules[index];
         ModuleInterface *module = qobject_cast<ModuleInterface *>(w);
-        if (module)
-        {
+        if (module) {
             module->updateSmallIcon();
             module->updateSelectBtnPos();
         }
-        if (index != 1)
-        {
+        if (index != 1) {
             QWidget *w = m_modules[1];
 #ifndef DISABLE_VIDEO
             VideoWidget *video = qobject_cast<VideoWidget *>(w);
@@ -358,13 +365,40 @@ void NormalModule::updateInterface(int width)
         }
         QWidget *w = m_modules[m_index];
         switch (m_index) {
+            case 1:
+#ifndef DISABLE_VIDEO
+                static_cast<VideoWidget *>(w)->updateInterface(QSize(549, 343));
+#endif
+                break;
+            case 2:
+                static_cast<DesktopModeModule *>(w)->updateInterface(1.0);
+                break;
+            /*case 3:
+                static_cast<WMModeModule *>(w)->keyPressEvent(e);
+                break;
+            case 4:
+                static_cast<IconModule *>(w)->keyPressEvent(e);
+                break;*/
+            default:
+                break;
+        };
+        return;
+    }
+    QSize size(549, 343);
+    int widgetWidth = size.width() - (width - 110);
+    int widgetHeigh = size.height() * (widgetWidth / size.width());
+    m_content->setFixedSize(widgetWidth, widgetHeigh);
+
+    QWidget *w = m_modules[m_index];
+    float f = float(110.0 / width);
+    switch (m_index) {
         case 1:
-    #ifndef DISABLE_VIDEO
-            static_cast<VideoWidget *>(w)->updateInterface(QSize(549, 343));
-    #endif
+#ifndef DISABLE_VIDEO
+            static_cast<VideoWidget *>(w)->updateInterface(QSize(widgetWidth, widgetHeigh));
+#endif
             break;
         case 2:
-            static_cast<DesktopModeModule *>(w)->updateInterface(1.0);
+            static_cast<DesktopModeModule *>(w)->updateInterface(f);
             break;
         /*case 3:
             static_cast<WMModeModule *>(w)->keyPressEvent(e);
@@ -374,33 +408,6 @@ void NormalModule::updateInterface(int width)
             break;*/
         default:
             break;
-        };
-        return;
-    }
-    QSize size(549, 343);
-    int widgetWidth = size.width() - (width - 110);
-    int widgetHeigh = size.height() * ((float)widgetWidth / (float)size.width());
-    m_content->setFixedSize(widgetWidth, widgetHeigh);
-
-    QWidget *w = m_modules[m_index];
-    float f = 110.0 / (float)width;
-    switch (m_index) {
-    case 1:
-#ifndef DISABLE_VIDEO
-        static_cast<VideoWidget *>(w)->updateInterface(QSize(widgetWidth, widgetHeigh));
-#endif
-        break;
-    case 2:
-        static_cast<DesktopModeModule *>(w)->updateInterface(f);
-        break;
-    /*case 3:
-        static_cast<WMModeModule *>(w)->keyPressEvent(e);
-        break;
-    case 4:
-        static_cast<IconModule *>(w)->keyPressEvent(e);
-        break;*/
-    default:
-        break;
     };
 
     for (QWidget *w : m_buttonGrp->buttons()) {

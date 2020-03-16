@@ -23,7 +23,7 @@
 
 Worker *Worker::Instance()
 {
-    static Worker * instance = new Worker;
+    static Worker *instance = new Worker;
     return instance;
 }
 
@@ -31,26 +31,26 @@ void Worker::setDesktopMode(Model::DesktopMode mode)
 {
     QStringList args;
     switch (mode) {
-    case Model::EfficientMode:
-        args << "--print-reply"
-             << "--dest=com.deepin.dde.daemon.Launcher"
-             << "/com/deepin/dde/daemon/Launcher"
-             << "org.freedesktop.DBus.Properties.Set"
-             << "string:com.deepin.dde.daemon.Launcher"
-             << "string:Fullscreen"
-             << "variant:boolean:false";
-        break;
-    case Model::FashionMode:
-        args << "--print-reply"
-             << "--dest=com.deepin.dde.daemon.Launcher"
-             << "/com/deepin/dde/daemon/Launcher"
-             << "org.freedesktop.DBus.Properties.Set"
-             << "string:com.deepin.dde.daemon.Launcher"
-             << "string:Fullscreen"
-             << "variant:boolean:true";
-        break;
-    default:
-        break;
+        case Model::EfficientMode:
+            args << "--print-reply"
+                 << "--dest=com.deepin.dde.daemon.Launcher"
+                 << "/com/deepin/dde/daemon/Launcher"
+                 << "org.freedesktop.DBus.Properties.Set"
+                 << "string:com.deepin.dde.daemon.Launcher"
+                 << "string:Fullscreen"
+                 << "variant:boolean:false";
+            break;
+        case Model::FashionMode:
+            args << "--print-reply"
+                 << "--dest=com.deepin.dde.daemon.Launcher"
+                 << "/com/deepin/dde/daemon/Launcher"
+                 << "org.freedesktop.DBus.Properties.Set"
+                 << "string:com.deepin.dde.daemon.Launcher"
+                 << "string:Fullscreen"
+                 << "variant:boolean:true";
+            break;
+        default:
+            break;
     }
 
     QProcess::startDetached("dbus-send", args);
@@ -81,8 +81,10 @@ void Worker::onWMChang(/*const quint32 &wm*/)
         return;
     else if (m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::KWinWM)
         return;*/
-    m_model->setWmType(m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::DeepinWM ? Model::WM_3D : Model::WM_2D);
-    //m_model->setWmType(wm == "deepin wm" ? Model::WM_3D : Model::WM_2D);
+    m_model->setWmType(m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::DeepinWM
+                           ? Model::WM_3D
+                           : Model::WM_2D);
+    // m_model->setWmType(wm == "deepin wm" ? Model::WM_3D : Model::WM_2D);
 }
 
 void Worker::onDisplayModeChanged(int mode)
@@ -94,13 +96,13 @@ void Worker::onIconRefreshed(const QString &name)
 {
     if (name == "icon") {
         QDBusPendingReply<QString> icon = m_iconInter->List("icon");
-        QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(icon, this);
-        connect(watcher, &QDBusPendingCallWatcher::finished, this, [=] (QDBusPendingCallWatcher *w) {
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(icon, this);
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, [=](QDBusPendingCallWatcher *w) {
             if (w->isError()) {
                 qDebug() << w->error().message();
             } else {
-               QDBusPendingReply<QString> reply = *w;
-               onIconListChanged(reply.value());
+                QDBusPendingReply<QString> reply = *w;
+                onIconListChanged(reply.value());
             }
 
             watcher->deleteLater();
@@ -114,12 +116,13 @@ void Worker::onIconListChanged(const QString &value)
 
     QStringList currentIconIdList;
     for (const QJsonValue &value : array) {
-        QDBusPendingReply<QString> icon = m_iconInter->Thumbnail("icon", value.toObject()["Id"].toString());
+        QDBusPendingReply<QString> icon =
+            m_iconInter->Thumbnail("icon", value.toObject()["Id"].toString());
         const QJsonObject &obj = value.toObject();
 
         currentIconIdList << obj["Id"].toString();
 
-        QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(icon, this);
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(icon, this);
         watcher->setProperty("Json", obj);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &Worker::onIconPixmapFinished);
     }
@@ -145,14 +148,11 @@ void Worker::onIconPixmapFinished(QDBusPendingCallWatcher *w)
 Worker::Worker(QObject *parent)
     : QObject(parent)
     , m_model(Model::Instance())
-    , m_iconInter(new Icon("com.deepin.daemon.Appearance",
-                           "/com/deepin/daemon/Appearance",
+    , m_iconInter(new Icon("com.deepin.daemon.Appearance", "/com/deepin/daemon/Appearance",
                            QDBusConnection::sessionBus(), this))
-    , m_wmInter(new WMSwitcher("com.deepin.WMSwitcher",
-                               "/com/deepin/WMSwitcher",
+    , m_wmInter(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher",
                                QDBusConnection::sessionBus(), this))
-    , m_dockInter(new Dock("com.deepin.dde.daemon.Dock",
-                           "/com/deepin/dde/daemon/Dock",
+    , m_dockInter(new Dock("com.deepin.dde.daemon.Dock", "/com/deepin/dde/daemon/Dock",
                            QDBusConnection::sessionBus(), this))
 {
     connect(m_iconInter, &Icon::Refreshed, this, &Worker::onIconRefreshed);
@@ -166,7 +166,7 @@ Worker::Worker(QObject *parent)
 
     m_model->setCurrentIcon(m_iconInter->iconTheme());
     m_windowManage = DWindowManagerHelper::instance();
-    bool aa = connect(m_windowManage, &DWindowManagerHelper::windowManagerChanged, this, &Worker::onWMChang);
+    connect(m_windowManage, &DWindowManagerHelper::windowManagerChanged, this, &Worker::onWMChang);
 
     onWMChanged(m_wmInter->CurrentWM());
     onDisplayModeChanged(m_dockInter->displayMode());

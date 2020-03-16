@@ -60,7 +60,7 @@ void NavigationButton::initButton()
         if (isChecked()) {
             pl.setColor(DPalette::WindowText, Qt::white);
             m_shadow->setOffset(0, 4);
-            m_shadow->setColor(QColor(44, 167, 248, 0.4 * 255));
+            m_shadow->setColor(QColor(44, 167, 248, int(0.4 * 255)));
             m_shadow->setBlurRadius(6);
         } else {
             pl.setColor(DPalette::WindowText, QColor(65, 77, 104));
@@ -70,7 +70,7 @@ void NavigationButton::initButton()
         if (isChecked()) {
             pl.setColor(DPalette::WindowText, Qt::white);
             m_shadow->setOffset(0, 4);
-            m_shadow->setColor(QColor(0, 42, 175, 0.4 * 255));
+            m_shadow->setColor(QColor(0, 42, 175, int(0.4 * 255)));
             m_shadow->setBlurRadius(6);
         } else {
             pl.setColor(DPalette::WindowText, QColor(192, 198, 212));

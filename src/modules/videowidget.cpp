@@ -132,7 +132,7 @@ void VideoWidget::updateBigIcon()
 {
     setFixedSize(700, 450);
     m_video->setFixedSize(this->size());
-    if (m_background != NULL) {
+    if (m_background != nullptr) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
         pixmap = pixmap.scaled(m_video->size() /* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio,
                                Qt::SmoothTransformation);
@@ -150,7 +150,7 @@ void VideoWidget::updateSmallIcon()
     const QSize size(540, 340);
     setFixedSize(size);
     m_video->setFixedSize(size);
-    if (m_background != NULL) {
+    if (m_background != nullptr) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
         pixmap = pixmap.scaled(m_video->size() /* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio,
                                Qt::SmoothTransformation);
@@ -195,9 +195,9 @@ void VideoWidget::updateControlButton()
         m_btnAni->setStartValue(p);
         m_btnAni->setEndValue(QPoint(p.x(), height() - m_control->height() - 20));
         m_btnAni->start();
-        if (m_background != NULL) {
+        if (m_background != nullptr) {
             delete m_background;
-            m_background = NULL;
+            m_background = nullptr;
         }
     } else {
         m_control->setNormalPic(":/resources/play_normal.svg");
@@ -255,7 +255,7 @@ void VideoWidget::updateInterface(QSize size)
 {
     setFixedSize(size);
     m_video->setFixedSize(size);
-    if (m_background != NULL) {
+    if (m_background != nullptr) {
         QPixmap pixmap(":/resources/demo_Moment.jpg");
         pixmap = pixmap.scaled(m_video->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_background->setFixedSize(m_video->size());

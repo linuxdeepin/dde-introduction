@@ -17,9 +17,9 @@
  */
 
 #include "borderwidget.h"
+#include <QDebug>
 #include <QPainter>
 #include <QPainterPath>
-#include <QDebug>
 
 BorderWidget::BorderWidget(QWidget *parent)
     : DFrame(parent)
@@ -56,7 +56,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
-    QRect pixRect(QPoint(6, 6), (m_size - QSize(3,3)) / devicePixelRatioF());
+    QRect pixRect(QPoint(6, 6), (m_size - QSize(3, 3)) / devicePixelRatioF());
     pixRect.moveCenter(rect().center());
 
     // draw background
@@ -66,7 +66,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     painter.drawPixmap(pixRect, m_pixmap);
 
     if (!m_checked) {
-        QPen pen(QColor(0, 0, 0, 0.2 * 255));
+        QPen pen(QColor(0, 0, 0, int(0.2 * 255)));
         pen.setWidth(1);
         painter.setPen(pen);
         QPainterPath Frame;
