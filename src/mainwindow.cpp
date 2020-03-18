@@ -58,6 +58,8 @@ MainWindow::MainWindow(DWidget *parent)
     setFixedSize(WINDOW_SIZE);
 
     setTitlebarShadowEnabled(false);
+
+    initWindowWidget();
 }
 
 MainWindow::~MainWindow() {}
@@ -160,11 +162,9 @@ void MainWindow::initUI()
 
     m_nextBtn = new NextButton(tr("Next"), this);
     m_doneBtn = new NextButton(tr("Done"), this);
+    m_previousBtn = new DIconButton(QStyle::StandardPixmap::SP_ArrowBack, this);
     m_nextBtn->setFixedSize(100, 36);
     m_doneBtn->setFixedSize(100, 36);
-
-    // m_previousBtn = new DPushButton(this);
-    m_previousBtn = new DIconButton(QStyle::StandardPixmap::SP_ArrowBack, this);
     m_previousBtn->setFixedSize(36, 36);
 
     // Addition Button Shadow
@@ -174,6 +174,7 @@ void MainWindow::initUI()
     shadow_effect->setBlurRadius(4);
     m_nextBtn->setGraphicsEffect(shadow_effect);
     m_previousBtn->setGraphicsEffect(shadow_effect);
+
     slotTheme();
 
     DImageButton *closeBtn =
@@ -181,9 +182,7 @@ void MainWindow::initUI()
                          ":/resources/close_normal.svg", this);
 
     closeBtn->setFixedSize(51, 51);
-
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
-    closeBtn->show();
 
 #ifndef QT_DEBUG
     const bool isFirst = m_settings->value("IsFirst", true).toBool();

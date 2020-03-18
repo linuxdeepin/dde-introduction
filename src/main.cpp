@@ -16,17 +16,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "mainwindow.h"
-#include "normalwindow.h"
 #include <DApplication>
-#include <QDebug>
-#include <DWidgetUtil>
+#include <DGuiApplicationHelper>
+#include <DLog>
 #include <DPlatformWindowHandle>
 #include <DWidget>
-#include <DLog>
-#include <QDBusInterface>
+#include <DWidgetUtil>
 #include <DWindowManagerHelper>
-#include <DGuiApplicationHelper>
+#include <QDBusInterface>
+#include <QDebug>
+#include "mainwindow.h"
+#include "normalwindow.h"
 
 #ifndef DISABLE_VIDEO
 #include <compositing_manager.h>
@@ -34,7 +34,7 @@
 
 DWIDGET_USE_NAMESPACE
 
-static QString g_appPath;//全局路径
+static QString g_appPath;  //全局路径
 
 //获取配置文件主题类型，并重新设置
 DGuiApplicationHelper::ColorType getThemeTypeSetting()
@@ -49,21 +49,20 @@ DGuiApplicationHelper::ColorType getThemeTypeSetting()
 
     //获取读到的主题类型，并返回设置
     switch (t_readType) {
-    case 0:
-        // 跟随系统主题
-        return DGuiApplicationHelper::UnknownType;
-    case 1:
-//        浅色主题
-        return DGuiApplicationHelper::LightType;
+        case 0:
+            // 跟随系统主题
+            return DGuiApplicationHelper::UnknownType;
+        case 1:
+            //        浅色主题
+            return DGuiApplicationHelper::LightType;
 
-    case 2:
-//        深色主题
-        return DGuiApplicationHelper::DarkType;
-    default:
-        // 跟随系统主题
-        return DGuiApplicationHelper::UnknownType;
+        case 2:
+            //        深色主题
+            return DGuiApplicationHelper::DarkType;
+        default:
+            // 跟随系统主题
+            return DGuiApplicationHelper::UnknownType;
     }
-
 }
 
 //保存当前主题类型配置文件
@@ -84,12 +83,12 @@ int main(int argc, char *argv[])
 {
     bool isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
 #ifndef DISABLE_VIDEO
-//    if (isx86)
+    //    if (isx86)
     qDebug() << "init movie";
     qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
 #endif
 
-    //QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+    // QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     DApplication::loadDXcbPlugin();
     DApplication a(argc, argv);
 
@@ -130,14 +129,15 @@ int main(int argc, char *argv[])
 
     //监听当前应用主题切换事件
     QObject::connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::paletteTypeChanged,
-    [] (DGuiApplicationHelper::ColorType type) {
-        qDebug() << type;
-        // 保存程序的主题设置  type : 0,系统主题， 1,浅色主题， 2,深色主题
-        saveThemeTypeSetting(0);
-        DGuiApplicationHelper::instance()->setPaletteType(type);
-    });
+                     [](DGuiApplicationHelper::ColorType type) {
+                         qDebug() << type;
+                         // 保存程序的主题设置  type : 0,系统主题， 1,浅色主题， 2,深色主题
+                         saveThemeTypeSetting(0);
+                         DGuiApplicationHelper::instance()->setPaletteType(type);
+                     });
 
-    static const QDate buildDate = QLocale( QLocale::English ).toDate( QString(__DATE__).replace("  ", " 0"), "MMM dd yyyy");
+    static const QDate buildDate =
+        QLocale(QLocale::English).toDate(QString(__DATE__).replace("  ", " 0"), "MMM dd yyyy");
     QString t_date = buildDate.toString("MMdd");
     // Version Time
     a.setApplicationVersion(DApplication::buildVersion(t_date));
@@ -149,12 +149,9 @@ int main(int argc, char *argv[])
     dmr::CompositingManager::get().overrideCompositeMode(true);
 #endif
 
-    qDebug() << "mainwindow init";
     MainWindow w;
-    w.show();
     moveToCenter(&w);
-    qDebug() << "mainwindow show";
-    w.initWindowWidget();
+    w.show();
 
     DPlatformWindowHandle::enableDXcbForWindow(&w, true);
     dbus.registerObject("/com/deepin/introduction", &w, QDBusConnection::ExportScriptableSlots);
