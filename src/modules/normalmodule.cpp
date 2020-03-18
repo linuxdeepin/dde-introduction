@@ -145,7 +145,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     // desktop button
     NavigationButton *desktopBtn = new NavigationButton(tr("Desktop Mode"));
-    desktopBtn->setToolTip("Desktop Mode");
+    desktopBtn->setToolTip(tr("Desktop Mode"));
     m_buttonMap[desktopBtn] = ++moduleCount;
     // desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Choose a desktop mode");
@@ -163,7 +163,7 @@ NormalModule::NormalModule(DWidget *parent)
                               .toBool();
     if (allow_switch_wm && isSuportEffect) {
         wmBtn = new NavigationButton(tr("Running Mode"));
-        wmBtn->setToolTip("Running Mode");
+        wmBtn->setToolTip(tr("Running Mode"));
         m_buttonMap[wmBtn] = ++moduleCount;
         // wmBtn->setText(tr("Operation mode"));
         connect(wmBtn, &NavigationButton::widthChanged, this, &NormalModule::updateInterface);
@@ -179,7 +179,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     // icon button
     NavigationButton *iconBtn = new NavigationButton(tr("Icon Theme"));
-    iconBtn->setToolTip("Icon Theme");
+    iconBtn->setToolTip(tr("Icon Theme"));
     m_buttonMap[iconBtn] = ++moduleCount;
     // iconBtn->setText(tr("Icon theme"));
     m_titleMap[iconBtn] = tr("Choose an icon theme");
