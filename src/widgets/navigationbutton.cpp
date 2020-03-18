@@ -25,6 +25,8 @@
 #include <DGuiApplicationHelper>
 #include <DPalette>
 
+#include <QDebug>
+
 DWIDGET_USE_NAMESPACE
 DGUI_USE_NAMESPACE
 
@@ -81,6 +83,8 @@ void NavigationButton::initButton()
     m_label->setPalette(pl);
     m_label->setForegroundRole(DPalette::WindowText);
 }
+
+void NavigationButton::enterEvent(QEvent *event) {}
 
 /*QSize NavigationButton::setHint()
 {

@@ -38,6 +38,7 @@ public:
 protected:
     // void paintEvent(QPaintEvent *event);
     // QSize setHint();
+    void enterEvent(QEvent* event);
 
 signals:
     void widthChanged(int);

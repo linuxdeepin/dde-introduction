@@ -1,12 +1,12 @@
 #include "bottomnavigation.h"
 #include "bottombutton.h"
 
-#include <QHBoxLayout>
 #include <dimagebutton.h>
 #include <QDesktopServices>
-#include <QUrl>
 #include <QEvent>
+#include <QHBoxLayout>
 #include <QProcess>
+#include <QUrl>
 
 DWIDGET_USE_NAMESPACE
 
@@ -17,18 +17,15 @@ BottomNavigation::BottomNavigation(DWidget *parent)
     layout->setContentsMargins(20, 10, 20, 14);
     layout->setSpacing(10);
 
-    DImageButton *sinaBtn = new DImageButton(":/resources/weibo.svg",
-                                             ":/resources/weibo.svg",
-                                             ":/resources/weibo.svg");
-    DImageButton *twitterBtn = new DImageButton(":/resources/Twitter.svg",
-                                                ":/resources/Twitter.svg",
-                                                ":/resources/Twitter.svg");
-    DImageButton *facebook = new DImageButton(":/resources/Facebook.svg",
-                                              ":/resources/Facebook.svg",
-                                              ":/resources/Facebook.svg");
+    DImageButton *sinaBtn =
+        new DImageButton(":/resources/weibo.svg", ":/resources/weibo.svg", ":/resources/weibo.svg");
+    DImageButton *twitterBtn = new DImageButton(
+        ":/resources/Twitter.svg", ":/resources/Twitter.svg", ":/resources/Twitter.svg");
+    DImageButton *facebook = new DImageButton(
+        ":/resources/Facebook.svg", ":/resources/Facebook.svg", ":/resources/Facebook.svg");
 
-    //BottomButton *offical = new BottomButton;
-    //offical->setText(tr("Home Page"));
+    // BottomButton *offical = new BottomButton;
+    // offical->setText(tr("Home Page"));
 
     BottomButton *community = new BottomButton;
     community->setText(tr("Community"));
@@ -42,13 +39,12 @@ BottomNavigation::BottomNavigation(DWidget *parent)
     BottomButton *thank = new BottomButton;
     thank->setText(tr("Acknowledgments"));
 
-    DImageButton *mail = new DImageButton(":/resources/Mail.svg",
-                                          ":/resources/Mail.svg",
-                                          ":/resources/Mail.svg");
+    DImageButton *mail =
+        new DImageButton(":/resources/Mail.svg", ":/resources/Mail.svg", ":/resources/Mail.svg");
 
     QList<DImageButton *> list;
 
-    list << sinaBtn << twitterBtn << facebook  << community << feedback << help << thank
+    list << sinaBtn << twitterBtn << facebook << community << feedback << help << thank
 #ifndef PROFESSIONAL
          << thank
 #endif
@@ -63,25 +59,23 @@ BottomNavigation::BottomNavigation(DWidget *parent)
     m_buttons[twitterBtn] = "https://twitter.com/linux_deepin";
     m_buttons[facebook] = "https://www.facebook.com/deepinlinux/";
 
-/*#ifndef PROFESSIONAL
-    m_buttons[offical] = "https://www.deepin.org/";
-#else
-    m_buttons[offical] = "https://www.deepin.com/";
-#endif*/
+    /*#ifndef PROFESSIONAL
+        m_buttons[offical] = "https://www.deepin.org/";
+    #else
+        m_buttons[offical] = "https://www.deepin.com/";
+    #endif*/
     m_buttons[community] = "https://bbs.deepin.org/";
     m_buttons[feedback] = "http://feedback.deepin.org/";
     m_buttons[thank] = "https://www.deepin.org/acknowledgments/deepin/";
     m_buttons[mail] = "mailto:support@deepin.com";
 
-    connect(help, &DImageButton::clicked, this, [ = ] {
-        QProcess::startDetached("/usr/bin/dman");
-    });
+    connect(help, &DImageButton::clicked, this, [=] { QProcess::startDetached("/usr/bin/dman"); });
 
     layout->addWidget(sinaBtn, 0, Qt::AlignCenter);
     layout->addWidget(twitterBtn, 0, Qt::AlignCenter);
     layout->addWidget(facebook, 0, Qt::AlignCenter);
     layout->addStretch();
-    //layout->addWidget(offical, 0, Qt::AlignCenter);
+    // layout->addWidget(offical, 0, Qt::AlignCenter);
     layout->addWidget(community, 0, Qt::AlignCenter);
     layout->addWidget(feedback, 0, Qt::AlignCenter);
     layout->addWidget(help, 0, Qt::AlignCenter);

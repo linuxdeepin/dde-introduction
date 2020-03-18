@@ -118,6 +118,7 @@ NormalModule::NormalModule(DWidget *parent)
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
 
     NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
+    videoBtn->setToolTip(tr("Introduction"));
 //    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
 #ifndef DISABLE_VIDEO
     //    if (isx86) {
@@ -144,6 +145,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     // desktop button
     NavigationButton *desktopBtn = new NavigationButton(tr("Desktop Mode"));
+    desktopBtn->setToolTip("Desktop Mode");
     m_buttonMap[desktopBtn] = ++moduleCount;
     // desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Choose a desktop mode");
@@ -161,6 +163,7 @@ NormalModule::NormalModule(DWidget *parent)
                               .toBool();
     if (allow_switch_wm && isSuportEffect) {
         wmBtn = new NavigationButton(tr("Running Mode"));
+        wmBtn->setToolTip("Running Mode");
         m_buttonMap[wmBtn] = ++moduleCount;
         // wmBtn->setText(tr("Operation mode"));
         connect(wmBtn, &NavigationButton::widthChanged, this, &NormalModule::updateInterface);
@@ -176,6 +179,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     // icon button
     NavigationButton *iconBtn = new NavigationButton(tr("Icon Theme"));
+    iconBtn->setToolTip("Icon Theme");
     m_buttonMap[iconBtn] = ++moduleCount;
     // iconBtn->setText(tr("Icon theme"));
     m_titleMap[iconBtn] = tr("Choose an icon theme");
@@ -197,7 +201,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     // about button
     /*NavigationButton *aboutBtn = new NavigationButton(tr("About us"));
-    m_buttonMap[aboutBtn]   = ++moduleCount;
+    m_buttonMap[aboutBtn] = ++moduleCount;
     aboutBtn->setText(tr("About us"));
     m_titleMap[aboutBtn] = tr("About us");
     m_buttonGrp->addButton(aboutBtn);
