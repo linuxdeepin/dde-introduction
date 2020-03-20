@@ -19,9 +19,9 @@
 #ifndef BASEMODULEWIDGET_H
 #define BASEMODULEWIDGET_H
 
+#include <DLabel>
 #include <DWidget>
 #include <QVBoxLayout>
-#include <DLabel>
 
 DWIDGET_USE_NAMESPACE
 
@@ -29,12 +29,12 @@ class BaseModuleWidget : public DWidget
 {
     Q_OBJECT
 public:
-    explicit BaseModuleWidget(QWidget* content, QWidget *parent = nullptr);
+    explicit BaseModuleWidget(QWidget* content, QWidget* parent = nullptr);
 
-    void setTitle(const QString &title);
-    void setDescribe(const QString &describe);
+    void setTitle(const QString& title);
+    void setDescribe(const QString& describe);
     void setType(int type);
-    DWidget* getModel() {return m_content;};
+    DWidget* getModel() { return m_content; }
 
 private:
     QVBoxLayout* m_layout;
@@ -44,4 +44,4 @@ private:
     int m_type;
 };
 
-#endif // BASEMODULEWIDGET_H
+#endif  // BASEMODULEWIDGET_H

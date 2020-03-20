@@ -192,16 +192,16 @@ void MainWindow::initUI()
         m_settings->setValue("IsFirst", false);
 
 #ifndef DISABLE_VIDEO
-        //        if (isx86) {
-        m_current = new VideoWidget(false, m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Transparent);
-//        } else {
-#else
-        m_current = new PhotoSlide(m_fakerWidget);
-        m_nextBtn->setMode(NextButton::Normal);
-        static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
-        m_nextBtn->setMode(NextButton::Normal);
-        m_index = 1;
+        if (isx86) {
+            m_current = new VideoWidget(false, m_fakerWidget);
+            m_nextBtn->setMode(NextButton::Transparent);
+        } else {
+            m_current = new PhotoSlide(m_fakerWidget);
+            m_nextBtn->setMode(NextButton::Normal);
+            static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+            m_nextBtn->setMode(NextButton::Normal);
+            m_index = 1;
+        }
 #endif
         //        }
         //#else
@@ -282,16 +282,15 @@ void MainWindow::updateModule(const int index)
     switch (index) {
         case 1:
 #ifndef DISABLE_VIDEO
-            //        if (isx86) {
-            m_current = new VideoWidget(false, m_fakerWidget);
-            m_current->setFixedSize(WINDOW_SIZE);
-            m_nextBtn->setMode(NextButton::Transparent);
-//        } else {
-#else
-            m_current = new PhotoSlide(m_fakerWidget);
-            m_nextBtn->setMode(NextButton::Normal);
-            static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
-//        }
+            if (isx86) {
+                m_current = new VideoWidget(false, m_fakerWidget);
+                m_current->setFixedSize(WINDOW_SIZE);
+                m_nextBtn->setMode(NextButton::Transparent);
+            } else {
+                m_current = new PhotoSlide(m_fakerWidget);
+                m_nextBtn->setMode(NextButton::Normal);
+                static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
+            }
 #endif
             m_previousBtn->hide();
             break;
