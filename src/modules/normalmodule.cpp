@@ -121,7 +121,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
     videoBtn->setToolTip(tr("Introduction"));
-//    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
+    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
 #ifndef DISABLE_VIDEO
     //    if (isx86) {
     // video button
