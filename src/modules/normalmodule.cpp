@@ -26,13 +26,15 @@
 #include "support.h"
 #include "wmmodemodule.h"
 
-#include <QFont>
-
 #include <DSuggestButton>
+#include <QFont>
 
 #ifndef DISABLE_VIDEO
 #include "videowidget.h"
 #endif
+
+#include <DSysInfo>
+DCORE_USE_NAMESPACE
 
 NormalModule::NormalModule(DWidget *parent)
     : DWidget(parent)
@@ -156,25 +158,31 @@ NormalModule::NormalModule(DWidget *parent)
     desktopModeModule->hide();
     m_modules[moduleCount] = desktopModeModule;
 
-    // wm button
-    NavigationButton *wmBtn = nullptr;
-    bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
-                              .property("compositingAllowSwitch")
-                              .toBool();
-    if (allow_switch_wm && isSuportEffect) {
-        wmBtn = new NavigationButton(tr("Running Mode"));
-        wmBtn->setToolTip(tr("Running Mode"));
-        m_buttonMap[wmBtn] = ++moduleCount;
-        // wmBtn->setText(tr("Operation mode"));
-        connect(wmBtn, &NavigationButton::widthChanged, this, &NormalModule::updateInterface);
-        m_titleMap[wmBtn] = tr("Choose a running mode");
-        m_describeMap[wmBtn] =
-            tr("Please choose normal mode if you has a low configuration computer");
-        m_buttonGrp->addButton(wmBtn);
-        WMModeModule *wmModeModule = new WMModeModule(this);
-        wmModeModule->setFirst(false);
-        wmModeModule->hide();
-        m_modules[moduleCount] = wmModeModule;
+    const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
+    bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
+    bool m_bSystemIsServer = IsServerSystem;
+
+    if (!m_bSystemIsServer) {
+        // wm button
+        NavigationButton *wmBtn = nullptr;
+        bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
+                                  .property("compositingAllowSwitch")
+                                  .toBool();
+        if (allow_switch_wm && isSuportEffect) {
+            wmBtn = new NavigationButton(tr("Running Mode"));
+            wmBtn->setToolTip(tr("Running Mode"));
+            m_buttonMap[wmBtn] = ++moduleCount;
+            // wmBtn->setText(tr("Operation mode"));
+            connect(wmBtn, &NavigationButton::widthChanged, this, &NormalModule::updateInterface);
+            m_titleMap[wmBtn] = tr("Choose a running mode");
+            m_describeMap[wmBtn] =
+                tr("Please choose normal mode if you has a low configuration computer");
+            m_buttonGrp->addButton(wmBtn);
+            WMModeModule *wmModeModule = new WMModeModule(this);
+            wmModeModule->setFirst(false);
+            wmModeModule->hide();
+            m_modules[moduleCount] = wmModeModule;
+        }
     }
 
     // icon button
