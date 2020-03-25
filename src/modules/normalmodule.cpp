@@ -27,13 +27,13 @@
 #include "wmmodemodule.h"
 
 #include <DSuggestButton>
+#include <DSysInfo>
 #include <QFont>
 
 #ifndef DISABLE_VIDEO
 #include "videowidget.h"
 #endif
 
-#include <DSysInfo>
 DCORE_USE_NAMESPACE
 
 NormalModule::NormalModule(DWidget *parent)
@@ -162,8 +162,8 @@ NormalModule::NormalModule(DWidget *parent)
     bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
     bool m_bSystemIsServer = IsServerSystem;
 
+    // wm button
     if (!m_bSystemIsServer) {
-        // wm button
         NavigationButton *wmBtn = nullptr;
         bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
                                   .property("compositingAllowSwitch")

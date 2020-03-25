@@ -24,17 +24,18 @@
 #include "modules/photoslide.h"
 #include "modules/wmmodemodule.h"
 
-#include <QHBoxLayout>
-
 #include <DGuiApplicationHelper>
 #include <DPalette>
 #include <DPlatformWindowHandle>
+#include <DSysInfo>
 #include <DTitlebar>
+#include <QHBoxLayout>
 
 #ifndef DISABLE_VIDEO
 #include "modules/videowidget.h"
 #endif
 
+DCORE_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 static const QSize WINDOW_SIZE {699, 449};
@@ -298,27 +299,36 @@ void MainWindow::updateModule(const int index)
             m_current = initDesktopModeModule();
             break;
         case 3: {
-            bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
-                                      .property("compositingAllowSwitch")
-                                      .toBool();
-            if (isSuportEffect == true) {
-                if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
-                    m_current = initWMModeModule();
-                    break;
-                }
+            const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
+            bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
+            bool m_bSystemIsServer = IsServerSystem;
 
-                QFile file("/etc/deepin-wm-switcher/config.json");
-                if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-                    QJsonObject obj = doc.object();
-                    if (obj["allow_switch"].toBool()) {
+            if (!m_bSystemIsServer) {
+                bool isSuportEffect =
+                    QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
+                        .property("compositingAllowSwitch")
+                        .toBool();
+                if (isSuportEffect == true) {
+                    if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
                         m_current = initWMModeModule();
                         break;
                     }
-                }
-            }
 
-            if (!m_nextBtn->isVisible()) {  // hack
+                    QFile file("/etc/deepin-wm-switcher/config.json");
+                    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                        QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+                        QJsonObject obj = doc.object();
+                        if (obj["allow_switch"].toBool()) {
+                            m_current = initWMModeModule();
+                            break;
+                        }
+                    }
+                }
+
+                if (!m_nextBtn->isVisible()) {  // hack
+                    ++m_index;
+                }
+            } else {
                 ++m_index;
             }
         }
