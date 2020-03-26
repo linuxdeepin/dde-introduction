@@ -187,6 +187,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     // icon button
     NavigationButton *iconBtn = new NavigationButton(tr("Icon Theme"));
+    iconBtn->setFixedSize(200, 200);
     iconBtn->setToolTip(tr("Icon Theme"));
     m_buttonMap[iconBtn] = ++moduleCount;
     // iconBtn->setText(tr("Icon theme"));
