@@ -17,10 +17,6 @@
  */
 
 #include "basemodulewidget.h"
-#include <DPalette>
-#include <QDebug>
-
-DGUI_USE_NAMESPACE
 
 BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     : QWidget(parent)
@@ -55,8 +51,9 @@ void BaseModuleWidget::setTitle(const QString &title)
     QFont font;
     font.setFamily("SourceHanSansSC");
     font.setStyleName("Bold");
-    font.setPixelSize(17);
     m_titleLbl->setFont(font);
+    DFontSizeManager::instance()->bind(m_titleLbl, DFontSizeManager::T5);
+
     if (m_type == 1) {
         DPalette pa = m_titleLbl->palette();
         pa.setColor(DPalette::WindowText, Qt::black);
@@ -74,8 +71,9 @@ void BaseModuleWidget::setDescribe(const QString &describe)
     QFont font;
     font.setFamily("SourceHanSansSC");
     font.setStyleName("Normal");
-    font.setPixelSize(12);
     m_describeLbl->setFont(font);
+    DFontSizeManager::instance()->bind(m_describeLbl, DFontSizeManager::T8);
+
     if (m_type == 1) {
         DPalette pa = m_describeLbl->palette();
         pa.setColor(DPalette::WindowText, QColor(138, 161, 180, 255));

@@ -19,21 +19,28 @@
 #ifndef NORMALMODULE_H
 #define NORMALMODULE_H
 
-#include <QVBoxLayout>
 #include <QButtonGroup>
-#include <QPushButton>
+#include <QFont>
 #include <QKeyEvent>
 #include <QMap>
+#include <QPushButton>
+#include <QVBoxLayout>
 
-#include <DWidget>
-#include <DPalette>
+#include <DFontSizeManager>
 #include <DLabel>
+#include <DPalette>
+#include <DSuggestButton>
+#include <DSysInfo>
+#include <DWidget>
 
 #include <com_deepin_wmswitcher.h>
 
 using WMSwitcher = com::deepin::WMSwitcher;
-DWIDGET_USE_NAMESPACE
+
 DGUI_USE_NAMESPACE
+DCORE_USE_NAMESPACE
+DWIDGET_USE_NAMESPACE
+
 class ModuleInterface;
 class NavigationButton;
 class NormalModule : public DWidget
@@ -45,7 +52,7 @@ public:
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
-    //void keyPressEvent(QKeyEvent *e);
+    // void keyPressEvent(QKeyEvent *e);
 
 private:
     void updateCurrentWidget(const int index);
@@ -59,10 +66,10 @@ private:
     QVBoxLayout *m_leftNavigationLayout;
     QVBoxLayout *m_rightContentLayout;
     QButtonGroup *m_buttonGrp;
-    QMap<QWidget*, int> m_buttonMap;
-    QMap<QAbstractButton*, QString> m_titleMap;
-    QMap<QAbstractButton*, QString> m_describeMap;
-    QMap<int, QWidget*> m_modules;
+    QMap<QWidget *, int> m_buttonMap;
+    QMap<QAbstractButton *, QString> m_titleMap;
+    QMap<QAbstractButton *, QString> m_describeMap;
+    QMap<int, QWidget *> m_modules;
     NavigationButton *m_button;
     QWidget *m_currentWidget;
     WMSwitcher *m_wmSwitcher;
@@ -73,4 +80,4 @@ private:
     bool isx86;
 };
 
-#endif // NORMALMODULE_H
+#endif  // NORMALMODULE_H

@@ -26,15 +26,9 @@
 #include "support.h"
 #include "wmmodemodule.h"
 
-#include <DSuggestButton>
-#include <DSysInfo>
-#include <QFont>
-
 #ifndef DISABLE_VIDEO
 #include "videowidget.h"
 #endif
-
-DCORE_USE_NAMESPACE
 
 NormalModule::NormalModule(DWidget *parent)
     : DWidget(parent)
@@ -89,16 +83,18 @@ NormalModule::NormalModule(DWidget *parent)
     // BottomNavigation *bottomNavigation = new BottomNavigation;
 
     QFont font;
-    font.setPixelSize(17);
     font.setFamily("SourceHanSansSC");
     font.setStyleName("Bold");
     m_titleLabel->setFont(font);
+    DFontSizeManager::instance()->bind(m_titleLabel, DFontSizeManager::T5);
 
     QFont deFont;
     deFont.setFamily("SourceHanSansSC");
     deFont.setStyleName("Normal");
     deFont.setPixelSize(12);
     m_describe->setFont(deFont);
+    DFontSizeManager::instance()->bind(m_describe, DFontSizeManager::T8);
+
     updateLabel();
 
     QVBoxLayout *mainLayout = new QVBoxLayout;

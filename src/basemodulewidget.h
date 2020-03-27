@@ -19,10 +19,13 @@
 #ifndef BASEMODULEWIDGET_H
 #define BASEMODULEWIDGET_H
 
+#include <DFontSizeManager>
 #include <DLabel>
+#include <DPalette>
 #include <DWidget>
 #include <QVBoxLayout>
 
+DGUI_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 class BaseModuleWidget : public DWidget
