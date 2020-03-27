@@ -234,8 +234,8 @@ NormalModule::NormalModule(DWidget *parent)
     // m_leftNavigationLayout->addStretch();
 
     for (QWidget *w : m_buttonGrp->buttons()) {
-        w->setFixedSize(110, 30);
-        // w->setMinimumSize(110, 30);
+        // w->setFixedSize(110, 30);
+        w->setMinimumSize(110, 10);
         m_leftNavigationLayout->addWidget(w, 0, Qt::AlignHCenter | Qt::AlignVCenter);
         w->installEventFilter(this);
     }
