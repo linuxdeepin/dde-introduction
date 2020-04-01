@@ -325,6 +325,7 @@ void NormalModule::updateCurrentWidget(const int index)
             if (video) {
                 video->stop();
             }
+            video->showVideoControlButton();
 #endif
         }
 

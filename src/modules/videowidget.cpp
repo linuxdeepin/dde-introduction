@@ -265,6 +265,13 @@ void VideoWidget::updateInterface(QSize size)
     updateClip();
 }
 
+void VideoWidget::showVideoControlButton()
+{
+    m_hideEffect->setOpacity(1);
+    m_control->show();
+    m_leaveTimer->stop();
+}
+
 void VideoWidget::enterEvent(QEvent *e)
 {
     ModuleInterface::enterEvent(e);

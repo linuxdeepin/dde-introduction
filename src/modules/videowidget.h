@@ -47,6 +47,7 @@ public:
     void onControlButtonClicked();
     void stop();
     void updateInterface(QSize);
+    void showVideoControlButton();
 
 protected:
     void enterEvent(QEvent *) Q_DECL_OVERRIDE;
