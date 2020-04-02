@@ -193,7 +193,7 @@ void MainWindow::initUI()
         m_settings->setValue("IsFirst", false);
 
 #ifndef DISABLE_VIDEO
-        if (isx86) {
+        if (!isx86) {
             m_current = new VideoWidget(false, m_fakerWidget);
             m_nextBtn->setMode(NextButton::Transparent);
         } else {

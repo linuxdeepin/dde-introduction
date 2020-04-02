@@ -33,7 +33,7 @@
     <name>MainWindow</name>
     <message>
         <source>Next</source>
-        <translation>下一个</translation>
+        <translation>下一步</translation>
     </message>
     <message>
         <source>Done</source>
