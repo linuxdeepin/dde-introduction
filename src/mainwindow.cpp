@@ -193,7 +193,7 @@ void MainWindow::initUI()
         m_settings->setValue("IsFirst", false);
 
 #ifndef DISABLE_VIDEO
-        if (!isx86) {
+        if (isx86) {
             m_current = new VideoWidget(false, m_fakerWidget);
             m_nextBtn->setMode(NextButton::Transparent);
         } else {
@@ -234,7 +234,7 @@ void MainWindow::initUI()
 #endif
 
     // m_current->setFixedSize(704, 454);
-    m_current->move(-1, -1);
+    m_current->move(0, 0);
     m_current->setFixedSize(QSize(700, 450));
     m_current->show();
 
