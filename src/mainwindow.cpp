@@ -185,7 +185,7 @@ void MainWindow::initUI()
     closeBtn->setFixedSize(51, 51);
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
 
-#ifndef QT_DEBUG
+#ifdef QT_DEBUG
     const bool isFirst = m_settings->value("IsFirst", true).toBool();
     m_isFirst = isFirst;
 
