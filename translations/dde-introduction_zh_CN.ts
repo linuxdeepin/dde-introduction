@@ -1,38 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="zh_CN">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
 <context>
     <name>BottomNavigation</name>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="34"/>
         <source>Community</source>
-        <translation type="unfinished"></translation>
+        <translation>社区</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="37"/>
         <source>Feeback</source>
-        <translation type="unfinished"></translation>
+        <translation>反馈</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="40"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>帮助</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="43"/>
         <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
+        <translation>鸣谢</translation>
     </message>
 </context>
 <context>
     <name>DesktopModeModule</name>
     <message>
-        <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Efficient Mode</source>
         <translation>高效模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/desktopmodemodule.cpp" line="29"/>
         <source>Fashion Mode</source>
         <translation>时尚模式</translation>
     </message>
@@ -40,42 +32,34 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.cpp" line="159"/>
         <source>Next</source>
-        <translation>下一步</translation>
+        <translation>下一个</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="160"/>
         <source>Done</source>
-        <translation>完  成</translation>
+        <translation>完成</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="354"/>
-        <source>Desktop Mode</source>
-        <translation>桌面样式</translation>
+        <source>Choose a desktop mode</source>
+        <translation>请选择桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="368"/>
-        <source>Running Mode</source>
-        <translation>运行模式</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="369"/>
-        <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
-        <translation>您可以在控制中心个性化模块—开启或关闭窗口特效</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="355"/>
         <source>You can switch modes by right clicking on the dock</source>
         <translation>您可以在任务栏右键菜单—“模式”中进行调节</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="382"/>
+        <source>Choose a running mode</source>
+        <translation>请选择运行模式</translation>
+    </message>
+    <message>
+        <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
+        <translation>您可以在控制中心个性化模块—开启或关闭窗口特效</translation>
+    </message>
+    <message>
         <source>Choose an icon theme</source>
         <translation>请选择图标主题</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="383"/>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
         <translation>您可以在控制中心个性化模块—图标主题中进行调节</translation>
     </message>
@@ -83,67 +67,53 @@
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
-        <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Introduction</source>
         <translation>介绍</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="143"/>
+        <source>Welcome</source>
+        <translation>欢迎使用</translation>
+    </message>
+    <message>
         <source>Desktop Mode</source>
         <translation>桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="146"/>
         <source>Choose a desktop mode</source>
         <translation>请选择桌面样式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
         <source>You can switch modes by right clicking on the dock</source>
         <translation>您可以在任务栏右键菜单—“模式”中进行调节</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="157"/>
         <source>Running Mode</source>
         <translation>运行模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="172"/>
         <source>Choose a running mode</source>
         <translation>请选择运行模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="173"/>
         <source>Please choose normal mode if you has a low configuration computer</source>
         <translation>如果您的电脑配置不高，推荐您选择普通模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="182"/>
         <source>Icon Theme</source>
         <translation>图标主题</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="185"/>
         <source>Choose an icon theme</source>
         <translation>请选择图标主题</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="186"/>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
         <translation>您可以在控制中心个性化模块—图标主题中进行调节</translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
-        <location filename="../src/modules/normalmodule.cpp" line="133"/>
-        <source>Welcome</source>
-        <translation>欢迎使用</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="114"/>
         <source>Welcome</source>
         <translation>欢迎使用</translation>
     </message>
@@ -151,12 +121,10 @@
 <context>
     <name>WMModeModule</name>
     <message>
-        <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Normal Mode</source>
         <translation>普通模式</translation>
     </message>
     <message>
-        <location filename="../src/modules/wmmodemodule.cpp" line="29"/>
         <source>Effect Mode</source>
         <translation>特效模式</translation>
     </message>

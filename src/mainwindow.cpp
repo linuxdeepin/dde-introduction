@@ -185,7 +185,7 @@ void MainWindow::initUI()
     closeBtn->setFixedSize(51, 51);
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
 
-#ifndef QT_DEBUG
+#ifdef QT_DEBUG
     const bool isFirst = m_settings->value("IsFirst", true).toBool();
     m_isFirst = isFirst;
 
@@ -368,7 +368,7 @@ BaseModuleWidget *MainWindow::initDesktopModeModule()
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
-    w->setTitle(tr("Desktop Mode"));
+    w->setTitle(tr("Choose a desktop mode"));
     w->setDescribe(tr("You can switch modes by right clicking on the dock"));
     w->setFixedSize(WINDOW_SIZE);
     return w;
@@ -382,7 +382,7 @@ BaseModuleWidget *MainWindow::initWMModeModule()
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
     w->setType(type);
-    w->setTitle(tr("Running Mode"));
+    w->setTitle(tr("Choose a running mode"));
     w->setDescribe(tr("You can switch it in Control Center > Personalization > Window effect"));
     w->setFixedSize(WINDOW_SIZE);
     return w;

@@ -1,38 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>BottomNavigation</name>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="34"/>
         <source>Community</source>
         <translation>Community</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="37"/>
         <source>Feeback</source>
-        <translation type="unfinished"></translation>
+        <translation>Feeback</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="43"/>
-        <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="40"/>
         <source>Help</source>
         <translation>Aiuto</translation>
+    </message>
+    <message>
+        <source>Acknowledgments</source>
+        <translation>Considerazioni</translation>
     </message>
 </context>
 <context>
     <name>DesktopModeModule</name>
     <message>
-        <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Efficient Mode</source>
         <translation>Efficient</translation>
     </message>
     <message>
-        <location filename="../src/modules/desktopmodemodule.cpp" line="29"/>
         <source>Fashion Mode</source>
         <translation>Fashion</translation>
     </message>
@@ -40,125 +32,101 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.cpp" line="159"/>
         <source>Next</source>
         <translation>Avanti</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="160"/>
         <source>Done</source>
         <translation>Fatto</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="354"/>
-        <source>Desktop Mode</source>
-        <translation type="unfinished"></translation>
+        <source>Choose a desktop mode</source>
+        <translation>Scegli una modalità desktop</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="355"/>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation type="unfinished"></translation>
+        <translation>Potrete modificare la modalità cliccando col tasto destro sulla Dock</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="368"/>
-        <source>Running Mode</source>
-        <translation type="unfinished"></translation>
+        <source>Choose a running mode</source>
+        <translation>Scegli una modalità di esecuzione</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="369"/>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Potrete modificarlo nel Control Center &gt; Personalizzazione &gt; Effetti finestre</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="382"/>
         <source>Choose an icon theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli un tema per le icone</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="383"/>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Potrete modificarlo nel Control Center &gt; Personalizzazione &gt; Tema icone</translation>
     </message>
 </context>
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
-        <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Introduction</source>
         <translation>Introduzione</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="143"/>
-        <source>Desktop Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="146"/>
-        <source>Choose a desktop mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
-        <source>You can switch modes by right clicking on the dock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="157"/>
-        <source>Running Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="172"/>
-        <source>Choose a running mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="173"/>
-        <source>Please choose normal mode if you has a low configuration computer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="182"/>
-        <source>Icon Theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="185"/>
-        <source>Choose an icon theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="186"/>
-        <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
-        <location filename="../src/modules/normalmodule.cpp" line="133"/>
         <source>Welcome</source>
         <translation>Benvenuto</translation>
+    </message>
+    <message>
+        <source>Desktop Mode</source>
+        <translation>Modalità desktop</translation>
+    </message>
+    <message>
+        <source>Choose a desktop mode</source>
+        <translation>Scegli una modalità desktop</translation>
+    </message>
+    <message>
+        <source>You can switch modes by right clicking on the dock</source>
+        <translation>Potrete modificare la modalità cliccando col tasto destro sulla Dock</translation>
+    </message>
+    <message>
+        <source>Running Mode</source>
+        <translation>Modalità in esecuzione</translation>
+    </message>
+    <message>
+        <source>Choose a running mode</source>
+        <translation>Scegli una modalità di esecuzione</translation>
+    </message>
+    <message>
+        <source>Please choose normal mode if you has a low configuration computer</source>
+        <translation>Seleziona la modalità base se hai una configurazione hardware basilare</translation>
+    </message>
+    <message>
+        <source>Icon Theme</source>
+        <translation>Tema icone</translation>
+    </message>
+    <message>
+        <source>Choose an icon theme</source>
+        <translation>Scegli un tema per le icone</translation>
+    </message>
+    <message>
+        <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
+        <translation>Potrete modificarlo nel Control Center &gt; Personalizzazione &gt; Tema icone</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="114"/>
         <source>Welcome</source>
-        <translation type="unfinished">Benvenuto</translation>
+        <translation>Benvenuto</translation>
     </message>
 </context>
 <context>
     <name>WMModeModule</name>
     <message>
-        <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Normal Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità Base</translation>
     </message>
     <message>
-        <location filename="../src/modules/wmmodemodule.cpp" line="29"/>
         <source>Effect Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità Completa</translation>
     </message>
 </context>
 </TS>

@@ -1,38 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="fi">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
 <context>
     <name>BottomNavigation</name>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="34"/>
         <source>Community</source>
         <translation>Yhteisö</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="37"/>
         <source>Feeback</source>
-        <translation type="unfinished"></translation>
+        <translation>Palaute</translation>
     </message>
     <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="43"/>
-        <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/widgets/bottomnavigation.cpp" line="40"/>
         <source>Help</source>
-        <translation>Ohje</translation>
+        <translation>Apua</translation>
+    </message>
+    <message>
+        <source>Acknowledgments</source>
+        <translation>Kiitokset</translation>
     </message>
 </context>
 <context>
     <name>DesktopModeModule</name>
     <message>
-        <location filename="../src/modules/desktopmodemodule.cpp" line="28"/>
         <source>Efficient Mode</source>
         <translation>Alavalikko</translation>
     </message>
     <message>
-        <location filename="../src/modules/desktopmodemodule.cpp" line="29"/>
         <source>Fashion Mode</source>
         <translation>Keskitetty</translation>
     </message>
@@ -40,125 +32,101 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.cpp" line="159"/>
         <source>Next</source>
         <translation>Seuraava</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="160"/>
         <source>Done</source>
         <translation>Valmis</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="354"/>
-        <source>Desktop Mode</source>
-        <translation type="unfinished"></translation>
+        <source>Choose a desktop mode</source>
+        <translation>Valitse työpöytätila</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="355"/>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit vaihtaa tiloja klikkaamalla oikeaa telakkassa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="368"/>
-        <source>Running Mode</source>
-        <translation type="unfinished"></translation>
+        <source>Choose a running mode</source>
+        <translation>Valitse juoksutila</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="369"/>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit vaihtaa sen kohdassa Ohjauspaneeli &gt; Mukauttaminen &gt; Ikkunaefekti</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="382"/>
         <source>Choose an icon theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kuvaketeema</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="383"/>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihda se Ohjauspaneeli &gt; Mukauttaminen &gt; Kuvaketeema</translation>
     </message>
 </context>
 <context>
     <name>NormalModule</name>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="117"/>
-        <location filename="../src/modules/normalmodule.cpp" line="118"/>
         <source>Introduction</source>
         <translation>Johdanto</translation>
     </message>
     <message>
-        <location filename="../src/modules/normalmodule.cpp" line="143"/>
-        <source>Desktop Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="146"/>
-        <source>Choose a desktop mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="147"/>
-        <source>You can switch modes by right clicking on the dock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="157"/>
-        <source>Running Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="172"/>
-        <source>Choose a running mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="173"/>
-        <source>Please choose normal mode if you has a low configuration computer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="182"/>
-        <source>Icon Theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="185"/>
-        <source>Choose an icon theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="186"/>
-        <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/modules/normalmodule.cpp" line="124"/>
-        <location filename="../src/modules/normalmodule.cpp" line="133"/>
         <source>Welcome</source>
         <translation>Tervetuloa</translation>
+    </message>
+    <message>
+        <source>Desktop Mode</source>
+        <translation>Työpöytätila</translation>
+    </message>
+    <message>
+        <source>Choose a desktop mode</source>
+        <translation>Valitse työpöytätila</translation>
+    </message>
+    <message>
+        <source>You can switch modes by right clicking on the dock</source>
+        <translation>Voit vaihtaa tiloja klikkaamalla oikeaa telakkassa</translation>
+    </message>
+    <message>
+        <source>Running Mode</source>
+        <translation>Juoksutila</translation>
+    </message>
+    <message>
+        <source>Choose a running mode</source>
+        <translation>Valitse juoksutila</translation>
+    </message>
+    <message>
+        <source>Please choose normal mode if you has a low configuration computer</source>
+        <translation>Ole hyvä ja valitse normaali tila, jos tietokoneesi on tehoton</translation>
+    </message>
+    <message>
+        <source>Icon Theme</source>
+        <translation>Kuvake teema</translation>
+    </message>
+    <message>
+        <source>Choose an icon theme</source>
+        <translation>Valitse kuvaketeema</translation>
+    </message>
+    <message>
+        <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
+        <translation>Vaihda se Ohjauspaneeli &gt; Mukauttaminen &gt; Kuvaketeema</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="114"/>
         <source>Welcome</source>
-        <translation type="unfinished">Tervetuloa</translation>
+        <translation>Tervetuloa</translation>
     </message>
 </context>
 <context>
     <name>WMModeModule</name>
     <message>
-        <location filename="../src/modules/wmmodemodule.cpp" line="28"/>
         <source>Normal Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Normaali tila</translation>
     </message>
     <message>
-        <location filename="../src/modules/wmmodemodule.cpp" line="29"/>
         <source>Effect Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tehoste tila</translation>
     </message>
 </context>
 </TS>
