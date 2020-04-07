@@ -81,7 +81,7 @@ void saveThemeTypeSetting(int type)
 
 int main(int argc, char *argv[])
 {
-    bool isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
+    //bool isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
 #ifndef DISABLE_VIDEO
     //    if (isx86)
     qDebug() << "init movie";
