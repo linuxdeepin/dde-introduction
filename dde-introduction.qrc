@@ -58,5 +58,6 @@
         <file>resources/effective_mode_big@3x.png</file>
         <file>resources/fashion_mode_big@3x.png</file>
         <file>resources/fashion_mode_small@3x.png</file>
+        <file>resources/community_Moment.png</file>
     </qresource>
 </RCC>

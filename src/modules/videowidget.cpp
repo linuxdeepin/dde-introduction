@@ -69,6 +69,15 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     m_hideAni->setStartValue(1.0f);
     m_hideAni->setEndValue(0.0f);
 
+    //社区版/非社区版视频和封面不同
+    if (DSysInfo::isCommunityEdition()) {
+        m_strVideoCoverIcon = QString(":/resources/community_Moment.png");
+        m_strVideo = QString("/community.mp4");
+    } else {
+        m_strVideoCoverIcon = QString(":/resources/demo_Moment.jpg");
+        m_strVideo = QString("/demo.mp4");
+    }
+
     connect(m_hideAni, &QPropertyAnimation::finished, this, [=] { m_control->hide(); });
 
     connect(m_leaveTimer, &QTimer::timeout, this, [=] { m_hideAni->start(); });
@@ -133,7 +142,7 @@ void VideoWidget::updateBigIcon()
     setFixedSize(700, 450);
     m_video->setFixedSize(this->size());
     if (m_background != nullptr) {
-        QPixmap pixmap(":/resources/demo_Moment.jpg");
+        QPixmap pixmap(m_strVideoCoverIcon);
         pixmap = pixmap.scaled(m_video->size() /* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio,
                                Qt::SmoothTransformation);
         // m_label->setPixmap(pixmap);
@@ -151,7 +160,7 @@ void VideoWidget::updateSmallIcon()
     setFixedSize(size);
     m_video->setFixedSize(size);
     if (m_background != nullptr) {
-        QPixmap pixmap(":/resources/demo_Moment.jpg");
+        QPixmap pixmap(m_strVideoCoverIcon);
         pixmap = pixmap.scaled(m_video->size() /* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio,
                                Qt::SmoothTransformation);
         // m_label->setPixmap(pixmap);
@@ -230,7 +239,7 @@ void VideoWidget::onControlButtonClicked()
     if (!m_load) {
         qreal ratio = 1.0;
         QDir videoPath(ResourcesQDir());
-        const QString &file = videoPath.path() + QString("/demo.mp4");
+        const QString &file = videoPath.path() + QString(m_strVideo);
         m_video->engine().playlist().append(
             QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
         m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
@@ -256,7 +265,7 @@ void VideoWidget::updateInterface(QSize size)
     setFixedSize(size);
     m_video->setFixedSize(size);
     if (m_background != nullptr) {
-        QPixmap pixmap(":/resources/demo_Moment.jpg");
+        QPixmap pixmap(m_strVideoCoverIcon);
         pixmap = pixmap.scaled(m_video->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_background->setFixedSize(m_video->size());
         m_background->setPixmap(pixmap);

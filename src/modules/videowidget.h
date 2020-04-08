@@ -30,8 +30,10 @@
 #include <QPropertyAnimation>
 #include <player_widget.h>
 #include <player_engine.h>
+#include <DSysInfo>
 
 DWIDGET_USE_NAMESPACE
+DCORE_USE_NAMESPACE
 
 class QGraphicsOpacityEffect;
 class VideoWidget : public ModuleInterface {
@@ -70,6 +72,8 @@ private:
     DLabel *m_label;
     bool m_load;
     bool m_first;
+    QString m_strVideoCoverIcon;
+    QString m_strVideo;
 };
 
 #endif
