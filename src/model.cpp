@@ -17,7 +17,6 @@
  */
 
 #include "model.h"
-
 #include <QCollator>
 
 bool iconSort(const IconStruct &icon1, const IconStruct &icon2) {
