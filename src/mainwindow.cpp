@@ -233,9 +233,9 @@ void MainWindow::initUI()
     m_nextBtn->setMode(NextButton::Transparent);
 #endif
 
-//    m_current->move(0, 0);
-//    m_current->setFixedSize(QSize(700, 450));
-//    m_current->show();
+    m_current->move(0, 0);
+    m_current->setFixedSize(QSize(700, 450));
+    m_current->show();
 
     m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/ 10, 404);
     m_nextBtn->move(/*width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20*/ 590,
