@@ -1,132 +1,132 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="vi" version="2.1">
 <context>
     <name>BottomNavigation</name>
     <message>
         <source>Community</source>
-        <translation>Gemeinschaft</translation>
+        <translation>Cộng đồng</translation>
     </message>
     <message>
         <source>Feeback</source>
-        <translation>Rückmeldung</translation>
+        <translation>Phản hồi</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Hilfe</translation>
+        <translation>Giúp đỡ</translation>
     </message>
     <message>
         <source>Acknowledgments</source>
-        <translation>Danksagungen</translation>
+        <translation>Ghi nhận</translation>
     </message>
 </context>
 <context>
     <name>DesktopModeModule</name>
     <message>
         <source>Efficient Mode</source>
-        <translation>Leistungs-Modus</translation>
+        <translation>Chế độ Hiệu quả</translation>
     </message>
     <message>
         <source>Fashion Mode</source>
-        <translation>Design-Modus</translation>
+        <translation>Chế độ Thời trang</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Next</source>
-        <translation>Weiter</translation>
+        <translation>Kế tiếp</translation>
     </message>
     <message>
         <source>Done</source>
-        <translation>Fertig</translation>
+        <translation>Xong</translation>
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Wählen Sie einen Desktop-Modus</translation>
+        <translation>Chọn chế độ hiển thị màn hình</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>Sie können den Modus wechseln, indem Sie mit der rechten Maustaste auf das Dock klicken</translation>
+        <translation>Bạn có thể chuyển đổi chế độ bằng cách nhấp chuột phải vào thanh công cụ</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Wähle einen Betriebsmodus</translation>
+        <translation>Chọn chế độ chạy</translation>
     </message>
     <message>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
-        <translation>Sie können es ändern in Kontrollzentrum&gt; Personalisierung&gt; Fenstereffekte</translation>
+        <translation>Bạn có thể chuyển nó trong Trung tâm điều khiển&gt; Cá nhân hóa&gt; Hiệu ứng cửa sổ</translation>
     </message>
     <message>
         <source>Choose an icon theme</source>
-        <translation>Wählen Sie ein Symbolthema aus</translation>
+        <translation>Chọn một chủ đề icon</translation>
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation>Änderbar im Kontrollzentrum unter Personalisierung &gt; Icon Theme</translation>
+        <translation>Thay đổi nó trong Trung tâm điều khiển&gt; Cá nhân hóa&gt; Chủ đề icon</translation>
     </message>
 </context>
 <context>
     <name>NormalModule</name>
     <message>
         <source>Introduction</source>
-        <translation>Einführung</translation>
+        <translation>Giới thiệu</translation>
     </message>
     <message>
         <source>Welcome</source>
-        <translation>Willkommen</translation>
+        <translation>Xin chào</translation>
     </message>
     <message>
         <source>Desktop Mode</source>
-        <translation>Desktop Modus</translation>
+        <translation>Chế độ Desktop</translation>
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Wählen Sie einen Desktop-Modus</translation>
+        <translation>Chọn chế độ hiển thị màn hình</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>Sie können den Modus wechseln, indem Sie mit der rechten Maustaste auf das Dock klicken</translation>
+        <translation>Bạn có thể chuyển đổi chế độ bằng cách nhấp chuột phải vào thanh công cụ</translation>
     </message>
     <message>
         <source>Running Mode</source>
-        <translation>Betriebsmodus</translation>
+        <translation>Chế độ chạy</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Wähle einen Betriebsmodus</translation>
+        <translation>Chọn chế độ chạy</translation>
     </message>
     <message>
         <source>Please choose normal mode if you has a low configuration computer</source>
-        <translation>Bitte wählen Sie den normalen Modus, wenn Sie einen Computer mit niedriger Konfiguration haben</translation>
+        <translation>Vui lòng chọn chế độ bình thường nếu bạn có máy tính cấu hình thấp</translation>
     </message>
     <message>
         <source>Icon Theme</source>
-        <translation>Symbolthema</translation>
+        <translation>Chủ đề Biểu tượng</translation>
     </message>
     <message>
         <source>Choose an icon theme</source>
-        <translation>Wählen Sie ein Symbolthema aus</translation>
+        <translation>Chọn một chủ đề icon</translation>
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation>Änderbar im Kontrollzentrum unter Personalisierung &gt; Icon Theme</translation>
+        <translation>Thay đổi nó trong Trung tâm điều khiển&gt; Cá nhân hóa&gt; Chủ đề icon</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Welcome</source>
-        <translation>Willkommen</translation>
+        <translation>Xin chào</translation>
     </message>
 </context>
 <context>
     <name>WMModeModule</name>
     <message>
         <source>Normal Mode</source>
-        <translation>Normaler Modus</translation>
+        <translation>Chế độ bình thường</translation>
     </message>
     <message>
         <source>Effect Mode</source>
-        <translation>Effektmodus</translation>
+        <translation>Chế độ Hiệu quả</translation>
     </message>
 </context>
 </TS>

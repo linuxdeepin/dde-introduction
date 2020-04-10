@@ -68,7 +68,7 @@
     <name>NormalModule</name>
     <message>
         <source>Introduction</source>
-        <translation>Представљање</translation>
+        <translation>Упознај</translation>
     </message>
     <message>
         <source>Welcome</source>

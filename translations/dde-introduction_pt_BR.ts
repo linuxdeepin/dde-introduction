@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Escolha um Modo de Área de Trabalho</translation>
+        <translation>Escolha um modo da área de trabalho</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
@@ -49,19 +49,19 @@
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Escolha um Modo de Execução</translation>
+        <translation>Escolha um modo de execução</translation>
     </message>
     <message>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
-        <translation>Pode alterná-lo em Central de Controle &gt; Personalização &gt; Efeitos de Janela</translation>
+        <translation>Pode alterná-lo na Central de Controle &gt; Personalização &gt; Efeito Janela</translation>
     </message>
     <message>
         <source>Choose an icon theme</source>
-        <translation>Escolha um Tema de Ícone</translation>
+        <translation>Escolha um tema de ícone</translation>
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation>Altere-o em Central de Controle &gt; Personalização &gt; Tema de Ícones</translation>
+        <translation>Altere-o em Central de Controle &gt; Personalização &gt; Tema de Ícone</translation>
     </message>
 </context>
 <context>
@@ -76,11 +76,11 @@
     </message>
     <message>
         <source>Desktop Mode</source>
-        <translation>Modo Área de Trabalho</translation>
+        <translation>Modo da Área de Trabalho</translation>
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Escolha um Modo de Área de Trabalho</translation>
+        <translation>Escolha um modo da área de trabalho</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
@@ -92,7 +92,7 @@
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Escolha um Modo de Execução</translation>
+        <translation>Escolha um modo de execução</translation>
     </message>
     <message>
         <source>Please choose normal mode if you has a low configuration computer</source>
@@ -100,15 +100,15 @@
     </message>
     <message>
         <source>Icon Theme</source>
-        <translation>Tema de Ícones</translation>
+        <translation>Tema de Ícone</translation>
     </message>
     <message>
         <source>Choose an icon theme</source>
-        <translation>Escolha um Tema de Ícone</translation>
+        <translation>Escolha um tema de ícone</translation>
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation>Altere-o em Central de Controle &gt; Personalização &gt; Tema de Ícones</translation>
+        <translation>Altere-o em Central de Controle &gt; Personalização &gt; Tema de Ícone</translation>
     </message>
 </context>
 <context>
@@ -126,7 +126,7 @@
     </message>
     <message>
         <source>Effect Mode</source>
-        <translation>Efeito</translation>
+        <translation>Modo Efeito</translation>
     </message>
 </context>
 </TS>

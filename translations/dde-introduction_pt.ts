@@ -7,7 +7,7 @@
     </message>
     <message>
         <source>Feeback</source>
-        <translation>Comentários</translation>
+        <translation>Opinião</translation>
     </message>
     <message>
         <source>Help</source>

@@ -122,11 +122,11 @@
     <name>WMModeModule</name>
     <message>
         <source>Normal Mode</source>
-        <translation>Mode normal</translation>
+        <translation>Mode Normal</translation>
     </message>
     <message>
         <source>Effect Mode</source>
-        <translation>Mode effet</translation>
+        <translation>Mode Effet</translation>
     </message>
 </context>
 </TS>

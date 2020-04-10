@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Scegli una modalità desktop</translation>
+        <translation>Scegli la modalità desktop</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
