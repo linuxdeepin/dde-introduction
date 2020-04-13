@@ -115,7 +115,7 @@
     <name>QObject</name>
     <message>
         <source>Welcome</source>
-        <translation>欢迎使用</translation>
+        <translation>欢迎</translation>
     </message>
 </context>
 <context>
