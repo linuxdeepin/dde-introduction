@@ -110,8 +110,8 @@ INSTALLS += desktop target icon qm_files
 
 DEFINES += PROFESSIONAL
 videos.path = $$PREFIX/share/dde-introduction/
-videos.files += resources/professional/*.mp4
-videos.files += resources/professional/*.ass
+videos.files += resources/community/*.mp4
+videos.files += resources/community/*.ass
 INSTALLS += videos
 
 CONFIG(release, debug|release) {
