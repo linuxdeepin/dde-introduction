@@ -73,7 +73,6 @@ private:
     bool m_load;
     bool m_first;
     QString m_strVideoCoverIcon;
-    QString m_strVideo;
 };
 
 #endif
