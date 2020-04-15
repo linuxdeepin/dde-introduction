@@ -56,6 +56,7 @@ MainWindow::MainWindow(DWidget *parent)
 
     this->setWindowFlags(Qt::CustomizeWindowHint);
     titlebar()->setMenuVisible(false);
+    titlebar()->setIcon(QIcon::fromTheme("dde-introduction"));
     setFixedSize(WINDOW_SIZE);
 
     setTitlebarShadowEnabled(false);
@@ -229,13 +230,13 @@ void MainWindow::initUI()
 
     connect(closeBtn, &DImageButton::clicked, this, &MainWindow::close);
 
-    DLabel *logo = new DLabel(this);
-    QPixmap pixmap =
-        QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
-    pixmap.setDevicePixelRatio(devicePixelRatioF());
-    logo->setPixmap(pixmap);
-    logo->move(rect().topLeft() + QPoint(10, 8));
-    logo->show();
+//    DLabel *logo = new DLabel(this);
+//    QPixmap pixmap =
+//        QIcon::fromTheme("dde-introduction").pixmap(QSize(32, 32) * devicePixelRatioF());
+//    pixmap.setDevicePixelRatio(devicePixelRatioF());
+//    logo->setPixmap(pixmap);
+//    logo->move(rect().topLeft() + QPoint(10, 8));
+//    logo->show();
 }
 
 void MainWindow::initConnect()
