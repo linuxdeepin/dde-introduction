@@ -64,7 +64,13 @@ MainWindow::MainWindow(DWidget *parent)
     initWindowWidget();
 }
 
-MainWindow::~MainWindow() {}
+MainWindow::~MainWindow() {
+    QFile file(DDE_STARTGUIDE_PATH);
+    if (file.exists()) {
+        QProcess *pStartAppProcess = new QProcess();
+        pStartAppProcess->startDetached(DDE_STARTGUIDE_PATH);
+    }
+}
 
 void MainWindow::initWindowWidget()
 {

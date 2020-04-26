@@ -19,8 +19,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "widgets/nextbutton.h"
-
 #include <com_deepin_wmswitcher.h>
 #include <QPropertyAnimation>
 #include <QPushButton>
@@ -33,6 +31,10 @@
 #include <DImageButton>
 #include <DWidget>
 
+#include "widgets/nextbutton.h"
+
+#define DDE_STARTGUIDE_PATH "/usr/bin/dde-startguide"
+
 using WMSwitcherInter = com::deepin::WMSwitcher;
 
 DWIDGET_USE_NAMESPACE
@@ -43,7 +45,7 @@ class MainWindow : public DMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(DWidget *parent = 0);
+    MainWindow(DWidget *parent = nullptr);
     ~MainWindow();
     void initWindowWidget();
 
