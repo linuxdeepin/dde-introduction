@@ -37,8 +37,8 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
     setFocusPolicy(Qt::NoFocus);
     this->setFlat(true);
     this->setText("");
+    isEnter = false;
 
-    m_shadow = new QGraphicsDropShadowEffect(this);
     m_label = new DLabel(this);
     m_label->setElideMode(Qt::ElideRight);
     m_label->setText(text);
@@ -62,30 +62,50 @@ void NavigationButton::initButton()
     if (type == 1) {
         if (isChecked()) {
             pl.setColor(DPalette::WindowText, Qt::white);
-            m_shadow->setOffset(0, 4);
-            m_shadow->setColor(QColor(44, 167, 248, int(0.4 * 255)));
-            m_shadow->setBlurRadius(6);
         } else {
             pl.setColor(DPalette::WindowText, QColor(65, 77, 104));
-            m_shadow->setColor(QColor(0, 42, 175, 0));
         }
     } else {
         if (isChecked()) {
             pl.setColor(DPalette::WindowText, Qt::white);
-            m_shadow->setOffset(0, 4);
-            m_shadow->setColor(QColor(0, 42, 175, int(0.4 * 255)));
-            m_shadow->setBlurRadius(6);
         } else {
             pl.setColor(DPalette::WindowText, QColor(192, 198, 212));
-            m_shadow->setColor(QColor(0, 42, 175, 0));
         }
     }
-    setGraphicsEffect(m_shadow);
+
     m_label->setPalette(pl);
     m_label->setForegroundRole(DPalette::WindowText);
 }
 
-void NavigationButton::enterEvent(QEvent *event) {}
+void NavigationButton::enterEvent(QEvent *event) {
+    isEnter = true;
+}
+
+void NavigationButton::leaveEvent(QEvent *event) {
+    isEnter = false;
+}
+
+void NavigationButton::paintEvent(QPaintEvent *event)
+{
+    if (isEnter) {
+        this->setAutoFillBackground(true);
+        this->setBackgroundRole(DPalette::Base);
+
+        QRect rect = this->rect();
+        QPainter painter(this);
+        painter.setRenderHint(QPainter::Antialiasing);
+        DPalette pa;
+        painter.setBrush(pa.light());
+        QColor penColor = pa.base().color();
+        painter.setPen(QPen(penColor));
+
+        QPainterPath painterPath;
+        painterPath.addRoundedRect(rect, 8, 8);
+        painter.drawPath(painterPath);
+    }
+    DPushButton::paintEvent(event);
+}
+
 
 /*QSize NavigationButton::setHint()
 {

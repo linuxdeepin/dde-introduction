@@ -265,7 +265,6 @@ void NormalModule::keyPressEvent(QKeyEvent *e)
     QWidget *w = m_modules[m_index];
     switch (m_index) {
         case 1:
-//        static_cast<VideoWidget *>(w)->keyPressEvent(e);
 #ifndef DISABLE_VIDEO
             static_cast<VideoWidget *>(w)->keyPressEvent(e);
 #endif

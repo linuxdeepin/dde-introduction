@@ -36,16 +36,17 @@ public:
     void initButton();
 
 protected:
-    // void paintEvent(QPaintEvent *event);
     // QSize setHint();
+    void paintEvent(QPaintEvent *event);
     void enterEvent(QEvent* event);
+    void leaveEvent(QEvent* event);
 
 signals:
     void widthChanged(int);
 
 private:
     DLabel* m_label;
-    QGraphicsDropShadowEffect* m_shadow;
+    bool isEnter;
 };
 
 #endif  // NAVIGATIONBUTTON_H
