@@ -20,7 +20,12 @@
 #define BORDERWIDGET_H
 
 #include <DFrame>
+#include <DGuiApplicationHelper>
 
+#include <QPainter>
+#include <QPainterPath>
+
+DGUI_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 class BorderWidget : public DFrame

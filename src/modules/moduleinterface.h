@@ -21,11 +21,14 @@
 
 #include "../model.h"
 #include "../worker.h"
+#include "../widgets/iconbutton.h"
 
 #include <dimagebutton.h>
 #include <QFrame>
 #include <DFrame>
 #include <DLabel>
+#include <DHiDPIHelper>
+#include <DFloatingButton>
 
 DWIDGET_USE_NAMESPACE
 
@@ -47,7 +50,7 @@ public:
 protected:
     Model  *m_model;
     Worker *m_worker;
-    DLabel* m_selectBtn;
+    IconButton *m_selectBtn;
     QTimer *m_updateSelectBtnTimer;
 };
 

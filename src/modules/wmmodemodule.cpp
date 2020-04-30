@@ -111,19 +111,19 @@ void WMModeModule::paintEvent(QPaintEvent *event)
 
     if (m_first) {
         if (m_model->wmType() == Model::WM_2D) {
-            point.setX(x * 2 + 4);
-            point.setY(y + 66);
+            point.setX(x * 2 + 2);
+            point.setY(y + 63);
         } else if (m_model->wmType() == Model::WM_3D) {
-            point.setX(x);
-            point.setY(y + 66);
+            point.setX(x - 2);
+            point.setY(y + 63);
         }
     } else {
         if (m_model->wmType() == Model::WM_2D) {
-            point.setX(x * 2 + 22);
-            point.setY(y + 26);
+            point.setX(x * 2 + 20);
+            point.setY(y + 24);
         } else if (m_model->wmType() == Model::WM_3D) {
-            point.setX(x + 4);
-            point.setY(y + 26);
+            point.setX(x + 2);
+            point.setY(y + 24);
         }
     }
 

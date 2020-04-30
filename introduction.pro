@@ -41,7 +41,8 @@ HEADERS += \
     src/dvideowidget.h \
     src/modules/photoslide.h \
     src/widgets/bottombutton.h \
-    src/widgets/coverphoto.h
+    src/widgets/coverphoto.h \
+    src/widgets/iconbutton.h
 
 SOURCES += \
     src/basemodulewidget.cpp \
@@ -66,7 +67,8 @@ SOURCES += \
     src/dvideowidget.cpp \
     src/modules/photoslide.cpp \
     src/widgets/bottombutton.cpp \
-    src/widgets/coverphoto.cpp
+    src/widgets/coverphoto.cpp \
+    src/widgets/iconbutton.cpp
 
 RESOURCES += \
     dde-introduction.qrc

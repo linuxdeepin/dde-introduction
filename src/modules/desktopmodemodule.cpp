@@ -136,19 +136,19 @@ void DesktopModeModule::paintEvent(QPaintEvent *event)
 
     if (isfirst) {
         if (m_model->desktopMode() == Model::EfficientMode) {
-            point.setX(x * 2 + 17);
-            point.setY(y + 66);
+            point.setX(x * 2 + 15);
+            point.setY(y + 63);
         } else if (m_model->desktopMode() == Model::FashionMode) {
-            point.setX(x - 1);
-            point.setY(y + 66);
+            point.setX(x - 2);
+            point.setY(y + 63);
         }
     } else {
         if (m_model->desktopMode() == Model::EfficientMode) {
-            point.setX(x * 2 + 23);
-            point.setY(y + 26);
+            point.setX(x * 2 + 21);
+            point.setY(y + 24);
         } else if (m_model->desktopMode() == Model::FashionMode) {
-            point.setX(x + 4);
-            point.setY(y + 26);
+            point.setX(x + 2);
+            point.setY(y + 24);
         }
     }
 

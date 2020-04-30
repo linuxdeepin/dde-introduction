@@ -17,9 +17,6 @@
  */
 
 #include "borderwidget.h"
-#include <QDebug>
-#include <QPainter>
-#include <QPainterPath>
 
 BorderWidget::BorderWidget(QWidget *parent)
     : DFrame(parent)
@@ -66,7 +63,7 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     painter.drawPixmap(pixRect, m_pixmap);
 
     if (!m_checked) {
-        QPen pen(QColor(0, 0, 0, int(0.2 * 255)));
+        QPen pen(QColor(0, 0, 0, int(0 * 255)));
         pen.setWidth(1);
         painter.setPen(pen);
         QPainterPath Frame;
@@ -83,7 +80,9 @@ void BorderWidget::paintEvent(QPaintEvent *event)
     path.addRoundedRect(rect().adjusted(2, 2, -3, -3), 10, 10);
     painter.setClipRect(QRect(), Qt::NoClip);
     if (m_checked) {
-        QPen pen(QColor("#0081FF"));
+        QColor color = DGuiApplicationHelper::instance()->applicationPalette()
+                .highlight().color();
+        QPen pen(color);
         pen.setWidth(4);
 
         painter.setPen(pen);
