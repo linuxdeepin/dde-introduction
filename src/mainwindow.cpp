@@ -195,8 +195,9 @@ void MainWindow::initUI()
     bool isFirst = m_settings->value("IsFirst", true).toBool();
     m_isFirst = isFirst;
 
-    if (isFirst) {
+    isFirst = !isFirst;
 
+    if (isFirst) {
         m_settings->setValue("IsFirst", false);
 
         if (isx86) {
