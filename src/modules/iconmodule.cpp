@@ -124,7 +124,7 @@ void IconModule::currentIconChanged(const IconStruct &icon)
 
 void IconModule::updateBigIcon()
 {
-    const QSize size(700, 330);
+    const QSize size(700, 340);
     setFixedSize(size);
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());
@@ -144,7 +144,7 @@ void IconModule::updateBigIcon()
 
 void IconModule::updateSmallIcon()
 {
-    const QSize size(580, 250);
+    const QSize size(550, 270);
     setFixedSize(size);
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());

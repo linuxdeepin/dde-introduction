@@ -185,15 +185,17 @@ void MainWindow::initUI()
 
     slotTheme();
 
-    DImageButton *closeBtn =
-        new DImageButton(":/resources/close_normal.svg", ":/resources/close_normal.svg",
-                         ":/resources/close_normal.svg", this);
+    DImageButton *closeBtn = new DImageButton(":/resources/close_normal.svg",
+                                              ":/resources/close_normal.svg",
+                                              ":/resources/close_normal.svg", this);
 
     closeBtn->setFixedSize(51, 51);
     closeBtn->move(rect().topRight() - QPoint(closeBtn->width(), 0));
 
     bool isFirst = m_settings->value("IsFirst", true).toBool();
     m_isFirst = isFirst;
+
+    isFirst = !isFirst;
 
     if (isFirst) {
         m_settings->setValue("IsFirst", false);

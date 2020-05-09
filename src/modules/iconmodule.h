@@ -27,7 +27,6 @@
 #include <QScrollArea>
 #include <QGridLayout>
 #include <dflowlayout.h>
-#include <QScrollArea>
 #include <QKeyEvent>
 
 #include <DWidget>
