@@ -58,7 +58,6 @@ MainWindow::MainWindow(DWidget *parent)
     titlebar()->setMenuVisible(false);
     titlebar()->setIcon(QIcon::fromTheme("dde-introduction"));
     setFixedSize(WINDOW_SIZE);
-
     setTitlebarShadowEnabled(false);
 
     initWindowWidget();
@@ -194,8 +193,6 @@ void MainWindow::initUI()
 
     bool isFirst = m_settings->value("IsFirst", true).toBool();
     m_isFirst = isFirst;
-
-    isFirst = !isFirst;
 
     if (isFirst) {
         m_settings->setValue("IsFirst", false);
