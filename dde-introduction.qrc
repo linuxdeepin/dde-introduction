@@ -59,5 +59,13 @@
         <file>resources/fashion_mode_big@3x.png</file>
         <file>resources/fashion_mode_small@3x.png</file>
         <file>resources/community_Moment.png</file>
+        <file>resources/2d_big@community.png</file>
+        <file>resources/2d_small@community.png</file>
+        <file>resources/3d_big@community.png</file>
+        <file>resources/3d_small@community.png</file>
+        <file>resources/effective_mode_big@community.png</file>
+        <file>resources/fashion_mode_big@community.png</file>
+        <file>resources/fashion_mode_small@community.png</file>
+        <file>resources/effective_mode_small@community.png</file>
     </qresource>
 </RCC>
