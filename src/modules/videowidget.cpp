@@ -114,6 +114,7 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
 
     autoPlay = !autoPlay;
     m_video->engine().setBackendProperty("pause-on-start", autoPlay ? "false" : "true");
+    m_video->engine().setBackendProperty("panscan", 1.0);
 
     // m_video->engine().playlist().append(QUrl::fromLocalFile(qt_findAtNxFile(file,
     // devicePixelRatioF(), &ratio)));
