@@ -61,7 +61,7 @@ void PhotoSlide::updateBigIcon()
 
 void PhotoSlide::updateSmallIcon()
 {
-    const QSize size(550, 346);
+    const QSize size(549, 309);
     setFixedSize(size);
     //container_label_->setFixedSize(size);
     m_currentLabel->setFixedSize(size);
@@ -145,6 +145,7 @@ void PhotoSlide::updateSlideImage()
         //        pixmap = pixmap.scaled(700, 450, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
         //container_label_->setPixmap(pixmap);
         m_currentLabel->setPixmap(pixmap);
+        m_currentLabel->setScaledContents(true);
         //m_lastLable->setPixmap(lastPixmap);
     }
     else {

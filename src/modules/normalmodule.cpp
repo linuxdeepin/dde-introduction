@@ -331,7 +331,7 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget = w;
 
         m_rightContentLayout->addWidget(m_currentWidget, 0, Qt::AlignCenter);
-        m_currentWidget->setFixedSize(549, 343);
+        m_currentWidget->setFixedSize(549, 309);
         m_currentWidget->show();
     });
 }
