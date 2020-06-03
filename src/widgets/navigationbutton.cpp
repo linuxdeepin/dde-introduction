@@ -42,10 +42,10 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
     m_label = new DLabel(this);
     m_label->setElideMode(Qt::ElideRight);
     m_label->setText(text);
-    m_label->setFixedSize(95,30);
+    m_label->setFixedSize(95, 30);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
-    layout->setContentsMargins(10, 0, 0, 0);
+    layout->setContentsMargins(5, 0, 0, 0);
     layout->addWidget(m_label);
     setLayout(layout);
     initButton();
