@@ -159,11 +159,11 @@ void MainWindow::next()
 
 void MainWindow::initUI()
 {
-    DPlatformWindowHandle *handle = new DPlatformWindowHandle(this);
-    handle->setBorderWidth(0);
-    handle->setWindowRadius(5);
-    handle->setEnableSystemMove(true);
-    handle->setEnableSystemResize(false);
+    DPlatformWindowHandle handle(this);
+    handle.setBorderWidth(0);
+    handle.setWindowRadius(5);
+    handle.setEnableSystemMove(true);
+    handle.setEnableSystemResize(false);
 
     m_fakerWidget = new DWidget(this);
     m_fakerWidget->show();
