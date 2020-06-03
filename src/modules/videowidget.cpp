@@ -155,15 +155,13 @@ void VideoWidget::updateBigIcon()
 
 void VideoWidget::updateSmallIcon()
 {
-    const QSize size(540, 340);
+    QSize size(549, 343);
     setFixedSize(size);
     m_video->setFixedSize(size);
     if (m_background != nullptr) {
         QPixmap pixmap(m_strVideoCoverIcon);
-        pixmap = pixmap.scaled(m_video->size() /* * devicePixelRatioF()*/, Qt::IgnoreAspectRatio,
+        pixmap = pixmap.scaled(size, Qt::IgnoreAspectRatio,
                                Qt::SmoothTransformation);
-        // m_label->setPixmap(pixmap);
-        // m_label->setFixedSize(m_video->size());
         m_background->setFixedSize(m_video->size());
         m_background->setPixmap(pixmap);
     }

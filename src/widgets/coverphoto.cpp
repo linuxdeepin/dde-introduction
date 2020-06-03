@@ -25,8 +25,8 @@ void CoverPhoto::paintEvent(QPaintEvent *event)
     QRect pixRect(QPoint(0, 0), m_pixmap.size()/* * devicePixelRatioF()*/);
 
     // draw background
-    QPainterPath contentPath;
-    contentPath.addRoundedRect(pixRect, 10, 10);
-    painter.setClipPath(contentPath);
+//    QPainterPath contentPath;
+//    contentPath.addRoundedRect(pixRect, 10, 10);
+//    painter.setClipPath(contentPath);
     painter.drawPixmap(pixRect, m_pixmap);
 }
