@@ -48,7 +48,8 @@ class NormalModule : public DWidget
     Q_OBJECT
 public:
     explicit NormalModule(DWidget *parent = nullptr);
-    void keyPressEvent(QKeyEvent *);
+     ~NormalModule() override;
+    void keyPressEvent(QKeyEvent *) override;
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;

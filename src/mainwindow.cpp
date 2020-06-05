@@ -64,6 +64,9 @@ MainWindow::MainWindow(DWidget *parent)
 }
 
 MainWindow::~MainWindow() {
+    delete m_current;
+    delete m_settings;
+
     if (m_isFirst) {
         QFile file(DDE_STARTGUIDE_PATH);
         if (file.exists()) {

@@ -423,3 +423,9 @@ void NormalModule::updateInterface(int width)
         w->setMinimumSize(width + 15, 30);
     }
 }
+
+NormalModule::~NormalModule()
+{
+    delete m_buttonGrp;
+
+}
