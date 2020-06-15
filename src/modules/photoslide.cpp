@@ -81,7 +81,7 @@ void PhotoSlide::updateSmallIcon()
 
 void PhotoSlide::updateSelectBtnPos() {}
 
-void PhotoSlide::start(bool disable_slide, bool disable_animation, int duration)
+void PhotoSlide::start(bool disable_slide/*, bool disable_animation, int duration*/)
 {
     // Read the first slide image.
     slide_index_ = 0;

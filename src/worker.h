@@ -22,6 +22,8 @@
 #include "model.h"
 
 #include <QObject>
+#include <QJsonDocument>
+#include <QProcess>
 
 #include <com_deepin_daemon_appearance.h>
 #include <com_deepin_wmswitcher.h>

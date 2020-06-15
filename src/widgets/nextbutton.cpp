@@ -4,9 +4,9 @@
 #include <QPainter>
 #include <QGraphicsDropShadowEffect>
 
-#define DEFAULT_BG_COLOR  255, 255, 255, 1.0 * 255
-#define HOVER_BG_COLOR    255, 255, 255, 0.3 * 255
-#define PRESS_BG_COLOR    255, 255, 255, 0.1 * 255
+#define DEFAULT_BG_COLOR  255, 255, 255, int(1.0 * 255)
+#define HOVER_BG_COLOR    255, 255, 255, int(0.3 * 255)
+#define PRESS_BG_COLOR    255, 255, 255, int(0.1 * 255)
 
 NextButton::NextButton(const QString &text, QWidget *parent)
     : DPushButton(parent)

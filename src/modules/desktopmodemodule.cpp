@@ -61,8 +61,6 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
             m_fashionWidget->setChecked(true);
             m_efficientWidget->setChecked(false);
             break;
-        default:
-            break;
     }
     update();
 }

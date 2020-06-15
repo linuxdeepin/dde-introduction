@@ -17,26 +17,6 @@
  */
 
 #include "mainwindow.h"
-#include "basemodulewidget.h"
-#include "modules/desktopmodemodule.h"
-#include "modules/iconmodule.h"
-#include "modules/normalmodule.h"
-#include "modules/photoslide.h"
-#include "modules/wmmodemodule.h"
-
-#include <DGuiApplicationHelper>
-#include <DPalette>
-#include <DPlatformWindowHandle>
-#include <DSysInfo>
-#include <DTitlebar>
-#include <QHBoxLayout>
-
-#ifndef DISABLE_VIDEO
-#include "modules/videowidget.h"
-#endif
-
-DCORE_USE_NAMESPACE
-DWIDGET_USE_NAMESPACE
 
 static const QSize WINDOW_SIZE {699, 449};
 MainWindow::MainWindow(DWidget *parent)
@@ -210,7 +190,7 @@ void MainWindow::initUI()
         } else {
             m_current = new PhotoSlide(m_fakerWidget);
             m_nextBtn->setMode(NextButton::Normal);
-            static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
+            static_cast<PhotoSlide *>(m_current)->start(false/*, false, 2000*/);
             m_nextBtn->setMode(NextButton::Normal);
             m_index = 1;
         }
@@ -281,7 +261,7 @@ void MainWindow::updateModule(const int index)
             } else {
                 m_current = new PhotoSlide(m_fakerWidget);
                 m_nextBtn->setMode(NextButton::Normal);
-                static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
+                static_cast<PhotoSlide *>(m_current)->start(false/*, false, 1000*/);
             }
 
             m_previousBtn->hide();

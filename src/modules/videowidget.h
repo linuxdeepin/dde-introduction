@@ -23,7 +23,7 @@
 #include "../dvideowidget.h"
 #include "../widgets/coverphoto.h"
 
-#include <dimagebutton.h>
+#include <DImageButton>
 #include <DClipEffectWidget>
 #include <DLabel>
 #include <DWidget>

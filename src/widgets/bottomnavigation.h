@@ -2,7 +2,14 @@
 #define BOTTOMNAVIGATION_H
 
 #include <QMap>
+#include <QDesktopServices>
+#include <QEvent>
+#include <QHBoxLayout>
+#include <QProcess>
+#include <QUrl>
 
+#include <DImageButton>
+#include <DIconButton>
 #include <DWidget>
 
 DWIDGET_USE_NAMESPACE

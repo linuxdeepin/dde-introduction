@@ -115,9 +115,14 @@ NormalModule::NormalModule(DWidget *parent)
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
 
+ #ifndef DISABLE_VIDEO
     NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
     videoBtn->setToolTip(tr("Introduction"));
+#else
     NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
+    slideBtn->setToolTip(tr("Introduction"));
+#endif
+
 #ifndef DISABLE_VIDEO
     //    if (isx86) {
     // video button

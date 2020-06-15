@@ -21,7 +21,16 @@
 #include "dtkwidget_global.h"
 #include "dobject.h"
 
+#include <QAbstractVideoSurface>
+#include <QVideoSurfaceFormat>
+#include <QCamera>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include <QPainter>
+#include <QPointer>
 #include <QWidget>
+
+#include <DObjectPrivate>
 
 QT_BEGIN_NAMESPACE
 class QCamera;
@@ -56,7 +65,7 @@ public:
     Qt::AspectRatioMode aspectRatioMode() const;
 
     void setSourceVideoPixelRatio(const qreal ratio);
-    const qreal sourceVideoPixelRatio() const;
+    qreal sourceVideoPixelRatio();
 
     int brightness() const;
     int contrast() const;

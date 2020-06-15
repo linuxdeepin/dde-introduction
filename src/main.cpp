@@ -136,9 +136,9 @@ int main(int argc, char *argv[])
                          DGuiApplicationHelper::instance()->setPaletteType(type);
                      });
 
-    static const QDate buildDate =
-        QLocale(QLocale::English).toDate(QString(__DATE__).replace("  ", " 0"), "MMM dd yyyy");
+    QDate buildDate = QDate::currentDate();
     QString t_date = buildDate.toString("MMdd");
+
     // Version Time
     a.setApplicationVersion(DApplication::buildVersion(t_date));
 
