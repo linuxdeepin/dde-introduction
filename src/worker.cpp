@@ -33,7 +33,7 @@ void Worker::setDesktopMode(Model::DesktopMode mode)
                  << "--dest=com.deepin.dde.daemon.Launcher"
                  << "/com/deepin/dde/daemon/Launcher"
                  << "org.freedesktop.DBus.Properties.Set"
-                 << "string:com.deepin.dde.daemon.Launcher"
+//                 << "string:com.deepin.dde.daemon.Launcher"
 //                 << "string:Fullscreen"
                  << "variant:boolean:false";
             break;
@@ -42,7 +42,7 @@ void Worker::setDesktopMode(Model::DesktopMode mode)
                  << "--dest=com.deepin.dde.daemon.Launcher"
                  << "/com/deepin/dde/daemon/Launcher"
                  << "org.freedesktop.DBus.Properties.Set"
-                 << "string:com.deepin.dde.daemon.Launcher"
+//                 << "string:com.deepin.dde.daemon.Launcher"
 //                 << "string:Fullscreen"
                  << "variant:boolean:true";
             break;
