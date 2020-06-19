@@ -20,7 +20,7 @@ public:
     void updateSelectBtnPos() override;
 
 public slots:
-    void start(bool disable_slide/*, bool disable_animation, int duration*/);
+    void start(bool disable_slide, bool disable_animation, int duration);
     void stop();
     void setPhotoList(const QStringList& list);
 

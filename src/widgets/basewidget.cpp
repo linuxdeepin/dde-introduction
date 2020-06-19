@@ -48,7 +48,7 @@ void BaseWidget::setLayoutSpacing(int i)
 void BaseWidget::updateInterface(float f)
 {
     m_borderWidget->updateInterface(f);
-    m_borderWidget->setFixedSize(m_size * static_cast<qreal>(f));
+    m_borderWidget->setFixedSize(m_size * f);
 }
 
 void BaseWidget::setBigPixmap(const QString &url)

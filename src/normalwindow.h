@@ -19,18 +19,10 @@
 #ifndef NORMALWINDOW_H
 #define NORMALWINDOW_H
 
-#include "modules/desktopmodemodule.h"
-#include "modules/wmmodemodule.h"
-#include "modules/iconmodule.h"
-#include "basemodulewidget.h"
-
-#include <QWidget>
-
-#include <DSettings>
 #include <DSettingsDialog>
+#include <QWidget>
 #include <DSettingsWidgetFactory>
 
-DCORE_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 class NormalWindow : public DSettingsDialog

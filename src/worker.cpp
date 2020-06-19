@@ -17,6 +17,9 @@
  */
 
 #include "worker.h"
+#include <QDebug>
+#include <QJsonDocument>
+#include <QProcess>
 
 Worker *Worker::Instance()
 {
@@ -72,15 +75,19 @@ void Worker::onWMChanged(const QString &wm)
 
 void Worker::onWMChang(/*const quint32 &wm*/)
 {
-    m_model->setWmType(m_windowManage->windowManagerName() ==
-                       DWindowManagerHelper::WMName::DeepinWM
+    /*if (m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::DeepinWM)
+        return;
+    else if (m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::KWinWM)
+        return;*/
+    m_model->setWmType(m_windowManage->windowManagerName() == DWindowManagerHelper::WMName::DeepinWM
                            ? Model::WM_3D
                            : Model::WM_2D);
+    // m_model->setWmType(wm == "deepin wm" ? Model::WM_3D : Model::WM_2D);
 }
 
 void Worker::onDisplayModeChanged(int mode)
 {
-    m_model->setDesktopMode(static_cast<Model::DesktopMode>(mode));
+    m_model->setDesktopMode((Model::DesktopMode)mode);
 }
 
 void Worker::onIconRefreshed(const QString &name)

@@ -41,6 +41,8 @@ void ModuleInterface::setIconType(Model::IconType type)
     case Model::Small:
         updateSmallIcon();
         break;
+    default:
+        break;
     }
 }
 

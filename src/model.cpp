@@ -18,6 +18,8 @@
 
 #include "model.h"
 
+#include <QCollator>
+
 bool iconSort(const IconStruct &icon1, const IconStruct &icon2) {
     QCollator qc;
     return qc.compare(icon1.Id, icon2.Id) < 0;

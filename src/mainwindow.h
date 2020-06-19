@@ -19,42 +19,25 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "basemodulewidget.h"
-#include "modules/desktopmodemodule.h"
-#include "modules/iconmodule.h"
-#include "modules/normalmodule.h"
-#include "modules/photoslide.h"
-#include "modules/wmmodemodule.h"
-#include "widgets/nextbutton.h"
-#ifndef DISABLE_VIDEO
-#include "modules/videowidget.h"
-#endif
-
+#include <com_deepin_wmswitcher.h>
 #include <QPropertyAnimation>
 #include <QPushButton>
 #include <QSettings>
 #include <QWidget>
 #include <QKeyEvent>
-#include <QHBoxLayout>
 
-#include <DGuiApplicationHelper>
-#include <DPalette>
-#include <DPlatformWindowHandle>
-#include <DSysInfo>
-#include <DTitlebar>
 #include <DMainWindow>
 #include <DIconButton>
 #include <DImageButton>
 #include <DWidget>
 
-#include <com_deepin_wmswitcher.h>
-
-DCORE_USE_NAMESPACE
-DWIDGET_USE_NAMESPACE
+#include "widgets/nextbutton.h"
 
 #define DDE_STARTGUIDE_PATH "/usr/bin/dde-startguide"
 
 using WMSwitcherInter = com::deepin::WMSwitcher;
+
+DWIDGET_USE_NAMESPACE
 
 class BaseModuleWidget;
 class MainWindow : public DMainWindow

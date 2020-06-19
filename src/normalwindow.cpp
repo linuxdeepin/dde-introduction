@@ -17,6 +17,14 @@
  */
 
 #include "normalwindow.h"
+#include "modules/desktopmodemodule.h"
+#include "modules/wmmodemodule.h"
+#include "modules/iconmodule.h"
+#include "basemodulewidget.h"
+
+#include <DSettings>
+
+DCORE_USE_NAMESPACE
 
 static QWidget *createDesktopModeHandle(QObject *opt) {
     Q_UNUSED(opt);

@@ -23,8 +23,6 @@
 #include <QJsonObject>
 #include <QDebug>
 #include <QPixmap>
-#include <QCollator>
-
 
 struct IconStruct {
     QString Id;
