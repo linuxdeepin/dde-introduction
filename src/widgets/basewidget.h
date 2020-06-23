@@ -22,9 +22,11 @@
 #include "borderwidget.h"
 
 #include <QVBoxLayout>
+#include <QDebug>
 
 #include <DFrame>
 #include <DImageButton>
+#include <DHiDPIHelper>
 #include <DLabel>
 
 DWIDGET_USE_NAMESPACE

@@ -16,15 +16,6 @@
  */
 
 #include "dvideowidget.h"
-#include <DObjectPrivate>
-
-#include <QAbstractVideoSurface>
-#include <QVideoSurfaceFormat>
-#include <QCamera>
-#include <QMediaPlayer>
-#include <QMediaPlaylist>
-#include <QPainter>
-#include <QPointer>
 
 DWIDGET_BEGIN_NAMESPACE
 
@@ -285,7 +276,7 @@ const QVideoFrame *DVideoWidget::currentFrame() const
         return &d->formatProxy->currentFrame();
     }
 
-    return NULL;
+    return nullptr;
 }
 
 /**
@@ -360,7 +351,7 @@ void DVideoWidget::setScale(qreal scale)
 {
     D_D(DVideoWidget);
 
-    if (d->scale == scale)
+    if (abs(d->scale - scale) < 0.000001)
         return;
 
     d->scale = scale;
@@ -435,7 +426,7 @@ void DVideoWidget::paintEvent(QPaintEvent *)
 
     QPainter painter(this);
 
-    const QMediaPlaylist *pl = d->player ? d->player->playlist() : NULL;
+    const QMediaPlaylist *pl = d->player ? d->player->playlist() : nullptr;
     bool loop = pl && (pl->playbackMode() == QMediaPlaylist::Loop || pl->playbackMode() == QMediaPlaylist::CurrentItemInLoop);
     QVideoFrame frame = (!loop || d->formatProxy->m_currentFrame.isValid()) ? d->formatProxy->m_currentFrame : d->formatProxy->m_lastFrame;
 

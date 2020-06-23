@@ -42,7 +42,7 @@ void BorderWidget::setChecked(bool checked)
 
 void BorderWidget::updateInterface(float f)
 {
-    m_size = m_pixmap.size() * f;
+    m_size = m_pixmap.size() * static_cast<qreal>(f);
     update();
 }
 

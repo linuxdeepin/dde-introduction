@@ -18,9 +18,6 @@
 
 #include "bottombutton.h"
 
-#include <QPainter>
-#include <QGraphicsDropShadowEffect>
-
 BottomButton::BottomButton(DWidget *parent)
     : DImageButton(parent)
 {

@@ -17,18 +17,6 @@
  */
 
 #include "normalmodule.h"
-#include "../widgets/bottomnavigation.h"
-#include "../widgets/navigationbutton.h"
-#include "about.h"
-#include "desktopmodemodule.h"
-#include "iconmodule.h"
-#include "photoslide.h"
-#include "support.h"
-#include "wmmodemodule.h"
-
-#ifndef DISABLE_VIDEO
-#include "videowidget.h"
-#endif
 
 NormalModule::NormalModule(DWidget *parent)
     : DWidget(parent)
@@ -115,37 +103,31 @@ NormalModule::NormalModule(DWidget *parent)
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
 
+#ifndef DISABLE_VIDEO
     NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
     videoBtn->setToolTip(tr("Introduction"));
-    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
-#ifndef DISABLE_VIDEO
-    //    if (isx86) {
-    // video button
     m_buttonMap[videoBtn] = ++moduleCount;
-    // videoBtn->setText(tr("Introduction"));
     m_titleMap[videoBtn] = tr("Welcome");
     m_buttonGrp->addButton(videoBtn);
     VideoWidget *videoModule = new VideoWidget(false, this);
     videoModule->hide();
     m_modules[moduleCount] = videoModule;
-//    } else {
 #else
-    m_buttonMap[slideBtn] = ++moduleCount;
+    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
     slideBtn->setToolTip(tr("Introduction"));
+    m_buttonMap[slideBtn] = ++moduleCount;
     m_titleMap[slideBtn] = tr("Welcome");
     m_buttonGrp->addButton(slideBtn);
     PhotoSlide *slideModule = new PhotoSlide;
     slideModule->hide();
     slideModule->start(false, false, 2000);
     m_modules[moduleCount] = slideModule;
-//    }
 #endif
 
     // desktop button
     NavigationButton *desktopBtn = new NavigationButton(tr("Desktop Mode"));
     desktopBtn->setToolTip(tr("Desktop Mode"));
     m_buttonMap[desktopBtn] = ++moduleCount;
-    // desktopBtn->setText(tr("Desktop mode"));
     m_titleMap[desktopBtn] = tr("Choose a desktop mode");
     m_describeMap[desktopBtn] = tr("You can switch modes by right clicking on the dock");
     m_buttonGrp->addButton(desktopBtn);
@@ -168,7 +150,6 @@ NormalModule::NormalModule(DWidget *parent)
             wmBtn = new NavigationButton(tr("Running Mode"));
             wmBtn->setToolTip(tr("Running Mode"));
             m_buttonMap[wmBtn] = ++moduleCount;
-            // wmBtn->setText(tr("Operation mode"));
             connect(wmBtn, &NavigationButton::widthChanged, this, &NormalModule::updateInterface);
             m_titleMap[wmBtn] = tr("Choose a running mode");
             m_describeMap[wmBtn] =
@@ -260,26 +241,65 @@ NormalModule::NormalModule(DWidget *parent)
 #endif
 }
 
-void NormalModule::keyPressEvent(QKeyEvent *e)
+void NormalModule::keyPressEvent(QKeyEvent *event)
 {
     QWidget *w = m_modules[m_index];
-    switch (m_index) {
-        case 1:
+
+    if(event->key() == Qt::Key_Up) {
+        int index = m_index;
+        if (index == 1) return;
+
+        index = -index;
+
+        QAbstractButton *btn = m_buttonGrp->button(index - 1);
+        btn->setChecked(false);
+
+        btn = m_buttonGrp->button(index);
+        btn->setChecked(true);
+
+        updataButton(btn);
+        updateCurrentWidget(m_buttonMap[btn]);
+        m_titleLabel->setText(m_titleMap[btn]);
+        m_describe->setText(m_describeMap[btn]);
+    }
+    else if(event->key() == Qt::Key_Down) {
+        int index = m_index;
+        if (index == 4) return;
+
+        index = -index - 2;
+
+        QAbstractButton *btn = m_buttonGrp->button(index + 1);
+        btn->setChecked(false);
+
+        btn = m_buttonGrp->button(index);
+        btn->setChecked(true);
+
+        updataButton(btn);
+        updateCurrentWidget(m_buttonMap[btn]);
+        m_titleLabel->setText(m_titleMap[btn]);
+        m_describe->setText(m_describeMap[btn]);
+    }
+    else {
+        switch (m_index) {
+            case 1:
 #ifndef DISABLE_VIDEO
-            static_cast<VideoWidget *>(w)->keyPressEvent(e);
+                static_cast<VideoWidget *>(w)->keyPressEvent(event);
+                break;
+#else
+                break;
 #endif
-            break;
-        case 2:
-            static_cast<DesktopModeModule *>(w)->keyPressEvent(e);
-            break;
-        case 3:
-            static_cast<WMModeModule *>(w)->keyPressEvent(e);
-            break;
-        case 4:
-            static_cast<IconModule *>(w)->keyPressEvent(e);
-            break;
-        default:
-            break;
+            case 2:
+                static_cast<DesktopModeModule *>(w)->keyPressEvent(event);
+                break;
+            case 3:
+                static_cast<WMModeModule *>(w)->keyPressEvent(event);
+                break;
+            case 4:
+                static_cast<IconModule *>(w)->keyPressEvent(event);
+                break;
+            default:
+                break;
+        }
     };
 }
 
@@ -427,5 +447,4 @@ void NormalModule::updateInterface(int width)
 NormalModule::~NormalModule()
 {
     delete m_buttonGrp;
-
 }

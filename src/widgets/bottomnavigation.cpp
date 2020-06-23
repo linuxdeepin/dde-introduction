@@ -1,14 +1,4 @@
 #include "bottomnavigation.h"
-#include "bottombutton.h"
-
-#include <dimagebutton.h>
-#include <QDesktopServices>
-#include <QEvent>
-#include <QHBoxLayout>
-#include <QProcess>
-#include <QUrl>
-
-DWIDGET_USE_NAMESPACE
 
 BottomNavigation::BottomNavigation(DWidget *parent)
     : DWidget(parent)

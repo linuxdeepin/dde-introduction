@@ -19,6 +19,18 @@
 #ifndef NORMALMODULE_H
 #define NORMALMODULE_H
 
+#include "../widgets/bottomnavigation.h"
+#include "../widgets/navigationbutton.h"
+#include "about.h"
+#include "desktopmodemodule.h"
+#include "iconmodule.h"
+#include "photoslide.h"
+#include "support.h"
+#include "wmmodemodule.h"
+#ifndef DISABLE_VIDEO
+#include "videowidget.h"
+#endif
+
 #include <QButtonGroup>
 #include <QFont>
 #include <QKeyEvent>
@@ -51,13 +63,14 @@ public:
      ~NormalModule() override;
     void keyPressEvent(QKeyEvent *) override;
 
+
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
-    // void keyPressEvent(QKeyEvent *e);
 
 private:
     void updateCurrentWidget(const int index);
     void updataButton(QAbstractButton *btn);
+
 private slots:
     void initTheme(int type);
     void updateLabel();

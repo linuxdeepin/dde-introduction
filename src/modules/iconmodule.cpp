@@ -18,7 +18,7 @@
 
 #include "iconmodule.h"
 
-#include <QImageReader>
+
 
 IconModule::IconModule(QWidget *parent)
     : ModuleInterface(parent)

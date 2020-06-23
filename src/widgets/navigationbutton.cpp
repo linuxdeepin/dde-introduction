@@ -18,18 +18,6 @@
 
 #include "navigationbutton.h"
 
-#include <QGraphicsDropShadowEffect>
-#include <QHBoxLayout>
-#include <QPainter>
-
-#include <DGuiApplicationHelper>
-#include <DPalette>
-
-#include <QDebug>
-
-DWIDGET_USE_NAMESPACE
-DGUI_USE_NAMESPACE
-
 NavigationButton::NavigationButton(QString text, DWidget *parent)
     : DPushButton(text, parent)
 {

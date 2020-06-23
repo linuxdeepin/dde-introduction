@@ -18,18 +18,6 @@
 
 #include "videowidget.h"
 
-#include <player_engine.h>
-#include <QBitmap>
-#include <QGraphicsOpacityEffect>
-#include <QHBoxLayout>
-#include <QIcon>
-#include <QLocale>
-#include <QMediaPlaylist>
-#include <QPainter>
-#include <QPushButton>
-#include <QResizeEvent>
-#include <QTimer>
-
 static QDir ResourcesQDir()
 {
     QDir videoPath(qApp->applicationDirPath());

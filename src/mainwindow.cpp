@@ -17,28 +17,9 @@
  */
 
 #include "mainwindow.h"
-#include "basemodulewidget.h"
-#include "modules/desktopmodemodule.h"
-#include "modules/iconmodule.h"
-#include "modules/normalmodule.h"
-#include "modules/photoslide.h"
-#include "modules/wmmodemodule.h"
-
-#include <DGuiApplicationHelper>
-#include <DPalette>
-#include <DPlatformWindowHandle>
-#include <DSysInfo>
-#include <DTitlebar>
-#include <QHBoxLayout>
-
-#ifndef DISABLE_VIDEO
-#include "modules/videowidget.h"
-#endif
-
-DCORE_USE_NAMESPACE
-DWIDGET_USE_NAMESPACE
 
 static const QSize WINDOW_SIZE {699, 449};
+
 MainWindow::MainWindow(DWidget *parent)
     : DMainWindow(parent)
     , m_index(1)

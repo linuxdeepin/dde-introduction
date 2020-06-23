@@ -20,11 +20,16 @@
 #define NAVIGATIONBUTTON_H
 
 #include <QGraphicsDropShadowEffect>
+#include <QHBoxLayout>
+#include <QPainter>
 
+#include <DGuiApplicationHelper>
+#include <DPalette>
 #include <DLabel>
 #include <DPushButton>
 #include <DWidget>
 
+DGUI_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 class NavigationButton : public DPushButton

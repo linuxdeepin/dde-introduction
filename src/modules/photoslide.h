@@ -7,8 +7,12 @@
 #include <QLabel>
 #include <QPropertyAnimation>
 #include <QWidget>
+#include <QPainter>
 
 #include <DLabel>
+#include <DHiDPIHelper>
+
+DWIDGET_USE_NAMESPACE
 
 class PhotoSlide : public ModuleInterface {
     Q_OBJECT

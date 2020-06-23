@@ -2,6 +2,10 @@
 #define NEXTBUTTON_H
 
 #include <QPushButton>
+#include <QPainterPath>
+#include <QPainter>
+#include <QGraphicsDropShadowEffect>
+
 #include <DPushButton>
 
 DWIDGET_USE_NAMESPACE

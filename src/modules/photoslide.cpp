@@ -1,10 +1,5 @@
 #include "photoslide.h"
 
-#include <DHiDPIHelper>
-#include <QPainter>
-
-DWIDGET_USE_NAMESPACE
-
 PhotoSlide::PhotoSlide(QWidget *parent)
     : ModuleInterface(parent)
 {

@@ -17,9 +17,6 @@
  */
 
 #include "worker.h"
-#include <QDebug>
-#include <QJsonDocument>
-#include <QProcess>
 
 Worker *Worker::Instance()
 {
@@ -87,7 +84,7 @@ void Worker::onWMChang(/*const quint32 &wm*/)
 
 void Worker::onDisplayModeChanged(int mode)
 {
-    m_model->setDesktopMode((Model::DesktopMode)mode);
+    m_model->setDesktopMode(static_cast<Model::DesktopMode>(mode));
 }
 
 void Worker::onIconRefreshed(const QString &name)

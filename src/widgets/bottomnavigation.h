@@ -1,9 +1,19 @@
 #ifndef BOTTOMNAVIGATION_H
 #define BOTTOMNAVIGATION_H
 
+
+#include "bottombutton.h"
+
+#include <QDesktopServices>
+#include <QEvent>
+#include <QHBoxLayout>
+#include <QProcess>
+#include <QUrl>
 #include <QMap>
 
 #include <DWidget>
+
+#include <dimagebutton.h>
 
 DWIDGET_USE_NAMESPACE
 

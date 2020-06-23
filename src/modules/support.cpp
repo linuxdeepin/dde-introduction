@@ -1,7 +1,5 @@
 #include "support.h"
 
-#include <DFrame>
-
 Support::Support(QWidget *parent)
     : QScrollArea(parent)
 {

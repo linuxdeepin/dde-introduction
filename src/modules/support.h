@@ -4,6 +4,7 @@
 #include <QScrollArea>
 #include <DGuiApplicationHelper>
 #include <DLabel>
+#include <DFrame>
 
 DGUI_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE

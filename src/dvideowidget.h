@@ -22,6 +22,15 @@
 #include "dobject.h"
 
 #include <QWidget>
+#include <QAbstractVideoSurface>
+#include <QVideoSurfaceFormat>
+#include <QCamera>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include <QPainter>
+#include <QPointer>
+
+#include <DObjectPrivate>
 
 QT_BEGIN_NAMESPACE
 class QCamera;
@@ -47,7 +56,7 @@ class LIBDTKWIDGETSHARED_EXPORT DVideoWidget : public QWidget, public DTK_CORE_N
     Q_PROPERTY(bool round READ round WRITE setRound NOTIFY roundChanged)
 
 public:
-    explicit DVideoWidget(QWidget *parent = 0);
+    explicit DVideoWidget(QWidget *parent = nullptr);
 
     bool mirroredHorizontal() const;
     bool mirroredVertical() const;

@@ -77,8 +77,6 @@ void WMModeModule::onWMModeChanged(Model::WMType type)
             m_fashionWidget->setChecked(true);
             m_efficientWidget->setChecked(false);
             break;
-        default:
-            break;
     }
     update();
 }

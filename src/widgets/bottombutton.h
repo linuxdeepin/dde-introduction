@@ -20,6 +20,8 @@
 #define BOTTOMBUTTON_H
 
 #include <QRect>
+#include <QPainter>
+#include <QGraphicsDropShadowEffect>
 
 #include <DImageButton>
 #include <DWidget>

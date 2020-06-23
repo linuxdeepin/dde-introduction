@@ -23,7 +23,17 @@
 #include "../dvideowidget.h"
 #include "../widgets/coverphoto.h"
 
-#include <dimagebutton.h>
+#include <QBitmap>
+#include <QGraphicsOpacityEffect>
+#include <QHBoxLayout>
+#include <QIcon>
+#include <QLocale>
+#include <QMediaPlaylist>
+#include <QPainter>
+#include <QPushButton>
+#include <QResizeEvent>
+#include <QTimer>
+
 #include <DClipEffectWidget>
 #include <DLabel>
 #include <DWidget>
@@ -31,6 +41,9 @@
 #include <player_widget.h>
 #include <player_engine.h>
 #include <DSysInfo>
+
+#include <player_engine.h>
+#include <dimagebutton.h>
 
 DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE

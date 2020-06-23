@@ -17,10 +17,6 @@
  */
 
 #include "basewidget.h"
-#include <DHiDPIHelper>
-#include <QDebug>
-
-DWIDGET_USE_NAMESPACE
 
 BaseWidget::BaseWidget(QWidget *parent)
     : DFrame(parent)

@@ -1,7 +1,5 @@
 #include "coverphoto.h"
 
-#include <QPainter>
-
 CoverPhoto::CoverPhoto(QWidget *parent)
 : DFrame(parent)
 {

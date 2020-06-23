@@ -26,10 +26,11 @@
 
 #include <QScrollArea>
 #include <QGridLayout>
-#include <dflowlayout.h>
 #include <QKeyEvent>
+#include <QImageReader>
 
 #include <DWidget>
+#include <dflowlayout.h>
 
 DWIDGET_USE_NAMESPACE
 
