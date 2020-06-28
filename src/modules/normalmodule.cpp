@@ -244,63 +244,25 @@ NormalModule::NormalModule(DWidget *parent)
 void NormalModule::keyPressEvent(QKeyEvent *event)
 {
     QWidget *w = m_modules[m_index];
-
-    if(event->key() == Qt::Key_Up) {
-        int index = m_index;
-        if (index == 1) return;
-
-        index = -index;
-
-        QAbstractButton *btn = m_buttonGrp->button(index - 1);
-        btn->setChecked(false);
-
-        btn = m_buttonGrp->button(index);
-        btn->setChecked(true);
-
-        updataButton(btn);
-        updateCurrentWidget(m_buttonMap[btn]);
-        m_titleLabel->setText(m_titleMap[btn]);
-        m_describe->setText(m_describeMap[btn]);
-    }
-    else if(event->key() == Qt::Key_Down) {
-        int index = m_index;
-        if (index == 4) return;
-
-        index = -index - 2;
-
-        QAbstractButton *btn = m_buttonGrp->button(index + 1);
-        btn->setChecked(false);
-
-        btn = m_buttonGrp->button(index);
-        btn->setChecked(true);
-
-        updataButton(btn);
-        updateCurrentWidget(m_buttonMap[btn]);
-        m_titleLabel->setText(m_titleMap[btn]);
-        m_describe->setText(m_describeMap[btn]);
-    }
-    else {
-        switch (m_index) {
-            case 1:
+    switch (m_index) {
+        case 1:
 #ifndef DISABLE_VIDEO
-                static_cast<VideoWidget *>(w)->keyPressEvent(event);
-                break;
-#else
-                break;
+                static_cast<VideoWidget *>(w)->keyPressEvent(event);                
 #endif
-            case 2:
-                static_cast<DesktopModeModule *>(w)->keyPressEvent(event);
-                break;
-            case 3:
-                static_cast<WMModeModule *>(w)->keyPressEvent(event);
-                break;
-            case 4:
-                static_cast<IconModule *>(w)->keyPressEvent(event);
-                break;
-            default:
-                break;
-        }
-    };
+            break;
+        case 2:
+            static_cast<DesktopModeModule *>(w)->keyPressEvent(event);
+            break;
+        case 3:
+            static_cast<WMModeModule *>(w)->keyPressEvent(event);
+            break;
+        case 4:
+            static_cast<IconModule *>(w)->keyPressEvent(event);
+            break;
+        default:
+            break;
+
+    }
 }
 
 /*void NormalModule::keyPressEvent(QKeyEvent *e)

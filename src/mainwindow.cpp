@@ -205,7 +205,7 @@ void MainWindow::initUI()
         m_nextBtn->hide();
     }
 
-    m_current->move(0, 0);
+    m_current->move(-1, -1);
     m_current->setFixedSize(QSize(700, 450));
     m_current->show();
 
