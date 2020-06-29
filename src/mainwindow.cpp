@@ -102,6 +102,16 @@ void MainWindow::previous()
         return;
     }
 
+    const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
+    bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
+    bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
+                                        .property("compositingAllowSwitch")
+                                        .toBool();
+
+    if ((IsServerSystem || !isSuportEffect) && m_index == 4){
+        m_index--;
+    }
+
     updateModule(--m_index);
 
     m_currentAni->setDuration(300);
@@ -273,9 +283,8 @@ void MainWindow::updateModule(const int index)
         case 3: {
             const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
             bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
-            bool m_bSystemIsServer = IsServerSystem;
 
-            if (!m_bSystemIsServer) {
+            if (!IsServerSystem) {
                 bool isSuportEffect =
                     QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
                         .property("compositingAllowSwitch")
