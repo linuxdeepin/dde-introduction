@@ -71,15 +71,14 @@ NormalModule::NormalModule(DWidget *parent)
     // BottomNavigation *bottomNavigation = new BottomNavigation;
 
     QFont font;
-    font.setFamily("SourceHanSansSC");
+//    font.setFamily("SourceHanSansSC");
     font.setStyleName("Bold");
     m_titleLabel->setFont(font);
     DFontSizeManager::instance()->bind(m_titleLabel, DFontSizeManager::T5);
 
     QFont deFont;
-    deFont.setFamily("SourceHanSansSC");
+//    deFont.setFamily("SourceHanSansSC");
     deFont.setStyleName("Normal");
-    deFont.setPixelSize(12);
     m_describe->setFont(deFont);
     DFontSizeManager::instance()->bind(m_describe, DFontSizeManager::T8);
 
