@@ -49,7 +49,7 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
 void BaseModuleWidget::setTitle(const QString &title)
 {
     QFont font;
-    font.setFamily("SourceHanSansSC");
+//    font.setFamily("SourceHanSansSC");
     font.setStyleName("Bold");
     m_titleLbl->setFont(font);
     DFontSizeManager::instance()->bind(m_titleLbl, DFontSizeManager::T5);
@@ -69,7 +69,7 @@ void BaseModuleWidget::setTitle(const QString &title)
 void BaseModuleWidget::setDescribe(const QString &describe)
 {
     QFont font;
-    font.setFamily("SourceHanSansSC");
+//    font.setFamily("SourceHanSansSC");
     font.setStyleName("Normal");
     m_describeLbl->setFont(font);
     DFontSizeManager::instance()->bind(m_describeLbl, DFontSizeManager::T8);
