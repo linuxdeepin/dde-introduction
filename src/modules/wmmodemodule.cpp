@@ -50,15 +50,15 @@ WMModeModule::WMModeModule(QWidget *parent)
 
 void WMModeModule::updateBigIcon()
 {
-    m_efficientWidget->setBigPixmap(":/resources/2d_big@3x.png");
-    m_fashionWidget->setBigPixmap(":/resources/3d_big@3x.png");
+    m_efficientWidget->setBigPixmap(":/resources/2d_big@community.png");
+    m_fashionWidget->setBigPixmap(":/resources/3d_big@community.png");
     m_layout->setContentsMargins(10, 70, 10, 35);
 }
 
 void WMModeModule::updateSmallIcon()
 {
-    m_efficientWidget->setSmallPixmap(":/resources/2d_small@3x.png");
-    m_fashionWidget->setSmallPixmap(":/resources/3d_small@3x.png");
+    m_efficientWidget->setSmallPixmap(":/resources/2d_small@community.png");
+    m_fashionWidget->setSmallPixmap(":/resources/3d_small@community.png");
 }
 
 void WMModeModule::updateSelectBtnPos()
