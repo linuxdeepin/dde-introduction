@@ -99,6 +99,11 @@ NormalModule::NormalModule(DWidget *parent)
     setFixedSize(700, 450);
     m_content->setFixedSize(549, 343);
 
+    m_closeFrame = new CloseButton(this);
+    m_closeFrame->move(657, 9);
+    m_closeFrame->setFocusPolicy(Qt::NoFocus);
+    m_closeFrame->beFocused = false;
+
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
 
@@ -243,6 +248,70 @@ NormalModule::NormalModule(DWidget *parent)
 void NormalModule::keyPressEvent(QKeyEvent *event)
 {
     QWidget *w = m_modules[m_index];
+
+    if(event->key() == Qt::Key_Up) {
+        int index = m_index;
+        if (index == 1) return;
+
+        index = -index;
+
+        QAbstractButton *btn = m_buttonGrp->button(index - 1);
+        btn->setChecked(false);
+
+        btn = m_buttonGrp->button(index);
+        btn->setChecked(true);
+
+        updataButton(btn);
+        updateCurrentWidget(m_buttonMap[btn]);
+        m_titleLabel->setText(m_titleMap[btn]);
+        m_describe->setText(m_describeMap[btn]);
+    }
+    else if(event->key() == Qt::Key_Down) {
+        int index = m_index;
+        if (index == 4) return;
+
+        index = -index - 2;
+
+        QAbstractButton *btn = m_buttonGrp->button(index + 1);
+        btn->setChecked(false);
+
+        btn = m_buttonGrp->button(index);
+        btn->setChecked(true);
+
+        updataButton(btn);
+        updateCurrentWidget(m_buttonMap[btn]);
+        m_titleLabel->setText(m_titleMap[btn]);
+        m_describe->setText(m_describeMap[btn]);
+    }
+    else if(event->key() == Qt::Key_Tab) {
+        int index = m_index;
+        if (!m_closeFrame->beFocused && m_index == 4)
+            index = 0;
+
+        if (index > 0) {
+            m_closeFrame->beFocused = false;
+
+            int nest_index = - (index % 4 + 2);
+
+            QAbstractButton *btn = m_buttonGrp->button(nest_index);
+
+            btn = m_buttonGrp->button(nest_index);
+            btn->setChecked(true);
+
+            updataButton(btn);
+            updateCurrentWidget(m_buttonMap[btn]);
+            m_titleLabel->setText(m_titleMap[btn]);
+            m_describe->setText(m_describeMap[btn]);
+        }
+        else {
+            m_closeFrame->beFocused = true;
+        }
+    }
+    else if(event->key() == Qt::Key_Return) {
+        if (m_closeFrame->beFocused)
+            emit closeMainWindow();
+    }
+
     switch (m_index) {
         case 1:
 #ifndef DISABLE_VIDEO

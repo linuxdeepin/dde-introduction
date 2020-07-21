@@ -26,6 +26,7 @@
 #include "modules/photoslide.h"
 #include "modules/wmmodemodule.h"
 #include "widgets/nextbutton.h"
+#include "widgets/closebutton.h"
 #ifndef DISABLE_VIDEO
 #include "modules/videowidget.h"
 #endif
@@ -63,11 +64,12 @@ class MainWindow : public DMainWindow
 
 public:
     MainWindow(DWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
     void initWindowWidget();
 
 protected:
-    void keyPressEvent(QKeyEvent *);
+    void keyPressEvent(QKeyEvent *event) override;
+    void closeEvent(QCloseEvent *event) override;
 
 private slots:
     void previous();
@@ -87,6 +89,7 @@ private:
 
 private:
     int m_index;
+    CloseButton *m_closeFrame;
     NextButton *m_nextBtn;
     DIconButton *m_previousBtn;
     NextButton *m_doneBtn;

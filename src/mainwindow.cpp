@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright (C) 2017 ~ 2018 Deepin Technology Co., Ltd.
  *
  * Author:     kirigaya <kirigaya@mkacg.com>
@@ -35,16 +35,20 @@ MainWindow::MainWindow(DWidget *parent)
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
             &MainWindow::slotTheme);
 
-    this->setWindowFlags(Qt::CustomizeWindowHint);
+    setWindowFlags(Qt::CustomizeWindowHint);
     titlebar()->setMenuVisible(false);
     titlebar()->setIcon(QIcon::fromTheme("dde-introduction"));
     setFixedSize(WINDOW_SIZE);
     setTitlebarShadowEnabled(false);
 
+    //    setTabOrder(this, m_nextBtn);
+    //    setTabOrder(m_nextBtn, m_closeFrame);
+
     initWindowWidget();
 }
 
-MainWindow::~MainWindow() {
+MainWindow::~MainWindow()
+{
     delete m_current;
     delete m_settings;
 
@@ -64,36 +68,43 @@ void MainWindow::initWindowWidget()
     initConnect();
 }
 
-void MainWindow::keyPressEvent(QKeyEvent *e)
+void MainWindow::closeEvent(QCloseEvent *event)
 {
+//    event->ignore();
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+
     if (m_isFirst) {
+
         switch (m_index) {
             case 1:
 #ifndef DISABLE_VIDEO
-                static_cast<VideoWidget *>(m_current)->keyPressEvent(e);
+               static_cast<VideoWidget *>(m_current)->keyPressEvent(event);
 #endif
                 break;
             case 2:
                 static_cast<DesktopModeModule *>(
                     static_cast<BaseModuleWidget *>(m_current)->getModel())
-                    ->keyPressEvent(e);
+                    ->keyPressEvent(event);
                 break;
             case 3:
                 static_cast<WMModeModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())
-                    ->keyPressEvent(e);
+                    ->keyPressEvent(event);
                 break;
             case 4:
                 static_cast<IconModule *>(static_cast<BaseModuleWidget *>(m_current)->getModel())
-                    ->keyPressEvent(e);
+                    ->keyPressEvent(event);
                 break;
             default:
                 break;
         }
-        setFocus();
+     //   setFocus();
     } else {
-        static_cast<NormalModule *>(m_current)->keyPressEvent(e);
+        static_cast<NormalModule *>(m_current)->keyPressEvent(event);
     }
-    QMainWindow::keyPressEvent(e);
+    QMainWindow::keyPressEvent(event);
 }
 
 void MainWindow::previous()
@@ -119,7 +130,7 @@ void MainWindow::previous()
     m_currentAni->setStartValue(QPoint(m_last->x() - m_last->width(), 0));
     m_currentAni->setEndValue(m_last->rect().topLeft());
 
-    m_lastAni->setDuration(300);
+    m_lastAni->setDuration(300);      
     m_currentAni->setEasingCurve(QEasingCurve::InOutCubic);
     m_lastAni->setStartValue(m_last->rect().topLeft());
     m_lastAni->setEndValue(m_last->rect().topRight());
@@ -152,7 +163,7 @@ void MainWindow::next()
 }
 
 void MainWindow::initUI()
-{
+{            
     DPlatformWindowHandle handle(this);
     handle.setBorderWidth(0);
     handle.setWindowRadius(5);
@@ -192,6 +203,8 @@ void MainWindow::initUI()
 
     if (isFirst) {
         m_settings->setValue("IsFirst", false);
+        m_closeFrame = new CloseButton(this);
+        m_closeFrame->move(657, 9);
 
         if (isx86) {
 #ifndef DISABLE_VIDEO
@@ -202,7 +215,6 @@ void MainWindow::initUI()
             m_current = new PhotoSlide(m_fakerWidget);
             m_nextBtn->setMode(NextButton::Normal);
             static_cast<PhotoSlide *>(m_current)->start(false, false, 2000);
-            m_nextBtn->setMode(NextButton::Normal);
             m_index = 1;
         }
 
@@ -245,6 +257,8 @@ void MainWindow::initConnect()
     connect(m_nextBtn, &NextButton::clicked, this, &MainWindow::next);
     connect(m_currentAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
     connect(m_doneBtn, &NextButton::clicked, qApp, &QCoreApplication::quit);
+    connect(m_closeFrame, &CloseButton::closeMainWindow, this, &MainWindow::close);
+    connect(static_cast<NormalModule*>(m_current), &NormalModule::closeMainWindow, this, &MainWindow::close);
 }
 
 void MainWindow::bindAnimation()
@@ -262,13 +276,13 @@ void MainWindow::updateModule(const int index)
 
     m_last = m_current;
     switch (index) {
-        case 1:
+        case 1: 
             if (isx86) {
 #ifndef DISABLE_VIDEO
                 m_current = new VideoWidget(false, m_fakerWidget);
 #endif
-                m_fakerWidget->move(-1, -1);
                 m_fakerWidget->setFixedSize(QSize(700, 450));
+                m_fakerWidget->move(-1,-1);
                 m_nextBtn->setMode(NextButton::Transparent);
             } else {
                 m_current = new PhotoSlide(m_fakerWidget);

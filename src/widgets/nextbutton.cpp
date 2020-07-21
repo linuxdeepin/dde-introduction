@@ -1,4 +1,5 @@
 #include "nextbutton.h"
+#include <QDebug>
 
 #define DEFAULT_BG_COLOR  255, 255, 255, int(1.0 * 255)
 #define HOVER_BG_COLOR    255, 255, 255, int(0.3 * 255)
@@ -11,8 +12,7 @@ NextButton::NextButton(const QString &text, QWidget *parent)
     , m_currentColor(QColor(DEFAULT_BG_COLOR))
 {
     setText(text);
-    setFocusPolicy(Qt::NoFocus);
-
+//    setFocusPolicy(Qt::NoFocus);
     update();
 }
 
@@ -48,4 +48,11 @@ void NextButton::mousePressEvent(QMouseEvent *event)
     m_currentColor = QColor(PRESS_BG_COLOR);
 
     update();
+}
+
+void NextButton::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Return){
+        this->click();
+    }
 }

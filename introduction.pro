@@ -42,7 +42,9 @@ HEADERS += \
     src/modules/photoslide.h \
     src/widgets/bottombutton.h \
     src/widgets/coverphoto.h \
-    src/widgets/iconbutton.h
+    src/widgets/iconbutton.h \
+    src/widgets/closebutton.h
+
 
 SOURCES += \
     src/basemodulewidget.cpp \
@@ -68,7 +70,8 @@ SOURCES += \
     src/modules/photoslide.cpp \
     src/widgets/bottombutton.cpp \
     src/widgets/coverphoto.cpp \
-    src/widgets/iconbutton.cpp
+    src/widgets/iconbutton.cpp \
+    src/widgets/closebutton.cpp
 
 RESOURCES += \
     dde-introduction.qrc

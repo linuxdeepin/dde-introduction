@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright (C) 2017 ~ 2017 Deepin Technology Co., Ltd.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ class VideoFormatProxy : public QAbstractVideoSurface
 {
     Q_OBJECT
 
-public:
+public: 
     VideoFormatProxy(QObject *parent);
     QVideoFrame& currentFrame() const;
 protected:

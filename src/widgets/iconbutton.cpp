@@ -7,4 +7,5 @@ IconButton::IconButton(QWidget *parent)
     setIconSize(QSize(9,9));
     setIcon(DStyle::SP_MarkElement);
     setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    setFocusPolicy(Qt::NoFocus);
 }

@@ -21,6 +21,7 @@
 
 #include "../widgets/bottomnavigation.h"
 #include "../widgets/navigationbutton.h"
+#include "../widgets/closebutton.h"
 #include "about.h"
 #include "desktopmodemodule.h"
 #include "iconmodule.h"
@@ -63,6 +64,8 @@ public:
      ~NormalModule() override;
     void keyPressEvent(QKeyEvent *) override;
 
+signals:
+    void closeMainWindow();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
@@ -77,6 +80,7 @@ private slots:
     void updateInterface(int);
 
 private:
+    CloseButton *m_closeFrame;
     QVBoxLayout *m_leftNavigationLayout;
     QVBoxLayout *m_rightContentLayout;
     QButtonGroup *m_buttonGrp;

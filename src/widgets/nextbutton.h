@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QPainterPath>
 #include <QPainter>
+#include <QKeyEvent>
 #include <QGraphicsDropShadowEffect>
 
 #include <DPushButton>
@@ -23,11 +24,12 @@ public:
 
     void setMode(Mode mode);
 
-protected:
+public:
     //void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
-    void enterEvent(QEvent *event) Q_DECL_OVERRIDE;
-    void leaveEvent(QEvent *event) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void enterEvent(QEvent *event) override;
+    void leaveEvent(QEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void keyPressEvent(QKeyEvent *) override;
 
 private:
     QString m_text;

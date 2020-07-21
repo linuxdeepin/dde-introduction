@@ -2,7 +2,6 @@
 #define COVERPHOTO_H
 
 #include <QPainter>
-
 #include <DFrame>
 
 DWIDGET_USE_NAMESPACE
