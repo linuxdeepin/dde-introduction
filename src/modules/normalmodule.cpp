@@ -360,7 +360,7 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget->hide();
     }
 
-    QTimer::singleShot(100, this, [=] {
+    QTimer::singleShot(20, this, [=] {
         QWidget *w = m_modules[index];
         ModuleInterface *module = qobject_cast<ModuleInterface *>(w);
         if (module) {
