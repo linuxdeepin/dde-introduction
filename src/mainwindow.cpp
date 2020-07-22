@@ -257,8 +257,10 @@ void MainWindow::initConnect()
     connect(m_nextBtn, &NextButton::clicked, this, &MainWindow::next);
     connect(m_currentAni, &QPropertyAnimation::finished, this, &MainWindow::animationHandle);
     connect(m_doneBtn, &NextButton::clicked, qApp, &QCoreApplication::quit);
-    connect(m_closeFrame, &CloseButton::closeMainWindow, this, &MainWindow::close);
-    connect(static_cast<NormalModule*>(m_current), &NormalModule::closeMainWindow, this, &MainWindow::close);
+    if (m_isFirst)
+        connect(m_closeFrame, &CloseButton::closeMainWindow, this, &MainWindow::close);
+    else
+        connect(static_cast<NormalModule*>(m_current), &NormalModule::closeMainWindow, this, &MainWindow::close);
 }
 
 void MainWindow::bindAnimation()
