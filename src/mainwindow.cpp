@@ -41,10 +41,10 @@ MainWindow::MainWindow(DWidget *parent)
     setFixedSize(WINDOW_SIZE);
     setTitlebarShadowEnabled(false);
 
-    //    setTabOrder(this, m_nextBtn);
-    //    setTabOrder(m_nextBtn, m_closeFrame);
-
     initWindowWidget();
+
+    setTabOrder(m_previousBtn, m_nextBtn);
+    setTabOrder(m_previousBtn, m_doneBtn);
 }
 
 MainWindow::~MainWindow()
@@ -75,9 +75,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-
     if (m_isFirst) {
-
         switch (m_index) {
             case 1:
 #ifndef DISABLE_VIDEO
@@ -99,8 +97,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
                 break;
             default:
                 break;
-        }
-     //   setFocus();
+        }  
     } else {
         static_cast<NormalModule *>(m_current)->keyPressEvent(event);
     }
@@ -282,14 +279,15 @@ void MainWindow::updateModule(const int index)
             if (isx86) {
 #ifndef DISABLE_VIDEO
                 m_current = new VideoWidget(false, m_fakerWidget);
+                m_fakerWidget->setFocus();
 #endif
                 m_fakerWidget->setFixedSize(QSize(700, 450));
                 m_fakerWidget->move(-1,-1);
                 m_nextBtn->setMode(NextButton::Transparent);
             } else {
-                m_current = new PhotoSlide(m_fakerWidget);
                 m_nextBtn->setMode(NextButton::Normal);
                 static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
+                m_current->setFocus();
             }
 
             m_previousBtn->hide();
@@ -365,6 +363,7 @@ BaseModuleWidget *MainWindow::initDesktopModeModule()
 
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
+    w->setFocus();
     w->setType(type);
     w->setTitle(tr("Choose a desktop mode"));
     w->setDescribe(tr("You can switch modes by right clicking on the dock"));
@@ -379,6 +378,7 @@ BaseModuleWidget *MainWindow::initWMModeModule()
 
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
+    w->setFocus();
     w->setType(type);
     w->setTitle(tr("Choose a running mode"));
     w->setDescribe(tr("You can switch it in Control Center > Personalization > Window effect"));
@@ -393,6 +393,7 @@ BaseModuleWidget *MainWindow::initIconModule()
 
     int type = DGuiApplicationHelper::instance()->themeType();
     BaseModuleWidget *w = new BaseModuleWidget(module, m_fakerWidget);
+    m_fakerWidget->setFocus();
     w->setType(type);
     w->setTitle(tr("Choose an icon theme"));
     w->setDescribe(tr("Change it in Control Center > Personalization > Icon Theme"));

@@ -37,10 +37,18 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
     layout->addWidget(m_label);
     setLayout(layout);
     initButton();
+    needFrame = false;
 
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
             &NavigationButton::initButton);
     connect(this, &NavigationButton::clicked, this, &NavigationButton::initButton);
+}
+
+void NavigationButton::mousePressEvent(QMouseEvent *event)
+{
+    needFrame = false;
+    isEnter = false;
+    DPushButton::mousePressEvent(event);
 }
 
 void NavigationButton::initButton()
@@ -75,6 +83,8 @@ void NavigationButton::leaveEvent(QEvent *event) {
 
 void NavigationButton::paintEvent(QPaintEvent *event)
 {
+    DPushButton::paintEvent(event);
+
     if (isEnter) {
         this->setAutoFillBackground(true);
         this->setBackgroundRole(DPalette::Base);
@@ -91,7 +101,22 @@ void NavigationButton::paintEvent(QPaintEvent *event)
         painterPath.addRoundedRect(rect, 8, 8);
         painter.drawPath(painterPath);
     }
-    DPushButton::paintEvent(event);
+
+    if (needFrame) {
+        QPainter painter(this);
+        painter.setRenderHint(QPainter::Antialiasing, true);
+        QPainterPath path;
+        path.addRoundedRect(rect().adjusted(4, 4, -4, -4), 5, 5);
+        painter.setClipRect(QRect(), Qt::NoClip);
+
+        QColor color(Qt::white);
+        QPen pen(color);
+        pen.setWidth(1);
+        painter.setPen(pen);
+        painter.drawPath(path);
+    }
+
+    initButton();
 }
 
 

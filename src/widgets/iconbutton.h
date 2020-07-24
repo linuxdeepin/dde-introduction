@@ -9,6 +9,7 @@ class IconButton : public DFloatingButton
 {
 public:
     IconButton(QWidget *parent = nullptr);
+
 };
 
 #endif // ICONBUTTON_H

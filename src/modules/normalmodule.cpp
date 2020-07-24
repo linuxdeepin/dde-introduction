@@ -249,7 +249,7 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
 {
     QWidget *w = m_modules[m_index];
 
-    if(event->key() == Qt::Key_Up) {
+    if(event->key() == Qt::Key_Up && !m_closeFlag) {
         int index = m_index;
         if (index == 1) return;
 
@@ -257,16 +257,18 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
 
         QAbstractButton *btn = m_buttonGrp->button(index - 1);
         btn->setChecked(false);
+        static_cast<NavigationButton*>(btn)->needFrame = false;
 
         btn = m_buttonGrp->button(index);
         btn->setChecked(true);
+        static_cast<NavigationButton*>(btn)->needFrame = true;
 
         updataButton(btn);
         updateCurrentWidget(m_buttonMap[btn]);
         m_titleLabel->setText(m_titleMap[btn]);
         m_describe->setText(m_describeMap[btn]);
     }
-    else if(event->key() == Qt::Key_Down) {
+    else if(event->key() == Qt::Key_Down && !m_closeFlag) {
         int index = m_index;
         if (index == 4) return;
 
@@ -274,9 +276,11 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
 
         QAbstractButton *btn = m_buttonGrp->button(index + 1);
         btn->setChecked(false);
+        static_cast<NavigationButton*>(btn)->needFrame = false;
 
         btn = m_buttonGrp->button(index);
         btn->setChecked(true);
+        static_cast<NavigationButton*>(btn)->needFrame = true;
 
         updataButton(btn);
         updateCurrentWidget(m_buttonMap[btn]);
@@ -284,52 +288,33 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
         m_describe->setText(m_describeMap[btn]);
     }
     else if(event->key() == Qt::Key_Tab) {
-        int index = m_index;
-        if (!m_closeFrame->beFocused && m_index == 4)
-            index = 0;
-
-        if (index > 0) {
-            m_closeFrame->beFocused = false;
-
-            int nest_index = - (index % 4 + 2);
-
-            QAbstractButton *btn = m_buttonGrp->button(nest_index);
-
-            btn = m_buttonGrp->button(nest_index);
-            btn->setChecked(true);
-
-            updataButton(btn);
-            updateCurrentWidget(m_buttonMap[btn]);
-            m_titleLabel->setText(m_titleMap[btn]);
-            m_describe->setText(m_describeMap[btn]);
-        }
-        else {
-            m_closeFrame->beFocused = true;
-        }
+        m_closeFrame->beFocused = !m_closeFrame->beFocused;
+        m_closeFlag = m_closeFrame->beFocused;
     }
     else if(event->key() == Qt::Key_Return) {
         if (m_closeFrame->beFocused)
             emit closeMainWindow();
     }
 
-    switch (m_index) {
-        case 1:
+    if (!m_closeFlag) {
+        switch (m_index) {
+            case 1:
 #ifndef DISABLE_VIDEO
-                static_cast<VideoWidget *>(w)->keyPressEvent(event);                
+                    static_cast<VideoWidget *>(w)->keyPressEvent(event);
 #endif
-            break;
-        case 2:
-            static_cast<DesktopModeModule *>(w)->keyPressEvent(event);
-            break;
-        case 3:
-            static_cast<WMModeModule *>(w)->keyPressEvent(event);
-            break;
-        case 4:
-            static_cast<IconModule *>(w)->keyPressEvent(event);
-            break;
-        default:
-            break;
-
+                break;
+            case 2:
+                static_cast<DesktopModeModule *>(w)->keyPressEvent(event);
+                break;
+            case 3:
+                static_cast<WMModeModule *>(w)->keyPressEvent(event);
+                break;
+            case 4:
+                static_cast<IconModule *>(w)->keyPressEvent(event);
+                break;
+            default:
+                break;
+        }
     }
 }
 
@@ -360,7 +345,7 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget->hide();
     }
 
-    QTimer::singleShot(20, this, [=] {
+    QTimer::singleShot(30, this, [=] {
         QWidget *w = m_modules[index];
         ModuleInterface *module = qobject_cast<ModuleInterface *>(w);
         if (module) {

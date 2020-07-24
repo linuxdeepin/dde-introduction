@@ -81,6 +81,7 @@ private slots:
 
 private:
     CloseButton *m_closeFrame;
+    bool m_closeFlag;
     QVBoxLayout *m_leftNavigationLayout;
     QVBoxLayout *m_rightContentLayout;
     QButtonGroup *m_buttonGrp;

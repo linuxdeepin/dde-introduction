@@ -22,6 +22,7 @@
 #include <QGraphicsDropShadowEffect>
 #include <QHBoxLayout>
 #include <QPainter>
+#include <QKeyEvent>
 
 #include <DGuiApplicationHelper>
 #include <DPalette>
@@ -40,11 +41,14 @@ public:
 
     void initButton();
 
+    bool needFrame;
+
 protected:
     // QSize setHint();
     void paintEvent(QPaintEvent *event);
     void enterEvent(QEvent* event);
     void leaveEvent(QEvent* event);
+    void mousePressEvent(QMouseEvent *event);
 
 signals:
     void widthChanged(int);
