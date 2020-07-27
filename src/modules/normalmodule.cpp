@@ -222,6 +222,8 @@ NormalModule::NormalModule(DWidget *parent)
     }
     m_leftNavigationLayout->addStretch();
 
+    setFocus();
+
     // m_leftNavigationLayout->addStretch();
 
     connect(m_buttonGrp,
