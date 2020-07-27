@@ -83,7 +83,7 @@ void NavigationButton::leaveEvent(QEvent *event) {
 
 void NavigationButton::paintEvent(QPaintEvent *event)
 {
-    DPushButton::paintEvent(event);
+
 
     if (isEnter) {
         this->setAutoFillBackground(true);
@@ -101,6 +101,8 @@ void NavigationButton::paintEvent(QPaintEvent *event)
         painterPath.addRoundedRect(rect, 8, 8);
         painter.drawPath(painterPath);
     }
+
+    DPushButton::paintEvent(event);
 
     if (needFrame) {
         QPainter painter(this);
