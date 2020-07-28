@@ -1,4 +1,4 @@
- /*
+/*
  * Copyright (C) 2017 ~ 2018 Deepin Technology Co., Ltd.
  *
  * Author:     kirigaya <kirigaya@mkacg.com>
@@ -97,7 +97,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
                 break;
             default:
                 break;
-        }  
+        }
     } else {
         static_cast<NormalModule *>(m_current)->keyPressEvent(event);
     }
@@ -127,7 +127,7 @@ void MainWindow::previous()
     m_currentAni->setStartValue(QPoint(m_last->x() - m_last->width(), 0));
     m_currentAni->setEndValue(m_last->rect().topLeft());
 
-    m_lastAni->setDuration(300);      
+    m_lastAni->setDuration(300);
     m_currentAni->setEasingCurve(QEasingCurve::InOutCubic);
     m_lastAni->setStartValue(m_last->rect().topLeft());
     m_lastAni->setEndValue(m_last->rect().topRight());
@@ -160,7 +160,7 @@ void MainWindow::next()
 }
 
 void MainWindow::initUI()
-{            
+{
     DPlatformWindowHandle handle(this);
     handle.setBorderWidth(0);
     handle.setWindowRadius(5);
@@ -173,10 +173,10 @@ void MainWindow::initUI()
 
     m_nextBtn = new NextButton(tr("Next"), this);
     m_doneBtn = new NextButton(tr("Done"), this);
-    m_previousBtn = new DIconButton(QStyle::StandardPixmap::SP_ArrowBack, this);
+    m_previousBtn = new previousButton(this);
+    m_previousBtn->setIcon(QStyle::StandardPixmap::SP_ArrowBack);
     m_nextBtn->setFixedSize(100, 36);
     m_doneBtn->setFixedSize(100, 36);
-    m_previousBtn->setFixedSize(36, 36);
 
     // Addition Button Shadow
     QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
@@ -275,7 +275,7 @@ void MainWindow::updateModule(const int index)
 
     m_last = m_current;
     switch (index) {
-        case 1: 
+        case 1:
             if (isx86) {
 #ifndef DISABLE_VIDEO
                 m_current = new VideoWidget(false, m_fakerWidget);

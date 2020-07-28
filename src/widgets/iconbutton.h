@@ -2,6 +2,7 @@
 #define ICONBUTTON_H
 
 #include <DFloatingButton>
+#include <QKeyEvent>
 
 DWIDGET_USE_NAMESPACE
 

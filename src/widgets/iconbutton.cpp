@@ -9,3 +9,4 @@ IconButton::IconButton(QWidget *parent)
     setAttribute(Qt::WA_TransparentForMouseEvents, true);
     setFocusPolicy(Qt::NoFocus);
 }
+

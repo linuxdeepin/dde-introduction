@@ -27,6 +27,7 @@
 #include "modules/wmmodemodule.h"
 #include "widgets/nextbutton.h"
 #include "widgets/closebutton.h"
+#include "widgets/previousbutton.h"
 #ifndef DISABLE_VIDEO
 #include "modules/videowidget.h"
 #endif

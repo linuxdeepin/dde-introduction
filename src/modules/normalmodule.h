@@ -81,7 +81,6 @@ private slots:
 
 private:
     CloseButton *m_closeFrame;
-    bool m_closeFlag;
     QVBoxLayout *m_leftNavigationLayout;
     QVBoxLayout *m_rightContentLayout;
     QButtonGroup *m_buttonGrp;
@@ -97,6 +96,7 @@ private:
     DWidget *m_content;
     int m_index;
     bool isx86;
+    bool tab_be_press;
 };
 
 #endif  // NORMALMODULE_H

@@ -71,13 +71,11 @@ NormalModule::NormalModule(DWidget *parent)
     // BottomNavigation *bottomNavigation = new BottomNavigation;
 
     QFont font;
-//    font.setFamily("SourceHanSansSC");
     font.setStyleName("Bold");
     m_titleLabel->setFont(font);
     DFontSizeManager::instance()->bind(m_titleLabel, DFontSizeManager::T5);
 
     QFont deFont;
-//    deFont.setFamily("SourceHanSansSC");
     deFont.setStyleName("Normal");
     m_describe->setFont(deFont);
     DFontSizeManager::instance()->bind(m_describe, DFontSizeManager::T8);
@@ -103,6 +101,10 @@ NormalModule::NormalModule(DWidget *parent)
     m_closeFrame->move(657, 9);
     m_closeFrame->setFocusPolicy(Qt::NoFocus);
     m_closeFrame->beFocused = false;
+
+    tab_be_press = false;
+
+    setFocus();
 
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
@@ -251,58 +253,66 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
 {
     QWidget *w = m_modules[m_index];
 
-    if(event->key() == Qt::Key_Up && !m_closeFlag) {
+    if(event->key() == Qt::Key_Up && !m_closeFrame->beFocused) {
         int index = m_index;
         if (index == 1) return;
 
         index = -index;
 
         QAbstractButton *btn = m_buttonGrp->button(index - 1);
-        btn->setChecked(false);
         static_cast<NavigationButton*>(btn)->needFrame = false;
 
         btn = m_buttonGrp->button(index);
         btn->setChecked(true);
-        static_cast<NavigationButton*>(btn)->needFrame = true;
+        if (tab_be_press)
+            static_cast<NavigationButton*>(btn)->needFrame = true;
 
         updataButton(btn);
         updateCurrentWidget(m_buttonMap[btn]);
         m_titleLabel->setText(m_titleMap[btn]);
         m_describe->setText(m_describeMap[btn]);
     }
-    else if(event->key() == Qt::Key_Down && !m_closeFlag) {
+    else if(event->key() == Qt::Key_Down && !m_closeFrame->beFocused) {
         int index = m_index;
         if (index == 4) return;
 
         index = -index - 2;
 
         QAbstractButton *btn = m_buttonGrp->button(index + 1);
-        btn->setChecked(false);
         static_cast<NavigationButton*>(btn)->needFrame = false;
 
         btn = m_buttonGrp->button(index);
         btn->setChecked(true);
-        static_cast<NavigationButton*>(btn)->needFrame = true;
+        if (tab_be_press)
+            static_cast<NavigationButton*>(btn)->needFrame = true;
 
         updataButton(btn);
         updateCurrentWidget(m_buttonMap[btn]);
-        m_titleLabel->setText(m_titleMap[btn]);
-        m_describe->setText(m_describeMap[btn]);
+
+        QTimer::singleShot(30, this, [=] {
+            m_titleLabel->setText(m_titleMap[btn]);
+            m_describe->setText(m_describeMap[btn]);
+        });
     }
     else if(event->key() == Qt::Key_Tab) {
+        tab_be_press = true;
         m_closeFrame->beFocused = !m_closeFrame->beFocused;
-        m_closeFlag = m_closeFrame->beFocused;
+        if (m_closeFrame->beFocused) {
+            QAbstractButton *btn = m_buttonGrp->button(-m_index - 1);
+            static_cast<NavigationButton*>(btn)->needFrame = false;
+        }
+        repaint();
     }
     else if(event->key() == Qt::Key_Return) {
         if (m_closeFrame->beFocused)
             emit closeMainWindow();
     }
 
-    if (!m_closeFlag) {
+    if (!m_closeFrame->beFocused) {
         switch (m_index) {
             case 1:
 #ifndef DISABLE_VIDEO
-                    static_cast<VideoWidget *>(w)->keyPressEvent(event);
+                static_cast<VideoWidget *>(w)->keyPressEvent(event);
 #endif
                 break;
             case 2:
@@ -331,7 +341,6 @@ bool NormalModule::eventFilter(QObject *watched, QEvent *event)
     if (qobject_cast<NavigationButton *>(watched) && event->type() == QEvent::KeyPress) {
         return true;
     }
-
     return false;
 }
 

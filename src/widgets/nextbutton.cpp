@@ -52,6 +52,12 @@ void NextButton::mousePressEvent(QMouseEvent *event)
 
 void NextButton::keyPressEvent(QKeyEvent *event)
 {
+    if (event->key() == Qt::Key_Left ||
+        event->key() == Qt::Key_Right ||
+        event->key() == Qt::Key_Up ||
+        event->key() == Qt::Key_Down)
+        return;
+
     if (event->key() == Qt::Key_Return){
         this->click();
     }

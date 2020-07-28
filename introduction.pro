@@ -43,7 +43,8 @@ HEADERS += \
     src/widgets/bottombutton.h \
     src/widgets/coverphoto.h \
     src/widgets/iconbutton.h \
-    src/widgets/closebutton.h
+    src/widgets/closebutton.h \
+    src/widgets/previousbutton.h
 
 
 SOURCES += \
@@ -71,7 +72,8 @@ SOURCES += \
     src/widgets/bottombutton.cpp \
     src/widgets/coverphoto.cpp \
     src/widgets/iconbutton.cpp \
-    src/widgets/closebutton.cpp
+    src/widgets/closebutton.cpp \
+    src/widgets/previousbutton.cpp
 
 RESOURCES += \
     dde-introduction.qrc
