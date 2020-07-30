@@ -128,7 +128,7 @@ void IconModule::updateBigIcon()
     setFixedSize(size);
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());
-    m_layout->setContentsMargins(10, 43, 0, 15);
+    m_layout->setContentsMargins(10, 45, 0, 15);
     updateSelectBtnPos();
 
     QMapIterator<IconStruct, BaseWidget*>map(m_iconList);
@@ -139,7 +139,7 @@ void IconModule::updateBigIcon()
         pixmap = pixmap.scaled(QSize(320, 70) * devicePixelRatioF(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
         map.value()->setPixmap(pixmap);
     }
-    m_height = 70;
+    m_height = 71;
 }
 
 void IconModule::updateSmallIcon()

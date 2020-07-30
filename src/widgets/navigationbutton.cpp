@@ -17,6 +17,7 @@
  */
 
 #include "navigationbutton.h"
+#include <QDebug>
 
 NavigationButton::NavigationButton(QString text, DWidget *parent)
     : DPushButton(text, parent)
@@ -69,8 +70,12 @@ void NavigationButton::initButton()
         }
     }
 
+    QColor color = DGuiApplicationHelper::instance()->applicationPalette()
+                .highlight().color();
+    pl.setColor(QPalette::Background, Qt::green);
+
+    m_label->autoFillBackground();
     m_label->setPalette(pl);
-    m_label->setForegroundRole(DPalette::WindowText);
 }
 
 void NavigationButton::enterEvent(QEvent *event) {
@@ -100,7 +105,9 @@ void NavigationButton::paintEvent(QPaintEvent *event)
         painter.drawPath(painterPath);
     }
 
-     DPushButton::paintEvent(event);
+    DPushButton::paintEvent(event);
+
+    initButton();
 
     if (needFrame) {
         QPainter painter(this);
@@ -115,8 +122,6 @@ void NavigationButton::paintEvent(QPaintEvent *event)
         painter.setPen(pen);
         painter.drawPath(path);
     }
-
-    initButton();
 }
 
 

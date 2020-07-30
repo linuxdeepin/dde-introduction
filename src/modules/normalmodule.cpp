@@ -264,6 +264,7 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
 
         btn = m_buttonGrp->button(index);
         btn->setChecked(true);
+
         if (tab_be_press)
             static_cast<NavigationButton*>(btn)->needFrame = true;
 
@@ -283,16 +284,16 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
 
         btn = m_buttonGrp->button(index);
         btn->setChecked(true);
+
         if (tab_be_press)
             static_cast<NavigationButton*>(btn)->needFrame = true;
 
         updataButton(btn);
         updateCurrentWidget(m_buttonMap[btn]);
 
-        QTimer::singleShot(30, this, [=] {
-            m_titleLabel->setText(m_titleMap[btn]);
-            m_describe->setText(m_describeMap[btn]);
-        });
+        m_titleLabel->setText(m_titleMap[btn]);
+        m_describe->setText(m_describeMap[btn]);
+
     }
     else if(event->key() == Qt::Key_Tab) {
         tab_be_press = true;
@@ -301,7 +302,11 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
             QAbstractButton *btn = m_buttonGrp->button(-m_index - 1);
             static_cast<NavigationButton*>(btn)->needFrame = false;
         }
-        repaint();
+        else {
+            QAbstractButton *btn = m_buttonGrp->button(-m_index - 1);
+            static_cast<NavigationButton*>(btn)->needFrame = true;
+        }
+        update();
     }
     else if(event->key() == Qt::Key_Return) {
         if (m_closeFrame->beFocused)

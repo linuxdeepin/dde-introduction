@@ -101,6 +101,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     } else {
         static_cast<NormalModule *>(m_current)->keyPressEvent(event);
     }
+
     QMainWindow::keyPressEvent(event);
 }
 
@@ -231,7 +232,8 @@ void MainWindow::initUI()
     m_previousBtn->move(/*20, height() - m_previousBtn->height() - 20*/ 10, 404);
     m_nextBtn->move(/*width() - m_nextBtn->width() - 20, height() - m_nextBtn->height()- 20*/ 590,
                     404);
-    m_doneBtn->move(m_nextBtn->pos());
+    m_doneBtn->move
+            (m_nextBtn->pos());
     m_doneBtn->hide();
 
     m_currentAni->setPropertyName("pos");
