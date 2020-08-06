@@ -32,6 +32,7 @@ NormalModule::NormalModule(DWidget *parent)
 {
     isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
     // initTheme(0);
+
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);

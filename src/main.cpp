@@ -81,22 +81,20 @@ void saveThemeTypeSetting(int type)
 
 int main(int argc, char *argv[])
 {
-    //bool isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
 #ifndef DISABLE_VIDEO
-    //    if (isx86)
-    qDebug() << "init movie";
     qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
 #endif
 
     // QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     DApplication::loadDXcbPlugin();
     DApplication a(argc, argv);
+    a.loadTranslator();
 
     g_appPath = QDir::homePath() + QDir::separator() + "." + qApp->applicationName();
     QDir t_appDir;
     t_appDir.mkpath(g_appPath);
 
-    a.setApplicationName("dde-introduction");
+    a.setApplicationName(" ");
 
     // dapplication default setting is true
     a.setAttribute(Qt::AA_ForceRasterWidgets, false);

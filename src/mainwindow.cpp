@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2017 ~ 2018 Deepin Technology Co., Ltd.
  *
  * Author:     kirigaya <kirigaya@mkacg.com>
@@ -35,7 +35,8 @@ MainWindow::MainWindow(DWidget *parent)
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
             &MainWindow::slotTheme);
 
-    setWindowFlags(Qt::WindowCloseButtonHint);
+    setWindowFlags(Qt::WindowSystemMenuHint);
+
     titlebar()->setMenuVisible(false);
     titlebar()->setIcon(QIcon::fromTheme("dde-introduction"));
     setFixedSize(WINDOW_SIZE);
@@ -70,32 +71,11 @@ void MainWindow::initWindowWidget()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    qDebug() << "aaaaaaaaaaaaaa";
     this->close();
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F1){
-        qDebug() << "1111111111111111";
-        this->close();
-    }
-
-    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F2){
-        qDebug() << "2222222222222222";
-        this->close();
-    }
-
-    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F3){
-        qDebug() << "3333333333333333";
-        this->close();
-    }
-
-    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F4){
-        qDebug() << "4444444444444444";
-        this->close();
-    }
-
     if (m_isFirst) {
         switch (m_index) {
             case 1:
@@ -144,7 +124,6 @@ void MainWindow::previous()
         m_index--;
     }
 
-    qDebug() << m_index;
     updateModule(--m_index);
 
     m_currentAni->setDuration(300);
