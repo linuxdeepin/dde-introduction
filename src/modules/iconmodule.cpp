@@ -18,8 +18,6 @@
 
 #include "iconmodule.h"
 
-
-
 IconModule::IconModule(QWidget *parent)
     : ModuleInterface(parent)
     , m_scroll(new QScrollArea)
@@ -36,6 +34,8 @@ IconModule::IconModule(QWidget *parent)
     m_scrollWidget->setLayout(widgetLayout);
 
     m_scrollWidget->installEventFilter(this);
+
+    setMouseTracking(true);
 
     widgetLayout->setContentsMargins(0, 30, 0, 25);
     widgetLayout->setMargin(0);
@@ -205,3 +205,37 @@ bool IconModule::eventFilter(QObject *watched, QEvent *event)
 
     return ModuleInterface::eventFilter(watched, event);
 }
+
+
+void IconModule::mousePressEvent(QMouseEvent *event)
+{
+    m_TempPoint = event->pos();
+}
+
+//滑动鼠标下位
+void IconModule::mouseMoveEvent(QMouseEvent *event)
+{
+    auto pos = event->pos();
+
+    auto vbar = m_scroll->verticalScrollBar();
+
+    //向上滑动 向下滚动
+    auto offset = m_TempPoint.y() - pos.y();
+
+    //获取当前滚动条位置
+    auto val = vbar->value();
+
+    //获取滚动条pagetemp区域高度
+    auto step = vbar->pageStep();
+
+    //设计移动位置
+    auto move   = offset * step / m_scrollWidget->height();
+
+    if(move + val < 0 || move + val > m_scrollWidget->height())
+        return;
+
+    //移动
+    vbar->setValue(move + val);
+}
+
+

@@ -18,6 +18,7 @@
 
 #include "desktopmodemodule.h"
 
+//桌面模式类
 DesktopModeModule::DesktopModeModule(QWidget *parent)
     : ModuleInterface(parent)
     , m_layout(new QHBoxLayout(this))
@@ -50,6 +51,7 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     updateSmallIcon();
 }
 
+//修改选中框状态
 void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
 {
     switch (mode) {
@@ -65,6 +67,7 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
     update();
 }
 
+//首次启动初始化
 void DesktopModeModule::updateBigIcon()
 {
     m_efficientWidget->setBigPixmap(":/resources/effective_mode_big@3x.png");
@@ -73,6 +76,7 @@ void DesktopModeModule::updateBigIcon()
     m_size = QSize(330, 210);
 }
 
+//日常启动初始化
 void DesktopModeModule::updateSmallIcon()
 {
     QPixmap pixmapeff(":/resources/effective_mode_small@3x.png");

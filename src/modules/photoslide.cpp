@@ -76,6 +76,11 @@ void PhotoSlide::updateSmallIcon()
 
 void PhotoSlide::updateSelectBtnPos() {}
 
+void PhotoSlide::keyPressEvent(QKeyEvent *e)
+{
+//    QWidget::keyPressEvent(e);
+}
+
 void PhotoSlide::start(bool disable_slide, bool disable_animation, int duration)
 {
     // Read the first slide image.

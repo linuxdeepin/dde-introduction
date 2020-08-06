@@ -37,6 +37,7 @@
 #include <QSettings>
 #include <QWidget>
 #include <QKeyEvent>
+#include <QWheelEvent>
 #include <QHBoxLayout>
 
 #include <DMainWindow>
@@ -71,6 +72,8 @@ public:
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void closeEvent(QCloseEvent *event) override;
+//    void QWheelEvent(const QPoint& pos, int delta, Qt::MouseButtons buttons,
+//                       Qt::KeyboardModifiers modifiers, Qt::Orientation orient = Qt::Vertical);
 
 private slots:
     void previous();

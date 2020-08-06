@@ -23,6 +23,8 @@ public:
     void updateSmallIcon() override;
     void updateSelectBtnPos() override;
 
+    void keyPressEvent(QKeyEvent *) override;
+
 public slots:
     void start(bool disable_slide, bool disable_animation, int duration);
     void stop();

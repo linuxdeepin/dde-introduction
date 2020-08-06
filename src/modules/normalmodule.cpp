@@ -144,7 +144,7 @@ NormalModule::NormalModule(DWidget *parent)
 
     const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
     bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
-    bool m_bSystemIsServer = IsServerSystem;
+    m_bSystemIsServer = IsServerSystem;
 
     // wm button
     if (!m_bSystemIsServer) {
@@ -275,7 +275,13 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_Down && !m_closeFrame->beFocused) {
         int index = m_index;
-        if (index == 4) return;
+
+        if (!m_bSystemIsServer) {
+            if (index == 4) return;
+        }
+        else {
+            if (index == 3) return;
+        }
 
         index = -index - 2;
 
@@ -318,6 +324,8 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
             case 1:
 #ifndef DISABLE_VIDEO
                 static_cast<VideoWidget *>(w)->keyPressEvent(event);
+#else
+                static_cast<PhotoSlide *>(w)->keyPressEvent(event);
 #endif
                 break;
             case 2:

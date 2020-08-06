@@ -1,5 +1,6 @@
 #include "about.h"
 
+//关于页面 暂时不用
 About::About(QWidget *parent)
     : QScrollArea(parent)
 {

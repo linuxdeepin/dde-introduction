@@ -25,9 +25,12 @@
 #include "../worker.h"
 
 #include <QScrollArea>
+#include <QScrollBar>
 #include <QGridLayout>
 #include <QKeyEvent>
 #include <QImageReader>
+#include <QEvent>
+#include <QMouseEvent>
 
 #include <DWidget>
 #include <dflowlayout.h>
@@ -44,6 +47,9 @@ public:
     void updateSmallIcon() Q_DECL_OVERRIDE;
     void updateSelectBtnPos() Q_DECL_OVERRIDE;
     void keyPressEvent(QKeyEvent*) Q_DECL_OVERRIDE;
+    void mouseMoveEvent(QMouseEvent*) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent*) Q_DECL_OVERRIDE;
+
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
@@ -58,7 +64,10 @@ private:
     DWidget *m_scrollWidget;
     DFlowLayout* m_layout;
     QMap<IconStruct, BaseWidget*> m_iconList;
-    int m_height;
+    int m_height;    
+    QWidget *m_Body;
+    QPoint m_TempPoint;
+
 };
 
 #endif // ICONMODULE_H

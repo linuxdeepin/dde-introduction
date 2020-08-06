@@ -75,11 +75,17 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
+    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F4){
+        this->close();
+    }
+
     if (m_isFirst) {
         switch (m_index) {
             case 1:
 #ifndef DISABLE_VIDEO
-               static_cast<VideoWidget *>(m_current)->keyPressEvent(event);
+            static_cast<VideoWidget *>(m_current)->keyPressEvent(event);
+#else
+            static_cast<PhotoSlide *>(m_current)->keyPressEvent(event);
 #endif
                 break;
             case 2:
@@ -121,6 +127,7 @@ void MainWindow::previous()
         m_index--;
     }
 
+    qDebug() << m_index;
     updateModule(--m_index);
 
     m_currentAni->setDuration(300);
@@ -286,8 +293,9 @@ void MainWindow::updateModule(const int index)
                 m_fakerWidget->move(-1,-1);
                 m_nextBtn->setMode(NextButton::Transparent);
             } else {
-                m_nextBtn->setMode(NextButton::Normal);
+                m_current = new PhotoSlide(m_fakerWidget);
                 static_cast<PhotoSlide *>(m_current)->start(false, false, 1000);
+                m_nextBtn->setMode(NextButton::Normal);
             }
 
             m_previousBtn->hide();
