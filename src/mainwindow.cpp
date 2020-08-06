@@ -70,8 +70,8 @@ void MainWindow::initWindowWidget()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    DMainWindow::closeEvent(event);
-//    event->ignore();
+    qDebug() << "aaaaaaaaaaaaaa";
+    this->close();
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
