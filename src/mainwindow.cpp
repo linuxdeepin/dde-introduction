@@ -35,11 +35,11 @@ MainWindow::MainWindow(DWidget *parent)
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
             &MainWindow::slotTheme);
 
-//    setWindowFlags(Qt::WindowStaysOnTopHint);
-//    titlebar()->setMenuVisible(false);
+    setWindowFlags(Qt::WindowCloseButtonHint);
+    titlebar()->setMenuVisible(false);
     titlebar()->setIcon(QIcon::fromTheme("dde-introduction"));
     setFixedSize(WINDOW_SIZE);
-//    setTitlebarShadowEnabled(false);
+    setTitlebarShadowEnabled(false);
 
     initWindowWidget();
 
