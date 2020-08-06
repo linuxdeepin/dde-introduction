@@ -1,4 +1,4 @@
-/*
+    /*
  * Copyright (C) 2017 ~ 2018 Deepin Technology Co., Ltd.
  *
  * Author:     kirigaya <kirigaya@mkacg.com>

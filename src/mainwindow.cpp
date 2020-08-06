@@ -35,11 +35,11 @@ MainWindow::MainWindow(DWidget *parent)
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
             &MainWindow::slotTheme);
 
-    setWindowFlags(Qt::CustomizeWindowHint);
-    titlebar()->setMenuVisible(false);
+//    setWindowFlags(Qt::WindowStaysOnTopHint);
+//    titlebar()->setMenuVisible(false);
     titlebar()->setIcon(QIcon::fromTheme("dde-introduction"));
     setFixedSize(WINDOW_SIZE);
-    setTitlebarShadowEnabled(false);
+//    setTitlebarShadowEnabled(false);
 
     initWindowWidget();
 
@@ -95,8 +95,6 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         qDebug() << "4444444444444444";
         this->close();
     }
-
-
 
     if (m_isFirst) {
         switch (m_index) {
