@@ -144,10 +144,13 @@ NormalModule::NormalModule(DWidget *parent)
 
     const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
     bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
-    m_bSystemIsServer = IsServerSystem;
+    bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
+                                        .property("compositingAllowSwitch")
+                                        .toBool();
+    (!IsServerSystem && isSuportEffect) ? m_supportWM = false : m_supportWM = true;
 
     // wm button
-    if (!m_bSystemIsServer) {
+    if (!m_supportWM) {
         NavigationButton *wmBtn = nullptr;
         bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
                                   .property("compositingAllowSwitch")
@@ -276,7 +279,7 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
     else if(event->key() == Qt::Key_Down && !m_closeFrame->beFocused) {
         int index = m_index;
 
-        if (!m_bSystemIsServer) {
+        if (!m_supportWM) {
             if (index == 4) return;
         }
         else {

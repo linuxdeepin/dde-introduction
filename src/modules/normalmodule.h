@@ -97,7 +97,7 @@ private:
     int m_index;
     bool isx86;
     bool tab_be_press;
-    bool m_bSystemIsServer;
+    bool m_supportWM;
 };
 
 #endif  // NORMALMODULE_H

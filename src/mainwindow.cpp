@@ -75,7 +75,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F4){
+    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F1){
+        qDebug() << "1111111111111111";
         this->close();
     }
 
