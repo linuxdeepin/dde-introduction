@@ -70,6 +70,7 @@ void MainWindow::initWindowWidget()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
+    DMainWindow::closeEvent(event);
 //    event->ignore();
 }
 
@@ -79,6 +80,23 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         qDebug() << "1111111111111111";
         this->close();
     }
+
+    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F2){
+        qDebug() << "2222222222222222";
+        this->close();
+    }
+
+    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F3){
+        qDebug() << "3333333333333333";
+        this->close();
+    }
+
+    if (event->modifiers() == Qt::AltModifier && event->key() == Qt::Key_F4){
+        qDebug() << "4444444444444444";
+        this->close();
+    }
+
+
 
     if (m_isFirst) {
         switch (m_index) {
@@ -210,7 +228,7 @@ void MainWindow::initUI()
     if (isFirst) {
         m_settings->setValue("IsFirst", false);
         m_closeFrame = new CloseButton(this);
-        m_closeFrame->move(657, 9);
+        m_closeFrame->move(657, 50); //9
 
         if (isx86) {
 #ifndef DISABLE_VIDEO
