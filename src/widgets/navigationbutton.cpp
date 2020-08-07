@@ -89,9 +89,6 @@ void NavigationButton::leaveEvent(QEvent *event) {
 void NavigationButton::paintEvent(QPaintEvent *event)
 {
     if (isEnter) {
-        this->setAutoFillBackground(true);
-        this->setBackgroundRole(DPalette::Base);
-
         QRect rect = this->rect();
         QPainter painter(this);
         painter.setRenderHint(QPainter::Antialiasing);
@@ -107,8 +104,6 @@ void NavigationButton::paintEvent(QPaintEvent *event)
 
     DPushButton::paintEvent(event);
 
-    initButton();
-
     if (needFrame) {
         QPainter painter(this);
         painter.setRenderHint(QPainter::Antialiasing, true);
@@ -122,6 +117,10 @@ void NavigationButton::paintEvent(QPaintEvent *event)
         painter.setPen(pen);
         painter.drawPath(path);
     }
+
+
+
+    initButton();
 }
 
 

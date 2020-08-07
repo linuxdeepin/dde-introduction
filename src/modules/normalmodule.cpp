@@ -316,7 +316,7 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
             QAbstractButton *btn = m_buttonGrp->button(-m_index - 1);
             static_cast<NavigationButton*>(btn)->needFrame = true;
         }
-        update();
+        repaint();
     }
     else if(event->key() == Qt::Key_Return) {
         if (m_closeFrame->beFocused)
