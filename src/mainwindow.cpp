@@ -267,7 +267,8 @@ void MainWindow::updateModule(const int index)
 #ifndef DISABLE_VIDEO
                 m_current = new VideoWidget(false, m_fakerWidget);
 #endif
-                m_current->setFixedSize(WINDOW_SIZE);
+                m_fakerWidget->setFixedSize(QSize(700, 450));
+                m_fakerWidget->move(-1, -1);
                 m_nextBtn->setMode(NextButton::Transparent);
             } else {
                 m_current = new PhotoSlide(m_fakerWidget);
