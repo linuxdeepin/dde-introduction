@@ -205,7 +205,7 @@ void MainWindow::initUI()
     if (isFirst) {
         m_settings->setValue("IsFirst", false);
         m_closeFrame = new CloseButton(this);
-        m_closeFrame->move(657, 50); //9
+        m_closeFrame->move(657, 9);
 
         if (isx86) {
 #ifndef DISABLE_VIDEO
