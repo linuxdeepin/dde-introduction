@@ -35,7 +35,7 @@ MainWindow::MainWindow(DWidget *parent)
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
             &MainWindow::slotTheme);
 
-    setWindowFlags(Qt::WindowTitleHint);
+    setWindowFlags(Qt::WindowContextHelpButtonHint);
 
     titlebar()->setMenuVisible(false);
     titlebar()->setIcon(QIcon::fromTheme("dde-introduction"));
