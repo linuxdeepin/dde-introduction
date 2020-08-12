@@ -25,14 +25,11 @@ BaseWidget::BaseWidget(QWidget *parent)
     , m_title(new DLabel(this))
 {
     m_layout->setMargin(0);
-    m_layout->setSpacing(16);
-
-    m_layout->addStretch();
     m_layout->addWidget(m_borderWidget, 0, Qt::AlignCenter);
-    m_layout->addWidget(m_title, 0, Qt::AlignCenter);
-    m_layout->addStretch();
-    setLineWidth(0);
+    m_layout->setSpacing(5);
+    m_layout->addWidget(m_title, 10, Qt::AlignCenter);
 
+    setLineWidth(0);
     setLayout(m_layout);
 }
 
@@ -74,6 +71,7 @@ void BaseWidget::setBigPixmap(const QPixmap &pixmap)
     m_size = QSize(320, 200) + QSize(10, 11);
 
     setFixedWidth(m_borderWidget->width());
+    setFixedHeight(m_borderWidget->height() + m_title->height());
 }
 
 void BaseWidget::setSmallPixmap(const QPixmap &pixmap)
