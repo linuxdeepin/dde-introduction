@@ -239,6 +239,8 @@ NormalModule::NormalModule(DWidget *parent)
                 updateCurrentWidget(m_buttonMap[btn]);
                 m_titleLabel->setText(m_titleMap[btn]);
                 m_describe->setText(m_describeMap[btn]);
+                m_closeFrame->beFocused = false;
+                m_closeFrame->update();
             });
 
 #ifndef DISABLE_VIDEO
