@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 #endif
 
     // QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-    DApplication::loadDXcbPlugin();
+    // DApplication::loadDXcbPlugin();
     DApplication a(argc, argv);
     a.loadTranslator();
 

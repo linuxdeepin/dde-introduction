@@ -70,11 +70,8 @@ void NavigationButton::initButton()
         }
     }
 
-    QColor color = DGuiApplicationHelper::instance()->applicationPalette()
-                .highlight().color();
-    pl.setColor(QPalette::Background, Qt::green);
-
     m_label->autoFillBackground();
+    m_label->setForegroundRole(DPalette::WindowText);
     m_label->setPalette(pl);
 }
 
@@ -117,8 +114,6 @@ void NavigationButton::paintEvent(QPaintEvent *event)
         painter.setPen(pen);
         painter.drawPath(path);
     }
-
-
 
     initButton();
 }
