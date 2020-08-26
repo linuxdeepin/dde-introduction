@@ -206,9 +206,9 @@ bool IconModule::eventFilter(QObject *watched, QEvent *event)
     return ModuleInterface::eventFilter(watched, event);
 }
 
-
 void IconModule::mousePressEvent(QMouseEvent *event)
 {
+    emit cancelCloseFrame();
     m_TempPoint = event->pos();
 }
 

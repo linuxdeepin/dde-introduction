@@ -223,6 +223,8 @@ void VideoWidget::onControlButtonClicked()
         m_pauseTimer->stop();
     }*/
 
+    emit cancelCloseFrame();
+
     if (!m_load) {
         qreal ratio = 1.0;
         QDir videoPath(ResourcesQDir());
@@ -234,7 +236,6 @@ void VideoWidget::onControlButtonClicked()
     }
     m_video->engine().pauseResume();
     m_video->engine().play();
-
     // updateControlButton();
 }
 

@@ -116,7 +116,7 @@ NormalModule::NormalModule(DWidget *parent)
     m_buttonMap[videoBtn] = ++moduleCount;
     m_titleMap[videoBtn] = tr("Welcome");
     m_buttonGrp->addButton(videoBtn);
-    VideoWidget *videoModule = new VideoWidget(false, this);
+    VideoWidget *videoModule = new VideoWidget(false, this); 
     videoModule->hide();
     m_modules[moduleCount] = videoModule;
 #else
@@ -242,6 +242,8 @@ NormalModule::NormalModule(DWidget *parent)
                 m_closeFrame->beFocused = false;
                 m_closeFrame->update();
             });
+    connect(videoModule, &VideoWidget::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
+    connect(iconModule, &IconModule::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
 
 #ifndef DISABLE_VIDEO
     //    if (isx86) {
@@ -253,6 +255,16 @@ NormalModule::NormalModule(DWidget *parent)
     m_button = slideBtn;
 //    }
 #endif
+}
+
+void NormalModule::mousePressEvent(QMouseEvent *event) {
+    cancelCloseFrame();
+    DWidget::mousePressEvent(event);
+}
+
+void NormalModule::cancelCloseFrame() {
+    m_closeFrame->beFocused = false;
+    m_closeFrame->update();
 }
 
 void NormalModule::keyPressEvent(QKeyEvent *event)

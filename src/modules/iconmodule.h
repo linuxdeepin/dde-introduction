@@ -50,6 +50,8 @@ public:
     void mouseMoveEvent(QMouseEvent*) Q_DECL_OVERRIDE;
     void mousePressEvent(QMouseEvent*) Q_DECL_OVERRIDE;
 
+signals:
+    void cancelCloseFrame();
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;

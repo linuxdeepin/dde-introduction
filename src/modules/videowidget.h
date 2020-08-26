@@ -64,6 +64,9 @@ public:
     void updateInterface(QSize);
     void showVideoControlButton();
 
+signals:
+    void cancelCloseFrame();
+
 protected:
     void enterEvent(QEvent *) Q_DECL_OVERRIDE;
     void leaveEvent(QEvent *) Q_DECL_OVERRIDE;

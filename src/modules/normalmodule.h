@@ -35,6 +35,7 @@
 #include <QButtonGroup>
 #include <QFont>
 #include <QKeyEvent>
+#include <QMouseEvent>
 #include <QMap>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -63,6 +64,7 @@ public:
     explicit NormalModule(DWidget *parent = nullptr);
      ~NormalModule() override;
     void keyPressEvent(QKeyEvent *) override;
+    void mousePressEvent(QMouseEvent *event) override;
 
 signals:
     void closeMainWindow();
@@ -78,6 +80,7 @@ private slots:
     void initTheme(int type);
     void updateLabel();
     void updateInterface(int);
+    void cancelCloseFrame();
 
 private:
     CloseButton *m_closeFrame;
