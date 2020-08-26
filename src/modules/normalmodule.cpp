@@ -119,6 +119,7 @@ NormalModule::NormalModule(DWidget *parent)
     VideoWidget *videoModule = new VideoWidget(false, this); 
     videoModule->hide();
     m_modules[moduleCount] = videoModule;
+    connect(videoModule, &VideoWidget::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
 #else
     NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
     slideBtn->setToolTip(tr("Introduction"));
@@ -184,6 +185,7 @@ NormalModule::NormalModule(DWidget *parent)
     IconModule *iconModule = new IconModule(this);
     iconModule->hide();
     m_modules[moduleCount] = iconModule;
+    connect(iconModule, &IconModule::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
 
     // support us
     /*NavigationButton *supportBtn = new NavigationButton(tr("Support us"));
@@ -242,8 +244,6 @@ NormalModule::NormalModule(DWidget *parent)
                 m_closeFrame->beFocused = false;
                 m_closeFrame->update();
             });
-    connect(videoModule, &VideoWidget::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
-    connect(iconModule, &IconModule::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
 
 #ifndef DISABLE_VIDEO
     //    if (isx86) {
