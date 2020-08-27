@@ -264,7 +264,9 @@ void NormalModule::mousePressEvent(QMouseEvent *event) {
 
 void NormalModule::cancelCloseFrame() {
     m_closeFrame->beFocused = false;
-    m_closeFrame->update();
+    QAbstractButton *btn = m_buttonGrp->button(-m_index - 1);
+    static_cast<NavigationButton*>(btn)->needFrame = false;
+    update();
 }
 
 void NormalModule::keyPressEvent(QKeyEvent *event)
