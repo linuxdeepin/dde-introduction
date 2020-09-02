@@ -21,4 +21,6 @@ Package: dde-introduction
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Introduction for UOS
- Deepin initialization setup tool
+ When you log into the system for the first time, a welcome program will automatically start.    
+ Watch the introduction video to get new features, customize your desktop, enable the window 
+ effect and know more about UnionTech OS.
