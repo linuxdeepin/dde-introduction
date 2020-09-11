@@ -178,6 +178,10 @@ void IconModule::keyPressEvent(QKeyEvent *e)
         }
     }
     if (e->key() == Qt::Key_Left) {
+        if (index == 2){
+            QScrollBar *pScrollBar = m_scroll->verticalScrollBar();
+            pScrollBar->setValue(0);
+        }
         if (index == 0)
             return;
         m_worker->setIcon(m_model->iconList().at(index - 1));
@@ -186,6 +190,10 @@ void IconModule::keyPressEvent(QKeyEvent *e)
             return;
         m_worker->setIcon(m_model->iconList().at(index + 1));
     } else if (e->key() == Qt::Key_Up) {
+        if (index == 2 || index == 3){
+            QScrollBar *pScrollBar = m_scroll->verticalScrollBar();
+            pScrollBar->setValue(0);
+        }
         if (index < 2)
             return;
         m_worker->setIcon(m_model->iconList().at(index - 2));
