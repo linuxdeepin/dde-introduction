@@ -144,15 +144,23 @@ NormalModule::NormalModule(DWidget *parent)
     desktopModeModule->hide();
     m_modules[moduleCount] = desktopModeModule;
 
+    bool uosType;
+    DSysInfo::uosEditionType() == DSysInfo::UosEdition::UosEnterprise ||
+    DSysInfo::uosEditionType() == DSysInfo::UosEdition::UosEnterpriseC ||
+    DSysInfo::uosEditionType() == DSysInfo::UosEdition::UosEuler ?
+    uosType = true : uosType = false;
+
     const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
     bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
+
     bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
                                         .property("compositingAllowSwitch")
                                         .toBool();
-    (!IsServerSystem && isSuportEffect) ? m_supportWM = false : m_supportWM = true;
+
+    (IsServerSystem || !isSuportEffect || uosType) ? m_supportWM = false : m_supportWM = true;
 
     // wm button
-    if (!m_supportWM) {
+    if (m_supportWM) {
         NavigationButton *wmBtn = nullptr;
         bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
                                   .property("compositingAllowSwitch")

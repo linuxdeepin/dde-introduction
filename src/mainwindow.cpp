@@ -42,6 +42,21 @@ MainWindow::MainWindow(DWidget *parent)
     setFixedSize(WINDOW_SIZE);
     setTitlebarShadowEnabled(false);
 
+    bool uosType;
+    DSysInfo::uosEditionType() == DSysInfo::UosEdition::UosEnterprise ||
+    DSysInfo::uosEditionType() == DSysInfo::UosEdition::UosEnterpriseC ||
+    DSysInfo::uosEditionType() == DSysInfo::UosEdition::UosEuler ?
+    uosType = true : uosType = false;
+
+    const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
+    bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
+
+    bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
+                                        .property("compositingAllowSwitch")
+                                        .toBool();
+
+    (IsServerSystem || !isSuportEffect || uosType) ? m_supportWM = false : m_supportWM = true;
+
     initWindowWidget();
 
     setTabOrder(m_previousBtn, m_nextBtn);
@@ -114,13 +129,7 @@ void MainWindow::previous()
         return;
     }
 
-    const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
-    bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
-    bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
-                                        .property("compositingAllowSwitch")
-                                        .toBool();
-
-    if ((IsServerSystem || !isSuportEffect) && m_index == 4){
+    if (!m_supportWM && m_index == 4){
         m_index--;
     }
 
@@ -302,29 +311,20 @@ void MainWindow::updateModule(const int index)
             m_fakerWidget->setFocus();
             break;
         case 3: {
-            const DSysInfo::DeepinType DeepinType = DSysInfo::deepinType();
-            bool IsServerSystem = (DSysInfo::DeepinServer == DeepinType);
+            if (m_supportWM) {
+                if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
+                    m_current = initWMModeModule();
+                    m_fakerWidget->setFocus();
+                    break;
+                }
 
-            if (!IsServerSystem) {
-                bool isSuportEffect =
-                    QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
-                        .property("compositingAllowSwitch")
-                        .toBool();
-                if (isSuportEffect == true) {
-                    if (m_displayInter->isValid() && m_displayInter->AllowSwitch()) {
+                QFile file("/etc/deepin-wm-switcher/config.json");
+                if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+                    QJsonObject obj = doc.object();
+                    if (obj["allow_switch"].toBool()) {
                         m_current = initWMModeModule();
-                        m_fakerWidget->setFocus();
                         break;
-                    }
-
-                    QFile file("/etc/deepin-wm-switcher/config.json");
-                    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                        QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
-                        QJsonObject obj = doc.object();
-                        if (obj["allow_switch"].toBool()) {
-                            m_current = initWMModeModule();
-                            break;
-                        }
                     }
                 }
 

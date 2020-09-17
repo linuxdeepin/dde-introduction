@@ -106,6 +106,7 @@ private:
     WMSwitcherInter *m_displayInter;
     bool isx86;
     bool m_isFirst;
+    bool m_supportWM;
 };
 
 #endif // MAINWINDOW_H
