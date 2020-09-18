@@ -88,6 +88,7 @@ private:
     DLabel *m_label;
     bool m_load;
     bool m_first;
+    bool m_isCommunity;
     QString m_strVideoCoverIcon;
 };
 

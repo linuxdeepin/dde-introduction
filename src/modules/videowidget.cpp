@@ -57,14 +57,11 @@ VideoWidget::VideoWidget(bool autoPlay, QWidget *parent)
     m_hideAni->setStartValue(1.0f);
     m_hideAni->setEndValue(0.0f);
 
+    m_isCommunity = DSysInfo::isCommunityEdition();
     //社区版/专业版/个人版视频封面不同
-    if (DSysInfo::isCommunityEdition()) {
-        m_strVideoCoverIcon = QString(":/resources/community_Moment.png");
-    }
-    //} else if(DSysInfo::deepinType() == DSysInfo::DeepinProfessional || DSysInfo::deepinType() == DSysInfo::DeepinPersonal) {
-    else {
-        m_strVideoCoverIcon = QString(":/resources/demo_Moment.jpg");
-    }
+
+    m_isCommunity ? m_strVideoCoverIcon = QString(":/resources/community_Moment.png") :
+                    m_strVideoCoverIcon = QString(":/resources/demo_Moment.jpg");
 
     connect(m_hideAni, &QPropertyAnimation::finished, this, [=] { m_control->hide(); });
 
@@ -228,7 +225,9 @@ void VideoWidget::onControlButtonClicked()
     if (!m_load) {
         qreal ratio = 1.0;
         QDir videoPath(ResourcesQDir());
-        const QString &file = videoPath.path() + QString("/demo.mp4");
+        QString file =  videoPath.path();
+        m_isCommunity ? file += QString("/community.mp4") :
+                        file += QString("/professional.mp4");
         m_video->engine().playlist().append(
             QUrl::fromLocalFile(qt_findAtNxFile(file, devicePixelRatioF(), &ratio)));
         m_video->engine().playlist().setPlayMode(dmr::PlaylistModel::SingleLoop);
@@ -236,6 +235,7 @@ void VideoWidget::onControlButtonClicked()
     }
     m_video->engine().pauseResume();
     m_video->engine().play();
+
     // updateControlButton();
 }
 
