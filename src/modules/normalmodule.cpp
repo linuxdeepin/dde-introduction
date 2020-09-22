@@ -110,40 +110,6 @@ NormalModule::NormalModule(DWidget *parent)
     int moduleCount = 0;
     bool allow_switch_wm = m_wmSwitcher->AllowSwitch();
 
-#ifndef DISABLE_VIDEO
-    NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
-    videoBtn->setToolTip(tr("Introduction"));
-    m_buttonMap[videoBtn] = ++moduleCount;
-    m_titleMap[videoBtn] = tr("Welcome");
-    m_buttonGrp->addButton(videoBtn);
-    VideoWidget *videoModule = new VideoWidget(false, this); 
-    videoModule->hide();
-    m_modules[moduleCount] = videoModule;
-    connect(videoModule, &VideoWidget::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
-#else
-    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"));
-    slideBtn->setToolTip(tr("Introduction"));
-    m_buttonMap[slideBtn] = ++moduleCount;
-    m_titleMap[slideBtn] = tr("Welcome");
-    m_buttonGrp->addButton(slideBtn);
-    PhotoSlide *slideModule = new PhotoSlide;
-    slideModule->hide();
-    slideModule->start(false, false, 2000);
-    m_modules[moduleCount] = slideModule;
-#endif
-
-    // desktop button
-    NavigationButton *desktopBtn = new NavigationButton(tr("Desktop Mode"));
-    desktopBtn->setToolTip(tr("Desktop Mode"));
-    m_buttonMap[desktopBtn] = ++moduleCount;
-    m_titleMap[desktopBtn] = tr("Choose a desktop mode");
-    m_describeMap[desktopBtn] = tr("You can switch modes by right clicking on the dock");
-    m_buttonGrp->addButton(desktopBtn);
-    DesktopModeModule *desktopModeModule = new DesktopModeModule(this);
-    desktopModeModule->setFirst(false);
-    desktopModeModule->hide();
-    m_modules[moduleCount] = desktopModeModule;
-
     bool uosType;
     DSysInfo::uosEditionType() == DSysInfo::UosEdition::UosEnterprise ||
     DSysInfo::uosEditionType() == DSysInfo::UosEdition::UosEnterpriseC ||
@@ -159,13 +125,68 @@ NormalModule::NormalModule(DWidget *parent)
 
     (IsServerSystem || !isSuportEffect || uosType) ? m_supportWM = false : m_supportWM = true;
 
+#ifndef DISABLE_VIDEO
+    if (m_supportWM) {
+        NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
+        videoBtn->setToolTip(tr("Introduction"));
+        m_buttonMap[videoBtn] = ++moduleCount;
+        m_titleMap[videoBtn] = tr("Welcome");
+        m_buttonGrp->addButton(videoBtn);
+        VideoWidget *videoModule = new VideoWidget(false, this);
+        videoModule->hide();
+        m_modules[moduleCount] = videoModule;
+        connect(videoModule, &VideoWidget::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
+        m_button = videoBtn;
+        m_button->setChecked(true);
+        m_titleLabel->setText(m_titleMap[videoBtn]);
+        updateCurrentWidget(m_buttonMap[videoBtn]);
+    } else {
+        NavigationButton *slideBtn = new NavigationButton(tr("Introduction"), this);
+        slideBtn->setToolTip(tr("Introduction"));
+        m_buttonMap[slideBtn] = ++moduleCount;
+        m_titleMap[slideBtn] = tr("Welcome");
+        m_buttonGrp->addButton(slideBtn);
+        PhotoSlide *slideModule = new PhotoSlide;
+        slideModule->hide();
+        slideModule->start(false, false, 2000);
+        m_modules[moduleCount] = slideModule;
+        m_button = slideBtn;
+        m_button->setChecked(true);
+        m_titleLabel->setText(m_titleMap[slideBtn]);
+        updateCurrentWidget(m_buttonMap[slideBtn]);
+    }
+#else
+    NavigationButton *slideBtn = new NavigationButton(tr("Introduction"), this);
+    slideBtn->setToolTip(tr("Introduction"));
+    m_buttonMap[slideBtn] = ++moduleCount;
+    m_titleMap[slideBtn] = tr("Welcome");
+    m_buttonGrp->addButton(slideBtn);
+    PhotoSlide *slideModule = new PhotoSlide;
+    slideModule->hide();
+    slideModule->start(false, false, 2000);
+    m_modules[moduleCount] = slideModule;
+    m_button = slideBtn;
+    slideBtn->setChecked(true);
+    m_titleLabel->setText(m_titleMap[slideBtn]);
+    updateCurrentWidget(m_buttonMap[slideBtn]);
+#endif 
+
+    // desktop button
+    NavigationButton *desktopBtn = new NavigationButton(tr("Desktop Mode"));
+    desktopBtn->setToolTip(tr("Desktop Mode"));
+    m_buttonMap[desktopBtn] = ++moduleCount;
+    m_titleMap[desktopBtn] = tr("Choose a desktop mode");
+    m_describeMap[desktopBtn] = tr("You can switch modes by right clicking on the dock");
+    m_buttonGrp->addButton(desktopBtn);
+    DesktopModeModule *desktopModeModule = new DesktopModeModule(this);
+    desktopModeModule->setFirst(false);
+    desktopModeModule->hide();
+    m_modules[moduleCount] = desktopModeModule;
+
     // wm button
     if (m_supportWM) {
         NavigationButton *wmBtn = nullptr;
-        bool isSuportEffect = QDBusInterface("com.deepin.wm", "/com/deepin/wm", "com.deepin.wm")
-                                  .property("compositingAllowSwitch")
-                                  .toBool();
-        if (allow_switch_wm && isSuportEffect) {
+        if (allow_switch_wm) {
             wmBtn = new NavigationButton(tr("Running Mode"));
             wmBtn->setToolTip(tr("Running Mode"));
             m_buttonMap[wmBtn] = ++moduleCount;
@@ -215,17 +236,6 @@ NormalModule::NormalModule(DWidget *parent)
     about->hide();
     m_modules[moduleCount] = about;*/
 
-#ifndef DISABLE_VIDEO
-    //    if (isx86) {
-    videoBtn->setChecked(true);
-    m_titleLabel->setText(m_titleMap[videoBtn]);
-//    } else {
-#else
-    slideBtn->setChecked(true);
-    m_titleLabel->setText(m_titleMap[slideBtn]);
-//    }
-#endif
-
     m_buttonGrp->setExclusive(true);
 
     // m_leftNavigationLayout->addStretch();
@@ -252,17 +262,6 @@ NormalModule::NormalModule(DWidget *parent)
                 m_closeFrame->beFocused = false;
                 m_closeFrame->update();
             });
-
-#ifndef DISABLE_VIDEO
-    //    if (isx86) {
-    updateCurrentWidget(m_buttonMap[videoBtn]);
-    m_button = videoBtn;
-//    } else {
-#else
-    updateCurrentWidget(m_buttonMap[slideBtn]);
-    m_button = slideBtn;
-//    }
-#endif
 }
 
 void NormalModule::mousePressEvent(QMouseEvent *event) {

@@ -87,7 +87,6 @@ contains(TARGET_ARCH, x86_64) {
     PKGCONFIG -= libdmr
 }
 
-
 desktop.path = $$PREFIX/share/applications/
 desktop.files += $$PWD/dde-introduction.desktop
 

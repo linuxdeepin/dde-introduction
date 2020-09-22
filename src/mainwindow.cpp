@@ -220,7 +220,7 @@ void MainWindow::initUI()
         m_closeFrame = new CloseButton(this);
         m_closeFrame->move(657, 9);
 
-        if (isx86) {
+        if (isx86 && m_supportWM) {
 #ifndef DISABLE_VIDEO
             m_current = new VideoWidget(false, m_fakerWidget);
 #endif
