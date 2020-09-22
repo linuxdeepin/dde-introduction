@@ -57,6 +57,10 @@ MainWindow::MainWindow(DWidget *parent)
 
     (IsServerSystem || !isSuportEffect || uosType) ? m_supportWM = false : m_supportWM = true;
 
+    if (!m_supportWM) {
+       Worker::Instance()->setWMMode(Model::WM_2D);
+    }
+
     initWindowWidget();
 
     setTabOrder(m_previousBtn, m_nextBtn);
