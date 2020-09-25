@@ -18,6 +18,7 @@
 
 #include "mainwindow.h"
 
+
 static const QSize WINDOW_SIZE {699, 449};
 
 MainWindow::MainWindow(DWidget *parent)
