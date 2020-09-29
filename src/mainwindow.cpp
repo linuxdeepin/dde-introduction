@@ -221,7 +221,7 @@ void MainWindow::initUI()
         m_closeFrame = new CloseButton(this);
         m_closeFrame->move(657, 9);
 
-        if (isx86 && m_supportWM) {
+        if (isx86 && (DSysInfo::uosEditionType() != DSysInfo::UosEdition::UosEnterpriseC)) {  //行业版没有libdmr
 #ifndef DISABLE_VIDEO
             m_current = new VideoWidget(false, m_fakerWidget);
 #endif

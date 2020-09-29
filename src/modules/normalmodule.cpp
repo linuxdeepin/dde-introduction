@@ -126,7 +126,7 @@ NormalModule::NormalModule(DWidget *parent)
     (IsServerSystem || !isSuportEffect || uosType) ? m_supportWM = false : m_supportWM = true;
 
 #ifndef DISABLE_VIDEO
-    if (m_supportWM) {
+    if (DSysInfo::uosEditionType() != DSysInfo::UosEdition::UosEnterpriseC) {    //行业版没有libdmr
         NavigationButton *videoBtn = new NavigationButton(tr("Introduction"));
         videoBtn->setToolTip(tr("Introduction"));
         m_buttonMap[videoBtn] = ++moduleCount;
@@ -140,20 +140,6 @@ NormalModule::NormalModule(DWidget *parent)
         m_button->setChecked(true);
         m_titleLabel->setText(m_titleMap[videoBtn]);
         updateCurrentWidget(m_buttonMap[videoBtn]);
-    } else {
-        NavigationButton *slideBtn = new NavigationButton(tr("Introduction"), this);
-        slideBtn->setToolTip(tr("Introduction"));
-        m_buttonMap[slideBtn] = ++moduleCount;
-        m_titleMap[slideBtn] = tr("Welcome");
-        m_buttonGrp->addButton(slideBtn);
-        PhotoSlide *slideModule = new PhotoSlide;
-        slideModule->hide();
-        slideModule->start(false, false, 2000);
-        m_modules[moduleCount] = slideModule;
-        m_button = slideBtn;
-        m_button->setChecked(true);
-        m_titleLabel->setText(m_titleMap[slideBtn]);
-        updateCurrentWidget(m_buttonMap[slideBtn]);
     }
 #else
     NavigationButton *slideBtn = new NavigationButton(tr("Introduction"), this);
@@ -213,8 +199,7 @@ NormalModule::NormalModule(DWidget *parent)
     m_buttonGrp->addButton(iconBtn);
     IconModule *iconModule = new IconModule(this);
     iconModule->hide();
-    m_modules[moduleCount] = iconModule;
-    connect(iconModule, &IconModule::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
+    m_modules[moduleCount] = iconModule;    connect(iconModule, &IconModule::cancelCloseFrame, this, &NormalModule::cancelCloseFrame);
 
     // support us
     /*NavigationButton *supportBtn = new NavigationButton(tr("Support us"));
@@ -396,7 +381,7 @@ void NormalModule::updateCurrentWidget(const int index)
         m_currentWidget->hide();
     }
 
-    QTimer::singleShot(30, this, [=] {
+    QTimer::singleShot(50, this, [=] {
         QWidget *w = m_modules[index];
         ModuleInterface *module = qobject_cast<ModuleInterface *>(w);
         if (module) {
@@ -415,6 +400,7 @@ void NormalModule::updateCurrentWidget(const int index)
         }
 
         m_currentWidget = w;
+        repaint();
 
         m_rightContentLayout->addWidget(m_currentWidget, 0, Qt::AlignCenter);
         m_currentWidget->setFixedSize(549, 309);
