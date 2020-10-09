@@ -32,7 +32,6 @@ NormalModule::NormalModule(DWidget *parent)
 {
     isx86 = QSysInfo::currentCpuArchitecture().startsWith("x86");
     // initTheme(0);
-
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     layout->setSpacing(0);
@@ -288,7 +287,7 @@ void NormalModule::keyPressEvent(QKeyEvent *event)
     else if(event->key() == Qt::Key_Down && !m_closeFrame->beFocused) {
         int index = m_index;
 
-        if (!m_supportWM) {
+        if (m_supportWM) {
             if (index == 4) return;
         }
         else {
