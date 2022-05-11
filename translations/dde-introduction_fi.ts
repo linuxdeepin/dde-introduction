@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Valitse juoksutila</translation>
+        <translation>Valitse käyttötila</translation>
     </message>
     <message>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>Choose an icon theme</source>
-        <translation>Valitse kuvaketeema</translation>
+        <translation>Valitse kuvakeiden teema</translation>
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
@@ -88,11 +88,11 @@
     </message>
     <message>
         <source>Running Mode</source>
-        <translation>Juoksutila</translation>
+        <translation>Käyttötila</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Valitse juoksutila</translation>
+        <translation>Valitse käyttötila</translation>
     </message>
     <message>
         <source>Please choose normal mode if you has a low configuration computer</source>
@@ -104,7 +104,7 @@
     </message>
     <message>
         <source>Choose an icon theme</source>
-        <translation>Valitse kuvaketeema</translation>
+        <translation>Valitse kuvakeiden teema</translation>
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>

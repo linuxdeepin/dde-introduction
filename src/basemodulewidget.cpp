@@ -32,6 +32,7 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_describeLbl->setWordWrap(true);
     m_describeLbl->setAlignment(Qt::AlignCenter);
     m_describeLbl->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+    m_describeLbl->setElideMode(Qt::TextElideMode::ElideRight);
 
     m_layout->addSpacing(20);
     m_layout->addWidget(m_titleLbl, 0, Qt::AlignHCenter);
@@ -40,54 +41,31 @@ BaseModuleWidget::BaseModuleWidget(QWidget *content, QWidget *parent)
     m_layout->addStretch();
     m_layout->addWidget(m_describeLbl, 0, Qt::AlignHCenter);
     m_layout->addSpacing(15);
-
-    m_type = 1;
-
     setLayout(m_layout);
 }
 
 void BaseModuleWidget::setTitle(const QString &title)
 {
     QFont font;
-//    font.setFamily("SourceHanSansSC");
     font.setStyleName("Bold");
     m_titleLbl->setFont(font);
     DFontSizeManager::instance()->bind(m_titleLbl, DFontSizeManager::T5);
-
-    if (m_type == 1) {
-        DPalette pa = m_titleLbl->palette();
-        pa.setColor(DPalette::WindowText, Qt::black);
-        m_titleLbl->setPalette(pa);
-    } else {
-        DPalette pa = m_titleLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(192, 198, 212, 255));
-        m_titleLbl->setPalette(pa);
-    }
     m_titleLbl->setText(title);
 }
 
-void BaseModuleWidget::setDescribe(const QString &describe)
+void BaseModuleWidget::setDescribe(const QString &describe, bool bIsFirst)
 {
     QFont font;
-//    font.setFamily("SourceHanSansSC");
     font.setStyleName("Normal");
     m_describeLbl->setFont(font);
     DFontSizeManager::instance()->bind(m_describeLbl, DFontSizeManager::T8);
-
-    if (m_type == 1) {
-        DPalette pa = m_describeLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(138, 161, 180, 255));
-        m_describeLbl->setPalette(pa);
-    } else {
-        DPalette pa = m_describeLbl->palette();
-        pa.setColor(DPalette::WindowText, QColor(192, 198, 212, 255));
-        m_describeLbl->setPalette(pa);
-    }
     m_describeLbl->setText(describe);
     m_describeLbl->adjustSize();
 }
 
-void BaseModuleWidget::setType(int type)
+void BaseModuleWidget::setContentWidgetHeight(int iHeight)
 {
-    m_type = type;
+    if (m_content) {
+        m_content->setFixedHeight(iHeight);
+    }
 }

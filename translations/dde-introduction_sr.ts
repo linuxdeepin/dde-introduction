@@ -26,7 +26,7 @@
     </message>
     <message>
         <source>Fashion Mode</source>
-        <translation>Улицкан режим</translation>
+        <translation>Модеран режим</translation>
     </message>
 </context>
 <context>
@@ -68,7 +68,7 @@
     <name>NormalModule</name>
     <message>
         <source>Introduction</source>
-        <translation>Упознај</translation>
+        <translation>Упознавање</translation>
     </message>
     <message>
         <source>Welcome</source>

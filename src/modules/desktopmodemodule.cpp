@@ -30,10 +30,11 @@ DesktopModeModule::DesktopModeModule(QWidget *parent)
     m_fashionWidget->setTitle(tr("Fashion Mode"));
 
     connect(m_model, &Model::desktopModeChanged, this, &DesktopModeModule::onDesktopTypeChanged);
-    connect(m_fashionWidget, &BaseWidget::clicked, this,
-            [=] { m_worker->setDesktopMode(Model::FashionMode); });
-    connect(m_efficientWidget, &BaseWidget::clicked, this,
-            [=] { m_worker->setDesktopMode(Model::EfficientMode); });
+    //时尚模式点击响应
+    connect(m_fashionWidget, &BaseWidget::clicked, this,&DesktopModeModule::onSetModeFashion);
+    //高效模式点击响应
+    connect(m_efficientWidget, &BaseWidget::clicked, this,&DesktopModeModule::onSetModeEfficient);
+    //高效模式大小变化响应
     connect(m_efficientWidget, &BaseWidget::sizeChanged, this,
             &DesktopModeModule::updateSelectBtnPos);
 
@@ -67,7 +68,7 @@ void DesktopModeModule::onDesktopTypeChanged(Model::DesktopMode mode)
     update();
 }
 
-//首次启动初始化
+//首次启动初始化图片
 void DesktopModeModule::updateBigIcon()
 {
     m_efficientWidget->setBigPixmap(":/resources/effective_mode_big@3x.png");
@@ -76,7 +77,7 @@ void DesktopModeModule::updateBigIcon()
     m_size = QSize(330, 210);
 }
 
-//日常启动初始化
+//日常启动初始化图片
 void DesktopModeModule::updateSmallIcon()
 {
     QPixmap pixmapeff(":/resources/effective_mode_small@3x.png");
@@ -96,6 +97,7 @@ void DesktopModeModule::setFirst(bool first)
     isfirst = first;
 }
 
+//功能??? zyf也不知道
 void DesktopModeModule::updateInterface(float f)
 {
     m_efficientWidget->updateInterface(f);
@@ -115,17 +117,19 @@ void DesktopModeModule::updateInterface(float f)
     update();
 }
 
+//键盘按键事件左右切换高效和时尚模式
 void DesktopModeModule::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Left) {
-        if (m_model->desktopMode() == 1)
+        if (m_model->desktopMode() == Model::EfficientMode)//代码不规范
             m_worker->setDesktopMode(Model::FashionMode);
     } else if (event->key() == Qt::Key_Right) {
-        if (m_model->desktopMode() == 0)
+        if (m_model->desktopMode() == Model::FashionMode)
             m_worker->setDesktopMode(Model::EfficientMode);
     }
 }
 
+//更新选择按钮的位置
 void DesktopModeModule::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
@@ -156,4 +160,11 @@ void DesktopModeModule::paintEvent(QPaintEvent *event)
 
     m_selectBtn->move(point);
     m_selectBtn->raise();
+}
+
+void DesktopModeModule::onSetModeFashion() {
+    m_worker->setDesktopMode(Model::FashionMode);
+}
+void DesktopModeModule::onSetModeEfficient() {
+    m_worker->setDesktopMode(Model::EfficientMode);
 }

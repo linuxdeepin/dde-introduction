@@ -3,7 +3,7 @@
     <name>BottomNavigation</name>
     <message>
         <source>Community</source>
-        <translation>Společenství</translation>
+        <translation>Komunita</translation>
     </message>
     <message>
         <source>Feeback</source>
@@ -26,7 +26,7 @@
     </message>
     <message>
         <source>Fashion Mode</source>
-        <translation>Návykový režim</translation>
+        <translation>Módní režim</translation>
     </message>
 </context>
 <context>
@@ -41,19 +41,19 @@
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Vyberte režim pracovní plochy</translation>
+        <translation>Vyberte režim plochy</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>Režimy můžete přepnout po klepnutí pravým tlačítkem myši na panel</translation>
+        <translation>Režimy můžete přepnout kliknutím pravým tlačítkem myši na panel</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Vyberte režim provozu</translation>
+        <translation>Vyberte režim provozování</translation>
     </message>
     <message>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
-        <translation>Můžete jej přepnout v Ovládacím středisku → Přizpůsobení → Vzhled → Okenní efekt</translation>
+        <translation>Můžete přepnout v Ovládací panely → Přizpůsobení → Vzhled → Efekty pro okna</translation>
     </message>
     <message>
         <source>Choose an icon theme</source>
@@ -61,7 +61,7 @@
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation>Můžete jej změnit v Ovládacím středisku → Přizpůsobení → Vzhled → Vzhled ikon</translation>
+        <translation>Můžete změnit v Ovládací panely → Přizpůsobení → Vzhled → Vzhled ikon</translation>
     </message>
 </context>
 <context>
@@ -76,27 +76,27 @@
     </message>
     <message>
         <source>Desktop Mode</source>
-        <translation>Režim pracovní plochy</translation>
+        <translation>Režim plochy</translation>
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Vyberte režim pracovní plochy</translation>
+        <translation>Vyberte režim plochy</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>Režimy můžete přepnout po klepnutí pravým tlačítkem myši na panel</translation>
+        <translation>Režimy můžete přepnout kliknutím pravým tlačítkem myši na panel</translation>
     </message>
     <message>
         <source>Running Mode</source>
-        <translation>Režim provozu</translation>
+        <translation>Režim provozování</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Vyberte režim provozu</translation>
+        <translation>Vyberte režim provozování</translation>
     </message>
     <message>
         <source>Please choose normal mode if you has a low configuration computer</source>
-        <translation>Vyberte, prosím, normální režim, pokud máte méně výkonný počítač</translation>
+        <translation>Pokud máte méně výkonný počítač, zvolte střídmý režim</translation>
     </message>
     <message>
         <source>Icon Theme</source>
@@ -108,7 +108,7 @@
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation>Můžete jej změnit v Ovládacím středisku → Přizpůsobení → Vzhled → Vzhled ikon</translation>
+        <translation>Můžete změnit v Ovládací panely → Přizpůsobení → Vzhled ikon</translation>
     </message>
 </context>
 <context>
@@ -122,11 +122,11 @@
     <name>WMModeModule</name>
     <message>
         <source>Normal Mode</source>
-        <translation>Normální režim</translation>
+        <translation>Střídmý režim</translation>
     </message>
     <message>
         <source>Effect Mode</source>
-        <translation>Efektový režim</translation>
+        <translation>Líbivý režim</translation>
     </message>
 </context>
 </TS>

@@ -22,11 +22,11 @@
     <name>DesktopModeModule</name>
     <message>
         <source>Efficient Mode</source>
-        <translation>Eficiente</translation>
+        <translation>Modo Eficiente</translation>
     </message>
     <message>
         <source>Fashion Mode</source>
-        <translation>Fashion</translation>
+        <translation>Modo Fashion</translation>
     </message>
 </context>
 <context>
@@ -41,11 +41,11 @@
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Escolha um modo da área de trabalho</translation>
+        <translation>Escolha um Modo da Área de Trabalho</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>Pode alternar os modos, clicando com o botão direito do mouse na dock</translation>
+        <translation>Altere os modos ao clicar com o botão direito na dock</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
@@ -53,11 +53,11 @@
     </message>
     <message>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
-        <translation>Pode alterná-lo na Central de Controle &gt; Personalização &gt; Efeito Janela</translation>
+        <translation>Altere-o em Central de Controle &gt; Personalização &gt; Efeito Janela</translation>
     </message>
     <message>
         <source>Choose an icon theme</source>
-        <translation>Escolha um tema de ícone</translation>
+        <translation>Escolha um Tema de Ícone</translation>
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
@@ -72,23 +72,23 @@
     </message>
     <message>
         <source>Welcome</source>
-        <translation>Bem-Vindo</translation>
+        <translation>Bem-vindo(a) ao deepin</translation>
     </message>
     <message>
         <source>Desktop Mode</source>
-        <translation>Modo da Área de Trabalho</translation>
+        <translation>Estilo</translation>
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Escolha um modo da área de trabalho</translation>
+        <translation>Escolha um Modo da Área de Trabalho</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>Pode alternar os modos, clicando com o botão direito do mouse na dock</translation>
+        <translation>Altere os modos ao clicar com o botão direito na dock</translation>
     </message>
     <message>
         <source>Running Mode</source>
-        <translation>Modo de Corrida</translation>
+        <translation>Desempenho</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
@@ -96,15 +96,15 @@
     </message>
     <message>
         <source>Please choose normal mode if you has a low configuration computer</source>
-        <translation>Escolha o Modo Normal se tiver um computador com hardware básico</translation>
+        <translation>Escolha o modo normal se tiver um computador com hardware básico</translation>
     </message>
     <message>
         <source>Icon Theme</source>
-        <translation>Tema de Ícone</translation>
+        <translation>Ícones</translation>
     </message>
     <message>
         <source>Choose an icon theme</source>
-        <translation>Escolha um tema de ícone</translation>
+        <translation>Escolha um Tema de Ícone</translation>
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
@@ -115,7 +115,7 @@
     <name>QObject</name>
     <message>
         <source>Welcome</source>
-        <translation>Bem-vindo</translation>
+        <translation>Bem-vindo(a) ao deepin</translation>
     </message>
 </context>
 <context>

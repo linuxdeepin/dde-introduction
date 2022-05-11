@@ -22,11 +22,11 @@
     <name>DesktopModeModule</name>
     <message>
         <source>Efficient Mode</source>
-        <translation>高效 (Windows) 模式</translation>
+        <translation>高效模式</translation>
     </message>
     <message>
         <source>Fashion Mode</source>
-        <translation>時尚 (Deepin) 模式</translation>
+        <translation>時尚模式</translation>
     </message>
 </context>
 <context>
@@ -45,7 +45,7 @@
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>在 Dock 上按下右鍵後選擇「模式」切換樣式</translation>
+        <translation>在任務欄上按下右鍵後選擇「模式」切換樣式</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
@@ -84,7 +84,7 @@
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>在 Dock 上按下右鍵後選擇「模式」切換樣式</translation>
+        <translation>在任務欄上按下右鍵後選擇「模式」切換樣式</translation>
     </message>
     <message>
         <source>Running Mode</source>

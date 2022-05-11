@@ -22,11 +22,11 @@
     <name>DesktopModeModule</name>
     <message>
         <source>Efficient Mode</source>
-        <translation>능률 모드</translation>
+        <translation>효율 모드</translation>
     </message>
     <message>
         <source>Fashion Mode</source>
-        <translation>유행 모드</translation>
+        <translation>시각 모드</translation>
     </message>
 </context>
 <context>
@@ -41,11 +41,11 @@
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>바탕화면 모드 선택</translation>
+        <translation>작업표시줄 모드 선택</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>도구집을 마우스 오른쪽 버튼으로 클릭하여 모드를 전환할 수 있습니다.</translation>
+        <translation>선택 모드를 우클릭하여 적용시킬 수 있습니다.</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
@@ -76,15 +76,15 @@
     </message>
     <message>
         <source>Desktop Mode</source>
-        <translation>바탕화면 모드</translation>
+        <translation>작업표시줄 모드</translation>
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>바탕화면 모드 선택</translation>
+        <translation>작업표시줄 모드 선택</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>도구집을 마우스 오른쪽 버튼으로 클릭하여 모드를 전환할 수 있습니다.</translation>
+        <translation>선택 모드를 우클릭하여 적용시킬 수 있습니다.</translation>
     </message>
     <message>
         <source>Running Mode</source>

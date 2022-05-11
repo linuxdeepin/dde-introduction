@@ -33,8 +33,8 @@ class BottomButton : public DImageButton
     Q_OBJECT
 public:
     explicit BottomButton(DWidget *parent = nullptr);
-    void setText(const QString text) {m_text = text;};
-    void setRect(const QRect rect) {m_rect = rect;};
+    void setText(const QString text);
+    void setRect(const QRect rect);
 
 protected:
     void paintEvent(QPaintEvent *event);

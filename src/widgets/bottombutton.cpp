@@ -27,6 +27,7 @@ BottomButton::BottomButton(DWidget *parent)
 
 void BottomButton::paintEvent(QPaintEvent *event)
 {
+    Q_UNUSED(event);
     QFont font;
     font.setFamily("SourceHanSansSC");
     font.setStyleName("Medium");
@@ -40,4 +41,14 @@ void BottomButton::paintEvent(QPaintEvent *event)
     painter.setFont(font);
     painter.setPen(QPen(QColor(0,129,255)));
     painter.drawText(rect(), m_text);
+}
+
+void BottomButton::setText(const QString text)
+{
+    m_text = text;
+}
+
+void BottomButton::setRect(const QRect rect)
+{
+    m_rect = rect;
 }

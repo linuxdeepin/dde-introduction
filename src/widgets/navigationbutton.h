@@ -29,10 +29,12 @@
 #include <DLabel>
 #include <DPushButton>
 #include <DWidget>
+#include <QPainterPath>
 
 DGUI_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
+//导航按钮类
 class NavigationButton : public DPushButton
 {
     Q_OBJECT
@@ -41,7 +43,7 @@ public:
 
     void initButton();
 
-    bool needFrame;
+    bool needFrame;//需要画框标志位
 
 protected:
     // QSize setHint();

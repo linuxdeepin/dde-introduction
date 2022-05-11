@@ -26,7 +26,7 @@
     </message>
     <message>
         <source>Fashion Mode</source>
-        <translation>Mod Berfesyen</translation>
+        <translation>Mod Fesyen</translation>
     </message>
 </context>
 <context>
@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Pilih satu mod desktop</translation>
+        <translation>Pilih satu mod atas meja</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Pilih satu mod berjalan</translation>
+        <translation>Pilih satu mod yang berjalan</translation>
     </message>
     <message>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
@@ -76,11 +76,11 @@
     </message>
     <message>
         <source>Desktop Mode</source>
-        <translation>Mod Desktop</translation>
+        <translation>Mod Atas Meja</translation>
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Pilih satu mod desktop</translation>
+        <translation>Pilih satu mod atas meja</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
@@ -92,7 +92,7 @@
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Pilih satu mod berjalan</translation>
+        <translation>Pilih satu mod yang berjalan</translation>
     </message>
     <message>
         <source>Please choose normal mode if you has a low configuration computer</source>
@@ -126,7 +126,7 @@
     </message>
     <message>
         <source>Effect Mode</source>
-        <translation>Mod Kesan</translation>
+        <translation>Mod Efek</translation>
     </message>
 </context>
 </TS>

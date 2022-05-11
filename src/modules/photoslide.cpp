@@ -1,8 +1,32 @@
+/*
+* Copyright (C) 2019 ~ 2021 Uniontech Software Technology Co.,Ltd.
+*
+* Author:     xiepengfei <xiepengfei@uniontech.com>
+*
+* Maintainer: xiepengfei <xiepengfei@uniontech.com>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "photoslide.h"
 
 PhotoSlide::PhotoSlide(QWidget *parent)
     : ModuleInterface(parent)
 {
+    DSysInfo::UosEdition imageType = DSysInfo::uosEditionType();
+    initSetImage(imageType);
+
     m_selectBtn->hide();
 
     /*container_label_ = new DLabel(this);
@@ -25,6 +49,7 @@ PhotoSlide::PhotoSlide(QWidget *parent)
     connect(animation_group_, &QParallelAnimationGroup::currentLoopChanged, this, &PhotoSlide::updateSlideImage);*/
 
     //m_lastLable = new DLabel(this);
+    //图片是加载在DLabel上面
     m_currentLabel = new DLabel(this);
     m_lastAni = new QPropertyAnimation(this);
     m_currentAni = new QPropertyAnimation(this);
@@ -34,6 +59,49 @@ PhotoSlide::PhotoSlide(QWidget *parent)
     updateBigIcon();
 }
 
+void PhotoSlide::initSetImage(DSysInfo::UosEdition imageType) {
+    if (imageType == DSysInfo::UosEdition::UosProfessional ||
+            imageType == DSysInfo::UosEdition::UosCommunity) {
+        m_strPhotoPath = QString(UOSPROFESSIONAL_PHOTO_PATH);
+        m_iHpotoTotal  = UOSPROFESSIONAL_PHOTO_TOTAL;
+        #if 0
+        #if defined (ISLOONGARCH64)
+            //龙芯5000专业版 misp架构有对应6张轮播图
+            m_strPhotoPath = QString(UOSPROFESSIONAL_LOONGARCH5000_PHOTO_PATH);
+            m_iHpotoTotal  = UOSPROFESSIONAL_LOONGARCH5000_PHOTO_TOTAL;
+        #else
+            m_strPhotoPath = QString(UOSPROFESSIONAL_PHOTO_PATH);
+            m_iHpotoTotal  = UOSPROFESSIONAL_PHOTO_TOTAL;
+        #endif
+        #endif
+    } else if (imageType == DSysInfo::UosEdition::UosEnterprise ||
+               imageType == DSysInfo::UosEdition::UosEnterpriseC ) {
+        #if defined (ISLOONGARCH64)
+            //龙芯5000服务器企业版 misp架构对应6张轮播图
+            m_strPhotoPath = QString(UOSENTERPRISE_LOONGARCH5000_PHOTO_PATH);
+            m_iHpotoTotal  = UOSENTERPRISE_LOONGARCH5000_PHOTO_TOTAL;
+        #else
+        //服务器专业版/行业版，轮播图6张
+        m_strPhotoPath = QString(UOSENTERPRISE_PHOTO_PATH);
+        m_iHpotoTotal  = UOSENTERPRISE_PHOTO_TOTAL;
+        #endif
+    } else if (imageType == DSysInfo::UosEdition::UosEuler) {
+        //欧拉版,轮播图8张
+        m_strPhotoPath = QString(UOSEULER_PHOTO_PATH);
+        m_iHpotoTotal  = UOSEULER_PHOTO_TOTAL;
+    } else {
+        //考虑到如果在新类型系统上跑应用，默认使用8张的专业版轮播图
+        m_strPhotoPath = QString(UOSPROFESSIONAL_PHOTO_PATH);
+        m_iHpotoTotal  = UOSPROFESSIONAL_PHOTO_TOTAL;
+    }
+}
+
+/*******************************************************************************
+ 1. @函数:    updateBigIcon
+ 2. @作者:
+ 3. @日期:    2020-12-08
+ 4. @说明:    更新第一次启动轮播图
+*******************************************************************************/
 void PhotoSlide::updateBigIcon()
 {
     const QSize size(700, 450);
@@ -42,8 +110,8 @@ void PhotoSlide::updateBigIcon()
     m_currentLabel->setFixedSize(size);
 
     QStringList list;
-    for (int i = 1; i != 9; i++) {
-        list << QString(":/resources/slide_big/0%1.jpg").arg(i);
+    for (int i = 1; i <= m_iHpotoTotal; i++) {
+        list << QString("%1/slide_big/0%2.jpg").arg(m_strPhotoPath).arg(i);
     }
 
     setPhotoList(list);
@@ -54,6 +122,12 @@ void PhotoSlide::updateBigIcon()
     //pos_animation_->setKeyValueAt(1.0, QPoint(50, 0));
 }
 
+/*******************************************************************************
+ 1. @函数:    updateSmallIcon
+ 2. @作者:
+ 3. @日期:    2020-12-08
+ 4. @说明:    更新日常的轮播图
+*******************************************************************************/
 void PhotoSlide::updateSmallIcon()
 {
     const QSize size(549, 309);
@@ -62,8 +136,8 @@ void PhotoSlide::updateSmallIcon()
     m_currentLabel->setFixedSize(size);
 
     QStringList list;
-    for (int i = 1; i != 9; i++) {
-        list << QString(":/resources/slide_small/0%1.jpg").arg(i);
+    for (int i = 1; i <= m_iHpotoTotal; i++) {
+        list << QString("%1/slide_small/0%2.jpg").arg(m_strPhotoPath).arg(i);
     }
 
     setPhotoList(list);
@@ -78,11 +152,15 @@ void PhotoSlide::updateSelectBtnPos() {}
 
 void PhotoSlide::keyPressEvent(QKeyEvent *e)
 {
+    Q_UNUSED(e);
 //    QWidget::keyPressEvent(e);
 }
 
+//第二参数不用，可以删除
 void PhotoSlide::start(bool disable_slide, bool disable_animation, int duration)
 {
+    Q_UNUSED(disable_animation);
+    Q_UNUSED(duration);
     // Read the first slide image.
     slide_index_ = 0;
     updateSlideImage();
@@ -110,18 +188,27 @@ void PhotoSlide::start(bool disable_slide, bool disable_animation, int duration)
     time->start(2000);
 }
 
-void PhotoSlide::stop()
-{
-    animation_group_->stop();
-}
+//void PhotoSlide::stop()
+//{
+//    animation_group_->stop();
+//}
 
+//保存照片的list
 void PhotoSlide::setPhotoList(const QStringList &list)
 {
+    //如果照片名字是一样的？？？内容更换了，会不会return???
     if (m_photoList == list) return;
 
     m_photoList = list;
 }
 
+
+/*******************************************************************************
+ 1. @函数:    updateSlideImage
+ 2. @作者:
+ 3. @日期:    2020-12-09
+ 4. @说明:    更新轮播图的图片
+*******************************************************************************/
 void PhotoSlide::updateSlideImage()
 {
     if (m_currentAni->state() == QPropertyAnimation::Running) {
@@ -129,24 +216,16 @@ void PhotoSlide::updateSlideImage()
     }
 
     const QString filepath(m_photoList[slide_index_]);
-    //const QString lastfilepath(m_photoList[last_index_]);
-
-    //m_lastLable->deleteLater();
+    if(m_lastLable) {
+        m_lastLable->deleteLater();
+    }
     m_lastLable = m_currentLabel;
-    //m_lastLable->deleteLater();
-    //m_lastLable = new DLabel(this);
-    //delete m_currentLabel;
-    //m_currentLabel = nullptr;
     m_currentLabel = new DLabel(this);
 
     if (QFile::exists(filepath)) {
         QPixmap pixmap = DHiDPIHelper::loadNxPixmap(filepath);
-        //QPixmap lastPixmap = DHiDPIHelper::loadNxPixmap(lastfilepath);
-        //        pixmap = pixmap.scaled(700, 450, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
-        //container_label_->setPixmap(pixmap);
         m_currentLabel->setPixmap(pixmap);
         m_currentLabel->setScaledContents(true);
-        //m_lastLable->setPixmap(lastPixmap);
     }
     else {
         qWarning() << "slide file not found:" << filepath;
@@ -169,7 +248,6 @@ void PhotoSlide::updateSlideImage()
     m_currentAni->start();
     m_lastAni->start();
 
-    //container_label_->show();
-    //last_index_ = slide_index_;
     slide_index_ = (slide_index_ + 1) % m_photoList.length();
 }
+

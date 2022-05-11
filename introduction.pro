@@ -6,18 +6,20 @@ QT += dtkwidget
 PKGCONFIG += dframeworkdbus libdmr gsettings-qt
 DESTDIR    = $$_PRO_FILE_PWD_
 
-#load(dtk_qmake)
-
 greaterThan(QT_MAJOR_VERSION, 4) {
     TARGET_ARCH=$${QT_ARCH}
 } else {
     TARGET_ARCH=$${QMAKE_HOST.arch}
 }
 
+QMAKE_CXXFLAGS+= -fPIE
+QMAKE_LFLAGS += -pie
 
 isEmpty(PREFIX){
     PREFIX = /usr
 }
+
+system("bash delete_video.sh")
 
 HEADERS += \
     src/basemodulewidget.h \

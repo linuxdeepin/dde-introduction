@@ -1,3 +1,24 @@
+/*
+* Copyright (C) 2019 ~ 2021 Uniontech Software Technology Co.,Ltd.
+*
+* Author:     xiepengfei <xiepengfei@uniontech.com>
+*
+* Maintainer: xiepengfei <xiepengfei@uniontech.com>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "support.h"
 
 Support::Support(QWidget *parent)
@@ -16,8 +37,8 @@ Support::Support(QWidget *parent)
 
     m_label->setMargin(20);
     m_label->setOpenExternalLinks(true);
-    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::paletteTypeChanged, this, &Support::initTheme);
-    int type = DGuiApplicationHelper::instance()->paletteType();
+//    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::paletteTypeChanged, this, &Support::initTheme);
+//   s int type = DGuiApplicationHelper::instance()->paletteType();
 
     /*m_text = QString("<p style=\"font-family: SourceHanSansSC-Medium;font-size: 16px;color: #000000;line-height: 18px;\">%1</p>"
                                   "<div style=\"font-family: SourceHanSansSC-Medium;font-size: 12px;color: #303030;line-height: 18px;\">%2<a href=http://www.deepin.org/donate>%3</a>%4</div>"
@@ -36,11 +57,11 @@ Support::Support(QWidget *parent)
                           .arg(tr("You can also become an individual payer to support us and gain more rights and interests at "))
                           .arg(tr("www.deepin.org"));*/
 
-    initTheme(type);
+//    initTheme(type);
 }
 
-void Support::initTheme(int type)
-{
+//void Support::initTheme(int type)
+//{
     /*if (type == 0) {
         type = DGuiApplicationHelper::instance()->themeType();
     }
@@ -88,4 +109,4 @@ void Support::initTheme(int type)
                  .arg(tr("■"));
     }
     m_label->setText(m_text);*/
-}
+//}

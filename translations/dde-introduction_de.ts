@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Wählen Sie einen Desktop-Modus</translation>
+        <translation>Wählen Sie einen Desktop-Modus aus</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Wähle einen Betriebsmodus</translation>
+        <translation>Wählen Sie einen Betriebsmodus aus</translation>
     </message>
     <message>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
@@ -76,11 +76,11 @@
     </message>
     <message>
         <source>Desktop Mode</source>
-        <translation>Desktop Modus</translation>
+        <translation>Desktop-Modus</translation>
     </message>
     <message>
         <source>Choose a desktop mode</source>
-        <translation>Wählen Sie einen Desktop-Modus</translation>
+        <translation>Wählen Sie einen Desktop-Modus aus</translation>
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
@@ -92,7 +92,7 @@
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Wähle einen Betriebsmodus</translation>
+        <translation>Wählen Sie einen Betriebsmodus aus</translation>
     </message>
     <message>
         <source>Please choose normal mode if you has a low configuration computer</source>

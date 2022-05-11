@@ -1,5 +1,12 @@
-dde-introduction (0.0.1-1) unstable; urgency=medium
+dde-introduction (5.6.0.41+nmu1) UNRELEASED; urgency=medium
 
-  * Initial Release.
+ * Non-maintainer upload.
+ * 
 
- -- Deepin Packages Builder <packages@deepin.com>  Wed, 11 Oct 2017 17:38:35 +0800
+ --  <guoshaoyu@guoshaoyu-PC>  Sat, 08 May 2021 17:26:20 +0800 
+dde-introduction (5.6.0.41) unstable; urgency=medium
+
+ * 修复无法切换特效模式的问题；
+ * 更新视频；                                
+ 
+-- Deepin Packages Builder <packages@deepin.com>  Wed, 11 Oct 2017 17:38:35 +0800

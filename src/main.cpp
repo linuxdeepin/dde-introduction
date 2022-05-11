@@ -26,7 +26,8 @@
 #include <QDBusInterface>
 #include <QDebug>
 #include "mainwindow.h"
-#include "normalwindow.h"
+//#include "normalwindow.h"
+#include "environments.h"
 
 #ifndef DISABLE_VIDEO
 #include <compositing_manager.h>
@@ -34,125 +35,100 @@
 
 DWIDGET_USE_NAMESPACE
 
-static QString g_appPath;  //全局路径
-
-//获取配置文件主题类型，并重新设置
-DGuiApplicationHelper::ColorType getThemeTypeSetting()
-{
-    //需要找到自己程序的配置文件路径，并读取配置，这里只是用home路径下themeType.cfg文件举例,具体配置文件根据自身项目情况
-    QString t_appDir = g_appPath + QDir::separator() + "themetype.cfg";
-    QFile t_configFile(t_appDir);
-
-    t_configFile.open(QIODevice::ReadOnly | QIODevice::Text);
-    QByteArray t_readBuf = t_configFile.readAll();
-    int t_readType = QString(t_readBuf).toInt();
-
-    //获取读到的主题类型，并返回设置
-    switch (t_readType) {
-        case 0:
-            // 跟随系统主题
-            return DGuiApplicationHelper::UnknownType;
-        case 1:
-            //        浅色主题
-            return DGuiApplicationHelper::LightType;
-
-        case 2:
-            //        深色主题
-            return DGuiApplicationHelper::DarkType;
-        default:
-            // 跟随系统主题
-            return DGuiApplicationHelper::UnknownType;
-    }
-}
-
-//保存当前主题类型配置文件
-void saveThemeTypeSetting(int type)
-{
-    //需要找到自己程序的配置文件路径，并写入配置，这里只是用home路径下themeType.cfg文件举例,具体配置文件根据自身项目情况
-    QString t_appDir = g_appPath + QDir::separator() + "themetype.cfg";
-    QFile t_configFile(t_appDir);
-
-    t_configFile.open(QIODevice::WriteOnly | QIODevice::Text);
-    //直接将主题类型保存到配置文件，具体配置key-value组合根据自身项目情况
-    QString t_typeStr = QString::number(type);
-    t_configFile.write(t_typeStr.toUtf8());
-    t_configFile.close();
-}
-
 int main(int argc, char *argv[])
 {
-#ifndef DISABLE_VIDEO
-    qputenv("DXCB_FAKE_PLATFORM_NAME_XCB", "TRUE");
-#endif
+    using namespace Dtk::Core;
 
-    // QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-    DApplication::loadDXcbPlugin();
-    DApplication a(argc, argv);
-    a.loadTranslator();
+    if (!QString(qgetenv("XDG_CURRENT_DESKTOP")).toLower().startsWith("deepin")) {
+        setenv("XDG_CURRENT_DESKTOP", "Deepin", 1);
+    }
 
-    g_appPath = QDir::homePath() + QDir::separator() + "." + qApp->applicationName();
-    QDir t_appDir;
-    t_appDir.mkpath(g_appPath);
+    /* 平台支持播放时才对播放视频做相关设置 */
+    #ifndef DISABLE_VIDEO
+    /* 规避兼容103x环境下编译构建失败的问题，因为103x环境无dmr::utils::first_check_wayland_env()接口 */
+    #if (DTK_VERSION > DTK_VERSION_CHECK(5, 4, 1, 0))
+    /* 适配wayland系统环境 */
+    if (dmr::utils::first_check_wayland_env()) {
+        qputenv("QT_WAYLAND_SHELL_INTEGRATION", "kwayland-shell");
+        setenv("PULSE_PROP_media.role", "video", 1);
+    }
+    #endif
+    #endif
 
-    a.setApplicationName(" ");
+    QDateTime current = QDateTime::currentDateTime();
+    qDebug() << "LOG_FLAG"
+             << QDateTime::currentDateTime().toString(Qt::ISODateWithMs)
+             << "start to initaalize app";
+    qint64 initializeAppStartMs = current.toMSecsSinceEpoch();
+
+    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+    DApplication *a = nullptr;
+
+    #if (DTK_VERSION < DTK_VERSION_CHECK(5, 4, 0, 0))
+        a = new DApplication(argc, argv);
+    #else
+        a = DApplication::globalApplication(argc, argv);
+    #endif
+
+    a->setAttribute(Qt::AA_UseHighDpiPixmaps);
+    a->setApplicationName("dde-introduction");
+    a->setAttribute(Qt::AA_ForceRasterWidgets, false);
 
     // dapplication default setting is true
-    a.setAttribute(Qt::AA_ForceRasterWidgets, false);
 
-    if (!a.setSingleInstance(a.applicationName(), DApplication::UserScope)) {
-        qWarning() << QString("There is a %1 running!!").arg(a.applicationName());
+    if (!a->setSingleInstance(a->applicationName(), DApplication::UserScope)) {
+        qWarning() << QString("There is a %1 running!!").arg(a->applicationName());
         return -1;
     }
 
-    a.setAutoActivateWindows(true);
-    a.setOrganizationName("deepin");
-    a.setApplicationVersion(DApplication::buildVersion("1.0"));
-    a.loadTranslator();
-    a.setApplicationDisplayName(QObject::tr("Welcome"));
+    a->setAutoActivateWindows(true);
+    a->setOrganizationName("deepin");
+    a->setApplicationVersion(VERSION);
+    //因为快速启动turbo原因，loadTranslator函数需要放在所有QObject::tr之前，setApplicationName之后
+    a->loadTranslator();
+    a->setApplicationDisplayName(QObject::tr("Welcome"));
+
+    /* 必须在setOrganizationName("deepin")之后设置才生效 */
+    Dtk::Core::DLogManager::registerConsoleAppender();
+    Dtk::Core::DLogManager::registerFileAppender();
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerService("com.deepin.introduction");
-    using namespace Dtk::Core;
-    Dtk::Core::DLogManager::registerConsoleAppender();
-    Dtk::Core::DLogManager::registerFileAppender();
+
     QCommandLineParser cmdParser;
     cmdParser.setApplicationDescription("dde-introduction");
     cmdParser.addHelpOption();
     cmdParser.addVersionOption();
-    cmdParser.process(a);
-
-    // 应用已保存的主题设置
-    DGuiApplicationHelper::instance()->setPaletteType(getThemeTypeSetting());
-    saveThemeTypeSetting(0);
+    cmdParser.process(*a);
 
     //监听当前应用主题切换事件
     QObject::connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::paletteTypeChanged,
                      [](DGuiApplicationHelper::ColorType type) {
-                         qDebug() << type;
-                         // 保存程序的主题设置  type : 0,系统主题， 1,浅色主题， 2,深色主题
-                         saveThemeTypeSetting(0);
                          DGuiApplicationHelper::instance()->setPaletteType(type);
-                     });
+                    });
 
-    static const QDate buildDate =
-        QLocale(QLocale::English).toDate(QString(__DATE__).replace("  ", " 0"), "MMM dd yyyy");
+    static const QDate buildDate = QLocale(QLocale::English).toDate(QString(__DATE__).replace("  ", " 0"), "MMM dd yyyy");
     QString t_date = buildDate.toString("MMdd");
     // Version Time
-    a.setApplicationVersion(DApplication::buildVersion(t_date));
+    a->setApplicationVersion(DApplication::buildVersion(t_date));
 
     setlocale(LC_NUMERIC, "C");
-
-    // 强制不使用嵌入mpv窗口的模式
-#ifndef DISABLE_VIDEO
-    dmr::CompositingManager::get().overrideCompositeMode(true);
-#endif
 
     MainWindow w;
     moveToCenter(&w);
     w.show();
 
-    DPlatformWindowHandle::enableDXcbForWindow(&w, true);
     dbus.registerObject("/com/deepin/introduction", &w, QDBusConnection::ExportScriptableSlots);
 
-    return a.exec();
+    current = QDateTime::currentDateTime();
+    qDebug() << "LOG_FLAG"
+             << QDateTime::currentDateTime().toString(Qt::ISODateWithMs)
+             << " finish to initialize app";
+
+    qint64 inittalizeApoFinishMs = current.toMSecsSinceEpoch();
+    qint64 time = inittalizeApoFinishMs - initializeAppStartMs;
+    qInfo() << QString("[GRABPOINT] POINT-01  time=%1ms").arg(time);
+
+
+    return a->exec();
 }

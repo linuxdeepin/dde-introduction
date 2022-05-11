@@ -28,6 +28,7 @@
 #include "widgets/nextbutton.h"
 #include "widgets/closebutton.h"
 #include "widgets/previousbutton.h"
+#include "worker.h"
 #ifndef DISABLE_VIDEO
 #include "modules/videowidget.h"
 #endif
@@ -56,6 +57,7 @@ DCORE_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 #define DDE_STARTGUIDE_PATH "/usr/bin/dde-startguide"
+#define FIRST_ICONCONTENT_WINSIZE 278
 
 using WMSwitcherInter = com::deepin::WMSwitcher;
 
@@ -65,47 +67,60 @@ class MainWindow : public DMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(DWidget *parent = nullptr);
+    explicit MainWindow(DWidget *parent = nullptr);
     ~MainWindow() override;
-    void initWindowWidget();
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void closeEvent(QCloseEvent *event) override;
-//    void QWheelEvent(const QPoint& pos, int delta, Qt::MouseButtons buttons,
-//                       Qt::KeyboardModifiers modifiers, Qt::Orientation orient = Qt::Vertical);
 
 private slots:
+    //上一步按钮响应函数
     void previous();
+    //下一步按钮响应函数
     void next();
 
 private:
+    //主题变化响应函数
     void slotTheme();
     void initUI();
     void initConnect();
+    //绑定需要动画的界面
     void bindAnimation();
+    //根据index值进行欢迎四个界面的创建,并进行动画绑定
     void updateModule(const int index);
+    //动画结束后删除m_last保存的界面
     void animationHandle();
 
     BaseModuleWidget *initDesktopModeModule();
     BaseModuleWidget *initWMModeModule();
     BaseModuleWidget *initIconModule();
 
-private:
+    //记录当前所属于界面
     int m_index;
-    CloseButton *m_closeFrame;
-    NextButton *m_nextBtn;
-    DIconButton *m_previousBtn;
-    NextButton *m_doneBtn;
+    //CloseButton *m_closeFrame;
+    //下一步按钮
+    NextButton *m_nextBtn {nullptr};
+    //上一步按钮
+    DIconButton *m_previousBtn {nullptr};
+    //完成按钮
+    NextButton *m_doneBtn {nullptr};
+    //关闭按钮
+    DIconButton *m_pCloseBtn {nullptr};
+    //第一个页面widget放置动画或者轮播图
     DWidget *m_current;
     DWidget *m_last;
+    //上一步和下一步选择的界面的动画
     QPropertyAnimation *m_currentAni;
+    //当前还没变化的界面的动画
     QPropertyAnimation *m_lastAni;
     DWidget *m_fakerWidget;
     QSettings *m_settings;
     WMSwitcherInter *m_displayInter;
-    bool isx86;
+    //是否使用视频的标志
+    bool m_useVideo;
     bool m_isFirst;
+    //标志是否是可以窗口特效的版本
     bool m_supportWM;
 };
 

@@ -29,14 +29,12 @@ WMModeModule::WMModeModule(QWidget *parent)
     m_fashionWidget->setTitle(tr("Effect Mode"));
 
     connect(m_model, &Model::wmTypeChanged, this, &WMModeModule::onWMModeChanged);
-    connect(m_fashionWidget, &BaseWidget::clicked, this,
-            [=] { m_worker->setWMMode(Model::WM_3D); });
-    connect(m_efficientWidget, &BaseWidget::clicked, this,
-            [=] { m_worker->setWMMode(Model::WM_2D); });
-
+    connect(m_fashionWidget, &BaseWidget::clicked, this, &WMModeModule::onSetModeEfficient);
+    connect(m_efficientWidget, &BaseWidget::clicked, this, &WMModeModule::onSetModeNormal);
     connect(m_efficientWidget, &BaseWidget::sizeChanged, this, &WMModeModule::updateSelectBtnPos);
 
-    QTimer::singleShot(100, this, [=] { onWMModeChanged(m_model->wmType()); });
+    //特效模式和普通模式切换响应
+    onWMModeChanged(m_model->wmType());
 
     m_layout->setContentsMargins(0, 30, 0, 65);
 
@@ -48,6 +46,7 @@ WMModeModule::WMModeModule(QWidget *parent)
     updateSmallIcon();
 }
 
+//首次启动初始化图片
 void WMModeModule::updateBigIcon()
 {
     m_efficientWidget->setBigPixmap(":/resources/2d_big@3x.png");
@@ -55,17 +54,25 @@ void WMModeModule::updateBigIcon()
     m_layout->setContentsMargins(10, 70, 10, 35);
 }
 
+//日常启动初始化图片
 void WMModeModule::updateSmallIcon()
 {
     m_efficientWidget->setSmallPixmap(":/resources/2d_small@3x.png");
     m_fashionWidget->setSmallPixmap(":/resources/3d_small@3x.png");
 }
 
+//更新选择按钮位置
 void WMModeModule::updateSelectBtnPos()
 {
     onWMModeChanged(m_model->wmType());
 }
 
+/*******************************************************************************
+ 1. @函数:    onWMModeChanged
+ 2. @作者:
+ 3. @日期:    2020-12-09
+ 4. @说明:    特效模式和普通模式切换响应槽函数
+*******************************************************************************/
 void WMModeModule::onWMModeChanged(Model::WMType type)
 {
     switch (type) {
@@ -77,26 +84,31 @@ void WMModeModule::onWMModeChanged(Model::WMType type)
             m_fashionWidget->setChecked(true);
             m_efficientWidget->setChecked(false);
             break;
+        default:
+            break;
     }
     update();
 }
 
+//设置首次启动标志位
 void WMModeModule::setFirst(bool first)
 {
     m_first = first;
 }
 
+//键盘按键事件左右切换特效和普通模式
 void WMModeModule::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Left) {
-        if (m_model->wmType() == 0)
+        if (m_model->wmType() == Model::WM_2D)
             m_worker->setWMMode(Model::WM_3D);
     } else if (event->key() == Qt::Key_Right) {
-        if (m_model->wmType() == 1)
+        if (m_model->wmType() == Model::WM_3D)
             m_worker->setWMMode(Model::WM_2D);
     }
 }
 
+//通过绘制函数，更新选择按钮的位置
 void WMModeModule::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
@@ -128,3 +140,11 @@ void WMModeModule::paintEvent(QPaintEvent *event)
     m_selectBtn->move(point);
     m_selectBtn->raise();
 }
+
+void WMModeModule::onSetModeNormal() {
+    m_worker->setWMMode(Model::WM_2D);
+}
+void WMModeModule::onSetModeEfficient() {
+    m_worker->setWMMode(Model::WM_3D);
+}
+

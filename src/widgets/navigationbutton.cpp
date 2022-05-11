@@ -38,9 +38,12 @@ NavigationButton::NavigationButton(QString text, DWidget *parent)
     setLayout(layout);
     initButton();
     needFrame = false;
+    m_label->setForegroundRole(DPalette::WindowText);
 
+    //主题变化时，导航按钮跟着变化颜色
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this,
             &NavigationButton::initButton);
+    //导航按钮点击时，颜色也跟随主题变化
     connect(this, &NavigationButton::clicked, this, &NavigationButton::initButton);
 }
 
@@ -51,11 +54,18 @@ void NavigationButton::mousePressEvent(QMouseEvent *event)
     DPushButton::mousePressEvent(event);
 }
 
+
+/*******************************************************************************
+ 1. @函数:    initButton
+ 2. @作者:
+ 3. @日期:    2020-12-09
+ 4. @说明:    根据主题设置m_label的Palette颜色
+*******************************************************************************/
 void NavigationButton::initButton()
 {
     int type = DGuiApplicationHelper::instance()->themeType();
     DPalette pl = m_label->palette();
-    if (type == 1) {
+    if (type == DGuiApplicationHelper::LightType) {
         if (isChecked()) {
             pl.setColor(DPalette::WindowText, Qt::white);
         } else {
@@ -68,21 +78,24 @@ void NavigationButton::initButton()
             pl.setColor(DPalette::WindowText, QColor(192, 198, 212));
         }
     }
-
     m_label->setPalette(pl);
-    m_label->setForegroundRole(DPalette::WindowText);
 }
 
-void NavigationButton::enterEvent(QEvent *event) {
+void NavigationButton::enterEvent(QEvent *event)
+{
+    Q_UNUSED(event);
     isEnter = true;
 }
 
-void NavigationButton::leaveEvent(QEvent *event) {
+void NavigationButton::leaveEvent(QEvent *event)
+{
+    Q_UNUSED(event);
     isEnter = false;
 }
 
 void NavigationButton::paintEvent(QPaintEvent *event)
 {
+    //灰色背景绘制
     if (isEnter) {
         QRect rect = this->rect();
         QPainter painter(this);
@@ -99,6 +112,7 @@ void NavigationButton::paintEvent(QPaintEvent *event)
 
     DPushButton::paintEvent(event);
 
+    //画框 tab切换时
     if (needFrame) {
         QPainter painter(this);
         painter.setRenderHint(QPainter::Antialiasing, true);
@@ -106,11 +120,20 @@ void NavigationButton::paintEvent(QPaintEvent *event)
         path.addRoundedRect(rect().adjusted(4, 4, -4, -4), 5, 5);
         painter.setClipRect(QRect(), Qt::NoClip);
 
-        QColor color(Qt::white);
-        QPen pen(color);
-        pen.setWidth(1);
-        painter.setPen(pen);
-        painter.drawPath(path);
+        int type = DGuiApplicationHelper::instance()->themeType();
+        if (type == 1) {
+            QColor color(Qt::white);
+            QPen pen(color);
+            pen.setWidth(1);
+            painter.setPen(pen);
+            painter.drawPath(path);
+        } else {
+            QColor color(QColor("#282828"));
+            QPen pen(color);
+            pen.setWidth(1);
+            painter.setPen(pen);
+            painter.drawPath(path);
+        }
     }
 
     initButton();

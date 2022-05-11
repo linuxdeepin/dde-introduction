@@ -22,11 +22,11 @@
     <name>DesktopModeModule</name>
     <message>
         <source>Efficient Mode</source>
-        <translation>Mode étendu </translation>
+        <translation>Sans dock</translation>
     </message>
     <message>
         <source>Fashion Mode</source>
-        <translation>Mode dock</translation>
+        <translation>Avec dock</translation>
     </message>
 </context>
 <context>
@@ -45,15 +45,15 @@
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>Vous pouvez changer de mode en cliquant avec le bouton droit sur le dock</translation>
+        <translation>Vous pouvez basculer de mode en cliquant avec le bouton droit sur le dock</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Choisir le mode performance</translation>
+        <translation>Choisir le mode de performance</translation>
     </message>
     <message>
         <source>You can switch it in Control Center &gt; Personalization &gt; Window effect</source>
-        <translation>Vous pouvez le changer dans le Centre de contrôle &gt; Personnalisation &gt; Effet de fenêtre</translation>
+        <translation>Vous pouvez basculer de mode dans: Centre de contrôle &gt; Personnalisation &gt; Aspect de fenêtre</translation>
     </message>
     <message>
         <source>Choose an icon theme</source>
@@ -61,7 +61,7 @@
     </message>
     <message>
         <source>Change it in Control Center &gt; Personalization &gt; Icon Theme</source>
-        <translation>Modifiez-le dans le Centre de contrôle &gt; Personnalisation &gt; Thème d&apos;icônes</translation>
+        <translation>Changer-le dans le Centre de contrôle &gt; Personnalisation &gt; Thème d&apos;icône</translation>
     </message>
 </context>
 <context>
@@ -84,15 +84,15 @@
     </message>
     <message>
         <source>You can switch modes by right clicking on the dock</source>
-        <translation>Vous pouvez changer de mode en cliquant avec le bouton droit sur le dock</translation>
+        <translation>Vous pouvez basculer de mode en cliquant avec le bouton droit sur le dock</translation>
     </message>
     <message>
         <source>Running Mode</source>
-        <translation>Mode performance</translation>
+        <translation>Mode de performance</translation>
     </message>
     <message>
         <source>Choose a running mode</source>
-        <translation>Choisir le mode performance</translation>
+        <translation>Choisir le mode de performance</translation>
     </message>
     <message>
         <source>Please choose normal mode if you has a low configuration computer</source>
@@ -122,11 +122,11 @@
     <name>WMModeModule</name>
     <message>
         <source>Normal Mode</source>
-        <translation>Mode Normal</translation>
+        <translation>Mode normal</translation>
     </message>
     <message>
         <source>Effect Mode</source>
-        <translation>Mode Effet</translation>
+        <translation>Mode esthétique </translation>
     </message>
 </context>
 </TS>

@@ -63,13 +63,24 @@ IconModule::IconModule(QWidget *parent)
     connect(m_model, &Model::iconRemoved, this, &IconModule::removeIcon);
     connect(m_model, &Model::iconChanged, this, &IconModule::currentIconChanged);
 
+    //m_model是在父类ModuleInterface中new的
     for (const IconStruct &icon : m_model->iconList()) {
         addIcon(icon);
+    }
+
+    if (QSysInfo::currentCpuArchitecture().contains(QString("mips"))) {
+        m_bIsMispCpuArch = true;
     }
 
     updateSmallIcon();
 }
 
+/*******************************************************************************
+ 1. @函数:    addIcon
+ 2. @作者:
+ 3. @日期:    2020-12-09
+ 4. @说明:    拷贝主题图标到当前界面并保存
+*******************************************************************************/
 void IconModule::addIcon(const IconStruct &icon)
 {
      if (m_iconList.keys().contains(icon) && icon.Id.isEmpty()) {
@@ -88,11 +99,19 @@ void IconModule::addIcon(const IconStruct &icon)
          m_worker->setIcon(icon);
      });
 
+     //保存主题图标信息
      m_iconList[icon] = base;
 
+     //显示到主题图标界面
      m_layout->insertWidget(m_model->iconList().indexOf(icon), base);
 }
 
+/*******************************************************************************
+ 1. @函数:    removeIcon
+ 2. @作者:
+ 3. @日期:    2020-12-09
+ 4. @说明:    删除图标，删除界面和本地保存
+*******************************************************************************/
 void IconModule::removeIcon(const IconStruct &icon)
 {
     BaseWidget *base = m_iconList[icon];
@@ -100,10 +119,16 @@ void IconModule::removeIcon(const IconStruct &icon)
     m_layout->removeWidget(base);
 
     m_iconList.remove(icon);
-
-    base->deleteLater();
+    if(base)
+        base->deleteLater();
 }
 
+/*******************************************************************************
+ 1. @函数:    currentIconChanged
+ 2. @作者:
+ 3. @日期:    2020-12-09
+ 4. @说明:    当前界面主题图标变化响应函数
+*******************************************************************************/
 void IconModule::currentIconChanged(const IconStruct &icon)
 {
     if (icon.Id.isEmpty()) {
@@ -113,7 +138,9 @@ void IconModule::currentIconChanged(const IconStruct &icon)
     m_selectBtn->raise();
 
     BaseWidget * w = m_iconList[icon];
-    QPoint p = w->mapTo(m_scrollWidget, m_iconList[icon]->rect().topRight())  - QPoint(9, 3);
+    if(w == nullptr) //添加为空判断，防止奔溃
+        return;
+    QPoint p = w->mapTo(m_scrollWidget, m_iconList[icon]->rect().topRight())  - QPoint(9, 5);
     m_scroll->ensureVisible(p.x(), p.y() + m_height, 50, m_height);
     m_selectBtn->move(w->mapTo(m_scrollWidget, m_iconList[icon]->rect().topRight())  - QPoint(11, 7));
 
@@ -122,9 +149,10 @@ void IconModule::currentIconChanged(const IconStruct &icon)
     }
 }
 
+//首次启动初始化图片
 void IconModule::updateBigIcon()
 {
-    const QSize size(700, 340);
+    const QSize size(700, 278);
     setFixedSize(size);
     m_scroll->setFixedSize(size);
     m_scrollWidget->setFixedWidth(size.width());
@@ -142,6 +170,7 @@ void IconModule::updateBigIcon()
     m_height = 71;
 }
 
+//日常启动初始化图片
 void IconModule::updateSmallIcon()
 {
     const QSize size(550, 270);
@@ -162,11 +191,13 @@ void IconModule::updateSmallIcon()
     m_height = 60;
 }
 
+//更新选择按钮位置
 void IconModule::updateSelectBtnPos()
 {
     currentIconChanged(m_model->currentIcon());
 }
 
+//键盘按键事件
 void IconModule::keyPressEvent(QKeyEvent *e)
 {
     IconStruct icon = m_model->currentIcon();
@@ -180,27 +211,29 @@ void IconModule::keyPressEvent(QKeyEvent *e)
     if (e->key() == Qt::Key_Left) {
         if (index == 2){
             QScrollBar *pScrollBar = m_scroll->verticalScrollBar();
-            pScrollBar->setValue(0);
+            pScrollBar->setValue(pScrollBar->value()-pScrollBar->pageStep());
         }
-        if (index == 0)
+        if (index < 1)
             return;
         m_worker->setIcon(m_model->iconList().at(index - 1));
     } else if (e->key() == Qt::Key_Right) {
         if (index == m_model->iconList().size() - 1)
             return;
         m_worker->setIcon(m_model->iconList().at(index + 1));
-    } else if (e->key() == Qt::Key_Up) {
+    } else if (e->key() == Qt::Key_Up) {//首次启动时有效果
         if (index == 2 || index == 3){
             QScrollBar *pScrollBar = m_scroll->verticalScrollBar();
-            pScrollBar->setValue(0);
+            pScrollBar->setValue(pScrollBar->value()-pScrollBar->pageStep());
         }
         if (index < 2)
             return;
         m_worker->setIcon(m_model->iconList().at(index - 2));
-    } else if (e->key() == Qt::Key_Down) {
+    } else if (e->key() == Qt::Key_Down) {//首次启动时有效果
         if (index > m_model->iconList().size() - 3)
             return;
         m_worker->setIcon(m_model->iconList().at(index + 2));
+    } else {
+        return;
     }
     updateSelectBtnPos();
 }
@@ -214,36 +247,34 @@ bool IconModule::eventFilter(QObject *watched, QEvent *event)
     return ModuleInterface::eventFilter(watched, event);
 }
 
+//鼠标点击事件
 void IconModule::mousePressEvent(QMouseEvent *event)
 {
+    //鼠标点击时，取消选中框
     emit cancelCloseFrame();
     m_TempPoint = event->pos();
 }
 
-//滑动鼠标下位
+//滑动鼠标下位， 鼠标左键按住之后，可以上下拖动
 void IconModule::mouseMoveEvent(QMouseEvent *event)
 {
-    auto pos = event->pos();
-
-    auto vbar = m_scroll->verticalScrollBar();
-
-    //向上滑动 向下滚动
-    auto offset = m_TempPoint.y() - pos.y();
-
-    //获取当前滚动条位置
-    auto val = vbar->value();
-
-    //获取滚动条pagetemp区域高度
-    auto step = vbar->pageStep();
-
-    //设计移动位置
-    auto move   = offset * step / m_scrollWidget->height();
-
-    if(move + val < 0 || move + val > m_scrollWidget->height())
-        return;
-
-    //移动
-    vbar->setValue(move + val);
+    if (event->buttons() & Qt::LeftButton) {
+        auto pos = event->pos();
+        auto vbar = m_scroll->verticalScrollBar();
+        //向上滑动 向下滚动
+        auto offset = m_TempPoint.y() - pos.y();
+        //获取当前滚动条位置
+        auto val = vbar->value();
+        //获取滚动条pagetemp区域高度
+        auto step = vbar->pageStep();
+        //设计移动位置
+        auto move   = offset * step / m_scrollWidget->height();
+        if(move + val < 0 || move + val > m_scrollWidget->height())
+            return;
+        //移动
+        vbar->setValue(move + val);
+    }
 }
+
 
 
