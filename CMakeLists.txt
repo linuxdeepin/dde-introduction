@@ -24,6 +24,11 @@ if (NOT DEFINED VERSION)
     set(VERSION 1.2.2)
 endif ()
 
+include(GNUInstallDirs)
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set(CMAKE_INSTALL_PREFIX /usr)
+endif ()
+
 ADD_COMPILE_OPTIONS(-fno-access-control)
 
 #set different ISO types
@@ -164,39 +169,36 @@ if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
 endif()
 
 
-set(CMAKE_INSTALL_PREFIX /usr)
-
 # Install files
-install(TARGETS dde-introduction DESTINATION bin)
+install(TARGETS dde-introduction DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 file(GLOB APP_QM_FILES "${CMAKE_SOURCE_DIR}/translations/*.qm")
 file(GLOB_RECURSE ASS_SRC ${CMAKE_SOURCE_DIR}/resources/video/*.ass)
 
 #Choose different videos for different ISO types
 if(ISO_TYPE MATCHES "server")
-set(VIDEO_PATH ${CMAKE_SOURCE_DIR}/resources/video/server/demo.mp4)
+    set(VIDEO_PATH ${CMAKE_SOURCE_DIR}/resources/video/server/demo.mp4)
 elseif(ISO_TYPE MATCHES "community")
-set(VIDEO_PATH ${CMAKE_SOURCE_DIR}/resources/video/community/demo.mp4)
+    set(VIDEO_PATH ${CMAKE_SOURCE_DIR}/resources/video/community/demo.mp4)
 else()
-set(VIDEO_PATH ${CMAKE_SOURCE_DIR}/resources/video/professional/demo.mp4)
+    set(VIDEO_PATH ${CMAKE_SOURCE_DIR}/resources/video/professional/demo.mp4)
 endif()
 
 #代码覆盖率开关
 if(CMAKE_COVERAGE_ARG STREQUAL "CMAKE_COVERAGE_ARG_ON")
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall -fprofile-arcs -ftest-coverage")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -fprofile-arcs -ftest-coverage")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall -fprofile-arcs -ftest-coverage")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -fprofile-arcs -ftest-coverage")
 endif()
 
 file(GLOB_RECURSE DEMO_VIDEO_SRC ${VIDEO_PATH})
 
-install(FILES ${APP_QM_FILES} DESTINATION /usr/share/dde-introduction/translations)
-install(FILES ${APP_DESKTOP} DESTINATION /usr/share/applications)
-install(FILES ${APP_LOGO} DESTINATION  ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/)
-install(FILES ${ASS_SRC} DESTINATION /usr/share/dde-introduction/)
-install(FILES ${DEMO_VIDEO_SRC} DESTINATION /usr/share/dde-introduction/)
+install(FILES ${APP_QM_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/dde-introduction/translations)
+install(FILES ${APP_DESKTOP} DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+install(FILES ${APP_LOGO} DESTINATION  ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps/)
+install(FILES ${ASS_SRC} DESTINATION ${CMAKE_INSTALL_DATADIR}/dde-introduction/)
+install(FILES ${DEMO_VIDEO_SRC} DESTINATION ${CMAKE_INSTALL_DATADIR}/dde-introduction/)
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     #add ut test
     add_subdirectory(tests)
 endif()
-
 
