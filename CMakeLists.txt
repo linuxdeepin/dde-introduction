@@ -194,7 +194,9 @@ install(FILES ${APP_DESKTOP} DESTINATION /usr/share/applications)
 install(FILES ${APP_LOGO} DESTINATION  ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/)
 install(FILES ${ASS_SRC} DESTINATION /usr/share/dde-introduction/)
 install(FILES ${DEMO_VIDEO_SRC} DESTINATION /usr/share/dde-introduction/)
-#add ut test
-add_subdirectory(tests)
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    #add ut test
+    add_subdirectory(tests)
+endif()
 
 
