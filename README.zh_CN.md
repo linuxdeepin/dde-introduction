@@ -47,4 +47,4 @@ We encourage you to report issues and contribute changes
 
 ## 开源许可证
 
-dde-introduction 遵循协议 [LGPLv3](LICENSE).
+dde-introduction 遵循协议 [LGPL-3.0-only](LICENSE).

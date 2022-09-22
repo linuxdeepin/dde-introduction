@@ -48,4 +48,4 @@ We encourage you to report issues and contribute changes
 
 ## License
 
-deepin-ocr is licensed under [LGPLv3](LICENSE).
+deepin-ocr is licensed under [LGPL-3.0-only](LICENSE).
