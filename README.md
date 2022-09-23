@@ -48,4 +48,4 @@ We encourage you to report issues and contribute changes
 
 ## License
 
-deepin-ocr is licensed under [LGPL-3.0-only](LICENSE).
+dde-introduction is licensed under [LGPL-3.0-only](LICENSE).
