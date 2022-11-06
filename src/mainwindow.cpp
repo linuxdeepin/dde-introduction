@@ -92,8 +92,7 @@ MainWindow::~MainWindow()
     }
 
     if (m_isFirst) {
-        QFile file(DDE_STARTGUIDE_PATH);
-        if (file.exists()) {
+        if (!DDE_STARTGUIDE_PATH.isEmpty()) {
             QProcess *pStartAppProcess = new QProcess(this);
             pStartAppProcess->startDetached(DDE_STARTGUIDE_PATH);
         }
