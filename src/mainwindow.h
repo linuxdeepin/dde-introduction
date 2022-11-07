@@ -43,10 +43,11 @@
 DCORE_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
-#define DDE_STARTGUIDE_PATH "/usr/bin/dde-startguide"
 #define FIRST_ICONCONTENT_WINSIZE 278
 
 using WMSwitcherInter = com::deepin::WMSwitcher;
+
+const QString DDE_STARTGUIDE_PATH = QStandardPaths::findExecutable("dde-startguide");
 
 class BaseModuleWidget;
 class MainWindow : public DMainWindow
