@@ -1,3 +1,9 @@
+dde-introduction (5.6.0.2) UNRELEASED; urgency=medium
+
+  * Release 5.6.0.2
+
+ -- Deepin Packages Builder <packages@deepin.com>  Mon, 01 Jan 2023 15:26:28 +0800
+
 dde-introduction (5.6.0.41+nmu1) UNRELEASED; urgency=medium
 
  * Non-maintainer upload.
