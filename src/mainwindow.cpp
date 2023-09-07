@@ -15,7 +15,7 @@ MainWindow::MainWindow(DWidget *parent)
     , m_currentAni(new QPropertyAnimation(this))
     , m_lastAni(new QPropertyAnimation(this))
     , m_settings(new QSettings("deepin", "dde-introduction"))
-    , m_displayInter(new WMSwitcherInter("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher",
+    , m_displayInter(new WMSwitcherInter("org.deepin.dde.WMSwitcher1", "/org/deepin/dde/WMSwitcher1",
                                          QDBusConnection::sessionBus(), this))
 {
     qInfo() << "Current cpu architecture : " << QSysInfo::currentCpuArchitecture();
@@ -94,7 +94,7 @@ MainWindow::~MainWindow()
     if (m_isFirst) {
         if (!DDE_STARTGUIDE_PATH.isEmpty()) {
             QProcess *pStartAppProcess = new QProcess(this);
-            pStartAppProcess->startDetached(DDE_STARTGUIDE_PATH);
+            pStartAppProcess->startDetached(DDE_STARTGUIDE_PATH, {});
         }
     }
 }

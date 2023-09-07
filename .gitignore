@@ -1,25 +1,13 @@
-# Compiled Object files           
-*.slo                             
-*.lo                              
-*.o                               
+build
 
-# Compiled Dynamic libraries      
-*.so                              
-*.dylib                           
+src/dbusoutput/
 
-# Compiled Static libraries       
-*.lai                             
-*.la                              
-*.a                               
+src/environments.h
 
-.vscode/                          
-build*/                           
-*.core                            
-*.autosave                        
-*.user*                           
-# qm file is auto generate from .ts file                            
-*.qm                              
+*.qm
 
-# vim tmp file                    
-*.swp 
-dde-introduction
+.cache
+
+.vscode/
+
+*.swp

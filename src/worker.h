@@ -12,15 +12,15 @@
 #include <QJsonDocument>
 #include <QProcess>
 
-#include <com_deepin_daemon_appearance.h>
-#include <com_deepin_wmswitcher.h>
-#include <com_deepin_dde_daemon_dock.h>
+#include "org_deepin_dde_appearance1.h"
+#include "org_deepin_dde_wmswitcher1.h"
+#include "org_deepin_dde_daemon_dock1.h"
 #include <DWindowManagerHelper>
 
 //这是什么??? 封装好的DBUS接口
-using Icon       = com::deepin::daemon::Appearance;
-using WMSwitcher = com::deepin::WMSwitcher;
-using Dock       = com::deepin::dde::daemon::Dock;
+using Icon       = org::deepin::dde::Appearance1;
+using WMSwitcher = org::deepin::dde::WMSwitcher1;
+using Dock       = org::deepin::dde::daemon::Dock1;
 
 DGUI_USE_NAMESPACE
 //发送信息到DBUS改变电脑的桌面样式、运行模式、图标主题类

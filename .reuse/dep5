@@ -49,7 +49,7 @@ Copyright: UnionTech Software Technology Co., Ltd.
 License: CC-BY-4.0
 
 # resources
-Files: resources/*
+Files: resources/* misc/*
 Copyright: None
 License: LGPL-3.0-or-later
 

@@ -212,11 +212,11 @@ void Worker::onIconPixmapFinished(QDBusPendingCallWatcher *w)
 Worker::Worker(QObject *parent)
     : QObject(parent)
     , m_model(Model::Instance())
-    , m_iconInter(new Icon("com.deepin.daemon.Appearance", "/com/deepin/daemon/Appearance",
+    , m_iconInter(new Icon("org.deepin.dde.Appearance1", "/org/deepin/dde/Appearance1",
                            QDBusConnection::sessionBus(), this))
-    , m_wmInter(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher",
+    , m_wmInter(new WMSwitcher("org.deepin.dde.WMSwitcher1", "/org/deepin/dde/WMSwitcher1",
                                QDBusConnection::sessionBus(), this))
-    , m_dockInter(new Dock("com.deepin.dde.daemon.Dock", "/com/deepin/dde/daemon/Dock",
+    , m_dockInter(new Dock("org.deepin.dde.daemon.Dock1", "/org/deepin/dde/daemon/Dock1",
                            QDBusConnection::sessionBus(), this))
 {
     connect(m_iconInter, &Icon::Refreshed, this, &Worker::onIconRefreshed);

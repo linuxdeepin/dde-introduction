@@ -8,7 +8,6 @@
 
 #include "../model.h"
 #include "../widgets/basewidget.h"
-#include "../worker.h"
 #include "moduleinterface.h"
 
 #include <QHBoxLayout>

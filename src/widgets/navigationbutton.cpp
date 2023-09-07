@@ -126,37 +126,3 @@ void NavigationButton::paintEvent(QPaintEvent *event)
     initButton();
 }
 
-
-/*QSize NavigationButton::setHint()
-{
-    QFontMetrics fm(this->font());
-    QRect rec = fm.boundingRect(m_label->text());
-    return rec.size();
-}*/
-
-/*void NavigationButton::paintEvent(QPaintEvent *event)
-{
-    QPainter painter(this);
-    QFont font;
-    font.setFamily("SourceHanSansSC-Medium");
-    font.setPixelSize(14);
-    painter.setFont(font);
-    QRect r = rect();
-    r.setLeft(rect().left() + 10);
-    r.setTop(rect().top() + 4);
-    if (!isChecked()) {
-        painter.fillRect(rect(),QColor(248,248,248));
-        painter.setPen(QPen(QColor(65,77,104)));
-        painter.drawText(r, m_text);
-    } else {
-        QRect bacrRect = rect();
-        painter.setRenderHint(QPainter :: Antialiasing);
-        QPainterPath path;
-        path.addRoundedRect(bacrRect, 8, 8);
-        painter.setPen(Qt::NoPen);
-        painter.fillPath(path, QColor(0,129,255));
-        painter.drawPath(path);
-        painter.setPen(QPen(QColor(255,255,255)));
-        painter.drawText(r, m_text);
-    }
-}*/

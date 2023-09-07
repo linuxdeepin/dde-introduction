@@ -35,9 +35,9 @@
 #include <DSysInfo>
 #include <DWidget>
 
-#include <com_deepin_wmswitcher.h>
+#include "org_deepin_dde_wmswitcher1.h"
 
-using WMSwitcher = com::deepin::WMSwitcher;
+using WMSwitcher = org::deepin::dde::WMSwitcher1;
 
 DGUI_USE_NAMESPACE
 DCORE_USE_NAMESPACE

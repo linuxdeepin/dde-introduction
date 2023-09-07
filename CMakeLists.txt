@@ -20,14 +20,19 @@
 cmake_minimum_required(VERSION 3.7)
 set(PROJECT_VERSION "5.9.0.53")
 
+project(dde-introduction
+  VERSION ${PROJECT_VERSION}
+  LANGUAGES CXX
+)
+
 if (NOT DEFINED VERSION)
     set(VERSION 1.2.2)
 endif ()
 
-include(GNUInstallDirs)
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(CMAKE_INSTALL_PREFIX /usr)
 endif ()
+include(GNUInstallDirs)
 
 ADD_COMPILE_OPTIONS(-fno-access-control)
 
@@ -101,7 +106,7 @@ execute_process(COMMAND bash
                     ${APP_BIN_NAME}
                     WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/")
 
-configure_file(${CMAKE_CURRENT_LIST_DIR}/src/environments.h.in ${CMAKE_CURRENT_LIST_DIR}/src/environments.h @ONLY)
+configure_file(${CMAKE_CURRENT_LIST_DIR}/src/environments.h.in ${CMAKE_CURRENT_BINARY_DIR}/environments.h @ONLY)
 
 macro(SUBDIRLIST result curdir)
     file(GLOB children RELATIVE ${curdir} ${curdir}/*)
@@ -122,9 +127,6 @@ foreach(subdir ${all_src})
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/${subdir})
 endforeach()
 
-file(GLOB_RECURSE CPP_SRC ${CMAKE_SOURCE_DIR}/src/*.cpp)
-
-
 # Find the library
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
@@ -132,10 +134,33 @@ find_package(Qt5 COMPONENTS DBus Sql Multimedia REQUIRED)
 find_package(Qt5Gui REQUIRED)
 find_package(DtkWidget REQUIRED)
 find_package(DtkCore REQUIRED)
-find_package(DFrameworkdbus REQUIRED)
+find_package(DtkTools REQUIRED)
+
+function(generation_dbus_interface xmldir outdir)
+    IF(EXISTS ${outdir})
+        file(REMOVE_RECURSE ${outdir})
+    ENDIF()
+    execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory ${outdir})
+    file(GLOB_RECURSE allXmls ${xmldir}/*.xml)
+    foreach(XMLFILE ${allXmls})
+        string(FIND ${XMLFILE} "/" INDEX REVERSE)
+        string(SUBSTRING ${XMLFILE} ${INDEX} -1 classname)
+        string(REPLACE "/" "" classname ${classname})
+        string(REPLACE ".xml" "" classname ${classname})
+        string(REPLACE "." "_" classname ${classname})
+        string(TOLOWER ${classname} filename)
+        execute_process(COMMAND ${DTK_XML2CPP} -c ${classname} -p ${outdir}/${filename} ${XMLFILE}
+            WORKING_DIRECTORY ${outdir})
+    endforeach()
+endfunction(generation_dbus_interface)
+
+generation_dbus_interface(${CMAKE_CURRENT_SOURCE_DIR}/misc/ ${CMAKE_CURRENT_SOURCE_DIR}/src/dbusoutput)
+
+file(GLOB_RECURSE CPP_SRC ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
 include_directories(${GSTREAMER_INCLUDE_DIRS})
 include_directories(${Qt5Gui_PRIVATE_INCLUDE_DIRS})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/dbusoutput)
 
 if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
     pkg_check_modules(LIBDMR REQUIRED libdmr)
@@ -154,7 +179,6 @@ target_include_directories(${APP_BIN_NAME}
 
 target_link_libraries(${APP_BIN_NAME}
     ${DtkCore_LIBRARIES}
-    ${DFrameworkdbus_LIBRARIES}
     ${GSTREAMER_LIBRARIES}
     ${DtkWidget_LIBRARIES}
     Qt5::Core

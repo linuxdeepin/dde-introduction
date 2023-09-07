@@ -38,14 +38,14 @@
 #include <DSysInfo>
 #include <DTitlebar>
 
-#include <com_deepin_wmswitcher.h>
+#include "org_deepin_dde_wmswitcher1.h"
 
 DCORE_USE_NAMESPACE
 DWIDGET_USE_NAMESPACE
 
 #define FIRST_ICONCONTENT_WINSIZE 278
 
-using WMSwitcherInter = com::deepin::WMSwitcher;
+using WMSwitcherInter = org::deepin::dde::WMSwitcher1;
 
 const QString DDE_STARTGUIDE_PATH = QStandardPaths::findExecutable("dde-startguide");
 

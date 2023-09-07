@@ -14,7 +14,7 @@ NormalModule::NormalModule(DWidget *parent)
     , m_rightContentLayout(new QVBoxLayout)
     , m_buttonGrp(new QButtonGroup)
     , m_currentWidget(nullptr)
-    , m_wmSwitcher(new WMSwitcher("com.deepin.WMSwitcher", "/com/deepin/WMSwitcher",
+    , m_wmSwitcher(new WMSwitcher("org.deepin.dde.WMSwitcher1", "/org/deepin/dde/WMSwitcher1",
                                   QDBusConnection::sessionBus(), this))
     , m_titleLabel(new DLabel(this))
     , m_describe(new DLabel(this))
