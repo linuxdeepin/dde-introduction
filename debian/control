@@ -18,7 +18,7 @@ Build-Depends: debhelper (>= 9),
  libgtest-dev, 
  libgmock-dev
 Standards-Version: 3.9.8
-Homepage: http://www.deepin.org
+Homepage: https://github.com/linuxdeepin/dde-introduction
 
 Package: dde-introduction
 Architecture: any
